@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Fri Apr  1 13:26:48 2022
-// Host        : xsjl24732 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+// Date        : Tue Apr  5 18:15:12 2022
+// Host        : AsusP8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top design_2_auto_pc_2 -prefix
 //               design_2_auto_pc_2_ design_2_auto_pc_1_sim_netlist.v
 // Design      : design_2_auto_pc_1

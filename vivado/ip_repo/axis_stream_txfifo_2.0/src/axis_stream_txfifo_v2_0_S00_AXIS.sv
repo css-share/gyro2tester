@@ -33,7 +33,7 @@
 		input wire  S_AXIS_TVALID,
         output logic fifo_wren,
         output logic [C_S_AXIS_TDATA_WIDTH-1 : 0] fifo_wdata,
-        output logic [12:0] write_pointer
+        output logic [15:0] write_pointer
 	);
 	// function called clogb2 that returns an integer which has the 
 	// value of the ceiling of the log base 2.
@@ -45,7 +45,7 @@
 	endfunction
 
 	// Total number of input data.
-	localparam NUMBER_OF_INPUT_WORDS  = 8192;
+	localparam NUMBER_OF_INPUT_WORDS  = 65536;
 	// bit_num gives the minimum number of bits needed to address 'NUMBER_OF_INPUT_WORDS' size of FIFO.
 	localparam bit_num  = clogb2(NUMBER_OF_INPUT_WORDS-1);
 	// Define the states of state machine

@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
 -- Date        : Tue Apr  5 18:16:03 2022
 -- Host        : AsusP8 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_5/design_2_auto_pc_5_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_2_auto_pc_5 -prefix
+--               design_2_auto_pc_5_ design_2_auto_pc_5_sim_netlist.vhdl
 -- Design      : design_2_auto_pc_5
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -143,8 +143,6 @@ entity design_2_auto_pc_5_axi_protocol_converter_v2_1_25_axi_protocol_converter 
   attribute C_TRANSLATION_MODE of design_2_auto_pc_5_axi_protocol_converter_v2_1_25_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_2_auto_pc_5_axi_protocol_converter_v2_1_25_axi_protocol_converter : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_auto_pc_5_axi_protocol_converter_v2_1_25_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_25_axi_protocol_converter";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of design_2_auto_pc_5_axi_protocol_converter_v2_1_25_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;

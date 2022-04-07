@@ -15,12 +15,12 @@
 	)
 	(
 		// Users to add ports here
-		input wire [31:0] dbg_word0,
-        input wire [31:0] dbg_word1,
-        input wire [31:0] dbg_word2,
-        input wire [31:0] dbg_word3,
-        output wire       resetn,       // active LOW
-        output wire       loop,         // active HIGH
+		output logic [31:0] slv_reg0,
+        output logic [31:0] slv_reg1,
+        output logic [31:0] slv_reg2,
+        input wire   [31:0] dbg_word3,
+     //   output wire       resetn,       // active LOW
+     //   output wire       loop,         // active HIGH
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -109,9 +109,9 @@
 	//-- Signals for user logic register space example
 	//------------------------------------------------
 	//-- Number of Slave Registers 4
-	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg0;
-	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg1;
-	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg2;
+//	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg0;
+//	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg1;
+//	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg2;
 	reg [C_S_AXI_DATA_WIDTH-1:0]	slv_reg3;
 	wire	 slv_reg_rden;
 	wire	 slv_reg_wren;
@@ -221,6 +221,9 @@
 	// and the slave is ready to accept the write address and write data.
 	assign slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
 
+ 
+  logic slv_reg1_clr; 
+
 	always @( posedge S_AXI_ACLK )
 	begin
 	  if ( S_AXI_ARESETN == 1'b0 )
@@ -229,7 +232,14 @@
 	      slv_reg1 <= 0;
 	      slv_reg2 <= 0;
 	      slv_reg3 <= 0;
-	    end 
+	    end
+      else if (slv_reg1_clr)
+        begin
+	      slv_reg0 <= slv_reg0;
+	      slv_reg1 <= 32'h00000000;
+	      slv_reg2 <= slv_reg2;
+	      slv_reg3 <= slv_reg3;
+	    end
 	  else begin
 	    if (slv_reg_wren)
 	      begin
@@ -271,7 +281,20 @@
 	        endcase
 	      end
 	  end
-	end    
+	end  
+
+
+   	always @( posedge S_AXI_ACLK )
+	begin
+	  if ( S_AXI_ARESETN == 1'b0 )
+          slv_reg1_clr <= 1'b0;
+      else if (slv_reg1[0] & !slv_reg1_clr)
+          slv_reg1_clr <= 1'b1;
+      else
+          slv_reg1_clr <= 1'b0;
+    end  
+
+  
 
 	// Implement write response logic generation
 	// The write response and response valid signals are asserted by the slave 
@@ -375,12 +398,12 @@
 	begin
 	      // Address decoding for reading registers
 	      case ( axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
-	        //2'h0   : reg_data_out <= slv_reg0;
-	        2'h0   : reg_data_out <= dbg_word0;
-	        //2'h1   : reg_data_out <= slv_reg1;
-	        2'h1   : reg_data_out <= dbg_word1;
-	        //2'h2   : reg_data_out <= slv_reg2;
-	        2'h2   : reg_data_out <= dbg_word2;
+	        2'h0   : reg_data_out <= slv_reg0;
+	        //2'h0   : reg_data_out <= dbg_word0;
+	        2'h1   : reg_data_out <= slv_reg1;
+	        //2'h1   : reg_data_out <= dbg_word1;
+	        2'h2   : reg_data_out <= slv_reg2;
+	        //2'h2   : reg_data_out <= dbg_word2;
 	        //2'h3   : reg_data_out <= slv_reg3;
 	        2'h3   : reg_data_out <= dbg_word3;
 	        default : reg_data_out <= 0;
@@ -407,9 +430,9 @@
 	end    
 
 	// Add user logic here
-	assign resetn =  ~slv_reg0[0];     // inverted here to be active high in software.
+//	assign resetn =  ~slv_reg0[0];     // inverted here to be active high in software.
 //	assign loop   = slv_reg1[0];
-	assign loop = 1'b0;
+//	assign loop = 1'b0;
 	// User logic ends
 
 	endmodule

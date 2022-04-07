@@ -48,17 +48,18 @@
 
 
 // IP VLNV: xilinx.com:user:axis_stream_fifo:1.0
-// IP Revision: 52
+// IP Revision: 54
 
 (* X_CORE_INFO = "axis_stream_fifo_v1_0,Vivado 2021.2" *)
 (* CHECK_LICENSE_TYPE = "design_2_RxFIFO_0,axis_stream_fifo_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_2_RxFIFO_0,axis_stream_fifo_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axis_stream_fifo,x_ipVersion=1.0,x_ipCoreRevision=52,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S00_AXIS_TDATA_WIDTH=16,C_M00_AXIS_TDATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "design_2_RxFIFO_0,axis_stream_fifo_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axis_stream_fifo,x_ipVersion=1.0,x_ipCoreRevision=54,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S00_AXIS_TDATA_WIDTH=16,C_M00_AXIS_TDATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_2_RxFIFO_0 (
   clk,
   rst_n,
   txclk,
   tx_rstn,
+  rxfifo_full,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -102,6 +103,7 @@ input wire txclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME tx_rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 tx_rstn RST" *)
 input wire tx_rstn;
+output wire rxfifo_full;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [3 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -175,6 +177,7 @@ output wire m00_axis_tlast;
     .rst_n(rst_n),
     .txclk(txclk),
     .tx_rstn(tx_rstn),
+    .rxfifo_full(rxfifo_full),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

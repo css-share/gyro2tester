@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Mon Apr  4 22:42:12 2022
-//Host        : AsusP8 running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+//Date        : Wed Apr  6 17:10:20 2022
+//Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2_wrapper.bd
 //Design      : design_2_wrapper
 //Purpose     : IP block netlist
@@ -34,6 +34,8 @@ module design_2_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    LED0,
+    LED1,
     MCK_N,
     MCK_P,
     SPI_CSN,
@@ -64,6 +66,8 @@ module design_2_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  output LED0;
+  output LED1;
   output MCK_N;
   output MCK_P;
   output SPI_CSN;
@@ -95,6 +99,8 @@ module design_2_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire LED0;
+  wire LED1;
   wire MCK_N;
   wire MCK_P;
   wire SPI_CSN;
@@ -127,6 +133,8 @@ module design_2_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .LED0(LED0),
+        .LED1(LED1),
         .MCK_N(MCK_N),
         .MCK_P(MCK_P),
         .SPI_CSN(SPI_CSN),

@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Mon Apr  4 22:42:12 2022
-//Host        : AsusP8 running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+//Date        : Wed Apr  6 17:10:20 2022
+//Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2
 //Purpose     : IP block netlist
@@ -35,6 +35,8 @@ module design_2
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    LED0,
+    LED1,
     MCK_N,
     MCK_P,
     SPI_CSN,
@@ -65,6 +67,8 @@ module design_2
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
+  output LED0;
+  output LED1;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCK_N CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCK_N, CLK_DOMAIN design_2_BiDirChannels_0_0_MCK_N, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output MCK_N;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCK_P CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCK_P, CLK_DOMAIN design_2_BiDirChannels_0_0_MCK_P, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output MCK_P;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_CSN DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_CSN, LAYERED_METADATA undef" *) output SPI_CSN;
@@ -85,8 +89,10 @@ module design_2
   wire BiDirChannels_0_txclk;
   wire HSI_A0_1;
   wire Net;
+  wire RxFIFO_rxfifo_full;
   wire SPI_ip_0_SPI_CS;
   wire SPI_ip_0_SPI_SCK;
+  wire TxFIFO_txfifo_full;
   wire [31:0]axi_dma_0_M_AXIS_MM2S_TDATA;
   wire axi_dma_0_M_AXIS_MM2S_TLAST;
   wire axi_dma_0_M_AXIS_MM2S_TREADY;
@@ -364,6 +370,8 @@ module design_2
   assign DSYNC = BiDirChannels_0_HSI_DAP;
   assign DTX = BiDirChannels_0_HSI_DAM;
   assign HSI_A0_1 = DRX;
+  assign LED0 = TxFIFO_txfifo_full;
+  assign LED1 = RxFIFO_rxfifo_full;
   assign MCK_N = BiDirChannels_0_MCK_N;
   assign MCK_P = BiDirChannels_0_MCK_P;
   assign SPI_CSN = SPI_ip_0_SPI_CS;
@@ -597,6 +605,7 @@ module design_2
         .m00_axis_tready(axis_stream_fifo_0_M00_AXIS_TREADY),
         .m00_axis_tvalid(axis_stream_fifo_0_M00_AXIS_TVALID),
         .rst_n(rst_ps7_0_100M_peripheral_aresetn),
+        .rxfifo_full(RxFIFO_rxfifo_full),
         .s00_axi_araddr(ps7_0_axi_periph_M04_AXI_ARADDR[3:0]),
         .s00_axi_arprot(ps7_0_axi_periph_M04_AXI_ARPROT),
         .s00_axi_arready(ps7_0_axi_periph_M04_AXI_ARREADY),
@@ -691,7 +700,8 @@ module design_2
         .s00_axis_tstrb({1'b1,1'b1,1'b1,1'b1}),
         .s00_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
         .tx_rstn(txclk_reset_domain_peripheral_aresetn),
-        .txclk(BiDirChannels_0_txclk));
+        .txclk(BiDirChannels_0_txclk),
+        .txfifo_full(TxFIFO_txfifo_full));
   design_2_axi_dma_0_0 axi_dma_0
        (.axi_resetn(rst_ps7_0_100M_peripheral_aresetn),
         .m_axi_mm2s_aclk(processing_system7_0_FCLK_CLK0),

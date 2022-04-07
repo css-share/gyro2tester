@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Mon Apr  4 22:43:19 2022
-// Host        : AsusP8 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+// Date        : Wed Apr  6 17:12:26 2022
+// Host        : xsjl210014 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode funcsim
-//               c:/fromCharles/gyro_tester_gold/gyro_tester_gold/gyro_tester_gold/gyro_tester_gold.srcs/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0_sim_netlist.v
+//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0_sim_netlist.v
 // Design      : design_2_BiDirChannels_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -228,8 +228,8 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
     s00_axi_wdata,
     s00_axi_araddr,
     s00_axi_arvalid,
-    DRX,
     s00_axi_wstrb,
+    DRX,
     rst_n,
     s02_axis_tdata,
     s01_axis_tdata,
@@ -262,8 +262,8 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
   input [31:0]s00_axi_wdata;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
-  input DRX;
   input [3:0]s00_axi_wstrb;
+  input DRX;
   input rst_n;
   input [15:0]s02_axis_tdata;
   input [15:0]s01_axis_tdata;
@@ -272,8 +272,8 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
   input s00_axi_rready;
   input tx_rstn;
 
-  wire BiDirChannels_v1_0_S00_AXI_inst_n_12;
   wire BiDirChannels_v1_0_S00_AXI_inst_n_13;
+  wire BiDirChannels_v1_0_S00_AXI_inst_n_14;
   wire DRX;
   wire DSYNC;
   wire DTX;
@@ -287,6 +287,8 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
   wire [15:0]m00_axis_tdata;
   wire m00_axis_tready;
   wire nxt_state0__1;
+  wire p_0_in;
+  wire [0:0]p_1_out;
   wire pipe_valid_reg;
   wire rst_n;
   wire [1:0]s00_axi_araddr;
@@ -312,9 +314,12 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
   wire [2:0]sel0;
   wire tx_rstn;
   wire txclk;
+  wire u_gyro_serialout_n_6;
 
   design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI BiDirChannels_v1_0_S00_AXI_inst
-       (.Q({data_word_1[4],data_word_1[0]}),
+       (.D(p_1_out),
+        .DRX(DRX),
+        .Q(p_0_in),
         .clk(clk),
         .nxt_state0__1(nxt_state0__1),
         .rst_n(rst_n),
@@ -335,20 +340,23 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
         .s00_axi_wvalid(s00_axi_wvalid),
         .s00_axis_tvalid(s00_axis_tvalid),
         .s01_axis_tvalid(s01_axis_tvalid),
+        .\serial_in_reg_reg[0] (u_gyro_serialout_n_6),
         .\slv_reg0_reg[18]_0 (sel0),
-        .\slv_reg0_reg[31]_0 (BiDirChannels_v1_0_S00_AXI_inst_n_12),
-        .\slv_reg0_reg[31]_1 (BiDirChannels_v1_0_S00_AXI_inst_n_13),
+        .\slv_reg0_reg[31]_0 (BiDirChannels_v1_0_S00_AXI_inst_n_13),
+        .\slv_reg0_reg[31]_1 (BiDirChannels_v1_0_S00_AXI_inst_n_14),
+        .\slv_reg1_reg[4]_0 ({data_word_1[4],data_word_1[0]}),
         .\slv_reg2_reg[0]_0 (data_word_2),
         .tx_rstn(tx_rstn));
   design_2_BiDirChannels_0_0_GyroInputOutputSerializer u_gyro_serialout
-       (.DRX(DRX),
+       (.D(p_1_out),
         .DSYNC(DSYNC),
         .DTX(DTX),
+        .\FSM_onehot_cur_state_reg[1]_0 (u_gyro_serialout_n_6),
         .\FSM_onehot_cur_state_reg[2]_0 (\FSM_onehot_cur_state_reg[2] ),
         .MCK_N(MCK_N),
         .MCK_N_0(data_word_2),
         .MCK_P(MCK_P),
-        .Q({data_word_1[4],data_word_1[0]}),
+        .Q(p_0_in),
         .Q_reg(txclk),
         .Q_reg_0(sel0),
         .SYNCK(SYNCK),
@@ -357,13 +365,14 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0
         .m00_axis_tready(m00_axis_tready),
         .nxt_state0__1(nxt_state0__1),
         .pipe_valid_reg(pipe_valid_reg),
-        .qempty_reg(BiDirChannels_v1_0_S00_AXI_inst_n_13),
-        .\r_reg_reg[3] (BiDirChannels_v1_0_S00_AXI_inst_n_12),
+        .qempty_reg(BiDirChannels_v1_0_S00_AXI_inst_n_14),
+        .\r_reg_reg[3] (BiDirChannels_v1_0_S00_AXI_inst_n_13),
         .s00_axis_tdata(s00_axis_tdata),
         .s00_axis_tvalid(s00_axis_tvalid),
         .s01_axis_tdata(s01_axis_tdata),
         .s01_axis_tvalid(s01_axis_tvalid),
-        .s02_axis_tdata(s02_axis_tdata));
+        .s02_axis_tdata(s02_axis_tdata),
+        .serial_in_load_reg_0({data_word_1[4],data_word_1[0]}));
 endmodule
 
 (* ORIG_REF_NAME = "BiDirChannels_v1_0_S00_AXI" *) 
@@ -373,14 +382,18 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
     s00_axi_arready,
     s00_axi_bvalid,
     s00_axi_rvalid,
-    nxt_state0__1,
-    Q,
-    \slv_reg0_reg[18]_0 ,
+    D,
     \slv_reg2_reg[0]_0 ,
+    nxt_state0__1,
+    \slv_reg1_reg[4]_0 ,
+    \slv_reg0_reg[18]_0 ,
     \slv_reg0_reg[31]_0 ,
     \slv_reg0_reg[31]_1 ,
     s00_axi_rdata,
     clk,
+    Q,
+    \serial_in_reg_reg[0] ,
+    DRX,
     rst_n,
     s00_axis_tvalid,
     s01_axis_tvalid,
@@ -399,14 +412,18 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
   output s00_axi_arready;
   output s00_axi_bvalid;
   output s00_axi_rvalid;
-  output nxt_state0__1;
-  output [1:0]Q;
-  output [2:0]\slv_reg0_reg[18]_0 ;
+  output [0:0]D;
   output [0:0]\slv_reg2_reg[0]_0 ;
+  output nxt_state0__1;
+  output [1:0]\slv_reg1_reg[4]_0 ;
+  output [2:0]\slv_reg0_reg[18]_0 ;
   output \slv_reg0_reg[31]_0 ;
   output \slv_reg0_reg[31]_1 ;
   output [31:0]s00_axi_rdata;
   input clk;
+  input [0:0]Q;
+  input \serial_in_reg_reg[0] ;
+  input DRX;
   input rst_n;
   input s00_axis_tvalid;
   input s01_axis_tvalid;
@@ -421,7 +438,9 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
   input [1:0]s00_axi_araddr;
   input [3:0]s00_axi_wstrb;
 
-  wire [1:0]Q;
+  wire [0:0]D;
+  wire DRX;
+  wire [0:0]Q;
   wire aw_en_i_1_n_0;
   wire aw_en_reg_n_0;
   wire [3:2]axi_araddr;
@@ -458,6 +477,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
   wire s00_axi_wvalid;
   wire s00_axis_tvalid;
   wire s01_axis_tvalid;
+  wire \serial_in_reg_reg[0] ;
   wire [2:0]\slv_reg0_reg[18]_0 ;
   wire \slv_reg0_reg[31]_0 ;
   wire \slv_reg0_reg[31]_1 ;
@@ -494,6 +514,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
   wire \slv_reg1[23]_i_1_n_0 ;
   wire \slv_reg1[31]_i_1_n_0 ;
   wire \slv_reg1[7]_i_1_n_0 ;
+  wire [1:0]\slv_reg1_reg[4]_0 ;
   wire \slv_reg1_reg_n_0_[10] ;
   wire \slv_reg1_reg_n_0_[11] ;
   wire \slv_reg1_reg_n_0_[12] ;
@@ -576,7 +597,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
     \FSM_onehot_cur_state[2]_i_3 
        (.I0(s00_axis_tvalid),
         .I1(s01_axis_tvalid),
-        .I2(Q[0]),
+        .I2(\slv_reg1_reg[4]_0 [0]),
         .O(nxt_state0__1));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
@@ -712,7 +733,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h0AFC0A0C)) 
     \axi_rdata[0]_i_1 
-       (.I0(Q[0]),
+       (.I0(\slv_reg1_reg[4]_0 [0]),
         .I1(\slv_reg0_reg_n_0_[0] ),
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
@@ -946,7 +967,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
   LUT5 #(
     .INIT(32'h0AFC0A0C)) 
     \axi_rdata[4]_i_1 
-       (.I0(Q[1]),
+       (.I0(\slv_reg1_reg[4]_0 [1]),
         .I1(\slv_reg0_reg_n_0_[4] ),
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
@@ -1219,6 +1240,16 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
         .D(axi_wready0),
         .Q(s00_axi_wready),
         .R(axi_awready_i_1_n_0));
+  LUT6 #(
+    .INIT(64'hFFFF80FF00008000)) 
+    \serial_in_reg[0]_i_1 
+       (.I0(Q),
+        .I1(\slv_reg2_reg[0]_0 ),
+        .I2(\serial_in_reg_reg[0] ),
+        .I3(\slv_reg0_reg_n_0_[24] ),
+        .I4(\slv_reg0_reg_n_0_[25] ),
+        .I5(DRX),
+        .O(D));
   LUT4 #(
     .INIT(16'h0200)) 
     \slv_reg0[15]_i_1 
@@ -1488,7 +1519,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s00_axi_wdata[0]),
-        .Q(Q[0]),
+        .Q(\slv_reg1_reg[4]_0 [0]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[10] 
        (.C(clk),
@@ -1644,7 +1675,7 @@ module design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s00_axi_wdata[4]),
-        .Q(Q[1]),
+        .Q(\slv_reg1_reg[4]_0 [1]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[5] 
        (.C(clk),
@@ -1916,6 +1947,8 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     pipe_valid_reg,
     \FSM_onehot_cur_state_reg[2]_0 ,
     DTX,
+    Q,
+    \FSM_onehot_cur_state_reg[1]_0 ,
     MCK_N,
     MCK_P,
     DSYNC,
@@ -1924,7 +1957,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     qempty_reg,
     clk,
     m00_axis_tready,
-    Q,
+    serial_in_load_reg_0,
     MCK_N_0,
     Q_reg_0,
     s02_axis_tdata,
@@ -1933,12 +1966,14 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     nxt_state0__1,
     s01_axis_tvalid,
     s00_axis_tvalid,
-    DRX);
+    D);
   output Q_reg;
   output SYNCK;
   output pipe_valid_reg;
   output \FSM_onehot_cur_state_reg[2]_0 ;
   output DTX;
+  output [0:0]Q;
+  output \FSM_onehot_cur_state_reg[1]_0 ;
   output MCK_N;
   output MCK_P;
   output DSYNC;
@@ -1947,7 +1982,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
   input qempty_reg;
   input clk;
   input m00_axis_tready;
-  input [1:0]Q;
+  input [1:0]serial_in_load_reg_0;
   input [0:0]MCK_N_0;
   input [2:0]Q_reg_0;
   input [15:0]s02_axis_tdata;
@@ -1956,21 +1991,21 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
   input nxt_state0__1;
   input s01_axis_tvalid;
   input s00_axis_tvalid;
-  input DRX;
+  input [0:0]D;
 
-  wire DRX;
+  wire [0:0]D;
   wire DSYNC;
   wire DTX;
   wire \FSM_onehot_cur_state[0]_i_1_n_0 ;
   wire \FSM_onehot_cur_state[1]_i_1_n_0 ;
   wire \FSM_onehot_cur_state[2]_i_1_n_0 ;
+  wire \FSM_onehot_cur_state_reg[1]_0 ;
   wire \FSM_onehot_cur_state_reg[2]_0 ;
   wire \FSM_onehot_cur_state_reg_n_0_[0] ;
-  wire \FSM_onehot_cur_state_reg_n_0_[1] ;
   wire MCK_N;
   wire [0:0]MCK_N_0;
   wire MCK_P;
-  wire [1:0]Q;
+  wire [0:0]Q;
   wire Q_reg;
   wire [2:0]Q_reg_0;
   wire SYNCK;
@@ -2002,7 +2037,6 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
   wire [15:0]m00_axis_tdata;
   wire m00_axis_tready;
   wire nxt_state0__1;
-  wire p_0_in;
   wire pipe_valid_reg;
   wire qempty_reg;
   wire \r_reg_reg[3] ;
@@ -2020,6 +2054,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
   wire [3:0]serial_in_count_reg;
   wire serial_in_load;
   wire serial_in_load_d;
+  wire [1:0]serial_in_load_reg_0;
   wire [15:0]serial_in_reg;
   wire shift_last0__4;
   wire [47:0]shift_reg;
@@ -2028,10 +2063,10 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
 
   design_2_BiDirChannels_0_0_clock_divider_by_2 CLK_DIV2
        (.MCK_N(MCK_N),
-        .MCK_N_0(MCK_N_0),
+        .MCK_N_0(serial_in_load_reg_0[0]),
+        .MCK_N_1(MCK_N_0),
+        .MCK_N_2(\FSM_onehot_cur_state_reg[1]_0 ),
         .MCK_P(MCK_P),
-        .MCK_P_0(\FSM_onehot_cur_state_reg_n_0_[1] ),
-        .Q(Q[0]),
         .Q_reg(Q_reg),
         .Q_reg_0(\r_reg_reg[3] ),
         .mux_out(\baseClockMux/mux_out ));
@@ -2046,7 +2081,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     DSYNC_INST_0
        (.I0(shift_last0__4),
         .I1(MCK_N_0),
-        .I2(Q[0]),
+        .I2(serial_in_load_reg_0[0]),
         .I3(dsync_free__4),
         .O(DSYNC));
   LUT6 #(
@@ -2072,18 +2107,18 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
   LUT3 #(
     .INIT(8'h80)) 
     DTX_INST_0
-       (.I0(p_0_in),
+       (.I0(Q),
         .I1(MCK_N_0),
-        .I2(\FSM_onehot_cur_state_reg_n_0_[1] ),
+        .I2(\FSM_onehot_cur_state_reg[1]_0 ),
         .O(DTX));
   LUT6 #(
     .INIT(64'h0FFFFFFF08880000)) 
     \FSM_onehot_cur_state[0]_i_1 
-       (.I0(\FSM_onehot_cur_state_reg_n_0_[1] ),
+       (.I0(\FSM_onehot_cur_state_reg[1]_0 ),
         .I1(shift_last0__4),
         .I2(s01_axis_tvalid),
         .I3(s00_axis_tvalid),
-        .I4(Q[0]),
+        .I4(serial_in_load_reg_0[0]),
         .I5(\FSM_onehot_cur_state_reg_n_0_[0] ),
         .O(\FSM_onehot_cur_state[0]_i_1_n_0 ));
   LUT4 #(
@@ -2091,17 +2126,17 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     \FSM_onehot_cur_state[1]_i_1 
        (.I0(shift_last0__4),
         .I1(\FSM_onehot_cur_state_reg[2]_0 ),
-        .I2(Q[0]),
-        .I3(\FSM_onehot_cur_state_reg_n_0_[1] ),
+        .I2(serial_in_load_reg_0[0]),
+        .I3(\FSM_onehot_cur_state_reg[1]_0 ),
         .O(\FSM_onehot_cur_state[1]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hF800FFFFF8000000)) 
     \FSM_onehot_cur_state[2]_i_1 
-       (.I0(\FSM_onehot_cur_state_reg_n_0_[1] ),
+       (.I0(\FSM_onehot_cur_state_reg[1]_0 ),
         .I1(shift_last0__4),
         .I2(\FSM_onehot_cur_state_reg_n_0_[0] ),
         .I3(nxt_state0__1),
-        .I4(Q[0]),
+        .I4(serial_in_load_reg_0[0]),
         .I5(\FSM_onehot_cur_state_reg[2]_0 ),
         .O(\FSM_onehot_cur_state[2]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "SHIFT:010,IDLE:001,LOAD:100" *) 
@@ -2121,7 +2156,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
         .CE(1'b1),
         .CLR(qempty_reg),
         .D(\FSM_onehot_cur_state[1]_i_1_n_0 ),
-        .Q(\FSM_onehot_cur_state_reg_n_0_[1] ));
+        .Q(\FSM_onehot_cur_state_reg[1]_0 ));
   (* FSM_ENCODED_STATES = "SHIFT:010,IDLE:001,LOAD:100" *) 
   FDCE #(
     .INIT(1'b0)) 
@@ -2329,7 +2364,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     \serial_in_count[0]_i_1 
        (.I0(serial_in_count_reg[0]),
         .I1(dsync_free__4),
-        .I2(Q[0]),
+        .I2(serial_in_load_reg_0[0]),
         .I3(MCK_N_0),
         .I4(shift_last0__4),
         .O(\serial_in_count[0]_i_1_n_0 ));
@@ -2339,7 +2374,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
        (.I0(serial_in_count_reg[1]),
         .I1(serial_in_count_reg[0]),
         .I2(dsync_free__4),
-        .I3(Q[0]),
+        .I3(serial_in_load_reg_0[0]),
         .I4(MCK_N_0),
         .I5(shift_last0__4),
         .O(\serial_in_count[1]_i_1_n_0 ));
@@ -2349,7 +2384,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
        (.I0(serial_in_count_reg[2]),
         .I1(\serial_in_count[2]_i_2_n_0 ),
         .I2(dsync_free__4),
-        .I3(Q[0]),
+        .I3(serial_in_load_reg_0[0]),
         .I4(MCK_N_0),
         .I5(shift_last0__4),
         .O(\serial_in_count[2]_i_1_n_0 ));
@@ -2365,7 +2400,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     \serial_in_count[3]_i_1 
        (.I0(serial_in_count0),
         .I1(dsync_free__4),
-        .I2(Q[0]),
+        .I2(serial_in_load_reg_0[0]),
         .I3(MCK_N_0),
         .I4(shift_last0__4),
         .O(\serial_in_count[3]_i_1_n_0 ));
@@ -2410,7 +2445,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
         .I1(serial_in_count_reg[0]),
         .I2(serial_in_count_reg[2]),
         .I3(serial_in_count_reg[3]),
-        .I4(Q[1]),
+        .I4(serial_in_load_reg_0[1]),
         .O(serial_in_load_d));
   FDCE serial_in_load_reg
        (.C(Q_reg),
@@ -2422,7 +2457,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
        (.C(Q_reg),
         .CE(1'b1),
         .CLR(qempty_reg),
-        .D(DRX),
+        .D(D),
         .Q(serial_in_reg[0]));
   FDCE \serial_in_reg_reg[10] 
        (.C(Q_reg),
@@ -2846,7 +2881,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
     \shift_reg[47]_i_1 
        (.I0(\FSM_onehot_cur_state_reg[2]_0 ),
         .I1(shift_reg1),
-        .I2(\FSM_onehot_cur_state_reg_n_0_[1] ),
+        .I2(\FSM_onehot_cur_state_reg[1]_0 ),
         .O(\shift_reg[47]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3164,7 +3199,7 @@ module design_2_BiDirChannels_0_0_GyroInputOutputSerializer
         .CE(\shift_reg[47]_i_1_n_0 ),
         .CLR(qempty_reg),
         .D(shift_reg[47]),
-        .Q(p_0_in));
+        .Q(Q));
   FDCE \shift_reg_reg[4] 
        (.C(Q_reg),
         .CE(\shift_reg[47]_i_1_n_0 ),
@@ -3312,23 +3347,23 @@ module design_2_BiDirChannels_0_0_clock_divider_by_2
     MCK_P,
     mux_out,
     Q_reg_0,
-    Q,
     MCK_N_0,
-    MCK_P_0);
+    MCK_N_1,
+    MCK_N_2);
   output Q_reg;
   output MCK_N;
   output MCK_P;
   input mux_out;
   input Q_reg_0;
-  input [0:0]Q;
   input [0:0]MCK_N_0;
-  input MCK_P_0;
+  input [0:0]MCK_N_1;
+  input MCK_N_2;
 
   wire MCK_N;
   wire [0:0]MCK_N_0;
+  wire [0:0]MCK_N_1;
+  wire MCK_N_2;
   wire MCK_P;
-  wire MCK_P_0;
-  wire [0:0]Q;
   wire Q_reg;
   wire Q_reg_0;
   wire mux_out;
@@ -3336,9 +3371,9 @@ module design_2_BiDirChannels_0_0_clock_divider_by_2
   design_2_BiDirChannels_0_0_dff ff0
        (.MCK_N(MCK_N),
         .MCK_N_0(MCK_N_0),
+        .MCK_N_1(MCK_N_1),
+        .MCK_N_2(MCK_N_2),
         .MCK_P(MCK_P),
-        .MCK_P_0(MCK_P_0),
-        .Q(Q),
         .Q_reg_0(Q_reg),
         .Q_reg_1(Q_reg_0),
         .mux_out(mux_out));
@@ -3351,24 +3386,24 @@ module design_2_BiDirChannels_0_0_dff
     MCK_P,
     mux_out,
     Q_reg_1,
-    Q,
     MCK_N_0,
-    MCK_P_0);
+    MCK_N_1,
+    MCK_N_2);
   output Q_reg_0;
   output MCK_N;
   output MCK_P;
   input mux_out;
   input Q_reg_1;
-  input [0:0]Q;
   input [0:0]MCK_N_0;
-  input MCK_P_0;
+  input [0:0]MCK_N_1;
+  input MCK_N_2;
 
   wire D0;
   wire MCK_N;
   wire [0:0]MCK_N_0;
+  wire [0:0]MCK_N_1;
+  wire MCK_N_2;
   wire MCK_P;
-  wire MCK_P_0;
-  wire [0:0]Q;
   wire Q_reg_0;
   wire Q_reg_1;
   wire mux_out;
@@ -3378,17 +3413,17 @@ module design_2_BiDirChannels_0_0_dff
     .INIT(16'h55D5)) 
     MCK_N_INST_0
        (.I0(Q_reg_0),
-        .I1(Q),
-        .I2(MCK_N_0),
-        .I3(MCK_P_0),
+        .I1(MCK_N_0),
+        .I2(MCK_N_1),
+        .I3(MCK_N_2),
         .O(MCK_N));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'hBF00)) 
     MCK_P_INST_0
-       (.I0(MCK_P_0),
-        .I1(MCK_N_0),
-        .I2(Q),
+       (.I0(MCK_N_2),
+        .I1(MCK_N_1),
+        .I2(MCK_N_0),
         .I3(Q_reg_0),
         .O(MCK_P));
   LUT1 #(
