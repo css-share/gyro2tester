@@ -41,9 +41,9 @@
       "processing_system7_0": "",
       "axi_smc": "",
       "BiDirChannels_0": "",
+      "TxFIFO": "",
       "RxFIFO": "",
-      "SPI_ip_0": "",
-      "TxFIFO": ""
+      "SPI_ip_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -3433,6 +3433,17 @@
         "xci_path": "ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci",
         "inst_hier_path": "BiDirChannels_0"
       },
+      "TxFIFO": {
+        "vlnv": "user.org:user:axis_stream_txfifo:2.0",
+        "xci_name": "design_2_axis_stream_txfifo_0_2",
+        "xci_path": "ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci",
+        "inst_hier_path": "TxFIFO",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "11"
+          }
+        }
+      },
       "RxFIFO": {
         "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
         "xci_name": "design_2_RxFIFO_0",
@@ -3444,17 +3455,6 @@
         "xci_name": "design_2_SPI_ip_0_0",
         "xci_path": "ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci",
         "inst_hier_path": "SPI_ip_0"
-      },
-      "TxFIFO": {
-        "vlnv": "user.org:user:axis_stream_txfifo:2.0",
-        "xci_name": "design_2_axis_stream_txfifo_0_2",
-        "xci_path": "ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci",
-        "inst_hier_path": "TxFIFO",
-        "parameters": {
-          "ADDR_WIDTH": {
-            "value": "11"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -3602,8 +3602,8 @@
         "ports": [
           "BiDirChannels_0/txclk",
           "txclk_reset_domain/slowest_sync_clk",
-          "RxFIFO/txclk",
-          "TxFIFO/txclk"
+          "TxFIFO/txclk",
+          "RxFIFO/txclk"
         ]
       },
       "HSI_A0_1": {
@@ -3681,9 +3681,9 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_smc/aclk",
           "BiDirChannels_0/clk",
+          "TxFIFO/clk",
           "RxFIFO/clk",
-          "SPI_ip_0/clk",
-          "TxFIFO/clk"
+          "SPI_ip_0/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -3707,17 +3707,17 @@
           "axi_dma_0/axi_resetn",
           "axi_smc/aresetn",
           "BiDirChannels_0/rst_n",
+          "TxFIFO/rstn",
           "RxFIFO/rst_n",
-          "SPI_ip_0/rstn",
-          "TxFIFO/rstn"
+          "SPI_ip_0/rstn"
         ]
       },
       "txclk_reset_domain_peripheral_aresetn": {
         "ports": [
           "txclk_reset_domain/peripheral_aresetn",
           "BiDirChannels_0/tx_rstn",
-          "RxFIFO/tx_rstn",
-          "TxFIFO/tx_rstn"
+          "TxFIFO/tx_rstn",
+          "RxFIFO/tx_rstn"
         ]
       },
       "xlconcat_1_dout": {

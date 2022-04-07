@@ -28,9 +28,9 @@ preplace inst clk_reset_domain -pg 1 -lvl 1 -x 500 -y 590 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -x 2370 -y 850 -defaultsOSRD
 preplace inst axi_smc -pg 1 -lvl 4 -x 1900 -y 780 -defaultsOSRD
 preplace inst BiDirChannels_0 -pg 1 -lvl 5 -x 2370 -y 300 -defaultsOSRD
+preplace inst TxFIFO -pg 1 -lvl 4 -x 1900 -y 280 -defaultsOSRD
 preplace inst RxFIFO -pg 1 -lvl 4 -x 1900 -y 80 -defaultsOSRD -orient R180
 preplace inst SPI_ip_0 -pg 1 -lvl 5 -x 2370 -y 630 -defaultsOSRD
-preplace inst TxFIFO -pg 1 -lvl 4 -x 1900 -y 280 -defaultsOSRD
 preplace netloc BiDirChannels_0_HSI_DAM 1 5 1 NJ 280
 preplace netloc BiDirChannels_0_HSI_DAP 1 5 1 NJ 300
 preplace netloc BiDirChannels_0_MCK_N 1 5 1 N 340
@@ -39,8 +39,10 @@ preplace netloc BiDirChannels_0_SYNCK 1 5 1 N 360
 preplace netloc BiDirChannels_0_txclk 1 0 6 -50 160 NJ 160 NJ 160 1710J 390 2050J 170 2600
 preplace netloc HSI_A0_1 1 0 5 N -70 N -70 N -70 N -70 2110
 preplace netloc Net 1 5 1 N 610
+preplace netloc RxFIFO_rxfifo_full 1 3 3 1710 -30 2070J -20 NJ
 preplace netloc SPI_ip_0_SPI_CS 1 5 1 NJ 650
 preplace netloc SPI_ip_0_SPI_SCK 1 5 1 NJ 630
+preplace netloc TxFIFO_txfifo_full 1 4 2 2080 40 NJ
 preplace netloc axi_dma_0_mm2s_introut 1 3 1 1640 370n
 preplace netloc axi_dma_0_s2mm_introut 1 3 1 1620 390n
 preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 700 600n
@@ -49,8 +51,6 @@ preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 -50 480 NJ 480 NJ 480 N
 preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 690 500 1230 500 1690 420 2090
 preplace netloc txclk_reset_domain_peripheral_aresetn 1 1 4 680 170 N 170 1700J 400 2070
 preplace netloc xlconcat_1_dout 1 4 1 2080 890n
-preplace netloc RxFIFO_rxfifo_full 1 3 3 1710 -30 2070J -20 NJ
-preplace netloc TxFIFO_txfifo_full 1 4 2 2080 40 NJ
 preplace netloc BiDirChannels_0_M00_AXIS 1 4 2 NJ 110 2630
 preplace netloc axi_dma_0_M_AXIS_MM2S 1 3 1 1670 250n
 preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 1660 270n

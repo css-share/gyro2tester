@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Wed Apr  6 17:12:26 2022
-| Host         : xsjl210014 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Thu Apr  7 15:20:41 2022
+| Host         : xsjl23781 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 | Command      : report_utilization -file design_2_RxFIFO_0_utilization_synth.rpt -pb design_2_RxFIFO_0_utilization_synth.pb
 | Design       : design_2_RxFIFO_0
 | Device       : xc7z020clg484-1
@@ -150,10 +150,10 @@ Table of Contents
 +----------+------+---------------------+
 | FDCE     |  209 |        Flop & Latch |
 | FDRE     |  138 |        Flop & Latch |
-| LUT6     |  103 |                 LUT |
+| LUT6     |  105 |                 LUT |
 | LUT2     |   93 |                 LUT |
 | LUT4     |   81 |                 LUT |
-| LUT5     |   75 |                 LUT |
+| LUT5     |   73 |                 LUT |
 | CARRY4   |   35 |          CarryLogic |
 | RAMB36E1 |   32 |        Block Memory |
 | LUT3     |   29 |                 LUT |

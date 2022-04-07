@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Wed Apr  6 17:12:26 2022
-// Host        : xsjl210014 running 64-bit CentOS Linux release 7.4.1708 (Core)
+// Date        : Thu Apr  7 15:20:42 2022
+// Host        : xsjl23781 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 // Command     : write_verilog -force -mode funcsim
 //               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0_sim_netlist.v
 // Design      : design_2_RxFIFO_0
@@ -241,7 +241,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0
   wire q_afull_reg;
   wire reg_word0;
   wire rst_n;
-  wire [15:0]rx_fifo_fill_rd;
+  wire [16:0]rx_fifo_fill_rd;
   wire rx_fifo_halt_reg_n_0;
   wire rx_fifo_qempty;
   wire [1:0]s00_axi_araddr;
@@ -271,7 +271,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0
         .SR(axis_stream_fifo_v1_0_S00_AXI_inst_n_1),
         .axi_arready_reg_0(s00_axi_arready),
         .axi_awready_reg_0(s00_axi_awready),
-        .\axi_rdata_reg[15]_0 (rx_fifo_fill_rd),
+        .\axi_rdata_reg[16]_0 (rx_fifo_fill_rd),
         .\axi_rdata_reg[31]_0 (q_afull_reg),
         .axi_wready_reg_0(s00_axi_wready),
         .clk(clk),
@@ -341,7 +341,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
     s00_axi_wstrb,
     m00_axis_tready,
     rx_fifo_qempty,
-    \axi_rdata_reg[15]_0 ,
+    \axi_rdata_reg[16]_0 ,
     \axi_rdata_reg[31]_0 ,
     s00_axi_bready,
     s00_axi_arvalid,
@@ -368,7 +368,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   input [3:0]s00_axi_wstrb;
   input m00_axis_tready;
   input rx_fifo_qempty;
-  input [15:0]\axi_rdata_reg[15]_0 ;
+  input [16:0]\axi_rdata_reg[16]_0 ;
   input \axi_rdata_reg[31]_0 ;
   input s00_axi_bready;
   input s00_axi_arvalid;
@@ -392,7 +392,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   wire axi_awready0;
   wire axi_awready_reg_0;
   wire axi_bvalid_i_1_n_0;
-  wire [15:0]\axi_rdata_reg[15]_0 ;
+  wire [16:0]\axi_rdata_reg[16]_0 ;
   wire \axi_rdata_reg[31]_0 ;
   wire axi_rvalid_i_1_n_0;
   wire axi_wready_i_1_n_0;
@@ -625,7 +625,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[0]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [0]),
+       (.I0(\axi_rdata_reg[16]_0 [0]),
         .I1(reg_word1),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[0]),
@@ -635,7 +635,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[10]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [10]),
+       (.I0(\axi_rdata_reg[16]_0 [10]),
         .I1(\slv_reg1_reg_n_0_[10] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[10]),
@@ -645,7 +645,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[11]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [11]),
+       (.I0(\axi_rdata_reg[16]_0 [11]),
         .I1(\slv_reg1_reg_n_0_[11] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[11]),
@@ -655,7 +655,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[12]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [12]),
+       (.I0(\axi_rdata_reg[16]_0 [12]),
         .I1(\slv_reg1_reg_n_0_[12] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[12]),
@@ -665,7 +665,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[13]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [13]),
+       (.I0(\axi_rdata_reg[16]_0 [13]),
         .I1(\slv_reg1_reg_n_0_[13] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[13]),
@@ -675,7 +675,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[14]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [14]),
+       (.I0(\axi_rdata_reg[16]_0 [14]),
         .I1(\slv_reg1_reg_n_0_[14] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[14]),
@@ -685,21 +685,22 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[15]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [15]),
+       (.I0(\axi_rdata_reg[16]_0 [15]),
         .I1(\slv_reg1_reg_n_0_[15] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[15]),
         .I4(axi_araddr[3]),
         .I5(\slv_reg0_reg_n_0_[15] ),
         .O(reg_data_out[15]));
-  LUT5 #(
-    .INIT(32'h30BB3088)) 
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[16]_i_1 
-       (.I0(\slv_reg1_reg_n_0_[16] ),
-        .I1(axi_araddr[2]),
-        .I2(slv_reg2[16]),
-        .I3(axi_araddr[3]),
-        .I4(\slv_reg0_reg_n_0_[16] ),
+       (.I0(\axi_rdata_reg[16]_0 [16]),
+        .I1(\slv_reg1_reg_n_0_[16] ),
+        .I2(axi_araddr[2]),
+        .I3(slv_reg2[16]),
+        .I4(axi_araddr[3]),
+        .I5(\slv_reg0_reg_n_0_[16] ),
         .O(reg_data_out[16]));
   LUT5 #(
     .INIT(32'h30BB3088)) 
@@ -731,7 +732,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[1]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [1]),
+       (.I0(\axi_rdata_reg[16]_0 [1]),
         .I1(\slv_reg1_reg_n_0_[1] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[1]),
@@ -831,7 +832,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[2]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [2]),
+       (.I0(\axi_rdata_reg[16]_0 [2]),
         .I1(\slv_reg1_reg_n_0_[2] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[2]),
@@ -861,7 +862,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[3]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [3]),
+       (.I0(\axi_rdata_reg[16]_0 [3]),
         .I1(\slv_reg1_reg_n_0_[3] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[3]),
@@ -871,7 +872,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[4]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [4]),
+       (.I0(\axi_rdata_reg[16]_0 [4]),
         .I1(\slv_reg1_reg_n_0_[4] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[4]),
@@ -881,7 +882,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[5]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [5]),
+       (.I0(\axi_rdata_reg[16]_0 [5]),
         .I1(\slv_reg1_reg_n_0_[5] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[5]),
@@ -891,7 +892,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[6]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [6]),
+       (.I0(\axi_rdata_reg[16]_0 [6]),
         .I1(\slv_reg1_reg_n_0_[6] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[6]),
@@ -901,7 +902,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[7]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [7]),
+       (.I0(\axi_rdata_reg[16]_0 [7]),
         .I1(\slv_reg1_reg_n_0_[7] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[7]),
@@ -911,7 +912,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[8]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [8]),
+       (.I0(\axi_rdata_reg[16]_0 [8]),
         .I1(\slv_reg1_reg_n_0_[8] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[8]),
@@ -921,7 +922,7 @@ module design_2_RxFIFO_0_axis_stream_fifo_v1_0_S00_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[9]_i_1 
-       (.I0(\axi_rdata_reg[15]_0 [9]),
+       (.I0(\axi_rdata_reg[16]_0 [9]),
         .I1(\slv_reg1_reg_n_0_[9] ),
         .I2(axi_araddr[2]),
         .I3(slv_reg2[9]),
@@ -1912,7 +1913,7 @@ module design_2_RxFIFO_0_gen_async_que
     s00_axis_tdata);
   output rx_fifo_qempty;
   output tx_rstn_0;
-  output [15:0]Q;
+  output [16:0]Q;
   output q_afull_reg_0;
   output s00_axis_tready;
   output m00_axis_tlast;
@@ -1929,10 +1930,9 @@ module design_2_RxFIFO_0_gen_async_que
   input [0:0]\fill_rd_reg[0]_0 ;
   input [15:0]s00_axis_tdata;
 
-  wire [15:0]Q;
+  wire [16:0]Q;
   wire [0:0]SR;
   wire clk;
-  wire [16:16]fill_rd;
   wire [16:0]fill_rd_nxt;
   wire [16:0]fill_rd_nxt0;
   wire [16:0]fill_rd_nxt00_in;
@@ -3061,7 +3061,7 @@ module design_2_RxFIFO_0_gen_async_que
         .CE(1'b1),
         .CLR(wrstn_syncr_n_0),
         .D(fill_rd_nxt[16]),
-        .Q(fill_rd));
+        .Q(Q[16]));
   FDCE \fill_rd_reg[1] 
        (.C(clk),
         .CE(1'b1),
@@ -3982,48 +3982,49 @@ module design_2_RxFIFO_0_gen_async_que
         .CLR(wrstn_syncr_n_0),
         .D(wptr_s_bin[9]),
         .Q(last_sampled_wr_ptr[9]));
-  LUT5 #(
-    .INIT(32'h00001000)) 
+  LUT6 #(
+    .INIT(64'h0000000010000000)) 
     m00_axis_tlast_INST_0
        (.I0(m00_axis_tlast_INST_0_i_1_n_0),
         .I1(m00_axis_tlast_INST_0_i_2_n_0),
-        .I2(m00_axis_tready),
-        .I3(\fill_rd_reg[0]_0 ),
-        .I4(rx_fifo_qempty),
+        .I2(Q[0]),
+        .I3(m00_axis_tready),
+        .I4(\fill_rd_reg[0]_0 ),
+        .I5(rx_fifo_qempty),
         .O(m00_axis_tlast));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     m00_axis_tlast_INST_0_i_1
-       (.I0(Q[5]),
-        .I1(Q[4]),
-        .I2(Q[7]),
-        .I3(Q[6]),
+       (.I0(Q[14]),
+        .I1(Q[13]),
+        .I2(Q[15]),
+        .I3(Q[16]),
         .I4(m00_axis_tlast_INST_0_i_3_n_0),
         .O(m00_axis_tlast_INST_0_i_1_n_0));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     m00_axis_tlast_INST_0_i_2
-       (.I0(Q[13]),
-        .I1(Q[12]),
-        .I2(Q[14]),
-        .I3(Q[15]),
+       (.I0(Q[6]),
+        .I1(Q[5]),
+        .I2(Q[8]),
+        .I3(Q[7]),
         .I4(m00_axis_tlast_INST_0_i_4_n_0),
         .O(m00_axis_tlast_INST_0_i_2_n_0));
   LUT4 #(
-    .INIT(16'hFFEF)) 
+    .INIT(16'hFFFE)) 
     m00_axis_tlast_INST_0_i_3
-       (.I0(Q[2]),
-        .I1(Q[3]),
-        .I2(Q[0]),
-        .I3(Q[1]),
+       (.I0(Q[11]),
+        .I1(Q[12]),
+        .I2(Q[9]),
+        .I3(Q[10]),
         .O(m00_axis_tlast_INST_0_i_3_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
     m00_axis_tlast_INST_0_i_4
-       (.I0(Q[10]),
-        .I1(Q[11]),
-        .I2(Q[8]),
-        .I3(Q[9]),
+       (.I0(Q[3]),
+        .I1(Q[4]),
+        .I2(Q[1]),
+        .I3(Q[2]),
         .O(m00_axis_tlast_INST_0_i_4_n_0));
   LUT6 #(
     .INIT(64'hFCCCFCCCFAFAAAAA)) 
@@ -7819,7 +7820,7 @@ module design_2_RxFIFO_0_gen_async_que
         .Q(last_sampled_wr_ptr),
         .S({wr_2_rd_syncr_n_20,wr_2_rd_syncr_n_21,wr_2_rd_syncr_n_22,wr_2_rd_syncr_n_23}),
         .clk(clk),
-        .fill_rd_nxt0_carry__3({fill_rd,Q}),
+        .\fill_rd_nxt0_inferred__0/i___0_carry__3 (Q),
         .\fill_rd_reg[15] (wr_2_rd_syncr_n_33),
         .\fill_rd_reg[15]_0 (wr_2_rd_syncr_n_34),
         .\last_sampled_wr_ptr_reg[0] (wr_2_rd_syncr_n_24),
@@ -8518,7 +8519,7 @@ module design_2_RxFIFO_0_syncr_0
     \last_sampled_wr_ptr_reg[7]_0 ,
     \last_sampled_wr_ptr_reg[11]_0 ,
     Q,
-    fill_rd_nxt0_carry__3,
+    \fill_rd_nxt0_inferred__0/i___0_carry__3 ,
     clk,
     \sync_2stg_reg[16]_0 ,
     wptr);
@@ -8539,7 +8540,7 @@ module design_2_RxFIFO_0_syncr_0
   output [3:0]\last_sampled_wr_ptr_reg[7]_0 ;
   output [3:0]\last_sampled_wr_ptr_reg[11]_0 ;
   input [16:0]Q;
-  input [16:0]fill_rd_nxt0_carry__3;
+  input [16:0]\fill_rd_nxt0_inferred__0/i___0_carry__3 ;
   input clk;
   input \sync_2stg_reg[16]_0 ;
   input [16:0]wptr;
@@ -8548,7 +8549,7 @@ module design_2_RxFIFO_0_syncr_0
   wire [16:0]Q;
   wire [3:0]S;
   wire clk;
-  wire [16:0]fill_rd_nxt0_carry__3;
+  wire [16:0]\fill_rd_nxt0_inferred__0/i___0_carry__3 ;
   wire [0:0]\fill_rd_reg[15] ;
   wire [0:0]\fill_rd_reg[15]_0 ;
   wire \last_sampled_wr_ptr[0]_i_2_n_0 ;
@@ -8596,7 +8597,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__0_i_1
        (.I0(Q[6]),
         .I1(wptr_s_bin[6]),
-        .I2(fill_rd_nxt0_carry__3[6]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [6]),
         .O(\last_sampled_wr_ptr_reg[6] [3]));
   (* HLUTNM = "lutpair4" *) 
   LUT3 #(
@@ -8604,7 +8605,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__0_i_2
        (.I0(Q[5]),
         .I1(wptr_s_bin[5]),
-        .I2(fill_rd_nxt0_carry__3[5]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [5]),
         .O(\last_sampled_wr_ptr_reg[6] [2]));
   (* HLUTNM = "lutpair3" *) 
   LUT3 #(
@@ -8612,7 +8613,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__0_i_3
        (.I0(Q[4]),
         .I1(wptr_s_bin[4]),
-        .I2(fill_rd_nxt0_carry__3[4]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [4]),
         .O(\last_sampled_wr_ptr_reg[6] [1]));
   (* HLUTNM = "lutpair2" *) 
   LUT3 #(
@@ -8620,7 +8621,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__0_i_4
        (.I0(Q[3]),
         .I1(wptr_s_bin[3]),
-        .I2(fill_rd_nxt0_carry__3[3]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [3]),
         .O(\last_sampled_wr_ptr_reg[6] [0]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8628,7 +8629,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[6] [3]),
         .I1(wptr_s_bin[7]),
         .I2(Q[7]),
-        .I3(fill_rd_nxt0_carry__3[7]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [7]),
         .O(\last_sampled_wr_ptr_reg[7] [3]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8636,7 +8637,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[6] [2]),
         .I1(wptr_s_bin[6]),
         .I2(Q[6]),
-        .I3(fill_rd_nxt0_carry__3[6]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [6]),
         .O(\last_sampled_wr_ptr_reg[7] [2]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8644,7 +8645,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[6] [1]),
         .I1(wptr_s_bin[5]),
         .I2(Q[5]),
-        .I3(fill_rd_nxt0_carry__3[5]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [5]),
         .O(\last_sampled_wr_ptr_reg[7] [1]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8652,7 +8653,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[6] [0]),
         .I1(wptr_s_bin[4]),
         .I2(Q[4]),
-        .I3(fill_rd_nxt0_carry__3[4]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [4]),
         .O(\last_sampled_wr_ptr_reg[7] [0]));
   (* HLUTNM = "lutpair9" *) 
   LUT3 #(
@@ -8660,7 +8661,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__1_i_1
        (.I0(Q[10]),
         .I1(wptr_s_bin[10]),
-        .I2(fill_rd_nxt0_carry__3[10]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [10]),
         .O(\last_sampled_wr_ptr_reg[10] [3]));
   (* HLUTNM = "lutpair8" *) 
   LUT3 #(
@@ -8668,7 +8669,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__1_i_2
        (.I0(Q[9]),
         .I1(wptr_s_bin[9]),
-        .I2(fill_rd_nxt0_carry__3[9]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [9]),
         .O(\last_sampled_wr_ptr_reg[10] [2]));
   (* HLUTNM = "lutpair7" *) 
   LUT3 #(
@@ -8676,7 +8677,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__1_i_3
        (.I0(Q[8]),
         .I1(wptr_s_bin[8]),
-        .I2(fill_rd_nxt0_carry__3[8]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [8]),
         .O(\last_sampled_wr_ptr_reg[10] [1]));
   (* HLUTNM = "lutpair6" *) 
   LUT3 #(
@@ -8684,7 +8685,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__1_i_4
        (.I0(Q[7]),
         .I1(wptr_s_bin[7]),
-        .I2(fill_rd_nxt0_carry__3[7]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [7]),
         .O(\last_sampled_wr_ptr_reg[10] [0]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8692,7 +8693,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[10] [3]),
         .I1(wptr_s_bin[11]),
         .I2(Q[11]),
-        .I3(fill_rd_nxt0_carry__3[11]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [11]),
         .O(\last_sampled_wr_ptr_reg[11] [3]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8700,7 +8701,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[10] [2]),
         .I1(wptr_s_bin[10]),
         .I2(Q[10]),
-        .I3(fill_rd_nxt0_carry__3[10]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [10]),
         .O(\last_sampled_wr_ptr_reg[11] [2]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8708,7 +8709,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[10] [1]),
         .I1(wptr_s_bin[9]),
         .I2(Q[9]),
-        .I3(fill_rd_nxt0_carry__3[9]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [9]),
         .O(\last_sampled_wr_ptr_reg[11] [1]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8716,7 +8717,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[10] [0]),
         .I1(wptr_s_bin[8]),
         .I2(Q[8]),
-        .I3(fill_rd_nxt0_carry__3[8]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [8]),
         .O(\last_sampled_wr_ptr_reg[11] [0]));
   LUT5 #(
     .INIT(32'hD77D4114)) 
@@ -8725,7 +8726,7 @@ module design_2_RxFIFO_0_syncr_0
         .I1(\sync_2stg_reg_n_0_[15] ),
         .I2(\sync_2stg_reg_n_0_[14] ),
         .I3(wptr_s_bin[16]),
-        .I4(fill_rd_nxt0_carry__3[14]),
+        .I4(\fill_rd_nxt0_inferred__0/i___0_carry__3 [14]),
         .O(\last_sampled_wr_ptr_reg[14] [3]));
   LUT6 #(
     .INIT(64'h7DD7D77D14414114)) 
@@ -8735,7 +8736,7 @@ module design_2_RxFIFO_0_syncr_0
         .I2(\sync_2stg_reg_n_0_[13] ),
         .I3(wptr_s_bin[16]),
         .I4(\sync_2stg_reg_n_0_[15] ),
-        .I5(fill_rd_nxt0_carry__3[13]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [13]),
         .O(\last_sampled_wr_ptr_reg[14] [2]));
   (* HLUTNM = "lutpair11" *) 
   LUT3 #(
@@ -8743,7 +8744,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__2_i_3
        (.I0(Q[12]),
         .I1(wptr_s_bin[12]),
-        .I2(fill_rd_nxt0_carry__3[12]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [12]),
         .O(\last_sampled_wr_ptr_reg[14] [1]));
   (* HLUTNM = "lutpair10" *) 
   LUT3 #(
@@ -8751,7 +8752,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry__2_i_4
        (.I0(Q[11]),
         .I1(wptr_s_bin[11]),
-        .I2(fill_rd_nxt0_carry__3[11]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [11]),
         .O(\last_sampled_wr_ptr_reg[14] [0]));
   LUT5 #(
     .INIT(32'h69969669)) 
@@ -8760,7 +8761,7 @@ module design_2_RxFIFO_0_syncr_0
         .I1(\sync_2stg_reg_n_0_[15] ),
         .I2(wptr_s_bin[16]),
         .I3(Q[15]),
-        .I4(fill_rd_nxt0_carry__3[15]),
+        .I4(\fill_rd_nxt0_inferred__0/i___0_carry__3 [15]),
         .O(\sync_2stg_reg[15]_1 [3]));
   LUT6 #(
     .INIT(64'h9669699669969669)) 
@@ -8770,7 +8771,7 @@ module design_2_RxFIFO_0_syncr_0
         .I2(\sync_2stg_reg_n_0_[14] ),
         .I3(wptr_s_bin[16]),
         .I4(Q[14]),
-        .I5(fill_rd_nxt0_carry__3[14]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [14]),
         .O(\sync_2stg_reg[15]_1 [2]));
   LUT6 #(
     .INIT(64'h9669699669969669)) 
@@ -8780,7 +8781,7 @@ module design_2_RxFIFO_0_syncr_0
         .I2(\sync_2stg_reg_n_0_[13] ),
         .I3(wptr_s_bin[15]),
         .I4(Q[13]),
-        .I5(fill_rd_nxt0_carry__3[13]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [13]),
         .O(\sync_2stg_reg[15]_1 [1]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8788,17 +8789,17 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(\last_sampled_wr_ptr_reg[14] [0]),
         .I1(wptr_s_bin[12]),
         .I2(Q[12]),
-        .I3(fill_rd_nxt0_carry__3[12]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [12]),
         .O(\sync_2stg_reg[15]_1 [0]));
   LUT6 #(
     .INIT(64'h2B71D48ED48E2B71)) 
     fill_rd_nxt0_carry__3_i_1
-       (.I0(fill_rd_nxt0_carry__3[15]),
+       (.I0(\fill_rd_nxt0_inferred__0/i___0_carry__3 [15]),
         .I1(\sync_2stg_reg_n_0_[15] ),
         .I2(Q[15]),
         .I3(wptr_s_bin[16]),
         .I4(Q[16]),
-        .I5(fill_rd_nxt0_carry__3[16]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [16]),
         .O(\fill_rd_reg[15]_0 ));
   (* HLUTNM = "lutpair1" *) 
   LUT3 #(
@@ -8806,7 +8807,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry_i_1
        (.I0(Q[2]),
         .I1(wptr_s_bin[2]),
-        .I2(fill_rd_nxt0_carry__3[2]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [2]),
         .O(DI[2]));
   (* HLUTNM = "lutpair0" *) 
   LUT3 #(
@@ -8814,7 +8815,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry_i_2
        (.I0(Q[1]),
         .I1(wptr_s_bin[1]),
-        .I2(fill_rd_nxt0_carry__3[1]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [1]),
         .O(DI[1]));
   (* HLUTNM = "lutpair12" *) 
   LUT2 #(
@@ -8829,7 +8830,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(DI[2]),
         .I1(wptr_s_bin[3]),
         .I2(Q[3]),
-        .I3(fill_rd_nxt0_carry__3[3]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [3]),
         .O(S[3]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8837,7 +8838,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(DI[1]),
         .I1(wptr_s_bin[2]),
         .I2(Q[2]),
-        .I3(fill_rd_nxt0_carry__3[2]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [2]),
         .O(S[2]));
   LUT4 #(
     .INIT(16'h9669)) 
@@ -8845,7 +8846,7 @@ module design_2_RxFIFO_0_syncr_0
        (.I0(DI[0]),
         .I1(wptr_s_bin[1]),
         .I2(Q[1]),
-        .I3(fill_rd_nxt0_carry__3[1]),
+        .I3(\fill_rd_nxt0_inferred__0/i___0_carry__3 [1]),
         .O(S[1]));
   (* HLUTNM = "lutpair12" *) 
   LUT3 #(
@@ -8853,7 +8854,7 @@ module design_2_RxFIFO_0_syncr_0
     fill_rd_nxt0_carry_i_7
        (.I0(wptr_s_bin[0]),
         .I1(Q[0]),
-        .I2(fill_rd_nxt0_carry__3[0]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [0]),
         .O(S[0]));
   (* HLUTNM = "lutpair6" *) 
   LUT4 #(
@@ -8861,7 +8862,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__0_i_1
        (.I0(Q[7]),
         .I1(wptr_s_bin[7]),
-        .I2(fill_rd_nxt0_carry__3[7]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [7]),
         .I3(\last_sampled_wr_ptr_reg[6] [3]),
         .O(\last_sampled_wr_ptr_reg[7]_0 [3]));
   (* HLUTNM = "lutpair5" *) 
@@ -8870,7 +8871,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__0_i_2
        (.I0(Q[6]),
         .I1(wptr_s_bin[6]),
-        .I2(fill_rd_nxt0_carry__3[6]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [6]),
         .I3(\last_sampled_wr_ptr_reg[6] [2]),
         .O(\last_sampled_wr_ptr_reg[7]_0 [2]));
   (* HLUTNM = "lutpair4" *) 
@@ -8879,7 +8880,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__0_i_3
        (.I0(Q[5]),
         .I1(wptr_s_bin[5]),
-        .I2(fill_rd_nxt0_carry__3[5]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [5]),
         .I3(\last_sampled_wr_ptr_reg[6] [1]),
         .O(\last_sampled_wr_ptr_reg[7]_0 [1]));
   (* HLUTNM = "lutpair3" *) 
@@ -8888,7 +8889,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__0_i_4
        (.I0(Q[4]),
         .I1(wptr_s_bin[4]),
-        .I2(fill_rd_nxt0_carry__3[4]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [4]),
         .I3(\last_sampled_wr_ptr_reg[6] [0]),
         .O(\last_sampled_wr_ptr_reg[7]_0 [0]));
   (* HLUTNM = "lutpair10" *) 
@@ -8897,7 +8898,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__1_i_1
        (.I0(Q[11]),
         .I1(wptr_s_bin[11]),
-        .I2(fill_rd_nxt0_carry__3[11]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [11]),
         .I3(\last_sampled_wr_ptr_reg[10] [3]),
         .O(\last_sampled_wr_ptr_reg[11]_0 [3]));
   (* HLUTNM = "lutpair9" *) 
@@ -8906,7 +8907,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__1_i_2
        (.I0(Q[10]),
         .I1(wptr_s_bin[10]),
-        .I2(fill_rd_nxt0_carry__3[10]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [10]),
         .I3(\last_sampled_wr_ptr_reg[10] [2]),
         .O(\last_sampled_wr_ptr_reg[11]_0 [2]));
   (* HLUTNM = "lutpair8" *) 
@@ -8915,7 +8916,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__1_i_3
        (.I0(Q[9]),
         .I1(wptr_s_bin[9]),
-        .I2(fill_rd_nxt0_carry__3[9]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [9]),
         .I3(\last_sampled_wr_ptr_reg[10] [1]),
         .O(\last_sampled_wr_ptr_reg[11]_0 [1]));
   (* HLUTNM = "lutpair7" *) 
@@ -8924,7 +8925,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__1_i_4
        (.I0(Q[8]),
         .I1(wptr_s_bin[8]),
-        .I2(fill_rd_nxt0_carry__3[8]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [8]),
         .I3(\last_sampled_wr_ptr_reg[10] [0]),
         .O(\last_sampled_wr_ptr_reg[11]_0 [0]));
   LUT5 #(
@@ -8934,7 +8935,7 @@ module design_2_RxFIFO_0_syncr_0
         .I1(\sync_2stg_reg_n_0_[15] ),
         .I2(wptr_s_bin[16]),
         .I3(Q[15]),
-        .I4(fill_rd_nxt0_carry__3[15]),
+        .I4(\fill_rd_nxt0_inferred__0/i___0_carry__3 [15]),
         .O(\sync_2stg_reg[15]_0 [3]));
   LUT6 #(
     .INIT(64'h9669699669969669)) 
@@ -8944,7 +8945,7 @@ module design_2_RxFIFO_0_syncr_0
         .I2(\sync_2stg_reg_n_0_[14] ),
         .I3(wptr_s_bin[16]),
         .I4(Q[14]),
-        .I5(fill_rd_nxt0_carry__3[14]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [14]),
         .O(\sync_2stg_reg[15]_0 [2]));
   LUT6 #(
     .INIT(64'h9669699669969669)) 
@@ -8954,7 +8955,7 @@ module design_2_RxFIFO_0_syncr_0
         .I2(\sync_2stg_reg_n_0_[13] ),
         .I3(wptr_s_bin[15]),
         .I4(Q[13]),
-        .I5(fill_rd_nxt0_carry__3[13]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [13]),
         .O(\sync_2stg_reg[15]_0 [1]));
   (* HLUTNM = "lutpair11" *) 
   LUT4 #(
@@ -8962,18 +8963,18 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry__2_i_4
        (.I0(Q[12]),
         .I1(wptr_s_bin[12]),
-        .I2(fill_rd_nxt0_carry__3[12]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [12]),
         .I3(\last_sampled_wr_ptr_reg[14] [0]),
         .O(\sync_2stg_reg[15]_0 [0]));
   LUT6 #(
     .INIT(64'h2B71D48ED48E2B71)) 
     i___0_carry__3_i_1
-       (.I0(fill_rd_nxt0_carry__3[15]),
+       (.I0(\fill_rd_nxt0_inferred__0/i___0_carry__3 [15]),
         .I1(\sync_2stg_reg_n_0_[15] ),
         .I2(Q[15]),
         .I3(wptr_s_bin[16]),
         .I4(Q[16]),
-        .I5(fill_rd_nxt0_carry__3[16]),
+        .I5(\fill_rd_nxt0_inferred__0/i___0_carry__3 [16]),
         .O(\fill_rd_reg[15] ));
   (* HLUTNM = "lutpair13" *) 
   LUT3 #(
@@ -8981,7 +8982,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry_i_1
        (.I0(Q[0]),
         .I1(wptr_s_bin[0]),
-        .I2(fill_rd_nxt0_carry__3[0]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [0]),
         .O(\last_sampled_wr_ptr_reg[0] ));
   (* HLUTNM = "lutpair2" *) 
   LUT4 #(
@@ -8989,7 +8990,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry_i_2
        (.I0(Q[3]),
         .I1(wptr_s_bin[3]),
-        .I2(fill_rd_nxt0_carry__3[3]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [3]),
         .I3(DI[2]),
         .O(\last_sampled_wr_ptr_reg[3] [3]));
   (* HLUTNM = "lutpair1" *) 
@@ -8998,7 +8999,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry_i_3
        (.I0(Q[2]),
         .I1(wptr_s_bin[2]),
-        .I2(fill_rd_nxt0_carry__3[2]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [2]),
         .I3(DI[1]),
         .O(\last_sampled_wr_ptr_reg[3] [2]));
   (* HLUTNM = "lutpair0" *) 
@@ -9007,7 +9008,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry_i_4
        (.I0(Q[1]),
         .I1(wptr_s_bin[1]),
-        .I2(fill_rd_nxt0_carry__3[1]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [1]),
         .I3(\last_sampled_wr_ptr_reg[0] ),
         .O(\last_sampled_wr_ptr_reg[3] [1]));
   (* HLUTNM = "lutpair13" *) 
@@ -9016,7 +9017,7 @@ module design_2_RxFIFO_0_syncr_0
     i___0_carry_i_5
        (.I0(Q[0]),
         .I1(wptr_s_bin[0]),
-        .I2(fill_rd_nxt0_carry__3[0]),
+        .I2(\fill_rd_nxt0_inferred__0/i___0_carry__3 [0]),
         .O(\last_sampled_wr_ptr_reg[3] [0]));
   LUT6 #(
     .INIT(64'h6996966996696996)) 

@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Wed Apr  6 17:20:17 2022
-| Host             : xsjl20352 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date             : Thu Apr  7 15:26:41 2022
+| Host             : xsjl210011 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command          : report_power -file design_2_wrapper_power_routed.rpt -pb design_2_wrapper_power_summary_routed.pb -rpx design_2_wrapper_power_routed.rpx
 | Design           : design_2_wrapper
 | Device           : xc7z020clg484-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.825        |
+| Total On-Chip Power (W)  | 1.831        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.675        |
-| Device Static (W)        | 0.150        |
+| Dynamic (W)              | 1.678        |
+| Device Static (W)        | 0.154        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.0         |
-| Junction Temperature (C) | 46.0         |
+| Max Ambient (C)          | 63.9         |
+| Junction Temperature (C) | 46.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,9 +52,9 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.036 |        3 |       --- |             --- |
-| Slice Logic              |     0.018 |    24408 |       --- |             --- |
-|   LUT as Logic           |     0.015 |     7127 |     53200 |           13.40 |
+| Clocks                   |     0.037 |        3 |       --- |             --- |
+| Slice Logic              |     0.018 |    24412 |       --- |             --- |
+|   LUT as Logic           |     0.015 |     7129 |     53200 |           13.40 |
 |   LUT as Distributed RAM |     0.001 |      668 |     17400 |            3.84 |
 |   Register               |    <0.001 |    11821 |    106400 |           11.11 |
 |   CARRY4                 |    <0.001 |      199 |     13300 |            1.50 |
@@ -62,12 +62,12 @@ Table of Contents
 |   F7/F8 Muxes            |    <0.001 |       62 |     53200 |            0.12 |
 |   LUT as Shift Register  |    <0.001 |      443 |     17400 |            2.55 |
 |   Others                 |     0.000 |     1032 |       --- |             --- |
-| Signals                  |     0.026 |    16579 |       --- |             --- |
+| Signals                  |     0.027 |    16580 |       --- |             --- |
 | Block RAM                |     0.058 |       35 |       140 |           25.00 |
-| I/O                      |     0.004 |       11 |       200 |            5.50 |
+| I/O                      |     0.005 |       11 |       200 |            5.50 |
 | PS7                      |     1.533 |        1 |       --- |             --- |
-| Static Power             |     0.150 |          |           |                 |
-| Total                    |     1.825 |          |           |                 |
+| Static Power             |     0.154 |          |           |                 |
+| Total                    |     1.831 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,11 +77,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.150 |       0.133 |      0.017 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.151 |       0.134 |      0.017 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -153,8 +153,8 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_2_wrapper         |     1.675 |
-|   design_2_i             |     1.671 |
+| design_2_wrapper         |     1.678 |
+|   design_2_i             |     1.672 |
 |     AXI_Register_Demux   |     0.021 |
 |       m01_couplers       |     0.003 |
 |       m02_couplers       |     0.003 |
@@ -164,8 +164,8 @@ Table of Contents
 |       xbar               |     0.007 |
 |     BiDirChannels_0      |     0.001 |
 |       inst               |     0.001 |
-|     RxFIFO               |     0.068 |
-|       inst               |     0.068 |
+|     RxFIFO               |     0.069 |
+|       inst               |     0.069 |
 |     SPI_ip_0             |     0.001 |
 |       inst               |     0.001 |
 |     axi_dma_0            |     0.012 |
