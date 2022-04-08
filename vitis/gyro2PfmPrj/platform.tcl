@@ -16,3 +16,6 @@ platform write
 platform generate -domains 
 platform active {gyro2PfmPrj}
 platform generate
+platform active {gyro2PfmPrj}
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
+platform generate

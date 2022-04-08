@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="design_2_proc_sys_reset_0_2_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1649290260">
-  <File Type="REPORTS-TCL" Name="design_2_proc_sys_reset_0_2_reports.tcl"/>
+<GenRun Id="design_2_proc_sys_reset_0_2_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1649380362">
   <File Type="PA-TCL" Name="design_2_proc_sys_reset_0_2.tcl"/>
-  <File Type="RDS-DCP" Name="design_2_proc_sys_reset_0_2.dcp"/>
+  <File Type="REPORTS-TCL" Name="design_2_proc_sys_reset_0_2_reports.tcl"/>
   <File Type="RDS-RDS" Name="design_2_proc_sys_reset_0_2.vds"/>
   <File Type="RDS-UTIL" Name="design_2_proc_sys_reset_0_2_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="design_2_proc_sys_reset_0_2_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="design_2_proc_sys_reset_0_2.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_proc_sys_reset_0_2">
     <File Path="$PSRCDIR/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xci">
       <FileInfo>
@@ -40,7 +40,7 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PPRDIR/../C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp">
+    <File Path="$PPRDIR/synth_1/design_2_wrapper.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

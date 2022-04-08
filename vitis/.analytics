@@ -10,3 +10,7 @@ timestamp=[2022-04-05 18:41:15], mode=PLATFORM_GENERATION, duration=0:00:06.018,
 timestamp=[2022-04-05 18:42:09], mode=PLATFORM_GENERATION, duration=0:00:10.259, duration_ms=10259, data={name=gyro2PfmPrj}
 timestamp=[2022-04-05 18:44:08], mode=APP_CREATION, duration=0:00:08.587, duration_ms=8587, data={name=gyro2appPrj, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=gyro2PfmPrj, application_type=application}
 timestamp=[2022-04-05 18:44:58], mode=BUILD, duration=0:00:00.807, duration_ms=807, data={name=gyro2appPrj, configuration=Debug, clean_build=false}
+timestamp=[2022-04-07 18:31:10], mode=WORKBENCH_START, duration=0:00:07.150, duration_ms=7150, data={}
+timestamp=[2022-04-07 18:31:10], mode=WORKBENCH_UI_INIT, duration=0:00:00.935, duration_ms=935, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,gyro2PfmPrj,gyro2appPrj,gyro2appPrj_system}
+timestamp=[2022-04-07 18:31:11], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.066, duration_ms=66, data={}
+timestamp=[2022-04-07 18:33:41], mode=PLATFORM_GENERATION, duration=0:00:09.304, duration_ms=9304, data={name=gyro2PfmPrj}
