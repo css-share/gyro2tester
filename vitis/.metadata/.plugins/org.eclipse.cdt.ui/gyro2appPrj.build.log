@@ -1,4 +1,4 @@
-18:44:57 **** Build of configuration Debug for project gyro2appPrj ****
+03:49:36 **** Build of configuration Debug for project gyro2appPrj ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -91,11 +91,6 @@ At top level:
       |                ^~~~
 'Finished building: ../src/main.c'
 ' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
 'Building target: gyro2appPrj.elf'
 'Invoking: ARM v7 gcc linker'
 arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bsplib/lib -o "gyro2appPrj.elf"  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
@@ -108,5 +103,5 @@ arm-none-eabi-size gyro2appPrj.elf  |tee "gyro2appPrj.elf.size"
 'Finished building: gyro2appPrj.elf.size'
 ' '
 
-18:44:58 Build Finished (took 782ms)
+03:49:37 Build Finished (took 748ms)
 

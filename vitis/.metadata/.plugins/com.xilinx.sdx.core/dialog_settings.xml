@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="sdx.custom.platform.repository.locations" value="C:\Xilinx_projects\gyro2tester\vitis\gyro2PfmPrj\export\gyro2PfmPrj"/>
+	<item key="sdx.custom.platform.repository.locations" value="C:\Xilinx_projects\gyro2tester\vitis\gyro2PfmPrj\export\gyro2PfmPrj;C:\Xilinx_projects\gyro2tester\vitis\newGyro2Ptfm\export\newGyro2Ptfm"/>
 </section>

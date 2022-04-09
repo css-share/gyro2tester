@@ -10,11 +10,11 @@
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source design_2_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1353.359 ; gain = 0.000
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1352.512 ; gain = 0.000
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx_projects/gyro2tester/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1353.359 ; gain = 0.000
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1352.512 ; gain = 0.000
 Command: read_checkpoint -auto_incremental -incremental C:/Xilinx_projects/gyro2tester/vivado/project/synth_1/design_2_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Xilinx_projects/gyro2tester/vivado/project/synth_1/design_2_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,9 +27,9 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 32764
+INFO: [Synth 8-7075] Helper process launched with PID 52976
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1353.359 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1352.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_2_wrapper' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_2' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:13]
@@ -37,40 +37,40 @@ INFO: [Synth 8-6157] synthesizing module 'design_2_ps7_0_axi_periph_0' [c:/Xilin
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1G08EHP' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:2787]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1G08EHP' (1#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:2787]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_NDGYWS' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3073]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_0' (2#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_0' (2#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_NDGYWS' (3#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3073]
 INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1GX5PEM' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3383]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_1' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_1' (4#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_1' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_1' (4#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_1_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1GX5PEM' (5#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3383]
 INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_MQ77ZZ' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3693]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_2' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_2' (6#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_2' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_2' (6#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_2_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'design_2_auto_pc_2' is unconnected for instance 'auto_pc' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3928]
 WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'design_2_auto_pc_2' is unconnected for instance 'auto_pc' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3928]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'design_2_auto_pc_2' is unconnected for instance 'auto_pc' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3928]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_2_auto_pc_2' has 60 connections declared, but only 57 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3928]
 INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_MQ77ZZ' (7#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3693]
 INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_1D1SX97' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3988]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_3' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_3' (8#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_3' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_3' (8#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_3_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_1D1SX97' (9#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3988]
 INFO: [Synth 8-6157] synthesizing module 'm05_couplers_imp_QIQYEY' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:4298]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_4' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_4' (10#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_4' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_4' (10#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_4_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'm05_couplers_imp_QIQYEY' (11#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:4298]
 INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_1E8QK0O' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:4608]
 INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_1E8QK0O' (12#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:4608]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_IEFX27' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:4894]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_5' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_5' (13#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_auto_pc_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_5' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_5' (13#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_auto_pc_5_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'design_2_auto_pc_5' is unconnected for instance 'auto_pc' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:5209]
 WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'design_2_auto_pc_5' is unconnected for instance 'auto_pc' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:5209]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_2_auto_pc_5' has 79 connections declared, but only 77 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:5209]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_IEFX27' (14#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:4894]
-INFO: [Synth 8-6157] synthesizing module 'design_2_xbar_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_xbar_0' (15#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_xbar_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_xbar_0' (15#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_xbar_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'design_2_ps7_0_axi_periph_0' (16#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:931]
 WARNING: [Synth 8-7071] port 'M00_AXI_araddr' of module 'design_2_ps7_0_axi_periph_0' is unconnected for instance 'AXI_Register_Demux' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:351]
 WARNING: [Synth 8-7071] port 'M00_AXI_arburst' of module 'design_2_ps7_0_axi_periph_0' is unconnected for instance 'AXI_Register_Demux' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:351]
@@ -129,33 +129,33 @@ WARNING: [Synth 8-7071] port 'M06_AXI_wlast' of module 'design_2_ps7_0_axi_perip
 WARNING: [Synth 8-7071] port 'M06_AXI_wstrb' of module 'design_2_ps7_0_axi_periph_0' is unconnected for instance 'AXI_Register_Demux' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:351]
 WARNING: [Synth 8-7071] port 'M06_AXI_wvalid' of module 'design_2_ps7_0_axi_periph_0' is unconnected for instance 'AXI_Register_Demux' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:351]
 WARNING: [Synth 8-7023] instance 'AXI_Register_Demux' of module 'design_2_ps7_0_axi_periph_0' has 226 connections declared, but only 170 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:351]
-INFO: [Synth 8-6157] synthesizing module 'design_2_BiDirChannels_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_BiDirChannels_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_BiDirChannels_0_0' (17#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_BiDirChannels_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_RxFIFO_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_RxFIFO_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_RxFIFO_0' (18#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_RxFIFO_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_BiDirChannels_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_BiDirChannels_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_BiDirChannels_0_0' (17#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_BiDirChannels_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_RxFIFO_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_RxFIFO_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_RxFIFO_0' (18#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_RxFIFO_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm00_axis_tstrb' of module 'design_2_RxFIFO_0' is unconnected for instance 'RxFIFO' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:572]
 WARNING: [Synth 8-7023] instance 'RxFIFO' of module 'design_2_RxFIFO_0' has 34 connections declared, but only 33 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:572]
-INFO: [Synth 8-6157] synthesizing module 'design_2_SPI_ip_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_SPI_ip_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_SPI_ip_0_0' (19#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_SPI_ip_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axis_stream_txfifo_0_2' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_stream_txfifo_0_2' (20#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axi_dma_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axi_dma_0_0' (21#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_SPI_ip_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_SPI_ip_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_SPI_ip_0_0' (19#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_SPI_ip_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axis_stream_txfifo_0_2' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_stream_txfifo_0_2' (20#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axi_dma_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axi_dma_0_0' (21#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_axi_dma_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:676]
 WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:676]
 WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:676]
 WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:676]
 WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'design_2_axi_dma_0_0' has 64 connections declared, but only 60 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:676]
-INFO: [Synth 8-6157] synthesizing module 'design_2_smartconnect_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_smartconnect_0_0' (22#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_2' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_2' (23#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_smartconnect_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_smartconnect_0_0' (22#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_2' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_2' (23#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_2_proc_sys_reset_0_2' is unconnected for instance 'clk_reset_domain' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:806]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_2_proc_sys_reset_0_2' is unconnected for instance 'clk_reset_domain' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:806]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_2_proc_sys_reset_0_2' is unconnected for instance 'clk_reset_domain' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:806]
 WARNING: [Synth 8-7023] instance 'clk_reset_domain' of module 'design_2_proc_sys_reset_0_2' has 10 connections declared, but only 7 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:806]
-INFO: [Synth 8-6157] synthesizing module 'design_2_processing_system7_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_processing_system7_0_0' (24#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_processing_system7_0_0' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_processing_system7_0_0' (24#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:814]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:814]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:814]
@@ -168,8 +168,8 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'design_2_processing_s
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:814]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:814]
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_2_processing_system7_0_0' has 114 connections declared, but only 103 given [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:814]
-INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_1' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_1' (25#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32920-AsusP8/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_1' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_1' (25#1) [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-32272-AsusP8/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_2_proc_sys_reset_0_1' is unconnected for instance 'txclk_reset_domain' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:918]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_2_proc_sys_reset_0_1' is unconnected for instance 'txclk_reset_domain' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:918]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_2_proc_sys_reset_0_1' is unconnected for instance 'txclk_reset_domain' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:918]
@@ -283,18 +283,18 @@ WARNING: [Synth 8-7129] Port In100[0] in module xlconcat_v2_1_4_xlconcat is eith
 WARNING: [Synth 8-7129] Port In101[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1353.359 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1352.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1353.359 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1352.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1353.359 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1352.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1353.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1352.512 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -341,22 +341,22 @@ Parsing XDC File [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.run
 Finished Parsing XDC File [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1355.691 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1382.273 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1355.691 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1382.273 ; gain = 0.000
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1355.691 ; gain = 2.332
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1382.273 ; gain = 29.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1355.691 ; gain = 2.332
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1382.273 ; gain = 29.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -641,10 +641,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/clk_reset_domain. (con
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/processing_system7_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axi_smc. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1355.691 ; gain = 2.332
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1382.273 ; gain = 29.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1355.691 ; gain = 2.332
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1382.273 ; gain = 29.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -667,25 +667,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1355.691 ; gain = 2.332
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1382.273 ; gain = 29.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1401.430 ; gain = 48.070
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1404.352 ; gain = 51.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1402.098 ; gain = 48.738
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1404.945 ; gain = 52.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1422.309 ; gain = 68.949
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1424.703 ; gain = 72.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -703,37 +703,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -779,16 +779,16 @@ Report Cell Usage:
 |18    |OBUF                          |     9|
 +------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1427.094 ; gain = 71.402
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1427.094 ; gain = 73.734
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1429.488 ; gain = 47.215
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1429.488 ; gain = 76.977
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1439.156 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1441.543 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1454.320 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1456.613 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -796,7 +796,7 @@ Synth Design complete, checksum: b2f10395
 INFO: [Common 17-83] Releasing license: Synthesis
 79 Infos, 197 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1454.320 ; gain = 100.961
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1456.613 ; gain = 104.102
 INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/design_2_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_2_wrapper_utilization_synth.rpt -pb design_2_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr  8 02:46:02 2022...
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  9 04:23:35 2022...
