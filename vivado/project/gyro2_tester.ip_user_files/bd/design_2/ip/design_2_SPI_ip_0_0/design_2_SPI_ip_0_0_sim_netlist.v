@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Mon Apr  4 18:48:50 2022
-// Host        : xsjlc170313 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+// Date        : Thu Apr  7 15:19:34 2022
+// Host        : xsjl20348 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode funcsim
-//               /home/cdickins/reuse/gyro_tester_gold-master/gyro_tester_gold/gyro_tester_gold/gyro_tester_gold.srcs/sources_1/bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0_sim_netlist.v
+//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0_sim_netlist.v
 // Design      : design_2_SPI_ip_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -93,9 +93,9 @@ module design_2_SPI_ip_0_0
   GND GND
        (.G(\<const0> ));
   design_2_SPI_ip_0_0_SPI_ip_v1_0 inst
-       (.CLK(SPI_SCK),
-        .Q(SPI_CS),
+       (.SPI_CS(SPI_CS),
         .SPI_D(SPI_D),
+        .SPI_SCK(SPI_SCK),
         .clk(clk),
         .rstn(rstn),
         .s00_axi_araddr(s00_axi_araddr[3:2]),
@@ -117,13 +117,13 @@ endmodule
 
 (* ORIG_REF_NAME = "SPI_ip_v1_0" *) 
 module design_2_SPI_ip_0_0_SPI_ip_v1_0
-   (CLK,
-    Q,
-    s00_axi_awready,
+   (s00_axi_awready,
     s00_axi_wready,
     s00_axi_arready,
     s00_axi_rdata,
     s00_axi_rvalid,
+    SPI_SCK,
+    SPI_CS,
     s00_axi_bvalid,
     SPI_D,
     clk,
@@ -137,13 +137,13 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0
     rstn,
     s00_axi_bready,
     s00_axi_rready);
-  output CLK;
-  output [0:0]Q;
   output s00_axi_awready;
   output s00_axi_wready;
   output s00_axi_arready;
   output [31:0]s00_axi_rdata;
   output s00_axi_rvalid;
+  output SPI_SCK;
+  output SPI_CS;
   output s00_axi_bvalid;
   inout SPI_D;
   input clk;
@@ -158,25 +158,26 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0
   input s00_axi_bready;
   input s00_axi_rready;
 
-  wire CLK;
-  wire \FSM_sequential_cur_state[0]_i_3_n_0 ;
-  wire \FSM_sequential_cur_state[0]_i_4_n_0 ;
-  wire [0:0]Q;
+  wire \FSM_sequential_cur_state[0]_i_2_n_0 ;
+  wire \FSM_sequential_cur_state[1]_i_3_n_0 ;
+  wire SPI_CS;
   wire SPI_D;
+  wire SPI_SCK;
   wire SPI_ip_v1_0_S00_AXI_inst_n_1;
-  wire SPI_ip_v1_0_S00_AXI_inst_n_10;
-  wire SPI_ip_v1_0_S00_AXI_inst_n_13;
-  wire SPI_ip_v1_0_S00_AXI_inst_n_14;
+  wire SPI_ip_v1_0_S00_AXI_inst_n_29;
+  wire SPI_ip_v1_0_S00_AXI_inst_n_34;
+  wire SPI_ip_v1_0_S00_AXI_inst_n_38;
+  wire SPI_ip_v1_0_S00_AXI_inst_n_39;
   wire a;
   wire clk;
   wire clk_div16;
   wire clk_div2;
   wire clk_div4;
   wire clk_div8;
-  wire [1:1]cur_state;
+  wire [1:0]cur_state;
   wire [1:0]nxt_state;
   wire [3:0]p_0_in__0;
-  wire \read_count[3]_i_3_n_0 ;
+  wire \read_count[3]_i_4_n_0 ;
   wire [3:0]read_count_reg;
   wire rstn;
   wire [1:0]s00_axi_araddr;
@@ -199,9 +200,9 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0
   wire \shift_count[1]_i_1_n_0 ;
   wire \shift_count[2]_i_1_n_0 ;
   wire \shift_count[3]_i_1_n_0 ;
+  wire \shift_count[4]_i_1_n_0 ;
   wire \shift_count[4]_i_3_n_0 ;
-  wire [23:0]shift_reg;
-  wire shift_reg_0;
+  wire [23:1]shift_reg;
   wire \shift_reg_reg_n_0_[0] ;
   wire \shift_reg_reg_n_0_[10] ;
   wire \shift_reg_reg_n_0_[11] ;
@@ -225,88 +226,99 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0
   wire \shift_reg_reg_n_0_[7] ;
   wire \shift_reg_reg_n_0_[8] ;
   wire \shift_reg_reg_n_0_[9] ;
+  wire spi_clk;
   wire spi_oe;
   wire [15:0]spi_rdata;
-  wire spi_rdata_1;
+  wire spi_rdata_0;
   wire spi_start_s;
   wire spi_start_ss;
 
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \FSM_sequential_cur_state[0]_i_3 
-       (.I0(shift_count[3]),
-        .I1(shift_count[1]),
-        .I2(shift_count[0]),
-        .I3(shift_count[2]),
-        .I4(shift_count[4]),
-        .O(\FSM_sequential_cur_state[0]_i_3_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \FSM_sequential_cur_state[0]_i_4 
+    \FSM_sequential_cur_state[0]_i_2 
        (.I0(read_count_reg[2]),
         .I1(read_count_reg[0]),
         .I2(read_count_reg[1]),
         .I3(read_count_reg[3]),
-        .O(\FSM_sequential_cur_state[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+        .O(\FSM_sequential_cur_state[0]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'hFF20F020)) 
     \FSM_sequential_cur_state[1]_i_1 
        (.I0(spi_start_s),
         .I1(spi_start_ss),
-        .I2(Q),
-        .I3(cur_state),
-        .I4(\FSM_sequential_cur_state[0]_i_3_n_0 ),
+        .I2(cur_state[0]),
+        .I3(cur_state[1]),
+        .I4(\FSM_sequential_cur_state[1]_i_3_n_0 ),
         .O(nxt_state[1]));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_cur_state[1]_i_3 
+       (.I0(shift_count[3]),
+        .I1(shift_count[1]),
+        .I2(shift_count[0]),
+        .I3(shift_count[2]),
+        .I4(shift_count[4]),
+        .O(\FSM_sequential_cur_state[1]_i_3_n_0 ));
   (* FSM_ENCODED_STATES = "LOAD:11,SHIFT:10,READ:00,IDLE:01" *) 
   FDPE \FSM_sequential_cur_state_reg[0] 
-       (.C(CLK),
+       (.C(spi_clk),
         .CE(1'b1),
         .D(nxt_state[0]),
         .PRE(SPI_ip_v1_0_S00_AXI_inst_n_1),
-        .Q(Q));
+        .Q(cur_state[0]));
   (* FSM_ENCODED_STATES = "LOAD:11,SHIFT:10,READ:00,IDLE:01" *) 
   FDCE \FSM_sequential_cur_state_reg[1] 
-       (.C(CLK),
+       (.C(spi_clk),
         .CE(1'b1),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(nxt_state[1]),
-        .Q(cur_state));
+        .Q(cur_state[1]));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT2 #(
+    .INIT(4'h4)) 
+    SPI_CS_INST_0
+       (.I0(cur_state[1]),
+        .I1(cur_state[0]),
+        .O(SPI_CS));
   LUT2 #(
     .INIT(4'h8)) 
     SPI_D_INST_0
        (.I0(a),
         .I1(spi_oe),
         .O(SPI_D));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'hE)) 
     SPI_D_INST_0_i_1
-       (.I0(Q),
-        .I1(cur_state),
+       (.I0(cur_state[1]),
+        .I1(cur_state[0]),
         .O(spi_oe));
   design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI SPI_ip_v1_0_S00_AXI_inst
-       (.D(p_0_in__0),
-        .E(SPI_ip_v1_0_S00_AXI_inst_n_10),
-        .\FSM_sequential_cur_state_reg[0] (\FSM_sequential_cur_state[0]_i_3_n_0 ),
-        .Q({cur_state,Q}),
-        .Q_reg(CLK),
+       (.D({shift_reg,SPI_ip_v1_0_S00_AXI_inst_n_29}),
+        .E(SPI_ip_v1_0_S00_AXI_inst_n_34),
+        .\FSM_sequential_cur_state_reg[0] (\FSM_sequential_cur_state[1]_i_3_n_0 ),
+        .\FSM_sequential_cur_state_reg[0]_0 (\FSM_sequential_cur_state[0]_i_2_n_0 ),
+        .Q(cur_state),
+        .SPI_SCK(SPI_SCK),
         .SR(SPI_ip_v1_0_S00_AXI_inst_n_1),
+        .axi_arready_reg_0(s00_axi_arready),
+        .axi_awready_reg_0(s00_axi_awready),
         .\axi_rdata_reg[15]_0 (spi_rdata),
+        .axi_wready_reg_0(s00_axi_wready),
         .clk(clk),
         .clk_div16(clk_div16),
         .clk_div2(clk_div2),
         .clk_div4(clk_div4),
         .clk_div8(clk_div8),
-        .\read_count_reg[0] (\FSM_sequential_cur_state[0]_i_4_n_0 ),
+        .\read_count_reg[0] (spi_rdata_0),
         .\read_count_reg[3] (read_count_reg),
-        .\read_count_reg[3]_0 (\read_count[3]_i_3_n_0 ),
+        .\read_count_reg[3]_0 (\read_count[3]_i_4_n_0 ),
         .rstn(rstn),
         .s00_axi_araddr(s00_axi_araddr),
-        .s00_axi_arready(s00_axi_arready),
         .s00_axi_arvalid(s00_axi_arvalid),
         .s00_axi_awaddr(s00_axi_awaddr),
-        .s00_axi_awready(s00_axi_awready),
         .s00_axi_awvalid(s00_axi_awvalid),
         .s00_axi_bready(s00_axi_bready),
         .s00_axi_bvalid(s00_axi_bvalid),
@@ -314,89 +326,89 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0
         .s00_axi_rready(s00_axi_rready),
         .s00_axi_rvalid(s00_axi_rvalid),
         .s00_axi_wdata(s00_axi_wdata),
-        .s00_axi_wready(s00_axi_wready),
         .s00_axi_wstrb(s00_axi_wstrb),
         .s00_axi_wvalid(s00_axi_wvalid),
         .\shift_count_reg[4] (\shift_count[4]_i_3_n_0 ),
         .\shift_count_reg[4]_0 (shift_count[4]),
-        .\shift_reg_reg[22] (shift_reg),
         .\shift_reg_reg[23] ({\shift_reg_reg_n_0_[22] ,\shift_reg_reg_n_0_[21] ,\shift_reg_reg_n_0_[20] ,\shift_reg_reg_n_0_[19] ,\shift_reg_reg_n_0_[18] ,\shift_reg_reg_n_0_[17] ,\shift_reg_reg_n_0_[16] ,\shift_reg_reg_n_0_[15] ,\shift_reg_reg_n_0_[14] ,\shift_reg_reg_n_0_[13] ,\shift_reg_reg_n_0_[12] ,\shift_reg_reg_n_0_[11] ,\shift_reg_reg_n_0_[10] ,\shift_reg_reg_n_0_[9] ,\shift_reg_reg_n_0_[8] ,\shift_reg_reg_n_0_[7] ,\shift_reg_reg_n_0_[6] ,\shift_reg_reg_n_0_[5] ,\shift_reg_reg_n_0_[4] ,\shift_reg_reg_n_0_[3] ,\shift_reg_reg_n_0_[2] ,\shift_reg_reg_n_0_[1] ,\shift_reg_reg_n_0_[0] }),
-        .\slv_reg0_reg[0]_0 (SPI_ip_v1_0_S00_AXI_inst_n_13),
-        .\slv_reg0_reg[1]_0 (nxt_state[0]),
-        .\slv_reg0_reg[1]_1 (SPI_ip_v1_0_S00_AXI_inst_n_14));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+        .\slv_reg0_reg[0]_0 (SPI_ip_v1_0_S00_AXI_inst_n_38),
+        .\slv_reg0_reg[1]_0 (p_0_in__0),
+        .\slv_reg0_reg[1]_1 (nxt_state[0]),
+        .\slv_reg0_reg[1]_2 (SPI_ip_v1_0_S00_AXI_inst_n_39),
+        .spi_clk(spi_clk));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
-    .INIT(4'h7)) 
-    \read_count[3]_i_3 
-       (.I0(Q),
-        .I1(cur_state),
-        .O(\read_count[3]_i_3_n_0 ));
+    .INIT(4'h8)) 
+    \read_count[3]_i_4 
+       (.I0(cur_state[0]),
+        .I1(cur_state[1]),
+        .O(\read_count[3]_i_4_n_0 ));
   FDCE \read_count_reg[0] 
-       (.C(CLK),
-        .CE(SPI_ip_v1_0_S00_AXI_inst_n_10),
+       (.C(spi_clk),
+        .CE(SPI_ip_v1_0_S00_AXI_inst_n_34),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(p_0_in__0[0]),
         .Q(read_count_reg[0]));
   FDCE \read_count_reg[1] 
-       (.C(CLK),
-        .CE(SPI_ip_v1_0_S00_AXI_inst_n_10),
+       (.C(spi_clk),
+        .CE(SPI_ip_v1_0_S00_AXI_inst_n_34),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(p_0_in__0[1]),
         .Q(read_count_reg[1]));
   FDCE \read_count_reg[2] 
-       (.C(CLK),
-        .CE(SPI_ip_v1_0_S00_AXI_inst_n_10),
+       (.C(spi_clk),
+        .CE(SPI_ip_v1_0_S00_AXI_inst_n_34),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(p_0_in__0[2]),
         .Q(read_count_reg[2]));
   FDCE \read_count_reg[3] 
-       (.C(CLK),
-        .CE(SPI_ip_v1_0_S00_AXI_inst_n_10),
+       (.C(spi_clk),
+        .CE(SPI_ip_v1_0_S00_AXI_inst_n_34),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(p_0_in__0[3]),
         .Q(read_count_reg[3]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \shift_count[0]_i_1 
-       (.I0(Q),
+       (.I0(cur_state[0]),
         .I1(shift_count[0]),
         .O(\shift_count[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
     .INIT(8'hEB)) 
     \shift_count[1]_i_1 
-       (.I0(Q),
+       (.I0(cur_state[0]),
         .I1(shift_count[1]),
         .I2(shift_count[0]),
         .O(\shift_count[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'hEEEB)) 
     \shift_count[2]_i_1 
-       (.I0(Q),
+       (.I0(cur_state[0]),
         .I1(shift_count[2]),
         .I2(shift_count[0]),
         .I3(shift_count[1]),
         .O(\shift_count[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT5 #(
-    .INIT(32'h0000FE01)) 
+    .INIT(32'h55540001)) 
     \shift_count[3]_i_1 
-       (.I0(shift_count[2]),
-        .I1(shift_count[0]),
-        .I2(shift_count[1]),
-        .I3(shift_count[3]),
-        .I4(Q),
+       (.I0(cur_state[0]),
+        .I1(shift_count[2]),
+        .I2(shift_count[0]),
+        .I3(shift_count[1]),
+        .I4(shift_count[3]),
         .O(\shift_count[3]_i_1_n_0 ));
   LUT3 #(
     .INIT(8'hC8)) 
     \shift_count[4]_i_1 
-       (.I0(\FSM_sequential_cur_state[0]_i_3_n_0 ),
-        .I1(cur_state),
-        .I2(Q),
-        .O(shift_reg_0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+       (.I0(\FSM_sequential_cur_state[1]_i_3_n_0 ),
+        .I1(cur_state[1]),
+        .I2(cur_state[0]),
+        .O(\shift_count[4]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \shift_count[4]_i_3 
@@ -406,289 +418,289 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0
         .I3(shift_count[3]),
         .O(\shift_count[4]_i_3_n_0 ));
   FDCE \shift_count_reg[0] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(\shift_count[0]_i_1_n_0 ),
         .Q(shift_count[0]));
   FDCE \shift_count_reg[1] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(\shift_count[1]_i_1_n_0 ),
         .Q(shift_count[1]));
   FDCE \shift_count_reg[2] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(\shift_count[2]_i_1_n_0 ),
         .Q(shift_count[2]));
   FDCE \shift_count_reg[3] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(\shift_count[3]_i_1_n_0 ),
         .Q(shift_count[3]));
   FDCE \shift_count_reg[4] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
-        .D(SPI_ip_v1_0_S00_AXI_inst_n_14),
+        .D(SPI_ip_v1_0_S00_AXI_inst_n_39),
         .Q(shift_count[4]));
   FDCE \shift_reg_reg[0] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
-        .D(shift_reg[0]),
+        .D(SPI_ip_v1_0_S00_AXI_inst_n_29),
         .Q(\shift_reg_reg_n_0_[0] ));
   FDCE \shift_reg_reg[10] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[10]),
         .Q(\shift_reg_reg_n_0_[10] ));
   FDCE \shift_reg_reg[11] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[11]),
         .Q(\shift_reg_reg_n_0_[11] ));
   FDCE \shift_reg_reg[12] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[12]),
         .Q(\shift_reg_reg_n_0_[12] ));
   FDCE \shift_reg_reg[13] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[13]),
         .Q(\shift_reg_reg_n_0_[13] ));
   FDCE \shift_reg_reg[14] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[14]),
         .Q(\shift_reg_reg_n_0_[14] ));
   FDCE \shift_reg_reg[15] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[15]),
         .Q(\shift_reg_reg_n_0_[15] ));
   FDCE \shift_reg_reg[16] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[16]),
         .Q(\shift_reg_reg_n_0_[16] ));
   FDCE \shift_reg_reg[17] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[17]),
         .Q(\shift_reg_reg_n_0_[17] ));
   FDCE \shift_reg_reg[18] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[18]),
         .Q(\shift_reg_reg_n_0_[18] ));
   FDCE \shift_reg_reg[19] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[19]),
         .Q(\shift_reg_reg_n_0_[19] ));
   FDCE \shift_reg_reg[1] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[1]),
         .Q(\shift_reg_reg_n_0_[1] ));
   FDCE \shift_reg_reg[20] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[20]),
         .Q(\shift_reg_reg_n_0_[20] ));
   FDCE \shift_reg_reg[21] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[21]),
         .Q(\shift_reg_reg_n_0_[21] ));
   FDCE \shift_reg_reg[22] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[22]),
         .Q(\shift_reg_reg_n_0_[22] ));
   FDCE \shift_reg_reg[23] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[23]),
         .Q(a));
   FDCE \shift_reg_reg[2] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[2]),
         .Q(\shift_reg_reg_n_0_[2] ));
   FDCE \shift_reg_reg[3] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[3]),
         .Q(\shift_reg_reg_n_0_[3] ));
   FDCE \shift_reg_reg[4] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[4]),
         .Q(\shift_reg_reg_n_0_[4] ));
   FDCE \shift_reg_reg[5] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[5]),
         .Q(\shift_reg_reg_n_0_[5] ));
   FDCE \shift_reg_reg[6] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[6]),
         .Q(\shift_reg_reg_n_0_[6] ));
   FDCE \shift_reg_reg[7] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[7]),
         .Q(\shift_reg_reg_n_0_[7] ));
   FDCE \shift_reg_reg[8] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[8]),
         .Q(\shift_reg_reg_n_0_[8] ));
   FDCE \shift_reg_reg[9] 
-       (.C(CLK),
-        .CE(shift_reg_0),
+       (.C(spi_clk),
+        .CE(\shift_count[4]_i_1_n_0 ),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(shift_reg[9]),
         .Q(\shift_reg_reg_n_0_[9] ));
   LUT2 #(
     .INIT(4'h1)) 
     \spi_rdata[15]_i_1 
-       (.I0(cur_state),
-        .I1(Q),
-        .O(spi_rdata_1));
+       (.I0(cur_state[0]),
+        .I1(cur_state[1]),
+        .O(spi_rdata_0));
   FDCE \spi_rdata_reg[0] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(SPI_D),
         .Q(spi_rdata[0]));
   FDCE \spi_rdata_reg[10] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[9]),
         .Q(spi_rdata[10]));
   FDCE \spi_rdata_reg[11] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[10]),
         .Q(spi_rdata[11]));
   FDCE \spi_rdata_reg[12] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[11]),
         .Q(spi_rdata[12]));
   FDCE \spi_rdata_reg[13] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[12]),
         .Q(spi_rdata[13]));
   FDCE \spi_rdata_reg[14] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[13]),
         .Q(spi_rdata[14]));
   FDCE \spi_rdata_reg[15] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[14]),
         .Q(spi_rdata[15]));
   FDCE \spi_rdata_reg[1] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[0]),
         .Q(spi_rdata[1]));
   FDCE \spi_rdata_reg[2] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[1]),
         .Q(spi_rdata[2]));
   FDCE \spi_rdata_reg[3] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[2]),
         .Q(spi_rdata[3]));
   FDCE \spi_rdata_reg[4] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[3]),
         .Q(spi_rdata[4]));
   FDCE \spi_rdata_reg[5] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[4]),
         .Q(spi_rdata[5]));
   FDCE \spi_rdata_reg[6] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[5]),
         .Q(spi_rdata[6]));
   FDCE \spi_rdata_reg[7] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[6]),
         .Q(spi_rdata[7]));
   FDCE \spi_rdata_reg[8] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[7]),
         .Q(spi_rdata[8]));
   FDCE \spi_rdata_reg[9] 
-       (.C(CLK),
-        .CE(spi_rdata_1),
+       (.C(spi_clk),
+        .CE(spi_rdata_0),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_rdata[8]),
         .Q(spi_rdata[9]));
   FDCE spi_start_s_reg
-       (.C(CLK),
+       (.C(spi_clk),
         .CE(1'b1),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
-        .D(SPI_ip_v1_0_S00_AXI_inst_n_13),
+        .D(SPI_ip_v1_0_S00_AXI_inst_n_38),
         .Q(spi_start_s));
   FDCE spi_start_ss_reg
-       (.C(CLK),
+       (.C(spi_clk),
         .CE(1'b1),
         .CLR(SPI_ip_v1_0_S00_AXI_inst_n_1),
         .D(spi_start_s),
@@ -713,19 +725,20 @@ endmodule
 
 (* ORIG_REF_NAME = "SPI_ip_v1_0_S00_AXI" *) 
 module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
-   (s00_axi_awready,
+   (axi_awready_reg_0,
     SR,
-    s00_axi_wready,
-    s00_axi_arready,
+    axi_wready_reg_0,
+    axi_arready_reg_0,
     s00_axi_bvalid,
     s00_axi_rvalid,
     D,
-    E,
     \slv_reg0_reg[1]_0 ,
-    Q_reg,
-    \slv_reg0_reg[0]_0 ,
+    E,
     \slv_reg0_reg[1]_1 ,
-    \shift_reg_reg[22] ,
+    spi_clk,
+    SPI_SCK,
+    \slv_reg0_reg[0]_0 ,
+    \slv_reg0_reg[1]_2 ,
     s00_axi_rdata,
     clk,
     Q,
@@ -733,11 +746,12 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     \read_count_reg[3]_0 ,
     \read_count_reg[0] ,
     \FSM_sequential_cur_state_reg[0] ,
-    rstn,
-    clk_div8,
-    clk_div16,
+    \FSM_sequential_cur_state_reg[0]_0 ,
     clk_div2,
+    clk_div8,
     clk_div4,
+    clk_div16,
+    rstn,
     \axi_rdata_reg[15]_0 ,
     \shift_count_reg[4] ,
     \shift_count_reg[4]_0 ,
@@ -751,31 +765,33 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     s00_axi_wdata,
     s00_axi_araddr,
     s00_axi_wstrb);
-  output s00_axi_awready;
+  output axi_awready_reg_0;
   output [0:0]SR;
-  output s00_axi_wready;
-  output s00_axi_arready;
+  output axi_wready_reg_0;
+  output axi_arready_reg_0;
   output s00_axi_bvalid;
   output s00_axi_rvalid;
-  output [3:0]D;
+  output [23:0]D;
+  output [3:0]\slv_reg0_reg[1]_0 ;
   output [0:0]E;
-  output [0:0]\slv_reg0_reg[1]_0 ;
-  output Q_reg;
-  output [0:0]\slv_reg0_reg[0]_0 ;
   output [0:0]\slv_reg0_reg[1]_1 ;
-  output [23:0]\shift_reg_reg[22] ;
+  output spi_clk;
+  output SPI_SCK;
+  output [0:0]\slv_reg0_reg[0]_0 ;
+  output [0:0]\slv_reg0_reg[1]_2 ;
   output [31:0]s00_axi_rdata;
   input clk;
   input [1:0]Q;
   input [3:0]\read_count_reg[3] ;
   input \read_count_reg[3]_0 ;
-  input \read_count_reg[0] ;
+  input [0:0]\read_count_reg[0] ;
   input \FSM_sequential_cur_state_reg[0] ;
-  input rstn;
-  input clk_div8;
-  input clk_div16;
+  input \FSM_sequential_cur_state_reg[0]_0 ;
   input clk_div2;
+  input clk_div8;
   input clk_div4;
+  input clk_div16;
+  input rstn;
   input [15:0]\axi_rdata_reg[15]_0 ;
   input \shift_count_reg[4] ;
   input [0:0]\shift_count_reg[4]_0 ;
@@ -790,12 +806,14 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   input [1:0]s00_axi_araddr;
   input [3:0]s00_axi_wstrb;
 
-  wire [3:0]D;
+  wire [23:0]D;
   wire [3:1]DATA_WORD_0;
   wire [0:0]E;
   wire \FSM_sequential_cur_state_reg[0] ;
+  wire \FSM_sequential_cur_state_reg[0]_0 ;
   wire [1:0]Q;
-  wire Q_reg;
+  wire SPI_SCK;
+  wire SPI_SCK_INST_0_i_1_n_0;
   wire [0:0]SR;
   wire aw_en_i_1_n_0;
   wire aw_en_reg_n_0;
@@ -803,13 +821,16 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   wire \axi_araddr[2]_i_1_n_0 ;
   wire \axi_araddr[3]_i_1_n_0 ;
   wire axi_arready0;
+  wire axi_arready_reg_0;
   wire \axi_awaddr[2]_i_1_n_0 ;
   wire \axi_awaddr[3]_i_1_n_0 ;
   wire axi_awready0;
+  wire axi_awready_reg_0;
   wire axi_bvalid_i_1_n_0;
   wire [15:0]\axi_rdata_reg[15]_0 ;
   wire axi_rvalid_i_1_n_0;
   wire axi_wready0;
+  wire axi_wready_reg_0;
   wire clk;
   wire clk_div16;
   wire clk_div2;
@@ -817,16 +838,15 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   wire clk_div8;
   wire [1:0]p_0_in;
   wire [31:3]p_1_in;
-  wire \read_count_reg[0] ;
+  wire \read_count[3]_i_3_n_0 ;
+  wire [0:0]\read_count_reg[0] ;
   wire [3:0]\read_count_reg[3] ;
   wire \read_count_reg[3]_0 ;
   wire [31:0]reg_data_out;
   wire rstn;
   wire [1:0]s00_axi_araddr;
-  wire s00_axi_arready;
   wire s00_axi_arvalid;
   wire [1:0]s00_axi_awaddr;
-  wire s00_axi_awready;
   wire s00_axi_awvalid;
   wire s00_axi_bready;
   wire s00_axi_bvalid;
@@ -834,16 +854,15 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   wire s00_axi_rready;
   wire s00_axi_rvalid;
   wire [31:0]s00_axi_wdata;
-  wire s00_axi_wready;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
   wire \shift_count_reg[4] ;
   wire [0:0]\shift_count_reg[4]_0 ;
-  wire [23:0]\shift_reg_reg[22] ;
   wire [22:0]\shift_reg_reg[23] ;
   wire [0:0]\slv_reg0_reg[0]_0 ;
-  wire [0:0]\slv_reg0_reg[1]_0 ;
+  wire [3:0]\slv_reg0_reg[1]_0 ;
   wire [0:0]\slv_reg0_reg[1]_1 ;
+  wire [0:0]\slv_reg0_reg[1]_2 ;
   wire \slv_reg0_reg_n_0_[10] ;
   wire \slv_reg0_reg_n_0_[11] ;
   wire \slv_reg0_reg_n_0_[12] ;
@@ -884,6 +903,7 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   wire \slv_reg2[7]_i_1_n_0 ;
   wire slv_reg_rden__0;
   wire slv_reg_wren__0;
+  wire spi_clk;
 
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
@@ -891,31 +911,43 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     \FSM_sequential_cur_state[0]_i_1 
        (.I0(DATA_WORD_0[1]),
         .I1(\FSM_sequential_cur_state_reg[0] ),
-        .I2(\read_count_reg[0] ),
+        .I2(\FSM_sequential_cur_state_reg[0]_0 ),
         .I3(Q[1]),
         .I4(Q[0]),
-        .O(\slv_reg0_reg[1]_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \FSM_sequential_cur_state[0]_i_2 
-       (.I0(rstn),
-        .O(SR));
+        .O(\slv_reg0_reg[1]_1 ));
   LUT6 #(
-    .INIT(64'hCFCFAFA0C0C0AFA0)) 
+    .INIT(64'hFFE2CCE233E200E2)) 
+    \FSM_sequential_cur_state[1]_i_2 
+       (.I0(clk_div2),
+        .I1(DATA_WORD_0[3]),
+        .I2(clk_div8),
+        .I3(DATA_WORD_0[2]),
+        .I4(clk_div4),
+        .I5(clk_div16),
+        .O(spi_clk));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
     SPI_SCK_INST_0
-       (.I0(clk_div8),
-        .I1(clk_div16),
-        .I2(DATA_WORD_0[3]),
-        .I3(clk_div2),
-        .I4(DATA_WORD_0[2]),
-        .I5(clk_div4),
-        .O(Q_reg));
+       (.I0(SPI_SCK_INST_0_i_1_n_0),
+        .I1(Q[0]),
+        .O(SPI_SCK));
+  LUT6 #(
+    .INIT(64'h505F3030505F3F3F)) 
+    SPI_SCK_INST_0_i_1
+       (.I0(clk_div16),
+        .I1(clk_div4),
+        .I2(DATA_WORD_0[2]),
+        .I3(clk_div8),
+        .I4(DATA_WORD_0[3]),
+        .I5(clk_div2),
+        .O(SPI_SCK_INST_0_i_1_n_0));
   LUT6 #(
     .INIT(64'hF7FFC4CCC4CCC4CC)) 
     aw_en_i_1
        (.I0(s00_axi_awvalid),
         .I1(aw_en_reg_n_0),
-        .I2(s00_axi_awready),
+        .I2(axi_awready_reg_0),
         .I3(s00_axi_wvalid),
         .I4(s00_axi_bready),
         .I5(s00_axi_bvalid),
@@ -931,7 +963,7 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     \axi_araddr[2]_i_1 
        (.I0(s00_axi_araddr[0]),
         .I1(s00_axi_arvalid),
-        .I2(s00_axi_arready),
+        .I2(axi_arready_reg_0),
         .I3(axi_araddr[2]),
         .O(\axi_araddr[2]_i_1_n_0 ));
   LUT4 #(
@@ -939,7 +971,7 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     \axi_araddr[3]_i_1 
        (.I0(s00_axi_araddr[1]),
         .I1(s00_axi_arvalid),
-        .I2(s00_axi_arready),
+        .I2(axi_arready_reg_0),
         .I3(axi_araddr[3]),
         .O(\axi_araddr[3]_i_1_n_0 ));
   FDRE \axi_araddr_reg[2] 
@@ -959,20 +991,20 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     .INIT(4'h2)) 
     axi_arready_i_1
        (.I0(s00_axi_arvalid),
-        .I1(s00_axi_arready),
+        .I1(axi_arready_reg_0),
         .O(axi_arready0));
   FDRE axi_arready_reg
        (.C(clk),
         .CE(1'b1),
         .D(axi_arready0),
-        .Q(s00_axi_arready),
+        .Q(axi_arready_reg_0),
         .R(SR));
   LUT6 #(
     .INIT(64'hFBFFFFFF08000000)) 
     \axi_awaddr[2]_i_1 
        (.I0(s00_axi_awaddr[0]),
         .I1(s00_axi_wvalid),
-        .I2(s00_axi_awready),
+        .I2(axi_awready_reg_0),
         .I3(aw_en_reg_n_0),
         .I4(s00_axi_awvalid),
         .I5(p_0_in[0]),
@@ -982,7 +1014,7 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     \axi_awaddr[3]_i_1 
        (.I0(s00_axi_awaddr[1]),
         .I1(s00_axi_wvalid),
-        .I2(s00_axi_awready),
+        .I2(axi_awready_reg_0),
         .I3(aw_en_reg_n_0),
         .I4(s00_axi_awvalid),
         .I5(p_0_in[1]),
@@ -999,11 +1031,16 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
         .D(\axi_awaddr[3]_i_1_n_0 ),
         .Q(p_0_in[1]),
         .R(SR));
+  LUT1 #(
+    .INIT(2'h1)) 
+    axi_awready_i_1
+       (.I0(rstn),
+        .O(SR));
   LUT4 #(
     .INIT(16'h2000)) 
-    axi_awready_i_1
+    axi_awready_i_2
        (.I0(s00_axi_wvalid),
-        .I1(s00_axi_awready),
+        .I1(axi_awready_reg_0),
         .I2(aw_en_reg_n_0),
         .I3(s00_axi_awvalid),
         .O(axi_awready0));
@@ -1011,15 +1048,15 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
        (.C(clk),
         .CE(1'b1),
         .D(axi_awready0),
-        .Q(s00_axi_awready),
+        .Q(axi_awready_reg_0),
         .R(SR));
   LUT6 #(
     .INIT(64'h0000FFFF80008000)) 
     axi_bvalid_i_1
        (.I0(s00_axi_awvalid),
         .I1(s00_axi_wvalid),
-        .I2(s00_axi_awready),
-        .I3(s00_axi_wready),
+        .I2(axi_awready_reg_0),
+        .I3(axi_wready_reg_0),
         .I4(s00_axi_bready),
         .I5(s00_axi_bvalid),
         .O(axi_bvalid_i_1_n_0));
@@ -1529,7 +1566,7 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h08F8)) 
     axi_rvalid_i_1
-       (.I0(s00_axi_arready),
+       (.I0(axi_arready_reg_0),
         .I1(s00_axi_arvalid),
         .I2(s00_axi_rvalid),
         .I3(s00_axi_rready),
@@ -1546,262 +1583,272 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     axi_wready_i_1
        (.I0(s00_axi_awvalid),
         .I1(s00_axi_wvalid),
-        .I2(s00_axi_wready),
+        .I2(axi_wready_reg_0),
         .I3(aw_en_reg_n_0),
         .O(axi_wready0));
   FDRE axi_wready_reg
        (.C(clk),
         .CE(1'b1),
         .D(axi_wready0),
-        .Q(s00_axi_wready),
+        .Q(axi_wready_reg_0),
         .R(SR));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'h80FF)) 
     \read_count[0]_i_1 
-       (.I0(Q[0]),
-        .I1(Q[1]),
-        .I2(DATA_WORD_0[1]),
+       (.I0(DATA_WORD_0[1]),
+        .I1(Q[0]),
+        .I2(Q[1]),
         .I3(\read_count_reg[3] [0]),
-        .O(D[0]));
+        .O(\slv_reg0_reg[1]_0 [0]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hFF8080FF)) 
     \read_count[1]_i_1 
-       (.I0(DATA_WORD_0[1]),
-        .I1(Q[1]),
-        .I2(Q[0]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(DATA_WORD_0[1]),
         .I3(\read_count_reg[3] [1]),
         .I4(\read_count_reg[3] [0]),
-        .O(D[1]));
+        .O(\slv_reg0_reg[1]_0 [1]));
   LUT6 #(
     .INIT(64'hFF80FF80FF8080FF)) 
     \read_count[2]_i_1 
-       (.I0(DATA_WORD_0[1]),
-        .I1(Q[1]),
-        .I2(Q[0]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(DATA_WORD_0[1]),
         .I3(\read_count_reg[3] [2]),
         .I4(\read_count_reg[3] [0]),
         .I5(\read_count_reg[3] [1]),
-        .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'hC202)) 
+        .O(\slv_reg0_reg[1]_0 [2]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFE0000)) 
     \read_count[3]_i_1 
-       (.I0(\read_count_reg[0] ),
-        .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(DATA_WORD_0[1]),
+       (.I0(\read_count_reg[3] [2]),
+        .I1(\read_count_reg[3] [0]),
+        .I2(\read_count_reg[3] [1]),
+        .I3(\read_count_reg[3] [3]),
+        .I4(\read_count_reg[0] ),
+        .I5(\read_count[3]_i_3_n_0 ),
         .O(E));
   LUT6 #(
-    .INIT(64'hF2F2F2F2F2F2F22F)) 
+    .INIT(64'hF8F8F8F8F8F8F88F)) 
     \read_count[3]_i_2 
-       (.I0(DATA_WORD_0[1]),
-        .I1(\read_count_reg[3]_0 ),
+       (.I0(\read_count_reg[3]_0 ),
+        .I1(DATA_WORD_0[1]),
         .I2(\read_count_reg[3] [3]),
         .I3(\read_count_reg[3] [1]),
         .I4(\read_count_reg[3] [0]),
         .I5(\read_count_reg[3] [2]),
-        .O(D[3]));
+        .O(\slv_reg0_reg[1]_0 [3]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \read_count[3]_i_3 
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(DATA_WORD_0[1]),
+        .O(\read_count[3]_i_3_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
-    .INIT(16'h55C3)) 
+    .INIT(16'h7447)) 
     \shift_count[4]_i_2 
        (.I0(DATA_WORD_0[1]),
-        .I1(\shift_count_reg[4] ),
-        .I2(\shift_count_reg[4]_0 ),
-        .I3(Q[0]),
-        .O(\slv_reg0_reg[1]_1 ));
+        .I1(Q[0]),
+        .I2(\shift_count_reg[4] ),
+        .I3(\shift_count_reg[4]_0 ),
+        .O(\slv_reg0_reg[1]_2 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \shift_reg[0]_i_1 
-       (.I0(slv_reg2[0]),
+       (.I0(Q[0]),
+        .I1(slv_reg2[0]),
+        .O(D[0]));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[10]_i_1 
+       (.I0(slv_reg2[10]),
         .I1(Q[0]),
-        .O(\shift_reg_reg[22] [0]));
+        .I2(\shift_reg_reg[23] [9]),
+        .O(D[10]));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[10]_i_1 
-       (.I0(\shift_reg_reg[23] [9]),
-        .I1(Q[0]),
-        .I2(slv_reg2[10]),
-        .O(\shift_reg_reg[22] [10]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[11]_i_1 
-       (.I0(\shift_reg_reg[23] [10]),
+       (.I0(slv_reg2[11]),
         .I1(Q[0]),
-        .I2(slv_reg2[11]),
-        .O(\shift_reg_reg[22] [11]));
+        .I2(\shift_reg_reg[23] [10]),
+        .O(D[11]));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[12]_i_1 
+       (.I0(slv_reg2[12]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [11]),
+        .O(D[12]));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[12]_i_1 
-       (.I0(\shift_reg_reg[23] [11]),
-        .I1(Q[0]),
-        .I2(slv_reg2[12]),
-        .O(\shift_reg_reg[22] [12]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[13]_i_1 
-       (.I0(\shift_reg_reg[23] [12]),
+       (.I0(slv_reg2[13]),
         .I1(Q[0]),
-        .I2(slv_reg2[13]),
-        .O(\shift_reg_reg[22] [13]));
+        .I2(\shift_reg_reg[23] [12]),
+        .O(D[13]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[14]_i_1 
+       (.I0(slv_reg2[14]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [13]),
+        .O(D[14]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[14]_i_1 
-       (.I0(\shift_reg_reg[23] [13]),
-        .I1(Q[0]),
-        .I2(slv_reg2[14]),
-        .O(\shift_reg_reg[22] [14]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[15]_i_1 
-       (.I0(\shift_reg_reg[23] [14]),
+       (.I0(slv_reg2[15]),
         .I1(Q[0]),
-        .I2(slv_reg2[15]),
-        .O(\shift_reg_reg[22] [15]));
+        .I2(\shift_reg_reg[23] [14]),
+        .O(D[15]));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[16]_i_1 
+       (.I0(slv_reg1[0]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [15]),
+        .O(D[16]));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[16]_i_1 
-       (.I0(\shift_reg_reg[23] [15]),
-        .I1(Q[0]),
-        .I2(slv_reg1[0]),
-        .O(\shift_reg_reg[22] [16]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[17]_i_1 
-       (.I0(\shift_reg_reg[23] [16]),
+       (.I0(slv_reg1[1]),
         .I1(Q[0]),
-        .I2(slv_reg1[1]),
-        .O(\shift_reg_reg[22] [17]));
+        .I2(\shift_reg_reg[23] [16]),
+        .O(D[17]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[18]_i_1 
+       (.I0(slv_reg1[2]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [17]),
+        .O(D[18]));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[18]_i_1 
-       (.I0(\shift_reg_reg[23] [17]),
-        .I1(Q[0]),
-        .I2(slv_reg1[2]),
-        .O(\shift_reg_reg[22] [18]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[19]_i_1 
-       (.I0(\shift_reg_reg[23] [18]),
+       (.I0(slv_reg1[3]),
         .I1(Q[0]),
-        .I2(slv_reg1[3]),
-        .O(\shift_reg_reg[22] [19]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+        .I2(\shift_reg_reg[23] [18]),
+        .O(D[19]));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[1]_i_1 
-       (.I0(\shift_reg_reg[23] [0]),
+       (.I0(slv_reg2[1]),
         .I1(Q[0]),
-        .I2(slv_reg2[1]),
-        .O(\shift_reg_reg[22] [1]));
+        .I2(\shift_reg_reg[23] [0]),
+        .O(D[1]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[20]_i_1 
+       (.I0(slv_reg1[4]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [19]),
+        .O(D[20]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[20]_i_1 
-       (.I0(\shift_reg_reg[23] [19]),
-        .I1(Q[0]),
-        .I2(slv_reg1[4]),
-        .O(\shift_reg_reg[22] [20]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[21]_i_1 
-       (.I0(\shift_reg_reg[23] [20]),
+       (.I0(slv_reg1[5]),
         .I1(Q[0]),
-        .I2(slv_reg1[5]),
-        .O(\shift_reg_reg[22] [21]));
+        .I2(\shift_reg_reg[23] [20]),
+        .O(D[21]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[22]_i_1 
-       (.I0(\shift_reg_reg[23] [21]),
+       (.I0(slv_reg1[6]),
         .I1(Q[0]),
-        .I2(slv_reg1[6]),
-        .O(\shift_reg_reg[22] [22]));
+        .I2(\shift_reg_reg[23] [21]),
+        .O(D[22]));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hCA)) 
     \shift_reg[23]_i_1 
        (.I0(\shift_reg_reg[23] [22]),
+        .I1(DATA_WORD_0[1]),
+        .I2(Q[0]),
+        .O(D[23]));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[2]_i_1 
+       (.I0(slv_reg2[2]),
         .I1(Q[0]),
-        .I2(DATA_WORD_0[1]),
-        .O(\shift_reg_reg[22] [23]));
+        .I2(\shift_reg_reg[23] [1]),
+        .O(D[2]));
   (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[2]_i_1 
-       (.I0(\shift_reg_reg[23] [1]),
-        .I1(Q[0]),
-        .I2(slv_reg2[2]),
-        .O(\shift_reg_reg[22] [2]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[3]_i_1 
-       (.I0(\shift_reg_reg[23] [2]),
+       (.I0(slv_reg2[3]),
         .I1(Q[0]),
-        .I2(slv_reg2[3]),
-        .O(\shift_reg_reg[22] [3]));
+        .I2(\shift_reg_reg[23] [2]),
+        .O(D[3]));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[4]_i_1 
+       (.I0(slv_reg2[4]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [3]),
+        .O(D[4]));
   (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[4]_i_1 
-       (.I0(\shift_reg_reg[23] [3]),
-        .I1(Q[0]),
-        .I2(slv_reg2[4]),
-        .O(\shift_reg_reg[22] [4]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[5]_i_1 
-       (.I0(\shift_reg_reg[23] [4]),
+       (.I0(slv_reg2[5]),
         .I1(Q[0]),
-        .I2(slv_reg2[5]),
-        .O(\shift_reg_reg[22] [5]));
+        .I2(\shift_reg_reg[23] [4]),
+        .O(D[5]));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[6]_i_1 
+       (.I0(slv_reg2[6]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [5]),
+        .O(D[6]));
   (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[6]_i_1 
-       (.I0(\shift_reg_reg[23] [5]),
-        .I1(Q[0]),
-        .I2(slv_reg2[6]),
-        .O(\shift_reg_reg[22] [6]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[7]_i_1 
-       (.I0(\shift_reg_reg[23] [6]),
+       (.I0(slv_reg2[7]),
         .I1(Q[0]),
-        .I2(slv_reg2[7]),
-        .O(\shift_reg_reg[22] [7]));
+        .I2(\shift_reg_reg[23] [6]),
+        .O(D[7]));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \shift_reg[8]_i_1 
+       (.I0(slv_reg2[8]),
+        .I1(Q[0]),
+        .I2(\shift_reg_reg[23] [7]),
+        .O(D[8]));
   (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
-    .INIT(8'hE2)) 
-    \shift_reg[8]_i_1 
-       (.I0(\shift_reg_reg[23] [7]),
-        .I1(Q[0]),
-        .I2(slv_reg2[8]),
-        .O(\shift_reg_reg[22] [8]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT3 #(
-    .INIT(8'hE2)) 
+    .INIT(8'hB8)) 
     \shift_reg[9]_i_1 
-       (.I0(\shift_reg_reg[23] [8]),
+       (.I0(slv_reg2[9]),
         .I1(Q[0]),
-        .I2(slv_reg2[9]),
-        .O(\shift_reg_reg[22] [9]));
+        .I2(\shift_reg_reg[23] [8]),
+        .O(D[9]));
   LUT4 #(
     .INIT(16'h0200)) 
     \slv_reg0[15]_i_1 
@@ -1830,8 +1877,8 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
   LUT4 #(
     .INIT(16'h8000)) 
     \slv_reg0[31]_i_2 
-       (.I0(s00_axi_wready),
-        .I1(s00_axi_awready),
+       (.I0(axi_wready_reg_0),
+        .I1(axi_awready_reg_0),
         .I2(s00_axi_awvalid),
         .I3(s00_axi_wvalid),
         .O(slv_reg_wren__0));
@@ -2488,7 +2535,7 @@ module design_2_SPI_ip_0_0_SPI_ip_v1_0_S00_AXI
     slv_reg_rden
        (.I0(s00_axi_arvalid),
         .I1(s00_axi_rvalid),
-        .I2(s00_axi_arready),
+        .I2(axi_arready_reg_0),
         .O(slv_reg_rden__0));
 endmodule
 
@@ -2555,21 +2602,21 @@ module design_2_SPI_ip_0_0_dff_1
   input clk_div2;
   input [0:0]SR;
 
-  wire Q_i_1__0_n_0;
+  wire Q_i_1__1_n_0;
   wire [0:0]SR;
   wire clk_div2;
   wire clk_div4;
 
   LUT1 #(
     .INIT(2'h1)) 
-    Q_i_1__0
+    Q_i_1__1
        (.I0(clk_div4),
-        .O(Q_i_1__0_n_0));
+        .O(Q_i_1__1_n_0));
   FDCE Q_reg
        (.C(clk_div2),
         .CE(1'b1),
         .CLR(SR),
-        .D(Q_i_1__0_n_0),
+        .D(Q_i_1__1_n_0),
         .Q(clk_div4));
 endmodule
 
@@ -2582,21 +2629,21 @@ module design_2_SPI_ip_0_0_dff_2
   input clk_div4;
   input [0:0]SR;
 
-  wire Q_i_1__1_n_0;
+  wire Q_i_1__0_n_0;
   wire [0:0]SR;
   wire clk_div4;
   wire clk_div8;
 
   LUT1 #(
     .INIT(2'h1)) 
-    Q_i_1__1
+    Q_i_1__0
        (.I0(clk_div8),
-        .O(Q_i_1__1_n_0));
+        .O(Q_i_1__0_n_0));
   FDCE Q_reg
        (.C(clk_div4),
         .CE(1'b1),
         .CLR(SR),
-        .D(Q_i_1__1_n_0),
+        .D(Q_i_1__0_n_0),
         .Q(clk_div8));
 endmodule
 `ifndef GLBL

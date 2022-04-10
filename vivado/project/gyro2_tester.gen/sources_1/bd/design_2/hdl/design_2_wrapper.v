@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Thu Apr  7 15:18:07 2022
-//Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+//Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+//Date        : Sun Apr 10 00:32:48 2022
+//Host        : DESKTOP-H59M9G7 running 64-bit major release  (build 9200)
 //Command     : generate_target design_2_wrapper.bd
 //Design      : design_2_wrapper
 //Purpose     : IP block netlist

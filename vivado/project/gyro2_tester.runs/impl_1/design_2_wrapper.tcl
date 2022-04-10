@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper.tcl"
+  variable script "C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,31 +122,30 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
+  set_param chipscope.maxJobs 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg484-1
-  set_property board_part_repo_paths {/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/board_files/zed} [current_project]
-  set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+  set_property board_part digilentinc.com:zedboard:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.cache/wt [current_project]
-  set_property parent.project_path /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.xpr [current_project]
-  set_property ip_repo_paths /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo [current_project]
+  set_property webtalk.parent_dir C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.cache/wt [current_project]
+  set_property parent.project_path C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.xpr [current_project]
+  set_property ip_repo_paths C:/css/ngc/gyro2/gyro2tester/vivado/ip_repo [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.cache/ip [current_project]
+  set_property ip_output_repo C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/design_2_wrapper.dcp
+  add_files -quiet C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.runs/synth_1/design_2_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd
+  add_files C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc
+  read_xdc C:/css/ngc/gyro2/gyro2tester/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

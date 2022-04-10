@@ -1,4 +1,4 @@
-18:44:57 **** Build of configuration Debug for project gyro2appPrj ****
+14:55:27 **** Build of configuration Debug for project gyro2appPrj ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,19 +6,19 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 In file included from ../src/main.c:8:
-C:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/css/ngc/gyro2/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/css/ngc/gyro2/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
 ../src/main.c:239:2: warning: #warning CHECK FOR THE VALID DDR ADDRESS IN XPARAMETERS.H, DEFAULT SET TO 0x01000000 [-Wcpp]
   239 | #warning CHECK FOR THE VALID DDR ADDRESS IN XPARAMETERS.H, \
       |  ^~~~~~~
 In file included from ../src/main.c:6:
-C:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include/xparameters.h:213:40: warning: initialization of 'Xuint32 *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+C:/css/ngc/gyro2/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include/xparameters.h:213:40: warning: initialization of 'Xuint32 *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
   213 | #define XPAR_SPI_IP_0_S00_AXI_BASEADDR 0x43C10000
       |                                        ^~~~~~~~~~
 ../src/main.c:319:26: note: in expansion of macro 'XPAR_SPI_IP_0_S00_AXI_BASEADDR'
@@ -93,12 +93,12 @@ At top level:
 ' '
 'Building file: ../src/platform.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
 'Finished building: ../src/platform.c'
 ' '
 'Building target: gyro2appPrj.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bsplib/lib -o "gyro2appPrj.elf"  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/css/ngc/gyro2/gyro2tester/vitis/gyro2PfmPrj/export/gyro2PfmPrj/sw/gyro2PfmPrj/standalone_domain/bsplib/lib -o "gyro2appPrj.elf"  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: gyro2appPrj.elf'
 ' '
 'Invoking: ARM v7 Print Size'
@@ -108,5 +108,5 @@ arm-none-eabi-size gyro2appPrj.elf  |tee "gyro2appPrj.elf.size"
 'Finished building: gyro2appPrj.elf.size'
 ' '
 
-18:44:58 Build Finished (took 782ms)
+14:55:28 Build Finished (took 1s.735ms)
 

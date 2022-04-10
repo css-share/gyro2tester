@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Wed Apr  6 17:15:30 2022
-// Host        : xsjl20347 running 64-bit CentOS Linux release 7.4.1708 (Core)
+// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+// Date        : Tue Apr  5 18:18:31 2022
+// Host        : AsusP8 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top design_2_smartconnect_0_0 -prefix
 //               design_2_smartconnect_0_0_ design_2_smartconnect_0_0_stub.v
 // Design      : design_2_smartconnect_0_0
