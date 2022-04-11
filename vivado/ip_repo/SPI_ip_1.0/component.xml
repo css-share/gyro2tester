@@ -857,11 +857,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>axi4_pl_SPI_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>17</xilinx:coreRevision>
+      <xilinx:coreRevision>18</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:user:SPI_ip:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2022-04-07T21:33:54Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2022-04-07T22:16:37Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:SPI_ip:1.0_ARCHIVE_LOCATION">c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="xilinx.com:user:axi4_pl_SPI_ip:1.0_ARCHIVE_LOCATION">c:/Docs/gyro_tester_gold/ip_repo/SPI_ip_1.0</xilinx:tag>
@@ -933,6 +933,11 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@1fdcb5a9_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@7af6d855_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@74a3ca4a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70470f14_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a6d3cb4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25250d40_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e680c85_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27bfe5c4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

@@ -1231,7 +1231,7 @@
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHEID">498f014193ed91c8</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHCL">$Change: 3358895 $</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHCRC">f75862a6</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHRUNTIME">94</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHRUNTIME">43</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCONTEXT">IP_Unknown</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">26</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.MANAGED">TRUE</spirit:configurableElementValue>

@@ -19,7 +19,6 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SetSlaveTready">&quot;001&quot;</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.init">&quot;000&quot;</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.ARCHITECTURE">zynq</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.BASE_BOARD_PART">em.avnet.com:zed:part0:1.4</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.DEVICE">xc7z020</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.PACKAGE">clg484</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.PREFHDL">VERILOG</spirit:configurableElementValue>
@@ -32,7 +31,7 @@
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHEID">c1d67ec2ebc0ac2f</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHCL">$Change: 3358895 $</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHCRC">e833e846</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHRUNTIME">51</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCACHESYNTHRUNTIME">68</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCONTEXT">IP_Unknown</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.MANAGED">TRUE</spirit:configurableElementValue>

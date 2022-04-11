@@ -18,18 +18,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_xl
 # IP: bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axi_dma_0_0 || ORIG_REF_NAME==design_2_axi_dma_0_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_proc_sys_reset_0_1 || ORIG_REF_NAME==design_2_proc_sys_reset_0_1} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_proc_sys_reset_0_2 || ORIG_REF_NAME==design_2_proc_sys_reset_0_2} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_processing_system7_0_0 || ORIG_REF_NAME==design_2_processing_system7_0_0} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_smartconnect_0_0 || ORIG_REF_NAME==design_2_smartconnect_0_0} -quiet] -quiet
-
 # IP: bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_BiDirChannels_0_0 || ORIG_REF_NAME==design_2_BiDirChannels_0_0} -quiet] -quiet
 
@@ -41,6 +29,18 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_Rx
 
 # IP: bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_SPI_ip_0_0 || ORIG_REF_NAME==design_2_SPI_ip_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_proc_sys_reset_0_1 || ORIG_REF_NAME==design_2_proc_sys_reset_0_1} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_proc_sys_reset_0_2 || ORIG_REF_NAME==design_2_proc_sys_reset_0_2} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_processing_system7_0_0 || ORIG_REF_NAME==design_2_processing_system7_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_smartconnect_0_0 || ORIG_REF_NAME==design_2_smartconnect_0_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_data_processor_0_0 || ORIG_REF_NAME==design_2_data_processor_0_0} -quiet] -quiet
@@ -54,4 +54,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_ax
 # IP: bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_0 || ORIG_REF_NAME==design_2_auto_pc_0} -quiet] -quiet
 
-# XDC: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc
+# XDC: /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc

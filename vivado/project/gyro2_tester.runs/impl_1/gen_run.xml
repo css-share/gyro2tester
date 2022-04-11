@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1649709742">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1649719098">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BITSTR-SYSDEF" Name="design_2_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
@@ -122,7 +122,7 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PPRDIR/../C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp">
+    <File Path="$PPRDIR/synth_1/design_2_wrapper.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -148,16 +148,18 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_SPI_ip_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_BiDirChannels_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axi_dma_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_data_processor_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_proc_sys_reset_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_proc_sys_reset_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_SPI_ip_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_smartconnect_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_BiDirChannels_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
 </GenRun>

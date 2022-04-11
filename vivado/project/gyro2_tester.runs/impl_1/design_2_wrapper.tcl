@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper.tcl"
+  variable script "/home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -126,7 +126,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
   open_checkpoint design_2_wrapper_routed.dcp
-  set_property webtalk.parent_dir /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.cache/wt [current_project]
 set_property TOP design_2_wrapper [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

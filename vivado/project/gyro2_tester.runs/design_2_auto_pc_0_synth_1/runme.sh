@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_auto_pc_0_synth_1'
+HD_PWD='/home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.runs/design_2_auto_pc_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

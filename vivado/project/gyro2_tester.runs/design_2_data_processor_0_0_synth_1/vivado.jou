@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Mon Apr 11 13:38:44 2022
-# Process ID: 21181
-# Current directory: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1
+# Start of session at: Mon Apr 11 16:12:42 2022
+# Process ID: 25533
+# Current directory: /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1
 # Command line: vivado -log design_2_data_processor_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_data_processor_0_0.tcl
-# Log file: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1/design_2_data_processor_0_0.vds
-# Journal file: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1/vivado.jou
-# Running On: xsjl24871, OS: Linux, CPU Frequency: 3500.000 MHz, CPU Physical cores: 16, Host memory: 270210 MB
+# Log file: /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1/design_2_data_processor_0_0.vds
+# Journal file: /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1/vivado.jou
+# Running On: xsjl23781, OS: Linux, CPU Frequency: 2492.187 MHz, CPU Physical cores: 16, Host memory: 134941 MB
 #-----------------------------------------------------------
 source design_2_data_processor_0_0.tcl -notrace

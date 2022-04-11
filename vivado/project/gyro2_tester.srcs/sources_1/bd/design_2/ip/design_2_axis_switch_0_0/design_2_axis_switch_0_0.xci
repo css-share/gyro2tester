@@ -808,7 +808,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TID_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.TUSER_WIDTH">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.ARCHITECTURE">zynq</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.BASE_BOARD_PART">em.avnet.com:zed:part0:1.4</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.BASE_BOARD_PART"/>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.BOARD_CONNECTIONS"/>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.DEVICE">xc7z020</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.PACKAGE">clg484</spirit:configurableElementValue>
@@ -916,12 +916,10 @@
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_CTRL_ACLK.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_CTRL_ACLK.PHASE" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_CTRL_ARESETN.POLARITY" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
-            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.DECODER_REG" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.HAS_TKEEP" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.HAS_TLAST" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.HAS_TREADY" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.HAS_TSTRB" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
-            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NUM_MI" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ROUTING_MODE" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.TDATA_NUM_BYTES" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.TDEST_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
