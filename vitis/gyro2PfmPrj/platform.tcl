@@ -19,3 +19,8 @@ platform generate
 platform active {gyro2PfmPrj}
 platform config -updatehw {C:/css/ngc/gyro2/gyro2tester/vivado/project/design_2_wrapper.xsa}
 platform generate
+platform active {gyro2PfmPrj}
+bsp reload
+platform generate -domains 
+bsp reload
+platform generate -domains 

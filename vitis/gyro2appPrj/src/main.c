@@ -321,7 +321,7 @@ Xuint32  debugWordData = 0x00000000;						//change this depending on what you wa
 
 
 
-volatile unsigned char debugType = 7;
+volatile unsigned char debugType = 8;
 
 Xuint32 u32debugWords[MAX_PKT_LEN_BYTES/4];
 Xuint32	TxBufferData[MAX_PKT_LEN_BYTES];
@@ -538,6 +538,7 @@ static void enable_dmm_mux(void);
 static void disable_Vfuse(void);
 static void clearHSCKerrorFlag(void);
 static u8 readHSCKerrorFlag(void);
+static void dataIntoDDR(void);
 
 
 
@@ -3334,13 +3335,16 @@ void read_uart_bytes(void)
 				// value to the desired FPGA address space
 				*(debugWordAddr) = debugWordData;
 			}
-			break;
 			if (debugType == 7)
 			{
 			    *(baseaddr_spi+0) = 0xabcd1234;
 			    *(baseaddr_spi+1) = 0xaa55aa55;
 			    *(baseaddr_spi+2) = 0x87654321;
 			    *(baseaddr_spi+3) = 0x12345678;
+			}
+			if (debugType == 8)
+			{
+				dataIntoDDR();
 			}
 			break;
 
@@ -4305,6 +4309,27 @@ void end_HSI_capture_duration_pulse(void){
 	XGpioPs_WritePin(&MIO_gpio, HSI_RX_CAPTURE_PULSE_OUTPUT_PIN, 0);
 }
 //------------------------------------------------------------
+
+void testFPGA(void){
+	//run a sequence of reads/writes to test FPGA operation
+
+	//
+}
+//------------------------------------------------------------
+
+void dataIntoDDR(void){
+	//write 96k bytes of data directly into DDR memory
+	int	byteIndex;
+	int numBytesToWrite = 98400;	// (3*16k)words = (3*32k)bytes = (96k)bytes =  (98,304)bytes = 0x18000
+	int startValue = 0x55;
+
+	u8* dmaTxBuffer = (u8 *) (TX_BUFFER_BASE);
+
+	for (byteIndex=0; byteIndex<numBytesToWrite; byteIndex++){
+		dmaTxBuffer[byteIndex] = (startValue+byteIndex) && 0xFF;
+	}
+
+}
 
 // -----------------------------------------------------------
 int main() {
