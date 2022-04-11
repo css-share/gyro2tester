@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Thu Apr  7 14:49:13 2022
-# Process ID: 8987
-# Current directory: /home/cdickins/reuse/gyro2tester-main/vivado
+# Start of session at: Mon Apr 11 10:18:15 2022
+# Process ID: 12469
+# Current directory: /home/cdickins/reuse/gyro2tester-main_v1/vivado
 # Command line: vivado
-# Log file: /home/cdickins/reuse/gyro2tester-main/vivado/vivado.log
-# Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/vivado.jou
+# Log file: /home/cdickins/reuse/gyro2tester-main_v1/vivado/vivado.log
+# Journal file: /home/cdickins/reuse/gyro2tester-main_v1/vivado/vivado.jou
 # Running On: xsjcdickins40x, OS: Linux, CPU Frequency: 2600.248 MHz, CPU Physical cores: 8, Host memory: 33556 MB
 #-----------------------------------------------------------
 start_gui
@@ -19,58 +19,34 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 av
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
-open_project /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.xpr
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp'.
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+open_project /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.xpr
+INFO: [Project 1-313] Project file moved from '/home/cdickins/reuse/gyro2tester-main/vivado/project' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file '/home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp', nor could it be found using path '/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp'.
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
 Scanning sources...
 Finished scanning sources
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main_v1/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
-open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 8084.441 ; gain = 118.324 ; free physical = 21359 ; free virtual = 28876
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 8056.664 ; gain = 111.320 ; free physical = 24178 ; free virtual = 28938
 update_compile_order -fileset sources_1
-reset_run synth_1
-INFO: [Project 1-1161] Replacing file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp with file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/design_2_wrapper.dcp
-launch_runs synth_1 -cluster_configuration lsf
-ERROR: [Vivado 12-3280] Incremental checkpoint file '/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp' set on run 'synth_1' does not exist.
-set_property AUTO_INCREMENTAL_CHECKPOINT 0 [get_runs synth_1]
-INFO: [Vivado 12-7078] The incremental_compile property on the run reflects the DCP used to generate the current run results. If you do not want to use "/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp" for future runs, please clear the incremental_compile DCP run property.
-launch_runs synth_1 -cluster_configuration lsf
-ERROR: [Vivado 12-3280] Incremental checkpoint file '/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp' set on run 'synth_1' does not exist.
-set_property AUTO_INCREMENTAL_CHECKPOINT 1 [get_runs synth_1]
-ERROR: [Runs 36-527] DCP does not exist: /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
-set_property AUTO_INCREMENTAL_CHECKPOINT.DIRECTORY /home/cdickins/reuse/gyro2tester-main/vivado/project [get_runs synth_1]
-launch_runs synth_1 -cluster_configuration lsf
-ERROR: [Vivado 12-3280] Incremental checkpoint file '/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp' set on run 'synth_1' does not exist.
 set_property AUTO_INCREMENTAL_CHECKPOINT 0 [get_runs synth_1]
 INFO: [Vivado 12-7078] The incremental_compile property on the run reflects the DCP used to generate the current run results. If you do not want to use "/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp" for future runs, please clear the incremental_compile DCP run property.
 set_property incremental_checkpoint {} [get_runs synth_1]
 launch_runs synth_1 -cluster_configuration lsf
-[Thu Apr  7 15:02:34 2022] Launched synth_1...
-Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/runme.log
-launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 8363.574 ; gain = 0.000 ; free physical = 19057 ; free virtual = 26357
-launch_runs impl_1 -cluster_configuration lsf
-[Thu Apr  7 15:04:32 2022] Launched impl_1...
-Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4 -cluster_configuration lsf
-[Thu Apr  7 15:08:44 2022] Launched impl_1...
-Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.log
-set_property AUTO_INCREMENTAL_CHECKPOINT 1 [get_runs synth_1]
-set_property AUTO_INCREMENTAL_CHECKPOINT.DIRECTORY /home/cdickins/reuse/gyro2tester-main/vivado/project/synth_1 [get_runs synth_1]
-reset_run synth_1
-INFO: [Project 1-1160] Copying file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/design_2_wrapper.dcp to /home/cdickins/reuse/gyro2tester-main/vivado/project/synth_1 and adding it to utils fileset
-open_bd_design {/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd}
-Reading block design file </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd>...
+[Mon Apr 11 10:20:27 2022] Launched design_2_SPI_ip_0_0_synth_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_SPI_ip_0_0_synth_1/runme.log
+[Mon Apr 11 10:20:28 2022] Launched synth_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 8359.812 ; gain = 14.004 ; free physical = 21814 ; free virtual = 26686
+open_bd_design {/home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd}
+Reading block design file </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd>...
 Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - AXI_Register_Demux
 Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
 Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
@@ -86,89 +62,77 @@ Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - clk_reset_
 Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
 Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
 Adding component instance block -- xilinx.com:user:BiDirChannels:1.0 - BiDirChannels_0
+Adding component instance block -- user.org:user:axis_stream_txfifo:2.0 - TxFIFO
 Adding component instance block -- xilinx.com:user:axis_stream_fifo:1.0 - RxFIFO
 Adding component instance block -- xilinx.com:user:axi4_pl_SPI_ip:1.0 - SPI_ip_0
-Adding component instance block -- user.org:user:axis_stream_txfifo:2.0 - TxFIFO
-Successfully read diagram <design_2> from block design file </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd>
-open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 8363.574 ; gain = 0.000 ; free physical = 18911 ; free virtual = 26208
-ipx::edit_ip_in_project -upgrade true -name axis_stream_fifo_v1_0_project -directory /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.tmp/axis_stream_fifo_v1_0_project /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0/component.xml
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 9740.945 ; gain = 0.000 ; free physical = 18805 ; free virtual = 26102
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
-INFO: [IP_Flow 19-795] Syncing license key meta-data
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 9740.945 ; gain = 0.000 ; free physical = 18770 ; free virtual = 26068
+Successfully read diagram <design_2> from block design file </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 8400.953 ; gain = 0.000 ; free physical = 21338 ; free virtual = 26473
+add_files -norecurse /home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo/common/data_processor.sv
 update_compile_order -fileset sources_1
-set_property core_revision 56 [ipx::current_core]
-ipx::update_source_project_archive -component [ipx::current_core]
-ipx::update_checksums [ipx::current_core]
-ipx::check_integrity [ipx::current_core]
-INFO: [IP_Flow 19-7067] Note that bus interface 'txclk' has a fixed FREQ_HZ of '50000000'. This value will be respected whenever this IP is instantiated in IP Integrator.
-WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
-WARNING: [IP_Flow 19-3157] Bus Interface 'tx_rstn': Bus parameter POLARITY is ACTIVE_LOW but port 'tx_rstn' is not *resetn - please double check the POLARITY setting.
-INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
-INFO: [IP_Flow 19-2187] The Product Guide file is missing.
-INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
-ipx::save_core [ipx::current_core]
-ipx::move_temp_component_back -component [ipx::current_core]
-close_project -delete
-update_ip_catalog -rebuild -repo_path /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo
-INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'
-ipx::edit_ip_in_project -upgrade true -name axi4_pl_SPI_ip_v1_0_project -directory /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.tmp/axi4_pl_SPI_ip_v1_0_project /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0/component.xml
+update_files -from_files /home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo/common/data_processor.v -to_files /home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo/common/data_processor.sv -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo/common/data_processor.sv' with file '/home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo/common/data_processor.v'.
+set_property file_type Verilog [get_files  /home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo/common/data_processor.v]
+create_bd_cell -type module -reference data_processor data_processor_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'm_axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
-INFO: [IP_Flow 19-795] Syncing license key meta-data
-ipx::edit_ip_in_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 9798.684 ; gain = 0.000 ; free physical = 18829 ; free virtual = 26126
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main_v1/vivado/ip_repo'.
+set_property location {2 1046 -157} [get_bd_cells data_processor_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0
+endgroup
+set_property -dict [list CONFIG.NUM_MI {2}] [get_bd_cells smartconnect_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 axis_switch_0
+endgroup
+set_property location {2 953 11} [get_bd_cells axis_switch_0]
+set_property location {3 1185 11} [get_bd_cells axis_switch_0]
+set_property -dict [list CONFIG.NUM_MI {1} CONFIG.ROUTING_MODE {1} CONFIG.DECODER_REG {0}] [get_bd_cells axis_switch_0]
+set_property location {4 1961 -180} [get_bd_cells axis_switch_0]
+set_property location {4 1877 -214} [get_bd_cells axis_switch_0]
+delete_bd_objs [get_bd_intf_nets axis_stream_fifo_0_M00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins data_processor_0/m_axis] [get_bd_intf_pins axis_switch_0/S00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_0/S01_AXIS] [get_bd_intf_pins RxFIFO/M00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_0/M00_AXIS] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_0/S_AXI_CTRL] -boundary_type upper [get_bd_intf_pins AXI_Register_Demux/M00_AXI]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axis_switch:1.1 axis_switch_1
+endgroup
+set_property location {5 1888 32} [get_bd_cells axis_switch_1]
+set_property -dict [list CONFIG.NUM_SI {1} CONFIG.NUM_MI {2} CONFIG.ROUTING_MODE {1} CONFIG.DECODER_REG {1}] [get_bd_cells axis_switch_1]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_1/M00_AXIS] [get_bd_intf_pins data_processor_0/s_axis]
+delete_bd_objs [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_1/M01_AXIS] [get_bd_intf_pins TxFIFO/S00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_1/S00_AXIS] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
+connect_bd_net [get_bd_pins axis_switch_0/aclk] [get_bd_pins data_processor_0/clk]
+connect_bd_net [get_bd_pins axis_switch_0/s_axi_ctrl_aclk] [get_bd_pins axis_switch_0/aclk]
+connect_bd_net [get_bd_pins axis_switch_0/aresetn] [get_bd_pins data_processor_0/reset]
+connect_bd_net [get_bd_pins axis_switch_0/s_axi_ctrl_aresetn] [get_bd_pins axis_switch_0/aresetn]
+connect_bd_intf_net [get_bd_intf_pins axis_switch_1/S_AXI_CTRL] -boundary_type upper [get_bd_intf_pins AXI_Register_Demux/M06_AXI]
+connect_bd_net [get_bd_pins data_processor_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins data_processor_0/reset] [get_bd_pins clk_reset_domain/peripheral_aresetn]
+delete_bd_objs [get_bd_cells smartconnect_0]
+connect_bd_net [get_bd_pins axis_switch_1/aresetn] [get_bd_pins clk_reset_domain/peripheral_aresetn]
+connect_bd_net [get_bd_pins axis_switch_1/s_axi_ctrl_aresetn] [get_bd_pins clk_reset_domain/peripheral_aresetn]
+connect_bd_net [get_bd_pins axis_switch_1/aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins axis_switch_1/s_axi_ctrl_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
 update_compile_order -fileset sources_1
-set_property core_revision 18 [ipx::current_core]
-ipx::update_source_project_archive -component [ipx::current_core]
-ipx::update_checksums [ipx::current_core]
-ipx::check_integrity [ipx::current_core]
-WARNING: [IP_Flow 19-3157] Bus Interface 'rstn': Bus parameter POLARITY is ACTIVE_LOW but port 'rstn' is not *resetn - please double check the POLARITY setting.
-INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
-INFO: [IP_Flow 19-2187] The Product Guide file is missing.
-INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
-ipx::save_core [ipx::current_core]
-ipx::move_temp_component_back -component [ipx::current_core]
-close_project -delete
-update_ip_catalog -rebuild -repo_path /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo
-INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'
-report_ip_status -name ip_status 
-upgrade_ip [get_ips  {design_2_RxFIFO_0 design_2_SPI_ip_0_0}] -log ip_upgrade.log
-Upgrading '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd'
-INFO: [IP_Flow 19-3422] Upgraded design_2_RxFIFO_0 (axis_stream_fifo_v1.0 1.0) from revision 54 to revision 56
-INFO: [IP_Flow 19-3422] Upgraded design_2_SPI_ip_0_0 (axi4_pl_SPI_ip_v1.0 1.0) from revision 15 to revision 18
-Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
-Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
-INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log'.
-export_ip_user_files -of_objects [get_ips {design_2_RxFIFO_0 design_2_SPI_ip_0_0}] -no_script -sync -force -quiet
-report_ip_status -name ip_status 
-launch_runs impl_1 -to_step write_bitstream -jobs 4 -cluster_configuration lsf
-WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/AXI_Register_Demux/M06_AXI'. Please either complete or remove this path to resolve.
-WARNING: [BD 41-2670] Found an incomplete address path from address space '/processing_system7_0/Data' to master interface '/AXI_Register_Demux/M00_AXI'. Please either complete or remove this path to resolve.
-WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -addressables -of_objects /AXI_Register_Demux/xbar/M00_AXI'
-WARNING: [BD 5-699] No address segments matched 'get_bd_addr_segs -addressables -of_objects /AXI_Register_Demux/xbar/M06_AXI'
+assign_bd_address -target_address_space /processing_system7_0/Data [get_bd_addr_segs axis_switch_0/S_AXI_CTRL/Reg] -force
+Slave segment '/axis_switch_0/S_AXI_CTRL/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x43C0_0000 [ 64K ]>.
+assign_bd_address -target_address_space /processing_system7_0/Data [get_bd_addr_segs axis_switch_1/S_AXI_CTRL/Reg] -force
+Slave segment '/axis_switch_1/S_AXI_CTRL/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x43C5_0000 [ 64K ]>.
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+reset_run synth_1
+launch_runs synth_1 -cluster_configuration lsf
 INFO: [xilinx.com:ip:smartconnect:1.0-1] design_2_smartconnect_0_0: SmartConnect design_2_smartconnect_0_0 is in High-performance Mode.
 INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
 CRITICAL WARNING: [BD 41-1761] Reset pin '/BiDirChannels_0/tx_rstn' is found to be associated with multiple clock pins, which are not compatible w.r.t frequency, phase and clock-domain. This may prevent design from functioning correctly. Please ensure same reset pin is either not associated with different clock pins or all associated clock pins are driven by same or compatible clock source(s). List of associated clock pins:
@@ -177,43 +141,43 @@ CRITICAL WARNING: [BD 41-1761] Reset pin '/BiDirChannels_0/tx_rstn' is found to 
 /BiDirChannels_0/MCK_N
 /BiDirChannels_0/SYNCK
 
-Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
-VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v
-VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/sim/design_2.v
-VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v
-Exporting to file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/hw_handoff/design_2_smartconnect_0_0.hwh
-Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/synth/design_2_smartconnect_0_0.hwdef
+Wrote  : </home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/sim/design_2.v
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/xbar .
+Exporting to file /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/hw_handoff/design_2_smartconnect_0_0.hwh
+Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/synth/design_2_smartconnect_0_0.hwdef
 INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block RxFIFO .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block SPI_ip_0 .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_5/design_2_auto_pc_5_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block data_processor_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0_ooc.xdc'
+WARNING: [IP_Flow 19-5378] Port width mismatch for bus parameter 'S00_AXIS.TDATA_NUM_BYTES'. Logical port width '4' and physical port width '8' do not match.
+WARNING: [IP_Flow 19-5378] Port width mismatch for bus parameter 'S01_AXIS.TDATA_NUM_BYTES'. Logical port width '4' and physical port width '8' do not match.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_switch_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0_ooc.xdc'
+WARNING: [IP_Flow 19-5378] Port width mismatch for bus parameter 'M00_AXIS.TDATA_NUM_BYTES'. Logical port width '4' and physical port width '8' do not match.
+WARNING: [IP_Flow 19-5378] Port width mismatch for bus parameter 'M01_AXIS.TDATA_NUM_BYTES'. Logical port width '4' and physical port width '8' do not match.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_switch_1 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0_ooc.xdc'
 INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/s00_couplers/auto_pc .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/m01_couplers/auto_pc .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_1/design_2_auto_pc_1_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/m02_couplers/auto_pc .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_2/design_2_auto_pc_2_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/m03_couplers/auto_pc .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_3/design_2_auto_pc_3_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/m04_couplers/auto_pc .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_4/design_2_auto_pc_4_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_Register_Demux/m05_couplers/auto_pc .
-Exporting to file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hw_handoff/design_2.hwh
-Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.hwdef
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_0, cache-ID = c32a61d99b199734; cache size = 46.201 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_3, cache-ID = c32a61d99b199734; cache size = 46.201 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_smartconnect_0_0, cache-ID = 7921f90d7fc3c1bd; cache size = 46.201 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_1, cache-ID = c32a61d99b199734; cache size = 46.201 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_2, cache-ID = c32a61d99b199734; cache size = 46.201 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_4, cache-ID = c32a61d99b199734; cache size = 46.201 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_5, cache-ID = b12bbf366ae67349; cache size = 46.201 MB.
-[Thu Apr  7 15:18:26 2022] Launched design_2_RxFIFO_0_synth_1, design_2_SPI_ip_0_0_synth_1, synth_1...
+Exporting to file /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hw_handoff/design_2.hwh
+Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_smartconnect_0_0, cache-ID = 7921f90d7fc3c1bd; cache size = 47.103 MB.
+[Mon Apr 11 13:38:33 2022] Launched design_2_xbar_0_synth_1, design_2_auto_pc_0_synth_1, design_2_axis_switch_1_0_synth_1, design_2_axis_switch_0_0_synth_1, design_2_data_processor_0_0_synth_1...
 Run output will be captured here:
-design_2_RxFIFO_0_synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_RxFIFO_0_synth_1/runme.log
-design_2_SPI_ip_0_0_synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_SPI_ip_0_0_synth_1/runme.log
-synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/runme.log
-[Thu Apr  7 15:18:26 2022] Launched impl_1...
-Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:55 ; elapsed = 00:01:17 . Memory (MB): peak = 10081.691 ; gain = 199.816 ; free physical = 18572 ; free virtual = 25837
+design_2_xbar_0_synth_1: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_xbar_0_synth_1/runme.log
+design_2_auto_pc_0_synth_1: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_auto_pc_0_synth_1/runme.log
+design_2_axis_switch_1_0_synth_1: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_axis_switch_1_0_synth_1/runme.log
+design_2_axis_switch_0_0_synth_1: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_axis_switch_0_0_synth_1/runme.log
+design_2_data_processor_0_0_synth_1: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/design_2_data_processor_0_0_synth_1/runme.log
+[Mon Apr 11 13:38:33 2022] Launched synth_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:53 ; elapsed = 00:01:12 . Memory (MB): peak = 10300.207 ; gain = 120.898 ; free physical = 18815 ; free virtual = 24980
+launch_runs impl_1 -cluster_configuration lsf
+[Mon Apr 11 13:42:23 2022] Launched impl_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4 -cluster_configuration lsf
+[Mon Apr 11 13:45:49 2022] Launched impl_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.runs/impl_1/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Apr  7 15:30:53 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 11 15:28:54 2022...

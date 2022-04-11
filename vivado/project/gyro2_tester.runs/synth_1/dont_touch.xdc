@@ -33,31 +33,25 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_sm
 # IP: bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_BiDirChannels_0_0 || ORIG_REF_NAME==design_2_BiDirChannels_0_0} -quiet] -quiet
 
+# IP: bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_stream_txfifo_0_2 || ORIG_REF_NAME==design_2_axis_stream_txfifo_0_2} -quiet] -quiet
+
 # IP: bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_RxFIFO_0 || ORIG_REF_NAME==design_2_RxFIFO_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_SPI_ip_0_0 || ORIG_REF_NAME==design_2_SPI_ip_0_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_stream_txfifo_0_2 || ORIG_REF_NAME==design_2_axis_stream_txfifo_0_2} -quiet] -quiet
+# IP: bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_data_processor_0_0 || ORIG_REF_NAME==design_2_data_processor_0_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_auto_pc_5/design_2_auto_pc_5.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_5 || ORIG_REF_NAME==design_2_auto_pc_5} -quiet] -quiet
+# IP: bd/design_2/ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_switch_0_0 || ORIG_REF_NAME==design_2_axis_switch_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_switch_1_0 || ORIG_REF_NAME==design_2_axis_switch_1_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_0 || ORIG_REF_NAME==design_2_auto_pc_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_auto_pc_1/design_2_auto_pc_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_1 || ORIG_REF_NAME==design_2_auto_pc_1} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_auto_pc_2/design_2_auto_pc_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_2 || ORIG_REF_NAME==design_2_auto_pc_2} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_auto_pc_3/design_2_auto_pc_3.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_3 || ORIG_REF_NAME==design_2_auto_pc_3} -quiet] -quiet
-
-# IP: bd/design_2/ip/design_2_auto_pc_4/design_2_auto_pc_4.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_4 || ORIG_REF_NAME==design_2_auto_pc_4} -quiet] -quiet
-
-# XDC: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc
+# XDC: /home/cdickins/reuse/gyro2tester-main_v1/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc

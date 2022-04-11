@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:axi4_pl_SPI_ip:1.0
-// IP Revision: 18
+// IP Revision: 17
 
 `timescale 1ns/1ps
 

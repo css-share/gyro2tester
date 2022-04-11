@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Thu Apr  7 15:23:07 2022
-| Host         : xsjl23781 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+| Date         : Mon Apr 11 13:42:09 2022
+| Host         : xsjle190087 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 | Command      : report_utilization -file design_2_wrapper_utilization_synth.rpt -pb design_2_wrapper_utilization_synth.pb
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -163,13 +163,11 @@ Table of Contents
 | design_2_processing_system7_0_0 |    1 |
 | design_2_proc_sys_reset_0_2     |    1 |
 | design_2_proc_sys_reset_0_1     |    1 |
+| design_2_data_processor_0_0     |    1 |
+| design_2_axis_switch_1_0        |    1 |
+| design_2_axis_switch_0_0        |    1 |
 | design_2_axis_stream_txfifo_0_2 |    1 |
 | design_2_axi_dma_0_0            |    1 |
-| design_2_auto_pc_5              |    1 |
-| design_2_auto_pc_4              |    1 |
-| design_2_auto_pc_3              |    1 |
-| design_2_auto_pc_2              |    1 |
-| design_2_auto_pc_1              |    1 |
 | design_2_auto_pc_0              |    1 |
 | design_2_SPI_ip_0_0             |    1 |
 | design_2_RxFIFO_0               |    1 |

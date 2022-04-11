@@ -1191,8 +1191,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>axis_stream_fifo_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>56</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-04-07T22:16:00Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>55</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-04-07T21:24:17Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:axis_stream_fifo:1.0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2d0e308_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
@@ -1300,11 +1300,6 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@37932b22_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@27709f0f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@a4537d6_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.df@4c7e874f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.df@3b2bd0bc_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.df@6e64f519_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.df@52f39c3e_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.df@78368727_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
