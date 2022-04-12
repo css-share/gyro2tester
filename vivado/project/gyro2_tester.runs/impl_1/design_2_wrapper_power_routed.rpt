@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Mon Apr 11 16:21:09 2022
-| Host             : xsjl20349 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date             : Mon Apr 11 21:22:08 2022
+| Host             : AsusP8 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_2_wrapper_power_routed.rpt -pb design_2_wrapper_power_summary_routed.pb -rpx design_2_wrapper_power_routed.rpx
 | Design           : design_2_wrapper
 | Device           : xc7z020clg484-1
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.024 |        3 |       --- |             --- |
-| Slice Logic              |     0.011 |    15068 |       --- |             --- |
-|   LUT as Logic           |     0.009 |     4412 |     53200 |            8.29 |
+| Slice Logic              |     0.011 |    15032 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     4406 |     53200 |            8.28 |
 |   LUT as Distributed RAM |    <0.001 |      454 |     17400 |            2.61 |
-|   Register               |    <0.001 |     7329 |    106400 |            6.89 |
+|   Register               |    <0.001 |     7297 |    106400 |            6.86 |
 |   CARRY4                 |    <0.001 |      138 |     13300 |            1.04 |
 |   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
 |   F7/F8 Muxes            |    <0.001 |        1 |     53200 |           <0.01 |
 |   LUT as Shift Register  |    <0.001 |      183 |     17400 |            1.05 |
 |   Others                 |     0.000 |      673 |       --- |             --- |
-| Signals                  |     0.019 |    10353 |       --- |             --- |
+| Signals                  |     0.019 |    10313 |       --- |             --- |
 | Block RAM                |     0.058 |       35 |       140 |           25.00 |
 | I/O                      |     0.006 |       11 |       200 |            5.50 |
 | PS7                      |     1.533 |        1 |       --- |             --- |
@@ -155,7 +155,7 @@ Table of Contents
 +--------------------------+-----------+
 | design_2_wrapper         |     1.651 |
 |   design_2_i             |     1.645 |
-|     AXI_Register_Demux   |     0.004 |
+|     AXI_Register_Demux   |     0.005 |
 |       s00_couplers       |     0.003 |
 |       xbar               |     0.001 |
 |     BiDirChannels_0      |     0.001 |
@@ -164,8 +164,8 @@ Table of Contents
 |       inst               |     0.070 |
 |     SPI_ip_0             |     0.001 |
 |       inst               |     0.001 |
-|     axi_dma_0            |     0.007 |
-|       U0                 |     0.007 |
+|     axi_dma_0            |     0.008 |
+|       U0                 |     0.008 |
 |     axi_smc              |     0.022 |
 |       inst               |     0.022 |
 |     axis_switch_0        |     0.001 |

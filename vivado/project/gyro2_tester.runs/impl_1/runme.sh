@@ -6,10 +6,14 @@
 # Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 # 
 
+echo "This script was generated under a different operating system."
+echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executing this script"
+exit
+
 if [ -z "$PATH" ]; then
-  PATH=/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vitis/2021.2/bin:/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/ids_lite/ISE/bin/lin64:/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/bin
+  PATH=C:/Xilinx/Vitis/2021.2/bin;C:/Xilinx/Vivado/2021.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2021.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2021.2/bin
 else
-  PATH=/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vitis/2021.2/bin:/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/ids_lite/ISE/bin/lin64:/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/bin:$PATH
+  PATH=C:/Xilinx/Vitis/2021.2/bin;C:/Xilinx/Vivado/2021.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2021.2/ids_lite/ISE/lib/nt64:C:/Xilinx/Vivado/2021.2/bin:$PATH
 fi
 export PATH
 
@@ -20,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.runs/impl_1'
+HD_PWD='C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log design_2_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source design_2_wrapper.tcl -notrace
 
 

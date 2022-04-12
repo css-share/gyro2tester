@@ -14,3 +14,53 @@ timestamp=[2022-04-07 18:31:10], mode=WORKBENCH_START, duration=0:00:07.150, dur
 timestamp=[2022-04-07 18:31:10], mode=WORKBENCH_UI_INIT, duration=0:00:00.935, duration_ms=935, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,gyro2PfmPrj,gyro2appPrj,gyro2appPrj_system}
 timestamp=[2022-04-07 18:31:11], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.066, duration_ms=66, data={}
 timestamp=[2022-04-07 18:33:41], mode=PLATFORM_GENERATION, duration=0:00:09.304, duration_ms=9304, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 19:49:05], mode=WORKBENCH_START, duration=0:00:07.804, duration_ms=7804, data={}
+timestamp=[2022-04-11 19:49:06], mode=WORKBENCH_UI_INIT, duration=0:00:00.762, duration_ms=762, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,gyro2PfmPrj,gyro2appPrj,gyro2appPrj_system}
+timestamp=[2022-04-11 19:49:06], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.028, duration_ms=28, data={}
+timestamp=[2022-04-11 19:49:34], mode=PLATFORM_GENERATION, duration=0:00:16.777, duration_ms=16777, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 19:50:17], mode=PLATFORM_GENERATION, duration=0:00:05.070, duration_ms=5070, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:08:54], mode=PLATFORM_GENERATION, duration=0:00:15.418, duration_ms=15418, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:11:02], mode=PLATFORM_GENERATION, duration=0:00:17.263, duration_ms=17263, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:15:17], mode=PLATFORM_GENERATION, duration=0:00:04.398, duration_ms=4398, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:16:27], mode=PLATFORM_GENERATION, duration=0:00:04.279, duration_ms=4279, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:17:31], mode=PLATFORM_GENERATION, duration=0:00:04.349, duration_ms=4349, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:18:56], mode=PLATFORM_GENERATION, duration=0:00:04.879, duration_ms=4879, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:19:55], mode=PLATFORM_GENERATION, duration=0:00:03.861, duration_ms=3861, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:22:08], mode=PLATFORM_GENERATION, duration=0:00:08.586, duration_ms=8586, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:23:28], mode=PLATFORM_GENERATION, duration=0:00:10.427, duration_ms=10427, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 20:51:23], mode=WORKBENCH_START, duration=0:00:08.832, duration_ms=8832, data={}
+timestamp=[2022-04-11 20:51:24], mode=WORKBENCH_UI_INIT, duration=0:00:00.811, duration_ms=811, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,gyro2PfmPrj,gyro2appPrj,gyro2appPrj_system}
+timestamp=[2022-04-11 20:51:24], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.054, duration_ms=54, data={}
+timestamp=[2022-04-11 20:54:32], mode=BUILD, duration=0:00:01.304, duration_ms=1304, data={name=gyro2appPrj, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 20:55:01], mode=BUILD, duration=0:00:00.215, duration_ms=215, data={name=gyro2appPrj, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 21:25:37], mode=WORKBENCH_START, duration=0:00:07.891, duration_ms=7891, data={}
+timestamp=[2022-04-11 21:25:38], mode=WORKBENCH_UI_INIT, duration=0:00:01.060, duration_ms=1060, data={editors_count=1, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,gyro2PfmPrj,gyro2appPrj,gyro2appPrj_system}
+timestamp=[2022-04-11 21:25:38], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.337, duration_ms=337, data={}
+timestamp=[2022-04-11 21:27:20], mode=PLATFORM_GENERATION, duration=0:00:02.691, duration_ms=2691, data={name=gyro2PfmPrj}
+timestamp=[2022-04-11 21:27:48], mode=BUILD, duration=0:00:00.330, duration_ms=330, data={name=gyro2appPrj, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 21:33:52], mode=PLATFORM_CREATION, duration=0:00:19.620, duration_ms=19620, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2022-04-11 21:34:22], mode=PLATFORM_GENERATION, duration=0:00:06.153, duration_ms=6153, data={name=newPlatform}
+timestamp=[2022-04-11 21:38:16], mode=PLATFORM_GENERATION, duration=0:00:15.335, duration_ms=15335, data={name=newPlatform}
+timestamp=[2022-04-11 21:38:56], mode=BUILD, duration=0:00:00.195, duration_ms=195, data={name=gyro2appPrj, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 21:41:53], mode=APP_CREATION, duration=0:00:08.622, duration_ms=8622, data={name=newGyro2App, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=newPlatform, application_type=application}
+timestamp=[2022-04-11 21:42:16], mode=BUILD, duration=0:00:00.954, duration_ms=954, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 21:43:30], mode=BUILD, duration=0:00:00.250, duration_ms=250, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:23:46], mode=BUILD, duration=0:00:00.653, duration_ms=653, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:27:32], mode=BUILD, duration=0:00:00.602, duration_ms=602, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:31:07], mode=BUILD, duration=0:00:00.860, duration_ms=860, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:31:52], mode=BUILD, duration=0:00:00.812, duration_ms=812, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:32:35], mode=BUILD, duration=0:00:00.243, duration_ms=243, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:37:53], mode=BUILD, duration=0:00:00.802, duration_ms=802, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:38:03], mode=BUILD, duration=0:00:00.243, duration_ms=243, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 22:39:51], mode=PLATFORM_GENERATION, duration=0:00:04.674, duration_ms=4674, data={name=newPlatform}
+timestamp=[2022-04-11 22:39:51], mode=BUILD, duration=0:00:00.138, duration_ms=138, data={name=newGyro2App, configuration=Debug, clean_build=true}
+timestamp=[2022-04-11 22:42:07], mode=PLATFORM_GENERATION, duration=0:00:15.036, duration_ms=15036, data={name=newPlatform}
+timestamp=[2022-04-11 22:42:09], mode=BUILD, duration=0:00:01.430, duration_ms=1430, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 23:00:12], mode=BUILD, duration=0:00:00.308, duration_ms=308, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 23:11:09], mode=BUILD, duration=0:00:00.300, duration_ms=300, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 23:14:46], mode=BUILD, duration=0:00:00.544, duration_ms=544, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 23:17:07], mode=BUILD, duration=0:00:00.148, duration_ms=148, data={name=newGyro2App, configuration=Debug, clean_build=true}
+timestamp=[2022-04-11 23:17:08], mode=BUILD, duration=0:00:00.799, duration_ms=799, data={name=newGyro2App, configuration=Debug, clean_build=false}
+timestamp=[2022-04-11 23:21:01], mode=WORKBENCH_START, duration=0:00:08.636, duration_ms=8636, data={}
+timestamp=[2022-04-11 23:21:01], mode=WORKBENCH_UI_INIT, duration=0:00:00.568, duration_ms=568, data={editors_count=0, platform_editors_count=0, projects_count=6, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,gyro2appPrj,gyro2appPrj_system,newGyro2App,newGyro2App_system,newPlatform}
+timestamp=[2022-04-11 23:21:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.055, duration_ms=55, data={}

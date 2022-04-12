@@ -1,0 +1,10 @@
+00:29:51 **** Incremental Build of configuration Release for project example_dma_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 43391 C:/Xilinx_projects/gyro2tester/vitis_v2/design_2_wrapper/export/design_2_wrapper/design_2_wrapper.xpfm standalone_ps7_cortexa9_0 C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma_system/Release/system.bif
+sdcard_gen --xpfm C:/Xilinx_projects/gyro2tester/vitis_v2/design_2_wrapper/export/design_2_wrapper/design_2_wrapper.xpfm --sys_config design_2_wrapper --bif C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma_system/Release/system.bif --bitstream C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma/_ide/bitstream/design_2_wrapper.bit --elf C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma/Release/example_dma.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma/_ide/bitstream/design_2_wrapper.bit
+Running C:/Xilinx/Vitis/2021.2/bin/bootgen  -image C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma_system/Release/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+00:29:56 Build Finished (took 5s.187ms)
+

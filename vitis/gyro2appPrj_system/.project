@@ -3,7 +3,7 @@
 	<name>gyro2appPrj_system</name>
 	<comment></comment>
 	<projects>
-		<project>gyro2appPrj</project>
+		<project>newPlatform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -3,7 +3,7 @@
 	<name>gyro2appPrj</name>
 	<comment>Created by Vitis v2021.2</comment>
 	<projects>
-		<project>gyro2PfmPrj</project>
+		<project>newPlatform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

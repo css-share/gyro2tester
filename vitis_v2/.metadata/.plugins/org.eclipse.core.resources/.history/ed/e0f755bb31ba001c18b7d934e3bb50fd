@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="example_dma" location="C:/Xilinx_projects/gyro2tester/vitis_v2/example_dma" platform="C:/Xilinx_projects/gyro2tester/vitis_v2/design_2_wrapper/export/design_2_wrapper/design_2_wrapper.xpfm" platformUID="xilinx:zedboard::0.0(custom)" systemProject="example_dma_system" sysConfig="design_2_wrapper" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="d0dba154ddbbf748f965e5099f035f46">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1272060918" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1095289072" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

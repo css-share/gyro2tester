@@ -1,0 +1,35 @@
+23:17:07 **** Incremental Build of configuration Debug for project newGyro2App ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/dma_controller.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/newPlatform/export/newPlatform/sw/newPlatform/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
+'Finished building: ../src/dma_controller.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/newPlatform/export/newPlatform/sw/newPlatform/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/newPlatform/export/newPlatform/sw/newPlatform/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: newGyro2App.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/newPlatform/export/newPlatform/sw/newPlatform/standalone_domain/bsplib/lib -o "newGyro2App.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: newGyro2App.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size newGyro2App.elf  |tee "newGyro2App.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37492	   2248	  24504	  64244	   faf4	newGyro2App.elf
+'Finished building: newGyro2App.elf.size'
+' '
+
+23:17:08 Build Finished (took 785ms)
+
