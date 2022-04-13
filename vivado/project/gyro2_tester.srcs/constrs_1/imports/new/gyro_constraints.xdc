@@ -20,6 +20,12 @@ set_property IOSTANDARD LVCMOS18 [get_ports SPI_CSN]
 #
 set_property IOSTANDARD LVCMOS33 [get_ports LED0]
 set_property IOSTANDARD LVCMOS33 [get_ports LED1]
+set_property IOSTANDARD LVCMOS33 [get_ports LED2]
+set_property IOSTANDARD LVCMOS33 [get_ports LED3]
+set_property IOSTANDARD LVCMOS33 [get_ports LED4]
+set_property IOSTANDARD LVCMOS33 [get_ports LED5]
+set_property IOSTANDARD LVCMOS33 [get_ports LED6]
+set_property IOSTANDARD LVCMOS33 [get_ports LED7]
 #--------------------------------------
 
 
@@ -45,5 +51,12 @@ set_property PACKAGE_PIN A17 [get_ports SPI_CSN]
 #
 set_property PACKAGE_PIN T22 [get_ports LED0]
 set_property PACKAGE_PIN T21 [get_ports LED1]
+set_property PACKAGE_PIN U22 [get_ports LED2]
+set_property PACKAGE_PIN U21 [get_ports LED3]
+set_property PACKAGE_PIN V22 [get_ports LED4]
+set_property PACKAGE_PIN W22 [get_ports LED5]
+set_property PACKAGE_PIN U19 [get_ports LED6]
+set_property PACKAGE_PIN U14 [get_ports LED7]
+
 #--------------------------------------
 

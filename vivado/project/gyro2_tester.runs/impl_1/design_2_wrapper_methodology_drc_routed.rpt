@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Mon Apr 11 21:22:04 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue Apr 12 17:22:09 2022
+| Host         : xsjl210012 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 414
+             Violations found: 478
 +-----------+------------------+----------------------------------+------------+
 | Rule      | Severity         | Description                      | Violations |
 +-----------+------------------+----------------------------------+------------+
 | TIMING-14 | Critical Warning | LUT on the clock tree            | 1          |
-| TIMING-17 | Critical Warning | Non-clocked sequential cell      | 400        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell      | 464        |
 | HPDR-1    | Warning          | Port pin direction inconsistency | 1          |
 | HPDR-2    | Warning          | Port pin INOUT inconsistency     | 1          |
 | LUTAR-1   | Warning          | LUT drives async reset alert     | 4          |
@@ -1874,170 +1874,490 @@ Related violations: <none>
 
 TIMING-17#367 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#368 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#369 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#370 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#371 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#372 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#373 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#374 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#375 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#376 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/AUX_LPF[1].asr_lpf_reg[1]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#377 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/AUX_LPF[2].asr_lpf_reg[2]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#378 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/AUX_LPF[3].asr_lpf_reg[3]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#379 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/EXT_LPF[1].exr_lpf_reg[1]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#380 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/EXT_LPF[2].exr_lpf_reg[2]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#381 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/EXT_LPF[3].exr_lpf_reg[3]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#382 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/POR_SRL_I/CLK is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#383 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/lpf_asr_reg/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#384 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/lpf_exr_reg/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#385 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/lpf_int_reg/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#386 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/Core_reg/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#387 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[0]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#388 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[1]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#389 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[2]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#390 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[3]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#391 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[4]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#392 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[5]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#393 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/core_dec_reg[0]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#394 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/core_dec_reg[1]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#395 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/core_dec_reg[2]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#396 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/from_sys_reg/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#397 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/pr_dec_reg[0]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#398 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/pr_dec_reg[2]/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/macro_count_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#399 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_2_i/txclk_reset_domain/U0/SEQ/pr_reg/C is not reached by a timing clock
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#400 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#401 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#402 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#403 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#404 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#405 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#406 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[16]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#407 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[17]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#408 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[18]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#409 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[19]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#410 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#411 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[20]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#412 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[21]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#413 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[22]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#414 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[23]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#415 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[24]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#416 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[25]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#417 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[26]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#418 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[27]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#419 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[28]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#420 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[29]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#421 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#422 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[30]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#423 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[31]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#424 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#425 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#426 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#427 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#428 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#429 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#430 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/led_driver_0/inst/micro_count_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#431 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#432 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#433 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#434 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#435 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#436 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#437 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#438 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#439 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#440 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/AUX_LPF[1].asr_lpf_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#441 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/AUX_LPF[2].asr_lpf_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#442 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/AUX_LPF[3].asr_lpf_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#443 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/EXT_LPF[1].exr_lpf_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#444 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/EXT_LPF[2].exr_lpf_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#445 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/EXT_LPF[3].exr_lpf_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#446 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/POR_SRL_I/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#447 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/lpf_asr_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#448 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/lpf_exr_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#449 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/EXT_LPF/lpf_int_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#450 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/Core_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#451 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#452 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#453 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#454 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#455 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#456 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/SEQ_COUNTER/q_int_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#457 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/core_dec_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#458 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/core_dec_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#459 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/core_dec_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#460 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/from_sys_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#461 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/pr_dec_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#462 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/pr_dec_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#463 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_2_i/txclk_reset_domain/U0/SEQ/pr_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#464 Critical Warning
 Non-clocked sequential cell  
 The clock pin design_2_i/txclk_reset_domain/U0/SEQ/seq_clr_reg/C is not reached by a timing clock
 Related violations: <none>

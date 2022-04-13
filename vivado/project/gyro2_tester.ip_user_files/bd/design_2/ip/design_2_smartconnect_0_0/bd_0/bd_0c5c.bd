@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x99E7D007A5067028",
+      "boundary_crc": "0x99E7D007E50B1FE7",
       "design_src": "SBD",
       "device": "xc7z020clg484-1",
       "name": "bd_0c5c",
@@ -135,7 +135,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "256",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
@@ -270,7 +270,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "256",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {
@@ -405,7 +405,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "8"
+            "value": "16"
           },
           "NUM_READ_OUTSTANDING": {
             "value": "16"
@@ -3859,7 +3859,7 @@
                 "value": "0"
               },
               "M_MAX_BURST_LENGTH": {
-                "value": "8"
+                "value": "16"
               },
               "M_PROTOCOL": {
                 "value": "AXI3"

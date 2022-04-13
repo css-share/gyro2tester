@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Mon Apr 11 21:17:30 2022
-// Host        : AsusP8 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+// Date        : Tue Apr 12 17:07:28 2022
+// Host        : xsjl24536 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
+//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
 // Design      : design_2_axis_stream_txfifo_0_2
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1682,22 +1682,22 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I4(axi_araddr[3]),
         .O(reg_data_out[7]));
   LUT5 #(
-    .INIT(32'hAFFCA0FC)) 
+    .INIT(32'hA0A0CFC0)) 
     \axi_rdata[8]_i_1 
        (.I0(Q[8]),
-        .I1(\slv_reg0_reg_n_0_[8] ),
-        .I2(axi_araddr[3]),
-        .I3(axi_araddr[2]),
-        .I4(slv_reg1[8]),
+        .I1(slv_reg1[8]),
+        .I2(axi_araddr[2]),
+        .I3(\slv_reg0_reg_n_0_[8] ),
+        .I4(axi_araddr[3]),
         .O(reg_data_out[8]));
   LUT5 #(
-    .INIT(32'hA0A0CFC0)) 
+    .INIT(32'hAFFCA0FC)) 
     \axi_rdata[9]_i_1 
        (.I0(Q[9]),
-        .I1(slv_reg1[9]),
-        .I2(axi_araddr[2]),
-        .I3(\slv_reg0_reg_n_0_[9] ),
-        .I4(axi_araddr[3]),
+        .I1(\slv_reg0_reg_n_0_[9] ),
+        .I2(axi_araddr[3]),
+        .I3(axi_araddr[2]),
+        .I4(slv_reg1[9]),
         .O(reg_data_out[9]));
   FDRE \axi_rdata_reg[0] 
        (.C(clk),

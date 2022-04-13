@@ -1,15 +1,15 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Mon Apr 11 21:16:19 2022
-//Host        : AsusP8 running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+//Date        : Tue Apr 12 17:16:23 2022
+//Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=24,numReposBlks=15,numNonXlnxBlks=1,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=16,numNonXlnxBlks=1,numHierBlks=9,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
 module design_2
    (DDR_addr,
     DDR_ba,
@@ -37,6 +37,12 @@ module design_2
     FIXED_IO_ps_srstb,
     LED0,
     LED1,
+    LED2,
+    LED3,
+    LED4,
+    LED5,
+    LED6,
+    LED7,
     MCK_N,
     MCK_P,
     SPI_CSN,
@@ -69,6 +75,12 @@ module design_2
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   output LED0;
   output LED1;
+  output LED2;
+  output LED3;
+  output LED4;
+  output LED5;
+  output LED6;
+  output LED7;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCK_N CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCK_N, CLK_DOMAIN design_2_BiDirChannels_0_0_MCK_N, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output MCK_N;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCK_P CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCK_P, CLK_DOMAIN design_2_BiDirChannels_0_0_MCK_P, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output MCK_P;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_CSN DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_CSN, LAYERED_METADATA undef" *) output SPI_CSN;
@@ -200,6 +212,12 @@ module design_2
   wire data_processor_0_m_axis_TLAST;
   wire [0:0]data_processor_0_m_axis_TREADY;
   wire data_processor_0_m_axis_TVALID;
+  wire led_driver_0_led0;
+  wire led_driver_0_led1;
+  wire led_driver_0_led2;
+  wire led_driver_0_led3;
+  wire led_driver_0_led4;
+  wire led_driver_0_led5;
   wire [0:0]proc_sys_reset_0_interconnect_aresetn;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
@@ -396,6 +414,12 @@ module design_2
   assign HSI_A0_1 = DRX;
   assign LED0 = TxFIFO_txfifo_full;
   assign LED1 = RxFIFO_rxfifo_full;
+  assign LED2 = led_driver_0_led0;
+  assign LED3 = led_driver_0_led1;
+  assign LED4 = led_driver_0_led2;
+  assign LED5 = led_driver_0_led3;
+  assign LED6 = led_driver_0_led4;
+  assign LED7 = led_driver_0_led5;
   assign MCK_N = BiDirChannels_0_MCK_N;
   assign MCK_P = BiDirChannels_0_MCK_P;
   assign SPI_CSN = SPI_ip_0_SPI_CS;
@@ -952,6 +976,15 @@ module design_2
         .s_axis_tlast(axis_switch_1_M00_AXIS_TLAST),
         .s_axis_tready(axis_switch_1_M00_AXIS_TREADY),
         .s_axis_tvalid(axis_switch_1_M00_AXIS_TVALID));
+  design_2_led_driver_0_0 led_driver_0
+       (.clk(BiDirChannels_0_txclk),
+        .led0(led_driver_0_led0),
+        .led1(led_driver_0_led1),
+        .led2(led_driver_0_led2),
+        .led3(led_driver_0_led3),
+        .led4(led_driver_0_led4),
+        .led5(led_driver_0_led5),
+        .rstn(txclk_reset_domain_peripheral_aresetn));
   design_2_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),
