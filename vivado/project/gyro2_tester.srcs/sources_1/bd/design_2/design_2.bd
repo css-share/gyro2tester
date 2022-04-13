@@ -35,8 +35,8 @@
       "axi_smc": "",
       "axis_switch_0": "",
       "axis_switch_1": "",
-      "data_processor_0": "",
       "TxFIFO": "",
+      "data_processor_0": "",
       "led_driver_0": ""
     },
     "interface_ports": {
@@ -274,7 +274,7 @@
     "components": {
       "AXI_Register_Demux": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
-        "xci_path": "ip/design_2_ps7_0_axi_periph_0/design_2_ps7_0_axi_periph_0.xci",
+        "xci_path": "ip\\design_2_ps7_0_axi_periph_0\\design_2_ps7_0_axi_periph_0.xci",
         "inst_hier_path": "AXI_Register_Demux",
         "xci_name": "design_2_ps7_0_axi_periph_0",
         "parameters": {
@@ -471,7 +471,7 @@
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
             "xci_name": "design_2_xbar_0",
-            "xci_path": "ip/design_2_xbar_0/design_2_xbar_0.xci",
+            "xci_path": "ip\\design_2_xbar_0\\design_2_xbar_0.xci",
             "inst_hier_path": "AXI_Register_Demux/xbar",
             "parameters": {
               "NUM_MI": {
@@ -551,7 +551,7 @@
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
                 "xci_name": "design_2_auto_pc_0",
-                "xci_path": "ip/design_2_auto_pc_0/design_2_auto_pc_0.xci",
+                "xci_path": "ip\\design_2_auto_pc_0\\design_2_auto_pc_0.xci",
                 "inst_hier_path": "AXI_Register_Demux/s00_couplers/auto_pc",
                 "parameters": {
                   "MI_PROTOCOL": {
@@ -1222,13 +1222,13 @@
       "xlconcat_1": {
         "vlnv": "xilinx.com:ip:xlconcat:2.1",
         "xci_name": "design_2_xlconcat_1_0",
-        "xci_path": "ip/design_2_xlconcat_1_0/design_2_xlconcat_1_0.xci",
+        "xci_path": "ip\\design_2_xlconcat_1_0\\design_2_xlconcat_1_0.xci",
         "inst_hier_path": "xlconcat_1"
       },
       "axi_dma_0": {
         "vlnv": "xilinx.com:ip:axi_dma:7.1",
         "xci_name": "design_2_axi_dma_0_0",
-        "xci_path": "ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xci",
+        "xci_path": "ip\\design_2_axi_dma_0_0\\design_2_axi_dma_0_0.xci",
         "inst_hier_path": "axi_dma_0",
         "parameters": {
           "c_include_sg": {
@@ -1296,37 +1296,37 @@
       "BiDirChannels_0": {
         "vlnv": "xilinx.com:user:BiDirChannels:1.0",
         "xci_name": "design_2_BiDirChannels_0_0",
-        "xci_path": "ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci",
+        "xci_path": "ip\\design_2_BiDirChannels_0_0\\design_2_BiDirChannels_0_0.xci",
         "inst_hier_path": "BiDirChannels_0"
       },
       "RxFIFO": {
         "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
         "xci_name": "design_2_RxFIFO_0",
-        "xci_path": "ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci",
+        "xci_path": "ip\\design_2_RxFIFO_0\\design_2_RxFIFO_0.xci",
         "inst_hier_path": "RxFIFO"
       },
       "SPI_ip_0": {
         "vlnv": "xilinx.com:user:axi4_pl_SPI_ip:1.0",
         "xci_name": "design_2_SPI_ip_0_0",
-        "xci_path": "ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci",
+        "xci_path": "ip\\design_2_SPI_ip_0_0\\design_2_SPI_ip_0_0.xci",
         "inst_hier_path": "SPI_ip_0"
       },
       "txclk_reset_domain": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "design_2_proc_sys_reset_0_1",
-        "xci_path": "ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xci",
+        "xci_path": "ip\\design_2_proc_sys_reset_0_1\\design_2_proc_sys_reset_0_1.xci",
         "inst_hier_path": "txclk_reset_domain"
       },
       "clk_reset_domain": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "design_2_proc_sys_reset_0_2",
-        "xci_path": "ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xci",
+        "xci_path": "ip\\design_2_proc_sys_reset_0_2\\design_2_proc_sys_reset_0_2.xci",
         "inst_hier_path": "clk_reset_domain"
       },
       "processing_system7_0": {
         "vlnv": "xilinx.com:ip:processing_system7:5.5",
         "xci_name": "design_2_processing_system7_0_0",
-        "xci_path": "ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci",
+        "xci_path": "ip\\design_2_processing_system7_0_0\\design_2_processing_system7_0_0.xci",
         "inst_hier_path": "processing_system7_0",
         "parameters": {
           "PCW_ACT_APU_PERIPHERAL_FREQMHZ": {
@@ -3137,7 +3137,7 @@
       "axi_smc": {
         "vlnv": "xilinx.com:ip:smartconnect:1.0",
         "xci_name": "design_2_smartconnect_0_0",
-        "xci_path": "ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.xci",
+        "xci_path": "ip\\design_2_smartconnect_0_0\\design_2_smartconnect_0_0.xci",
         "inst_hier_path": "axi_smc",
         "parameters": {
           "NUM_SI": {
@@ -3213,7 +3213,7 @@
       "axis_switch_0": {
         "vlnv": "xilinx.com:ip:axis_switch:1.1",
         "xci_name": "design_2_axis_switch_0_0",
-        "xci_path": "ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0.xci",
+        "xci_path": "ip\\design_2_axis_switch_0_0\\design_2_axis_switch_0_0.xci",
         "inst_hier_path": "axis_switch_0",
         "parameters": {
           "ROUTING_MODE": {
@@ -3224,7 +3224,7 @@
       "axis_switch_1": {
         "vlnv": "xilinx.com:ip:axis_switch:1.1",
         "xci_name": "design_2_axis_switch_1_0",
-        "xci_path": "ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.xci",
+        "xci_path": "ip\\design_2_axis_switch_1_0\\design_2_axis_switch_1_0.xci",
         "inst_hier_path": "axis_switch_1",
         "parameters": {
           "DECODER_REG": {
@@ -3241,10 +3241,21 @@
           }
         }
       },
+      "TxFIFO": {
+        "vlnv": "user.org:user:axis_stream_txfifo:2.0",
+        "xci_name": "design_2_axis_stream_txfifo_0_2",
+        "xci_path": "ip\\design_2_axis_stream_txfifo_0_2\\design_2_axis_stream_txfifo_0_2.xci",
+        "inst_hier_path": "TxFIFO",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "11"
+          }
+        }
+      },
       "data_processor_0": {
         "vlnv": "xilinx.com:module_ref:data_processor:1.0",
         "xci_name": "design_2_data_processor_0_0",
-        "xci_path": "ip/design_2_data_processor_0_0/design_2_data_processor_0_0.xci",
+        "xci_path": "ip\\design_2_data_processor_0_0\\design_2_data_processor_0_0.xci",
         "inst_hier_path": "data_processor_0",
         "reference_info": {
           "ref_type": "hdl",
@@ -3439,21 +3450,10 @@
           }
         }
       },
-      "TxFIFO": {
-        "vlnv": "user.org:user:axis_stream_txfifo:2.0",
-        "xci_name": "design_2_axis_stream_txfifo_0_2",
-        "xci_path": "ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci",
-        "inst_hier_path": "TxFIFO",
-        "parameters": {
-          "ADDR_WIDTH": {
-            "value": "11"
-          }
-        }
-      },
       "led_driver_0": {
         "vlnv": "xilinx.com:module_ref:led_driver:1.0",
         "xci_name": "design_2_led_driver_0_0",
-        "xci_path": "ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci",
+        "xci_path": "ip\\design_2_led_driver_0_0\\design_2_led_driver_0_0.xci",
         "inst_hier_path": "led_driver_0",
         "reference_info": {
           "ref_type": "hdl",
@@ -3806,8 +3806,8 @@
           "axis_switch_1/aclk",
           "axis_switch_0/s_axi_ctrl_aclk",
           "axis_switch_0/aclk",
-          "data_processor_0/clk",
-          "TxFIFO/clk"
+          "TxFIFO/clk",
+          "data_processor_0/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -3837,8 +3837,8 @@
           "axis_switch_1/aresetn",
           "axis_switch_0/s_axi_ctrl_aresetn",
           "axis_switch_0/aresetn",
-          "data_processor_0/reset",
-          "TxFIFO/rstn"
+          "TxFIFO/rstn",
+          "data_processor_0/reset"
         ]
       },
       "txclk_reset_domain_peripheral_aresetn": {

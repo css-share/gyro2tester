@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 12 17:16:29 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 12 18:38:01 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_2" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -57,6 +57,36 @@
     <PORT DIR="O" NAME="LED1" SIGIS="undef" SIGNAME="RxFIFO_rxfifo_full">
       <CONNECTIONS>
         <CONNECTION INSTANCE="RxFIFO" PORT="rxfifo_full"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED2" SIGIS="undef" SIGNAME="led_driver_0_led0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="led_driver_0" PORT="led0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED3" SIGIS="undef" SIGNAME="led_driver_0_led1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="led_driver_0" PORT="led1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED4" SIGIS="undef" SIGNAME="led_driver_0_led2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="led_driver_0" PORT="led2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED5" SIGIS="undef" SIGNAME="led_driver_0_led3">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="led_driver_0" PORT="led3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED6" SIGIS="undef" SIGNAME="led_driver_0_led4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="led_driver_0" PORT="led4"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LED7" SIGIS="undef" SIGNAME="led_driver_0_led5">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="led_driver_0" PORT="led5"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CAS_n">
@@ -162,36 +192,6 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="processing_system7_0_PS_PORB">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="PS_PORB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED2" SIGIS="undef" SIGNAME="led_driver_0_led0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="led_driver_0" PORT="led0"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED3" SIGIS="undef" SIGNAME="led_driver_0_led1">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="led_driver_0" PORT="led1"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED4" SIGIS="undef" SIGNAME="led_driver_0_led2">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="led_driver_0" PORT="led2"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED5" SIGIS="undef" SIGNAME="led_driver_0_led3">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="led_driver_0" PORT="led3"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED6" SIGIS="undef" SIGNAME="led_driver_0_led4">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="led_driver_0" PORT="led4"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="LED7" SIGIS="undef" SIGNAME="led_driver_0_led5">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="led_driver_0" PORT="led5"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -6209,8 +6209,8 @@
             <CONNECTION INSTANCE="axis_switch_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="data_processor_0" PORT="reset"/>
             <CONNECTION INSTANCE="TxFIFO" PORT="rstn"/>
+            <CONNECTION INSTANCE="data_processor_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -7746,8 +7746,8 @@
             <CONNECTION INSTANCE="axis_switch_1" PORT="aclk"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="data_processor_0" PORT="clk"/>
             <CONNECTION INSTANCE="TxFIFO" PORT="clk"/>
+            <CONNECTION INSTANCE="data_processor_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">

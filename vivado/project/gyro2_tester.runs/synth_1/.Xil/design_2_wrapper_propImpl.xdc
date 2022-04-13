@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc rfile:../../../gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc rfile:../../../gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS18 [get_ports RXACTIVE]
 set_property src_info {type:XDC file:1 line:34 export:INPUT save:INPUT read:READ} [current_design]

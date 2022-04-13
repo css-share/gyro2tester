@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Tue Apr 12 17:22:07 2022
-| Host         : xsjl210012 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Tue Apr 12 18:43:52 2022
+| Host         : AsusP8 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_2_wrapper_drc_routed.rpt -pb design_2_wrapper_drc_routed.pb -rpx design_2_wrapper_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -128,22 +128,22 @@ Related violations: <none>
 
 REQP-1839#17 Warning
 RAMB36 async control check  
-The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[15]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/qempty_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#18 Warning
 RAMB36 async control check  
-The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#19 Warning
 RAMB36 async control check  
-The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#20 Warning
 RAMB36 async control check  
-The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0 has an input control pin design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rgfile_reg_0_0/ADDRBWRADDR[15] (net: design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr2[15]) which is driven by a register (design_2_i/RxFIFO/inst/u_rx_async_stream_fifo/rptr_reg[15]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 RPBF-3#1 Warning

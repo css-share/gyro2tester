@@ -45,11 +45,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_ax
 # IP: bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_switch_1_0 || ORIG_REF_NAME==design_2_axis_switch_1_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_stream_txfifo_0_2 || ORIG_REF_NAME==design_2_axis_stream_txfifo_0_2} -quiet] -quiet
-
 # IP: bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_data_processor_0_0 || ORIG_REF_NAME==design_2_data_processor_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_stream_txfifo_0_2 || ORIG_REF_NAME==design_2_axis_stream_txfifo_0_2} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_led_driver_0_0 || ORIG_REF_NAME==design_2_led_driver_0_0} -quiet] -quiet
@@ -57,4 +57,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_le
 # IP: bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_0 || ORIG_REF_NAME==design_2_auto_pc_0} -quiet] -quiet
 
-# XDC: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc
+# XDC: c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc
