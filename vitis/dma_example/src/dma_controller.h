@@ -9,8 +9,8 @@
 #define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00300000)
 #define RX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x004FFFFF)
 
-#define MAX_PKT_LEN		    0x20000 //(32 bytes - 8 DMA R/W cycles)
-//#define MAX_PKT_LEN		    0x08 //(8 bytes - 2 DMA R/W cycle)
+#define MAX_PKT_LEN		    0x18000 //(16 bytes - 48k DMA R/W cycles)
+
 #define MIN_PKT_LEN		    0x01 //(1 byte)
 #define NUM_TRANSFERS	    1
 
