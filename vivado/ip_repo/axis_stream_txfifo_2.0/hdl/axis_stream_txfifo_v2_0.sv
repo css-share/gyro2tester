@@ -67,6 +67,7 @@
 		input wire [(C_S00_AXIS_TDATA_WIDTH/8)-1 : 0] s00_axis_tstrb,
 		input wire  s00_axis_tlast,
 		input wire  s00_axis_tvalid,
+		
 
 		// Ports of Axi Master Bus Interface M00_AXIS
 
@@ -198,7 +199,7 @@
 	);
 
 
-  assign slv_reg2 = 32'h00041422;
+  assign slv_reg2 = 32'h10041422;
   
   //assign slv_reg3[15:0] = write_pointer;
   //assign slv_reg3[15:13] = 3'b000;

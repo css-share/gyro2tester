@@ -19,7 +19,7 @@
 
 module GyroInputOutputSerializer (
   input               clock,
-  output logic        txclk,
+  input               txclk,
   input               tx_rstn,
   input               reset_n,
   input               enable,
@@ -282,7 +282,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
 
 
 
-  assign txclk = clock_div_2;
+ // assign txclk = clock_div_2;
  
 ///////////////////////////////////////////////////
 // High Speed Output assignments                 //

@@ -1,24 +1,34 @@
-Nothing to build in platform 'design_2_wrapper'
+Nothing to build in platform 'design_5_wrapper'
 
-22:16:23 **** Incremental Build of configuration Debug for project dma_example ****
+23:29:29 **** Build of configuration Debug for project dmaTest3 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
+'Building file: ../src/dma_controller.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_5_wrapper/export/design_5_wrapper/sw/design_5_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
+'Finished building: ../src/dma_controller.c'
+' '
 'Building file: ../src/helloworld_gyro.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld_gyro.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld_gyro.d" -MT"src/helloworld_gyro.o" -o "src/helloworld_gyro.o" "../src/helloworld_gyro.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld_gyro.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_5_wrapper/export/design_5_wrapper/sw/design_5_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld_gyro.d" -MT"src/helloworld_gyro.o" -o "src/helloworld_gyro.o" "../src/helloworld_gyro.c"
 'Finished building: ../src/helloworld_gyro.c'
 ' '
-'Building target: dma_example.elf'
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_5_wrapper/export/design_5_wrapper/sw/design_5_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: dmaTest3.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "dma_example.elf"  ./src/dma_controller.o ./src/helloworld_gyro.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: dma_example.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_5_wrapper/export/design_5_wrapper/sw/design_5_wrapper/standalone_domain/bsplib/lib -o "dmaTest3.elf"  ./src/dma_controller.o ./src/helloworld_gyro.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: dmaTest3.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size dma_example.elf  |tee "dma_example.elf.size"
+arm-none-eabi-size dmaTest3.elf  |tee "dmaTest3.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  37928	   2248	  24504	  64680	   fca8	dma_example.elf
-'Finished building: dma_example.elf.size'
+  38120	   2248	  24504	  64872	   fd68	dmaTest3.elf
+'Finished building: dmaTest3.elf.size'
 ' '

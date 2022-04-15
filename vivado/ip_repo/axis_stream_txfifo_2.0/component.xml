@@ -419,7 +419,12 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_RESET"/>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_RESET">tx_rstn</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:description>6250000</spirit:description>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.TXCLK.FREQ_HZ"/>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -530,7 +535,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ff1fb989</spirit:value>
+            <spirit:value>5b7dd5c9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -546,7 +551,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ff1fb989</spirit:value>
+            <spirit:value>5b7dd5c9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -560,7 +565,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6935c70e</spirit:value>
+            <spirit:value>8a71f458</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -574,7 +579,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1c6f6cf7</spirit:value>
+            <spirit:value>4e275d82</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -588,7 +593,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>45a2f450</spirit:value>
+            <spirit:value>16328387</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1337,7 +1342,7 @@
       <spirit:file>
         <spirit:name>hdl/axis_stream_txfifo_v2_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_6348d27a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_475ec964</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1550,8 +1555,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>axis_stream_txfifo_v2.0</xilinx:displayName>
-      <xilinx:coreRevision>13</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-04-15T00:04:20Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>17</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-04-15T06:01:13Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="user.org:user:axis_stream_txfifo:2.0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@aebe5eb_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
@@ -1632,13 +1637,44 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@3843f720_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2ec5c5a4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@49b4ee36_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32e2be36_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7dbda76_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bd70ec7_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a5292cb_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1831b041_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7be77872_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@404127db_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6659e4a4_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@471a8416_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@741e52ac_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21af0ffd_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30dbd27b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f8b1b75_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7eaea837_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@452f1271_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b5b265b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e2e740a_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10f63040_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6637cdc9_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4748ed4_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bdfe0d7_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e9e585c_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c8a239b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d28da34_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3951b13a_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d401746_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@562fccda_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1fc0e584_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6100172a_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5768d267_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12c34c4_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="4202f66a"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c23c237d"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d54adb3e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fe4a1617"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2ab6d4e1"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f44cba14"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="833047b4"/>

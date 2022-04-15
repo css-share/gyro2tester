@@ -1,0 +1,2003 @@
+TRACE::2022-04-14.19:26:09::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:09::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:09::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:09::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:09::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:09::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:09::SCWPlatform::Do not have an existing db opened. 
+TRACE::2022-04-14.19:26:12::SCWPlatform::Opened new HwDB with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	""
+}
+TRACE::2022-04-14.19:26:12::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest"
+		}]
+}
+TRACE::2022-04-14.19:26:12::SCWPlatform::Boot application domains not present, creating them
+TRACE::2022-04-14.19:26:12::SCWDomain::checking for install qemu data   : 
+TRACE::2022-04-14.19:26:12::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-04-14.19:26:12::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:12::SCWPlatform::Boot application domain added for zynq_fsbl
+TRACE::2022-04-14.19:26:12::SCWPlatform::Generating the sources  .
+TRACE::2022-04-14.19:26:12::SCWBDomain::Generating boot domain sources.
+TRACE::2022-04-14.19:26:12::SCWBDomain:: Generating the zynq_fsbl Application.
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:12::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:12::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:12::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:12::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2022-04-14.19:26:12::SCWMssOS::No sw design opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::mss does not exists at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::Creating sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::Adding the swdes entry, created swdb C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::updating the scw layer changes to swdes at   C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::Writing mss at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:12::SCWMssOS::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp
+TRACE::2022-04-14.19:26:12::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2022-04-14.19:26:12::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2022-04-14.19:26:12::SCWBDomain::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp
+TRACE::2022-04-14.19:26:22::SCWPlatform::Generating sources Done.
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2022-04-14.19:26:22::SCWMssOS::No sw design opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::mss exists loading the mss file  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Opened the sw design from mss  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Adding the swdes entry C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name system
+TRACE::2022-04-14.19:26:22::SCWMssOS::updating the scw layer about changes
+TRACE::2022-04-14.19:26:22::SCWMssOS::Opened the sw design.  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:22::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:22::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:22::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:22::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:22::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest",
+			"sysActiveDom":	"zynq_fsbl",
+			"sysDefaultDom":	"",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"bb325bb10f96ebad04733f0cbd61b583",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.6", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWDomain::checking for install qemu data   : 
+TRACE::2022-04-14.19:26:22::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-04-14.19:26:22::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:22::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:22::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:22::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:22::SCWMssOS::No sw design opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::mss does not exists at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Creating sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Adding the swdes entry, created swdb C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss with des name C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::updating the scw layer changes to swdes at   C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Writing mss at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:22::SCWMssOS::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp
+TRACE::2022-04-14.19:26:22::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2022-04-14.19:26:22::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2022-04-14.19:26:22::SCWMssOS::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp
+TRACE::2022-04-14.19:26:22::SCWMssOS::Forcing BSP Sources regeneration.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss with des name system_0
+TRACE::2022-04-14.19:26:23::SCWMssOS::Writing the mss file completed C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"bb325bb10f96ebad04733f0cbd61b583",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.6", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"dfc7c889b24714450a63f0c03e79b0ef",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2022-04-14.19:26:23::SCWPlatform::Started generating the artifacts platform gyro2dmaTest
+TRACE::2022-04-14.19:26:23::SCWPlatform::Sanity checking of platform is completed
+LOG::2022-04-14.19:26:23::SCWPlatform::Started generating the artifacts for system configuration gyro2dmaTest
+LOG::2022-04-14.19:26:23::SCWSystem::Checking the domain zynq_fsbl
+LOG::2022-04-14.19:26:23::SCWSystem::Doing application build for :  zynq_fsbl
+TRACE::2022-04-14.19:26:23::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2022-04-14.19:26:23::SCWDomain::Skipping the build for domain :  zynq_fsbl
+LOG::2022-04-14.19:26:23::SCWSystem::Checking the domain standalone_domain
+LOG::2022-04-14.19:26:23::SCWSystem::Not a boot domain 
+LOG::2022-04-14.19:26:23::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2022-04-14.19:26:23::SCWDomain::Generating domain artifcats
+TRACE::2022-04-14.19:26:23::SCWMssOS::Generating standalone artifcats
+TRACE::2022-04-14.19:26:23::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt To C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/export/gyro2dmaTest/sw/gyro2dmaTest/qemu/
+TRACE::2022-04-14.19:26:23::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt To C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/export/gyro2dmaTest/sw/gyro2dmaTest/standalone_domain/qemu/
+TRACE::2022-04-14.19:26:23::SCWMssOS:: Copying the user libraries. 
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp
+TRACE::2022-04-14.19:26:23::SCWMssOS::Mss edits present, copying mssfile into export location C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2022-04-14.19:26:23::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2022-04-14.19:26:23::SCWDomain::Skipping the build for domain :  standalone_domain
+TRACE::2022-04-14.19:26:23::SCWMssOS::skipping the bsp build ... 
+TRACE::2022-04-14.19:26:23::SCWMssOS::Copying to export directory.
+TRACE::2022-04-14.19:26:23::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2022-04-14.19:26:23::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+TRACE::2022-04-14.19:26:23::SCWMssOS:: Completed Standalone Artifacts creation 
+LOG::2022-04-14.19:26:23::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2022-04-14.19:26:23::SCWSystem::Completed Processing the sysconfig gyro2dmaTest
+LOG::2022-04-14.19:26:23::SCWPlatform::Completed generating the artifacts for system configuration gyro2dmaTest
+TRACE::2022-04-14.19:26:23::SCWPlatform::Started preparing the platform 
+TRACE::2022-04-14.19:26:23::SCWSystem::Writing the bif file for system config gyro2dmaTest
+TRACE::2022-04-14.19:26:23::SCWSystem::dir created 
+TRACE::2022-04-14.19:26:23::SCWSystem::Writing the bif 
+TRACE::2022-04-14.19:26:23::SCWPlatform::Started writing the spfm file 
+TRACE::2022-04-14.19:26:23::SCWPlatform::Started writing the xpfm file 
+TRACE::2022-04-14.19:26:23::SCWPlatform::Completed generating the platform
+TRACE::2022-04-14.19:26:23::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:23::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:23::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:23::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:23::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:23::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"bb325bb10f96ebad04733f0cbd61b583",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.6", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"dfc7c889b24714450a63f0c03e79b0ef",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2022-04-14.19:26:24::SCWPlatform::updated the xpfm file.
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"bb325bb10f96ebad04733f0cbd61b583",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.6", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"dfc7c889b24714450a63f0c03e79b0ef",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"bb325bb10f96ebad04733f0cbd61b583",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.6", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on ps7_cortexa9_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"dfc7c889b24714450a63f0c03e79b0ef",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-04-14.19:26:24::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:24::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:24::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:24::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Opened existing hwdb design_2_wrapper_3
+TRACE::2022-04-14.19:26:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:24::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:24::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:24::SCWWriter::formatted JSON is {
+	"platformName":	"gyro2dmaTest",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"gyro2dmaTest",
+	"platHandOff":	"C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_2_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"gyro2dmaTest",
+	"systems":	[{
+			"systemName":	"gyro2dmaTest",
+			"systemDesc":	"gyro2dmaTest",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"gyro2dmaTest",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"bb325bb10f96ebad04733f0cbd61b583",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.6", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on ps7_cortexa9_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt",
+					"qemuData":	"C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.6",
+					"mssFile":	"",
+					"md5Digest":	"dfc7c889b24714450a63f0c03e79b0ef",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-04-14.19:26:25::SCWPlatform::Clearing the existing platform
+TRACE::2022-04-14.19:26:25::SCWSystem::Clearing the existing sysconfig
+TRACE::2022-04-14.19:26:25::SCWBDomain::clearing the fsbl build
+TRACE::2022-04-14.19:26:25::SCWMssOS::Removing the swdes entry for  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:25::SCWMssOS::Removing the swdes entry for  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:25::SCWSystem::Clearing the domains completed.
+TRACE::2022-04-14.19:26:25::SCWPlatform::Clearing the opened hw db.
+TRACE::2022-04-14.19:26:25::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform:: Platform location is C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:25::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:25::SCWPlatform::Removing the HwDB with name C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:25::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:25::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:25::SCWPlatform::Do not have an existing db opened. 
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened new HwDB with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWReader::Active system found as  gyro2dmaTest
+TRACE::2022-04-14.19:26:28::SCWReader::Handling sysconfig gyro2dmaTest
+TRACE::2022-04-14.19:26:28::SCWDomain::checking for install qemu data   : 
+TRACE::2022-04-14.19:26:28::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-04-14.19:26:28::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWReader::Boot application domain added for zynq_fsbl
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2022-04-14.19:26:28::SCWMssOS::No sw design opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::mss exists loading the mss file  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::Opened the sw design from mss  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::Adding the swdes entry C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name system
+TRACE::2022-04-14.19:26:28::SCWMssOS::updating the scw layer about changes
+TRACE::2022-04-14.19:26:28::SCWMssOS::Opened the sw design.  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:28::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS:: library already available in sw design:  xilffs:4.6
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:28::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS:: library already available in sw design:  xilrsa:1.6
+TRACE::2022-04-14.19:26:28::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:28::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:28::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2022-04-14.19:26:28::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:28::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWReader::No isolation master present  
+TRACE::2022-04-14.19:26:28::SCWDomain::checking for install qemu data   : 
+TRACE::2022-04-14.19:26:28::SCWDomain:: Using the QEMU Data from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-04-14.19:26:28::SCWDomain:: Using the QEMU args  from install at  : C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:28::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:28::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:28::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:28::SCWMssOS::No sw design opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::mss exists loading the mss file  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::Opened the sw design from mss  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:28::SCWMssOS::Adding the swdes entry C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss with des name system_0
+TRACE::2022-04-14.19:26:28::SCWMssOS::updating the scw layer about changes
+TRACE::2022-04-14.19:26:29::SCWMssOS::Opened the sw design.  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:29::SCWMssOS::Saving the mss changes C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:29::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-04-14.19:26:29::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-04-14.19:26:29::SCWMssOS::Commit changes completed.
+TRACE::2022-04-14.19:26:29::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2022-04-14.19:26:29::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2022-04-14.19:26:29::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:29::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:29::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:29::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:26:29::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:26:29::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:26:29::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:26:29::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:26:29::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:26:29::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:29::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:26:29::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:26:29::SCWReader::No isolation master present  
+LOG::2022-04-14.19:27:01::SCWPlatform::Started generating the artifacts platform gyro2dmaTest
+TRACE::2022-04-14.19:27:01::SCWPlatform::Sanity checking of platform is completed
+LOG::2022-04-14.19:27:01::SCWPlatform::Started generating the artifacts for system configuration gyro2dmaTest
+LOG::2022-04-14.19:27:01::SCWSystem::Checking the domain zynq_fsbl
+LOG::2022-04-14.19:27:01::SCWSystem::Doing application build for :  zynq_fsbl
+TRACE::2022-04-14.19:27:01::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2022-04-14.19:27:01::SCWDomain::Building the domain as part of full build :  zynq_fsbl
+TRACE::2022-04-14.19:27:01::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:01::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:01::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:01::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:27:01::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:01::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:27:01::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:27:01::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:27:01::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:27:01::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:27:01::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:27:01::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:27:01::SCWBDomain::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp
+TRACE::2022-04-14.19:27:01::SCWBDomain::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2022-04-14.19:27:01::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2022-04-14.19:27:01::SCWBDomain::System Command Ran  C:&  cd  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl& make -C  zynq_fsbl_bsp & make 
+TRACE::2022-04-14.19:27:01::SCWBDomain::make: Entering directory 'C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp'
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make --no-print-directory seq_libs
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axidma_v9_13/src"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axidma_v9_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:01::SCWBDomain::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:01::SCWBDomain::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-non
+TRACE::2022-04-14.19:27:01::SCWBDomain::e-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=
+TRACE::2022-04-14.19:27:01::SCWBDomain::hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axis_stream_txfifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_stream_txfifo_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-n
+TRACE::2022-04-14.19:27:01::SCWBDomain::one-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-ab
+TRACE::2022-04-14.19:27:01::SCWBDomain::i=hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axis_switch_v1_4/src"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_switch_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eab
+TRACE::2022-04-14.19:27:01::SCWBDomain::i-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard 
+TRACE::2022-04-14.19:27:01::SCWBDomain::-nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/BiDirChannels_v1_0/src"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make -C ps7_cortexa9_0/libsrc/BiDirChannels_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:01::SCWBDomain::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:01::SCWBDomain::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_8/src"
+
+TRACE::2022-04-14.19:27:01::SCWBDomain::make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none
+TRACE::2022-04-14.19:27:01::SCWBDomain::-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=h
+TRACE::2022-04-14.19:27:01::SCWBDomain::ard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_11/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:02::SCWBDomain::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:02::SCWBDomain::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_2/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/ddrps_v1_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:02::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:02::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_7/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/devcfg_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:02::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:02::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_8/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/dmaps_v2_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:02::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:02::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_15/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/emacps_v3_15/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:02::SCWBDomain::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:02::SCWBDomain::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_9/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/gpiops_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:02::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:02::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_9/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/qspips_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:02::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:02::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_6/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/scugic_v4_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:02::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:02::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_3/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/scutimer_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+TRACE::2022-04-14.19:27:02::SCWBDomain::s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+TRACE::2022-04-14.19:27:02::SCWBDomain::startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_4/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/scuwdt_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:02::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:02::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_13/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/sdps_v3_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:02::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:02::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_6/src"
+
+TRACE::2022-04-14.19:27:02::SCWBDomain::make -C ps7_cortexa9_0/libsrc/standalone_v7_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi
+TRACE::2022-04-14.19:27:02::SCWBDomain::-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -
+TRACE::2022-04-14.19:27:02::SCWBDomain::nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_14/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/ttcps_v3_14/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_11/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/uartps_v3_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:03::SCWBDomain::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:03::SCWBDomain::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_7/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/usbps_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:03::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:03::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_6/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/xadcps_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/xilffs_v4_6/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/xilffs_v4_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/xilrsa_v1_6/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/xilrsa_v1_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make libs in ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:03::SCWBDomain::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:03::SCWBDomain::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Compiling axis_stream_fifo..."
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make: Leaving directory 'C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp'
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C zynq_fsbl_bsp
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make[1]: Entering directory 'C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp'
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make --no-print-directory seq_libs
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axidma_v9_13/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axidma_v9_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:03::SCWBDomain::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:03::SCWBDomain::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-non
+TRACE::2022-04-14.19:27:03::SCWBDomain::e-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=
+TRACE::2022-04-14.19:27:03::SCWBDomain::hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axis_stream_txfifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_stream_txfifo_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-n
+TRACE::2022-04-14.19:27:03::SCWBDomain::one-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-ab
+TRACE::2022-04-14.19:27:03::SCWBDomain::i=hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/axis_switch_v1_4/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_switch_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eab
+TRACE::2022-04-14.19:27:03::SCWBDomain::i-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard 
+TRACE::2022-04-14.19:27:03::SCWBDomain::-nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/BiDirChannels_v1_0/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/BiDirChannels_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:03::SCWBDomain::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:03::SCWBDomain::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_8/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none
+TRACE::2022-04-14.19:27:03::SCWBDomain::-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=h
+TRACE::2022-04-14.19:27:03::SCWBDomain::ard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_11/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:03::SCWBDomain::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:03::SCWBDomain::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_2/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/ddrps_v1_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:03::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:03::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_7/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/devcfg_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_8/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/dmaps_v2_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:03::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:03::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_15/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/emacps_v3_15/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:03::SCWBDomain::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:03::SCWBDomain::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_9/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/gpiops_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_9/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/qspips_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_6/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/scugic_v4_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_3/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/scutimer_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+TRACE::2022-04-14.19:27:03::SCWBDomain::s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+TRACE::2022-04-14.19:27:03::SCWBDomain::startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_4/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/scuwdt_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:03::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:03::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_13/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/sdps_v3_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:03::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:03::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_6/src"
+
+TRACE::2022-04-14.19:27:03::SCWBDomain::make -C ps7_cortexa9_0/libsrc/standalone_v7_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi
+TRACE::2022-04-14.19:27:03::SCWBDomain::-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -
+TRACE::2022-04-14.19:27:03::SCWBDomain::nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_14/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/ttcps_v3_14/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_11/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/uartps_v3_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:04::SCWBDomain::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:04::SCWBDomain::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_7/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/usbps_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:04::SCWBDomain::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:04::SCWBDomain::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_6/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/xadcps_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/xilffs_v4_6/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/xilffs_v4_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make include in ps7_cortexa9_0/libsrc/xilrsa_v1_6/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/xilrsa_v1_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWBDomain:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWBDomain::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Running Make libs in ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make -C ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:04::SCWBDomain::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:04::SCWBDomain::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::"Compiling axis_stream_fifo..."
+
+TRACE::2022-04-14.19:27:04::SCWBDomain::make[1]: Leaving directory 'C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp'
+
+ERROR::2022-04-14.19:27:04::SCWBDomain::Failed to build the  zynq_fsbl application.
+LOG::2022-04-14.19:27:04::SCWSystem::Checking the domain standalone_domain
+LOG::2022-04-14.19:27:04::SCWSystem::Not a boot domain 
+LOG::2022-04-14.19:27:04::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2022-04-14.19:27:04::SCWDomain::Generating domain artifcats
+TRACE::2022-04-14.19:27:04::SCWMssOS::Generating standalone artifcats
+TRACE::2022-04-14.19:27:04::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt To C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/export/gyro2dmaTest/sw/gyro2dmaTest/qemu/
+TRACE::2022-04-14.19:27:04::SCWMssOS::Copying the qemu file from  C:/Xilinx/Vitis/2021.2/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt To C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/export/gyro2dmaTest/sw/gyro2dmaTest/standalone_domain/qemu/
+TRACE::2022-04-14.19:27:04::SCWMssOS:: Copying the user libraries. 
+TRACE::2022-04-14.19:27:04::SCWPlatform::Trying to open the hw design at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:04::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:04::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:04::SCWPlatform::DSA directory C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:27:04::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:27:04::SCWPlatform:: Unique name xilinx:zedboard::0.0
+TRACE::2022-04-14.19:27:04::SCWPlatform::Trying to set the existing hwdb with name design_2_wrapper_4
+TRACE::2022-04-14.19:27:04::SCWPlatform::Opened existing hwdb design_2_wrapper_4
+TRACE::2022-04-14.19:27:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-04-14.19:27:04::SCWMssOS::Checking the sw design at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:27:04::SCWMssOS::DEBUG:  swdes dump  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss|system_0||
+C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::Sw design exists and opened at  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:27:04::SCWMssOS::Completed writing the mss file at C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp
+TRACE::2022-04-14.19:27:04::SCWMssOS::Mss edits present, copying mssfile into export location C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:27:04::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2022-04-14.19:27:04::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2022-04-14.19:27:04::SCWDomain::Building the domain as part of full build :  standalone_domain
+TRACE::2022-04-14.19:27:04::SCWMssOS::doing bsp build ... 
+TRACE::2022-04-14.19:27:04::SCWMssOS::System Command Ran  C: & cd  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp & make 
+TRACE::2022-04-14.19:27:04::SCWMssOS::make --no-print-directory seq_libs
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/axidma_v9_13/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/axidma_v9_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:04::SCWMssOS::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:04::SCWMssOS::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-non
+TRACE::2022-04-14.19:27:04::SCWMssOS::e-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=
+TRACE::2022-04-14.19:27:04::SCWMssOS::hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/axis_stream_txfifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/axis_stream_txfifo_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-n
+TRACE::2022-04-14.19:27:04::SCWMssOS::one-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-ab
+TRACE::2022-04-14.19:27:04::SCWMssOS::i=hard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/axis_switch_v1_4/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/axis_switch_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eab
+TRACE::2022-04-14.19:27:04::SCWMssOS::i-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard 
+TRACE::2022-04-14.19:27:04::SCWMssOS::-nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/BiDirChannels_v1_0/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/BiDirChannels_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:04::SCWMssOS::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:04::SCWMssOS::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_8/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none
+TRACE::2022-04-14.19:27:04::SCWMssOS::-eabi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=h
+TRACE::2022-04-14.19:27:04::SCWMssOS::ard -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_11/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:04::SCWMssOS::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:04::SCWMssOS::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_2/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/ddrps_v1_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:04::SCWMssOS::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:04::SCWMssOS::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_7/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/devcfg_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_8/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/dmaps_v2_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:04::SCWMssOS::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:04::SCWMssOS::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_15/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/emacps_v3_15/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:04::SCWMssOS::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:04::SCWMssOS::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_9/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/gpiops_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_9/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/qspips_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_6/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/scugic_v4_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_3/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/scutimer_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-a
+TRACE::2022-04-14.19:27:04::SCWMssOS::s" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -no
+TRACE::2022-04-14.19:27:04::SCWMssOS::startfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_4/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/scuwdt_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:04::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:04::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_13/src"
+
+TRACE::2022-04-14.19:27:04::SCWMssOS::make -C ps7_cortexa9_0/libsrc/sdps_v3_13/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:05::SCWMssOS::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:05::SCWMssOS::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_6/src"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::make -C ps7_cortexa9_0/libsrc/standalone_v7_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi
+TRACE::2022-04-14.19:27:05::SCWMssOS::-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -
+TRACE::2022-04-14.19:27:05::SCWMssOS::nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_14/src"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::make -C ps7_cortexa9_0/libsrc/ttcps_v3_14/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:05::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:05::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_11/src"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::make -C ps7_cortexa9_0/libsrc/uartps_v3_11/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as
+TRACE::2022-04-14.19:27:05::SCWMssOS::" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nos
+TRACE::2022-04-14.19:27:05::SCWMssOS::tartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_7/src"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::make -C ps7_cortexa9_0/libsrc/usbps_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as" 
+TRACE::2022-04-14.19:27:05::SCWMssOS::"ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nosta
+TRACE::2022-04-14.19:27:05::SCWMssOS::rtfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_6/src"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::make -C ps7_cortexa9_0/libsrc/xadcps_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-eabi-as"
+TRACE::2022-04-14.19:27:05::SCWMssOS:: "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nost
+TRACE::2022-04-14.19:27:05::SCWMssOS::artfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Running Make libs in ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::make -C ps7_cortexa9_0/libsrc/axis_stream_fifo_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ASSEMBLER=arm-none-e
+TRACE::2022-04-14.19:27:05::SCWMssOS::abi-as" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=har
+TRACE::2022-04-14.19:27:05::SCWMssOS::d -nostartfiles -g -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2022-04-14.19:27:05::SCWMssOS::"Compiling axis_stream_fifo..."
+
+ERROR::2022-04-14.19:27:05::SCWMssOS::Failed to build  the bsp sources for domain - standalone_domain
+ERROR::2022-04-14.19:27:05::SCWSystem::Error in Processing the domain standalone_domain
+TRACE::2022-04-14.19:30:18::SCWPlatform::Clearing the existing platform
+TRACE::2022-04-14.19:30:18::SCWSystem::Clearing the existing sysconfig
+TRACE::2022-04-14.19:30:18::SCWBDomain::clearing the fsbl build
+TRACE::2022-04-14.19:30:18::SCWMssOS::Removing the swdes entry for  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-04-14.19:30:18::SCWMssOS::Removing the swdes entry for  C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/ps7_cortexa9_0/standalone_domain/bsp/system.mss
+TRACE::2022-04-14.19:30:18::SCWSystem::Clearing the domains completed.
+TRACE::2022-04-14.19:30:18::SCWPlatform::Clearing the opened hw db.
+TRACE::2022-04-14.19:30:18::SCWPlatform::DSA given C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:30:18::SCWPlatform::DSA absoulate path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:30:18::SCWPlatform:: Platform location is C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw
+TRACE::2022-04-14.19:30:18::SCWPlatform:: Platform Path C:/Xilinx_projects/gyro2tester/vitis/gyro2dmaTest/hw/design_2_wrapper.xsa
+TRACE::2022-04-14.19:30:18::SCWPlatform:: Unique name xilinx:zedboard::0.0

@@ -748,7 +748,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M00_AXIS.FREQ_HZ">50000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M00_AXIS.FREQ_HZ"/>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -766,7 +766,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M00_AXIS.CLK_DOMAIN">design_2_BiDirChannels_0_0_txclk</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M00_AXIS.CLK_DOMAIN">/clk_wiz_0_clk_out1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -919,7 +919,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M01_AXIS.FREQ_HZ">50000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M01_AXIS.FREQ_HZ"/>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -937,7 +937,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M01_AXIS.CLK_DOMAIN">design_2_BiDirChannels_0_0_txclk</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M01_AXIS.CLK_DOMAIN">/clk_wiz_0_clk_out1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1090,7 +1090,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M02_AXIS.FREQ_HZ">50000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M02_AXIS.FREQ_HZ"/>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1108,7 +1108,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M02_AXIS.CLK_DOMAIN">design_2_BiDirChannels_0_0_txclk</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M02_AXIS.CLK_DOMAIN">/clk_wiz_0_clk_out1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1157,16 +1157,12 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_RESET"/>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_RESET">tx_rstn</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.TXCLK.FREQ_HZ">50000000</spirit:value>
-          <spirit:vendorExtensions>
-            <xilinx:parameterInfo>
-              <xilinx:parameterUsage>none</xilinx:parameterUsage>
-            </xilinx:parameterInfo>
-          </spirit:vendorExtensions>
+          <spirit:description>6250000</spirit:description>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.TXCLK.FREQ_HZ"/>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
@@ -1188,7 +1184,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>CLK_DOMAIN</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.TXCLK.CLK_DOMAIN">design_2_BiDirChannels_0_0_txclk</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.TXCLK.CLK_DOMAIN">/clk_wiz_0_clk_out1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1394,11 +1390,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 15 00:06:56 UTC 2022</spirit:value>
+            <spirit:value>Fri Apr 15 06:04:37 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:875eda10</spirit:value>
+            <spirit:value>9:2c875d58</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1409,7 +1405,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:875eda10</spirit:value>
+            <spirit:value>9:2c875d58</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1425,11 +1421,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 15 00:06:56 UTC 2022</spirit:value>
+            <spirit:value>Fri Apr 15 06:04:37 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:875eda10</spirit:value>
+            <spirit:value>9:2c875d58</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1445,11 +1441,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 15 00:06:56 UTC 2022</spirit:value>
+            <spirit:value>Fri Apr 15 06:04:37 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f972f058</spirit:value>
+            <spirit:value>9:dfd2f721</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1465,11 +1461,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 15 00:06:56 UTC 2022</spirit:value>
+            <spirit:value>Fri Apr 15 06:04:37 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f972f058</spirit:value>
+            <spirit:value>9:dfd2f721</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1483,11 +1479,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 15 00:06:56 UTC 2022</spirit:value>
+            <spirit:value>Fri Apr 15 06:04:37 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:875eda10</spirit:value>
+            <spirit:value>9:2c875d58</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1501,11 +1497,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Apr 15 00:08:53 UTC 2022</spirit:value>
+            <spirit:value>Fri Apr 15 06:05:56 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:875eda10</spirit:value>
+            <spirit:value>9:2c875d58</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2244,15 +2240,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/4bc8/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv</spirit:name>
+        <spirit:name>../../ipshared/c388/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4bc8/src/axis_stream_txfifo_v2_0_S00_AXIS.sv</spirit:name>
+        <spirit:name>../../ipshared/c388/src/axis_stream_txfifo_v2_0_S00_AXIS.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4bc8/hdl/axis_stream_txfifo_v2_0.sv</spirit:name>
+        <spirit:name>../../ipshared/c388/hdl/axis_stream_txfifo_v2_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2267,15 +2263,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/4bc8/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv</spirit:name>
+        <spirit:name>../../ipshared/c388/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4bc8/src/axis_stream_txfifo_v2_0_S00_AXIS.sv</spirit:name>
+        <spirit:name>../../ipshared/c388/src/axis_stream_txfifo_v2_0_S00_AXIS.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/4bc8/hdl/axis_stream_txfifo_v2_0.sv</spirit:name>
+        <spirit:name>../../ipshared/c388/hdl/axis_stream_txfifo_v2_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2491,7 +2487,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>axis_stream_txfifo_v2.0</xilinx:displayName>
-      <xilinx:coreRevision>13</xilinx:coreRevision>
+      <xilinx:coreRevision>17</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="user.org:user:axis_stream_txfifo:2.0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@aebe5eb_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
@@ -2572,6 +2568,37 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@3843f720_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2ec5c5a4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@49b4ee36_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32e2be36_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7dbda76_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bd70ec7_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a5292cb_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1831b041_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7be77872_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@404127db_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6659e4a4_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@471a8416_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@741e52ac_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21af0ffd_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30dbd27b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f8b1b75_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7eaea837_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@452f1271_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b5b265b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e2e740a_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10f63040_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6637cdc9_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4748ed4_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bdfe0d7_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e9e585c_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c8a239b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d28da34_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3951b13a_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d401746_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@562fccda_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1fc0e584_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6100172a_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5768d267_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12c34c4_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/axis_stream_txfifo_2.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
@@ -2581,40 +2608,40 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.PHASE" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.FREQ_HZ" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.CLK_DOMAIN" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.FREQ_HZ" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.HAS_TLAST" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.HAS_TREADY" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.HAS_TSTRB" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.LAYERED_METADATA" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.PHASE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.TDATA_NUM_BYTES" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.TDEST_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.TUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.WIZ_DATA_WIDTH" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.FREQ_HZ" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.CLK_DOMAIN" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.FREQ_HZ" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.HAS_TLAST" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.HAS_TREADY" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.HAS_TSTRB" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.LAYERED_METADATA" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.PHASE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.TDATA_NUM_BYTES" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.TDEST_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.TUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M01_AXIS.WIZ_DATA_WIDTH" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.FREQ_HZ" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.CLK_DOMAIN" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.FREQ_HZ" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.HAS_TLAST" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.HAS_TREADY" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.HAS_TSTRB" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.LAYERED_METADATA" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.PHASE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.TDATA_NUM_BYTES" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.TDEST_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M02_AXIS.TID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -2669,10 +2696,10 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_PORT" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.FREQ_HZ" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.CLK_DOMAIN" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.FREQ_HZ" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.PHASE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TXCLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.TX_RSTN.POLARITY" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ADDR_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" xilinx:valueSource="user"/>
@@ -2682,9 +2709,9 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="4202f66a"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c23c237d"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d54adb3e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fe4a1617"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="2ab6d4e1"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f44cba14"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="833047b4"/>

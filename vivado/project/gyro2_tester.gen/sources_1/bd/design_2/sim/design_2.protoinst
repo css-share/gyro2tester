@@ -1071,6 +1071,7 @@
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "txclk"},
+						"ARESETN": { "actual": "tx_rstn"},
 						"TDATA": { "actual": "m00_axis_tdata"},
 						"TLAST": { "actual": "m00_axis_tlast"},
 						"TREADY": { "actual": "m00_axis_tready"},
@@ -1082,6 +1083,7 @@
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "txclk"},
+						"ARESETN": { "actual": "tx_rstn"},
 						"TDATA": { "actual": "m01_axis_tdata"},
 						"TLAST": { "actual": "m01_axis_tlast"},
 						"TREADY": { "actual": "m01_axis_tready"},
@@ -1093,6 +1095,7 @@
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
 						"ACLK": { "actual": "txclk"},
+						"ARESETN": { "actual": "tx_rstn"},
 						"TDATA": { "actual": "m02_axis_tdata"},
 						"TLAST": { "actual": "m02_axis_tlast"},
 						"TREADY": { "actual": "m02_axis_tready"},

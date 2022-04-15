@@ -3,7 +3,6 @@
 	<name>dma_example</name>
 	<comment>Created by Vitis v2021.2</comment>
 	<projects>
-		<project>design_2_wrapper</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
