@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Apr 14 01:07:39 2022
+# Process ID: 28890
+# Current directory: /home/cdickins/reuse/gyro2tester-main/vivado
+# Command line: vivado
+# Log file: /home/cdickins/reuse/gyro2tester-main/vivado/vivado.log
+# Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 14 01:08:27 2022...

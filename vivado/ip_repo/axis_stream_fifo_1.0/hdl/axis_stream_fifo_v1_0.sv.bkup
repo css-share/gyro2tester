@@ -1,0 +1,209 @@
+
+`timescale 1 ns / 1 ps
+
+
+
+
+
+
+	module axis_stream_fifo_v1_0 #
+	(
+     parameter integer C_S00_AXIS_TDATA_WIDTH = 16,
+     parameter integer C_M00_AXIS_TDATA_WIDTH = 32,
+     parameter integer C_S00_AXI_DATA_WIDTH	= 32,
+	 parameter integer C_S00_AXI_ADDR_WIDTH	= 4
+
+	)
+	(
+     input clk,
+     input rst_n,
+     input txclk,
+     input tx_rstn,
+     output logic rxfifo_full,
+     
+		input wire [C_S00_AXI_ADDR_WIDTH-1 : 0]     s00_axi_awaddr,
+		input wire [2 : 0]                          s00_axi_awprot,
+		input wire                                  s00_axi_awvalid,
+		output wire                                 s00_axi_awready,
+		input wire [C_S00_AXI_DATA_WIDTH-1 : 0]     s00_axi_wdata,
+		input wire [(C_S00_AXI_DATA_WIDTH/8)-1 : 0] s00_axi_wstrb,
+		input wire                               s00_axi_wvalid,
+		output wire                              s00_axi_wready,
+		output wire [1 : 0]                      s00_axi_bresp,
+		output wire                              s00_axi_bvalid,
+		input wire                               s00_axi_bready,
+		input wire [C_S00_AXI_ADDR_WIDTH-1 : 0]  s00_axi_araddr,
+		input wire [2 : 0]                       s00_axi_arprot,
+		input wire                               s00_axi_arvalid,
+		output wire                              s00_axi_arready,
+		output wire [C_S00_AXI_DATA_WIDTH-1 : 0] s00_axi_rdata,
+		output wire [1 : 0]                      s00_axi_rresp,
+		output wire                              s00_axi_rvalid,
+		input wire                               s00_axi_rready,
+
+    /* 
+     * AXI slave interface (input to the FIFO)
+     */  
+ 
+    input  wire [C_S00_AXIS_TDATA_WIDTH-1:0]       s00_axis_tdata,  
+    input  wire [(C_S00_AXIS_TDATA_WIDTH/8)-1 : 0] s00_axis_tstrb,  
+    input  wire                                    s00_axis_tvalid,  
+    output wire                                    s00_axis_tready,  
+    input  wire                                    s00_axis_tlast,  
+      
+    /* 
+     * AXI master interface (output of the FIFO) 
+     */  
+
+    output wire [C_M00_AXIS_TDATA_WIDTH-1:0]       m00_axis_tdata,  
+    output wire [(C_M00_AXIS_TDATA_WIDTH/8)-1 : 0] m00_axis_tstrb,  
+    output wire                                    m00_axis_tvalid,  
+    input  wire                                    m00_axis_tready,  
+    output wire                                    m00_axis_tlast  
+	);
+
+
+
+  
+	logic [31:0] reg_word0;
+    logic [31:0] reg_word1;
+	logic [31:0] reg_word2;
+	logic [31:0] reg_word3;
+
+
+    logic        read_fifo_en;
+
+
+  logic        rx_fifo_qempty;
+  logic        rx_fifo_qfull; 
+  logic        rx_fifo_afull;
+  logic        rx_fifo_pop;
+  logic        rx_fifo_push;
+  logic [16:0] rx_fifo_fill_rd;
+  logic        rx_fifo_halt;
+
+  
+// Instantiation of Axi Bus Interface S00_AXI
+	axis_stream_fifo_v1_0_S00_AXI # ( 
+		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
+		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
+	) axis_stream_fifo_v1_0_S00_AXI_inst (
+		.S_AXI_ACLK(clk),
+		.S_AXI_ARESETN(rst_n),
+		.S_AXI_AWADDR(s00_axi_awaddr),
+		.S_AXI_AWPROT(s00_axi_awprot),
+		.S_AXI_AWVALID(s00_axi_awvalid),
+		.S_AXI_AWREADY(s00_axi_awready),
+		.S_AXI_WDATA(s00_axi_wdata),
+		.S_AXI_WSTRB(s00_axi_wstrb),
+		.S_AXI_WVALID(s00_axi_wvalid),
+		.S_AXI_WREADY(s00_axi_wready),
+		.S_AXI_BRESP(s00_axi_bresp),
+		.S_AXI_BVALID(s00_axi_bvalid),
+		.S_AXI_BREADY(s00_axi_bready),
+		.S_AXI_ARADDR(s00_axi_araddr),
+		.S_AXI_ARPROT(s00_axi_arprot),
+		.S_AXI_ARVALID(s00_axi_arvalid),
+		.S_AXI_ARREADY(s00_axi_arready),
+		.S_AXI_RDATA(s00_axi_rdata),
+		.S_AXI_RRESP(s00_axi_rresp),
+		.S_AXI_RVALID(s00_axi_rvalid),
+		.S_AXI_RREADY(s00_axi_rready),
+
+		.slv_reg0(reg_word0),
+		.slv_reg1(reg_word1),
+		.slv_reg2(reg_word2),
+		.dbg_word3(reg_word3)
+	);
+
+
+
+
+
+
+
+  logic [31:0] rx_double_word;
+  logic rx_word_toggle;
+
+
+  always @ (posedge txclk or negedge tx_rstn)
+   begin
+    if (~tx_rstn)
+      rx_double_word <= 0;
+    else if (s00_axis_tvalid & s00_axis_tready)
+      rx_double_word <= {rx_double_word[15:0], s00_axis_tdata};
+   end
+
+  
+  always @ (posedge txclk or negedge tx_rstn)
+   begin
+    if (~tx_rstn)
+      rx_word_toggle <= 0;
+    else if (s00_axis_tvalid & s00_axis_tready)
+      rx_word_toggle <= ~rx_word_toggle;
+   end   
+
+
+
+  
+  // Write side logic 
+  assign s00_axis_tready = ~(rx_fifo_afull) & ~(rx_fifo_halt);
+  assign rx_fifo_push = s00_axis_tvalidrx_word_toggle & s00_axis_tready;
+  
+
+
+  assign reg_word3[16:0]  = rx_fifo_fill_rd;
+  assign reg_word3[31]    = rx_fifo_afull;
+  assign reg_word3[30]    = rx_fifo_qempty;
+  assign reg_word3[29:17] = 13'h0000;
+  
+
+
+  always @(posedge txclk or negedge tx_rstn)
+  begin
+    if (~tx_rstn)
+     rx_fifo_halt <= 0;
+    else if (reg_word1[0])
+      rx_fifo_halt <= 0;
+    else if (rx_fifo_afull)
+      rx_fifo_halt <= 1'b1;
+   end
+
+
+
+  
+ // Read side logic 
+  assign read_fifo_en = reg_word0[0];
+  assign rx_fifo_pop  = m00_axis_tvalid & m00_axis_tready;
+
+
+    gen_async_que #(.DPWR(16), .WD(C_S00_AXIS_TDATA_WIDTH), .AF(16384), .FIFO_RESET(0))  u_rx_async_stream_fifo (
+      .qout       (m00_axis_tdata[15:0]),
+      .pop        (rx_fifo_pop),
+      .rd_clk     (clk),
+      .rrst_n     (rst_n),
+      .qempty     (rx_fifo_qempty), 
+      .din        (s00_axis_tdata),
+      .fill_rd    (rx_fifo_fill_rd),
+      .qfull      (),
+      .q_afull    (rx_fifo_afull),
+      .fill_wr    (),
+      .push       (rx_fifo_push),
+      .wr_clk     (txclk),
+      .rst_n      (tx_rstn)
+    );
+
+
+
+
+  assign rxfifo_full = rx_fifo_afull;
+  assign m00_axis_tlast = ((rx_fifo_fill_rd == 17'h00001) & rx_fifo_pop) ? 1'b1 : 1'b0;
+  assign m00_axis_tdata[31:16] = 0;
+  assign m00_axis_tstrb = 4'hf;  
+  assign m00_axis_tvalid = !rx_fifo_qempty & read_fifo_en; 
+
+
+
+
+  
+	endmodule

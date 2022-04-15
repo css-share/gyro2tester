@@ -84,6 +84,8 @@ set_property parent.project_path /home/cdickins/reuse/gyro2tester-main/vivado/pr
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part_repo_paths {/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/board_files/zed} [current_project]
+set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.cache/ip [current_project]

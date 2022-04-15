@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 12 18:38:01 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 14 17:07:20 2022" VIVADOVERSION="2021.2">
 
-  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_2" PACKAGE="clg484" SPEEDGRADE="-1"/>
+  <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_2" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="O" NAME="SPI_SCK" SIGIS="data" SIGNAME="SPI_ip_0_SPI_SCK">
@@ -1721,10 +1721,10 @@
         </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="O" NAME="txclk" SIGIS="clk" SIGNAME="BiDirChannels_0_txclk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RxFIFO" PORT="txclk"/>
-            <CONNECTION INSTANCE="txclk_reset_domain" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="TxFIFO" PORT="txclk"/>
             <CONNECTION INSTANCE="led_driver_0" PORT="clk"/>
+            <CONNECTION INSTANCE="txclk_reset_domain" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="RxFIFO" PORT="txclk"/>
+            <CONNECTION INSTANCE="TxFIFO" PORT="txclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="DTX" SIGIS="undef" SIGNAME="BiDirChannels_0_DTX">
@@ -2097,7 +2097,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="56" FULLNAME="/RxFIFO" HWVERSION="1.0" INSTANCE="RxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_fifo" VLNV="xilinx.com:user:axis_stream_fifo:1.0">
+    <MODULE COREREVISION="57" FULLNAME="/RxFIFO" HWVERSION="1.0" INSTANCE="RxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_fifo" VLNV="xilinx.com:user:axis_stream_fifo:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -2583,7 +2583,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="12" FULLNAME="/TxFIFO" HWVERSION="2.0" INSTANCE="TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
+    <MODULE COREREVISION="13" FULLNAME="/TxFIFO" HWVERSION="2.0" INSTANCE="TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -6202,15 +6202,15 @@
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M06_ARESETN"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="rst_n"/>
-            <CONNECTION INSTANCE="RxFIFO" PORT="rst_n"/>
             <CONNECTION INSTANCE="SPI_ip_0" PORT="rstn"/>
-            <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="TxFIFO" PORT="rstn"/>
             <CONNECTION INSTANCE="data_processor_0" PORT="reset"/>
+            <CONNECTION INSTANCE="axi_smc" PORT="aresetn"/>
+            <CONNECTION INSTANCE="RxFIFO" PORT="rst_n"/>
+            <CONNECTION INSTANCE="TxFIFO" PORT="rstn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -7736,18 +7736,18 @@
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="clk"/>
-            <CONNECTION INSTANCE="RxFIFO" PORT="clk"/>
             <CONNECTION INSTANCE="SPI_ip_0" PORT="clk"/>
-            <CONNECTION INSTANCE="clk_reset_domain" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
-            <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="aclk"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="TxFIFO" PORT="clk"/>
             <CONNECTION INSTANCE="data_processor_0" PORT="clk"/>
+            <CONNECTION INSTANCE="clk_reset_domain" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
+            <CONNECTION INSTANCE="axi_smc" PORT="aclk"/>
+            <CONNECTION INSTANCE="RxFIFO" PORT="clk"/>
+            <CONNECTION INSTANCE="TxFIFO" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -8130,9 +8130,9 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="txclk_reset_domain_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="tx_rstn"/>
+            <CONNECTION INSTANCE="led_driver_0" PORT="rstn"/>
             <CONNECTION INSTANCE="RxFIFO" PORT="tx_rstn"/>
             <CONNECTION INSTANCE="TxFIFO" PORT="tx_rstn"/>
-            <CONNECTION INSTANCE="led_driver_0" PORT="rstn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
