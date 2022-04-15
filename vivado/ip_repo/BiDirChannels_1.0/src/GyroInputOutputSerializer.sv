@@ -19,7 +19,7 @@
 
 module GyroInputOutputSerializer (
   input               clock,
-  input               txclk,
+  output logic        txclk,
   input               tx_rstn,
   input               reset_n,
   input               enable,
@@ -33,7 +33,13 @@ module GyroInputOutputSerializer (
   input  [2:0]        in_channel,
   input  [3:0]        out_channel,
   input               HSCK_POL,		// 0: HSCK rest at 0, 1: HSCK rest at 1.
+                                 
+  input  [47:0]       tx_fifo_tdata,
+  input               tx_fifo_tvalid,
+  output logic        tx_fifo_tready,
+  input               tx_fifo_tlast,
 
+/*
   input  [15:0]       tx_fifo_data,
   input               tx_fifo_valid,
   output logic        tx_fifo_ready,
@@ -48,6 +54,7 @@ module GyroInputOutputSerializer (
   input               tx2_fifo_valid,
   output logic        tx2_fifo_ready,
   input               tx2_fifo_last,
+*/
 				  
   output logic [15:0] rx_fifo_data,
   output logic        rx_fifo_valid,
@@ -141,6 +148,61 @@ clock_divider_by_10 SYNC_CLK_DIV (
 
 
 
+  
+  logic [47:0]       tx_fifo_tdata_t;
+  logic              tx_fifo_tvalid_t;
+  logic              tx_fifo_tready_t;
+  logic              tx_fifo_tlast_t;
+
+  logic              tx_async_pop;
+  logic              tx_async_push;
+  logic              tx_async_qempty;
+  logic              tx_async_afull;
+  logic              tx_async_qfull;
+
+
+
+  //////////////////////////////////////////////////////////////////
+  // Write side logic 
+  assign tx_fifo_tready = ~(tx_async_afull) & out_start_stop;
+  assign tx_async_push = tx_fifo_tvalid & tx_fifo_tready;
+
+
+  
+  
+  gen_async_que #(.DPWR(3), .WD(48), .FIFO_RESET(0))  u_tx_async_stream_fifo (
+      .qout       (tx_fifo_tdata_t),
+      .pop        (tx_async_pop),
+      .rd_clk     (txclk),
+      .rrst_n     (tx_rstn),
+      .qempty     (tx_async_qempty), 
+      .din        (tx_fifo_tdata),
+      .fill_rd    (),
+      .qfull      (tx_async_qfull),
+      .q_afull    (tx_async_afull),
+      .fill_wr    (),
+      .push       (tx_async_push),
+      .wr_clk     (clock),
+      .rst_n      (reset_n)
+    );
+
+  
+ // Read side logic 
+  assign tx_fifo_tvalid_t = !tx_async_qempty;
+  assign tx_async_pop  = tx_fifo_tvalid_t & tx_fifo_tready_t;
+
+
+
+  
+  
+  //assign m00_axis_tlast = ((rx_fifo_fill_rd == 17'h00001) & rx_fifo_pop) ? 1'b1 : 1'b0;
+//  assign m00_axis_tdata[31:16] = 0;
+ // assign m00_axis_tstrb = 4'hf;
+
+  
+ 
+
+
 
   
 //  register_2bits STATE_REG(
@@ -201,7 +263,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
   begin
     case (cur_state)
       IDLE : begin
-        if (tx_fifo_valid & tx1_fifo_valid & tx1_fifo_valid & out_start_stop)
+        if (tx_fifo_tvalid_t & out_start_stop)
           nxt_state = LOAD;
         else
           nxt_state = IDLE;
@@ -215,7 +277,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
       SHIFT : begin
         if (~shift_last)
           nxt_state = SHIFT;
-        else if (tx_fifo_valid & tx1_fifo_valid & tx1_fifo_valid & out_start_stop)
+        else if (tx_fifo_tvalid_t & out_start_stop)
           nxt_state = LOAD;
         else
           nxt_state = IDLE;
@@ -241,7 +303,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
     if (~tx_rstn)   
       shift_reg <= 0;  
     else if (cur_state == LOAD)
-      shift_reg <= {tx_fifo_data, tx1_fifo_data, tx2_fifo_data}; 
+      shift_reg <= tx_fifo_tdata_t; 
     else if ((cur_state == SHIFT) && (count_48 != 0))
       shift_reg <= {shift_reg[46:0], 1'b0};
     end    
@@ -272,17 +334,19 @@ clock_divider_by_10 SYNC_CLK_DIV (
 
   
   
+  assign tx_fifo_tready_t = (cur_state == LOAD);
+
   
-  assign tx_fifo_ready   = (cur_state == LOAD);
-  assign tx1_fifo_ready  = (cur_state == LOAD); 
-  assign tx2_fifo_ready  = (cur_state == LOAD);
+ // assign tx_fifo_ready   = (cur_state == LOAD);
+ // assign tx1_fifo_ready  = (cur_state == LOAD); 
+ // assign tx2_fifo_ready  = (cur_state == LOAD);
 
 
   assign shift_oe =  (cur_state == SHIFT);
 
 
 
- // assign txclk = clock_div_2;
+  assign txclk = clock_div_2;
  
 ///////////////////////////////////////////////////
 // High Speed Output assignments                 //

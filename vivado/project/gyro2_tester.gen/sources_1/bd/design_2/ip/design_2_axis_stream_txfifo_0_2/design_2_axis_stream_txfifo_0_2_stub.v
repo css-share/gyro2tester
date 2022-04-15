@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Thu Apr 14 23:05:56 2022
-// Host        : AsusP8 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+// Date        : Fri Apr 15 02:13:04 2022
+// Host        : xsjl210012 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_stub.v
+//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_stub.v
 // Design      : design_2_axis_stream_txfifo_0_2
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -14,20 +14,16 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "axis_stream_txfifo_v2_0,Vivado 2021.2" *)
-module design_2_axis_stream_txfifo_0_2(clk, txclk, rstn, tx_rstn, txfifo_full, 
-  s00_axi_awaddr, s00_axi_awprot, s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, 
-  s00_axi_wstrb, s00_axi_wvalid, s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, 
-  s00_axi_bready, s00_axi_araddr, s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, 
-  s00_axi_rdata, s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, s00_axis_tready, 
-  s00_axis_tdata, s00_axis_tstrb, s00_axis_tlast, s00_axis_tvalid, m00_axis_tvalid, 
-  m00_axis_tdata, m00_axis_tstrb, m00_axis_tlast, m00_axis_tready, m01_axis_tvalid, 
-  m01_axis_tdata, m01_axis_tstrb, m01_axis_tlast, m01_axis_tready, m02_axis_tvalid, 
-  m02_axis_tdata, m02_axis_tstrb, m02_axis_tlast, m02_axis_tready)
-/* synthesis syn_black_box black_box_pad_pin="clk,txclk,rstn,tx_rstn,txfifo_full,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s00_axis_tready,s00_axis_tdata[31:0],s00_axis_tstrb[3:0],s00_axis_tlast,s00_axis_tvalid,m00_axis_tvalid,m00_axis_tdata[15:0],m00_axis_tstrb[1:0],m00_axis_tlast,m00_axis_tready,m01_axis_tvalid,m01_axis_tdata[15:0],m01_axis_tstrb[1:0],m01_axis_tlast,m01_axis_tready,m02_axis_tvalid,m02_axis_tdata[15:0],m02_axis_tstrb[1:0],m02_axis_tlast,m02_axis_tready" */;
+module design_2_axis_stream_txfifo_0_2(clk, rstn, txfifo_full, s00_axi_awaddr, 
+  s00_axi_awprot, s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, s00_axi_wstrb, 
+  s00_axi_wvalid, s00_axi_wready, s00_axi_bresp, s00_axi_bvalid, s00_axi_bready, 
+  s00_axi_araddr, s00_axi_arprot, s00_axi_arvalid, s00_axi_arready, s00_axi_rdata, 
+  s00_axi_rresp, s00_axi_rvalid, s00_axi_rready, s00_axis_tready, s00_axis_tdata, 
+  s00_axis_tstrb, s00_axis_tlast, s00_axis_tvalid, m00_axis_tvalid, m00_axis_tdata, 
+  m00_axis_tstrb, m00_axis_tlast, m00_axis_tready)
+/* synthesis syn_black_box black_box_pad_pin="clk,rstn,txfifo_full,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,s00_axis_tready,s00_axis_tdata[31:0],s00_axis_tstrb[3:0],s00_axis_tlast,s00_axis_tvalid,m00_axis_tvalid,m00_axis_tdata[47:0],m00_axis_tstrb[5:0],m00_axis_tlast,m00_axis_tready" */;
   input clk;
-  input txclk;
   input rstn;
-  input tx_rstn;
   output txfifo_full;
   input [3:0]s00_axi_awaddr;
   input [2:0]s00_axi_awprot;
@@ -54,18 +50,8 @@ module design_2_axis_stream_txfifo_0_2(clk, txclk, rstn, tx_rstn, txfifo_full,
   input s00_axis_tlast;
   input s00_axis_tvalid;
   output m00_axis_tvalid;
-  output [15:0]m00_axis_tdata;
-  output [1:0]m00_axis_tstrb;
+  output [47:0]m00_axis_tdata;
+  output [5:0]m00_axis_tstrb;
   output m00_axis_tlast;
   input m00_axis_tready;
-  output m01_axis_tvalid;
-  output [15:0]m01_axis_tdata;
-  output [1:0]m01_axis_tstrb;
-  output m01_axis_tlast;
-  input m01_axis_tready;
-  output m02_axis_tvalid;
-  output [15:0]m02_axis_tdata;
-  output [1:0]m02_axis_tstrb;
-  output m02_axis_tlast;
-  input m02_axis_tready;
 endmodule

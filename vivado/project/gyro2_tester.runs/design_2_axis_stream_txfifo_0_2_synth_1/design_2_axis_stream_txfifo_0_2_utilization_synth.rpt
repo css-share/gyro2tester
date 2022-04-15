@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Thu Apr 14 23:05:56 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 02:13:04 2022
+| Host         : xsjl210012 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_utilization -file design_2_axis_stream_txfifo_0_2_utilization_synth.rpt -pb design_2_axis_stream_txfifo_0_2_utilization_synth.pb
 | Design       : design_2_axis_stream_txfifo_0_2
 | Device       : xc7z020clg484-1
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 1794 |     0 |          0 |     53200 |  3.37 |
-|   LUT as Logic             |  386 |     0 |          0 |     53200 |  0.73 |
+| Slice LUTs*                | 1792 |     0 |          0 |     53200 |  3.37 |
+|   LUT as Logic             |  384 |     0 |          0 |     53200 |  0.72 |
 |   LUT as Memory            | 1408 |     0 |          0 |     17400 |  8.09 |
 |     LUT as Distributed RAM | 1408 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
@@ -150,17 +150,17 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | RAMD64E  | 1408 |  Distributed Memory |
-| LUT6     |  310 |                 LUT |
+| LUT6     |  311 |                 LUT |
 | FDRE     |  144 |        Flop & Latch |
 | MUXF7    |  128 |               MuxFx |
 | FDCE     |  122 |        Flop & Latch |
 | MUXF8    |   64 |               MuxFx |
-| LUT5     |   35 |                 LUT |
-| LUT4     |   21 |                 LUT |
-| LUT2     |   18 |                 LUT |
+| LUT5     |   34 |                 LUT |
+| LUT4     |   20 |                 LUT |
+| LUT2     |   19 |                 LUT |
 | CARRY4   |    8 |          CarryLogic |
 | LUT3     |    4 |                 LUT |
-| LUT1     |    3 |                 LUT |
+| LUT1     |    2 |                 LUT |
 | FDSE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 

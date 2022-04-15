@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650003241" LaunchIncrCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" LaunchWriteIncrSynthDcp="true">
-  <File Type="PA-TCL" Name="design_2_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="design_2_wrapper_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="design_2_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="design_2_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="design_2_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="design_2_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="design_2_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="design_2_wrapper_timing_summary_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650014967" LaunchIncrCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="VDS-TIMING-PB" Name="design_2_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="design_2_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="design_2_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="design_2_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="design_2_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="design_2_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="design_2_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="design_2_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="design_2_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../ip_repo/common/data_processor.v">
@@ -36,26 +36,6 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/design_2/hdl/design_2_wrapper.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/common/clock_mux.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ip_repo/common/clock_mux.v"/>
-        <Attr Name="ImportTime" Val="1649292563"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/common/mux_8x1_1bit.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../ip_repo/common/mux_8x1_1bit.sv"/>
-        <Attr Name="ImportTime" Val="1649292563"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -100,13 +80,13 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="design_2_BiDirChannels_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_SPI_ip_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_axi_dma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_proc_sys_reset_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_led_driver_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_data_processor_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axi_dma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_SPI_ip_0_0"/>
 </GenRun>

@@ -79,7 +79,7 @@
   logic        rx_fifo_afull;
   logic        rx_fifo_pop;
   logic        rx_fifo_push;
-  logic [16:0] rx_fifo_fill_rd;
+  logic [15:0] rx_fifo_fill_rd;
   logic        rx_fifo_halt;
 
   
@@ -180,10 +180,10 @@
   
 
 
-  assign reg_word3[16:0]  = rx_fifo_fill_rd;
+  assign reg_word3[15:0]  = rx_fifo_fill_rd;
   assign reg_word3[31]    = rx_fifo_afull;
   assign reg_word3[30]    = rx_fifo_qempty;
-  assign reg_word3[29:17] = 13'h0000;
+  assign reg_word3[29:16] = 13'h0000;
   
 
 
@@ -225,7 +225,7 @@
 
 
   assign rxfifo_full = rx_fifo_afull;
-  assign m00_axis_tlast = ((rx_fifo_fill_rd == 17'h00001) & rx_fifo_pop) ? 1'b1 : 1'b0;
+  assign m00_axis_tlast = ((rx_fifo_fill_rd == 16'h0001) & rx_fifo_pop) ? 1'b1 : 1'b0;
 //  assign m00_axis_tdata[31:16] = 0;
   assign m00_axis_tstrb = 4'hf;  
   assign m00_axis_tvalid = !rx_fifo_qempty & read_fifo_en; 
