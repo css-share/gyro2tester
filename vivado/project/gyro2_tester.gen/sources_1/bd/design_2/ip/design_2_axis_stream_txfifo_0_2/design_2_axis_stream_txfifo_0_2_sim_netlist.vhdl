@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Fri Apr 15 02:13:05 2022
--- Host        : xsjl210012 running 64-bit CentOS Linux release 7.4.1708 (Core)
+-- Date        : Fri Apr 15 18:39:43 2022
+-- Host        : xsjl23956 running 64-bit CentOS Linux release 7.4.1708 (Core)
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.vhdl
 -- Design      : design_2_axis_stream_txfifo_0_2
@@ -690,14 +690,14 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     );
 \axi_rdata[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"A0A0CFC0"
+      INIT => X"AFFCA0FC"
     )
         port map (
       I0 => Q(8),
-      I1 => slv_reg1(8),
-      I2 => axi_araddr(2),
-      I3 => \slv_reg0_reg_n_0_[8]\,
-      I4 => axi_araddr(3),
+      I1 => \slv_reg0_reg_n_0_[8]\,
+      I2 => axi_araddr(3),
+      I3 => axi_araddr(2),
+      I4 => slv_reg1(8),
       O => reg_data_out(8)
     );
 \axi_rdata[9]_i_1\: unisim.vcomponents.LUT5
@@ -1019,13 +1019,13 @@ m00_axis_tlast_INST_0: unisim.vcomponents.LUT4
     );
 m00_axis_tlast_INST_0_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000080000000000"
+      INIT => X"0000800000000000"
     )
         port map (
       I0 => m00_axis_tready,
       I1 => slv_reg0,
-      I2 => \rd_ptr_reg_reg__0\(2),
-      I3 => rd_ptr_reg_reg(5),
+      I2 => rd_ptr_reg_reg(1),
+      I3 => rd_ptr_reg_reg(4),
       I4 => \rd_ptr_reg_reg__0\(3),
       I5 => ADDRA(4),
       O => m00_axis_tlast_INST_0_i_1_n_0
@@ -1880,69 +1880,69 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS is
   port (
     mst_exec_state_reg_0 : out STD_LOGIC;
-    write_pointer : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    D : out STD_LOGIC_VECTOR ( 15 downto 0 );
     fifo_wren : out STD_LOGIC;
-    ADDRD : out STD_LOGIC_VECTOR ( 4 downto 0 );
-    \write_pointer_reg[3]_rep__0_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \write_pointer_reg[0]_rep__1_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ADDRD : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    \write_pointer_reg[5]_rep__0_0\ : out STD_LOGIC_VECTOR ( 5 downto 0 );
     \write_pointer_reg[3]_rep_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \write_pointer_reg[0]_rep__3_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \write_pointer_reg[0]_rep__2_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
+    \write_pointer_reg[1]_rep_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \write_pointer_reg[5]_rep__1_0\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \write_pointer_reg[5]_rep__0_0\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \write_pointer_reg[5]_rep_0\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    \write_pointer_reg[4]_rep__0_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \write_pointer_reg[14]_0\ : out STD_LOGIC;
-    \write_pointer_reg[8]_0\ : out STD_LOGIC;
     \write_pointer_reg[10]_0\ : out STD_LOGIC;
-    \write_pointer_reg[6]_0\ : out STD_LOGIC;
-    \write_pointer_reg[6]_1\ : out STD_LOGIC;
-    \write_pointer_reg[7]_0\ : out STD_LOGIC;
-    \write_pointer_reg[6]_2\ : out STD_LOGIC;
-    \write_pointer_reg[7]_1\ : out STD_LOGIC;
     \write_pointer_reg[10]_1\ : out STD_LOGIC;
+    \write_pointer_reg[6]_0\ : out STD_LOGIC;
     \write_pointer_reg[9]_0\ : out STD_LOGIC;
+    \write_pointer_reg[8]_0\ : out STD_LOGIC;
+    \write_pointer_reg[7]_0\ : out STD_LOGIC;
     \write_pointer_reg[8]_1\ : out STD_LOGIC;
-    \write_pointer_reg[6]_3\ : out STD_LOGIC;
+    \write_pointer_reg[7]_1\ : out STD_LOGIC;
     \write_pointer_reg[7]_2\ : out STD_LOGIC;
-    \write_pointer_reg[9]_1\ : out STD_LOGIC;
-    \write_pointer_reg[9]_2\ : out STD_LOGIC;
-    \write_pointer_reg[8]_2\ : out STD_LOGIC;
-    \write_pointer_reg[9]_3\ : out STD_LOGIC;
-    \write_pointer_reg[8]_3\ : out STD_LOGIC;
-    \write_pointer_reg[9]_4\ : out STD_LOGIC;
+    \write_pointer_reg[6]_1\ : out STD_LOGIC;
     \write_pointer_reg[7]_3\ : out STD_LOGIC;
-    \write_pointer_reg[8]_4\ : out STD_LOGIC;
-    \write_pointer_reg[8]_5\ : out STD_LOGIC;
+    \write_pointer_reg[9]_1\ : out STD_LOGIC;
+    \write_pointer_reg[8]_2\ : out STD_LOGIC;
+    \write_pointer_reg[8]_3\ : out STD_LOGIC;
     \write_pointer_reg[7]_4\ : out STD_LOGIC;
-    \write_pointer_reg[9]_5\ : out STD_LOGIC;
-    \write_pointer_reg[6]_4\ : out STD_LOGIC;
-    \write_pointer_reg[7]_5\ : out STD_LOGIC;
-    \write_pointer_reg[7]_6\ : out STD_LOGIC;
+    \write_pointer_reg[9]_2\ : out STD_LOGIC;
+    \write_pointer_reg[8]_4\ : out STD_LOGIC;
+    \write_pointer_reg[9]_3\ : out STD_LOGIC;
+    \write_pointer_reg[8]_5\ : out STD_LOGIC;
     \write_pointer_reg[8]_6\ : out STD_LOGIC;
-    \write_pointer_reg[7]_7\ : out STD_LOGIC;
+    \write_pointer_reg[6]_2\ : out STD_LOGIC;
+    \write_pointer_reg[7]_5\ : out STD_LOGIC;
+    \write_pointer_reg[9]_4\ : out STD_LOGIC;
+    \write_pointer_reg[9]_5\ : out STD_LOGIC;
     \write_pointer_reg[8]_7\ : out STD_LOGIC;
-    \write_pointer_reg[6]_5\ : out STD_LOGIC;
     \write_pointer_reg[10]_2\ : out STD_LOGIC;
+    \write_pointer_reg[6]_3\ : out STD_LOGIC;
+    \write_pointer_reg[6]_4\ : out STD_LOGIC;
+    \write_pointer_reg[7]_6\ : out STD_LOGIC;
+    \write_pointer_reg[6]_5\ : out STD_LOGIC;
+    \write_pointer_reg[7]_7\ : out STD_LOGIC;
     \write_pointer_reg[10]_3\ : out STD_LOGIC;
     writes_done_reg_0 : in STD_LOGIC;
     clk : in STD_LOGIC;
     s00_axis_tvalid : in STD_LOGIC;
+    txfifo_full : in STD_LOGIC;
     s00_axis_tlast : in STD_LOGIC;
-    txfifo_full_reg : in STD_LOGIC;
-    txfifo_full : in STD_LOGIC
+    txfifo_full_reg : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS : entity is "axis_stream_txfifo_v2_0_S00_AXIS";
 end design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS;
 
 architecture STRUCTURE of design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS is
-  signal \^addrd\ : STD_LOGIC_VECTOR ( 4 downto 0 );
+  signal \^addrd\ : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal \^d\ : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal \^fifo_wren\ : STD_LOGIC;
+  signal mem_reg_r2_0_63_0_2_i_2_n_0 : STD_LOGIC;
   signal mst_exec_state_i_1_n_0 : STD_LOGIC;
   signal \^mst_exec_state_reg_0\ : STD_LOGIC;
   signal txfifo_full_i_3_n_0 : STD_LOGIC;
   signal txfifo_full_i_4_n_0 : STD_LOGIC;
   signal txfifo_full_i_5_n_0 : STD_LOGIC;
-  signal \^write_pointer\ : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal \write_pointer[0]_i_2_n_0\ : STD_LOGIC;
   signal \write_pointer_reg[0]_i_1_n_0\ : STD_LOGIC;
   signal \write_pointer_reg[0]_i_1_n_1\ : STD_LOGIC;
@@ -1968,7 +1968,7 @@ architecture STRUCTURE of design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_
   signal \write_pointer_reg[4]_i_1_n_5\ : STD_LOGIC;
   signal \write_pointer_reg[4]_i_1_n_6\ : STD_LOGIC;
   signal \write_pointer_reg[4]_i_1_n_7\ : STD_LOGIC;
-  signal \^write_pointer_reg[5]_rep_0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal \^write_pointer_reg[5]_rep__1_0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \write_pointer_reg[8]_i_1_n_0\ : STD_LOGIC;
   signal \write_pointer_reg[8]_i_1_n_1\ : STD_LOGIC;
   signal \write_pointer_reg[8]_i_1_n_2\ : STD_LOGIC;
@@ -1994,12 +1994,12 @@ architecture STRUCTURE of design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_
   attribute ORIG_CELL_NAME of \write_pointer_reg[0]_rep__0\ : label is "write_pointer_reg[0]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[0]_rep__1\ : label is "write_pointer_reg[0]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[0]_rep__2\ : label is "write_pointer_reg[0]";
-  attribute ORIG_CELL_NAME of \write_pointer_reg[0]_rep__3\ : label is "write_pointer_reg[0]";
   attribute ADDER_THRESHOLD of \write_pointer_reg[12]_i_1\ : label is 11;
   attribute ORIG_CELL_NAME of \write_pointer_reg[1]\ : label is "write_pointer_reg[1]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[1]_rep\ : label is "write_pointer_reg[1]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[1]_rep__0\ : label is "write_pointer_reg[1]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[1]_rep__1\ : label is "write_pointer_reg[1]";
+  attribute ORIG_CELL_NAME of \write_pointer_reg[1]_rep__2\ : label is "write_pointer_reg[1]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[2]\ : label is "write_pointer_reg[2]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[2]_rep\ : label is "write_pointer_reg[2]";
   attribute ORIG_CELL_NAME of \write_pointer_reg[2]_rep__0\ : label is "write_pointer_reg[2]";
@@ -2022,427 +2022,437 @@ architecture STRUCTURE of design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_
   attribute SOFT_HLUTNM of writes_done_i_1 : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of writes_done_i_4 : label is "soft_lutpair3";
 begin
-  ADDRD(4 downto 0) <= \^addrd\(4 downto 0);
+  ADDRD(5 downto 0) <= \^addrd\(5 downto 0);
+  D(15 downto 0) <= \^d\(15 downto 0);
   fifo_wren <= \^fifo_wren\;
   mst_exec_state_reg_0 <= \^mst_exec_state_reg_0\;
-  write_pointer(15 downto 0) <= \^write_pointer\(15 downto 0);
   \write_pointer_reg[3]_rep_0\(3 downto 0) <= \^write_pointer_reg[3]_rep_0\(3 downto 0);
-  \write_pointer_reg[5]_rep_0\(1 downto 0) <= \^write_pointer_reg[5]_rep_0\(1 downto 0);
+  \write_pointer_reg[5]_rep__1_0\(1 downto 0) <= \^write_pointer_reg[5]_rep__1_0\(1 downto 0);
 mem_reg_r2_0_63_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000002"
     )
         port map (
-      I0 => \^fifo_wren\,
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(9),
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[10]_3\
+      I0 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I1 => \^d\(10),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(9),
+      I5 => \^d\(8),
+      O => \write_pointer_reg[10]_1\
+    );
+mem_reg_r2_0_63_0_2_i_2: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"08"
+    )
+        port map (
+      I0 => s00_axis_tvalid,
+      I1 => \^mst_exec_state_reg_0\,
+      I2 => txfifo_full,
+      O => mem_reg_r2_0_63_0_2_i_2_n_0
     );
 mem_reg_r2_1024_1087_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000008"
     )
         port map (
-      I0 => \^write_pointer\(10),
-      I1 => \^fifo_wren\,
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(9),
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[10]_1\
+      I0 => \^d\(10),
+      I1 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(9),
+      I5 => \^d\(8),
+      O => \write_pointer_reg[10]_3\
     );
 mem_reg_r2_1088_1151_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(10),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(7),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[8]_4\
+      I0 => \^d\(8),
+      I1 => \^d\(9),
+      I2 => \^d\(10),
+      I3 => \^d\(6),
+      I4 => \^d\(7),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[8]_3\
     );
 mem_reg_r2_1152_1215_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(10),
-      I3 => \^write_pointer\(7),
-      I4 => \^write_pointer\(6),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[8]_6\
+      I0 => \^d\(8),
+      I1 => \^d\(9),
+      I2 => \^d\(10),
+      I3 => \^d\(7),
+      I4 => \^d\(6),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[8]_1\
     );
 mem_reg_r2_1216_1279_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(10),
-      O => \write_pointer_reg[8]_0\
+      I0 => \^d\(8),
+      I1 => \^d\(9),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(10),
+      O => \write_pointer_reg[8]_7\
     );
 mem_reg_r2_1280_1343_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(10),
-      I3 => \^write_pointer\(8),
-      I4 => \^write_pointer\(6),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[7]_6\
+      I0 => \^d\(7),
+      I1 => \^d\(9),
+      I2 => \^d\(10),
+      I3 => \^d\(8),
+      I4 => \^d\(6),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[7]_1\
     );
 mem_reg_r2_128_191_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000008"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^fifo_wren\,
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[7]_4\
+      I0 => \^d\(7),
+      I1 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I2 => \^d\(8),
+      I3 => \^d\(6),
+      I4 => \^d\(10),
+      I5 => \^d\(9),
+      O => \write_pointer_reg[7]_3\
     );
 mem_reg_r2_1344_1407_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(6),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(10),
-      O => \write_pointer_reg[7]_1\
+      I0 => \^d\(7),
+      I1 => \^d\(9),
+      I2 => \^d\(8),
+      I3 => \^d\(6),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(10),
+      O => \write_pointer_reg[7]_7\
     );
 mem_reg_r2_1408_1471_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(6),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(7),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(10),
-      O => \write_pointer_reg[6]_2\
+      I0 => \^d\(6),
+      I1 => \^d\(9),
+      I2 => \^d\(8),
+      I3 => \^d\(7),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(10),
+      O => \write_pointer_reg[6]_5\
     );
 mem_reg_r2_1472_1535_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"2000000000000000"
     )
         port map (
-      I0 => \^fifo_wren\,
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[9]_0\
+      I0 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I1 => \^d\(9),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(10),
+      I5 => \^d\(8),
+      O => \write_pointer_reg[9]_5\
     );
 mem_reg_r2_1536_1599_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer\(8),
-      I2 => \^write_pointer\(10),
-      I3 => \^write_pointer\(9),
-      I4 => \^write_pointer\(6),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[7]_5\
+      I0 => \^d\(7),
+      I1 => \^d\(8),
+      I2 => \^d\(10),
+      I3 => \^d\(9),
+      I4 => \^d\(6),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[7]_2\
     );
 mem_reg_r2_1600_1663_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer\(8),
-      I2 => \^write_pointer\(9),
-      I3 => \^write_pointer\(6),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(10),
-      O => \write_pointer_reg[7]_0\
+      I0 => \^d\(7),
+      I1 => \^d\(8),
+      I2 => \^d\(9),
+      I3 => \^d\(6),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(10),
+      O => \write_pointer_reg[7]_6\
     );
 mem_reg_r2_1664_1727_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(6),
-      I1 => \^write_pointer\(8),
-      I2 => \^write_pointer\(9),
-      I3 => \^write_pointer\(7),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(10),
-      O => \write_pointer_reg[6]_1\
+      I0 => \^d\(6),
+      I1 => \^d\(8),
+      I2 => \^d\(9),
+      I3 => \^d\(7),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(10),
+      O => \write_pointer_reg[6]_4\
     );
 mem_reg_r2_1728_1791_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"2000000000000000"
     )
         port map (
-      I0 => \^fifo_wren\,
-      I1 => \^write_pointer\(8),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[8]_2\
+      I0 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I1 => \^d\(8),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(10),
+      I5 => \^d\(9),
+      O => \write_pointer_reg[8]_5\
     );
 mem_reg_r2_1792_1855_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(6),
-      I1 => \^write_pointer\(7),
-      I2 => \^write_pointer\(9),
-      I3 => \^write_pointer\(8),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(10),
-      O => \write_pointer_reg[6]_0\
+      I0 => \^d\(6),
+      I1 => \^d\(7),
+      I2 => \^d\(9),
+      I3 => \^d\(8),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(10),
+      O => \write_pointer_reg[6]_3\
     );
 mem_reg_r2_1856_1919_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"2000000000000000"
     )
         port map (
-      I0 => \^fifo_wren\,
-      I1 => \^write_pointer\(7),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[7]_3\
+      I0 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I1 => \^d\(7),
+      I2 => \^d\(8),
+      I3 => \^d\(6),
+      I4 => \^d\(10),
+      I5 => \^d\(9),
+      O => \write_pointer_reg[7]_4\
     );
 mem_reg_r2_1920_1983_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"2000000000000000"
     )
         port map (
-      I0 => \^fifo_wren\,
-      I1 => \^write_pointer\(6),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(7),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[6]_4\
+      I0 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I1 => \^d\(6),
+      I2 => \^d\(8),
+      I3 => \^d\(7),
+      I4 => \^d\(10),
+      I5 => \^d\(9),
+      O => \write_pointer_reg[6]_1\
     );
 mem_reg_r2_192_255_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(9),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(8),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[9]_2\
+      I0 => \^d\(9),
+      I1 => \^d\(10),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(8),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[9]_3\
     );
 mem_reg_r2_1984_2047_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(10),
-      I1 => \^fifo_wren\,
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(9),
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[10]_0\
+      I0 => \^d\(10),
+      I1 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(9),
+      I5 => \^d\(8),
+      O => \write_pointer_reg[10]_2\
     );
 mem_reg_r2_256_319_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000008"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^fifo_wren\,
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[8]_3\
+      I0 => \^d\(8),
+      I1 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(10),
+      I5 => \^d\(9),
+      O => \write_pointer_reg[8]_4\
     );
 mem_reg_r2_320_383_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(9),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(7),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[9]_4\
+      I0 => \^d\(9),
+      I1 => \^d\(10),
+      I2 => \^d\(8),
+      I3 => \^d\(6),
+      I4 => \^d\(7),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[9]_1\
     );
 mem_reg_r2_384_447_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(9),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(7),
-      I4 => \^write_pointer\(6),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[9]_5\
+      I0 => \^d\(9),
+      I1 => \^d\(10),
+      I2 => \^d\(8),
+      I3 => \^d\(7),
+      I4 => \^d\(6),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[9]_0\
     );
 mem_reg_r2_448_511_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(9),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[9]_3\
+      I0 => \^d\(9),
+      I1 => \^d\(10),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(8),
+      O => \write_pointer_reg[9]_2\
     );
 mem_reg_r2_512_575_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000008"
     )
         port map (
-      I0 => \^write_pointer\(9),
-      I1 => \^fifo_wren\,
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[9]_1\
+      I0 => \^d\(9),
+      I1 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(10),
+      I5 => \^d\(8),
+      O => \write_pointer_reg[9]_4\
     );
 mem_reg_r2_576_639_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(9),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(7),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[8]_5\
+      I0 => \^d\(8),
+      I1 => \^d\(10),
+      I2 => \^d\(9),
+      I3 => \^d\(6),
+      I4 => \^d\(7),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[8]_2\
     );
 mem_reg_r2_640_703_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(9),
-      I3 => \^write_pointer\(7),
-      I4 => \^write_pointer\(6),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[8]_7\
+      I0 => \^d\(8),
+      I1 => \^d\(10),
+      I2 => \^d\(9),
+      I3 => \^d\(7),
+      I4 => \^d\(6),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[8]_0\
     );
 mem_reg_r2_64_127_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000008"
     )
         port map (
-      I0 => \^write_pointer\(6),
-      I1 => \^fifo_wren\,
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(7),
-      I4 => \^write_pointer\(10),
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[6]_5\
+      I0 => \^d\(6),
+      I1 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I2 => \^d\(8),
+      I3 => \^d\(7),
+      I4 => \^d\(10),
+      I5 => \^d\(9),
+      O => \write_pointer_reg[6]_0\
     );
 mem_reg_r2_704_767_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(8),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[8]_1\
+      I0 => \^d\(8),
+      I1 => \^d\(10),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(9),
+      O => \write_pointer_reg[8]_6\
     );
 mem_reg_r2_768_831_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000100000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(9),
-      I3 => \^write_pointer\(8),
-      I4 => \^write_pointer\(6),
-      I5 => \^fifo_wren\,
-      O => \write_pointer_reg[7]_7\
+      I0 => \^d\(7),
+      I1 => \^d\(10),
+      I2 => \^d\(9),
+      I3 => \^d\(8),
+      I4 => \^d\(6),
+      I5 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      O => \write_pointer_reg[7]_0\
     );
 mem_reg_r2_832_895_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(6),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[7]_2\
+      I0 => \^d\(7),
+      I1 => \^d\(10),
+      I2 => \^d\(8),
+      I3 => \^d\(6),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(9),
+      O => \write_pointer_reg[7]_5\
     );
 mem_reg_r2_896_959_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"1000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(6),
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(7),
-      I4 => \^fifo_wren\,
-      I5 => \^write_pointer\(9),
-      O => \write_pointer_reg[6]_3\
+      I0 => \^d\(6),
+      I1 => \^d\(10),
+      I2 => \^d\(8),
+      I3 => \^d\(7),
+      I4 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I5 => \^d\(9),
+      O => \write_pointer_reg[6]_2\
     );
 mem_reg_r2_960_1023_0_2_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"2000000000000000"
     )
         port map (
-      I0 => \^fifo_wren\,
-      I1 => \^write_pointer\(10),
-      I2 => \^write_pointer\(7),
-      I3 => \^write_pointer\(6),
-      I4 => \^write_pointer\(9),
-      I5 => \^write_pointer\(8),
-      O => \write_pointer_reg[10]_2\
+      I0 => mem_reg_r2_0_63_0_2_i_2_n_0,
+      I1 => \^d\(10),
+      I2 => \^d\(7),
+      I3 => \^d\(6),
+      I4 => \^d\(9),
+      I5 => \^d\(8),
+      O => \write_pointer_reg[10]_0\
     );
 mst_exec_state_i_1: unisim.vcomponents.LUT3
     generic map(
@@ -2477,10 +2487,10 @@ txfifo_full_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => txfifo_full_reg,
-      I1 => \^write_pointer\(14),
+      I1 => \^d\(14),
       I2 => txfifo_full_i_3_n_0,
-      I3 => \^write_pointer\(13),
-      I4 => \^write_pointer\(15),
+      I3 => \^d\(13),
+      I4 => \^d\(15),
       I5 => txfifo_full,
       O => \write_pointer_reg[14]_0\
     );
@@ -2491,9 +2501,9 @@ txfifo_full_i_3: unisim.vcomponents.LUT5
         port map (
       I0 => txfifo_full_i_4_n_0,
       I1 => txfifo_full_i_5_n_0,
-      I2 => \^write_pointer\(12),
-      I3 => \^addrd\(4),
-      I4 => \^write_pointer\(0),
+      I2 => \^d\(12),
+      I3 => \^write_pointer_reg[5]_rep__1_0\(0),
+      I4 => \^addrd\(0),
       O => txfifo_full_i_3_n_0
     );
 txfifo_full_i_4: unisim.vcomponents.LUT6
@@ -2501,12 +2511,12 @@ txfifo_full_i_4: unisim.vcomponents.LUT6
       INIT => X"8000000000000000"
     )
         port map (
-      I0 => \^write_pointer\(7),
-      I1 => \^write_pointer_reg[5]_rep_0\(1),
-      I2 => \^write_pointer\(1),
-      I3 => \^write_pointer\(10),
-      I4 => \^write_pointer\(2),
-      I5 => \^write_pointer\(3),
+      I0 => \^d\(7),
+      I1 => \^addrd\(5),
+      I2 => \^d\(1),
+      I3 => \^d\(10),
+      I4 => \^write_pointer_reg[3]_rep_0\(2),
+      I5 => \^write_pointer_reg[3]_rep_0\(3),
       O => txfifo_full_i_4_n_0
     );
 txfifo_full_i_5: unisim.vcomponents.LUT4
@@ -2514,10 +2524,10 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => \^write_pointer\(11),
-      I1 => \^write_pointer\(9),
-      I2 => \^write_pointer\(8),
-      I3 => \^write_pointer\(6),
+      I0 => \^d\(11),
+      I1 => \^d\(9),
+      I2 => \^d\(8),
+      I3 => \^d\(6),
       O => txfifo_full_i_5_n_0
     );
 \write_pointer[0]_i_2\: unisim.vcomponents.LUT1
@@ -2525,7 +2535,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       INIT => X"1"
     )
         port map (
-      I0 => \^write_pointer\(0),
+      I0 => \^addrd\(0),
       O => \write_pointer[0]_i_2_n_0\
     );
 \write_pointer_reg[0]\: unisim.vcomponents.FDRE
@@ -2533,7 +2543,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_7\,
-      Q => \^write_pointer\(0),
+      Q => \^d\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[0]_i_1\: unisim.vcomponents.CARRY4
@@ -2567,7 +2577,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_7\,
-      Q => \write_pointer_reg[3]_rep__0_0\(0),
+      Q => \write_pointer_reg[5]_rep__0_0\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[0]_rep__1\: unisim.vcomponents.FDRE
@@ -2575,7 +2585,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_7\,
-      Q => \write_pointer_reg[0]_rep__1_0\(0),
+      Q => \^write_pointer_reg[3]_rep_0\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[0]_rep__2\: unisim.vcomponents.FDRE
@@ -2583,15 +2593,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_7\,
-      Q => \^write_pointer_reg[3]_rep_0\(0),
-      R => writes_done_reg_0
-    );
-\write_pointer_reg[0]_rep__3\: unisim.vcomponents.FDRE
-     port map (
-      C => clk,
-      CE => \^fifo_wren\,
-      D => \write_pointer_reg[0]_i_1_n_7\,
-      Q => \write_pointer_reg[0]_rep__3_0\(0),
+      Q => \write_pointer_reg[0]_rep__2_0\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[10]\: unisim.vcomponents.FDRE
@@ -2599,7 +2601,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[8]_i_1_n_5\,
-      Q => \^write_pointer\(10),
+      Q => \^d\(10),
       R => writes_done_reg_0
     );
 \write_pointer_reg[11]\: unisim.vcomponents.FDRE
@@ -2607,7 +2609,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[8]_i_1_n_4\,
-      Q => \^write_pointer\(11),
+      Q => \^d\(11),
       R => writes_done_reg_0
     );
 \write_pointer_reg[12]\: unisim.vcomponents.FDRE
@@ -2615,7 +2617,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[12]_i_1_n_7\,
-      Q => \^write_pointer\(12),
+      Q => \^d\(12),
       R => writes_done_reg_0
     );
 \write_pointer_reg[12]_i_1\: unisim.vcomponents.CARRY4
@@ -2631,14 +2633,14 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       O(2) => \write_pointer_reg[12]_i_1_n_5\,
       O(1) => \write_pointer_reg[12]_i_1_n_6\,
       O(0) => \write_pointer_reg[12]_i_1_n_7\,
-      S(3 downto 0) => \^write_pointer\(15 downto 12)
+      S(3 downto 0) => \^d\(15 downto 12)
     );
 \write_pointer_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[12]_i_1_n_6\,
-      Q => \^write_pointer\(13),
+      Q => \^d\(13),
       R => writes_done_reg_0
     );
 \write_pointer_reg[14]\: unisim.vcomponents.FDRE
@@ -2646,7 +2648,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[12]_i_1_n_5\,
-      Q => \^write_pointer\(14),
+      Q => \^d\(14),
       R => writes_done_reg_0
     );
 \write_pointer_reg[15]\: unisim.vcomponents.FDRE
@@ -2654,7 +2656,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[12]_i_1_n_4\,
-      Q => \^write_pointer\(15),
+      Q => \^d\(15),
       R => writes_done_reg_0
     );
 \write_pointer_reg[1]\: unisim.vcomponents.FDRE
@@ -2662,7 +2664,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_6\,
-      Q => \^write_pointer\(1),
+      Q => \^d\(1),
       R => writes_done_reg_0
     );
 \write_pointer_reg[1]_rep\: unisim.vcomponents.FDRE
@@ -2670,7 +2672,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_6\,
-      Q => \^write_pointer_reg[3]_rep_0\(1),
+      Q => \write_pointer_reg[1]_rep_0\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[1]_rep__0\: unisim.vcomponents.FDRE
@@ -2678,10 +2680,18 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_6\,
-      Q => \write_pointer_reg[3]_rep__0_0\(1),
+      Q => \^write_pointer_reg[3]_rep_0\(1),
       R => writes_done_reg_0
     );
 \write_pointer_reg[1]_rep__1\: unisim.vcomponents.FDRE
+     port map (
+      C => clk,
+      CE => \^fifo_wren\,
+      D => \write_pointer_reg[0]_i_1_n_6\,
+      Q => \write_pointer_reg[5]_rep__0_0\(1),
+      R => writes_done_reg_0
+    );
+\write_pointer_reg[1]_rep__2\: unisim.vcomponents.FDRE
      port map (
       C => clk,
       CE => \^fifo_wren\,
@@ -2694,7 +2704,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_5\,
-      Q => \^write_pointer\(2),
+      Q => \^d\(2),
       R => writes_done_reg_0
     );
 \write_pointer_reg[2]_rep\: unisim.vcomponents.FDRE
@@ -2710,7 +2720,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_5\,
-      Q => \write_pointer_reg[3]_rep__0_0\(2),
+      Q => \write_pointer_reg[5]_rep__0_0\(2),
       R => writes_done_reg_0
     );
 \write_pointer_reg[2]_rep__1\: unisim.vcomponents.FDRE
@@ -2726,7 +2736,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_4\,
-      Q => \^write_pointer\(3),
+      Q => \^d\(3),
       R => writes_done_reg_0
     );
 \write_pointer_reg[3]_rep\: unisim.vcomponents.FDRE
@@ -2742,7 +2752,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[0]_i_1_n_4\,
-      Q => \write_pointer_reg[3]_rep__0_0\(3),
+      Q => \write_pointer_reg[5]_rep__0_0\(3),
       R => writes_done_reg_0
     );
 \write_pointer_reg[3]_rep__1\: unisim.vcomponents.FDRE
@@ -2758,7 +2768,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_7\,
-      Q => \^write_pointer\(4),
+      Q => \^d\(4),
       R => writes_done_reg_0
     );
 \write_pointer_reg[4]_i_1\: unisim.vcomponents.CARRY4
@@ -2774,16 +2784,16 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       O(2) => \write_pointer_reg[4]_i_1_n_5\,
       O(1) => \write_pointer_reg[4]_i_1_n_6\,
       O(0) => \write_pointer_reg[4]_i_1_n_7\,
-      S(3 downto 2) => \^write_pointer\(7 downto 6),
-      S(1) => \^write_pointer_reg[5]_rep_0\(1),
-      S(0) => \^addrd\(4)
+      S(3 downto 2) => \^d\(7 downto 6),
+      S(1) => \^addrd\(5),
+      S(0) => \^write_pointer_reg[5]_rep__1_0\(0)
     );
 \write_pointer_reg[4]_rep\: unisim.vcomponents.FDRE
      port map (
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_7\,
-      Q => \^addrd\(4),
+      Q => \^write_pointer_reg[5]_rep__1_0\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[4]_rep__0\: unisim.vcomponents.FDRE
@@ -2791,7 +2801,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_7\,
-      Q => \write_pointer_reg[5]_rep__1_0\(0),
+      Q => \write_pointer_reg[4]_rep__0_0\(0),
       R => writes_done_reg_0
     );
 \write_pointer_reg[4]_rep__1\: unisim.vcomponents.FDRE
@@ -2799,7 +2809,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_7\,
-      Q => \write_pointer_reg[5]_rep__0_0\(0),
+      Q => \write_pointer_reg[5]_rep__0_0\(4),
       R => writes_done_reg_0
     );
 \write_pointer_reg[4]_rep__2\: unisim.vcomponents.FDRE
@@ -2807,7 +2817,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_7\,
-      Q => \^write_pointer_reg[5]_rep_0\(0),
+      Q => \^addrd\(4),
       R => writes_done_reg_0
     );
 \write_pointer_reg[5]\: unisim.vcomponents.FDRE
@@ -2815,7 +2825,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_6\,
-      Q => \^write_pointer\(5),
+      Q => \^d\(5),
       R => writes_done_reg_0
     );
 \write_pointer_reg[5]_rep\: unisim.vcomponents.FDRE
@@ -2823,7 +2833,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_6\,
-      Q => \^write_pointer_reg[5]_rep_0\(1),
+      Q => \^addrd\(5),
       R => writes_done_reg_0
     );
 \write_pointer_reg[5]_rep__0\: unisim.vcomponents.FDRE
@@ -2831,7 +2841,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_6\,
-      Q => \write_pointer_reg[5]_rep__0_0\(1),
+      Q => \write_pointer_reg[5]_rep__0_0\(5),
       R => writes_done_reg_0
     );
 \write_pointer_reg[5]_rep__1\: unisim.vcomponents.FDRE
@@ -2839,7 +2849,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_6\,
-      Q => \write_pointer_reg[5]_rep__1_0\(1),
+      Q => \^write_pointer_reg[5]_rep__1_0\(1),
       R => writes_done_reg_0
     );
 \write_pointer_reg[6]\: unisim.vcomponents.FDRE
@@ -2847,7 +2857,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_5\,
-      Q => \^write_pointer\(6),
+      Q => \^d\(6),
       R => writes_done_reg_0
     );
 \write_pointer_reg[7]\: unisim.vcomponents.FDRE
@@ -2855,7 +2865,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[4]_i_1_n_4\,
-      Q => \^write_pointer\(7),
+      Q => \^d\(7),
       R => writes_done_reg_0
     );
 \write_pointer_reg[8]\: unisim.vcomponents.FDRE
@@ -2863,7 +2873,7 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[8]_i_1_n_7\,
-      Q => \^write_pointer\(8),
+      Q => \^d\(8),
       R => writes_done_reg_0
     );
 \write_pointer_reg[8]_i_1\: unisim.vcomponents.CARRY4
@@ -2879,14 +2889,14 @@ txfifo_full_i_5: unisim.vcomponents.LUT4
       O(2) => \write_pointer_reg[8]_i_1_n_5\,
       O(1) => \write_pointer_reg[8]_i_1_n_6\,
       O(0) => \write_pointer_reg[8]_i_1_n_7\,
-      S(3 downto 0) => \^write_pointer\(11 downto 8)
+      S(3 downto 0) => \^d\(11 downto 8)
     );
 \write_pointer_reg[9]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
       CE => \^fifo_wren\,
       D => \write_pointer_reg[8]_i_1_n_6\,
-      Q => \^write_pointer\(9),
+      Q => \^d\(9),
       R => writes_done_reg_0
     );
 writes_done_i_1: unisim.vcomponents.LUT4
@@ -2917,9 +2927,9 @@ writes_done_i_3: unisim.vcomponents.LUT3
       INIT => X"7F"
     )
         port map (
-      I0 => \^write_pointer\(14),
-      I1 => \^write_pointer\(15),
-      I2 => \^write_pointer\(13),
+      I0 => \^d\(14),
+      I1 => \^d\(15),
+      I2 => \^d\(13),
       O => writes_done_i_3_n_0
     );
 writes_done_i_4: unisim.vcomponents.LUT3
@@ -2927,9 +2937,9 @@ writes_done_i_4: unisim.vcomponents.LUT3
       INIT => X"7F"
     )
         port map (
-      I0 => \^write_pointer\(12),
-      I1 => \^addrd\(4),
-      I2 => \^write_pointer\(0),
+      I0 => \^d\(12),
+      I1 => \^write_pointer_reg[5]_rep__1_0\(0),
+      I2 => \^addrd\(0),
       O => writes_done_i_4_n_0
     );
 writes_done_reg: unisim.vcomponents.FDRE
@@ -2947,17 +2957,18 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0 is
   port (
+    mst_exec_state_reg : out STD_LOGIC;
+    txfifo_full : out STD_LOGIC;
     m00_axis_tready_0 : out STD_LOGIC;
     s00_axi_wready : out STD_LOGIC;
     s00_axi_awready : out STD_LOGIC;
     s00_axi_arready : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    mst_exec_state_reg : out STD_LOGIC;
     m00_axis_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
-    txfifo_full : out STD_LOGIC;
     m00_axis_tvalid : out STD_LOGIC;
+    s00_axis_tvalid : in STD_LOGIC;
     clk : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wvalid : in STD_LOGIC;
@@ -2968,7 +2979,6 @@ entity design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0 is
     s00_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     rstn : in STD_LOGIC;
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axis_tvalid : in STD_LOGIC;
     s00_axis_tlast : in STD_LOGIC;
     m00_axis_tready : in STD_LOGIC;
     s00_axi_bready : in STD_LOGIC;
@@ -8303,21 +8313,21 @@ m00_axis_tlast_INST_0_i_2: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => rd_ptr_reg_reg(7),
-      I1 => rd_ptr_reg_reg(0),
-      I2 => rd_ptr_reg_reg(10),
+      I0 => rd_ptr_reg_reg(11),
+      I1 => \rd_ptr_reg_reg[3]_rep_n_0\,
+      I2 => rd_ptr_reg_reg(8),
       I3 => \rd_ptr_reg_reg[1]_rep_n_0\,
       O => m00_axis_tlast_INST_0_i_2_n_0
     );
 m00_axis_tlast_INST_0_i_3: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7FFF"
+      INIT => X"DFFF"
     )
         port map (
-      I0 => \rd_ptr_reg_reg__0\(13),
-      I1 => rd_ptr_reg_reg(8),
-      I2 => \rd_ptr_reg_reg[5]_rep_n_0\,
-      I3 => \rd_ptr_reg_reg[3]_rep_n_0\,
+      I0 => rd_ptr_reg_reg(0),
+      I1 => \rd_ptr_reg_reg__0\(14),
+      I2 => \rd_ptr_reg_reg__0\(13),
+      I3 => rd_ptr_reg_reg(9),
       O => m00_axis_tlast_INST_0_i_3_n_0
     );
 m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
@@ -8325,9 +8335,9 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => rd_ptr_reg_reg(9),
+      I0 => \rd_ptr_reg_reg__0\(12),
       I1 => \rd_ptr_reg_reg[4]_rep_n_0\,
-      I2 => \rd_ptr_reg_reg__0\(12),
+      I2 => \rd_ptr_reg_reg[5]_rep_n_0\,
       I3 => \rd_ptr_reg_reg[2]_rep_n_0\,
       O => m00_axis_tlast_INST_0_i_4_n_0
     );
@@ -13367,12 +13377,12 @@ mem_alt_reg_r2_0_63_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__8_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__8_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -13382,7 +13392,7 @@ mem_alt_reg_r2_0_63_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_0_63_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_0_63_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_alt_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -13404,12 +13414,11 @@ mem_alt_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -13419,7 +13428,7 @@ mem_alt_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_0_63_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_0_63_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_alt_reg_r2_0_63_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -13441,12 +13450,12 @@ mem_alt_reg_r2_0_63_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -13456,7 +13465,7 @@ mem_alt_reg_r2_0_63_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_0_63_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_0_63_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_alt_reg_r2_0_63_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -13478,12 +13487,12 @@ mem_alt_reg_r2_0_63_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -13493,7 +13502,7 @@ mem_alt_reg_r2_0_63_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_0_63_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_0_63_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_alt_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -13515,12 +13524,12 @@ mem_alt_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -13530,7 +13539,7 @@ mem_alt_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_0_63_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_0_63_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_alt_reg_r2_1024_1087_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -13552,12 +13561,12 @@ mem_alt_reg_r2_1024_1087_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -13567,7 +13576,7 @@ mem_alt_reg_r2_1024_1087_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1024_1087_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1024_1087_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_alt_reg_r2_1024_1087_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -13589,12 +13598,11 @@ mem_alt_reg_r2_1024_1087_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -13604,7 +13612,7 @@ mem_alt_reg_r2_1024_1087_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1024_1087_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1024_1087_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_alt_reg_r2_1024_1087_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -13626,12 +13634,12 @@ mem_alt_reg_r2_1024_1087_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -13641,7 +13649,7 @@ mem_alt_reg_r2_1024_1087_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1024_1087_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1024_1087_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_alt_reg_r2_1024_1087_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -13663,12 +13671,12 @@ mem_alt_reg_r2_1024_1087_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -13678,7 +13686,7 @@ mem_alt_reg_r2_1024_1087_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1024_1087_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1024_1087_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_alt_reg_r2_1024_1087_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -13700,12 +13708,12 @@ mem_alt_reg_r2_1024_1087_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -13715,7 +13723,7 @@ mem_alt_reg_r2_1024_1087_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1024_1087_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1024_1087_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_alt_reg_r2_1088_1151_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -13737,12 +13745,12 @@ mem_alt_reg_r2_1088_1151_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -13752,7 +13760,7 @@ mem_alt_reg_r2_1088_1151_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1088_1151_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1088_1151_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_alt_reg_r2_1088_1151_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -13774,12 +13782,11 @@ mem_alt_reg_r2_1088_1151_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -13789,7 +13796,7 @@ mem_alt_reg_r2_1088_1151_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1088_1151_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1088_1151_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_alt_reg_r2_1088_1151_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -13811,12 +13818,12 @@ mem_alt_reg_r2_1088_1151_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -13826,7 +13833,7 @@ mem_alt_reg_r2_1088_1151_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1088_1151_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1088_1151_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_alt_reg_r2_1088_1151_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -13848,12 +13855,12 @@ mem_alt_reg_r2_1088_1151_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -13863,7 +13870,7 @@ mem_alt_reg_r2_1088_1151_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1088_1151_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1088_1151_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_alt_reg_r2_1088_1151_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -13885,12 +13892,12 @@ mem_alt_reg_r2_1088_1151_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -13900,7 +13907,7 @@ mem_alt_reg_r2_1088_1151_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1088_1151_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1088_1151_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_alt_reg_r2_1152_1215_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -13922,12 +13929,12 @@ mem_alt_reg_r2_1152_1215_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -13937,7 +13944,7 @@ mem_alt_reg_r2_1152_1215_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1152_1215_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1152_1215_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_alt_reg_r2_1152_1215_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -13959,12 +13966,11 @@ mem_alt_reg_r2_1152_1215_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -13974,7 +13980,7 @@ mem_alt_reg_r2_1152_1215_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1152_1215_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1152_1215_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_alt_reg_r2_1152_1215_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -13996,12 +14002,12 @@ mem_alt_reg_r2_1152_1215_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -14011,7 +14017,7 @@ mem_alt_reg_r2_1152_1215_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1152_1215_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1152_1215_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_alt_reg_r2_1152_1215_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -14033,12 +14039,12 @@ mem_alt_reg_r2_1152_1215_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -14048,7 +14054,7 @@ mem_alt_reg_r2_1152_1215_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1152_1215_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1152_1215_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_alt_reg_r2_1152_1215_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -14070,12 +14076,12 @@ mem_alt_reg_r2_1152_1215_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -14085,7 +14091,7 @@ mem_alt_reg_r2_1152_1215_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1152_1215_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1152_1215_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_alt_reg_r2_1216_1279_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -14107,12 +14113,12 @@ mem_alt_reg_r2_1216_1279_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -14122,7 +14128,7 @@ mem_alt_reg_r2_1216_1279_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1216_1279_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1216_1279_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_alt_reg_r2_1216_1279_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -14144,12 +14150,11 @@ mem_alt_reg_r2_1216_1279_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -14159,7 +14164,7 @@ mem_alt_reg_r2_1216_1279_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1216_1279_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1216_1279_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_alt_reg_r2_1216_1279_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -14181,12 +14186,12 @@ mem_alt_reg_r2_1216_1279_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -14196,7 +14201,7 @@ mem_alt_reg_r2_1216_1279_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1216_1279_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1216_1279_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_alt_reg_r2_1216_1279_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -14218,12 +14223,12 @@ mem_alt_reg_r2_1216_1279_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -14233,7 +14238,7 @@ mem_alt_reg_r2_1216_1279_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1216_1279_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1216_1279_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_alt_reg_r2_1216_1279_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -14255,12 +14260,12 @@ mem_alt_reg_r2_1216_1279_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -14270,7 +14275,7 @@ mem_alt_reg_r2_1216_1279_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1216_1279_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1216_1279_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_alt_reg_r2_1280_1343_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -14292,12 +14297,12 @@ mem_alt_reg_r2_1280_1343_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -14307,7 +14312,7 @@ mem_alt_reg_r2_1280_1343_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1280_1343_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1280_1343_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_alt_reg_r2_1280_1343_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -14329,12 +14334,11 @@ mem_alt_reg_r2_1280_1343_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -14344,7 +14348,7 @@ mem_alt_reg_r2_1280_1343_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1280_1343_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1280_1343_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_alt_reg_r2_1280_1343_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -14366,12 +14370,12 @@ mem_alt_reg_r2_1280_1343_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -14381,7 +14385,7 @@ mem_alt_reg_r2_1280_1343_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1280_1343_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1280_1343_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_alt_reg_r2_1280_1343_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -14403,12 +14407,12 @@ mem_alt_reg_r2_1280_1343_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -14418,7 +14422,7 @@ mem_alt_reg_r2_1280_1343_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1280_1343_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1280_1343_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_alt_reg_r2_1280_1343_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -14440,12 +14444,12 @@ mem_alt_reg_r2_1280_1343_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -14455,7 +14459,7 @@ mem_alt_reg_r2_1280_1343_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1280_1343_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1280_1343_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_alt_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -14477,12 +14481,12 @@ mem_alt_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -14492,7 +14496,7 @@ mem_alt_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_128_191_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_128_191_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_alt_reg_r2_128_191_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -14514,12 +14518,11 @@ mem_alt_reg_r2_128_191_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -14529,7 +14532,7 @@ mem_alt_reg_r2_128_191_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_128_191_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_128_191_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_alt_reg_r2_128_191_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -14551,12 +14554,12 @@ mem_alt_reg_r2_128_191_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -14566,7 +14569,7 @@ mem_alt_reg_r2_128_191_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_128_191_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_128_191_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_alt_reg_r2_128_191_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -14588,12 +14591,12 @@ mem_alt_reg_r2_128_191_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -14603,7 +14606,7 @@ mem_alt_reg_r2_128_191_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_128_191_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_128_191_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_alt_reg_r2_128_191_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -14625,12 +14628,12 @@ mem_alt_reg_r2_128_191_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -14640,7 +14643,7 @@ mem_alt_reg_r2_128_191_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_128_191_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_128_191_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_alt_reg_r2_1344_1407_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -14662,12 +14665,12 @@ mem_alt_reg_r2_1344_1407_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -14677,7 +14680,7 @@ mem_alt_reg_r2_1344_1407_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1344_1407_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1344_1407_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_alt_reg_r2_1344_1407_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -14699,12 +14702,11 @@ mem_alt_reg_r2_1344_1407_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -14714,7 +14716,7 @@ mem_alt_reg_r2_1344_1407_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1344_1407_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1344_1407_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_alt_reg_r2_1344_1407_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -14736,12 +14738,12 @@ mem_alt_reg_r2_1344_1407_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -14751,7 +14753,7 @@ mem_alt_reg_r2_1344_1407_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1344_1407_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1344_1407_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_alt_reg_r2_1344_1407_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -14773,12 +14775,12 @@ mem_alt_reg_r2_1344_1407_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -14788,7 +14790,7 @@ mem_alt_reg_r2_1344_1407_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1344_1407_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1344_1407_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_alt_reg_r2_1344_1407_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -14810,12 +14812,12 @@ mem_alt_reg_r2_1344_1407_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -14825,7 +14827,7 @@ mem_alt_reg_r2_1344_1407_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1344_1407_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1344_1407_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_alt_reg_r2_1408_1471_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -14847,12 +14849,12 @@ mem_alt_reg_r2_1408_1471_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -14862,7 +14864,7 @@ mem_alt_reg_r2_1408_1471_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1408_1471_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1408_1471_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_alt_reg_r2_1408_1471_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -14884,12 +14886,11 @@ mem_alt_reg_r2_1408_1471_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -14899,7 +14900,7 @@ mem_alt_reg_r2_1408_1471_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1408_1471_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1408_1471_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_alt_reg_r2_1408_1471_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -14921,12 +14922,12 @@ mem_alt_reg_r2_1408_1471_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -14936,7 +14937,7 @@ mem_alt_reg_r2_1408_1471_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1408_1471_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1408_1471_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_alt_reg_r2_1408_1471_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -14958,12 +14959,12 @@ mem_alt_reg_r2_1408_1471_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -14973,7 +14974,7 @@ mem_alt_reg_r2_1408_1471_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1408_1471_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1408_1471_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_alt_reg_r2_1408_1471_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -14995,12 +14996,12 @@ mem_alt_reg_r2_1408_1471_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -15010,7 +15011,7 @@ mem_alt_reg_r2_1408_1471_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1408_1471_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1408_1471_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_alt_reg_r2_1472_1535_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -15032,12 +15033,12 @@ mem_alt_reg_r2_1472_1535_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -15047,7 +15048,7 @@ mem_alt_reg_r2_1472_1535_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1472_1535_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1472_1535_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_alt_reg_r2_1472_1535_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -15069,12 +15070,11 @@ mem_alt_reg_r2_1472_1535_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -15084,7 +15084,7 @@ mem_alt_reg_r2_1472_1535_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1472_1535_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1472_1535_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_alt_reg_r2_1472_1535_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -15106,12 +15106,12 @@ mem_alt_reg_r2_1472_1535_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -15121,7 +15121,7 @@ mem_alt_reg_r2_1472_1535_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1472_1535_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1472_1535_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_alt_reg_r2_1472_1535_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -15143,12 +15143,12 @@ mem_alt_reg_r2_1472_1535_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -15158,7 +15158,7 @@ mem_alt_reg_r2_1472_1535_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1472_1535_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1472_1535_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_alt_reg_r2_1472_1535_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -15180,12 +15180,12 @@ mem_alt_reg_r2_1472_1535_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -15195,7 +15195,7 @@ mem_alt_reg_r2_1472_1535_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1472_1535_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1472_1535_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_alt_reg_r2_1536_1599_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -15217,12 +15217,12 @@ mem_alt_reg_r2_1536_1599_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -15232,7 +15232,7 @@ mem_alt_reg_r2_1536_1599_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1536_1599_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1536_1599_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_alt_reg_r2_1536_1599_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -15254,12 +15254,11 @@ mem_alt_reg_r2_1536_1599_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -15269,7 +15268,7 @@ mem_alt_reg_r2_1536_1599_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1536_1599_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1536_1599_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_alt_reg_r2_1536_1599_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -15291,12 +15290,12 @@ mem_alt_reg_r2_1536_1599_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -15306,7 +15305,7 @@ mem_alt_reg_r2_1536_1599_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1536_1599_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1536_1599_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_alt_reg_r2_1536_1599_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -15328,12 +15327,12 @@ mem_alt_reg_r2_1536_1599_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -15343,7 +15342,7 @@ mem_alt_reg_r2_1536_1599_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1536_1599_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1536_1599_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_alt_reg_r2_1536_1599_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -15365,12 +15364,12 @@ mem_alt_reg_r2_1536_1599_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -15380,7 +15379,7 @@ mem_alt_reg_r2_1536_1599_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1536_1599_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1536_1599_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_alt_reg_r2_1600_1663_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -15402,12 +15401,12 @@ mem_alt_reg_r2_1600_1663_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -15417,7 +15416,7 @@ mem_alt_reg_r2_1600_1663_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1600_1663_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1600_1663_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_alt_reg_r2_1600_1663_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -15439,12 +15438,11 @@ mem_alt_reg_r2_1600_1663_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -15454,7 +15452,7 @@ mem_alt_reg_r2_1600_1663_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1600_1663_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1600_1663_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_alt_reg_r2_1600_1663_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -15476,12 +15474,12 @@ mem_alt_reg_r2_1600_1663_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -15491,7 +15489,7 @@ mem_alt_reg_r2_1600_1663_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1600_1663_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1600_1663_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_alt_reg_r2_1600_1663_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -15513,12 +15511,12 @@ mem_alt_reg_r2_1600_1663_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -15528,7 +15526,7 @@ mem_alt_reg_r2_1600_1663_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1600_1663_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1600_1663_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_alt_reg_r2_1600_1663_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -15550,12 +15548,12 @@ mem_alt_reg_r2_1600_1663_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -15565,7 +15563,7 @@ mem_alt_reg_r2_1600_1663_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1600_1663_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1600_1663_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_alt_reg_r2_1664_1727_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -15587,12 +15585,12 @@ mem_alt_reg_r2_1664_1727_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -15602,7 +15600,7 @@ mem_alt_reg_r2_1664_1727_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1664_1727_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1664_1727_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_alt_reg_r2_1664_1727_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -15624,12 +15622,11 @@ mem_alt_reg_r2_1664_1727_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -15639,7 +15636,7 @@ mem_alt_reg_r2_1664_1727_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1664_1727_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1664_1727_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_alt_reg_r2_1664_1727_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -15661,12 +15658,12 @@ mem_alt_reg_r2_1664_1727_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -15676,7 +15673,7 @@ mem_alt_reg_r2_1664_1727_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1664_1727_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1664_1727_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_alt_reg_r2_1664_1727_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -15698,12 +15695,12 @@ mem_alt_reg_r2_1664_1727_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -15713,7 +15710,7 @@ mem_alt_reg_r2_1664_1727_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1664_1727_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1664_1727_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_alt_reg_r2_1664_1727_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -15735,12 +15732,12 @@ mem_alt_reg_r2_1664_1727_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -15750,7 +15747,7 @@ mem_alt_reg_r2_1664_1727_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1664_1727_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1664_1727_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_alt_reg_r2_1728_1791_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -15772,12 +15769,12 @@ mem_alt_reg_r2_1728_1791_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -15787,7 +15784,7 @@ mem_alt_reg_r2_1728_1791_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1728_1791_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1728_1791_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_alt_reg_r2_1728_1791_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -15809,12 +15806,11 @@ mem_alt_reg_r2_1728_1791_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -15824,7 +15820,7 @@ mem_alt_reg_r2_1728_1791_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1728_1791_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1728_1791_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_alt_reg_r2_1728_1791_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -15846,12 +15842,12 @@ mem_alt_reg_r2_1728_1791_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -15861,7 +15857,7 @@ mem_alt_reg_r2_1728_1791_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1728_1791_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1728_1791_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_alt_reg_r2_1728_1791_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -15883,12 +15879,12 @@ mem_alt_reg_r2_1728_1791_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -15898,7 +15894,7 @@ mem_alt_reg_r2_1728_1791_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1728_1791_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1728_1791_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_alt_reg_r2_1728_1791_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -15920,12 +15916,12 @@ mem_alt_reg_r2_1728_1791_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -15935,7 +15931,7 @@ mem_alt_reg_r2_1728_1791_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1728_1791_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1728_1791_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_alt_reg_r2_1792_1855_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -15957,12 +15953,12 @@ mem_alt_reg_r2_1792_1855_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -15972,7 +15968,7 @@ mem_alt_reg_r2_1792_1855_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1792_1855_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1792_1855_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_alt_reg_r2_1792_1855_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -15994,12 +15990,11 @@ mem_alt_reg_r2_1792_1855_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -16009,7 +16004,7 @@ mem_alt_reg_r2_1792_1855_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1792_1855_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1792_1855_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_alt_reg_r2_1792_1855_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -16031,12 +16026,12 @@ mem_alt_reg_r2_1792_1855_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -16046,7 +16041,7 @@ mem_alt_reg_r2_1792_1855_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1792_1855_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1792_1855_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_alt_reg_r2_1792_1855_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -16068,12 +16063,12 @@ mem_alt_reg_r2_1792_1855_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -16083,7 +16078,7 @@ mem_alt_reg_r2_1792_1855_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1792_1855_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1792_1855_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_alt_reg_r2_1792_1855_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -16105,12 +16100,12 @@ mem_alt_reg_r2_1792_1855_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -16120,7 +16115,7 @@ mem_alt_reg_r2_1792_1855_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1792_1855_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1792_1855_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_alt_reg_r2_1856_1919_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -16142,12 +16137,12 @@ mem_alt_reg_r2_1856_1919_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -16157,7 +16152,7 @@ mem_alt_reg_r2_1856_1919_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1856_1919_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1856_1919_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_alt_reg_r2_1856_1919_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -16179,12 +16174,11 @@ mem_alt_reg_r2_1856_1919_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -16194,7 +16188,7 @@ mem_alt_reg_r2_1856_1919_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1856_1919_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1856_1919_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_alt_reg_r2_1856_1919_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -16216,12 +16210,12 @@ mem_alt_reg_r2_1856_1919_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -16231,7 +16225,7 @@ mem_alt_reg_r2_1856_1919_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1856_1919_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1856_1919_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_alt_reg_r2_1856_1919_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -16253,12 +16247,12 @@ mem_alt_reg_r2_1856_1919_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -16268,7 +16262,7 @@ mem_alt_reg_r2_1856_1919_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1856_1919_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1856_1919_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_alt_reg_r2_1856_1919_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -16290,12 +16284,12 @@ mem_alt_reg_r2_1856_1919_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -16305,7 +16299,7 @@ mem_alt_reg_r2_1856_1919_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1856_1919_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1856_1919_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_alt_reg_r2_1920_1983_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -16327,12 +16321,12 @@ mem_alt_reg_r2_1920_1983_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -16342,7 +16336,7 @@ mem_alt_reg_r2_1920_1983_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1920_1983_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1920_1983_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_alt_reg_r2_1920_1983_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -16364,12 +16358,11 @@ mem_alt_reg_r2_1920_1983_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -16379,7 +16372,7 @@ mem_alt_reg_r2_1920_1983_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1920_1983_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1920_1983_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_alt_reg_r2_1920_1983_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -16401,12 +16394,12 @@ mem_alt_reg_r2_1920_1983_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -16416,7 +16409,7 @@ mem_alt_reg_r2_1920_1983_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1920_1983_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1920_1983_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_alt_reg_r2_1920_1983_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -16438,12 +16431,12 @@ mem_alt_reg_r2_1920_1983_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -16453,7 +16446,7 @@ mem_alt_reg_r2_1920_1983_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1920_1983_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1920_1983_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_alt_reg_r2_1920_1983_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -16475,12 +16468,12 @@ mem_alt_reg_r2_1920_1983_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -16490,7 +16483,7 @@ mem_alt_reg_r2_1920_1983_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1920_1983_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1920_1983_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_alt_reg_r2_192_255_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -16512,12 +16505,12 @@ mem_alt_reg_r2_192_255_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -16527,7 +16520,7 @@ mem_alt_reg_r2_192_255_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_192_255_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_192_255_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_alt_reg_r2_192_255_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -16549,12 +16542,11 @@ mem_alt_reg_r2_192_255_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -16564,7 +16556,7 @@ mem_alt_reg_r2_192_255_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_192_255_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_192_255_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_alt_reg_r2_192_255_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -16586,12 +16578,12 @@ mem_alt_reg_r2_192_255_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -16601,7 +16593,7 @@ mem_alt_reg_r2_192_255_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_192_255_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_192_255_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_alt_reg_r2_192_255_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -16623,12 +16615,12 @@ mem_alt_reg_r2_192_255_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -16638,7 +16630,7 @@ mem_alt_reg_r2_192_255_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_192_255_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_192_255_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_alt_reg_r2_192_255_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -16660,12 +16652,12 @@ mem_alt_reg_r2_192_255_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -16675,7 +16667,7 @@ mem_alt_reg_r2_192_255_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_192_255_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_192_255_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_alt_reg_r2_1984_2047_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -16697,12 +16689,12 @@ mem_alt_reg_r2_1984_2047_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -16712,7 +16704,7 @@ mem_alt_reg_r2_1984_2047_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1984_2047_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_1984_2047_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_alt_reg_r2_1984_2047_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -16734,12 +16726,11 @@ mem_alt_reg_r2_1984_2047_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -16749,7 +16740,7 @@ mem_alt_reg_r2_1984_2047_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1984_2047_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_1984_2047_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_alt_reg_r2_1984_2047_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -16771,12 +16762,12 @@ mem_alt_reg_r2_1984_2047_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -16786,7 +16777,7 @@ mem_alt_reg_r2_1984_2047_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1984_2047_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_1984_2047_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_alt_reg_r2_1984_2047_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -16808,12 +16799,12 @@ mem_alt_reg_r2_1984_2047_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -16823,7 +16814,7 @@ mem_alt_reg_r2_1984_2047_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1984_2047_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_1984_2047_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_alt_reg_r2_1984_2047_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -16845,12 +16836,12 @@ mem_alt_reg_r2_1984_2047_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -16860,7 +16851,7 @@ mem_alt_reg_r2_1984_2047_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_1984_2047_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_1984_2047_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_alt_reg_r2_256_319_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -16882,12 +16873,12 @@ mem_alt_reg_r2_256_319_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -16919,12 +16910,11 @@ mem_alt_reg_r2_256_319_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -16956,12 +16946,12 @@ mem_alt_reg_r2_256_319_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -16993,12 +16983,12 @@ mem_alt_reg_r2_256_319_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -17030,12 +17020,12 @@ mem_alt_reg_r2_256_319_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -17067,12 +17057,12 @@ mem_alt_reg_r2_320_383_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -17082,7 +17072,7 @@ mem_alt_reg_r2_320_383_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_320_383_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_320_383_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_alt_reg_r2_320_383_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -17104,12 +17094,11 @@ mem_alt_reg_r2_320_383_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -17119,7 +17108,7 @@ mem_alt_reg_r2_320_383_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_320_383_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_320_383_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_alt_reg_r2_320_383_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -17141,12 +17130,12 @@ mem_alt_reg_r2_320_383_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -17156,7 +17145,7 @@ mem_alt_reg_r2_320_383_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_320_383_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_320_383_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_alt_reg_r2_320_383_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -17178,12 +17167,12 @@ mem_alt_reg_r2_320_383_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -17193,7 +17182,7 @@ mem_alt_reg_r2_320_383_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_320_383_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_320_383_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_alt_reg_r2_320_383_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -17215,12 +17204,12 @@ mem_alt_reg_r2_320_383_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -17230,7 +17219,7 @@ mem_alt_reg_r2_320_383_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_320_383_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_320_383_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_alt_reg_r2_384_447_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -17252,12 +17241,12 @@ mem_alt_reg_r2_384_447_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -17267,7 +17256,7 @@ mem_alt_reg_r2_384_447_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_384_447_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_384_447_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_alt_reg_r2_384_447_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -17289,12 +17278,11 @@ mem_alt_reg_r2_384_447_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -17304,7 +17292,7 @@ mem_alt_reg_r2_384_447_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_384_447_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_384_447_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_alt_reg_r2_384_447_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -17326,12 +17314,12 @@ mem_alt_reg_r2_384_447_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -17341,7 +17329,7 @@ mem_alt_reg_r2_384_447_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_384_447_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_384_447_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_alt_reg_r2_384_447_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -17363,12 +17351,12 @@ mem_alt_reg_r2_384_447_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -17378,7 +17366,7 @@ mem_alt_reg_r2_384_447_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_384_447_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_384_447_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_alt_reg_r2_384_447_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -17400,12 +17388,12 @@ mem_alt_reg_r2_384_447_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -17415,7 +17403,7 @@ mem_alt_reg_r2_384_447_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_384_447_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_384_447_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_alt_reg_r2_448_511_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -17437,12 +17425,12 @@ mem_alt_reg_r2_448_511_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -17474,12 +17462,11 @@ mem_alt_reg_r2_448_511_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -17511,12 +17498,12 @@ mem_alt_reg_r2_448_511_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -17548,12 +17535,12 @@ mem_alt_reg_r2_448_511_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -17585,12 +17572,12 @@ mem_alt_reg_r2_448_511_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -17622,12 +17609,12 @@ mem_alt_reg_r2_512_575_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -17637,7 +17624,7 @@ mem_alt_reg_r2_512_575_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_512_575_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_512_575_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_alt_reg_r2_512_575_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -17659,12 +17646,11 @@ mem_alt_reg_r2_512_575_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -17674,7 +17660,7 @@ mem_alt_reg_r2_512_575_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_512_575_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_512_575_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_alt_reg_r2_512_575_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -17696,12 +17682,12 @@ mem_alt_reg_r2_512_575_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -17711,7 +17697,7 @@ mem_alt_reg_r2_512_575_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_512_575_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_512_575_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_alt_reg_r2_512_575_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -17733,12 +17719,12 @@ mem_alt_reg_r2_512_575_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -17748,7 +17734,7 @@ mem_alt_reg_r2_512_575_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_512_575_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_512_575_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_alt_reg_r2_512_575_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -17770,12 +17756,12 @@ mem_alt_reg_r2_512_575_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -17785,7 +17771,7 @@ mem_alt_reg_r2_512_575_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_512_575_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_512_575_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_alt_reg_r2_576_639_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -17807,12 +17793,12 @@ mem_alt_reg_r2_576_639_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -17822,7 +17808,7 @@ mem_alt_reg_r2_576_639_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_576_639_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_576_639_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_alt_reg_r2_576_639_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -17844,12 +17830,11 @@ mem_alt_reg_r2_576_639_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -17859,7 +17844,7 @@ mem_alt_reg_r2_576_639_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_576_639_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_576_639_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_alt_reg_r2_576_639_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -17881,12 +17866,12 @@ mem_alt_reg_r2_576_639_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -17896,7 +17881,7 @@ mem_alt_reg_r2_576_639_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_576_639_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_576_639_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_alt_reg_r2_576_639_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -17918,12 +17903,12 @@ mem_alt_reg_r2_576_639_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -17933,7 +17918,7 @@ mem_alt_reg_r2_576_639_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_576_639_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_576_639_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_alt_reg_r2_576_639_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -17955,12 +17940,12 @@ mem_alt_reg_r2_576_639_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -17970,7 +17955,7 @@ mem_alt_reg_r2_576_639_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_576_639_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_576_639_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_alt_reg_r2_640_703_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -17992,12 +17977,12 @@ mem_alt_reg_r2_640_703_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -18007,7 +17992,7 @@ mem_alt_reg_r2_640_703_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_640_703_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_640_703_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_alt_reg_r2_640_703_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -18029,12 +18014,11 @@ mem_alt_reg_r2_640_703_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -18044,7 +18028,7 @@ mem_alt_reg_r2_640_703_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_640_703_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_640_703_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_alt_reg_r2_640_703_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -18066,12 +18050,12 @@ mem_alt_reg_r2_640_703_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -18081,7 +18065,7 @@ mem_alt_reg_r2_640_703_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_640_703_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_640_703_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_alt_reg_r2_640_703_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -18103,12 +18087,12 @@ mem_alt_reg_r2_640_703_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -18118,7 +18102,7 @@ mem_alt_reg_r2_640_703_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_640_703_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_640_703_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_alt_reg_r2_640_703_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -18140,12 +18124,12 @@ mem_alt_reg_r2_640_703_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -18155,7 +18139,7 @@ mem_alt_reg_r2_640_703_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_640_703_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_640_703_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_alt_reg_r2_64_127_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -18177,12 +18161,12 @@ mem_alt_reg_r2_64_127_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__8_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__8_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -18192,7 +18176,7 @@ mem_alt_reg_r2_64_127_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_64_127_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_64_127_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_alt_reg_r2_64_127_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -18214,12 +18198,11 @@ mem_alt_reg_r2_64_127_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -18229,7 +18212,7 @@ mem_alt_reg_r2_64_127_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_64_127_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_64_127_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_alt_reg_r2_64_127_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -18251,12 +18234,12 @@ mem_alt_reg_r2_64_127_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -18266,7 +18249,7 @@ mem_alt_reg_r2_64_127_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_64_127_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_64_127_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_alt_reg_r2_64_127_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -18288,12 +18271,12 @@ mem_alt_reg_r2_64_127_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -18303,7 +18286,7 @@ mem_alt_reg_r2_64_127_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_64_127_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_64_127_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_alt_reg_r2_64_127_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -18325,12 +18308,12 @@ mem_alt_reg_r2_64_127_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -18340,7 +18323,7 @@ mem_alt_reg_r2_64_127_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_64_127_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_64_127_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_alt_reg_r2_704_767_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -18362,12 +18345,12 @@ mem_alt_reg_r2_704_767_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -18377,7 +18360,7 @@ mem_alt_reg_r2_704_767_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_704_767_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_704_767_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_alt_reg_r2_704_767_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -18399,12 +18382,11 @@ mem_alt_reg_r2_704_767_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -18414,7 +18396,7 @@ mem_alt_reg_r2_704_767_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_704_767_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_704_767_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_alt_reg_r2_704_767_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -18436,12 +18418,12 @@ mem_alt_reg_r2_704_767_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -18451,7 +18433,7 @@ mem_alt_reg_r2_704_767_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_704_767_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_704_767_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_alt_reg_r2_704_767_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -18473,12 +18455,12 @@ mem_alt_reg_r2_704_767_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -18488,7 +18470,7 @@ mem_alt_reg_r2_704_767_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_704_767_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_704_767_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_alt_reg_r2_704_767_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -18510,12 +18492,12 @@ mem_alt_reg_r2_704_767_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -18525,7 +18507,7 @@ mem_alt_reg_r2_704_767_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_704_767_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_704_767_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_alt_reg_r2_768_831_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -18548,11 +18530,11 @@ mem_alt_reg_r2_768_831_0_2: unisim.vcomponents.RAM64M
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
       ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -18562,7 +18544,7 @@ mem_alt_reg_r2_768_831_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_768_831_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_768_831_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_alt_reg_r2_768_831_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -18584,12 +18566,11 @@ mem_alt_reg_r2_768_831_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -18599,7 +18580,7 @@ mem_alt_reg_r2_768_831_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_768_831_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_768_831_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_alt_reg_r2_768_831_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -18621,12 +18602,12 @@ mem_alt_reg_r2_768_831_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -18636,7 +18617,7 @@ mem_alt_reg_r2_768_831_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_768_831_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_768_831_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_alt_reg_r2_768_831_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -18658,12 +18639,12 @@ mem_alt_reg_r2_768_831_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -18673,7 +18654,7 @@ mem_alt_reg_r2_768_831_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_768_831_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_768_831_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_alt_reg_r2_768_831_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -18695,12 +18676,12 @@ mem_alt_reg_r2_768_831_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -18710,7 +18691,7 @@ mem_alt_reg_r2_768_831_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_768_831_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_768_831_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_alt_reg_r2_832_895_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -18733,11 +18714,11 @@ mem_alt_reg_r2_832_895_0_2: unisim.vcomponents.RAM64M
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
       ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -18747,7 +18728,7 @@ mem_alt_reg_r2_832_895_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_832_895_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_832_895_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_alt_reg_r2_832_895_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -18769,12 +18750,11 @@ mem_alt_reg_r2_832_895_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -18784,7 +18764,7 @@ mem_alt_reg_r2_832_895_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_832_895_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_832_895_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_alt_reg_r2_832_895_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -18806,12 +18786,12 @@ mem_alt_reg_r2_832_895_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -18821,7 +18801,7 @@ mem_alt_reg_r2_832_895_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_832_895_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_832_895_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_alt_reg_r2_832_895_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -18843,12 +18823,12 @@ mem_alt_reg_r2_832_895_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -18858,7 +18838,7 @@ mem_alt_reg_r2_832_895_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_832_895_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_832_895_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_alt_reg_r2_832_895_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -18880,12 +18860,12 @@ mem_alt_reg_r2_832_895_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -18895,7 +18875,7 @@ mem_alt_reg_r2_832_895_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_832_895_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_832_895_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_alt_reg_r2_896_959_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -18918,11 +18898,11 @@ mem_alt_reg_r2_896_959_0_2: unisim.vcomponents.RAM64M
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
       ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -18932,7 +18912,7 @@ mem_alt_reg_r2_896_959_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_896_959_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_896_959_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_alt_reg_r2_896_959_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -18954,12 +18934,11 @@ mem_alt_reg_r2_896_959_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -18969,7 +18948,7 @@ mem_alt_reg_r2_896_959_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_896_959_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_896_959_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_alt_reg_r2_896_959_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -18991,12 +18970,12 @@ mem_alt_reg_r2_896_959_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -19006,7 +18985,7 @@ mem_alt_reg_r2_896_959_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_896_959_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_896_959_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_alt_reg_r2_896_959_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -19028,12 +19007,12 @@ mem_alt_reg_r2_896_959_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -19043,7 +19022,7 @@ mem_alt_reg_r2_896_959_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_896_959_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_896_959_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_alt_reg_r2_896_959_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -19065,12 +19044,12 @@ mem_alt_reg_r2_896_959_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -19080,7 +19059,7 @@ mem_alt_reg_r2_896_959_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_896_959_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_896_959_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_alt_reg_r2_960_1023_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -19103,11 +19082,11 @@ mem_alt_reg_r2_960_1023_0_2: unisim.vcomponents.RAM64M
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
       ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(16),
       DIB => s00_axis_tdata(17),
       DIC => s00_axis_tdata(18),
@@ -19117,7 +19096,7 @@ mem_alt_reg_r2_960_1023_0_2: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_960_1023_0_2_n_2,
       DOD => NLW_mem_alt_reg_r2_960_1023_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_alt_reg_r2_960_1023_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -19139,12 +19118,11 @@ mem_alt_reg_r2_960_1023_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(28),
       DIB => s00_axis_tdata(29),
       DIC => s00_axis_tdata(30),
@@ -19154,7 +19132,7 @@ mem_alt_reg_r2_960_1023_12_14: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_960_1023_12_14_n_2,
       DOD => NLW_mem_alt_reg_r2_960_1023_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_alt_reg_r2_960_1023_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -19176,12 +19154,12 @@ mem_alt_reg_r2_960_1023_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(19),
       DIB => s00_axis_tdata(20),
       DIC => s00_axis_tdata(21),
@@ -19191,7 +19169,7 @@ mem_alt_reg_r2_960_1023_3_5: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_960_1023_3_5_n_2,
       DOD => NLW_mem_alt_reg_r2_960_1023_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_alt_reg_r2_960_1023_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -19213,12 +19191,12 @@ mem_alt_reg_r2_960_1023_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(22),
       DIB => s00_axis_tdata(23),
       DIC => s00_axis_tdata(24),
@@ -19228,7 +19206,7 @@ mem_alt_reg_r2_960_1023_6_8: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_960_1023_6_8_n_2,
       DOD => NLW_mem_alt_reg_r2_960_1023_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_alt_reg_r2_960_1023_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -19250,12 +19228,12 @@ mem_alt_reg_r2_960_1023_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(25),
       DIB => s00_axis_tdata(26),
       DIC => s00_axis_tdata(27),
@@ -19265,7 +19243,7 @@ mem_alt_reg_r2_960_1023_9_11: unisim.vcomponents.RAM64M
       DOC => mem_alt_reg_r2_960_1023_9_11_n_2,
       DOD => NLW_mem_alt_reg_r2_960_1023_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_reg_r2_0_63_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -19287,12 +19265,12 @@ mem_reg_r2_0_63_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -19302,7 +19280,7 @@ mem_reg_r2_0_63_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_0_63_0_2_n_2,
       DOD => NLW_mem_reg_r2_0_63_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -19324,12 +19302,12 @@ mem_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -19339,7 +19317,7 @@ mem_reg_r2_0_63_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_0_63_12_14_n_2,
       DOD => NLW_mem_reg_r2_0_63_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_reg_r2_0_63_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -19361,9 +19339,11 @@ mem_reg_r2_0_63_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__8_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -19373,7 +19353,7 @@ mem_reg_r2_0_63_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_0_63_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_0_63_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_reg_r2_0_63_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -19395,12 +19375,12 @@ mem_reg_r2_0_63_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => write_pointer(3),
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -19410,7 +19390,7 @@ mem_reg_r2_0_63_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_0_63_3_5_n_2,
       DOD => NLW_mem_reg_r2_0_63_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_reg_r2_0_63_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -19432,12 +19412,12 @@ mem_reg_r2_0_63_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -19447,7 +19427,7 @@ mem_reg_r2_0_63_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_0_63_6_8_n_2,
       DOD => NLW_mem_reg_r2_0_63_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -19469,12 +19449,12 @@ mem_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -19484,7 +19464,7 @@ mem_reg_r2_0_63_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_0_63_9_11_n_2,
       DOD => NLW_mem_reg_r2_0_63_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_71
+      WE => u_txfifo_wr_chn_n_41
     );
 mem_reg_r2_1024_1087_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -19506,12 +19486,12 @@ mem_reg_r2_1024_1087_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -19521,7 +19501,7 @@ mem_reg_r2_1024_1087_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1024_1087_0_2_n_2,
       DOD => NLW_mem_reg_r2_1024_1087_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_reg_r2_1024_1087_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -19543,12 +19523,12 @@ mem_reg_r2_1024_1087_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -19558,7 +19538,7 @@ mem_reg_r2_1024_1087_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1024_1087_12_14_n_2,
       DOD => NLW_mem_reg_r2_1024_1087_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_reg_r2_1024_1087_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -19580,9 +19560,11 @@ mem_reg_r2_1024_1087_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -19592,7 +19574,7 @@ mem_reg_r2_1024_1087_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1024_1087_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1024_1087_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_reg_r2_1024_1087_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -19614,12 +19596,12 @@ mem_reg_r2_1024_1087_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -19629,7 +19611,7 @@ mem_reg_r2_1024_1087_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1024_1087_3_5_n_2,
       DOD => NLW_mem_reg_r2_1024_1087_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_reg_r2_1024_1087_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -19651,12 +19633,12 @@ mem_reg_r2_1024_1087_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -19666,7 +19648,7 @@ mem_reg_r2_1024_1087_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1024_1087_6_8_n_2,
       DOD => NLW_mem_reg_r2_1024_1087_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_reg_r2_1024_1087_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -19688,12 +19670,12 @@ mem_reg_r2_1024_1087_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -19703,7 +19685,7 @@ mem_reg_r2_1024_1087_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1024_1087_9_11_n_2,
       DOD => NLW_mem_reg_r2_1024_1087_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_47
+      WE => u_txfifo_wr_chn_n_71
     );
 mem_reg_r2_1088_1151_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -19725,12 +19707,12 @@ mem_reg_r2_1088_1151_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -19740,7 +19722,7 @@ mem_reg_r2_1088_1151_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1088_1151_0_2_n_2,
       DOD => NLW_mem_reg_r2_1088_1151_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_reg_r2_1088_1151_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -19762,12 +19744,12 @@ mem_reg_r2_1088_1151_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -19777,7 +19759,7 @@ mem_reg_r2_1088_1151_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1088_1151_12_14_n_2,
       DOD => NLW_mem_reg_r2_1088_1151_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_reg_r2_1088_1151_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -19799,9 +19781,11 @@ mem_reg_r2_1088_1151_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -19811,7 +19795,7 @@ mem_reg_r2_1088_1151_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1088_1151_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1088_1151_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_reg_r2_1088_1151_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -19833,12 +19817,12 @@ mem_reg_r2_1088_1151_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -19848,7 +19832,7 @@ mem_reg_r2_1088_1151_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1088_1151_3_5_n_2,
       DOD => NLW_mem_reg_r2_1088_1151_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_reg_r2_1088_1151_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -19870,12 +19854,12 @@ mem_reg_r2_1088_1151_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -19885,7 +19869,7 @@ mem_reg_r2_1088_1151_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1088_1151_6_8_n_2,
       DOD => NLW_mem_reg_r2_1088_1151_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_reg_r2_1088_1151_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -19907,12 +19891,12 @@ mem_reg_r2_1088_1151_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -19922,7 +19906,7 @@ mem_reg_r2_1088_1151_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1088_1151_9_11_n_2,
       DOD => NLW_mem_reg_r2_1088_1151_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_59
+      WE => u_txfifo_wr_chn_n_53
     );
 mem_reg_r2_1152_1215_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -19944,12 +19928,12 @@ mem_reg_r2_1152_1215_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -19959,7 +19943,7 @@ mem_reg_r2_1152_1215_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1152_1215_0_2_n_2,
       DOD => NLW_mem_reg_r2_1152_1215_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_reg_r2_1152_1215_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -19981,12 +19965,12 @@ mem_reg_r2_1152_1215_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -19996,7 +19980,7 @@ mem_reg_r2_1152_1215_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1152_1215_12_14_n_2,
       DOD => NLW_mem_reg_r2_1152_1215_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_reg_r2_1152_1215_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -20018,9 +20002,11 @@ mem_reg_r2_1152_1215_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -20030,7 +20016,7 @@ mem_reg_r2_1152_1215_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1152_1215_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1152_1215_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_reg_r2_1152_1215_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -20052,12 +20038,12 @@ mem_reg_r2_1152_1215_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -20067,7 +20053,7 @@ mem_reg_r2_1152_1215_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1152_1215_3_5_n_2,
       DOD => NLW_mem_reg_r2_1152_1215_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_reg_r2_1152_1215_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -20089,12 +20075,12 @@ mem_reg_r2_1152_1215_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -20104,7 +20090,7 @@ mem_reg_r2_1152_1215_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1152_1215_6_8_n_2,
       DOD => NLW_mem_reg_r2_1152_1215_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_reg_r2_1152_1215_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -20126,12 +20112,12 @@ mem_reg_r2_1152_1215_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -20141,7 +20127,7 @@ mem_reg_r2_1152_1215_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1152_1215_9_11_n_2,
       DOD => NLW_mem_reg_r2_1152_1215_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_66
+      WE => u_txfifo_wr_chn_n_46
     );
 mem_reg_r2_1216_1279_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -20163,12 +20149,12 @@ mem_reg_r2_1216_1279_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -20178,7 +20164,7 @@ mem_reg_r2_1216_1279_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1216_1279_0_2_n_2,
       DOD => NLW_mem_reg_r2_1216_1279_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_reg_r2_1216_1279_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -20200,12 +20186,12 @@ mem_reg_r2_1216_1279_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -20215,7 +20201,7 @@ mem_reg_r2_1216_1279_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1216_1279_12_14_n_2,
       DOD => NLW_mem_reg_r2_1216_1279_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_reg_r2_1216_1279_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -20237,9 +20223,11 @@ mem_reg_r2_1216_1279_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -20249,7 +20237,7 @@ mem_reg_r2_1216_1279_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1216_1279_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1216_1279_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_reg_r2_1216_1279_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -20271,12 +20259,12 @@ mem_reg_r2_1216_1279_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -20286,7 +20274,7 @@ mem_reg_r2_1216_1279_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1216_1279_3_5_n_2,
       DOD => NLW_mem_reg_r2_1216_1279_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_reg_r2_1216_1279_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -20308,12 +20296,12 @@ mem_reg_r2_1216_1279_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -20323,7 +20311,7 @@ mem_reg_r2_1216_1279_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1216_1279_6_8_n_2,
       DOD => NLW_mem_reg_r2_1216_1279_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_reg_r2_1216_1279_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -20345,12 +20333,12 @@ mem_reg_r2_1216_1279_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -20360,7 +20348,7 @@ mem_reg_r2_1216_1279_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1216_1279_9_11_n_2,
       DOD => NLW_mem_reg_r2_1216_1279_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_40
+      WE => u_txfifo_wr_chn_n_64
     );
 mem_reg_r2_1280_1343_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -20382,12 +20370,12 @@ mem_reg_r2_1280_1343_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -20397,7 +20385,7 @@ mem_reg_r2_1280_1343_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1280_1343_0_2_n_2,
       DOD => NLW_mem_reg_r2_1280_1343_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_reg_r2_1280_1343_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -20419,12 +20407,12 @@ mem_reg_r2_1280_1343_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -20434,7 +20422,7 @@ mem_reg_r2_1280_1343_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1280_1343_12_14_n_2,
       DOD => NLW_mem_reg_r2_1280_1343_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_reg_r2_1280_1343_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -20456,9 +20444,11 @@ mem_reg_r2_1280_1343_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -20468,7 +20458,7 @@ mem_reg_r2_1280_1343_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1280_1343_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1280_1343_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_reg_r2_1280_1343_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -20490,12 +20480,12 @@ mem_reg_r2_1280_1343_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -20505,7 +20495,7 @@ mem_reg_r2_1280_1343_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1280_1343_3_5_n_2,
       DOD => NLW_mem_reg_r2_1280_1343_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_reg_r2_1280_1343_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -20527,12 +20517,12 @@ mem_reg_r2_1280_1343_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -20542,7 +20532,7 @@ mem_reg_r2_1280_1343_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1280_1343_6_8_n_2,
       DOD => NLW_mem_reg_r2_1280_1343_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_reg_r2_1280_1343_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -20564,12 +20554,12 @@ mem_reg_r2_1280_1343_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -20579,7 +20569,7 @@ mem_reg_r2_1280_1343_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1280_1343_9_11_n_2,
       DOD => NLW_mem_reg_r2_1280_1343_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_65
+      WE => u_txfifo_wr_chn_n_47
     );
 mem_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -20601,12 +20591,12 @@ mem_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -20616,7 +20606,7 @@ mem_reg_r2_128_191_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_128_191_0_2_n_2,
       DOD => NLW_mem_reg_r2_128_191_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_reg_r2_128_191_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -20638,12 +20628,12 @@ mem_reg_r2_128_191_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -20653,7 +20643,7 @@ mem_reg_r2_128_191_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_128_191_12_14_n_2,
       DOD => NLW_mem_reg_r2_128_191_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_reg_r2_128_191_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -20675,9 +20665,11 @@ mem_reg_r2_128_191_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -20687,7 +20679,7 @@ mem_reg_r2_128_191_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_128_191_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_128_191_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_reg_r2_128_191_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -20709,12 +20701,12 @@ mem_reg_r2_128_191_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -20724,7 +20716,7 @@ mem_reg_r2_128_191_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_128_191_3_5_n_2,
       DOD => NLW_mem_reg_r2_128_191_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_reg_r2_128_191_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -20746,12 +20738,12 @@ mem_reg_r2_128_191_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -20761,7 +20753,7 @@ mem_reg_r2_128_191_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_128_191_6_8_n_2,
       DOD => NLW_mem_reg_r2_128_191_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_reg_r2_128_191_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -20783,12 +20775,12 @@ mem_reg_r2_128_191_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -20798,7 +20790,7 @@ mem_reg_r2_128_191_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_128_191_9_11_n_2,
       DOD => NLW_mem_reg_r2_128_191_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_61
+      WE => u_txfifo_wr_chn_n_50
     );
 mem_reg_r2_1344_1407_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -20820,12 +20812,12 @@ mem_reg_r2_1344_1407_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -20835,7 +20827,7 @@ mem_reg_r2_1344_1407_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1344_1407_0_2_n_2,
       DOD => NLW_mem_reg_r2_1344_1407_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_reg_r2_1344_1407_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -20857,12 +20849,12 @@ mem_reg_r2_1344_1407_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -20872,7 +20864,7 @@ mem_reg_r2_1344_1407_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1344_1407_12_14_n_2,
       DOD => NLW_mem_reg_r2_1344_1407_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_reg_r2_1344_1407_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -20894,9 +20886,11 @@ mem_reg_r2_1344_1407_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -20906,7 +20900,7 @@ mem_reg_r2_1344_1407_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1344_1407_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1344_1407_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_reg_r2_1344_1407_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -20928,12 +20922,12 @@ mem_reg_r2_1344_1407_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -20943,7 +20937,7 @@ mem_reg_r2_1344_1407_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1344_1407_3_5_n_2,
       DOD => NLW_mem_reg_r2_1344_1407_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_reg_r2_1344_1407_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -20965,12 +20959,12 @@ mem_reg_r2_1344_1407_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -20980,7 +20974,7 @@ mem_reg_r2_1344_1407_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1344_1407_6_8_n_2,
       DOD => NLW_mem_reg_r2_1344_1407_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_reg_r2_1344_1407_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -21002,12 +20996,12 @@ mem_reg_r2_1344_1407_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -21017,7 +21011,7 @@ mem_reg_r2_1344_1407_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1344_1407_9_11_n_2,
       DOD => NLW_mem_reg_r2_1344_1407_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_46
+      WE => u_txfifo_wr_chn_n_70
     );
 mem_reg_r2_1408_1471_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -21039,12 +21033,12 @@ mem_reg_r2_1408_1471_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -21054,7 +21048,7 @@ mem_reg_r2_1408_1471_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1408_1471_0_2_n_2,
       DOD => NLW_mem_reg_r2_1408_1471_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_reg_r2_1408_1471_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -21076,12 +21070,12 @@ mem_reg_r2_1408_1471_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -21091,7 +21085,7 @@ mem_reg_r2_1408_1471_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1408_1471_12_14_n_2,
       DOD => NLW_mem_reg_r2_1408_1471_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_reg_r2_1408_1471_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -21113,9 +21107,11 @@ mem_reg_r2_1408_1471_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -21125,7 +21121,7 @@ mem_reg_r2_1408_1471_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1408_1471_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1408_1471_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_reg_r2_1408_1471_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -21147,12 +21143,12 @@ mem_reg_r2_1408_1471_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -21162,7 +21158,7 @@ mem_reg_r2_1408_1471_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1408_1471_3_5_n_2,
       DOD => NLW_mem_reg_r2_1408_1471_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_reg_r2_1408_1471_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -21184,12 +21180,12 @@ mem_reg_r2_1408_1471_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -21199,7 +21195,7 @@ mem_reg_r2_1408_1471_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1408_1471_6_8_n_2,
       DOD => NLW_mem_reg_r2_1408_1471_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_reg_r2_1408_1471_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -21221,12 +21217,12 @@ mem_reg_r2_1408_1471_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -21236,7 +21232,7 @@ mem_reg_r2_1408_1471_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1408_1471_9_11_n_2,
       DOD => NLW_mem_reg_r2_1408_1471_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_45
+      WE => u_txfifo_wr_chn_n_69
     );
 mem_reg_r2_1472_1535_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -21258,12 +21254,12 @@ mem_reg_r2_1472_1535_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -21273,7 +21269,7 @@ mem_reg_r2_1472_1535_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1472_1535_0_2_n_2,
       DOD => NLW_mem_reg_r2_1472_1535_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_reg_r2_1472_1535_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -21295,12 +21291,12 @@ mem_reg_r2_1472_1535_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -21310,7 +21306,7 @@ mem_reg_r2_1472_1535_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1472_1535_12_14_n_2,
       DOD => NLW_mem_reg_r2_1472_1535_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_reg_r2_1472_1535_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -21332,9 +21328,11 @@ mem_reg_r2_1472_1535_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -21344,7 +21342,7 @@ mem_reg_r2_1472_1535_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1472_1535_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1472_1535_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_reg_r2_1472_1535_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -21366,12 +21364,12 @@ mem_reg_r2_1472_1535_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -21381,7 +21379,7 @@ mem_reg_r2_1472_1535_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1472_1535_3_5_n_2,
       DOD => NLW_mem_reg_r2_1472_1535_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_reg_r2_1472_1535_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -21403,12 +21401,12 @@ mem_reg_r2_1472_1535_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -21418,7 +21416,7 @@ mem_reg_r2_1472_1535_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1472_1535_6_8_n_2,
       DOD => NLW_mem_reg_r2_1472_1535_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_reg_r2_1472_1535_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -21440,12 +21438,12 @@ mem_reg_r2_1472_1535_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -21455,7 +21453,7 @@ mem_reg_r2_1472_1535_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1472_1535_9_11_n_2,
       DOD => NLW_mem_reg_r2_1472_1535_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_48
+      WE => u_txfifo_wr_chn_n_63
     );
 mem_reg_r2_1536_1599_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -21477,12 +21475,12 @@ mem_reg_r2_1536_1599_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -21492,7 +21490,7 @@ mem_reg_r2_1536_1599_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1536_1599_0_2_n_2,
       DOD => NLW_mem_reg_r2_1536_1599_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_reg_r2_1536_1599_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -21514,12 +21512,12 @@ mem_reg_r2_1536_1599_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -21529,7 +21527,7 @@ mem_reg_r2_1536_1599_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1536_1599_12_14_n_2,
       DOD => NLW_mem_reg_r2_1536_1599_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_reg_r2_1536_1599_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -21551,9 +21549,11 @@ mem_reg_r2_1536_1599_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -21563,7 +21563,7 @@ mem_reg_r2_1536_1599_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1536_1599_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1536_1599_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_reg_r2_1536_1599_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -21585,12 +21585,12 @@ mem_reg_r2_1536_1599_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -21600,7 +21600,7 @@ mem_reg_r2_1536_1599_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1536_1599_3_5_n_2,
       DOD => NLW_mem_reg_r2_1536_1599_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_reg_r2_1536_1599_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -21622,12 +21622,12 @@ mem_reg_r2_1536_1599_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -21637,7 +21637,7 @@ mem_reg_r2_1536_1599_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1536_1599_6_8_n_2,
       DOD => NLW_mem_reg_r2_1536_1599_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_reg_r2_1536_1599_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -21659,12 +21659,12 @@ mem_reg_r2_1536_1599_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -21674,7 +21674,7 @@ mem_reg_r2_1536_1599_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1536_1599_9_11_n_2,
       DOD => NLW_mem_reg_r2_1536_1599_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_64
+      WE => u_txfifo_wr_chn_n_48
     );
 mem_reg_r2_1600_1663_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -21696,12 +21696,12 @@ mem_reg_r2_1600_1663_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -21711,7 +21711,7 @@ mem_reg_r2_1600_1663_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1600_1663_0_2_n_2,
       DOD => NLW_mem_reg_r2_1600_1663_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_reg_r2_1600_1663_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -21733,12 +21733,12 @@ mem_reg_r2_1600_1663_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -21748,7 +21748,7 @@ mem_reg_r2_1600_1663_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1600_1663_12_14_n_2,
       DOD => NLW_mem_reg_r2_1600_1663_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_reg_r2_1600_1663_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -21770,9 +21770,11 @@ mem_reg_r2_1600_1663_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -21782,7 +21784,7 @@ mem_reg_r2_1600_1663_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1600_1663_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1600_1663_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_reg_r2_1600_1663_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -21804,12 +21806,12 @@ mem_reg_r2_1600_1663_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -21819,7 +21821,7 @@ mem_reg_r2_1600_1663_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1600_1663_3_5_n_2,
       DOD => NLW_mem_reg_r2_1600_1663_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_reg_r2_1600_1663_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -21841,12 +21843,12 @@ mem_reg_r2_1600_1663_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -21856,7 +21858,7 @@ mem_reg_r2_1600_1663_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1600_1663_6_8_n_2,
       DOD => NLW_mem_reg_r2_1600_1663_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_reg_r2_1600_1663_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -21878,12 +21880,12 @@ mem_reg_r2_1600_1663_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -21893,7 +21895,7 @@ mem_reg_r2_1600_1663_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1600_1663_9_11_n_2,
       DOD => NLW_mem_reg_r2_1600_1663_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_44
+      WE => u_txfifo_wr_chn_n_68
     );
 mem_reg_r2_1664_1727_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -21915,12 +21917,12 @@ mem_reg_r2_1664_1727_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -21930,7 +21932,7 @@ mem_reg_r2_1664_1727_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1664_1727_0_2_n_2,
       DOD => NLW_mem_reg_r2_1664_1727_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_reg_r2_1664_1727_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -21952,12 +21954,12 @@ mem_reg_r2_1664_1727_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -21967,7 +21969,7 @@ mem_reg_r2_1664_1727_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1664_1727_12_14_n_2,
       DOD => NLW_mem_reg_r2_1664_1727_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_reg_r2_1664_1727_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -21989,9 +21991,11 @@ mem_reg_r2_1664_1727_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -22001,7 +22005,7 @@ mem_reg_r2_1664_1727_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1664_1727_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1664_1727_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_reg_r2_1664_1727_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -22023,12 +22027,12 @@ mem_reg_r2_1664_1727_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -22038,7 +22042,7 @@ mem_reg_r2_1664_1727_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1664_1727_3_5_n_2,
       DOD => NLW_mem_reg_r2_1664_1727_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_reg_r2_1664_1727_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -22060,12 +22064,12 @@ mem_reg_r2_1664_1727_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -22075,7 +22079,7 @@ mem_reg_r2_1664_1727_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1664_1727_6_8_n_2,
       DOD => NLW_mem_reg_r2_1664_1727_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_reg_r2_1664_1727_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -22097,12 +22101,12 @@ mem_reg_r2_1664_1727_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -22112,7 +22116,7 @@ mem_reg_r2_1664_1727_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1664_1727_9_11_n_2,
       DOD => NLW_mem_reg_r2_1664_1727_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_43
+      WE => u_txfifo_wr_chn_n_67
     );
 mem_reg_r2_1728_1791_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -22134,12 +22138,12 @@ mem_reg_r2_1728_1791_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -22149,7 +22153,7 @@ mem_reg_r2_1728_1791_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1728_1791_0_2_n_2,
       DOD => NLW_mem_reg_r2_1728_1791_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_reg_r2_1728_1791_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -22171,12 +22175,12 @@ mem_reg_r2_1728_1791_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -22186,7 +22190,7 @@ mem_reg_r2_1728_1791_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1728_1791_12_14_n_2,
       DOD => NLW_mem_reg_r2_1728_1791_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_reg_r2_1728_1791_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -22208,9 +22212,11 @@ mem_reg_r2_1728_1791_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -22220,7 +22226,7 @@ mem_reg_r2_1728_1791_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1728_1791_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1728_1791_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_reg_r2_1728_1791_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -22242,12 +22248,12 @@ mem_reg_r2_1728_1791_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -22257,7 +22263,7 @@ mem_reg_r2_1728_1791_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1728_1791_3_5_n_2,
       DOD => NLW_mem_reg_r2_1728_1791_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_reg_r2_1728_1791_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -22279,12 +22285,12 @@ mem_reg_r2_1728_1791_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -22294,7 +22300,7 @@ mem_reg_r2_1728_1791_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1728_1791_6_8_n_2,
       DOD => NLW_mem_reg_r2_1728_1791_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_reg_r2_1728_1791_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -22316,12 +22322,12 @@ mem_reg_r2_1728_1791_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -22331,7 +22337,7 @@ mem_reg_r2_1728_1791_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1728_1791_9_11_n_2,
       DOD => NLW_mem_reg_r2_1728_1791_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_54
+      WE => u_txfifo_wr_chn_n_58
     );
 mem_reg_r2_1792_1855_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -22353,12 +22359,12 @@ mem_reg_r2_1792_1855_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -22368,7 +22374,7 @@ mem_reg_r2_1792_1855_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1792_1855_0_2_n_2,
       DOD => NLW_mem_reg_r2_1792_1855_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_reg_r2_1792_1855_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -22390,12 +22396,12 @@ mem_reg_r2_1792_1855_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -22405,7 +22411,7 @@ mem_reg_r2_1792_1855_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1792_1855_12_14_n_2,
       DOD => NLW_mem_reg_r2_1792_1855_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_reg_r2_1792_1855_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -22427,9 +22433,11 @@ mem_reg_r2_1792_1855_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -22439,7 +22447,7 @@ mem_reg_r2_1792_1855_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1792_1855_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1792_1855_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_reg_r2_1792_1855_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -22461,12 +22469,11 @@ mem_reg_r2_1792_1855_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2 downto 1) => write_pointer(2 downto 1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -22476,7 +22483,7 @@ mem_reg_r2_1792_1855_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1792_1855_3_5_n_2,
       DOD => NLW_mem_reg_r2_1792_1855_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_reg_r2_1792_1855_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -22498,12 +22505,12 @@ mem_reg_r2_1792_1855_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -22513,7 +22520,7 @@ mem_reg_r2_1792_1855_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1792_1855_6_8_n_2,
       DOD => NLW_mem_reg_r2_1792_1855_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_reg_r2_1792_1855_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -22535,12 +22542,12 @@ mem_reg_r2_1792_1855_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -22550,7 +22557,7 @@ mem_reg_r2_1792_1855_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1792_1855_9_11_n_2,
       DOD => NLW_mem_reg_r2_1792_1855_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_42
+      WE => u_txfifo_wr_chn_n_66
     );
 mem_reg_r2_1856_1919_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -22572,12 +22579,12 @@ mem_reg_r2_1856_1919_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -22587,7 +22594,7 @@ mem_reg_r2_1856_1919_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1856_1919_0_2_n_2,
       DOD => NLW_mem_reg_r2_1856_1919_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_reg_r2_1856_1919_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -22609,12 +22616,12 @@ mem_reg_r2_1856_1919_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -22624,7 +22631,7 @@ mem_reg_r2_1856_1919_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1856_1919_12_14_n_2,
       DOD => NLW_mem_reg_r2_1856_1919_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_reg_r2_1856_1919_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -22646,9 +22653,11 @@ mem_reg_r2_1856_1919_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -22658,7 +22667,7 @@ mem_reg_r2_1856_1919_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1856_1919_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1856_1919_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_reg_r2_1856_1919_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -22680,12 +22689,11 @@ mem_reg_r2_1856_1919_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2 downto 1) => write_pointer(2 downto 1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -22695,7 +22703,7 @@ mem_reg_r2_1856_1919_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1856_1919_3_5_n_2,
       DOD => NLW_mem_reg_r2_1856_1919_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_reg_r2_1856_1919_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -22717,12 +22725,12 @@ mem_reg_r2_1856_1919_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -22732,7 +22740,7 @@ mem_reg_r2_1856_1919_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1856_1919_6_8_n_2,
       DOD => NLW_mem_reg_r2_1856_1919_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_reg_r2_1856_1919_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -22754,12 +22762,12 @@ mem_reg_r2_1856_1919_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -22769,7 +22777,7 @@ mem_reg_r2_1856_1919_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1856_1919_9_11_n_2,
       DOD => NLW_mem_reg_r2_1856_1919_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_58
+      WE => u_txfifo_wr_chn_n_54
     );
 mem_reg_r2_1920_1983_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -22791,12 +22799,12 @@ mem_reg_r2_1920_1983_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -22806,7 +22814,7 @@ mem_reg_r2_1920_1983_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1920_1983_0_2_n_2,
       DOD => NLW_mem_reg_r2_1920_1983_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_reg_r2_1920_1983_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -22828,12 +22836,12 @@ mem_reg_r2_1920_1983_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -22843,7 +22851,7 @@ mem_reg_r2_1920_1983_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1920_1983_12_14_n_2,
       DOD => NLW_mem_reg_r2_1920_1983_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_reg_r2_1920_1983_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -22865,9 +22873,11 @@ mem_reg_r2_1920_1983_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -22877,7 +22887,7 @@ mem_reg_r2_1920_1983_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1920_1983_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1920_1983_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_reg_r2_1920_1983_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -22899,12 +22909,12 @@ mem_reg_r2_1920_1983_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -22914,7 +22924,7 @@ mem_reg_r2_1920_1983_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1920_1983_3_5_n_2,
       DOD => NLW_mem_reg_r2_1920_1983_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_reg_r2_1920_1983_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -22936,12 +22946,12 @@ mem_reg_r2_1920_1983_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -22951,7 +22961,7 @@ mem_reg_r2_1920_1983_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1920_1983_6_8_n_2,
       DOD => NLW_mem_reg_r2_1920_1983_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_reg_r2_1920_1983_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -22973,12 +22983,12 @@ mem_reg_r2_1920_1983_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -22988,7 +22998,7 @@ mem_reg_r2_1920_1983_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1920_1983_9_11_n_2,
       DOD => NLW_mem_reg_r2_1920_1983_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_63
+      WE => u_txfifo_wr_chn_n_49
     );
 mem_reg_r2_192_255_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -23010,12 +23020,12 @@ mem_reg_r2_192_255_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -23025,7 +23035,7 @@ mem_reg_r2_192_255_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_192_255_0_2_n_2,
       DOD => NLW_mem_reg_r2_192_255_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_reg_r2_192_255_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -23047,12 +23057,12 @@ mem_reg_r2_192_255_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -23062,7 +23072,7 @@ mem_reg_r2_192_255_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_192_255_12_14_n_2,
       DOD => NLW_mem_reg_r2_192_255_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_reg_r2_192_255_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -23084,9 +23094,11 @@ mem_reg_r2_192_255_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -23096,7 +23108,7 @@ mem_reg_r2_192_255_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_192_255_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_192_255_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_reg_r2_192_255_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -23118,12 +23130,12 @@ mem_reg_r2_192_255_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -23133,7 +23145,7 @@ mem_reg_r2_192_255_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_192_255_3_5_n_2,
       DOD => NLW_mem_reg_r2_192_255_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_reg_r2_192_255_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -23155,12 +23167,12 @@ mem_reg_r2_192_255_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -23170,7 +23182,7 @@ mem_reg_r2_192_255_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_192_255_6_8_n_2,
       DOD => NLW_mem_reg_r2_192_255_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_reg_r2_192_255_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -23192,12 +23204,12 @@ mem_reg_r2_192_255_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -23207,7 +23219,7 @@ mem_reg_r2_192_255_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_192_255_9_11_n_2,
       DOD => NLW_mem_reg_r2_192_255_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_53
+      WE => u_txfifo_wr_chn_n_57
     );
 mem_reg_r2_1984_2047_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -23229,12 +23241,12 @@ mem_reg_r2_1984_2047_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -23244,7 +23256,7 @@ mem_reg_r2_1984_2047_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1984_2047_0_2_n_2,
       DOD => NLW_mem_reg_r2_1984_2047_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_reg_r2_1984_2047_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -23266,12 +23278,12 @@ mem_reg_r2_1984_2047_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__5_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => write_pointer(5),
+      ADDRD(4) => u_txfifo_wr_chn_n_38,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -23281,7 +23293,7 @@ mem_reg_r2_1984_2047_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1984_2047_12_14_n_2,
       DOD => NLW_mem_reg_r2_1984_2047_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_reg_r2_1984_2047_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -23303,9 +23315,11 @@ mem_reg_r2_1984_2047_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_35,
-      ADDRD(4) => u_txfifo_wr_chn_n_36,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_36,
+      ADDRD(4) => u_txfifo_wr_chn_n_37,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -23315,7 +23329,7 @@ mem_reg_r2_1984_2047_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_1984_2047_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_1984_2047_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_reg_r2_1984_2047_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -23337,12 +23351,12 @@ mem_reg_r2_1984_2047_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__4_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__0_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__4_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -23352,7 +23366,7 @@ mem_reg_r2_1984_2047_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1984_2047_3_5_n_2,
       DOD => NLW_mem_reg_r2_1984_2047_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_reg_r2_1984_2047_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -23374,12 +23388,12 @@ mem_reg_r2_1984_2047_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -23389,7 +23403,7 @@ mem_reg_r2_1984_2047_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1984_2047_6_8_n_2,
       DOD => NLW_mem_reg_r2_1984_2047_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_reg_r2_1984_2047_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -23411,12 +23425,12 @@ mem_reg_r2_1984_2047_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_37,
+      ADDRD(5) => write_pointer(5),
       ADDRD(4) => u_txfifo_wr_chn_n_38,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -23426,7 +23440,7 @@ mem_reg_r2_1984_2047_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_1984_2047_9_11_n_2,
       DOD => NLW_mem_reg_r2_1984_2047_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_41
+      WE => u_txfifo_wr_chn_n_65
     );
 mem_reg_r2_256_319_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -23448,12 +23462,12 @@ mem_reg_r2_256_319_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -23485,12 +23499,12 @@ mem_reg_r2_256_319_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -23522,9 +23536,11 @@ mem_reg_r2_256_319_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -23556,12 +23572,12 @@ mem_reg_r2_256_319_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -23593,12 +23609,12 @@ mem_reg_r2_256_319_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -23630,12 +23646,12 @@ mem_reg_r2_256_319_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -23667,12 +23683,12 @@ mem_reg_r2_320_383_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -23682,7 +23698,7 @@ mem_reg_r2_320_383_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_320_383_0_2_n_2,
       DOD => NLW_mem_reg_r2_320_383_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_reg_r2_320_383_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -23704,12 +23720,12 @@ mem_reg_r2_320_383_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -23719,7 +23735,7 @@ mem_reg_r2_320_383_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_320_383_12_14_n_2,
       DOD => NLW_mem_reg_r2_320_383_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_reg_r2_320_383_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -23741,9 +23757,11 @@ mem_reg_r2_320_383_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -23753,7 +23771,7 @@ mem_reg_r2_320_383_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_320_383_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_320_383_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_reg_r2_320_383_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -23775,12 +23793,12 @@ mem_reg_r2_320_383_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -23790,7 +23808,7 @@ mem_reg_r2_320_383_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_320_383_3_5_n_2,
       DOD => NLW_mem_reg_r2_320_383_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_reg_r2_320_383_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -23812,12 +23830,12 @@ mem_reg_r2_320_383_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -23827,7 +23845,7 @@ mem_reg_r2_320_383_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_320_383_6_8_n_2,
       DOD => NLW_mem_reg_r2_320_383_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_reg_r2_320_383_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -23849,12 +23867,12 @@ mem_reg_r2_320_383_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -23864,7 +23882,7 @@ mem_reg_r2_320_383_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_320_383_9_11_n_2,
       DOD => NLW_mem_reg_r2_320_383_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_57
+      WE => u_txfifo_wr_chn_n_51
     );
 mem_reg_r2_384_447_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -23886,12 +23904,12 @@ mem_reg_r2_384_447_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -23901,7 +23919,7 @@ mem_reg_r2_384_447_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_384_447_0_2_n_2,
       DOD => NLW_mem_reg_r2_384_447_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_reg_r2_384_447_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -23923,12 +23941,12 @@ mem_reg_r2_384_447_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -23938,7 +23956,7 @@ mem_reg_r2_384_447_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_384_447_12_14_n_2,
       DOD => NLW_mem_reg_r2_384_447_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_reg_r2_384_447_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -23960,9 +23978,11 @@ mem_reg_r2_384_447_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -23972,7 +23992,7 @@ mem_reg_r2_384_447_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_384_447_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_384_447_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_reg_r2_384_447_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -23994,12 +24014,12 @@ mem_reg_r2_384_447_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -24009,7 +24029,7 @@ mem_reg_r2_384_447_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_384_447_3_5_n_2,
       DOD => NLW_mem_reg_r2_384_447_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_reg_r2_384_447_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -24031,12 +24051,12 @@ mem_reg_r2_384_447_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -24046,7 +24066,7 @@ mem_reg_r2_384_447_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_384_447_6_8_n_2,
       DOD => NLW_mem_reg_r2_384_447_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_reg_r2_384_447_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -24068,12 +24088,12 @@ mem_reg_r2_384_447_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -24083,7 +24103,7 @@ mem_reg_r2_384_447_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_384_447_9_11_n_2,
       DOD => NLW_mem_reg_r2_384_447_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_62
+      WE => u_txfifo_wr_chn_n_43
     );
 mem_reg_r2_448_511_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -24105,12 +24125,12 @@ mem_reg_r2_448_511_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -24142,12 +24162,12 @@ mem_reg_r2_448_511_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -24179,9 +24199,11 @@ mem_reg_r2_448_511_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -24213,12 +24235,12 @@ mem_reg_r2_448_511_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -24250,12 +24272,12 @@ mem_reg_r2_448_511_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -24287,12 +24309,12 @@ mem_reg_r2_448_511_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -24324,12 +24346,12 @@ mem_reg_r2_512_575_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -24339,7 +24361,7 @@ mem_reg_r2_512_575_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_512_575_0_2_n_2,
       DOD => NLW_mem_reg_r2_512_575_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_reg_r2_512_575_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -24361,12 +24383,12 @@ mem_reg_r2_512_575_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -24376,7 +24398,7 @@ mem_reg_r2_512_575_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_512_575_12_14_n_2,
       DOD => NLW_mem_reg_r2_512_575_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_reg_r2_512_575_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -24398,9 +24420,11 @@ mem_reg_r2_512_575_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -24410,7 +24434,7 @@ mem_reg_r2_512_575_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_512_575_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_512_575_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_reg_r2_512_575_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -24432,12 +24456,12 @@ mem_reg_r2_512_575_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -24447,7 +24471,7 @@ mem_reg_r2_512_575_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_512_575_3_5_n_2,
       DOD => NLW_mem_reg_r2_512_575_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_reg_r2_512_575_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -24469,12 +24493,12 @@ mem_reg_r2_512_575_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -24484,7 +24508,7 @@ mem_reg_r2_512_575_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_512_575_6_8_n_2,
       DOD => NLW_mem_reg_r2_512_575_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_reg_r2_512_575_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -24506,12 +24530,12 @@ mem_reg_r2_512_575_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -24521,7 +24545,7 @@ mem_reg_r2_512_575_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_512_575_9_11_n_2,
       DOD => NLW_mem_reg_r2_512_575_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_52
+      WE => u_txfifo_wr_chn_n_62
     );
 mem_reg_r2_576_639_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -24543,12 +24567,12 @@ mem_reg_r2_576_639_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -24558,7 +24582,7 @@ mem_reg_r2_576_639_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_576_639_0_2_n_2,
       DOD => NLW_mem_reg_r2_576_639_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_reg_r2_576_639_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -24580,12 +24604,12 @@ mem_reg_r2_576_639_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -24595,7 +24619,7 @@ mem_reg_r2_576_639_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_576_639_12_14_n_2,
       DOD => NLW_mem_reg_r2_576_639_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_reg_r2_576_639_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -24617,9 +24641,11 @@ mem_reg_r2_576_639_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -24629,7 +24655,7 @@ mem_reg_r2_576_639_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_576_639_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_576_639_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_reg_r2_576_639_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -24651,12 +24677,12 @@ mem_reg_r2_576_639_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -24666,7 +24692,7 @@ mem_reg_r2_576_639_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_576_639_3_5_n_2,
       DOD => NLW_mem_reg_r2_576_639_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_reg_r2_576_639_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -24688,12 +24714,12 @@ mem_reg_r2_576_639_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -24703,7 +24729,7 @@ mem_reg_r2_576_639_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_576_639_6_8_n_2,
       DOD => NLW_mem_reg_r2_576_639_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_reg_r2_576_639_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -24725,12 +24751,12 @@ mem_reg_r2_576_639_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -24740,7 +24766,7 @@ mem_reg_r2_576_639_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_576_639_9_11_n_2,
       DOD => NLW_mem_reg_r2_576_639_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_60
+      WE => u_txfifo_wr_chn_n_52
     );
 mem_reg_r2_640_703_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -24762,12 +24788,12 @@ mem_reg_r2_640_703_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -24777,7 +24803,7 @@ mem_reg_r2_640_703_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_640_703_0_2_n_2,
       DOD => NLW_mem_reg_r2_640_703_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_reg_r2_640_703_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -24799,12 +24825,12 @@ mem_reg_r2_640_703_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -24814,7 +24840,7 @@ mem_reg_r2_640_703_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_640_703_12_14_n_2,
       DOD => NLW_mem_reg_r2_640_703_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_reg_r2_640_703_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -24836,9 +24862,11 @@ mem_reg_r2_640_703_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -24848,7 +24876,7 @@ mem_reg_r2_640_703_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_640_703_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_640_703_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_reg_r2_640_703_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -24870,12 +24898,12 @@ mem_reg_r2_640_703_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -24885,7 +24913,7 @@ mem_reg_r2_640_703_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_640_703_3_5_n_2,
       DOD => NLW_mem_reg_r2_640_703_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_reg_r2_640_703_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -24907,12 +24935,12 @@ mem_reg_r2_640_703_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -24922,7 +24950,7 @@ mem_reg_r2_640_703_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_640_703_6_8_n_2,
       DOD => NLW_mem_reg_r2_640_703_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_reg_r2_640_703_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -24944,12 +24972,12 @@ mem_reg_r2_640_703_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -24959,7 +24987,7 @@ mem_reg_r2_640_703_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_640_703_9_11_n_2,
       DOD => NLW_mem_reg_r2_640_703_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_68
+      WE => u_txfifo_wr_chn_n_44
     );
 mem_reg_r2_64_127_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -24981,12 +25009,12 @@ mem_reg_r2_64_127_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__7_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__7_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -24996,7 +25024,7 @@ mem_reg_r2_64_127_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_64_127_0_2_n_2,
       DOD => NLW_mem_reg_r2_64_127_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_reg_r2_64_127_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -25018,12 +25046,12 @@ mem_reg_r2_64_127_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -25033,7 +25061,7 @@ mem_reg_r2_64_127_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_64_127_12_14_n_2,
       DOD => NLW_mem_reg_r2_64_127_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_reg_r2_64_127_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -25055,9 +25083,11 @@ mem_reg_r2_64_127_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__8_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -25067,7 +25097,7 @@ mem_reg_r2_64_127_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_64_127_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_64_127_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_reg_r2_64_127_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -25089,12 +25119,12 @@ mem_reg_r2_64_127_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -25104,7 +25134,7 @@ mem_reg_r2_64_127_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_64_127_3_5_n_2,
       DOD => NLW_mem_reg_r2_64_127_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_reg_r2_64_127_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -25126,12 +25156,12 @@ mem_reg_r2_64_127_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__3_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -25141,7 +25171,7 @@ mem_reg_r2_64_127_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_64_127_6_8_n_2,
       DOD => NLW_mem_reg_r2_64_127_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_reg_r2_64_127_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -25163,12 +25193,12 @@ mem_reg_r2_64_127_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -25178,7 +25208,7 @@ mem_reg_r2_64_127_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_64_127_9_11_n_2,
       DOD => NLW_mem_reg_r2_64_127_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_69
+      WE => u_txfifo_wr_chn_n_42
     );
 mem_reg_r2_704_767_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -25200,12 +25230,12 @@ mem_reg_r2_704_767_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -25215,7 +25245,7 @@ mem_reg_r2_704_767_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_704_767_0_2_n_2,
       DOD => NLW_mem_reg_r2_704_767_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_reg_r2_704_767_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -25237,12 +25267,12 @@ mem_reg_r2_704_767_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -25252,7 +25282,7 @@ mem_reg_r2_704_767_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_704_767_12_14_n_2,
       DOD => NLW_mem_reg_r2_704_767_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_reg_r2_704_767_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -25274,9 +25304,11 @@ mem_reg_r2_704_767_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -25286,7 +25318,7 @@ mem_reg_r2_704_767_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_704_767_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_704_767_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_reg_r2_704_767_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -25308,12 +25340,12 @@ mem_reg_r2_704_767_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -25323,7 +25355,7 @@ mem_reg_r2_704_767_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_704_767_3_5_n_2,
       DOD => NLW_mem_reg_r2_704_767_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_reg_r2_704_767_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -25345,12 +25377,12 @@ mem_reg_r2_704_767_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -25360,7 +25392,7 @@ mem_reg_r2_704_767_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_704_767_6_8_n_2,
       DOD => NLW_mem_reg_r2_704_767_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_reg_r2_704_767_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -25382,12 +25414,12 @@ mem_reg_r2_704_767_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__2_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__2_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -25397,7 +25429,7 @@ mem_reg_r2_704_767_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_704_767_9_11_n_2,
       DOD => NLW_mem_reg_r2_704_767_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_49
+      WE => u_txfifo_wr_chn_n_59
     );
 mem_reg_r2_768_831_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -25419,12 +25451,12 @@ mem_reg_r2_768_831_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -25434,7 +25466,7 @@ mem_reg_r2_768_831_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_768_831_0_2_n_2,
       DOD => NLW_mem_reg_r2_768_831_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_reg_r2_768_831_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -25456,12 +25488,12 @@ mem_reg_r2_768_831_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -25471,7 +25503,7 @@ mem_reg_r2_768_831_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_768_831_12_14_n_2,
       DOD => NLW_mem_reg_r2_768_831_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_reg_r2_768_831_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -25493,9 +25525,11 @@ mem_reg_r2_768_831_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -25505,7 +25539,7 @@ mem_reg_r2_768_831_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_768_831_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_768_831_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_reg_r2_768_831_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -25527,12 +25561,12 @@ mem_reg_r2_768_831_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -25542,7 +25576,7 @@ mem_reg_r2_768_831_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_768_831_3_5_n_2,
       DOD => NLW_mem_reg_r2_768_831_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_reg_r2_768_831_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -25564,12 +25598,12 @@ mem_reg_r2_768_831_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -25579,7 +25613,7 @@ mem_reg_r2_768_831_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_768_831_6_8_n_2,
       DOD => NLW_mem_reg_r2_768_831_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_reg_r2_768_831_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -25601,12 +25635,12 @@ mem_reg_r2_768_831_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -25616,7 +25650,7 @@ mem_reg_r2_768_831_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_768_831_9_11_n_2,
       DOD => NLW_mem_reg_r2_768_831_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_67
+      WE => u_txfifo_wr_chn_n_45
     );
 mem_reg_r2_832_895_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -25638,12 +25672,12 @@ mem_reg_r2_832_895_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -25653,7 +25687,7 @@ mem_reg_r2_832_895_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_832_895_0_2_n_2,
       DOD => NLW_mem_reg_r2_832_895_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_reg_r2_832_895_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -25675,12 +25709,12 @@ mem_reg_r2_832_895_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -25690,7 +25724,7 @@ mem_reg_r2_832_895_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_832_895_12_14_n_2,
       DOD => NLW_mem_reg_r2_832_895_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_reg_r2_832_895_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -25712,9 +25746,11 @@ mem_reg_r2_832_895_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -25724,7 +25760,7 @@ mem_reg_r2_832_895_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_832_895_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_832_895_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_reg_r2_832_895_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -25746,12 +25782,12 @@ mem_reg_r2_832_895_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -25761,7 +25797,7 @@ mem_reg_r2_832_895_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_832_895_3_5_n_2,
       DOD => NLW_mem_reg_r2_832_895_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_reg_r2_832_895_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -25783,12 +25819,12 @@ mem_reg_r2_832_895_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -25798,7 +25834,7 @@ mem_reg_r2_832_895_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_832_895_6_8_n_2,
       DOD => NLW_mem_reg_r2_832_895_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_reg_r2_832_895_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -25820,12 +25856,12 @@ mem_reg_r2_832_895_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -25835,7 +25871,7 @@ mem_reg_r2_832_895_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_832_895_9_11_n_2,
       DOD => NLW_mem_reg_r2_832_895_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_51
+      WE => u_txfifo_wr_chn_n_61
     );
 mem_reg_r2_896_959_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -25857,12 +25893,12 @@ mem_reg_r2_896_959_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -25872,7 +25908,7 @@ mem_reg_r2_896_959_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_896_959_0_2_n_2,
       DOD => NLW_mem_reg_r2_896_959_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_reg_r2_896_959_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -25894,12 +25930,12 @@ mem_reg_r2_896_959_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -25909,7 +25945,7 @@ mem_reg_r2_896_959_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_896_959_12_14_n_2,
       DOD => NLW_mem_reg_r2_896_959_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_reg_r2_896_959_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -25931,9 +25967,11 @@ mem_reg_r2_896_959_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -25943,7 +25981,7 @@ mem_reg_r2_896_959_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_896_959_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_896_959_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_reg_r2_896_959_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -25965,12 +26003,12 @@ mem_reg_r2_896_959_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -25980,7 +26018,7 @@ mem_reg_r2_896_959_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_896_959_3_5_n_2,
       DOD => NLW_mem_reg_r2_896_959_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_reg_r2_896_959_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -26002,12 +26040,12 @@ mem_reg_r2_896_959_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -26017,7 +26055,7 @@ mem_reg_r2_896_959_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_896_959_6_8_n_2,
       DOD => NLW_mem_reg_r2_896_959_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_reg_r2_896_959_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -26039,12 +26077,12 @@ mem_reg_r2_896_959_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -26054,7 +26092,7 @@ mem_reg_r2_896_959_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_896_959_9_11_n_2,
       DOD => NLW_mem_reg_r2_896_959_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_50
+      WE => u_txfifo_wr_chn_n_60
     );
 mem_reg_r2_960_1023_0_2: unisim.vcomponents.RAM64M
      port map (
@@ -26076,12 +26114,12 @@ mem_reg_r2_960_1023_0_2: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__6_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__6_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => u_txfifo_wr_chn_n_35,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(0),
       DIB => s00_axis_tdata(1),
       DIC => s00_axis_tdata(2),
@@ -26091,7 +26129,7 @@ mem_reg_r2_960_1023_0_2: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_960_1023_0_2_n_2,
       DOD => NLW_mem_reg_r2_960_1023_0_2_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_reg_r2_960_1023_12_14: unisim.vcomponents.RAM64M
      port map (
@@ -26113,12 +26151,12 @@ mem_reg_r2_960_1023_12_14: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__0_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__6_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__0_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_28,
-      ADDRD(2) => u_txfifo_wr_chn_n_29,
-      ADDRD(1) => u_txfifo_wr_chn_n_30,
-      ADDRD(0) => u_txfifo_wr_chn_n_32,
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(12),
       DIB => s00_axis_tdata(13),
       DIC => s00_axis_tdata(14),
@@ -26128,7 +26166,7 @@ mem_reg_r2_960_1023_12_14: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_960_1023_12_14_n_2,
       DOD => NLW_mem_reg_r2_960_1023_12_14_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_reg_r2_960_1023_15_15: unisim.vcomponents.RAM64M
      port map (
@@ -26150,9 +26188,11 @@ mem_reg_r2_960_1023_15_15: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__7_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep_n_0\,
-      ADDRD(5) => write_pointer(5),
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3 downto 0) => write_pointer(3 downto 0),
+      ADDRD(5) => u_txfifo_wr_chn_n_24,
+      ADDRD(4) => u_txfifo_wr_chn_n_25,
+      ADDRD(3 downto 2) => write_pointer(3 downto 2),
+      ADDRD(1) => u_txfifo_wr_chn_n_32,
+      ADDRD(0) => u_txfifo_wr_chn_n_34,
       DIA => s00_axis_tdata(15),
       DIB => s00_axis_tdata(31),
       DIC => '0',
@@ -26162,7 +26202,7 @@ mem_reg_r2_960_1023_15_15: unisim.vcomponents.RAM64M
       DOC => NLW_mem_reg_r2_960_1023_15_15_DOC_UNCONNECTED,
       DOD => NLW_mem_reg_r2_960_1023_15_15_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_reg_r2_960_1023_3_5: unisim.vcomponents.RAM64M
      port map (
@@ -26184,12 +26224,12 @@ mem_reg_r2_960_1023_3_5: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__5_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__1_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__5_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_26,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_30,
+      ADDRD(2) => u_txfifo_wr_chn_n_31,
+      ADDRD(1) => write_pointer(1),
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
       DIA => s00_axis_tdata(3),
       DIB => s00_axis_tdata(4),
       DIC => s00_axis_tdata(5),
@@ -26199,7 +26239,7 @@ mem_reg_r2_960_1023_3_5: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_960_1023_3_5_n_2,
       DOD => NLW_mem_reg_r2_960_1023_3_5_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_reg_r2_960_1023_6_8: unisim.vcomponents.RAM64M
      port map (
@@ -26221,12 +26261,12 @@ mem_reg_r2_960_1023_6_8: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__3_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__2_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__3_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_27,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_29,
       DIA => s00_axis_tdata(6),
       DIB => s00_axis_tdata(7),
       DIC => s00_axis_tdata(8),
@@ -26236,7 +26276,7 @@ mem_reg_r2_960_1023_6_8: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_960_1023_6_8_n_2,
       DOD => NLW_mem_reg_r2_960_1023_6_8_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 mem_reg_r2_960_1023_9_11: unisim.vcomponents.RAM64M
      port map (
@@ -26258,12 +26298,12 @@ mem_reg_r2_960_1023_9_11: unisim.vcomponents.RAM64M
       ADDRC(2) => \rd_ptr_reg_reg[3]_rep__1_n_0\,
       ADDRC(1) => \rd_ptr_reg_reg[2]_rep__4_n_0\,
       ADDRC(0) => \rd_ptr_reg_reg[1]_rep__1_n_0\,
-      ADDRD(5) => u_txfifo_wr_chn_n_33,
-      ADDRD(4) => u_txfifo_wr_chn_n_34,
-      ADDRD(3) => u_txfifo_wr_chn_n_23,
-      ADDRD(2) => u_txfifo_wr_chn_n_24,
-      ADDRD(1) => u_txfifo_wr_chn_n_25,
-      ADDRD(0) => u_txfifo_wr_chn_n_31,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_26,
+      ADDRD(2) => u_txfifo_wr_chn_n_27,
+      ADDRD(1) => u_txfifo_wr_chn_n_28,
+      ADDRD(0) => u_txfifo_wr_chn_n_33,
       DIA => s00_axis_tdata(9),
       DIB => s00_axis_tdata(10),
       DIC => s00_axis_tdata(11),
@@ -26273,7 +26313,7 @@ mem_reg_r2_960_1023_9_11: unisim.vcomponents.RAM64M
       DOC => mem_reg_r2_960_1023_9_11_n_2,
       DOD => NLW_mem_reg_r2_960_1023_9_11_DOD_UNCONNECTED,
       WCLK => clk,
-      WE => u_txfifo_wr_chn_n_70
+      WE => u_txfifo_wr_chn_n_40
     );
 \rd_ptr_reg_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -27117,11 +27157,13 @@ txfifo_full_reg: unisim.vcomponents.FDCE
     );
 u_txfifo_wr_chn: entity work.design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
      port map (
-      ADDRD(4) => u_txfifo_wr_chn_n_18,
-      ADDRD(3) => u_txfifo_wr_chn_n_19,
-      ADDRD(2) => u_txfifo_wr_chn_n_20,
-      ADDRD(1) => u_txfifo_wr_chn_n_21,
-      ADDRD(0) => u_txfifo_wr_chn_n_22,
+      ADDRD(5) => u_txfifo_wr_chn_n_18,
+      ADDRD(4) => u_txfifo_wr_chn_n_19,
+      ADDRD(3) => u_txfifo_wr_chn_n_20,
+      ADDRD(2) => u_txfifo_wr_chn_n_21,
+      ADDRD(1) => u_txfifo_wr_chn_n_22,
+      ADDRD(0) => u_txfifo_wr_chn_n_23,
+      D(15 downto 0) => write_pointer(15 downto 0),
       clk => clk,
       fifo_wren => fifo_wren,
       mst_exec_state_reg_0 => mst_exec_state_reg,
@@ -27129,56 +27171,54 @@ u_txfifo_wr_chn: entity work.design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_
       s00_axis_tvalid => s00_axis_tvalid,
       txfifo_full => \^txfifo_full\,
       txfifo_full_reg => \^m00_axis_tready_0\,
-      write_pointer(15 downto 0) => write_pointer(15 downto 0),
-      \write_pointer_reg[0]_rep__1_0\(0) => u_txfifo_wr_chn_n_27,
-      \write_pointer_reg[0]_rep__3_0\(0) => u_txfifo_wr_chn_n_32,
-      \write_pointer_reg[10]_0\ => u_txfifo_wr_chn_n_41,
-      \write_pointer_reg[10]_1\ => u_txfifo_wr_chn_n_47,
-      \write_pointer_reg[10]_2\ => u_txfifo_wr_chn_n_70,
+      \write_pointer_reg[0]_rep__2_0\(0) => u_txfifo_wr_chn_n_34,
+      \write_pointer_reg[10]_0\ => u_txfifo_wr_chn_n_40,
+      \write_pointer_reg[10]_1\ => u_txfifo_wr_chn_n_41,
+      \write_pointer_reg[10]_2\ => u_txfifo_wr_chn_n_65,
       \write_pointer_reg[10]_3\ => u_txfifo_wr_chn_n_71,
       \write_pointer_reg[14]_0\ => u_txfifo_wr_chn_n_39,
-      \write_pointer_reg[3]_rep_0\(3) => u_txfifo_wr_chn_n_28,
-      \write_pointer_reg[3]_rep_0\(2) => u_txfifo_wr_chn_n_29,
-      \write_pointer_reg[3]_rep_0\(1) => u_txfifo_wr_chn_n_30,
-      \write_pointer_reg[3]_rep_0\(0) => u_txfifo_wr_chn_n_31,
-      \write_pointer_reg[3]_rep__0_0\(3) => u_txfifo_wr_chn_n_23,
-      \write_pointer_reg[3]_rep__0_0\(2) => u_txfifo_wr_chn_n_24,
-      \write_pointer_reg[3]_rep__0_0\(1) => u_txfifo_wr_chn_n_25,
-      \write_pointer_reg[3]_rep__0_0\(0) => u_txfifo_wr_chn_n_26,
-      \write_pointer_reg[5]_rep_0\(1) => u_txfifo_wr_chn_n_37,
-      \write_pointer_reg[5]_rep_0\(0) => u_txfifo_wr_chn_n_38,
-      \write_pointer_reg[5]_rep__0_0\(1) => u_txfifo_wr_chn_n_35,
-      \write_pointer_reg[5]_rep__0_0\(0) => u_txfifo_wr_chn_n_36,
-      \write_pointer_reg[5]_rep__1_0\(1) => u_txfifo_wr_chn_n_33,
-      \write_pointer_reg[5]_rep__1_0\(0) => u_txfifo_wr_chn_n_34,
+      \write_pointer_reg[1]_rep_0\(0) => u_txfifo_wr_chn_n_35,
+      \write_pointer_reg[3]_rep_0\(3) => u_txfifo_wr_chn_n_30,
+      \write_pointer_reg[3]_rep_0\(2) => u_txfifo_wr_chn_n_31,
+      \write_pointer_reg[3]_rep_0\(1) => u_txfifo_wr_chn_n_32,
+      \write_pointer_reg[3]_rep_0\(0) => u_txfifo_wr_chn_n_33,
+      \write_pointer_reg[4]_rep__0_0\(0) => u_txfifo_wr_chn_n_38,
+      \write_pointer_reg[5]_rep__0_0\(5) => u_txfifo_wr_chn_n_24,
+      \write_pointer_reg[5]_rep__0_0\(4) => u_txfifo_wr_chn_n_25,
+      \write_pointer_reg[5]_rep__0_0\(3) => u_txfifo_wr_chn_n_26,
+      \write_pointer_reg[5]_rep__0_0\(2) => u_txfifo_wr_chn_n_27,
+      \write_pointer_reg[5]_rep__0_0\(1) => u_txfifo_wr_chn_n_28,
+      \write_pointer_reg[5]_rep__0_0\(0) => u_txfifo_wr_chn_n_29,
+      \write_pointer_reg[5]_rep__1_0\(1) => u_txfifo_wr_chn_n_36,
+      \write_pointer_reg[5]_rep__1_0\(0) => u_txfifo_wr_chn_n_37,
       \write_pointer_reg[6]_0\ => u_txfifo_wr_chn_n_42,
-      \write_pointer_reg[6]_1\ => u_txfifo_wr_chn_n_43,
-      \write_pointer_reg[6]_2\ => u_txfifo_wr_chn_n_45,
-      \write_pointer_reg[6]_3\ => u_txfifo_wr_chn_n_50,
-      \write_pointer_reg[6]_4\ => u_txfifo_wr_chn_n_63,
+      \write_pointer_reg[6]_1\ => u_txfifo_wr_chn_n_49,
+      \write_pointer_reg[6]_2\ => u_txfifo_wr_chn_n_60,
+      \write_pointer_reg[6]_3\ => u_txfifo_wr_chn_n_66,
+      \write_pointer_reg[6]_4\ => u_txfifo_wr_chn_n_67,
       \write_pointer_reg[6]_5\ => u_txfifo_wr_chn_n_69,
-      \write_pointer_reg[7]_0\ => u_txfifo_wr_chn_n_44,
-      \write_pointer_reg[7]_1\ => u_txfifo_wr_chn_n_46,
-      \write_pointer_reg[7]_2\ => u_txfifo_wr_chn_n_51,
-      \write_pointer_reg[7]_3\ => u_txfifo_wr_chn_n_58,
-      \write_pointer_reg[7]_4\ => u_txfifo_wr_chn_n_61,
-      \write_pointer_reg[7]_5\ => u_txfifo_wr_chn_n_64,
-      \write_pointer_reg[7]_6\ => u_txfifo_wr_chn_n_65,
-      \write_pointer_reg[7]_7\ => u_txfifo_wr_chn_n_67,
-      \write_pointer_reg[8]_0\ => u_txfifo_wr_chn_n_40,
-      \write_pointer_reg[8]_1\ => u_txfifo_wr_chn_n_49,
-      \write_pointer_reg[8]_2\ => u_txfifo_wr_chn_n_54,
-      \write_pointer_reg[8]_3\ => u_txfifo_wr_chn_n_56,
-      \write_pointer_reg[8]_4\ => u_txfifo_wr_chn_n_59,
-      \write_pointer_reg[8]_5\ => u_txfifo_wr_chn_n_60,
-      \write_pointer_reg[8]_6\ => u_txfifo_wr_chn_n_66,
-      \write_pointer_reg[8]_7\ => u_txfifo_wr_chn_n_68,
-      \write_pointer_reg[9]_0\ => u_txfifo_wr_chn_n_48,
-      \write_pointer_reg[9]_1\ => u_txfifo_wr_chn_n_52,
-      \write_pointer_reg[9]_2\ => u_txfifo_wr_chn_n_53,
-      \write_pointer_reg[9]_3\ => u_txfifo_wr_chn_n_55,
-      \write_pointer_reg[9]_4\ => u_txfifo_wr_chn_n_57,
-      \write_pointer_reg[9]_5\ => u_txfifo_wr_chn_n_62,
+      \write_pointer_reg[7]_0\ => u_txfifo_wr_chn_n_45,
+      \write_pointer_reg[7]_1\ => u_txfifo_wr_chn_n_47,
+      \write_pointer_reg[7]_2\ => u_txfifo_wr_chn_n_48,
+      \write_pointer_reg[7]_3\ => u_txfifo_wr_chn_n_50,
+      \write_pointer_reg[7]_4\ => u_txfifo_wr_chn_n_54,
+      \write_pointer_reg[7]_5\ => u_txfifo_wr_chn_n_61,
+      \write_pointer_reg[7]_6\ => u_txfifo_wr_chn_n_68,
+      \write_pointer_reg[7]_7\ => u_txfifo_wr_chn_n_70,
+      \write_pointer_reg[8]_0\ => u_txfifo_wr_chn_n_44,
+      \write_pointer_reg[8]_1\ => u_txfifo_wr_chn_n_46,
+      \write_pointer_reg[8]_2\ => u_txfifo_wr_chn_n_52,
+      \write_pointer_reg[8]_3\ => u_txfifo_wr_chn_n_53,
+      \write_pointer_reg[8]_4\ => u_txfifo_wr_chn_n_56,
+      \write_pointer_reg[8]_5\ => u_txfifo_wr_chn_n_58,
+      \write_pointer_reg[8]_6\ => u_txfifo_wr_chn_n_59,
+      \write_pointer_reg[8]_7\ => u_txfifo_wr_chn_n_64,
+      \write_pointer_reg[9]_0\ => u_txfifo_wr_chn_n_43,
+      \write_pointer_reg[9]_1\ => u_txfifo_wr_chn_n_51,
+      \write_pointer_reg[9]_2\ => u_txfifo_wr_chn_n_55,
+      \write_pointer_reg[9]_3\ => u_txfifo_wr_chn_n_57,
+      \write_pointer_reg[9]_4\ => u_txfifo_wr_chn_n_62,
+      \write_pointer_reg[9]_5\ => u_txfifo_wr_chn_n_63,
       writes_done_reg_0 => axis_stream_txfifo_v2_0_S00_AXI_inst_n_1
     );
 end STRUCTURE;

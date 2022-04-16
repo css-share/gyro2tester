@@ -1,26 +1,245 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 16:41:09 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 18:36:29 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : upgrade_ip
 | Device       : xc7z020clg484-1
 ------------------------------------------------------------------------------------
 
-Upgrade Log for IP 'design_2_smartconnect_0_0'
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
 
 1. Summary
 ----------
 
-SUCCESS in the conversion of design_2_smartconnect_0_0 (xilinx.com:ip:smartconnect:1.0 (Rev. 17)) to Vivado generation flows.
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 15) to (Rev. 16)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 18:22:40 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 59) to (Rev. 60)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 18:17:54 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0 (Rev. 59)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 17:56:38 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 58) to (Rev. 59)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 17:53:28 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0) from (Rev. 126) to (Rev. 127)
 
 After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
 
-2. Connection and Interface Information
----------------------------------------
+2. Connection Warnings
+----------------------
 
-Connection and Interface information can not be compared for deferred elaboration IPs.
-design_2_smartconnect_0_0 may have connection or interface changes.
+Detected external port differences while upgrading 'design_2_BiDirChannels_0_0'. These changes may impact your design.
+
+
+-Upgraded port 'm00_axis_tdata' width 48 differs from original width 16
+
+-Upgraded port 'm00_axis_tstrb' width 6 differs from original width 2
+
+
+3. Customization warnings
+-------------------------
+
+An attempt to modify the value of disabled parameter 'C_M00_AXIS_TDATA_WIDTH' from '48' to '16' has been ignored for IP 'design_2_BiDirChannels_0_0'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:BiDirChannels:1.0 -user_name design_2_BiDirChannels_0_0
+set_property -dict "\
+  CONFIG.C_M00_AXIS_TDATA_WIDTH {16} \
+  CONFIG.C_S00_AXIS_TDATA_WIDTH {48} \
+  CONFIG.C_S00_AXI_ADDR_WIDTH {4} \
+  CONFIG.C_S00_AXI_BASEADDR {0xFFFFFFFF} \
+  CONFIG.C_S00_AXI_DATA_WIDTH {32} \
+  CONFIG.C_S00_AXI_HIGHADDR {0x00000000} \
+  CONFIG.Component_Name {design_2_BiDirChannels_0_0} \
+  CONFIG.M00_AXIS.CLK_DOMAIN {design_2_BiDirChannels_0_0_txclk} \
+  CONFIG.M00_AXIS.FREQ_HZ {50000000} \
+  CONFIG.M00_AXIS.HAS_TKEEP {0} \
+  CONFIG.M00_AXIS.HAS_TLAST {1} \
+  CONFIG.M00_AXIS.HAS_TREADY {1} \
+  CONFIG.M00_AXIS.HAS_TSTRB {1} \
+  CONFIG.M00_AXIS.INSERT_VIP {0} \
+  CONFIG.M00_AXIS.LAYERED_METADATA {undef} \
+  CONFIG.M00_AXIS.PHASE {0.0} \
+  CONFIG.M00_AXIS.TDATA_NUM_BYTES {2} \
+  CONFIG.M00_AXIS.TDEST_WIDTH {0} \
+  CONFIG.M00_AXIS.TID_WIDTH {0} \
+  CONFIG.M00_AXIS.TUSER_WIDTH {0} \
+  CONFIG.M00_AXIS.WIZ_DATA_WIDTH {32} \
+  CONFIG.MCK_N.ASSOCIATED_BUSIF {} \
+  CONFIG.MCK_N.ASSOCIATED_PORT {} \
+  CONFIG.MCK_N.ASSOCIATED_RESET {tx_rstn} \
+  CONFIG.MCK_N.CLK_DOMAIN {design_2_BiDirChannels_0_0_MCK_N} \
+  CONFIG.MCK_N.FREQ_HZ {50000000} \
+  CONFIG.MCK_N.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MCK_N.INSERT_VIP {0} \
+  CONFIG.MCK_N.PHASE {0.0} \
+  CONFIG.MCK_P.ASSOCIATED_BUSIF {} \
+  CONFIG.MCK_P.ASSOCIATED_PORT {} \
+  CONFIG.MCK_P.ASSOCIATED_RESET {tx_rstn} \
+  CONFIG.MCK_P.CLK_DOMAIN {design_2_BiDirChannels_0_0_MCK_P} \
+  CONFIG.MCK_P.FREQ_HZ {50000000} \
+  CONFIG.MCK_P.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.MCK_P.INSERT_VIP {0} \
+  CONFIG.MCK_P.PHASE {0.0} \
+  CONFIG.S00_AXI.ADDR_WIDTH {4} \
+  CONFIG.S00_AXI.ARUSER_WIDTH {0} \
+  CONFIG.S00_AXI.AWUSER_WIDTH {0} \
+  CONFIG.S00_AXI.BUSER_WIDTH {0} \
+  CONFIG.S00_AXI.CLK_DOMAIN {design_2_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S00_AXI.DATA_WIDTH {32} \
+  CONFIG.S00_AXI.FREQ_HZ {100000000} \
+  CONFIG.S00_AXI.HAS_BRESP {1} \
+  CONFIG.S00_AXI.HAS_BURST {0} \
+  CONFIG.S00_AXI.HAS_CACHE {0} \
+  CONFIG.S00_AXI.HAS_LOCK {0} \
+  CONFIG.S00_AXI.HAS_PROT {1} \
+  CONFIG.S00_AXI.HAS_QOS {0} \
+  CONFIG.S00_AXI.HAS_REGION {0} \
+  CONFIG.S00_AXI.HAS_RRESP {1} \
+  CONFIG.S00_AXI.HAS_WSTRB {1} \
+  CONFIG.S00_AXI.ID_WIDTH {0} \
+  CONFIG.S00_AXI.INSERT_VIP {0} \
+  CONFIG.S00_AXI.MAX_BURST_LENGTH {1} \
+  CONFIG.S00_AXI.NUM_READ_OUTSTANDING {8} \
+  CONFIG.S00_AXI.NUM_READ_THREADS {1} \
+  CONFIG.S00_AXI.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.S00_AXI.NUM_WRITE_THREADS {1} \
+  CONFIG.S00_AXI.PHASE {0.0} \
+  CONFIG.S00_AXI.PROTOCOL {AXI4LITE} \
+  CONFIG.S00_AXI.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.S00_AXI.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.S00_AXI.RUSER_WIDTH {0} \
+  CONFIG.S00_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S00_AXI.WIZ_DATA_WIDTH {32} \
+  CONFIG.S00_AXI.WIZ_NUM_REG {4} \
+  CONFIG.S00_AXI.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.S00_AXI.WUSER_WIDTH {0} \
+  CONFIG.S00_AXIS.CLK_DOMAIN {design_2_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S00_AXIS.FREQ_HZ {100000000} \
+  CONFIG.S00_AXIS.HAS_TKEEP {0} \
+  CONFIG.S00_AXIS.HAS_TLAST {1} \
+  CONFIG.S00_AXIS.HAS_TREADY {1} \
+  CONFIG.S00_AXIS.HAS_TSTRB {1} \
+  CONFIG.S00_AXIS.INSERT_VIP {0} \
+  CONFIG.S00_AXIS.LAYERED_METADATA {undef} \
+  CONFIG.S00_AXIS.PHASE {0.0} \
+  CONFIG.S00_AXIS.TDATA_NUM_BYTES {6} \
+  CONFIG.S00_AXIS.TDEST_WIDTH {0} \
+  CONFIG.S00_AXIS.TID_WIDTH {0} \
+  CONFIG.S00_AXIS.TUSER_WIDTH {0} \
+  CONFIG.S00_AXIS.WIZ_DATA_WIDTH {32} \
+  CONFIG.SYNCK.ASSOCIATED_BUSIF {} \
+  CONFIG.SYNCK.ASSOCIATED_PORT {} \
+  CONFIG.SYNCK.ASSOCIATED_RESET {tx_rstn} \
+  CONFIG.SYNCK.CLK_DOMAIN {design_2_BiDirChannels_0_0_SYNCK} \
+  CONFIG.SYNCK.FREQ_HZ {50000000} \
+  CONFIG.SYNCK.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.SYNCK.INSERT_VIP {0} \
+  CONFIG.SYNCK.PHASE {0.0} \
+  CONFIG.clk.ASSOCIATED_BUSIF {S00_AXI:S00_AXIS} \
+  CONFIG.clk.ASSOCIATED_PORT {} \
+  CONFIG.clk.ASSOCIATED_RESET {rst_n} \
+  CONFIG.clk.CLK_DOMAIN {design_2_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.clk.FREQ_HZ {100000000} \
+  CONFIG.clk.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.clk.INSERT_VIP {0} \
+  CONFIG.clk.PHASE {0.0} \
+  CONFIG.rst_n.INSERT_VIP {0} \
+  CONFIG.rst_n.POLARITY {ACTIVE_LOW} \
+  CONFIG.tx_rstn.INSERT_VIP {0} \
+  CONFIG.tx_rstn.POLARITY {ACTIVE_LOW} \
+  CONFIG.txclk.ASSOCIATED_BUSIF {M00_AXIS} \
+  CONFIG.txclk.ASSOCIATED_PORT {} \
+  CONFIG.txclk.ASSOCIATED_RESET {tx_rstn} \
+  CONFIG.txclk.CLK_DOMAIN {design_2_BiDirChannels_0_0_txclk} \
+  CONFIG.txclk.FREQ_HZ {50000000} \
+  CONFIG.txclk.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.txclk.INSERT_VIP {0} \
+  CONFIG.txclk.PHASE {0.0} " [get_ips design_2_BiDirChannels_0_0]
 
 
 
@@ -30,33 +249,43 @@ design_2_smartconnect_0_0 may have connection or interface changes.
 
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 16:41:09 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 17:46:08 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : upgrade_ip
 | Device       : xc7z020clg484-1
 ------------------------------------------------------------------------------------
 
-Upgrade Log for IP 'design_2_processing_system7_0_0'
+Upgrade Log for IP 'design_2_RxFIFO_0'
 
 1. Summary
 ----------
 
-SUCCESS in the conversion of design_2_processing_system7_0_0 (xilinx.com:ip:processing_system7:5.5 (Rev. 6)) to Vivado generation flows.
+CAUTION (success, with warnings) in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 57) to (Rev. 58)
 
-2. Upgrade messages
--------------------
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
 
-WARNING: upgrade cannot add parameter PCW_TRACE_INTERNAL_WIDTH with default value 32 : a parameter called PCW_TRACE_INTERNAL_WIDTH already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_USE_AXI_NONSECURE with default value 0 : a parameter called PCW_USE_AXI_NONSECURE already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_EN_PTP_ENET0 with default value 1 : a parameter called PCW_EN_PTP_ENET0 already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_EN_PTP_ENET0 with default value 1 : a parameter called PCW_EN_PTP_ENET0 already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_GP0_NUM_WRITE_THREADS with default value 4 : a parameter called PCW_GP0_NUM_WRITE_THREADS already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_GP0_NUM_READ_THREADS with default value 4 : a parameter called PCW_GP0_NUM_READ_THREADS already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_GP1_NUM_WRITE_THREADS with default value 4 : a parameter called PCW_GP1_NUM_WRITE_THREADS already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_GP1_NUM_READ_THREADS with default value 4 : a parameter called PCW_GP1_NUM_READ_THREADS already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_GP0_EN_MODIFIABLE_TXN with default value 0 : a parameter called PCW_GP0_EN_MODIFIABLE_TXN already exists in processing_system7_v5_5
-WARNING: upgrade cannot add parameter PCW_GP1_EN_MODIFIABLE_TXN with default value 0 : a parameter called PCW_GP1_EN_MODIFIABLE_TXN already exists in processing_system7_v5_5
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_2_RxFIFO_0'.
+
+
+-Upgrade has removed interface 'tx_rstn'
+
+-Upgrade has removed interface 'txclk'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_2_RxFIFO_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'tx_rstn'
+
+-Upgrade has removed port 'txclk'
+
 
 
 
@@ -65,82 +294,19 @@ WARNING: upgrade cannot add parameter PCW_GP1_EN_MODIFIABLE_TXN with default val
 
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 16:41:09 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri Apr 15 17:42:23 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : upgrade_ip
 | Device       : xc7z020clg484-1
 ------------------------------------------------------------------------------------
 
-Upgrade Log for IP 'design_2_proc_sys_reset_0_2'
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
 
 1. Summary
 ----------
 
-SUCCESS in the conversion of design_2_proc_sys_reset_0_2 (xilinx.com:ip:proc_sys_reset:5.0 (Rev. 13)) to Vivado generation flows.
-
-
-
-
-
-
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 16:41:09 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
-| Command      : upgrade_ip
-| Device       : xc7z020clg484-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_2_proc_sys_reset_0_1'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_2_proc_sys_reset_0_1 (xilinx.com:ip:proc_sys_reset:5.0 (Rev. 13)) to Vivado generation flows.
-
-
-
-
-
-
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 16:41:09 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
-| Command      : upgrade_ip
-| Device       : xc7z020clg484-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_2_led_driver_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_2_led_driver_0_0 (xilinx.com:module_ref:led_driver:1.0 (Rev. 1)) to Vivado generation flows.
-
-
-
-
-
-
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Apr 15 16:41:09 2022
-| Host         : AsusP8 running 64-bit major release  (build 9200)
-| Command      : upgrade_ip
-| Device       : xc7z020clg484-1
-------------------------------------------------------------------------------------
-
-Upgrade Log for IP 'design_2_data_processor_0_0'
-
-1. Summary
-----------
-
-SUCCESS in the conversion of design_2_data_processor_0_0 (xilinx.com:module_ref:data_processor:1.0 (Rev. 1)) to Vivado generation flows.
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 14) to (Rev. 15)
 
 
 

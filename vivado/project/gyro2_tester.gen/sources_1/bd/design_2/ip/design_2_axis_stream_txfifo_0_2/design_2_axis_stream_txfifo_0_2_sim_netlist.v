@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Fri Apr 15 02:13:05 2022
-// Host        : xsjl210012 running 64-bit CentOS Linux release 7.4.1708 (Core)
+// Date        : Fri Apr 15 18:39:43 2022
+// Host        : xsjl23956 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode funcsim
 //               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
 // Design      : design_2_axis_stream_txfifo_0_2
@@ -157,17 +157,18 @@ endmodule
 
 (* ORIG_REF_NAME = "axis_stream_txfifo_v2_0" *) 
 module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
-   (m00_axis_tready_0,
+   (mst_exec_state_reg,
+    txfifo_full,
+    m00_axis_tready_0,
     s00_axi_wready,
     s00_axi_awready,
     s00_axi_arready,
     s00_axi_rdata,
-    mst_exec_state_reg,
     m00_axis_tdata,
     s00_axi_rvalid,
     s00_axi_bvalid,
-    txfifo_full,
     m00_axis_tvalid,
+    s00_axis_tvalid,
     clk,
     s00_axi_awaddr,
     s00_axi_wvalid,
@@ -178,22 +179,22 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
     s00_axis_tdata,
     rstn,
     s00_axi_wstrb,
-    s00_axis_tvalid,
     s00_axis_tlast,
     m00_axis_tready,
     s00_axi_bready,
     s00_axi_rready);
+  output mst_exec_state_reg;
+  output txfifo_full;
   output m00_axis_tready_0;
   output s00_axi_wready;
   output s00_axi_awready;
   output s00_axi_arready;
   output [31:0]s00_axi_rdata;
-  output mst_exec_state_reg;
   output [15:0]m00_axis_tdata;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
-  output txfifo_full;
   output m00_axis_tvalid;
+  input s00_axis_tvalid;
   input clk;
   input [1:0]s00_axi_awaddr;
   input s00_axi_wvalid;
@@ -204,7 +205,6 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   input [31:0]s00_axis_tdata;
   input rstn;
   input [3:0]s00_axi_wstrb;
-  input s00_axis_tvalid;
   input s00_axis_tlast;
   input m00_axis_tready;
   input s00_axi_bready;
@@ -2291,25 +2291,25 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   LUT4 #(
     .INIT(16'h7FFF)) 
     m00_axis_tlast_INST_0_i_2
-       (.I0(rd_ptr_reg_reg[7]),
-        .I1(rd_ptr_reg_reg[0]),
-        .I2(rd_ptr_reg_reg[10]),
+       (.I0(rd_ptr_reg_reg[11]),
+        .I1(\rd_ptr_reg_reg[3]_rep_n_0 ),
+        .I2(rd_ptr_reg_reg[8]),
         .I3(\rd_ptr_reg_reg[1]_rep_n_0 ),
         .O(m00_axis_tlast_INST_0_i_2_n_0));
   LUT4 #(
-    .INIT(16'h7FFF)) 
+    .INIT(16'hDFFF)) 
     m00_axis_tlast_INST_0_i_3
-       (.I0(rd_ptr_reg_reg__0[13]),
-        .I1(rd_ptr_reg_reg[8]),
-        .I2(\rd_ptr_reg_reg[5]_rep_n_0 ),
-        .I3(\rd_ptr_reg_reg[3]_rep_n_0 ),
+       (.I0(rd_ptr_reg_reg[0]),
+        .I1(rd_ptr_reg_reg__0[14]),
+        .I2(rd_ptr_reg_reg__0[13]),
+        .I3(rd_ptr_reg_reg[9]),
         .O(m00_axis_tlast_INST_0_i_3_n_0));
   LUT4 #(
     .INIT(16'h7FFF)) 
     m00_axis_tlast_INST_0_i_4
-       (.I0(rd_ptr_reg_reg[9]),
+       (.I0(rd_ptr_reg_reg__0[12]),
         .I1(\rd_ptr_reg_reg[4]_rep_n_0 ),
-        .I2(rd_ptr_reg_reg__0[12]),
+        .I2(\rd_ptr_reg_reg[5]_rep_n_0 ),
         .I3(\rd_ptr_reg_reg[2]_rep_n_0 ),
         .O(m00_axis_tlast_INST_0_i_4_n_0));
   FDCE m00_axis_tvalid_reg_reg
@@ -6107,7 +6107,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__8_n_0 ,\rd_ptr_reg_reg[5]_rep__8_n_0 ,\rd_ptr_reg_reg[4]_rep__8_n_0 ,\rd_ptr_reg_reg[3]_rep__8_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__8_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__8_n_0 ,\rd_ptr_reg_reg[5]_rep__8_n_0 ,\rd_ptr_reg_reg[4]_rep__8_n_0 ,\rd_ptr_reg_reg[3]_rep__8_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__8_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__8_n_0 ,\rd_ptr_reg_reg[5]_rep__8_n_0 ,\rd_ptr_reg_reg[4]_rep__8_n_0 ,\rd_ptr_reg_reg[3]_rep__8_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__8_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6117,7 +6117,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_0_63_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_0_63_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6131,7 +6131,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6141,7 +6141,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_0_63_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_0_63_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6155,7 +6155,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6165,7 +6165,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_0_63_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_0_63_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6179,7 +6179,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6189,7 +6189,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_0_63_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_0_63_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6203,7 +6203,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6213,7 +6213,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_0_63_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_0_63_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6227,7 +6227,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6237,7 +6237,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1024_1087_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1024_1087_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6251,7 +6251,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6261,7 +6261,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1024_1087_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1024_1087_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6275,7 +6275,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6285,7 +6285,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1024_1087_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1024_1087_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6299,7 +6299,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6309,7 +6309,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1024_1087_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1024_1087_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6323,7 +6323,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6333,7 +6333,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1024_1087_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1024_1087_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6347,7 +6347,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6357,7 +6357,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1088_1151_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1088_1151_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6371,7 +6371,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6381,7 +6381,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1088_1151_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1088_1151_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6395,7 +6395,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6405,7 +6405,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1088_1151_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1088_1151_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6419,7 +6419,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6429,7 +6429,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1088_1151_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1088_1151_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6443,7 +6443,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6453,7 +6453,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1088_1151_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1088_1151_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6467,7 +6467,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6477,7 +6477,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1152_1215_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1152_1215_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6491,7 +6491,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6501,7 +6501,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1152_1215_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1152_1215_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6515,7 +6515,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6525,7 +6525,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1152_1215_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1152_1215_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6539,7 +6539,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6549,7 +6549,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1152_1215_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1152_1215_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6563,7 +6563,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6573,7 +6573,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1152_1215_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1152_1215_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6587,7 +6587,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6597,7 +6597,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1216_1279_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1216_1279_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6611,7 +6611,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6621,7 +6621,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1216_1279_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1216_1279_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6635,7 +6635,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6645,7 +6645,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1216_1279_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1216_1279_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6659,7 +6659,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6669,7 +6669,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1216_1279_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1216_1279_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6683,7 +6683,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6693,7 +6693,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1216_1279_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1216_1279_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6707,7 +6707,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6717,7 +6717,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1280_1343_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1280_1343_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6731,7 +6731,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6741,7 +6741,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1280_1343_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1280_1343_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6755,7 +6755,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6765,7 +6765,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1280_1343_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1280_1343_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6779,7 +6779,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6789,7 +6789,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1280_1343_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1280_1343_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6803,7 +6803,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6813,7 +6813,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1280_1343_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1280_1343_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6827,7 +6827,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6837,7 +6837,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_128_191_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_128_191_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6851,7 +6851,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6861,7 +6861,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_128_191_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_128_191_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6875,7 +6875,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -6885,7 +6885,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_128_191_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_128_191_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6899,7 +6899,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -6909,7 +6909,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_128_191_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_128_191_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6923,7 +6923,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -6933,7 +6933,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_128_191_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_128_191_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6947,7 +6947,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -6957,7 +6957,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1344_1407_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1344_1407_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6971,7 +6971,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -6981,7 +6981,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1344_1407_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1344_1407_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -6995,7 +6995,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7005,7 +7005,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1344_1407_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1344_1407_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7019,7 +7019,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7029,7 +7029,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1344_1407_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1344_1407_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7043,7 +7043,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7053,7 +7053,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1344_1407_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1344_1407_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7067,7 +7067,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7077,7 +7077,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1408_1471_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1408_1471_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7091,7 +7091,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7101,7 +7101,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1408_1471_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1408_1471_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7115,7 +7115,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7125,7 +7125,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1408_1471_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1408_1471_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7139,7 +7139,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7149,7 +7149,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1408_1471_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1408_1471_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7163,7 +7163,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7173,7 +7173,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1408_1471_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1408_1471_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7187,7 +7187,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7197,7 +7197,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1472_1535_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1472_1535_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7211,7 +7211,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7221,7 +7221,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1472_1535_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1472_1535_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7235,7 +7235,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7245,7 +7245,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1472_1535_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1472_1535_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7259,7 +7259,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7269,7 +7269,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1472_1535_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1472_1535_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7283,7 +7283,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7293,7 +7293,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1472_1535_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1472_1535_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7307,7 +7307,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7317,7 +7317,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1536_1599_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1536_1599_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7331,7 +7331,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7341,7 +7341,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1536_1599_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1536_1599_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7355,7 +7355,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7365,7 +7365,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1536_1599_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1536_1599_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7379,7 +7379,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7389,7 +7389,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1536_1599_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1536_1599_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7403,7 +7403,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7413,7 +7413,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1536_1599_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1536_1599_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7427,7 +7427,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7437,7 +7437,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1600_1663_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1600_1663_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7451,7 +7451,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7461,7 +7461,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1600_1663_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1600_1663_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7475,7 +7475,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7485,7 +7485,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1600_1663_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1600_1663_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7499,7 +7499,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7509,7 +7509,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1600_1663_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1600_1663_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7523,7 +7523,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7533,7 +7533,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1600_1663_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1600_1663_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7547,7 +7547,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7557,7 +7557,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1664_1727_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1664_1727_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7571,7 +7571,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7581,7 +7581,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1664_1727_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1664_1727_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7595,7 +7595,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7605,7 +7605,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1664_1727_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1664_1727_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7619,7 +7619,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7629,7 +7629,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1664_1727_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1664_1727_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7643,7 +7643,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7653,7 +7653,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1664_1727_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1664_1727_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7667,7 +7667,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7677,7 +7677,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1728_1791_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1728_1791_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7691,7 +7691,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7701,7 +7701,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1728_1791_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1728_1791_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7715,7 +7715,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7725,7 +7725,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1728_1791_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1728_1791_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7739,7 +7739,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7749,7 +7749,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1728_1791_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1728_1791_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7763,7 +7763,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7773,7 +7773,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1728_1791_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1728_1791_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7787,7 +7787,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7797,7 +7797,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1792_1855_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1792_1855_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7811,7 +7811,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7821,7 +7821,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1792_1855_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1792_1855_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7835,7 +7835,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7845,7 +7845,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1792_1855_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1792_1855_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7859,7 +7859,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7869,7 +7869,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1792_1855_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1792_1855_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7883,7 +7883,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -7893,7 +7893,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1792_1855_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1792_1855_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7907,7 +7907,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -7917,7 +7917,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1856_1919_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1856_1919_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7931,7 +7931,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -7941,7 +7941,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1856_1919_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1856_1919_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7955,7 +7955,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -7965,7 +7965,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1856_1919_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1856_1919_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -7979,7 +7979,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -7989,7 +7989,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1856_1919_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1856_1919_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8003,7 +8003,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8013,7 +8013,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1856_1919_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1856_1919_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8027,7 +8027,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8037,7 +8037,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1920_1983_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1920_1983_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8051,7 +8051,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8061,7 +8061,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1920_1983_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1920_1983_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8075,7 +8075,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8085,7 +8085,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1920_1983_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1920_1983_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8099,7 +8099,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8109,7 +8109,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1920_1983_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1920_1983_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8123,7 +8123,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8133,7 +8133,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1920_1983_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1920_1983_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8147,7 +8147,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8157,7 +8157,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_192_255_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_192_255_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8171,7 +8171,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8181,7 +8181,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_192_255_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_192_255_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8195,7 +8195,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8205,7 +8205,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_192_255_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_192_255_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8219,7 +8219,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8229,7 +8229,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_192_255_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_192_255_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8243,7 +8243,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8253,7 +8253,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_192_255_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_192_255_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8267,7 +8267,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8277,7 +8277,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1984_2047_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_1984_2047_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8291,7 +8291,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8301,7 +8301,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1984_2047_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_1984_2047_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8315,7 +8315,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8325,7 +8325,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1984_2047_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_1984_2047_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8339,7 +8339,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8349,7 +8349,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1984_2047_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_1984_2047_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8363,7 +8363,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8373,7 +8373,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_1984_2047_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_1984_2047_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8387,7 +8387,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8411,7 +8411,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8435,7 +8435,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8459,7 +8459,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8483,7 +8483,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8507,7 +8507,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8517,7 +8517,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_320_383_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_320_383_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8531,7 +8531,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8541,7 +8541,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_320_383_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_320_383_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8555,7 +8555,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8565,7 +8565,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_320_383_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_320_383_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8579,7 +8579,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8589,7 +8589,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_320_383_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_320_383_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8603,7 +8603,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8613,7 +8613,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_320_383_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_320_383_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8627,7 +8627,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8637,7 +8637,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_384_447_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_384_447_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8651,7 +8651,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8661,7 +8661,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_384_447_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_384_447_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8675,7 +8675,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8685,7 +8685,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_384_447_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_384_447_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8699,7 +8699,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8709,7 +8709,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_384_447_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_384_447_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8723,7 +8723,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8733,7 +8733,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_384_447_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_384_447_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8747,7 +8747,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8771,7 +8771,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8795,7 +8795,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8819,7 +8819,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8843,7 +8843,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8867,7 +8867,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8877,7 +8877,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_512_575_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_512_575_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8891,7 +8891,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -8901,7 +8901,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_512_575_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_512_575_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8915,7 +8915,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -8925,7 +8925,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_512_575_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_512_575_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8939,7 +8939,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -8949,7 +8949,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_512_575_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_512_575_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8963,7 +8963,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -8973,7 +8973,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_512_575_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_512_575_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -8987,7 +8987,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -8997,7 +8997,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_576_639_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_576_639_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9011,7 +9011,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9021,7 +9021,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_576_639_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_576_639_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9035,7 +9035,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9045,7 +9045,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_576_639_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_576_639_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9059,7 +9059,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9069,7 +9069,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_576_639_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_576_639_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9083,7 +9083,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9093,7 +9093,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_576_639_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_576_639_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9107,7 +9107,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9117,7 +9117,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_640_703_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_640_703_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9131,7 +9131,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9141,7 +9141,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_640_703_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_640_703_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9155,7 +9155,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9165,7 +9165,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_640_703_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_640_703_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9179,7 +9179,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9189,7 +9189,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_640_703_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_640_703_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9203,7 +9203,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9213,7 +9213,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_640_703_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_640_703_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9227,7 +9227,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__8_n_0 ,\rd_ptr_reg_reg[5]_rep__8_n_0 ,\rd_ptr_reg_reg[4]_rep__8_n_0 ,\rd_ptr_reg_reg[3]_rep__8_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__8_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__8_n_0 ,\rd_ptr_reg_reg[5]_rep__8_n_0 ,\rd_ptr_reg_reg[4]_rep__8_n_0 ,\rd_ptr_reg_reg[3]_rep__8_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__8_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9237,7 +9237,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_64_127_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_64_127_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9251,7 +9251,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9261,7 +9261,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_64_127_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_64_127_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9275,7 +9275,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9285,7 +9285,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_64_127_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_64_127_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9299,7 +9299,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9309,7 +9309,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_64_127_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_64_127_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9323,7 +9323,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9333,7 +9333,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_64_127_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_64_127_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9347,7 +9347,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9357,7 +9357,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_704_767_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_704_767_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9371,7 +9371,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9381,7 +9381,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_704_767_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_704_767_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9395,7 +9395,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9405,7 +9405,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_704_767_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_704_767_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9419,7 +9419,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9429,7 +9429,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_704_767_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_704_767_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9443,7 +9443,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9453,7 +9453,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_704_767_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_704_767_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9467,7 +9467,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9477,7 +9477,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_768_831_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_768_831_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9491,7 +9491,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9501,7 +9501,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_768_831_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_768_831_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9515,7 +9515,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9525,7 +9525,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_768_831_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_768_831_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9539,7 +9539,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9549,7 +9549,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_768_831_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_768_831_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9563,7 +9563,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9573,7 +9573,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_768_831_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_768_831_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9587,7 +9587,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9597,7 +9597,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_832_895_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_832_895_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9611,7 +9611,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9621,7 +9621,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_832_895_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_832_895_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9635,7 +9635,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9645,7 +9645,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_832_895_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_832_895_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9659,7 +9659,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9669,7 +9669,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_832_895_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_832_895_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9683,7 +9683,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9693,7 +9693,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_832_895_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_832_895_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9707,7 +9707,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9717,7 +9717,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_896_959_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_896_959_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9731,7 +9731,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9741,7 +9741,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_896_959_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_896_959_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9755,7 +9755,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9765,7 +9765,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_896_959_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_896_959_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9779,7 +9779,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9789,7 +9789,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_896_959_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_896_959_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9803,7 +9803,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9813,7 +9813,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_896_959_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_896_959_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9827,7 +9827,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[16]),
         .DIB(s00_axis_tdata[17]),
         .DIC(s00_axis_tdata[18]),
@@ -9837,7 +9837,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_960_1023_0_2_n_2),
         .DOD(NLW_mem_alt_reg_r2_960_1023_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9851,7 +9851,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[28]),
         .DIB(s00_axis_tdata[29]),
         .DIC(s00_axis_tdata[30]),
@@ -9861,7 +9861,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_960_1023_12_14_n_2),
         .DOD(NLW_mem_alt_reg_r2_960_1023_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9875,7 +9875,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[19]),
         .DIB(s00_axis_tdata[20]),
         .DIC(s00_axis_tdata[21]),
@@ -9885,7 +9885,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_960_1023_3_5_n_2),
         .DOD(NLW_mem_alt_reg_r2_960_1023_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9899,7 +9899,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[22]),
         .DIB(s00_axis_tdata[23]),
         .DIC(s00_axis_tdata[24]),
@@ -9909,7 +9909,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_960_1023_6_8_n_2),
         .DOD(NLW_mem_alt_reg_r2_960_1023_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem_alt" *) 
@@ -9923,7 +9923,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[25]),
         .DIB(s00_axis_tdata[26]),
         .DIC(s00_axis_tdata[27]),
@@ -9933,7 +9933,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_alt_reg_r2_960_1023_9_11_n_2),
         .DOD(NLW_mem_alt_reg_r2_960_1023_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -9947,7 +9947,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -9957,7 +9957,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_0_63_0_2_n_2),
         .DOD(NLW_mem_reg_r2_0_63_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -9971,7 +9971,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -9981,7 +9981,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_0_63_12_14_n_2),
         .DOD(NLW_mem_reg_r2_0_63_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -9995,7 +9995,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__8_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__8_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__8_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10005,7 +10005,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_0_63_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_0_63_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10019,7 +10019,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,write_pointer[3],u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10029,7 +10029,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_0_63_3_5_n_2),
         .DOD(NLW_mem_reg_r2_0_63_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10043,7 +10043,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10053,7 +10053,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_0_63_6_8_n_2),
         .DOD(NLW_mem_reg_r2_0_63_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10067,7 +10067,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10077,7 +10077,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_0_63_9_11_n_2),
         .DOD(NLW_mem_reg_r2_0_63_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_71));
+        .WE(u_txfifo_wr_chn_n_41));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10091,7 +10091,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10101,7 +10101,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1024_1087_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1024_1087_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10115,7 +10115,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10125,7 +10125,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1024_1087_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1024_1087_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10139,7 +10139,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10149,7 +10149,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1024_1087_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1024_1087_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10163,7 +10163,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10173,7 +10173,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1024_1087_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1024_1087_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10187,7 +10187,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10197,7 +10197,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1024_1087_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1024_1087_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10211,7 +10211,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10221,7 +10221,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1024_1087_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1024_1087_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_47));
+        .WE(u_txfifo_wr_chn_n_71));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10235,7 +10235,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10245,7 +10245,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1088_1151_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1088_1151_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10259,7 +10259,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10269,7 +10269,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1088_1151_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1088_1151_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10283,7 +10283,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10293,7 +10293,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1088_1151_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1088_1151_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10307,7 +10307,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10317,7 +10317,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1088_1151_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1088_1151_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10331,7 +10331,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10341,7 +10341,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1088_1151_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1088_1151_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10355,7 +10355,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10365,7 +10365,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1088_1151_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1088_1151_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_59));
+        .WE(u_txfifo_wr_chn_n_53));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10379,7 +10379,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10389,7 +10389,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1152_1215_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1152_1215_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10403,7 +10403,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10413,7 +10413,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1152_1215_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1152_1215_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10427,7 +10427,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10437,7 +10437,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1152_1215_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1152_1215_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10451,7 +10451,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10461,7 +10461,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1152_1215_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1152_1215_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10475,7 +10475,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10485,7 +10485,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1152_1215_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1152_1215_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10499,7 +10499,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10509,7 +10509,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1152_1215_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1152_1215_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_66));
+        .WE(u_txfifo_wr_chn_n_46));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10523,7 +10523,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10533,7 +10533,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1216_1279_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1216_1279_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10547,7 +10547,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10557,7 +10557,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1216_1279_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1216_1279_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10571,7 +10571,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10581,7 +10581,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1216_1279_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1216_1279_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10595,7 +10595,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10605,7 +10605,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1216_1279_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1216_1279_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10619,7 +10619,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10629,7 +10629,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1216_1279_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1216_1279_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10643,7 +10643,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10653,7 +10653,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1216_1279_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1216_1279_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_40));
+        .WE(u_txfifo_wr_chn_n_64));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10667,7 +10667,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10677,7 +10677,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1280_1343_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1280_1343_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10691,7 +10691,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10701,7 +10701,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1280_1343_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1280_1343_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10715,7 +10715,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10725,7 +10725,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1280_1343_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1280_1343_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10739,7 +10739,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10749,7 +10749,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1280_1343_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1280_1343_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10763,7 +10763,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10773,7 +10773,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1280_1343_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1280_1343_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10787,7 +10787,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10797,7 +10797,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1280_1343_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1280_1343_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_65));
+        .WE(u_txfifo_wr_chn_n_47));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10811,7 +10811,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10821,7 +10821,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_128_191_0_2_n_2),
         .DOD(NLW_mem_reg_r2_128_191_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10835,7 +10835,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10845,7 +10845,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_128_191_12_14_n_2),
         .DOD(NLW_mem_reg_r2_128_191_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10859,7 +10859,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -10869,7 +10869,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_128_191_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_128_191_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10883,7 +10883,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -10893,7 +10893,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_128_191_3_5_n_2),
         .DOD(NLW_mem_reg_r2_128_191_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10907,7 +10907,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -10917,7 +10917,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_128_191_6_8_n_2),
         .DOD(NLW_mem_reg_r2_128_191_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10931,7 +10931,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -10941,7 +10941,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_128_191_9_11_n_2),
         .DOD(NLW_mem_reg_r2_128_191_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_61));
+        .WE(u_txfifo_wr_chn_n_50));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10955,7 +10955,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -10965,7 +10965,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1344_1407_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1344_1407_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -10979,7 +10979,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -10989,7 +10989,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1344_1407_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1344_1407_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11003,7 +11003,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11013,7 +11013,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1344_1407_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1344_1407_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11027,7 +11027,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11037,7 +11037,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1344_1407_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1344_1407_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11051,7 +11051,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11061,7 +11061,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1344_1407_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1344_1407_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11075,7 +11075,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11085,7 +11085,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1344_1407_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1344_1407_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_46));
+        .WE(u_txfifo_wr_chn_n_70));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11099,7 +11099,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11109,7 +11109,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1408_1471_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1408_1471_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11123,7 +11123,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11133,7 +11133,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1408_1471_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1408_1471_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11147,7 +11147,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11157,7 +11157,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1408_1471_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1408_1471_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11171,7 +11171,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11181,7 +11181,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1408_1471_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1408_1471_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11195,7 +11195,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11205,7 +11205,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1408_1471_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1408_1471_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11219,7 +11219,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11229,7 +11229,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1408_1471_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1408_1471_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_45));
+        .WE(u_txfifo_wr_chn_n_69));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11243,7 +11243,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11253,7 +11253,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1472_1535_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1472_1535_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11267,7 +11267,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11277,7 +11277,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1472_1535_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1472_1535_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11291,7 +11291,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11301,7 +11301,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1472_1535_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1472_1535_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11315,7 +11315,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11325,7 +11325,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1472_1535_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1472_1535_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11339,7 +11339,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11349,7 +11349,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1472_1535_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1472_1535_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11363,7 +11363,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11373,7 +11373,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1472_1535_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1472_1535_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_48));
+        .WE(u_txfifo_wr_chn_n_63));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11387,7 +11387,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11397,7 +11397,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1536_1599_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1536_1599_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11411,7 +11411,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11421,7 +11421,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1536_1599_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1536_1599_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11435,7 +11435,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11445,7 +11445,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1536_1599_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1536_1599_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11459,7 +11459,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11469,7 +11469,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1536_1599_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1536_1599_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11483,7 +11483,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11493,7 +11493,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1536_1599_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1536_1599_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11507,7 +11507,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11517,7 +11517,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1536_1599_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1536_1599_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_64));
+        .WE(u_txfifo_wr_chn_n_48));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11531,7 +11531,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11541,7 +11541,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1600_1663_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1600_1663_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11555,7 +11555,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11565,7 +11565,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1600_1663_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1600_1663_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11579,7 +11579,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11589,7 +11589,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1600_1663_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1600_1663_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11603,7 +11603,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11613,7 +11613,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1600_1663_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1600_1663_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11627,7 +11627,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11637,7 +11637,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1600_1663_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1600_1663_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11651,7 +11651,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11661,7 +11661,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1600_1663_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1600_1663_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_44));
+        .WE(u_txfifo_wr_chn_n_68));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11675,7 +11675,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11685,7 +11685,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1664_1727_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1664_1727_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11699,7 +11699,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11709,7 +11709,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1664_1727_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1664_1727_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11723,7 +11723,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11733,7 +11733,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1664_1727_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1664_1727_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11747,7 +11747,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11757,7 +11757,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1664_1727_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1664_1727_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11771,7 +11771,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11781,7 +11781,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1664_1727_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1664_1727_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11795,7 +11795,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11805,7 +11805,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1664_1727_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1664_1727_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_43));
+        .WE(u_txfifo_wr_chn_n_67));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11819,7 +11819,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11829,7 +11829,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1728_1791_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1728_1791_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11843,7 +11843,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11853,7 +11853,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1728_1791_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1728_1791_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11867,7 +11867,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -11877,7 +11877,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1728_1791_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1728_1791_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11891,7 +11891,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -11901,7 +11901,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1728_1791_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1728_1791_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11915,7 +11915,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -11925,7 +11925,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1728_1791_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1728_1791_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11939,7 +11939,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -11949,7 +11949,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1728_1791_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1728_1791_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_54));
+        .WE(u_txfifo_wr_chn_n_58));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11963,7 +11963,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -11973,7 +11973,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1792_1855_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1792_1855_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -11987,7 +11987,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -11997,7 +11997,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1792_1855_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1792_1855_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12011,7 +12011,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12021,7 +12021,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1792_1855_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1792_1855_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12035,7 +12035,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,write_pointer[2:1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12045,7 +12045,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1792_1855_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1792_1855_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12059,7 +12059,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12069,7 +12069,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1792_1855_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1792_1855_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12083,7 +12083,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12093,7 +12093,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1792_1855_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1792_1855_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_42));
+        .WE(u_txfifo_wr_chn_n_66));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12107,7 +12107,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12117,7 +12117,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1856_1919_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1856_1919_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12131,7 +12131,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -12141,7 +12141,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1856_1919_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1856_1919_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12155,7 +12155,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12165,7 +12165,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1856_1919_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1856_1919_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12179,7 +12179,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,write_pointer[2:1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12189,7 +12189,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1856_1919_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1856_1919_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12203,7 +12203,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12213,7 +12213,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1856_1919_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1856_1919_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12227,7 +12227,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12237,7 +12237,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1856_1919_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1856_1919_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_58));
+        .WE(u_txfifo_wr_chn_n_54));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12251,7 +12251,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12261,7 +12261,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1920_1983_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1920_1983_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12275,7 +12275,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -12285,7 +12285,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1920_1983_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1920_1983_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12299,7 +12299,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12309,7 +12309,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1920_1983_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1920_1983_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12323,7 +12323,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12333,7 +12333,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1920_1983_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1920_1983_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12347,7 +12347,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12357,7 +12357,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1920_1983_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1920_1983_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12371,7 +12371,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12381,7 +12381,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1920_1983_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1920_1983_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_63));
+        .WE(u_txfifo_wr_chn_n_49));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12395,7 +12395,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12405,7 +12405,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_192_255_0_2_n_2),
         .DOD(NLW_mem_reg_r2_192_255_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12419,7 +12419,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -12429,7 +12429,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_192_255_12_14_n_2),
         .DOD(NLW_mem_reg_r2_192_255_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12443,7 +12443,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12453,7 +12453,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_192_255_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_192_255_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12467,7 +12467,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12477,7 +12477,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_192_255_3_5_n_2),
         .DOD(NLW_mem_reg_r2_192_255_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12491,7 +12491,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12501,7 +12501,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_192_255_6_8_n_2),
         .DOD(NLW_mem_reg_r2_192_255_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12515,7 +12515,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12525,7 +12525,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_192_255_9_11_n_2),
         .DOD(NLW_mem_reg_r2_192_255_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_53));
+        .WE(u_txfifo_wr_chn_n_57));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12539,7 +12539,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12549,7 +12549,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1984_2047_0_2_n_2),
         .DOD(NLW_mem_reg_r2_1984_2047_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12563,7 +12563,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -12573,7 +12573,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1984_2047_12_14_n_2),
         .DOD(NLW_mem_reg_r2_1984_2047_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12587,7 +12587,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12597,7 +12597,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_1984_2047_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_1984_2047_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12611,7 +12611,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__4_n_0 ,\rd_ptr_reg_reg[5]_rep__4_n_0 ,\rd_ptr_reg_reg[4]_rep__4_n_0 ,\rd_ptr_reg_reg[3]_rep__4_n_0 ,\rd_ptr_reg_reg[2]_rep__0_n_0 ,\rd_ptr_reg_reg[1]_rep__4_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12621,7 +12621,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1984_2047_3_5_n_2),
         .DOD(NLW_mem_reg_r2_1984_2047_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12635,7 +12635,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12645,7 +12645,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1984_2047_6_8_n_2),
         .DOD(NLW_mem_reg_r2_1984_2047_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12659,7 +12659,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_38,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12669,7 +12669,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_1984_2047_9_11_n_2),
         .DOD(NLW_mem_reg_r2_1984_2047_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_41));
+        .WE(u_txfifo_wr_chn_n_65));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12683,7 +12683,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12707,7 +12707,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -12731,7 +12731,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12755,7 +12755,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12779,7 +12779,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12803,7 +12803,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12827,7 +12827,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12837,7 +12837,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_320_383_0_2_n_2),
         .DOD(NLW_mem_reg_r2_320_383_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12851,7 +12851,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -12861,7 +12861,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_320_383_12_14_n_2),
         .DOD(NLW_mem_reg_r2_320_383_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12875,7 +12875,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -12885,7 +12885,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_320_383_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_320_383_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12899,7 +12899,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -12909,7 +12909,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_320_383_3_5_n_2),
         .DOD(NLW_mem_reg_r2_320_383_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12923,7 +12923,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -12933,7 +12933,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_320_383_6_8_n_2),
         .DOD(NLW_mem_reg_r2_320_383_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12947,7 +12947,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -12957,7 +12957,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_320_383_9_11_n_2),
         .DOD(NLW_mem_reg_r2_320_383_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_57));
+        .WE(u_txfifo_wr_chn_n_51));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12971,7 +12971,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -12981,7 +12981,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_384_447_0_2_n_2),
         .DOD(NLW_mem_reg_r2_384_447_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -12995,7 +12995,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13005,7 +13005,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_384_447_12_14_n_2),
         .DOD(NLW_mem_reg_r2_384_447_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13019,7 +13019,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13029,7 +13029,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_384_447_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_384_447_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13043,7 +13043,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13053,7 +13053,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_384_447_3_5_n_2),
         .DOD(NLW_mem_reg_r2_384_447_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13067,7 +13067,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13077,7 +13077,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_384_447_6_8_n_2),
         .DOD(NLW_mem_reg_r2_384_447_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13091,7 +13091,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13101,7 +13101,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_384_447_9_11_n_2),
         .DOD(NLW_mem_reg_r2_384_447_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_62));
+        .WE(u_txfifo_wr_chn_n_43));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13115,7 +13115,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13139,7 +13139,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13163,7 +13163,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13187,7 +13187,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13211,7 +13211,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13235,7 +13235,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13259,7 +13259,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13269,7 +13269,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_512_575_0_2_n_2),
         .DOD(NLW_mem_reg_r2_512_575_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13283,7 +13283,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13293,7 +13293,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_512_575_12_14_n_2),
         .DOD(NLW_mem_reg_r2_512_575_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13307,7 +13307,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13317,7 +13317,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_512_575_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_512_575_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13331,7 +13331,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13341,7 +13341,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_512_575_3_5_n_2),
         .DOD(NLW_mem_reg_r2_512_575_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13355,7 +13355,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13365,7 +13365,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_512_575_6_8_n_2),
         .DOD(NLW_mem_reg_r2_512_575_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13379,7 +13379,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13389,7 +13389,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_512_575_9_11_n_2),
         .DOD(NLW_mem_reg_r2_512_575_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_52));
+        .WE(u_txfifo_wr_chn_n_62));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13403,7 +13403,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13413,7 +13413,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_576_639_0_2_n_2),
         .DOD(NLW_mem_reg_r2_576_639_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13427,7 +13427,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13437,7 +13437,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_576_639_12_14_n_2),
         .DOD(NLW_mem_reg_r2_576_639_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13451,7 +13451,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13461,7 +13461,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_576_639_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_576_639_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13475,7 +13475,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13485,7 +13485,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_576_639_3_5_n_2),
         .DOD(NLW_mem_reg_r2_576_639_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13499,7 +13499,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13509,7 +13509,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_576_639_6_8_n_2),
         .DOD(NLW_mem_reg_r2_576_639_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13523,7 +13523,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13533,7 +13533,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_576_639_9_11_n_2),
         .DOD(NLW_mem_reg_r2_576_639_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_60));
+        .WE(u_txfifo_wr_chn_n_52));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13547,7 +13547,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13557,7 +13557,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_640_703_0_2_n_2),
         .DOD(NLW_mem_reg_r2_640_703_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13571,7 +13571,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13581,7 +13581,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_640_703_12_14_n_2),
         .DOD(NLW_mem_reg_r2_640_703_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13595,7 +13595,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13605,7 +13605,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_640_703_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_640_703_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13619,7 +13619,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13629,7 +13629,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_640_703_3_5_n_2),
         .DOD(NLW_mem_reg_r2_640_703_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13643,7 +13643,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13653,7 +13653,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_640_703_6_8_n_2),
         .DOD(NLW_mem_reg_r2_640_703_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13667,7 +13667,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13677,7 +13677,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_640_703_9_11_n_2),
         .DOD(NLW_mem_reg_r2_640_703_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_68));
+        .WE(u_txfifo_wr_chn_n_44));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13691,7 +13691,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__7_n_0 ,\rd_ptr_reg_reg[5]_rep__7_n_0 ,\rd_ptr_reg_reg[4]_rep__7_n_0 ,\rd_ptr_reg_reg[3]_rep__7_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__7_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13701,7 +13701,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_64_127_0_2_n_2),
         .DOD(NLW_mem_reg_r2_64_127_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13715,7 +13715,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13725,7 +13725,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_64_127_12_14_n_2),
         .DOD(NLW_mem_reg_r2_64_127_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13739,7 +13739,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__8_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__8_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13749,7 +13749,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_64_127_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_64_127_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13763,7 +13763,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13773,7 +13773,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_64_127_3_5_n_2),
         .DOD(NLW_mem_reg_r2_64_127_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13787,7 +13787,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__3_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13797,7 +13797,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_64_127_6_8_n_2),
         .DOD(NLW_mem_reg_r2_64_127_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13811,7 +13811,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13821,7 +13821,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_64_127_9_11_n_2),
         .DOD(NLW_mem_reg_r2_64_127_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_69));
+        .WE(u_txfifo_wr_chn_n_42));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13835,7 +13835,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13845,7 +13845,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_704_767_0_2_n_2),
         .DOD(NLW_mem_reg_r2_704_767_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13859,7 +13859,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -13869,7 +13869,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_704_767_12_14_n_2),
         .DOD(NLW_mem_reg_r2_704_767_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13883,7 +13883,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -13893,7 +13893,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_704_767_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_704_767_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13907,7 +13907,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -13917,7 +13917,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_704_767_3_5_n_2),
         .DOD(NLW_mem_reg_r2_704_767_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13931,7 +13931,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -13941,7 +13941,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_704_767_6_8_n_2),
         .DOD(NLW_mem_reg_r2_704_767_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13955,7 +13955,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__2_n_0 ,\rd_ptr_reg_reg[5]_rep__2_n_0 ,\rd_ptr_reg_reg[4]_rep__2_n_0 ,\rd_ptr_reg_reg[3]_rep__2_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__2_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -13965,7 +13965,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_704_767_9_11_n_2),
         .DOD(NLW_mem_reg_r2_704_767_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_49));
+        .WE(u_txfifo_wr_chn_n_59));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -13979,7 +13979,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -13989,7 +13989,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_768_831_0_2_n_2),
         .DOD(NLW_mem_reg_r2_768_831_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14003,7 +14003,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -14013,7 +14013,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_768_831_12_14_n_2),
         .DOD(NLW_mem_reg_r2_768_831_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14027,7 +14027,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -14037,7 +14037,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_768_831_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_768_831_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14051,7 +14051,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -14061,7 +14061,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_768_831_3_5_n_2),
         .DOD(NLW_mem_reg_r2_768_831_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14075,7 +14075,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -14085,7 +14085,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_768_831_6_8_n_2),
         .DOD(NLW_mem_reg_r2_768_831_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14099,7 +14099,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -14109,7 +14109,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_768_831_9_11_n_2),
         .DOD(NLW_mem_reg_r2_768_831_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_67));
+        .WE(u_txfifo_wr_chn_n_45));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14123,7 +14123,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -14133,7 +14133,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_832_895_0_2_n_2),
         .DOD(NLW_mem_reg_r2_832_895_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14147,7 +14147,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -14157,7 +14157,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_832_895_12_14_n_2),
         .DOD(NLW_mem_reg_r2_832_895_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14171,7 +14171,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -14181,7 +14181,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_832_895_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_832_895_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14195,7 +14195,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -14205,7 +14205,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_832_895_3_5_n_2),
         .DOD(NLW_mem_reg_r2_832_895_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14219,7 +14219,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -14229,7 +14229,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_832_895_6_8_n_2),
         .DOD(NLW_mem_reg_r2_832_895_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14243,7 +14243,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -14253,7 +14253,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_832_895_9_11_n_2),
         .DOD(NLW_mem_reg_r2_832_895_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_51));
+        .WE(u_txfifo_wr_chn_n_61));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14267,7 +14267,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -14277,7 +14277,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_896_959_0_2_n_2),
         .DOD(NLW_mem_reg_r2_896_959_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14291,7 +14291,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -14301,7 +14301,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_896_959_12_14_n_2),
         .DOD(NLW_mem_reg_r2_896_959_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14315,7 +14315,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -14325,7 +14325,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_896_959_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_896_959_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14339,7 +14339,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -14349,7 +14349,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_896_959_3_5_n_2),
         .DOD(NLW_mem_reg_r2_896_959_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14363,7 +14363,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -14373,7 +14373,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_896_959_6_8_n_2),
         .DOD(NLW_mem_reg_r2_896_959_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14387,7 +14387,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -14397,7 +14397,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_896_959_9_11_n_2),
         .DOD(NLW_mem_reg_r2_896_959_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_50));
+        .WE(u_txfifo_wr_chn_n_60));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14411,7 +14411,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__6_n_0 ,\rd_ptr_reg_reg[5]_rep__6_n_0 ,\rd_ptr_reg_reg[4]_rep__6_n_0 ,\rd_ptr_reg_reg[3]_rep__6_n_0 ,\rd_ptr_reg_reg[2]_rep_n_0 ,\rd_ptr_reg_reg[1]_rep__6_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[0]),
         .DIB(s00_axis_tdata[1]),
         .DIC(s00_axis_tdata[2]),
@@ -14421,7 +14421,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_960_1023_0_2_n_2),
         .DOD(NLW_mem_reg_r2_960_1023_0_2_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14435,7 +14435,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__5_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__0_n_0 ,\rd_ptr_reg_reg[5]_rep__0_n_0 ,\rd_ptr_reg_reg[4]_rep__0_n_0 ,\rd_ptr_reg_reg[3]_rep__0_n_0 ,\rd_ptr_reg_reg[2]_rep__6_n_0 ,\rd_ptr_reg_reg[1]_rep__0_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_32}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[12]),
         .DIB(s00_axis_tdata[13]),
         .DIC(s00_axis_tdata[14]),
@@ -14445,7 +14445,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_960_1023_12_14_n_2),
         .DOD(NLW_mem_reg_r2_960_1023_12_14_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14459,7 +14459,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep_n_0 ,\rd_ptr_reg_reg[5]_rep_n_0 ,\rd_ptr_reg_reg[4]_rep_n_0 ,\rd_ptr_reg_reg[3]_rep_n_0 ,\rd_ptr_reg_reg[2]_rep__7_n_0 ,\rd_ptr_reg_reg[1]_rep_n_0 }),
-        .ADDRD({write_pointer[5],u_txfifo_wr_chn_n_18,write_pointer[3:0]}),
+        .ADDRD({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,write_pointer[3:2],u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_34}),
         .DIA(s00_axis_tdata[15]),
         .DIB(s00_axis_tdata[31]),
         .DIC(1'b0),
@@ -14469,7 +14469,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(NLW_mem_reg_r2_960_1023_15_15_DOC_UNCONNECTED),
         .DOD(NLW_mem_reg_r2_960_1023_15_15_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14483,7 +14483,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__5_n_0 ,\rd_ptr_reg_reg[5]_rep__5_n_0 ,\rd_ptr_reg_reg[4]_rep__5_n_0 ,\rd_ptr_reg_reg[3]_rep__5_n_0 ,\rd_ptr_reg_reg[2]_rep__1_n_0 ,\rd_ptr_reg_reg[1]_rep__5_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_26}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,write_pointer[1],u_txfifo_wr_chn_n_23}),
         .DIA(s00_axis_tdata[3]),
         .DIB(s00_axis_tdata[4]),
         .DIC(s00_axis_tdata[5]),
@@ -14493,7 +14493,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_960_1023_3_5_n_2),
         .DOD(NLW_mem_reg_r2_960_1023_3_5_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14507,7 +14507,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__3_n_0 ,\rd_ptr_reg_reg[5]_rep__3_n_0 ,\rd_ptr_reg_reg[4]_rep__3_n_0 ,\rd_ptr_reg_reg[3]_rep__3_n_0 ,\rd_ptr_reg_reg[2]_rep__2_n_0 ,\rd_ptr_reg_reg[1]_rep__3_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_27}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_29}),
         .DIA(s00_axis_tdata[6]),
         .DIB(s00_axis_tdata[7]),
         .DIC(s00_axis_tdata[8]),
@@ -14517,7 +14517,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_960_1023_6_8_n_2),
         .DOD(NLW_mem_reg_r2_960_1023_6_8_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   (* RTL_RAM_BITS = "32768" *) 
   (* RTL_RAM_NAME = "inst/mem" *) 
@@ -14531,7 +14531,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
        (.ADDRA({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRB({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
         .ADDRC({\rd_ptr_reg_reg[6]_rep__1_n_0 ,\rd_ptr_reg_reg[5]_rep__1_n_0 ,\rd_ptr_reg_reg[4]_rep__1_n_0 ,\rd_ptr_reg_reg[3]_rep__1_n_0 ,\rd_ptr_reg_reg[2]_rep__4_n_0 ,\rd_ptr_reg_reg[1]_rep__1_n_0 }),
-        .ADDRD({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34,u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_31}),
+        .ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_33}),
         .DIA(s00_axis_tdata[9]),
         .DIB(s00_axis_tdata[10]),
         .DIC(s00_axis_tdata[11]),
@@ -14541,7 +14541,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .DOC(mem_reg_r2_960_1023_9_11_n_2),
         .DOD(NLW_mem_reg_r2_960_1023_9_11_DOD_UNCONNECTED),
         .WCLK(clk),
-        .WE(u_txfifo_wr_chn_n_70));
+        .WE(u_txfifo_wr_chn_n_40));
   FDCE \rd_ptr_reg_reg[0] 
        (.C(clk),
         .CE(axis_stream_txfifo_v2_0_S00_AXI_inst_n_7),
@@ -15237,7 +15237,8 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .D(u_txfifo_wr_chn_n_39),
         .Q(txfifo_full));
   design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS u_txfifo_wr_chn
-       (.ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22}),
+       (.ADDRD({u_txfifo_wr_chn_n_18,u_txfifo_wr_chn_n_19,u_txfifo_wr_chn_n_20,u_txfifo_wr_chn_n_21,u_txfifo_wr_chn_n_22,u_txfifo_wr_chn_n_23}),
+        .D(write_pointer),
         .clk(clk),
         .fifo_wren(fifo_wren),
         .mst_exec_state_reg_0(mst_exec_state_reg),
@@ -15245,47 +15246,45 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .s00_axis_tvalid(s00_axis_tvalid),
         .txfifo_full(txfifo_full),
         .txfifo_full_reg(m00_axis_tready_0),
-        .write_pointer(write_pointer),
-        .\write_pointer_reg[0]_rep__1_0 (u_txfifo_wr_chn_n_27),
-        .\write_pointer_reg[0]_rep__3_0 (u_txfifo_wr_chn_n_32),
-        .\write_pointer_reg[10]_0 (u_txfifo_wr_chn_n_41),
-        .\write_pointer_reg[10]_1 (u_txfifo_wr_chn_n_47),
-        .\write_pointer_reg[10]_2 (u_txfifo_wr_chn_n_70),
+        .\write_pointer_reg[0]_rep__2_0 (u_txfifo_wr_chn_n_34),
+        .\write_pointer_reg[10]_0 (u_txfifo_wr_chn_n_40),
+        .\write_pointer_reg[10]_1 (u_txfifo_wr_chn_n_41),
+        .\write_pointer_reg[10]_2 (u_txfifo_wr_chn_n_65),
         .\write_pointer_reg[10]_3 (u_txfifo_wr_chn_n_71),
         .\write_pointer_reg[14]_0 (u_txfifo_wr_chn_n_39),
-        .\write_pointer_reg[3]_rep_0 ({u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29,u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31}),
-        .\write_pointer_reg[3]_rep__0_0 ({u_txfifo_wr_chn_n_23,u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26}),
-        .\write_pointer_reg[5]_rep_0 ({u_txfifo_wr_chn_n_37,u_txfifo_wr_chn_n_38}),
-        .\write_pointer_reg[5]_rep__0_0 ({u_txfifo_wr_chn_n_35,u_txfifo_wr_chn_n_36}),
-        .\write_pointer_reg[5]_rep__1_0 ({u_txfifo_wr_chn_n_33,u_txfifo_wr_chn_n_34}),
+        .\write_pointer_reg[1]_rep_0 (u_txfifo_wr_chn_n_35),
+        .\write_pointer_reg[3]_rep_0 ({u_txfifo_wr_chn_n_30,u_txfifo_wr_chn_n_31,u_txfifo_wr_chn_n_32,u_txfifo_wr_chn_n_33}),
+        .\write_pointer_reg[4]_rep__0_0 (u_txfifo_wr_chn_n_38),
+        .\write_pointer_reg[5]_rep__0_0 ({u_txfifo_wr_chn_n_24,u_txfifo_wr_chn_n_25,u_txfifo_wr_chn_n_26,u_txfifo_wr_chn_n_27,u_txfifo_wr_chn_n_28,u_txfifo_wr_chn_n_29}),
+        .\write_pointer_reg[5]_rep__1_0 ({u_txfifo_wr_chn_n_36,u_txfifo_wr_chn_n_37}),
         .\write_pointer_reg[6]_0 (u_txfifo_wr_chn_n_42),
-        .\write_pointer_reg[6]_1 (u_txfifo_wr_chn_n_43),
-        .\write_pointer_reg[6]_2 (u_txfifo_wr_chn_n_45),
-        .\write_pointer_reg[6]_3 (u_txfifo_wr_chn_n_50),
-        .\write_pointer_reg[6]_4 (u_txfifo_wr_chn_n_63),
+        .\write_pointer_reg[6]_1 (u_txfifo_wr_chn_n_49),
+        .\write_pointer_reg[6]_2 (u_txfifo_wr_chn_n_60),
+        .\write_pointer_reg[6]_3 (u_txfifo_wr_chn_n_66),
+        .\write_pointer_reg[6]_4 (u_txfifo_wr_chn_n_67),
         .\write_pointer_reg[6]_5 (u_txfifo_wr_chn_n_69),
-        .\write_pointer_reg[7]_0 (u_txfifo_wr_chn_n_44),
-        .\write_pointer_reg[7]_1 (u_txfifo_wr_chn_n_46),
-        .\write_pointer_reg[7]_2 (u_txfifo_wr_chn_n_51),
-        .\write_pointer_reg[7]_3 (u_txfifo_wr_chn_n_58),
-        .\write_pointer_reg[7]_4 (u_txfifo_wr_chn_n_61),
-        .\write_pointer_reg[7]_5 (u_txfifo_wr_chn_n_64),
-        .\write_pointer_reg[7]_6 (u_txfifo_wr_chn_n_65),
-        .\write_pointer_reg[7]_7 (u_txfifo_wr_chn_n_67),
-        .\write_pointer_reg[8]_0 (u_txfifo_wr_chn_n_40),
-        .\write_pointer_reg[8]_1 (u_txfifo_wr_chn_n_49),
-        .\write_pointer_reg[8]_2 (u_txfifo_wr_chn_n_54),
-        .\write_pointer_reg[8]_3 (u_txfifo_wr_chn_n_56),
-        .\write_pointer_reg[8]_4 (u_txfifo_wr_chn_n_59),
-        .\write_pointer_reg[8]_5 (u_txfifo_wr_chn_n_60),
-        .\write_pointer_reg[8]_6 (u_txfifo_wr_chn_n_66),
-        .\write_pointer_reg[8]_7 (u_txfifo_wr_chn_n_68),
-        .\write_pointer_reg[9]_0 (u_txfifo_wr_chn_n_48),
-        .\write_pointer_reg[9]_1 (u_txfifo_wr_chn_n_52),
-        .\write_pointer_reg[9]_2 (u_txfifo_wr_chn_n_53),
-        .\write_pointer_reg[9]_3 (u_txfifo_wr_chn_n_55),
-        .\write_pointer_reg[9]_4 (u_txfifo_wr_chn_n_57),
-        .\write_pointer_reg[9]_5 (u_txfifo_wr_chn_n_62),
+        .\write_pointer_reg[7]_0 (u_txfifo_wr_chn_n_45),
+        .\write_pointer_reg[7]_1 (u_txfifo_wr_chn_n_47),
+        .\write_pointer_reg[7]_2 (u_txfifo_wr_chn_n_48),
+        .\write_pointer_reg[7]_3 (u_txfifo_wr_chn_n_50),
+        .\write_pointer_reg[7]_4 (u_txfifo_wr_chn_n_54),
+        .\write_pointer_reg[7]_5 (u_txfifo_wr_chn_n_61),
+        .\write_pointer_reg[7]_6 (u_txfifo_wr_chn_n_68),
+        .\write_pointer_reg[7]_7 (u_txfifo_wr_chn_n_70),
+        .\write_pointer_reg[8]_0 (u_txfifo_wr_chn_n_44),
+        .\write_pointer_reg[8]_1 (u_txfifo_wr_chn_n_46),
+        .\write_pointer_reg[8]_2 (u_txfifo_wr_chn_n_52),
+        .\write_pointer_reg[8]_3 (u_txfifo_wr_chn_n_53),
+        .\write_pointer_reg[8]_4 (u_txfifo_wr_chn_n_56),
+        .\write_pointer_reg[8]_5 (u_txfifo_wr_chn_n_58),
+        .\write_pointer_reg[8]_6 (u_txfifo_wr_chn_n_59),
+        .\write_pointer_reg[8]_7 (u_txfifo_wr_chn_n_64),
+        .\write_pointer_reg[9]_0 (u_txfifo_wr_chn_n_43),
+        .\write_pointer_reg[9]_1 (u_txfifo_wr_chn_n_51),
+        .\write_pointer_reg[9]_2 (u_txfifo_wr_chn_n_55),
+        .\write_pointer_reg[9]_3 (u_txfifo_wr_chn_n_57),
+        .\write_pointer_reg[9]_4 (u_txfifo_wr_chn_n_62),
+        .\write_pointer_reg[9]_5 (u_txfifo_wr_chn_n_63),
         .writes_done_reg_0(axis_stream_txfifo_v2_0_S00_AXI_inst_n_1));
 endmodule
 
@@ -15874,13 +15873,13 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I4(axi_araddr[3]),
         .O(reg_data_out[7]));
   LUT5 #(
-    .INIT(32'hA0A0CFC0)) 
+    .INIT(32'hAFFCA0FC)) 
     \axi_rdata[8]_i_1 
        (.I0(Q[8]),
-        .I1(slv_reg1[8]),
-        .I2(axi_araddr[2]),
-        .I3(\slv_reg0_reg_n_0_[8] ),
-        .I4(axi_araddr[3]),
+        .I1(\slv_reg0_reg_n_0_[8] ),
+        .I2(axi_araddr[3]),
+        .I3(axi_araddr[2]),
+        .I4(slv_reg1[8]),
         .O(reg_data_out[8]));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
@@ -16122,12 +16121,12 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I3(m00_axis_tlast_1),
         .O(m00_axis_tready_0));
   LUT6 #(
-    .INIT(64'h0000080000000000)) 
+    .INIT(64'h0000800000000000)) 
     m00_axis_tlast_INST_0_i_1
        (.I0(m00_axis_tready),
         .I1(slv_reg0),
-        .I2(rd_ptr_reg_reg__0[2]),
-        .I3(rd_ptr_reg_reg[5]),
+        .I2(rd_ptr_reg_reg[1]),
+        .I3(rd_ptr_reg_reg[4]),
         .I4(rd_ptr_reg_reg__0[3]),
         .I5(ADDRA[4]),
         .O(m00_axis_tlast_INST_0_i_1_n_0));
@@ -16741,109 +16740,109 @@ endmodule
 (* ORIG_REF_NAME = "axis_stream_txfifo_v2_0_S00_AXIS" *) 
 module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
    (mst_exec_state_reg_0,
-    write_pointer,
+    D,
     fifo_wren,
     ADDRD,
-    \write_pointer_reg[3]_rep__0_0 ,
-    \write_pointer_reg[0]_rep__1_0 ,
-    \write_pointer_reg[3]_rep_0 ,
-    \write_pointer_reg[0]_rep__3_0 ,
-    \write_pointer_reg[5]_rep__1_0 ,
     \write_pointer_reg[5]_rep__0_0 ,
-    \write_pointer_reg[5]_rep_0 ,
+    \write_pointer_reg[3]_rep_0 ,
+    \write_pointer_reg[0]_rep__2_0 ,
+    \write_pointer_reg[1]_rep_0 ,
+    \write_pointer_reg[5]_rep__1_0 ,
+    \write_pointer_reg[4]_rep__0_0 ,
     \write_pointer_reg[14]_0 ,
-    \write_pointer_reg[8]_0 ,
     \write_pointer_reg[10]_0 ,
-    \write_pointer_reg[6]_0 ,
-    \write_pointer_reg[6]_1 ,
-    \write_pointer_reg[7]_0 ,
-    \write_pointer_reg[6]_2 ,
-    \write_pointer_reg[7]_1 ,
     \write_pointer_reg[10]_1 ,
+    \write_pointer_reg[6]_0 ,
     \write_pointer_reg[9]_0 ,
+    \write_pointer_reg[8]_0 ,
+    \write_pointer_reg[7]_0 ,
     \write_pointer_reg[8]_1 ,
-    \write_pointer_reg[6]_3 ,
+    \write_pointer_reg[7]_1 ,
     \write_pointer_reg[7]_2 ,
-    \write_pointer_reg[9]_1 ,
-    \write_pointer_reg[9]_2 ,
-    \write_pointer_reg[8]_2 ,
-    \write_pointer_reg[9]_3 ,
-    \write_pointer_reg[8]_3 ,
-    \write_pointer_reg[9]_4 ,
+    \write_pointer_reg[6]_1 ,
     \write_pointer_reg[7]_3 ,
-    \write_pointer_reg[8]_4 ,
-    \write_pointer_reg[8]_5 ,
+    \write_pointer_reg[9]_1 ,
+    \write_pointer_reg[8]_2 ,
+    \write_pointer_reg[8]_3 ,
     \write_pointer_reg[7]_4 ,
-    \write_pointer_reg[9]_5 ,
-    \write_pointer_reg[6]_4 ,
-    \write_pointer_reg[7]_5 ,
-    \write_pointer_reg[7]_6 ,
+    \write_pointer_reg[9]_2 ,
+    \write_pointer_reg[8]_4 ,
+    \write_pointer_reg[9]_3 ,
+    \write_pointer_reg[8]_5 ,
     \write_pointer_reg[8]_6 ,
-    \write_pointer_reg[7]_7 ,
+    \write_pointer_reg[6]_2 ,
+    \write_pointer_reg[7]_5 ,
+    \write_pointer_reg[9]_4 ,
+    \write_pointer_reg[9]_5 ,
     \write_pointer_reg[8]_7 ,
-    \write_pointer_reg[6]_5 ,
     \write_pointer_reg[10]_2 ,
+    \write_pointer_reg[6]_3 ,
+    \write_pointer_reg[6]_4 ,
+    \write_pointer_reg[7]_6 ,
+    \write_pointer_reg[6]_5 ,
+    \write_pointer_reg[7]_7 ,
     \write_pointer_reg[10]_3 ,
     writes_done_reg_0,
     clk,
     s00_axis_tvalid,
+    txfifo_full,
     s00_axis_tlast,
-    txfifo_full_reg,
-    txfifo_full);
+    txfifo_full_reg);
   output mst_exec_state_reg_0;
-  output [15:0]write_pointer;
+  output [15:0]D;
   output fifo_wren;
-  output [4:0]ADDRD;
-  output [3:0]\write_pointer_reg[3]_rep__0_0 ;
-  output [0:0]\write_pointer_reg[0]_rep__1_0 ;
+  output [5:0]ADDRD;
+  output [5:0]\write_pointer_reg[5]_rep__0_0 ;
   output [3:0]\write_pointer_reg[3]_rep_0 ;
-  output [0:0]\write_pointer_reg[0]_rep__3_0 ;
+  output [0:0]\write_pointer_reg[0]_rep__2_0 ;
+  output [0:0]\write_pointer_reg[1]_rep_0 ;
   output [1:0]\write_pointer_reg[5]_rep__1_0 ;
-  output [1:0]\write_pointer_reg[5]_rep__0_0 ;
-  output [1:0]\write_pointer_reg[5]_rep_0 ;
+  output [0:0]\write_pointer_reg[4]_rep__0_0 ;
   output \write_pointer_reg[14]_0 ;
-  output \write_pointer_reg[8]_0 ;
   output \write_pointer_reg[10]_0 ;
-  output \write_pointer_reg[6]_0 ;
-  output \write_pointer_reg[6]_1 ;
-  output \write_pointer_reg[7]_0 ;
-  output \write_pointer_reg[6]_2 ;
-  output \write_pointer_reg[7]_1 ;
   output \write_pointer_reg[10]_1 ;
+  output \write_pointer_reg[6]_0 ;
   output \write_pointer_reg[9]_0 ;
+  output \write_pointer_reg[8]_0 ;
+  output \write_pointer_reg[7]_0 ;
   output \write_pointer_reg[8]_1 ;
-  output \write_pointer_reg[6]_3 ;
+  output \write_pointer_reg[7]_1 ;
   output \write_pointer_reg[7]_2 ;
-  output \write_pointer_reg[9]_1 ;
-  output \write_pointer_reg[9]_2 ;
-  output \write_pointer_reg[8]_2 ;
-  output \write_pointer_reg[9]_3 ;
-  output \write_pointer_reg[8]_3 ;
-  output \write_pointer_reg[9]_4 ;
+  output \write_pointer_reg[6]_1 ;
   output \write_pointer_reg[7]_3 ;
-  output \write_pointer_reg[8]_4 ;
-  output \write_pointer_reg[8]_5 ;
+  output \write_pointer_reg[9]_1 ;
+  output \write_pointer_reg[8]_2 ;
+  output \write_pointer_reg[8]_3 ;
   output \write_pointer_reg[7]_4 ;
-  output \write_pointer_reg[9]_5 ;
-  output \write_pointer_reg[6]_4 ;
-  output \write_pointer_reg[7]_5 ;
-  output \write_pointer_reg[7]_6 ;
+  output \write_pointer_reg[9]_2 ;
+  output \write_pointer_reg[8]_4 ;
+  output \write_pointer_reg[9]_3 ;
+  output \write_pointer_reg[8]_5 ;
   output \write_pointer_reg[8]_6 ;
-  output \write_pointer_reg[7]_7 ;
+  output \write_pointer_reg[6]_2 ;
+  output \write_pointer_reg[7]_5 ;
+  output \write_pointer_reg[9]_4 ;
+  output \write_pointer_reg[9]_5 ;
   output \write_pointer_reg[8]_7 ;
-  output \write_pointer_reg[6]_5 ;
   output \write_pointer_reg[10]_2 ;
+  output \write_pointer_reg[6]_3 ;
+  output \write_pointer_reg[6]_4 ;
+  output \write_pointer_reg[7]_6 ;
+  output \write_pointer_reg[6]_5 ;
+  output \write_pointer_reg[7]_7 ;
   output \write_pointer_reg[10]_3 ;
   input writes_done_reg_0;
   input clk;
   input s00_axis_tvalid;
+  input txfifo_full;
   input s00_axis_tlast;
   input txfifo_full_reg;
-  input txfifo_full;
 
-  wire [4:0]ADDRD;
+  wire [5:0]ADDRD;
+  wire [15:0]D;
   wire clk;
   wire fifo_wren;
+  wire mem_reg_r2_0_63_0_2_i_2_n_0;
   wire mst_exec_state_i_1_n_0;
   wire mst_exec_state_reg_0;
   wire s00_axis_tlast;
@@ -16853,7 +16852,6 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   wire txfifo_full_i_4_n_0;
   wire txfifo_full_i_5_n_0;
   wire txfifo_full_reg;
-  wire [15:0]write_pointer;
   wire \write_pointer[0]_i_2_n_0 ;
   wire \write_pointer_reg[0]_i_1_n_0 ;
   wire \write_pointer_reg[0]_i_1_n_1 ;
@@ -16863,8 +16861,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   wire \write_pointer_reg[0]_i_1_n_5 ;
   wire \write_pointer_reg[0]_i_1_n_6 ;
   wire \write_pointer_reg[0]_i_1_n_7 ;
-  wire [0:0]\write_pointer_reg[0]_rep__1_0 ;
-  wire [0:0]\write_pointer_reg[0]_rep__3_0 ;
+  wire [0:0]\write_pointer_reg[0]_rep__2_0 ;
   wire \write_pointer_reg[10]_0 ;
   wire \write_pointer_reg[10]_1 ;
   wire \write_pointer_reg[10]_2 ;
@@ -16877,8 +16874,8 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   wire \write_pointer_reg[12]_i_1_n_6 ;
   wire \write_pointer_reg[12]_i_1_n_7 ;
   wire \write_pointer_reg[14]_0 ;
+  wire [0:0]\write_pointer_reg[1]_rep_0 ;
   wire [3:0]\write_pointer_reg[3]_rep_0 ;
-  wire [3:0]\write_pointer_reg[3]_rep__0_0 ;
   wire \write_pointer_reg[4]_i_1_n_0 ;
   wire \write_pointer_reg[4]_i_1_n_1 ;
   wire \write_pointer_reg[4]_i_1_n_2 ;
@@ -16887,8 +16884,8 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   wire \write_pointer_reg[4]_i_1_n_5 ;
   wire \write_pointer_reg[4]_i_1_n_6 ;
   wire \write_pointer_reg[4]_i_1_n_7 ;
-  wire [1:0]\write_pointer_reg[5]_rep_0 ;
-  wire [1:0]\write_pointer_reg[5]_rep__0_0 ;
+  wire [0:0]\write_pointer_reg[4]_rep__0_0 ;
+  wire [5:0]\write_pointer_reg[5]_rep__0_0 ;
   wire [1:0]\write_pointer_reg[5]_rep__1_0 ;
   wire \write_pointer_reg[6]_0 ;
   wire \write_pointer_reg[6]_1 ;
@@ -16937,323 +16934,330 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   LUT6 #(
     .INIT(64'h0000000000000002)) 
     mem_reg_r2_0_63_0_2_i_1
-       (.I0(fifo_wren),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[9]),
-        .I5(write_pointer[8]),
-        .O(\write_pointer_reg[10]_3 ));
+       (.I0(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I1(D[10]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[9]),
+        .I5(D[8]),
+        .O(\write_pointer_reg[10]_1 ));
+  LUT3 #(
+    .INIT(8'h08)) 
+    mem_reg_r2_0_63_0_2_i_2
+       (.I0(s00_axis_tvalid),
+        .I1(mst_exec_state_reg_0),
+        .I2(txfifo_full),
+        .O(mem_reg_r2_0_63_0_2_i_2_n_0));
   LUT6 #(
     .INIT(64'h0000000000000008)) 
     mem_reg_r2_1024_1087_0_2_i_1
-       (.I0(write_pointer[10]),
-        .I1(fifo_wren),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[9]),
-        .I5(write_pointer[8]),
-        .O(\write_pointer_reg[10]_1 ));
+       (.I0(D[10]),
+        .I1(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[9]),
+        .I5(D[8]),
+        .O(\write_pointer_reg[10]_3 ));
   LUT6 #(
     .INIT(64'h0000100000000000)) 
     mem_reg_r2_1088_1151_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[10]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[7]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[8]_4 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_1152_1215_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[10]),
-        .I3(write_pointer[7]),
-        .I4(write_pointer[6]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[8]_6 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_1216_1279_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(fifo_wren),
-        .I5(write_pointer[10]),
-        .O(\write_pointer_reg[8]_0 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_1280_1343_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[10]),
-        .I3(write_pointer[8]),
-        .I4(write_pointer[6]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[7]_6 ));
-  LUT6 #(
-    .INIT(64'h0000000000000008)) 
-    mem_reg_r2_128_191_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(fifo_wren),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[9]),
-        .O(\write_pointer_reg[7]_4 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_1344_1407_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[6]),
-        .I4(fifo_wren),
-        .I5(write_pointer[10]),
-        .O(\write_pointer_reg[7]_1 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_1408_1471_0_2_i_1
-       (.I0(write_pointer[6]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[7]),
-        .I4(fifo_wren),
-        .I5(write_pointer[10]),
-        .O(\write_pointer_reg[6]_2 ));
-  LUT6 #(
-    .INIT(64'h2000000000000000)) 
-    mem_reg_r2_1472_1535_0_2_i_1
-       (.I0(fifo_wren),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[8]),
-        .O(\write_pointer_reg[9]_0 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_1536_1599_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(write_pointer[8]),
-        .I2(write_pointer[10]),
-        .I3(write_pointer[9]),
-        .I4(write_pointer[6]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[7]_5 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_1600_1663_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(write_pointer[8]),
-        .I2(write_pointer[9]),
-        .I3(write_pointer[6]),
-        .I4(fifo_wren),
-        .I5(write_pointer[10]),
-        .O(\write_pointer_reg[7]_0 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_1664_1727_0_2_i_1
-       (.I0(write_pointer[6]),
-        .I1(write_pointer[8]),
-        .I2(write_pointer[9]),
-        .I3(write_pointer[7]),
-        .I4(fifo_wren),
-        .I5(write_pointer[10]),
-        .O(\write_pointer_reg[6]_1 ));
-  LUT6 #(
-    .INIT(64'h2000000000000000)) 
-    mem_reg_r2_1728_1791_0_2_i_1
-       (.I0(fifo_wren),
-        .I1(write_pointer[8]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[9]),
-        .O(\write_pointer_reg[8]_2 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_1792_1855_0_2_i_1
-       (.I0(write_pointer[6]),
-        .I1(write_pointer[7]),
-        .I2(write_pointer[9]),
-        .I3(write_pointer[8]),
-        .I4(fifo_wren),
-        .I5(write_pointer[10]),
-        .O(\write_pointer_reg[6]_0 ));
-  LUT6 #(
-    .INIT(64'h2000000000000000)) 
-    mem_reg_r2_1856_1919_0_2_i_1
-       (.I0(fifo_wren),
-        .I1(write_pointer[7]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[9]),
-        .O(\write_pointer_reg[7]_3 ));
-  LUT6 #(
-    .INIT(64'h2000000000000000)) 
-    mem_reg_r2_1920_1983_0_2_i_1
-       (.I0(fifo_wren),
-        .I1(write_pointer[6]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[7]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[9]),
-        .O(\write_pointer_reg[6]_4 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_192_255_0_2_i_1
-       (.I0(write_pointer[9]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[8]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[9]_2 ));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    mem_reg_r2_1984_2047_0_2_i_1
-       (.I0(write_pointer[10]),
-        .I1(fifo_wren),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[9]),
-        .I5(write_pointer[8]),
-        .O(\write_pointer_reg[10]_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000008)) 
-    mem_reg_r2_256_319_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(fifo_wren),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[9]),
+       (.I0(D[8]),
+        .I1(D[9]),
+        .I2(D[10]),
+        .I3(D[6]),
+        .I4(D[7]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
         .O(\write_pointer_reg[8]_3 ));
   LUT6 #(
     .INIT(64'h0000100000000000)) 
-    mem_reg_r2_320_383_0_2_i_1
-       (.I0(write_pointer[9]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[7]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[9]_4 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_384_447_0_2_i_1
-       (.I0(write_pointer[9]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[7]),
-        .I4(write_pointer[6]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[9]_5 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_448_511_0_2_i_1
-       (.I0(write_pointer[9]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(fifo_wren),
-        .I5(write_pointer[8]),
-        .O(\write_pointer_reg[9]_3 ));
-  LUT6 #(
-    .INIT(64'h0000000000000008)) 
-    mem_reg_r2_512_575_0_2_i_1
-       (.I0(write_pointer[9]),
-        .I1(fifo_wren),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[8]),
-        .O(\write_pointer_reg[9]_1 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_576_639_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[9]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[7]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[8]_5 ));
-  LUT6 #(
-    .INIT(64'h0000100000000000)) 
-    mem_reg_r2_640_703_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[9]),
-        .I3(write_pointer[7]),
-        .I4(write_pointer[6]),
-        .I5(fifo_wren),
-        .O(\write_pointer_reg[8]_7 ));
-  LUT6 #(
-    .INIT(64'h0000000000000008)) 
-    mem_reg_r2_64_127_0_2_i_1
-       (.I0(write_pointer[6]),
-        .I1(fifo_wren),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[7]),
-        .I4(write_pointer[10]),
-        .I5(write_pointer[9]),
-        .O(\write_pointer_reg[6]_5 ));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    mem_reg_r2_704_767_0_2_i_1
-       (.I0(write_pointer[8]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(fifo_wren),
-        .I5(write_pointer[9]),
+    mem_reg_r2_1152_1215_0_2_i_1
+       (.I0(D[8]),
+        .I1(D[9]),
+        .I2(D[10]),
+        .I3(D[7]),
+        .I4(D[6]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
         .O(\write_pointer_reg[8]_1 ));
   LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_1216_1279_0_2_i_1
+       (.I0(D[8]),
+        .I1(D[9]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[10]),
+        .O(\write_pointer_reg[8]_7 ));
+  LUT6 #(
     .INIT(64'h0000100000000000)) 
-    mem_reg_r2_768_831_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[9]),
-        .I3(write_pointer[8]),
-        .I4(write_pointer[6]),
-        .I5(fifo_wren),
+    mem_reg_r2_1280_1343_0_2_i_1
+       (.I0(D[7]),
+        .I1(D[9]),
+        .I2(D[10]),
+        .I3(D[8]),
+        .I4(D[6]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[7]_1 ));
+  LUT6 #(
+    .INIT(64'h0000000000000008)) 
+    mem_reg_r2_128_191_0_2_i_1
+       (.I0(D[7]),
+        .I1(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I2(D[8]),
+        .I3(D[6]),
+        .I4(D[10]),
+        .I5(D[9]),
+        .O(\write_pointer_reg[7]_3 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_1344_1407_0_2_i_1
+       (.I0(D[7]),
+        .I1(D[9]),
+        .I2(D[8]),
+        .I3(D[6]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[10]),
         .O(\write_pointer_reg[7]_7 ));
   LUT6 #(
     .INIT(64'h1000000000000000)) 
-    mem_reg_r2_832_895_0_2_i_1
-       (.I0(write_pointer[7]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[6]),
-        .I4(fifo_wren),
-        .I5(write_pointer[9]),
+    mem_reg_r2_1408_1471_0_2_i_1
+       (.I0(D[6]),
+        .I1(D[9]),
+        .I2(D[8]),
+        .I3(D[7]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[10]),
+        .O(\write_pointer_reg[6]_5 ));
+  LUT6 #(
+    .INIT(64'h2000000000000000)) 
+    mem_reg_r2_1472_1535_0_2_i_1
+       (.I0(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I1(D[9]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[10]),
+        .I5(D[8]),
+        .O(\write_pointer_reg[9]_5 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_1536_1599_0_2_i_1
+       (.I0(D[7]),
+        .I1(D[8]),
+        .I2(D[10]),
+        .I3(D[9]),
+        .I4(D[6]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
         .O(\write_pointer_reg[7]_2 ));
   LUT6 #(
     .INIT(64'h1000000000000000)) 
-    mem_reg_r2_896_959_0_2_i_1
-       (.I0(write_pointer[6]),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[7]),
-        .I4(fifo_wren),
-        .I5(write_pointer[9]),
+    mem_reg_r2_1600_1663_0_2_i_1
+       (.I0(D[7]),
+        .I1(D[8]),
+        .I2(D[9]),
+        .I3(D[6]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[10]),
+        .O(\write_pointer_reg[7]_6 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_1664_1727_0_2_i_1
+       (.I0(D[6]),
+        .I1(D[8]),
+        .I2(D[9]),
+        .I3(D[7]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[10]),
+        .O(\write_pointer_reg[6]_4 ));
+  LUT6 #(
+    .INIT(64'h2000000000000000)) 
+    mem_reg_r2_1728_1791_0_2_i_1
+       (.I0(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I1(D[8]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[10]),
+        .I5(D[9]),
+        .O(\write_pointer_reg[8]_5 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_1792_1855_0_2_i_1
+       (.I0(D[6]),
+        .I1(D[7]),
+        .I2(D[9]),
+        .I3(D[8]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[10]),
         .O(\write_pointer_reg[6]_3 ));
   LUT6 #(
     .INIT(64'h2000000000000000)) 
-    mem_reg_r2_960_1023_0_2_i_1
-       (.I0(fifo_wren),
-        .I1(write_pointer[10]),
-        .I2(write_pointer[7]),
-        .I3(write_pointer[6]),
-        .I4(write_pointer[9]),
-        .I5(write_pointer[8]),
+    mem_reg_r2_1856_1919_0_2_i_1
+       (.I0(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I1(D[7]),
+        .I2(D[8]),
+        .I3(D[6]),
+        .I4(D[10]),
+        .I5(D[9]),
+        .O(\write_pointer_reg[7]_4 ));
+  LUT6 #(
+    .INIT(64'h2000000000000000)) 
+    mem_reg_r2_1920_1983_0_2_i_1
+       (.I0(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I1(D[6]),
+        .I2(D[8]),
+        .I3(D[7]),
+        .I4(D[10]),
+        .I5(D[9]),
+        .O(\write_pointer_reg[6]_1 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_192_255_0_2_i_1
+       (.I0(D[9]),
+        .I1(D[10]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[8]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[9]_3 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    mem_reg_r2_1984_2047_0_2_i_1
+       (.I0(D[10]),
+        .I1(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[9]),
+        .I5(D[8]),
         .O(\write_pointer_reg[10]_2 ));
+  LUT6 #(
+    .INIT(64'h0000000000000008)) 
+    mem_reg_r2_256_319_0_2_i_1
+       (.I0(D[8]),
+        .I1(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[10]),
+        .I5(D[9]),
+        .O(\write_pointer_reg[8]_4 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_320_383_0_2_i_1
+       (.I0(D[9]),
+        .I1(D[10]),
+        .I2(D[8]),
+        .I3(D[6]),
+        .I4(D[7]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[9]_1 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_384_447_0_2_i_1
+       (.I0(D[9]),
+        .I1(D[10]),
+        .I2(D[8]),
+        .I3(D[7]),
+        .I4(D[6]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[9]_0 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_448_511_0_2_i_1
+       (.I0(D[9]),
+        .I1(D[10]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[8]),
+        .O(\write_pointer_reg[9]_2 ));
+  LUT6 #(
+    .INIT(64'h0000000000000008)) 
+    mem_reg_r2_512_575_0_2_i_1
+       (.I0(D[9]),
+        .I1(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[10]),
+        .I5(D[8]),
+        .O(\write_pointer_reg[9]_4 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_576_639_0_2_i_1
+       (.I0(D[8]),
+        .I1(D[10]),
+        .I2(D[9]),
+        .I3(D[6]),
+        .I4(D[7]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[8]_2 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_640_703_0_2_i_1
+       (.I0(D[8]),
+        .I1(D[10]),
+        .I2(D[9]),
+        .I3(D[7]),
+        .I4(D[6]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[8]_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000008)) 
+    mem_reg_r2_64_127_0_2_i_1
+       (.I0(D[6]),
+        .I1(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I2(D[8]),
+        .I3(D[7]),
+        .I4(D[10]),
+        .I5(D[9]),
+        .O(\write_pointer_reg[6]_0 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_704_767_0_2_i_1
+       (.I0(D[8]),
+        .I1(D[10]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[9]),
+        .O(\write_pointer_reg[8]_6 ));
+  LUT6 #(
+    .INIT(64'h0000100000000000)) 
+    mem_reg_r2_768_831_0_2_i_1
+       (.I0(D[7]),
+        .I1(D[10]),
+        .I2(D[9]),
+        .I3(D[8]),
+        .I4(D[6]),
+        .I5(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .O(\write_pointer_reg[7]_0 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_832_895_0_2_i_1
+       (.I0(D[7]),
+        .I1(D[10]),
+        .I2(D[8]),
+        .I3(D[6]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[9]),
+        .O(\write_pointer_reg[7]_5 ));
+  LUT6 #(
+    .INIT(64'h1000000000000000)) 
+    mem_reg_r2_896_959_0_2_i_1
+       (.I0(D[6]),
+        .I1(D[10]),
+        .I2(D[8]),
+        .I3(D[7]),
+        .I4(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I5(D[9]),
+        .O(\write_pointer_reg[6]_2 ));
+  LUT6 #(
+    .INIT(64'h2000000000000000)) 
+    mem_reg_r2_960_1023_0_2_i_1
+       (.I0(mem_reg_r2_0_63_0_2_i_2_n_0),
+        .I1(D[10]),
+        .I2(D[7]),
+        .I3(D[6]),
+        .I4(D[9]),
+        .I5(D[8]),
+        .O(\write_pointer_reg[10]_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h3A)) 
@@ -17278,10 +17282,10 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
     .INIT(64'h5555555555554440)) 
     txfifo_full_i_1
        (.I0(txfifo_full_reg),
-        .I1(write_pointer[14]),
+        .I1(D[14]),
         .I2(txfifo_full_i_3_n_0),
-        .I3(write_pointer[13]),
-        .I4(write_pointer[15]),
+        .I3(D[13]),
+        .I4(D[15]),
         .I5(txfifo_full),
         .O(\write_pointer_reg[14]_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
@@ -17290,39 +17294,39 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
     txfifo_full_i_3
        (.I0(txfifo_full_i_4_n_0),
         .I1(txfifo_full_i_5_n_0),
-        .I2(write_pointer[12]),
-        .I3(ADDRD[4]),
-        .I4(write_pointer[0]),
+        .I2(D[12]),
+        .I3(\write_pointer_reg[5]_rep__1_0 [0]),
+        .I4(ADDRD[0]),
         .O(txfifo_full_i_3_n_0));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
     txfifo_full_i_4
-       (.I0(write_pointer[7]),
-        .I1(\write_pointer_reg[5]_rep_0 [1]),
-        .I2(write_pointer[1]),
-        .I3(write_pointer[10]),
-        .I4(write_pointer[2]),
-        .I5(write_pointer[3]),
+       (.I0(D[7]),
+        .I1(ADDRD[5]),
+        .I2(D[1]),
+        .I3(D[10]),
+        .I4(\write_pointer_reg[3]_rep_0 [2]),
+        .I5(\write_pointer_reg[3]_rep_0 [3]),
         .O(txfifo_full_i_4_n_0));
   LUT4 #(
     .INIT(16'h7FFF)) 
     txfifo_full_i_5
-       (.I0(write_pointer[11]),
-        .I1(write_pointer[9]),
-        .I2(write_pointer[8]),
-        .I3(write_pointer[6]),
+       (.I0(D[11]),
+        .I1(D[9]),
+        .I2(D[8]),
+        .I3(D[6]),
         .O(txfifo_full_i_5_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     \write_pointer[0]_i_2 
-       (.I0(write_pointer[0]),
+       (.I0(ADDRD[0]),
         .O(\write_pointer[0]_i_2_n_0 ));
   (* ORIG_CELL_NAME = "write_pointer_reg[0]" *) 
   FDRE \write_pointer_reg[0] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_7 ),
-        .Q(write_pointer[0]),
+        .Q(D[0]),
         .R(writes_done_reg_0));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[0]_i_1 
@@ -17344,46 +17348,39 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_7 ),
-        .Q(\write_pointer_reg[3]_rep__0_0 [0]),
+        .Q(\write_pointer_reg[5]_rep__0_0 [0]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[0]" *) 
   FDRE \write_pointer_reg[0]_rep__1 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_7 ),
-        .Q(\write_pointer_reg[0]_rep__1_0 ),
+        .Q(\write_pointer_reg[3]_rep_0 [0]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[0]" *) 
   FDRE \write_pointer_reg[0]_rep__2 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_7 ),
-        .Q(\write_pointer_reg[3]_rep_0 [0]),
-        .R(writes_done_reg_0));
-  (* ORIG_CELL_NAME = "write_pointer_reg[0]" *) 
-  FDRE \write_pointer_reg[0]_rep__3 
-       (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[0]_i_1_n_7 ),
-        .Q(\write_pointer_reg[0]_rep__3_0 ),
+        .Q(\write_pointer_reg[0]_rep__2_0 ),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[10] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[8]_i_1_n_5 ),
-        .Q(write_pointer[10]),
+        .Q(D[10]),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[11] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[8]_i_1_n_4 ),
-        .Q(write_pointer[11]),
+        .Q(D[11]),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[12] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[12]_i_1_n_7 ),
-        .Q(write_pointer[12]),
+        .Q(D[12]),
         .R(writes_done_reg_0));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[12]_i_1 
@@ -17392,48 +17389,55 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\write_pointer_reg[12]_i_1_n_4 ,\write_pointer_reg[12]_i_1_n_5 ,\write_pointer_reg[12]_i_1_n_6 ,\write_pointer_reg[12]_i_1_n_7 }),
-        .S(write_pointer[15:12]));
+        .S(D[15:12]));
   FDRE \write_pointer_reg[13] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[12]_i_1_n_6 ),
-        .Q(write_pointer[13]),
+        .Q(D[13]),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[14] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[12]_i_1_n_5 ),
-        .Q(write_pointer[14]),
+        .Q(D[14]),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[15] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[12]_i_1_n_4 ),
-        .Q(write_pointer[15]),
+        .Q(D[15]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[1]" *) 
   FDRE \write_pointer_reg[1] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_6 ),
-        .Q(write_pointer[1]),
+        .Q(D[1]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[1]" *) 
   FDRE \write_pointer_reg[1]_rep 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_6 ),
-        .Q(\write_pointer_reg[3]_rep_0 [1]),
+        .Q(\write_pointer_reg[1]_rep_0 ),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[1]" *) 
   FDRE \write_pointer_reg[1]_rep__0 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_6 ),
-        .Q(\write_pointer_reg[3]_rep__0_0 [1]),
+        .Q(\write_pointer_reg[3]_rep_0 [1]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[1]" *) 
   FDRE \write_pointer_reg[1]_rep__1 
+       (.C(clk),
+        .CE(fifo_wren),
+        .D(\write_pointer_reg[0]_i_1_n_6 ),
+        .Q(\write_pointer_reg[5]_rep__0_0 [1]),
+        .R(writes_done_reg_0));
+  (* ORIG_CELL_NAME = "write_pointer_reg[1]" *) 
+  FDRE \write_pointer_reg[1]_rep__2 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_6 ),
@@ -17444,7 +17448,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_5 ),
-        .Q(write_pointer[2]),
+        .Q(D[2]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[2]" *) 
   FDRE \write_pointer_reg[2]_rep 
@@ -17458,7 +17462,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_5 ),
-        .Q(\write_pointer_reg[3]_rep__0_0 [2]),
+        .Q(\write_pointer_reg[5]_rep__0_0 [2]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[2]" *) 
   FDRE \write_pointer_reg[2]_rep__1 
@@ -17472,7 +17476,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_4 ),
-        .Q(write_pointer[3]),
+        .Q(D[3]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[3]" *) 
   FDRE \write_pointer_reg[3]_rep 
@@ -17486,7 +17490,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[0]_i_1_n_4 ),
-        .Q(\write_pointer_reg[3]_rep__0_0 [3]),
+        .Q(\write_pointer_reg[5]_rep__0_0 [3]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[3]" *) 
   FDRE \write_pointer_reg[3]_rep__1 
@@ -17500,7 +17504,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_7 ),
-        .Q(write_pointer[4]),
+        .Q(D[4]),
         .R(writes_done_reg_0));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[4]_i_1 
@@ -17509,55 +17513,55 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\write_pointer_reg[4]_i_1_n_4 ,\write_pointer_reg[4]_i_1_n_5 ,\write_pointer_reg[4]_i_1_n_6 ,\write_pointer_reg[4]_i_1_n_7 }),
-        .S({write_pointer[7:6],\write_pointer_reg[5]_rep_0 [1],ADDRD[4]}));
+        .S({D[7:6],ADDRD[5],\write_pointer_reg[5]_rep__1_0 [0]}));
   (* ORIG_CELL_NAME = "write_pointer_reg[4]" *) 
   FDRE \write_pointer_reg[4]_rep 
-       (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[4]_i_1_n_7 ),
-        .Q(ADDRD[4]),
-        .R(writes_done_reg_0));
-  (* ORIG_CELL_NAME = "write_pointer_reg[4]" *) 
-  FDRE \write_pointer_reg[4]_rep__0 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_7 ),
         .Q(\write_pointer_reg[5]_rep__1_0 [0]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[4]" *) 
+  FDRE \write_pointer_reg[4]_rep__0 
+       (.C(clk),
+        .CE(fifo_wren),
+        .D(\write_pointer_reg[4]_i_1_n_7 ),
+        .Q(\write_pointer_reg[4]_rep__0_0 ),
+        .R(writes_done_reg_0));
+  (* ORIG_CELL_NAME = "write_pointer_reg[4]" *) 
   FDRE \write_pointer_reg[4]_rep__1 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_7 ),
-        .Q(\write_pointer_reg[5]_rep__0_0 [0]),
+        .Q(\write_pointer_reg[5]_rep__0_0 [4]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[4]" *) 
   FDRE \write_pointer_reg[4]_rep__2 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_7 ),
-        .Q(\write_pointer_reg[5]_rep_0 [0]),
+        .Q(ADDRD[4]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[5]" *) 
   FDRE \write_pointer_reg[5] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_6 ),
-        .Q(write_pointer[5]),
+        .Q(D[5]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[5]" *) 
   FDRE \write_pointer_reg[5]_rep 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_6 ),
-        .Q(\write_pointer_reg[5]_rep_0 [1]),
+        .Q(ADDRD[5]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[5]" *) 
   FDRE \write_pointer_reg[5]_rep__0 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_6 ),
-        .Q(\write_pointer_reg[5]_rep__0_0 [1]),
+        .Q(\write_pointer_reg[5]_rep__0_0 [5]),
         .R(writes_done_reg_0));
   (* ORIG_CELL_NAME = "write_pointer_reg[5]" *) 
   FDRE \write_pointer_reg[5]_rep__1 
@@ -17570,19 +17574,19 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_5 ),
-        .Q(write_pointer[6]),
+        .Q(D[6]),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[7] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[4]_i_1_n_4 ),
-        .Q(write_pointer[7]),
+        .Q(D[7]),
         .R(writes_done_reg_0));
   FDRE \write_pointer_reg[8] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[8]_i_1_n_7 ),
-        .Q(write_pointer[8]),
+        .Q(D[8]),
         .R(writes_done_reg_0));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[8]_i_1 
@@ -17591,12 +17595,12 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\write_pointer_reg[8]_i_1_n_4 ,\write_pointer_reg[8]_i_1_n_5 ,\write_pointer_reg[8]_i_1_n_6 ,\write_pointer_reg[8]_i_1_n_7 }),
-        .S(write_pointer[11:8]));
+        .S(D[11:8]));
   FDRE \write_pointer_reg[9] 
        (.C(clk),
         .CE(fifo_wren),
         .D(\write_pointer_reg[8]_i_1_n_6 ),
-        .Q(write_pointer[9]),
+        .Q(D[9]),
         .R(writes_done_reg_0));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
@@ -17619,17 +17623,17 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   LUT3 #(
     .INIT(8'h7F)) 
     writes_done_i_3
-       (.I0(write_pointer[14]),
-        .I1(write_pointer[15]),
-        .I2(write_pointer[13]),
+       (.I0(D[14]),
+        .I1(D[15]),
+        .I2(D[13]),
         .O(writes_done_i_3_n_0));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     writes_done_i_4
-       (.I0(write_pointer[12]),
-        .I1(ADDRD[4]),
-        .I2(write_pointer[0]),
+       (.I0(D[12]),
+        .I1(\write_pointer_reg[5]_rep__1_0 [0]),
+        .I2(ADDRD[0]),
         .O(writes_done_i_4_n_0));
   FDRE writes_done_reg
        (.C(clk),

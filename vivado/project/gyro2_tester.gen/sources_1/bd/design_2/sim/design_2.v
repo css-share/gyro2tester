@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Fri Apr 15 16:43:28 2022
-//Host        : AsusP8 running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+//Date        : Fri Apr 15 18:38:02 2022
+//Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2
 //Purpose     : IP block netlist
@@ -122,10 +122,10 @@ module design_2
   wire AXI_Register_Demux_M06_AXI_WVALID;
   wire BiDirChannels_0_HSI_DAM;
   wire BiDirChannels_0_HSI_DAP;
-  wire [15:0]BiDirChannels_0_M00_AXIS_TDATA;
+  wire [47:0]BiDirChannels_0_M00_AXIS_TDATA;
   wire BiDirChannels_0_M00_AXIS_TLAST;
   wire BiDirChannels_0_M00_AXIS_TREADY;
-  wire [1:0]BiDirChannels_0_M00_AXIS_TSTRB;
+  wire [5:0]BiDirChannels_0_M00_AXIS_TSTRB;
   wire BiDirChannels_0_M00_AXIS_TVALID;
   wire BiDirChannels_0_MCK_N;
   wire BiDirChannels_0_MCK_P;
@@ -668,9 +668,7 @@ module design_2
         .s00_axis_tlast(BiDirChannels_0_M00_AXIS_TLAST),
         .s00_axis_tready(BiDirChannels_0_M00_AXIS_TREADY),
         .s00_axis_tstrb(BiDirChannels_0_M00_AXIS_TSTRB),
-        .s00_axis_tvalid(BiDirChannels_0_M00_AXIS_TVALID),
-        .tx_rstn(txclk_reset_domain_peripheral_aresetn),
-        .txclk(BiDirChannels_0_txclk));
+        .s00_axis_tvalid(BiDirChannels_0_M00_AXIS_TVALID));
   design_2_SPI_ip_0_0 SPI_ip_0
        (.SPI_CS(SPI_ip_0_SPI_CS),
         .SPI_D(SPI_D),

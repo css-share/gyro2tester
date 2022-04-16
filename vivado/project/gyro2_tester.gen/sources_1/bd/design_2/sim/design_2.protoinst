@@ -920,8 +920,8 @@
 				"/BiDirChannels_0/M00_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
-						"ACLK": { "actual": "txclk"},
-						"ARESETN": { "actual": "tx_rstn"},
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "rst_n"},
 						"TDATA": { "actual": "m00_axis_tdata"},
 						"TLAST": { "actual": "m00_axis_tlast"},
 						"TREADY": { "actual": "m00_axis_tready"},
@@ -1008,8 +1008,8 @@
 				"/RxFIFO/S00_AXIS": {
 					"interface": "xilinx.com:interface:axis:1.0",
 					"ports": {
-						"ACLK": { "actual": "txclk"},
-						"ARESETN": { "actual": "tx_rstn"},
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "rst_n"},
 						"TDATA": { "actual": "s00_axis_tdata"},
 						"TLAST": { "actual": "s00_axis_tlast"},
 						"TREADY": { "actual": "s00_axis_tready"},
