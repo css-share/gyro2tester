@@ -45,14 +45,20 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_pr
 # IP: bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_smartconnect_0_0 || ORIG_REF_NAME==design_2_smartconnect_0_0} -quiet] -quiet
 
+# IP: bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_BiDirChannels_0_0 || ORIG_REF_NAME==design_2_BiDirChannels_0_0} -quiet] -quiet
+
 # IP: bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_RxFIFO_0 || ORIG_REF_NAME==design_2_RxFIFO_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_stream_txfifo_0_2 || ORIG_REF_NAME==design_2_axis_stream_txfifo_0_2} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_BiDirChannels_0_0 || ORIG_REF_NAME==design_2_BiDirChannels_0_0} -quiet] -quiet
+# IP: bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_switch_2_0 || ORIG_REF_NAME==design_2_axis_switch_2_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_axis_switch_3_0 || ORIG_REF_NAME==design_2_axis_switch_3_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_0 || ORIG_REF_NAME==design_2_auto_pc_0} -quiet] -quiet

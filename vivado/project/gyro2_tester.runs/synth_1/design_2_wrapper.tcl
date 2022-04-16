@@ -128,6 +128,8 @@ set_property used_in_implementation false [get_files -all /home/cdickins/reuse/g
 set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_24/bd_0c5c_m00wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_25/bd_0c5c_m00bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/design_2_ooc.xdc]
 

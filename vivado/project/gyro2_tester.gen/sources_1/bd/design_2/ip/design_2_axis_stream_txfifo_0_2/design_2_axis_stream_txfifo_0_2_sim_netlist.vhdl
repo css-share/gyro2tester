@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Fri Apr 15 18:39:43 2022
--- Host        : xsjl23956 running 64-bit CentOS Linux release 7.4.1708 (Core)
+-- Date        : Fri Apr 15 22:02:50 2022
+-- Host        : xsjlc190416 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.vhdl
 -- Design      : design_2_axis_stream_txfifo_0_2
@@ -522,14 +522,14 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     );
 \axi_rdata[24]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"A0A0CFC0"
+      INIT => X"AFFCA0FC"
     )
         port map (
       I0 => Q(24),
-      I1 => slv_reg1(24),
-      I2 => axi_araddr(2),
-      I3 => \slv_reg0_reg_n_0_[24]\,
-      I4 => axi_araddr(3),
+      I1 => \slv_reg0_reg_n_0_[24]\,
+      I2 => axi_araddr(3),
+      I3 => axi_araddr(2),
+      I4 => slv_reg1(24),
       O => reg_data_out(24)
     );
 \axi_rdata[25]_i_1\: unisim.vcomponents.LUT5
@@ -570,14 +570,14 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     );
 \axi_rdata[28]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"A0A0CFC0"
+      INIT => X"AFFCA0FC"
     )
         port map (
       I0 => Q(28),
-      I1 => slv_reg1(28),
-      I2 => axi_araddr(2),
-      I3 => \slv_reg0_reg_n_0_[28]\,
-      I4 => axi_araddr(3),
+      I1 => \slv_reg0_reg_n_0_[28]\,
+      I2 => axi_araddr(3),
+      I3 => axi_araddr(2),
+      I4 => slv_reg1(28),
       O => reg_data_out(28)
     );
 \axi_rdata[29]_i_1\: unisim.vcomponents.LUT5
@@ -1019,12 +1019,12 @@ m00_axis_tlast_INST_0: unisim.vcomponents.LUT4
     );
 m00_axis_tlast_INST_0_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000800000000000"
+      INIT => X"0000080000000000"
     )
         port map (
       I0 => m00_axis_tready,
       I1 => slv_reg0,
-      I2 => rd_ptr_reg_reg(1),
+      I2 => \rd_ptr_reg_reg__0\(2),
       I3 => rd_ptr_reg_reg(4),
       I4 => \rd_ptr_reg_reg__0\(3),
       I5 => ADDRA(4),
@@ -8313,21 +8313,21 @@ m00_axis_tlast_INST_0_i_2: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => rd_ptr_reg_reg(11),
-      I1 => \rd_ptr_reg_reg[3]_rep_n_0\,
-      I2 => rd_ptr_reg_reg(8),
+      I0 => rd_ptr_reg_reg(7),
+      I1 => rd_ptr_reg_reg(0),
+      I2 => rd_ptr_reg_reg(11),
       I3 => \rd_ptr_reg_reg[1]_rep_n_0\,
       O => m00_axis_tlast_INST_0_i_2_n_0
     );
 m00_axis_tlast_INST_0_i_3: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"DFFF"
+      INIT => X"7FFF"
     )
         port map (
-      I0 => rd_ptr_reg_reg(0),
-      I1 => \rd_ptr_reg_reg__0\(14),
-      I2 => \rd_ptr_reg_reg__0\(13),
-      I3 => rd_ptr_reg_reg(9),
+      I0 => \rd_ptr_reg_reg__0\(13),
+      I1 => rd_ptr_reg_reg(9),
+      I2 => \rd_ptr_reg_reg[5]_rep_n_0\,
+      I3 => \rd_ptr_reg_reg[3]_rep_n_0\,
       O => m00_axis_tlast_INST_0_i_3_n_0
     );
 m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
@@ -8335,9 +8335,9 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => \rd_ptr_reg_reg__0\(12),
+      I0 => rd_ptr_reg_reg(8),
       I1 => \rd_ptr_reg_reg[4]_rep_n_0\,
-      I2 => \rd_ptr_reg_reg[5]_rep_n_0\,
+      I2 => \rd_ptr_reg_reg__0\(12),
       I3 => \rd_ptr_reg_reg[2]_rep_n_0\,
       O => m00_axis_tlast_INST_0_i_4_n_0
     );

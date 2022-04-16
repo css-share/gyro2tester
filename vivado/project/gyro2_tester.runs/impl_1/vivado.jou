@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Fri Apr 15 18:41:18 2022
-# Process ID: 122817
+# Start of session at: Fri Apr 15 22:04:45 2022
+# Process ID: 45841
 # Current directory: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1
 # Command line: vivado -log design_2_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_2_wrapper.tcl -notrace
 # Log file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper.vdi
 # Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/vivado.jou
-# Running On: xsjl210008, OS: Linux, CPU Frequency: 3299.987 MHz, CPU Physical cores: 32, Host memory: 404126 MB
+# Running On: xsjl23630, OS: Linux, CPU Frequency: 2492.065 MHz, CPU Physical cores: 16, Host memory: 101121 MB
 #-----------------------------------------------------------
 source design_2_wrapper.tcl -notrace

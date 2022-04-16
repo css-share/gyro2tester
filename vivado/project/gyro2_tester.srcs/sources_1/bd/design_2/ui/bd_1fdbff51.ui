@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.719206",
-   "Default View_TopLeft":"68,-157",
+   "Default View_ScaleFactor":"0.681403",
+   "Default View_TopLeft":"-119,-182",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
@@ -26,70 +26,77 @@ preplace port port-id_LED4 -pg 1 -lvl 9 -x 3160 -y 100 -defaultsOSRD
 preplace port port-id_LED5 -pg 1 -lvl 9 -x 3160 -y 120 -defaultsOSRD
 preplace port port-id_LED6 -pg 1 -lvl 9 -x 3160 -y 140 -defaultsOSRD
 preplace port port-id_LED7 -pg 1 -lvl 9 -x 3160 -y 160 -defaultsOSRD
-preplace inst AXI_Register_Demux -pg 1 -lvl 2 -x 530 -y 800 -defaultsOSRD
-preplace inst xlconcat_1 -pg 1 -lvl 7 -x 2320 -y 290 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 6 -x 1920 -y 460 -defaultsOSRD
-preplace inst SPI_ip_0 -pg 1 -lvl 8 -x 2820 -y 610 -defaultsOSRD
-preplace inst axis_switch_0 -pg 1 -lvl 5 -x 1530 -y 450 -defaultsOSRD
-preplace inst axis_switch_1 -pg 1 -lvl 3 -x 880 -y 440 -defaultsOSRD
-preplace inst data_processor_0 -pg 1 -lvl 4 -x 1180 -y 450 -defaultsOSRD
-preplace inst led_driver_0 -pg 1 -lvl 8 -x 2820 -y 110 -defaultsOSRD
-preplace inst txclk_reset_domain -pg 1 -lvl 6 -x 1920 -y 970 -defaultsOSRD
+preplace inst AXI_Register_Demux -pg 1 -lvl 2 -x 540 -y 800 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 7 -x 2390 -y 290 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 6 -x 2000 -y 460 -defaultsOSRD
+preplace inst SPI_ip_0 -pg 1 -lvl 8 -x 2830 -y 610 -defaultsOSRD
+preplace inst axis_switch_0 -pg 1 -lvl 5 -x 1600 -y 450 -defaultsOSRD
+preplace inst axis_switch_1 -pg 1 -lvl 3 -x 910 -y 440 -defaultsOSRD
+preplace inst data_processor_0 -pg 1 -lvl 4 -x 1220 -y 450 -defaultsOSRD
+preplace inst led_driver_0 -pg 1 -lvl 8 -x 2830 -y 110 -defaultsOSRD
+preplace inst txclk_reset_domain -pg 1 -lvl 6 -x 2000 -y 1380 -defaultsOSRD
 preplace inst clk_reset_domain -pg 1 -lvl 1 -x 180 -y 670 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 8 -x 2820 -y 380 -defaultsOSRD
-preplace inst axi_smc -pg 1 -lvl 7 -x 2320 -y 430 -defaultsOSRD
-preplace inst BiDirChannels_0 -pg 1 -lvl 8 -x 2820 -y 890 -defaultsOSRD
-preplace inst RxFIFO -pg 1 -lvl 5 -x 1530 -y 780 -defaultsOSRD -orient R180
-preplace inst TxFIFO -pg 1 -lvl 7 -x 2320 -y 750 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 8 -x 2830 -y 380 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 7 -x 2390 -y 430 -defaultsOSRD
+preplace inst BiDirChannels_0 -pg 1 -lvl 8 -x 2830 -y 890 -defaultsOSRD
+preplace inst RxFIFO -pg 1 -lvl 5 -x 1600 -y 780 -defaultsOSRD -orient R180
+preplace inst axis_switch_2 -pg 1 -lvl 6 -x 2000 -y 810 -defaultsOSRD
+preplace inst axis_switch_3 -pg 1 -lvl 6 -x 2000 -y 1140 -defaultsOSRD
+preplace inst TxFIFO -pg 1 -lvl 7 -x 2390 -y 750 -defaultsOSRD
 preplace netloc BiDirChannels_0_HSI_DAM 1 8 1 3090J 820n
 preplace netloc BiDirChannels_0_HSI_DAP 1 8 1 3100J 840n
 preplace netloc BiDirChannels_0_MCK_N 1 8 1 3120J 880n
 preplace netloc BiDirChannels_0_MCK_P 1 8 1 3110J 860n
 preplace netloc BiDirChannels_0_SYNCK 1 8 1 3130J 900n
-preplace netloc BiDirChannels_0_txclk 1 5 4 1730 220 N 220 2500 220 3080
-preplace netloc HSI_A0_1 1 0 8 -20J 550 NJ 550 NJ 550 NJ 550 1350J 580 NJ 580 NJ 580 2540J
+preplace netloc BiDirChannels_0_txclk 1 5 4 1790 220 N 220 2550 220 3080
+preplace netloc HSI_A0_1 1 0 8 -20J 490 NJ 490 720J 580 NJ 580 NJ 580 NJ 580 NJ 580 2550J
 preplace netloc Net 1 8 1 NJ 590
-preplace netloc RxFIFO_rxfifo_full 1 4 5 1370 930 1720J 870 NJ 870 2490J 1070 3140J
+preplace netloc RxFIFO_rxfifo_full 1 4 5 1390 1010 NJ 1010 NJ 1010 NJ 1010 3120J
 preplace netloc SPI_ip_0_SPI_CS 1 8 1 NJ 630
 preplace netloc SPI_ip_0_SPI_SCK 1 8 1 NJ 610
-preplace netloc TxFIFO_txfifo_full 1 7 2 2530J 700 NJ
-preplace netloc axi_dma_0_mm2s_introut 1 6 1 2120 280n
-preplace netloc axi_dma_0_s2mm_introut 1 6 1 2150 300n
+preplace netloc TxFIFO_txfifo_full 1 7 2 2580J 700 NJ
+preplace netloc axi_dma_0_mm2s_introut 1 6 1 2190 280n
+preplace netloc axi_dma_0_s2mm_introut 1 6 1 2210 300n
 preplace netloc led_driver_0_led0 1 8 1 NJ 60
 preplace netloc led_driver_0_led1 1 8 1 NJ 80
 preplace netloc led_driver_0_led2 1 8 1 NJ 100
 preplace netloc led_driver_0_led3 1 8 1 NJ 120
 preplace netloc led_driver_0_led4 1 8 1 NJ 140
 preplace netloc led_driver_0_led5 1 8 1 NJ 160
-preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 380 660n
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 9 0 570 360 470 700 300 1030 330 1330 280 1710 330 2130 530 2560 530 3060
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 9 -10 560 NJ 560 NJ 560 NJ 560 1330J 570 1700 610 NJ 610 2550J 690 3050
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 7 370 490 730 330 1020 530 1340 330 1690 340 2110 620 2500
-preplace netloc txclk_reset_domain_peripheral_aresetn 1 6 2 N 1010 2520
-preplace netloc xlconcat_1_dout 1 7 1 2570 290n
-preplace netloc AXI_Register_Demux_M00_AXI 1 2 3 680 280 NJ 280 1320J
-preplace netloc AXI_Register_Demux_M06_AXI 1 2 1 720 410n
-preplace netloc BiDirChannels_0_M00_AXIS 1 5 4 NJ 840 2130J 1000 2480J 1060 3050
-preplace netloc RxFIFO_M00_AXIS 1 4 1 1360 410n
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 5 740 290 NJ 290 NJ 290 NJ 290 2100
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 370 620n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 9 -20 570 380 510 760 550 1060 540 1360 600 1780 630 2200 540 2590 240 3070
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 9 -20 1260 NJ 1260 NJ 1260 NJ 1260 NJ 1260 1750 1260 NJ 1260 NJ 1260 3070
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 7 360 500 770 560 1070 530 1370 570 1760 340 2220 630 2560
+preplace netloc txclk_reset_domain_peripheral_aresetn 1 6 2 2240 1000 2570
+preplace netloc xlconcat_1_dout 1 7 1 2580 290n
+preplace netloc AXI_Register_Demux_M00_AXI 1 2 3 690 330 NJ 330 1370J
+preplace netloc AXI_Register_Demux_M06_AXI 1 2 1 730 410n
+preplace netloc RxFIFO_M00_AXIS 1 4 1 1380 410n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 5 710 310 NJ 310 NJ 310 NJ 310 2180
 preplace netloc axi_dma_0_M_AXI_MM2S 1 6 1 N 400
 preplace netloc axi_dma_0_M_AXI_S2MM 1 6 1 N 420
-preplace netloc axis_stream_txfifo_0_M00_AXIS 1 7 1 2510 690n
-preplace netloc axis_switch_0_M00_AXIS 1 5 1 1700 430n
+preplace netloc axis_switch_0_M00_AXIS 1 5 1 1740 430n
 preplace netloc axis_switch_1_M00_AXIS 1 3 1 N 430
-preplace netloc axis_switch_1_M01_AXIS 1 3 4 1040 300 NJ 300 NJ 300 2140J
-preplace netloc data_processor_0_m_axis 1 4 1 1350 390n
+preplace netloc axis_switch_1_M01_AXIS 1 3 4 1050 590 NJ 590 NJ 590 2240J
+preplace netloc data_processor_0_m_axis 1 4 1 1360 390n
 preplace netloc processing_system7_0_DDR 1 8 1 NJ 300
 preplace netloc processing_system7_0_FIXED_IO 1 8 1 NJ 320
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 8 380 310 NJ 310 NJ 310 NJ 310 NJ 310 2160J 520 NJ 520 3070
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 6 700 590 NJ 590 NJ 590 NJ 590 NJ 590 NJ
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 6 710J 630 NJ 630 NJ 630 NJ 630 NJ 630 2490
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 4 690J 320 NJ 320 NJ 320 1720
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 4 NJ 820 NJ 820 1340J 920 1690
-preplace netloc ps7_0_axi_periph_M05_AXI 1 2 5 740J 640 NJ 640 NJ 640 NJ 640 2120
-preplace netloc smartconnect_0_M00_AXI 1 7 1 2500 360n
-levelinfo -pg 1 -40 180 530 880 1180 1530 1920 2320 2820 3160
-pagesize -pg 1 -db -bbox -sgen -120 0 3280 1080
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 8 390 520 710J 620 NJ 620 NJ 620 NJ 620 NJ 620 2580J 520 3060
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 6 720 610 NJ 610 NJ 610 NJ 610 2250J 590 NJ
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 6 740J 660 NJ 660 NJ 660 NJ 660 NJ 660 2540
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 4 700J 320 NJ 320 NJ 320 1780
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 4 750J 680 NJ 680 NJ 680 1740
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 5 770J 690 NJ 690 NJ 690 NJ 690 2230
+preplace netloc smartconnect_0_M00_AXI 1 7 1 2550 360n
+preplace netloc TxFIFO_M00_AXIS 1 5 3 1820 650 N 650 2530
+preplace netloc axis_switch_2_M00_AXIS 1 6 2 2240 860 N
+preplace netloc axis_switch_2_M01_AXIS 1 5 2 1810 700 2180
+preplace netloc BiDirChannels_0_M00_AXIS 1 5 4 1800 600 2230 530 N 530 3060
+preplace netloc axis_switch_3_M00_AXIS 1 5 2 1770 680 2190
+preplace netloc AXI_Register_Demux_M07_AXI 1 2 4 760 670 N 670 N 670 1750
+preplace netloc AXI_Register_Demux_M08_AXI 1 2 4 N 880 N 880 N 880 1740
+levelinfo -pg 1 -40 180 540 910 1220 1600 2000 2390 2830 3160
+pagesize -pg 1 -db -bbox -sgen -120 -190 3280 1480
 "
 }
 {
