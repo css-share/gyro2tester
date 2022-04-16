@@ -3,7 +3,7 @@
 	<name>dmaTest</name>
 	<comment>Created by Vitis v2021.2</comment>
 	<projects>
-		<project>design_3_wrapper</project>
+		<project>design_1_wrapper</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

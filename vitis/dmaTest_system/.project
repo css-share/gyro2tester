@@ -3,7 +3,6 @@
 	<name>dmaTest_system</name>
 	<comment></comment>
 	<projects>
-		<project>design_4_wrapper</project>
 		<project>dmaTest</project>
 	</projects>
 	<buildSpec>

@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Tue Apr 12 15:53:27 2022
-// Host        : xsjlc190782 running 64-bit CentOS Linux release 7.9.2009 (Core)
-// Command     : write_verilog -force -mode funcsim
-//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0_sim_netlist.v
+// Date        : Mon Apr 11 16:14:11 2022
+// Host        : xsjl23781 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+// Command     : write_verilog -force -mode funcsim -rename_top design_2_data_processor_0_0 -prefix
+//               design_2_data_processor_0_0_ design_2_data_processor_0_0_sim_netlist.v
 // Design      : design_2_data_processor_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,73 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "design_2_data_processor_0_0,data_processor,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "data_processor,Vivado 2021.2" *) 
-(* NotValidForBitStream *)
-module design_2_data_processor_0_0
-   (clk,
-    reset,
-    s_axis_tdata,
-    s_axis_tkeep,
-    s_axis_tlast,
-    s_axis_tready,
-    s_axis_tvalid,
-    m_axis_tdata,
-    m_axis_tkeep,
-    m_axis_tlast,
-    m_axis_tready,
-    m_axis_tvalid,
-    state_reg);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF m_axis:s_axis, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TDATA" *) input [31:0]s_axis_tdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TKEEP" *) input [3:0]s_axis_tkeep;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TLAST" *) input s_axis_tlast;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TREADY" *) output s_axis_tready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input s_axis_tvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) output [31:0]m_axis_tdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TKEEP" *) output [3:0]m_axis_tkeep;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TLAST" *) output m_axis_tlast;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TREADY" *) input m_axis_tready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) output m_axis_tvalid;
-  output [2:0]state_reg;
-
-  wire clk;
-  wire [31:0]m_axis_tdata;
-  wire [2:2]\^m_axis_tkeep ;
-  wire m_axis_tlast;
-  wire m_axis_tready;
-  wire m_axis_tvalid;
-  wire reset;
-  wire [31:0]s_axis_tdata;
-  wire [3:0]s_axis_tkeep;
-  wire s_axis_tlast;
-  wire s_axis_tready;
-  wire s_axis_tvalid;
-  wire [2:0]state_reg;
-
-  assign m_axis_tkeep[3] = \^m_axis_tkeep [2];
-  assign m_axis_tkeep[2] = \^m_axis_tkeep [2];
-  assign m_axis_tkeep[1] = \^m_axis_tkeep [2];
-  assign m_axis_tkeep[0] = \^m_axis_tkeep [2];
-  design_2_data_processor_0_0_data_processor inst
-       (.Q(state_reg[2]),
-        .clk(clk),
-        .m_axis_tdata(m_axis_tdata),
-        .m_axis_tkeep(\^m_axis_tkeep ),
-        .m_axis_tlast(m_axis_tlast),
-        .m_axis_tready(m_axis_tready),
-        .m_axis_tvalid(m_axis_tvalid),
-        .reset(reset),
-        .s_axis_tdata(s_axis_tdata),
-        .s_axis_tkeep(s_axis_tkeep),
-        .s_axis_tlast(s_axis_tlast),
-        .s_axis_tready(s_axis_tready),
-        .s_axis_tvalid(s_axis_tvalid),
-        .state_reg(state_reg[1:0]));
-endmodule
-
-(* ORIG_REF_NAME = "data_processor" *) 
 module design_2_data_processor_0_0_data_processor
    (Q,
     m_axis_tlast,
@@ -1269,6 +1202,72 @@ module design_2_data_processor_0_0_data_processor
         .D(tlast_i_1_n_0),
         .Q(tlast_reg_n_0),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "design_2_data_processor_0_0,data_processor,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "data_processor,Vivado 2021.2" *) 
+(* NotValidForBitStream *)
+module design_2_data_processor_0_0
+   (clk,
+    reset,
+    s_axis_tdata,
+    s_axis_tkeep,
+    s_axis_tlast,
+    s_axis_tready,
+    s_axis_tvalid,
+    m_axis_tdata,
+    m_axis_tkeep,
+    m_axis_tlast,
+    m_axis_tready,
+    m_axis_tvalid,
+    state_reg);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_BUSIF m_axis:s_axis, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TDATA" *) input [31:0]s_axis_tdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TKEEP" *) input [3:0]s_axis_tkeep;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TLAST" *) input s_axis_tlast;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TREADY" *) output s_axis_tready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s_axis TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) input s_axis_tvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TDATA" *) output [31:0]m_axis_tdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TKEEP" *) output [3:0]m_axis_tkeep;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TLAST" *) output m_axis_tlast;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TREADY" *) input m_axis_tready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis TVALID" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *) output m_axis_tvalid;
+  output [2:0]state_reg;
+
+  wire clk;
+  wire [31:0]m_axis_tdata;
+  wire [2:2]\^m_axis_tkeep ;
+  wire m_axis_tlast;
+  wire m_axis_tready;
+  wire m_axis_tvalid;
+  wire reset;
+  wire [31:0]s_axis_tdata;
+  wire [3:0]s_axis_tkeep;
+  wire s_axis_tlast;
+  wire s_axis_tready;
+  wire s_axis_tvalid;
+  wire [2:0]state_reg;
+
+  assign m_axis_tkeep[3] = \^m_axis_tkeep [2];
+  assign m_axis_tkeep[2] = \^m_axis_tkeep [2];
+  assign m_axis_tkeep[1] = \^m_axis_tkeep [2];
+  assign m_axis_tkeep[0] = \^m_axis_tkeep [2];
+  design_2_data_processor_0_0_data_processor inst
+       (.Q(state_reg[2]),
+        .clk(clk),
+        .m_axis_tdata(m_axis_tdata),
+        .m_axis_tkeep(\^m_axis_tkeep ),
+        .m_axis_tlast(m_axis_tlast),
+        .m_axis_tready(m_axis_tready),
+        .m_axis_tvalid(m_axis_tvalid),
+        .reset(reset),
+        .s_axis_tdata(s_axis_tdata),
+        .s_axis_tkeep(s_axis_tkeep),
+        .s_axis_tlast(s_axis_tlast),
+        .s_axis_tready(s_axis_tready),
+        .s_axis_tvalid(s_axis_tvalid),
+        .state_reg(state_reg[1:0]));
 endmodule
 `ifndef GLBL
 `define GLBL
