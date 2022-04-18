@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:axis_stream_txfifo:2.0
-// IP Revision: 17
+// IP Revision: 18
 
 `timescale 1ns/1ps
 

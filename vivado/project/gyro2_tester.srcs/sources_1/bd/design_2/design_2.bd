@@ -32,16 +32,16 @@
       "axis_switch_0": "",
       "axis_switch_1": "",
       "data_processor_0": "",
-      "led_driver_0": "",
       "txclk_reset_domain": "",
       "clk_reset_domain": "",
       "processing_system7_0": "",
       "axi_smc": "",
       "BiDirChannels_0": "",
-      "RxFIFO": "",
       "axis_switch_2": "",
       "axis_switch_3": "",
-      "TxFIFO": ""
+      "TxFIFO": "",
+      "RxFIFO": "",
+      "led_driver_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1733,65 +1733,6 @@
             "direction": "O",
             "left": "2",
             "right": "0"
-          }
-        }
-      },
-      "led_driver_0": {
-        "vlnv": "xilinx.com:module_ref:led_driver:1.0",
-        "xci_name": "design_2_led_driver_0_0",
-        "xci_path": "ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci",
-        "inst_hier_path": "led_driver_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "led_driver",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rstn",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "50000000",
-                "value_src": "const_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_2_BiDirChannels_0_0_txclk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rstn": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "led0": {
-            "direction": "O"
-          },
-          "led1": {
-            "direction": "O"
-          },
-          "led2": {
-            "direction": "O"
-          },
-          "led3": {
-            "direction": "O"
-          },
-          "led4": {
-            "direction": "O"
-          },
-          "led5": {
-            "direction": "O"
           }
         }
       },
@@ -3700,17 +3641,6 @@
         "xci_path": "ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci",
         "inst_hier_path": "BiDirChannels_0"
       },
-      "RxFIFO": {
-        "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
-        "xci_name": "design_2_RxFIFO_0",
-        "xci_path": "ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci",
-        "inst_hier_path": "RxFIFO",
-        "parameters": {
-          "C_S00_AXIS_TDATA_WIDTH": {
-            "value": "48"
-          }
-        }
-      },
       "axis_switch_2": {
         "vlnv": "xilinx.com:ip:axis_switch:1.1",
         "xci_name": "design_2_axis_switch_2_0",
@@ -3750,6 +3680,76 @@
         "parameters": {
           "ADDR_WIDTH": {
             "value": "11"
+          }
+        }
+      },
+      "RxFIFO": {
+        "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
+        "xci_name": "design_2_RxFIFO_0",
+        "xci_path": "ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci",
+        "inst_hier_path": "RxFIFO",
+        "parameters": {
+          "C_S00_AXIS_TDATA_WIDTH": {
+            "value": "48"
+          }
+        }
+      },
+      "led_driver_0": {
+        "vlnv": "xilinx.com:module_ref:led_driver:1.0",
+        "xci_name": "design_2_led_driver_0_0",
+        "xci_path": "ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci",
+        "inst_hier_path": "led_driver_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "led_driver",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rstn",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "const_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_2_BiDirChannels_0_0_txclk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rstn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "led0": {
+            "direction": "O"
+          },
+          "led1": {
+            "direction": "O"
+          },
+          "led2": {
+            "direction": "O"
+          },
+          "led3": {
+            "direction": "O"
+          },
+          "led4": {
+            "direction": "O"
+          },
+          "led5": {
+            "direction": "O"
           }
         }
       }
@@ -3946,8 +3946,8 @@
       "BiDirChannels_0_txclk": {
         "ports": [
           "BiDirChannels_0/txclk",
-          "led_driver_0/clk",
-          "txclk_reset_domain/slowest_sync_clk"
+          "txclk_reset_domain/slowest_sync_clk",
+          "led_driver_0/clk"
         ]
       },
       "HSI_A0_1": {
@@ -4066,14 +4066,14 @@
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_smc/aclk",
           "BiDirChannels_0/clk",
-          "RxFIFO/clk",
           "axis_switch_2/aclk",
           "axis_switch_2/s_axi_ctrl_aclk",
           "axis_switch_3/aclk",
           "axis_switch_3/s_axi_ctrl_aclk",
           "AXI_Register_Demux/M07_ACLK",
           "AXI_Register_Demux/M08_ACLK",
-          "TxFIFO/clk"
+          "TxFIFO/clk",
+          "RxFIFO/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -4103,21 +4103,21 @@
           "data_processor_0/reset",
           "axi_smc/aresetn",
           "BiDirChannels_0/rst_n",
-          "RxFIFO/rst_n",
           "axis_switch_2/aresetn",
           "axis_switch_2/s_axi_ctrl_aresetn",
           "axis_switch_3/aresetn",
           "axis_switch_3/s_axi_ctrl_aresetn",
           "AXI_Register_Demux/M07_ARESETN",
           "AXI_Register_Demux/M08_ARESETN",
-          "TxFIFO/rstn"
+          "TxFIFO/rstn",
+          "RxFIFO/rst_n"
         ]
       },
       "txclk_reset_domain_peripheral_aresetn": {
         "ports": [
           "txclk_reset_domain/peripheral_aresetn",
-          "led_driver_0/rstn",
-          "BiDirChannels_0/tx_rstn"
+          "BiDirChannels_0/tx_rstn",
+          "led_driver_0/rstn"
         ]
       },
       "xlconcat_1_dout": {

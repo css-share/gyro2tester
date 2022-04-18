@@ -936,11 +936,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 16 01:24:06 UTC 2022</spirit:value>
+            <spirit:value>Mon Apr 18 05:34:58 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6fef9245</spirit:value>
+            <spirit:value>9:aa93e33b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -951,7 +951,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6fef9245</spirit:value>
+            <spirit:value>9:aa93e33b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -967,11 +967,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 16 01:24:06 UTC 2022</spirit:value>
+            <spirit:value>Mon Apr 18 05:34:58 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6fef9245</spirit:value>
+            <spirit:value>9:aa93e33b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -987,11 +987,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 16 01:24:06 UTC 2022</spirit:value>
+            <spirit:value>Mon Apr 18 05:34:58 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:64aca45a</spirit:value>
+            <spirit:value>9:a1d0d524</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1007,11 +1007,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 16 01:24:06 UTC 2022</spirit:value>
+            <spirit:value>Mon Apr 18 05:34:58 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:64aca45a</spirit:value>
+            <spirit:value>9:a1d0d524</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1025,11 +1025,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 16 01:24:06 UTC 2022</spirit:value>
+            <spirit:value>Mon Apr 18 05:34:58 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6fef9245</spirit:value>
+            <spirit:value>9:aa93e33b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1043,11 +1043,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Apr 16 01:25:25 UTC 2022</spirit:value>
+            <spirit:value>Mon Apr 18 05:37:37 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6fef9245</spirit:value>
+            <spirit:value>9:aa93e33b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1567,15 +1567,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/65b0/src/axis_stream_fifo_v1_0_M00_AXIS.sv</spirit:name>
+        <spirit:name>../../ipshared/088f/src/axis_stream_fifo_v1_0_M00_AXIS.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/65b0/hdl/axis_stream_fifo_v1_0_S00_AXI.sv</spirit:name>
+        <spirit:name>../../ipshared/088f/hdl/axis_stream_fifo_v1_0_S00_AXI.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/65b0/hdl/axis_stream_fifo_v1_0.sv</spirit:name>
+        <spirit:name>../../ipshared/088f/hdl/axis_stream_fifo_v1_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1590,15 +1590,15 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/65b0/src/axis_stream_fifo_v1_0_M00_AXIS.sv</spirit:name>
+        <spirit:name>../../ipshared/088f/src/axis_stream_fifo_v1_0_M00_AXIS.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/65b0/hdl/axis_stream_fifo_v1_0_S00_AXI.sv</spirit:name>
+        <spirit:name>../../ipshared/088f/hdl/axis_stream_fifo_v1_0_S00_AXI.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/65b0/hdl/axis_stream_fifo_v1_0.sv</spirit:name>
+        <spirit:name>../../ipshared/088f/hdl/axis_stream_fifo_v1_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1744,7 +1744,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>axis_stream_fifo_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>60</xilinx:coreRevision>
+      <xilinx:coreRevision>61</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:axis_stream_fifo:1.0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2d0e308_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
@@ -1918,6 +1918,17 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@2913a6ed_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@554ce244_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@5087f890_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bc67393_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d6bee63_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4bf43cc9_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e0f72af_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23ed7fc3_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@366e6e1_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3729f7c8_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47b265f0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fa13952_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c7c7847_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@591d10bd_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
@@ -1978,7 +1989,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.HAS_TKEEP" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.HAS_TLAST" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.HAS_TREADY" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.HAS_TSTRB" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.HAS_TSTRB" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.LAYERED_METADATA" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXIS.TDATA_NUM_BYTES" xilinx:valuePermission="bd"/>
@@ -1993,7 +2004,7 @@
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="900ff9ff"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fb701f56"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="953a695c"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="0487e84d"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b1fab2c7"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="009a6b7f"/>

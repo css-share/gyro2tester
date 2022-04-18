@@ -12,10 +12,11 @@ bhist -l -J /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ru
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source design_2_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 2925.102 ; gain = 2.020 ; free physical = 130014 ; free virtual = 247789
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
-add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2988.930 ; gain = 52.098 ; free physical = 86699 ; free virtual = 234031
+add_files: Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2977.199 ; gain = 52.098 ; free physical = 129946 ; free virtual = 247731
 Command: read_checkpoint -incremental /home/cdickins/reuse/gyro2tester-main/vivado/project/synth_1/design_2_wrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/cdickins/reuse/gyro2tester-main/vivado/project/synth_1/design_2_wrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -28,9 +29,9 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14723
+INFO: [Synth 8-7075] Helper process launched with PID 116783
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85556 ; free virtual = 232913
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 128740 ; free virtual = 246531
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_2_wrapper' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:13]
@@ -54,56 +55,56 @@ INFO: [Synth 8-6155] done synthesizing module 'm07_couplers_imp_P1J48P' (8#1) [/
 INFO: [Synth 8-6157] synthesizing module 'm08_couplers_imp_1BSIIC1' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3807]
 INFO: [Synth 8-6155] done synthesizing module 'm08_couplers_imp_1BSIIC1' (9#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3807]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_IEFX27' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3932]
-INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_0' (10#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_auto_pc_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_auto_pc_0' (10#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_IEFX27' (11#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:3932]
-INFO: [Synth 8-6157] synthesizing module 'design_2_xbar_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_xbar_0' (12#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_xbar_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_xbar_0' (12#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_xbar_0_stub.v:6]
 WARNING: [Synth 8-689] width (18) of port connection 'm_axi_arprot' does not match port width (27) of module 'design_2_xbar_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:2684]
 WARNING: [Synth 8-689] width (18) of port connection 'm_axi_awprot' does not match port width (27) of module 'design_2_xbar_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:2688]
 WARNING: [Synth 8-689] width (24) of port connection 'm_axi_wstrb' does not match port width (36) of module 'design_2_xbar_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:2700]
 INFO: [Synth 8-6155] done synthesizing module 'design_2_ps7_0_axi_periph_0' (13#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1216]
-INFO: [Synth 8-6157] synthesizing module 'design_2_BiDirChannels_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_BiDirChannels_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_BiDirChannels_0_0' (14#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_BiDirChannels_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_RxFIFO_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_RxFIFO_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_RxFIFO_0' (15#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_RxFIFO_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_SPI_ip_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_SPI_ip_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_SPI_ip_0_0' (16#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_SPI_ip_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axis_stream_txfifo_0_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_stream_txfifo_0_2' (17#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axi_dma_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axi_dma_0_0' (18#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_BiDirChannels_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_BiDirChannels_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_BiDirChannels_0_0' (14#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_BiDirChannels_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_RxFIFO_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_RxFIFO_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_RxFIFO_0' (15#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_RxFIFO_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_SPI_ip_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_SPI_ip_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_SPI_ip_0_0' (16#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_SPI_ip_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axis_stream_txfifo_0_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_stream_txfifo_0_2' (17#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_stream_txfifo_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axi_dma_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axi_dma_0_0' (18#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axi_dma_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:813]
 WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:813]
 WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'design_2_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:813]
 WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'design_2_axi_dma_0_0' has 64 connections declared, but only 61 given [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:813]
-INFO: [Synth 8-6157] synthesizing module 'design_2_smartconnect_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_smartconnect_0_0' (19#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_0_0' (20#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_smartconnect_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_smartconnect_0_0' (19#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_0_0' (20#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'm_axis_tstrb' of module 'design_2_axis_switch_0_0' is unconnected for instance 'axis_switch_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:944]
 WARNING: [Synth 8-7023] instance 'axis_switch_0' of module 'design_2_axis_switch_0_0' has 32 connections declared, but only 31 given [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:944]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_1_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_1_0' (21#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_1_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_1_0' (21#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_1_0_stub.v:6]
 WARNING: [Synth 8-689] width (4) of port connection 'm_axis_tkeep' does not match port width (8) of module 'design_2_axis_switch_1_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:980]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_2_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_2_0' (22#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_2_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_3_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_3_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_3_0' (23#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_axis_switch_3_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_2' (24#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_2_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_2_0' (22#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_axis_switch_3_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_3_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_switch_3_0' (23#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_axis_switch_3_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_2' (24#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_proc_sys_reset_0_2_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_2_proc_sys_reset_0_2' is unconnected for instance 'clk_reset_domain' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1069]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_2_proc_sys_reset_0_2' is unconnected for instance 'clk_reset_domain' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1069]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_2_proc_sys_reset_0_2' is unconnected for instance 'clk_reset_domain' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1069]
 WARNING: [Synth 8-7023] instance 'clk_reset_domain' of module 'design_2_proc_sys_reset_0_2' has 10 connections declared, but only 7 given [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1069]
-INFO: [Synth 8-6157] synthesizing module 'design_2_data_processor_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_data_processor_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_data_processor_0_0' (25#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_data_processor_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_data_processor_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_data_processor_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_data_processor_0_0' (25#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_data_processor_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'state_reg' of module 'design_2_data_processor_0_0' is unconnected for instance 'data_processor_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1077]
 WARNING: [Synth 8-7023] instance 'data_processor_0' of module 'design_2_data_processor_0_0' has 13 connections declared, but only 12 given [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1077]
-INFO: [Synth 8-6157] synthesizing module 'design_2_led_driver_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_led_driver_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_led_driver_0_0' (26#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_led_driver_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_2_processing_system7_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_processing_system7_0_0' (27#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_led_driver_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_led_driver_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_led_driver_0_0' (26#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_led_driver_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_processing_system7_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_processing_system7_0_0' (27#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1099]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1099]
 WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1099]
@@ -116,8 +117,8 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'design_2_processing_s
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1099]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'design_2_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1099]
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_2_processing_system7_0_0' has 114 connections declared, but only 103 given [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1099]
-INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_1' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_1' (28#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-14392-xsjlc190415/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_2_proc_sys_reset_0_1' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_proc_sys_reset_0_1' (28#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/.Xil/Vivado-193277-xsjl24914/realtime/design_2_proc_sys_reset_0_1_stub.v:6]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_2_proc_sys_reset_0_1' is unconnected for instance 'txclk_reset_domain' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1203]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_2_proc_sys_reset_0_1' is unconnected for instance 'txclk_reset_domain' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1203]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_2_proc_sys_reset_0_1' is unconnected for instance 'txclk_reset_domain' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v:1203]
@@ -231,18 +232,18 @@ WARNING: [Synth 8-7129] Port In100[0] in module xlconcat_v2_1_4_xlconcat is eith
 WARNING: [Synth 8-7129] Port In101[0] in module xlconcat_v2_1_4_xlconcat is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84567 ; free virtual = 231925
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 128702 ; free virtual = 246504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85446 ; free virtual = 232806
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 129211 ; free virtual = 247025
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85446 ; free virtual = 232806
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 129209 ; free virtual = 247023
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85381 ; free virtual = 232741
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 129195 ; free virtual = 247012
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -261,8 +262,6 @@ Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tes
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0/design_2_axis_switch_1_0_in_context.xdc] for cell 'design_2_i/axis_switch_1'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0/design_2_data_processor_0_0_in_context.xdc] for cell 'design_2_i/data_processor_0'
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0/design_2_data_processor_0_0_in_context.xdc] for cell 'design_2_i/data_processor_0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0/design_2_led_driver_0_0_in_context.xdc] for cell 'design_2_i/led_driver_0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0/design_2_led_driver_0_0_in_context.xdc] for cell 'design_2_i/led_driver_0'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_in_context.xdc] for cell 'design_2_i/txclk_reset_domain'
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_in_context.xdc] for cell 'design_2_i/txclk_reset_domain'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_in_context.xdc] for cell 'design_2_i/clk_reset_domain'
@@ -273,16 +272,87 @@ Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tes
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0/design_2_smartconnect_0_0_in_context.xdc] for cell 'design_2_i/axi_smc'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0_in_context.xdc] for cell 'design_2_i/BiDirChannels_0'
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0_in_context.xdc] for cell 'design_2_i/BiDirChannels_0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0/design_2_RxFIFO_0_in_context.xdc] for cell 'design_2_i/RxFIFO'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0/design_2_RxFIFO_0_in_context.xdc] for cell 'design_2_i/RxFIFO'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0/design_2_axis_switch_2_0_in_context.xdc] for cell 'design_2_i/axis_switch_2'
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0/design_2_axis_switch_2_0_in_context.xdc] for cell 'design_2_i/axis_switch_2'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0/design_2_axis_switch_3_0_in_context.xdc] for cell 'design_2_i/axis_switch_3'
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0/design_2_axis_switch_3_0_in_context.xdc] for cell 'design_2_i/axis_switch_3'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_in_context.xdc] for cell 'design_2_i/TxFIFO'
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_in_context.xdc] for cell 'design_2_i/TxFIFO'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0/design_2_RxFIFO_0_in_context.xdc] for cell 'design_2_i/RxFIFO'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0/design_2_RxFIFO_0_in_context.xdc] for cell 'design_2_i/RxFIFO'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0/design_2_led_driver_0_0_in_context.xdc] for cell 'design_2_i/led_driver_0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0/design_2_led_driver_0_0_in_context.xdc] for cell 'design_2_i/led_driver_0'
 Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
-WARNING: [Vivado 12-584] No ports matched 'RXACTIVE'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:8]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:56]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg/Q'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:56]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:58]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:58]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:63]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:63]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:64]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv8/clk_div8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:64]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+WARNING: [Vivado 12-627] No clocks matched 'txclk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [list [get_clocks clk_fpga_0] [get_clocks spi_clk] [get_clocks spi_clk_4] [get_clocks spi_clk_8]]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks txclk]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:67]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'txclk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:73]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:73]
+WARNING: [Vivado 12-627] No clocks matched 'txclk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:80]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:80]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:82]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:82]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:94]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:94]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:94]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:94]
+WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:95]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:95]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:95]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:95]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:97]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:97]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:97]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:97]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:98]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:98]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:98]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:98]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:99]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:99]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:99]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:99]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:100]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:100]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:100]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:100]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:101]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:101]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:101]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:101]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:102]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:102]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:102]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:102]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[2]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:110]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[3]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:111]
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_2_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_2_wrapper_propImpl.xdc].
@@ -291,22 +361,22 @@ Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tes
 Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85235 ; free virtual = 232609
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 129070 ; free virtual = 246919
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85230 ; free virtual = 232605
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 129071 ; free virtual = 246922
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85236 ; free virtual = 232610
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130919 ; free virtual = 246992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85236 ; free virtual = 232610
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130923 ; free virtual = 246996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -581,21 +651,21 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/SPI_ip_0. (constraint 
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axis_switch_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axis_switch_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/data_processor_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/led_driver_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/txclk_reset_domain. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/clk_reset_domain. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/processing_system7_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axi_smc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/BiDirChannels_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/RxFIFO. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axis_switch_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/axis_switch_3. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/TxFIFO. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/RxFIFO. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_2_i/led_driver_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85238 ; free virtual = 232615
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130922 ; free virtual = 246996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85229 ; free virtual = 232605
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130917 ; free virtual = 246991
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -618,25 +688,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 85216 ; free virtual = 232597
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130905 ; free virtual = 246988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84864 ; free virtual = 232256
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130777 ; free virtual = 246863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84859 ; free virtual = 232251
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130775 ; free virtual = 246861
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84797 ; free virtual = 232189
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2977.199 ; gain = 0.000 ; free physical = 130774 ; free virtual = 246861
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -654,37 +724,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84728 ; free virtual = 232119
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130770 ; free virtual = 246862
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84727 ; free virtual = 232119
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130766 ; free virtual = 246858
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84727 ; free virtual = 232118
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130769 ; free virtual = 246861
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84727 ; free virtual = 232118
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130768 ; free virtual = 246860
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84726 ; free virtual = 232118
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130767 ; free virtual = 246859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84726 ; free virtual = 232118
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130769 ; free virtual = 246862
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -737,24 +807,25 @@ Report Cell Usage:
 |19    |OBUF                          |    15|
 +------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84726 ; free virtual = 232118
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130768 ; free virtual = 246861
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84780 ; free virtual = 232172
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84780 ; free virtual = 232171
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2978.273 ; gain = 1.074 ; free physical = 130823 ; free virtual = 246916
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 2978.277 ; gain = 1.074 ; free physical = 130825 ; free virtual = 246917
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2988.930 ; gain = 0.000 ; free physical = 84995 ; free virtual = 232386
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2978.277 ; gain = 0.000 ; free physical = 130913 ; free virtual = 247006
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2990.934 ; gain = 0.000 ; free physical = 84695 ; free virtual = 232088
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2991.148 ; gain = 0.000 ; free physical = 130848 ; free virtual = 246941
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete, checksum: eb242b0e
 INFO: [Common 17-83] Releasing license: Synthesis
-85 Infos, 138 Warnings, 0 Critical Warnings and 0 Errors encountered.
+111 Infos, 173 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2990.934 ; gain = 2.004 ; free physical = 84881 ; free virtual = 232275
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 2991.148 ; gain = 13.949 ; free physical = 131043 ; free virtual = 247137
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/design_2_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_2_wrapper_utilization_synth.rpt -pb design_2_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 15 22:04:27 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 11:56:32 2022...

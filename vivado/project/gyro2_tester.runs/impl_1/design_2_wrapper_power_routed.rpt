@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Fri Apr 15 22:10:03 2022
-| Host             : xsjl23630 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+| Date             : Mon Apr 18 12:01:37 2022
+| Host             : xsjl24914 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command          : report_power -file design_2_wrapper_power_routed.rpt -pb design_2_wrapper_power_summary_routed.pb -rpx design_2_wrapper_power_routed.rpx
 | Design           : design_2_wrapper
 | Device           : xc7z020clg484-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.737        |
+| Total On-Chip Power (W)  | 1.783        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.589        |
-| Device Static (W)        | 0.148        |
+| Dynamic (W)              | 1.633        |
+| Device Static (W)        | 0.149        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.0         |
-| Junction Temperature (C) | 45.0         |
+| Max Ambient (C)          | 64.4         |
+| Junction Temperature (C) | 45.6         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,22 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.028 |        3 |       --- |             --- |
-| Slice Logic              |     0.010 |    18439 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     5006 |     53200 |            9.41 |
-|   LUT as Distributed RAM |    <0.001 |     1896 |     17400 |           10.90 |
-|   Register               |    <0.001 |     8270 |    106400 |            7.77 |
-|   CARRY4                 |    <0.001 |      182 |     13300 |            1.37 |
-|   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
-|   F7/F8 Muxes            |    <0.001 |      193 |     53200 |            0.36 |
+| Clocks                   |     0.030 |        7 |       --- |             --- |
+| Slice Logic              |     0.031 |    20440 |       --- |             --- |
+|   LUT as Distributed RAM |     0.016 |     3304 |     17400 |           18.99 |
+|   LUT as Logic           |     0.013 |     5464 |     53200 |           10.27 |
+|   Register               |    <0.001 |     8246 |    106400 |            7.75 |
+|   CARRY4                 |    <0.001 |      181 |     13300 |            1.36 |
+|   F7/F8 Muxes            |    <0.001 |      326 |     53200 |            0.61 |
 |   LUT as Shift Register  |    <0.001 |      202 |     17400 |            1.16 |
-|   Others                 |     0.000 |      724 |       --- |             --- |
-| Signals                  |     0.012 |    12523 |       --- |             --- |
+|   Others                 |     0.000 |      726 |       --- |             --- |
+| Signals                  |     0.031 |    13829 |       --- |             --- |
 | Block RAM                |     0.002 |        5 |       140 |            3.57 |
-| I/O                      |     0.003 |       16 |       200 |            8.00 |
+| I/O                      |     0.006 |       16 |       200 |            8.00 |
 | PS7                      |     1.533 |        1 |       --- |             --- |
-| Static Power             |     0.148 |          |           |                 |
-| Total                    |     1.737 |          |           |                 |
+| Static Power             |     0.149 |          |           |                 |
+| Total                    |     1.783 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,11 +76,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.068 |       0.052 |      0.015 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.016 |       0.000 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.109 |       0.094 |      0.016 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -137,11 +136,15 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------+-------------------------------------------------------------+-----------------+
-| Clock      | Domain                                                      | Constraint (ns) |
-+------------+-------------------------------------------------------------+-----------------+
-| clk_fpga_0 | design_2_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
-+------------+-------------------------------------------------------------+-----------------+
++------------+--------------------------------------------------------------------------+-----------------+
+| Clock      | Domain                                                                   | Constraint (ns) |
++------------+--------------------------------------------------------------------------+-----------------+
+| clk_fpga_0 | design_2_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]              |            10.0 |
+| spi_clk    | design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/SPI_SCK_INST_0_i_1_n_0 |            20.0 |
+| spi_clk_4  | design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/SPI_SCK_INST_0_i_1_n_0 |            20.0 |
+| spi_clk_8  | design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/SPI_SCK_INST_0_i_1_n_0 |            20.0 |
+| txclk      | design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/CLK        |            20.0 |
++------------+--------------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -153,27 +156,23 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_2_wrapper         |     1.589 |
-|   design_2_i             |     1.586 |
+| design_2_wrapper         |     1.633 |
+|   design_2_i             |     1.627 |
 |     AXI_Register_Demux   |     0.004 |
 |       s00_couplers       |     0.003 |
-|     BiDirChannels_0      |     0.002 |
-|       inst               |     0.002 |
-|     SPI_ip_0             |     0.001 |
-|       inst               |     0.001 |
-|     TxFIFO               |     0.005 |
-|       inst               |     0.005 |
-|     axi_dma_0            |     0.010 |
-|       U0                 |     0.010 |
-|     axi_smc              |     0.023 |
-|       inst               |     0.023 |
+|     BiDirChannels_0      |     0.003 |
+|       inst               |     0.003 |
+|     TxFIFO               |     0.048 |
+|       inst               |     0.048 |
+|     axi_dma_0            |     0.009 |
+|       U0                 |     0.009 |
+|     axi_smc              |     0.021 |
+|       inst               |     0.021 |
 |     axis_switch_0        |     0.001 |
 |       inst               |     0.001 |
 |     axis_switch_1        |     0.001 |
 |       inst               |     0.001 |
 |     axis_switch_2        |     0.001 |
-|       inst               |     0.001 |
-|     axis_switch_3        |     0.001 |
 |       inst               |     0.001 |
 |     processing_system7_0 |     1.535 |
 |       inst               |     1.535 |

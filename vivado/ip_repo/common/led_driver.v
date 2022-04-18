@@ -30,19 +30,19 @@ module led_driver (
 
 
   reg [31:0] macro_count;
-  reg [31:0] micro_count;
+  reg [25:0] micro_count;
   reg [5:0] shift_reg;
 
   always @(posedge clk or negedge rstn)
   begin
     if (!rstn) 
-      micro_count <= 32'h00000000;
+      micro_count <= 26'h0000000;
     else
       micro_count <= micro_count + 1;
   end 
 
 
-
+/*
   always @(posedge clk or negedge rstn)
   begin
     if (~rstn)
@@ -50,25 +50,25 @@ module led_driver (
     else if (micro_count == 32'hFFFFFFFF)
       macro_count <= macro_count + 1;
   end
-
+*/
 
 
 
   always @ (*)
   begin
   shift_reg = 6'b000000; 
-    case (macro_count)
-      32'h0FFFFFFF : shift_reg = 6'b000001;
-      32'h1FFFFFFF : shift_reg = 6'b000010; 
-      32'h2FFFFFFF : shift_reg = 6'b000100;
-      32'h3FFFFFFF : shift_reg = 6'b001000;
-      32'h4FFFFFFF : shift_reg = 6'b010000;
-      32'h5FFFFFFF : shift_reg = 6'b100000; 
-      32'h6FFFFFFF : shift_reg = 6'b010000;
-      32'h7FFFFFFF : shift_reg = 6'b001000; 
-      32'h8FFFFFFF : shift_reg = 6'b000100; 
-      32'h9FFFFFFF : shift_reg = 6'b000010; 
-      32'hAFFFFFFF : shift_reg = 6'b000001; 
+    case (micro_count)
+      26'h0FFFFFF : shift_reg = 6'b000001;
+      26'h1FFFFFF : shift_reg = 6'b000010; 
+      26'h2FFFFFF : shift_reg = 6'b000100;
+      26'h3FFFFFF : shift_reg = 6'b001000;
+      26'h4FFFFFF : shift_reg = 6'b010000;
+      26'h5FFFFFF : shift_reg = 6'b100000; 
+      26'h6FFFFFF : shift_reg = 6'b010000;
+      26'h7FFFFFF : shift_reg = 6'b001000; 
+      26'h8FFFFFF : shift_reg = 6'b000100; 
+      26'h9FFFFFF : shift_reg = 6'b000010; 
+      26'hAFFFFFF : shift_reg = 6'b000001; 
       default : begin
         shift_reg = 6'b000000; 
       end

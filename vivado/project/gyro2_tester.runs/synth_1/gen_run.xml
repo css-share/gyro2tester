@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650085230" LaunchIncrCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650308065" LaunchIncrCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="VDS-TIMING-PB" Name="design_2_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="design_2_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="design_2_wrapper.dcp"/>
@@ -58,6 +58,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/new/gyro_constraints.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -79,12 +80,12 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_led_driver_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_3_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_BiDirChannels_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_led_driver_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_data_processor_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_xbar_0"/>

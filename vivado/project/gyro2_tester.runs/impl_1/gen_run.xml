@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650085236">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650308065">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BITSTR-SYSDEF" Name="design_2_wrapper.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
@@ -124,6 +124,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/new/gyro_constraints.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -153,12 +154,12 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_led_driver_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_3_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_BiDirChannels_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_led_driver_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_data_processor_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_xbar_0"/>
