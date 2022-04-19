@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Sun Apr 17 22:54:37 2022
+//Date        : Mon Apr 18 23:50:16 2022
 //Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2_wrapper.bd
 //Design      : design_2_wrapper
@@ -45,7 +45,7 @@ module design_2_wrapper
     MCK_N,
     MCK_P,
     SPI_CSN,
-    SPI_D,
+    SPI_DN,
     SPI_SCK,
     SYNC_CK);
   inout [14:0]DDR_addr;
@@ -83,7 +83,7 @@ module design_2_wrapper
   output MCK_N;
   output MCK_P;
   output SPI_CSN;
-  inout SPI_D;
+  inout SPI_DN;
   output SPI_SCK;
   output SYNC_CK;
 
@@ -122,7 +122,7 @@ module design_2_wrapper
   wire MCK_N;
   wire MCK_P;
   wire SPI_CSN;
-  wire SPI_D;
+  wire SPI_DN;
   wire SPI_SCK;
   wire SYNC_CK;
 
@@ -162,7 +162,7 @@ module design_2_wrapper
         .MCK_N(MCK_N),
         .MCK_P(MCK_P),
         .SPI_CSN(SPI_CSN),
-        .SPI_D(SPI_D),
+        .SPI_DN(SPI_DN),
         .SPI_SCK(SPI_SCK),
         .SYNC_CK(SYNC_CK));
 endmodule

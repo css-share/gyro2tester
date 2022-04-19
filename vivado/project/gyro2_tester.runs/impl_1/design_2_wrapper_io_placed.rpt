@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date                      : Mon Apr 18 11:59:38 2022
-| Host                      : xsjl24914 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date                      : Mon Apr 18 23:56:20 2022
+| Host                      : xsjl20352 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command                   : report_io -file design_2_wrapper_io_placed.rpt
 | Design                    : design_2_wrapper
 | Device                    : xc7z020
@@ -53,7 +53,7 @@ Table of Contents
 | A16        | SPI_SCK           | High Range | IO_L9P_T1_DQS_AD3P_35   | OUTPUT      | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A17        | SPI_CSN           | High Range | IO_L9N_T1_DQS_AD3N_35   | OUTPUT      | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A18        | DSYNC             | High Range | IO_L10P_T1_AD11P_35     | OUTPUT      | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| A19        | SPI_D             | High Range | IO_L10N_T1_AD11N_35     | BIDIR       | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| A19        | SPI_DN            | High Range | IO_L10N_T1_AD11N_35     | BIDIR       | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A20        |                   | High Range | VCCO_35                 | VCCO        |                   |      35 |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | A21        | SYNC_CK           | High Range | IO_L15P_T2_DQS_AD12P_35 | OUTPUT      | LVCMOS18          |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A22        |                   | High Range | IO_L15N_T2_DQS_AD12N_35 | User IO     |                   |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

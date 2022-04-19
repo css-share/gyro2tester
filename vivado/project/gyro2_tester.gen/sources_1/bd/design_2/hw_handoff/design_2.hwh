@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Apr 17 22:54:43 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 18 23:50:21 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_2" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -27,11 +27,6 @@
     <PORT DIR="O" NAME="DTX" SIGIS="data" SIGNAME="BiDirChannels_0_DTX">
       <CONNECTIONS>
         <CONNECTION INSTANCE="BiDirChannels_0" PORT="DTX"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="SPI_D" SIGIS="data" SIGNAME="External_Ports_SPI_D">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="SPI_ip_0" PORT="SPI_D"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="50000000" DIR="O" NAME="SYNC_CK" SIGIS="clk" SIGNAME="BiDirChannels_0_SYNCK">
@@ -87,6 +82,11 @@
     <PORT DIR="O" NAME="LED7" SIGIS="undef" SIGNAME="led_driver_0_led5">
       <CONNECTIONS>
         <CONNECTION INSTANCE="led_driver_0" PORT="led5"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="SPI_DN" SIGIS="undef" SIGNAME="External_Ports_SPI_DN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="iobuf_xil_0" PORT="IO"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CAS_n">
@@ -2515,7 +2515,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="18" FULLNAME="/SPI_ip_0" HWVERSION="1.0" INSTANCE="SPI_ip_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi4_pl_SPI_ip" VLNV="xilinx.com:user:axi4_pl_SPI_ip:1.0">
+    <MODULE COREREVISION="19" FULLNAME="/SPI_ip_0" HWVERSION="1.0" INSTANCE="SPI_ip_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi4_pl_SPI_ip" VLNV="xilinx.com:user:axi4_pl_SPI_ip:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -2539,9 +2539,19 @@
             <CONNECTION INSTANCE="clk_reset_domain" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="IO" NAME="SPI_D" SIGIS="undef" SIGNAME="External_Ports_SPI_D">
+        <PORT DIR="O" NAME="spi_oen" SIGIS="undef" SIGNAME="SPI_ip_0_spi_oen">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="SPI_D"/>
+            <CONNECTION INSTANCE="iobuf_xil_0" PORT="T"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="spi_in" SIGIS="undef" SIGNAME="iobuf_xil_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="iobuf_xil_0" PORT="O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="spi_out" SIGIS="undef" SIGNAME="SPI_ip_0_spi_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="iobuf_xil_0" PORT="I"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="SPI_SCK" SIGIS="undef" SIGNAME="SPI_ip_0_SPI_SCK">
@@ -2709,7 +2719,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="18" FULLNAME="/TxFIFO" HWVERSION="2.0" INSTANCE="TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
+    <MODULE COREREVISION="19" FULLNAME="/TxFIFO" HWVERSION="2.0" INSTANCE="TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -7477,7 +7487,6 @@
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M05_ARESETN"/>
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M06_ARESETN"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="SPI_ip_0" PORT="rstn"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="s_axi_ctrl_aresetn"/>
@@ -7491,8 +7500,9 @@
             <CONNECTION INSTANCE="axis_switch_3" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M07_ARESETN"/>
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M08_ARESETN"/>
-            <CONNECTION INSTANCE="TxFIFO" PORT="rstn"/>
             <CONNECTION INSTANCE="RxFIFO" PORT="rst_n"/>
+            <CONNECTION INSTANCE="SPI_ip_0" PORT="rstn"/>
+            <CONNECTION INSTANCE="TxFIFO" PORT="rstn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -7618,6 +7628,36 @@
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/iobuf_xil_0" HWVERSION="1.0" INSTANCE="iobuf_xil_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="iobuf_xil" VLNV="xilinx.com:module_ref:iobuf_xil:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_2_iobuf_xil_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I" SIGIS="undef" SIGNAME="SPI_ip_0_spi_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_ip_0" PORT="spi_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="undef" SIGNAME="iobuf_xil_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_ip_0" PORT="spi_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="T" SIGIS="undef" SIGNAME="SPI_ip_0_spi_oen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_ip_0" PORT="spi_oen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" NAME="IO" SIGIS="undef" SIGNAME="External_Ports_SPI_DN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="SPI_DN"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/led_driver_0" HWVERSION="1.0" INSTANCE="led_driver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="led_driver" VLNV="xilinx.com:module_ref:led_driver:1.0">
       <DOCUMENTS/>
@@ -9017,7 +9057,6 @@
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_s2mm_aclk"/>
-            <CONNECTION INSTANCE="SPI_ip_0" PORT="clk"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="axis_switch_1" PORT="aclk"/>
             <CONNECTION INSTANCE="axis_switch_0" PORT="s_axi_ctrl_aclk"/>
@@ -9034,8 +9073,9 @@
             <CONNECTION INSTANCE="axis_switch_3" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M07_ACLK"/>
             <CONNECTION INSTANCE="AXI_Register_Demux" PORT="M08_ACLK"/>
-            <CONNECTION INSTANCE="TxFIFO" PORT="clk"/>
             <CONNECTION INSTANCE="RxFIFO" PORT="clk"/>
+            <CONNECTION INSTANCE="SPI_ip_0" PORT="clk"/>
+            <CONNECTION INSTANCE="TxFIFO" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">

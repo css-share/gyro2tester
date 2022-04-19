@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xEF39FC9C4314C6BC",
+      "boundary_crc": "0xDEF6315E3413BB8E",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../gyro2_tester.gen/sources_1/bd/design_2",
       "name": "design_2",
@@ -28,7 +28,6 @@
       },
       "xlconcat_1": "",
       "axi_dma_0": "",
-      "SPI_ip_0": "",
       "axis_switch_0": "",
       "axis_switch_1": "",
       "data_processor_0": "",
@@ -39,9 +38,11 @@
       "BiDirChannels_0": "",
       "axis_switch_2": "",
       "axis_switch_3": "",
-      "TxFIFO": "",
       "RxFIFO": "",
-      "led_driver_0": ""
+      "led_driver_0": "",
+      "SPI_ip_0": "",
+      "iobuf_xil_0": "",
+      "TxFIFO": ""
     },
     "interface_ports": {
       "DDR": {
@@ -162,16 +163,6 @@
           }
         }
       },
-      "SPI_D": {
-        "type": "data",
-        "direction": "IO",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
-      },
       "SYNC_CK": {
         "type": "clk",
         "direction": "O",
@@ -273,6 +264,9 @@
       },
       "LED7": {
         "direction": "O"
+      },
+      "SPI_DN": {
+        "direction": "IO"
       }
     },
     "components": {
@@ -1500,12 +1494,6 @@
             }
           }
         }
-      },
-      "SPI_ip_0": {
-        "vlnv": "xilinx.com:user:axi4_pl_SPI_ip:1.0",
-        "xci_name": "design_2_SPI_ip_0_0",
-        "xci_path": "ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci",
-        "inst_hier_path": "SPI_ip_0"
       },
       "axis_switch_0": {
         "vlnv": "xilinx.com:ip:axis_switch:1.1",
@@ -3672,17 +3660,6 @@
           }
         }
       },
-      "TxFIFO": {
-        "vlnv": "user.org:user:axis_stream_txfifo:2.0",
-        "xci_name": "design_2_axis_stream_txfifo_0_2",
-        "xci_path": "ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci",
-        "inst_hier_path": "TxFIFO",
-        "parameters": {
-          "ADDR_WIDTH": {
-            "value": "11"
-          }
-        }
-      },
       "RxFIFO": {
         "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
         "xci_name": "design_2_RxFIFO_0",
@@ -3750,6 +3727,48 @@
           },
           "led5": {
             "direction": "O"
+          }
+        }
+      },
+      "SPI_ip_0": {
+        "vlnv": "xilinx.com:user:axi4_pl_SPI_ip:1.0",
+        "xci_name": "design_2_SPI_ip_0_0",
+        "xci_path": "ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci",
+        "inst_hier_path": "SPI_ip_0"
+      },
+      "iobuf_xil_0": {
+        "vlnv": "xilinx.com:module_ref:iobuf_xil:1.0",
+        "xci_name": "design_2_iobuf_xil_0_0",
+        "xci_path": "ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci",
+        "inst_hier_path": "iobuf_xil_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "iobuf_xil",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "I": {
+            "direction": "I"
+          },
+          "O": {
+            "direction": "O"
+          },
+          "T": {
+            "direction": "I"
+          },
+          "IO": {
+            "direction": "IO"
+          }
+        }
+      },
+      "TxFIFO": {
+        "vlnv": "user.org:user:axis_stream_txfifo:2.0",
+        "xci_name": "design_2_axis_stream_txfifo_0_2",
+        "xci_path": "ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci",
+        "inst_hier_path": "TxFIFO",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "11"
           }
         }
       }
@@ -3958,8 +3977,8 @@
       },
       "Net": {
         "ports": [
-          "SPI_D",
-          "SPI_ip_0/SPI_D"
+          "SPI_DN",
+          "iobuf_xil_0/IO"
         ]
       },
       "RxFIFO_rxfifo_full": {
@@ -3980,6 +3999,18 @@
           "SPI_SCK"
         ]
       },
+      "SPI_ip_0_spi_oen": {
+        "ports": [
+          "SPI_ip_0/spi_oen",
+          "iobuf_xil_0/T"
+        ]
+      },
+      "SPI_ip_0_spi_out": {
+        "ports": [
+          "SPI_ip_0/spi_out",
+          "iobuf_xil_0/I"
+        ]
+      },
       "TxFIFO_txfifo_full": {
         "ports": [
           "TxFIFO/txfifo_full",
@@ -3996,6 +4027,12 @@
         "ports": [
           "axi_dma_0/s2mm_introut",
           "xlconcat_1/In1"
+        ]
+      },
+      "iobuf_xil_0_O": {
+        "ports": [
+          "iobuf_xil_0/O",
+          "SPI_ip_0/spi_in"
         ]
       },
       "led_driver_0_led0": {
@@ -4055,7 +4092,6 @@
           "axi_dma_0/s_axi_lite_aclk",
           "axi_dma_0/m_axi_mm2s_aclk",
           "axi_dma_0/m_axi_s2mm_aclk",
-          "SPI_ip_0/clk",
           "axis_switch_1/s_axi_ctrl_aclk",
           "axis_switch_1/aclk",
           "axis_switch_0/s_axi_ctrl_aclk",
@@ -4072,8 +4108,9 @@
           "axis_switch_3/s_axi_ctrl_aclk",
           "AXI_Register_Demux/M07_ACLK",
           "AXI_Register_Demux/M08_ACLK",
-          "TxFIFO/clk",
-          "RxFIFO/clk"
+          "RxFIFO/clk",
+          "SPI_ip_0/clk",
+          "TxFIFO/clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -4095,7 +4132,6 @@
           "AXI_Register_Demux/M05_ARESETN",
           "AXI_Register_Demux/M06_ARESETN",
           "axi_dma_0/axi_resetn",
-          "SPI_ip_0/rstn",
           "axis_switch_1/s_axi_ctrl_aresetn",
           "axis_switch_1/aresetn",
           "axis_switch_0/s_axi_ctrl_aresetn",
@@ -4109,8 +4145,9 @@
           "axis_switch_3/s_axi_ctrl_aresetn",
           "AXI_Register_Demux/M07_ARESETN",
           "AXI_Register_Demux/M08_ARESETN",
-          "TxFIFO/rstn",
-          "RxFIFO/rst_n"
+          "RxFIFO/rst_n",
+          "SPI_ip_0/rstn",
+          "TxFIFO/rstn"
         ]
       },
       "txclk_reset_domain_peripheral_aresetn": {

@@ -48,16 +48,18 @@
 
 
 // IP VLNV: xilinx.com:user:axi4_pl_SPI_ip:1.0
-// IP Revision: 18
+// IP Revision: 19
 
 (* X_CORE_INFO = "SPI_ip_v1_0,Vivado 2021.2" *)
 (* CHECK_LICENSE_TYPE = "design_2_SPI_ip_0_0,SPI_ip_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_2_SPI_ip_0_0,SPI_ip_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi4_pl_SPI_ip,x_ipVersion=1.0,x_ipCoreRevision=18,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "design_2_SPI_ip_0_0,SPI_ip_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi4_pl_SPI_ip,x_ipVersion=1.0,x_ipCoreRevision=19,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_2_SPI_ip_0_0 (
   clk,
   rstn,
-  SPI_D,
+  spi_oen,
+  spi_in,
+  spi_out,
   SPI_SCK,
   SPI_CS,
   s00_axi_awaddr,
@@ -87,7 +89,9 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rstn RST" *)
 input wire rstn;
-inout wire SPI_D;
+output wire spi_oen;
+input wire spi_in;
+output wire spi_out;
 output wire SPI_SCK;
 output wire SPI_CS;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
@@ -137,7 +141,9 @@ input wire s00_axi_rready;
   ) inst (
     .clk(clk),
     .rstn(rstn),
-    .SPI_D(SPI_D),
+    .spi_oen(spi_oen),
+    .spi_in(spi_in),
+    .spi_out(spi_out),
     .SPI_SCK(SPI_SCK),
     .SPI_CS(SPI_CS),
     .s00_axi_awaddr(s00_axi_awaddr),

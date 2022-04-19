@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:axi4_pl_SPI_ip:1.0
-// IP Revision: 18
+// IP Revision: 19
 
 `timescale 1ns/1ps
 
@@ -56,7 +56,9 @@
 module design_2_SPI_ip_0_0 (
   clk,
   rstn,
-  SPI_D,
+  spi_oen,
+  spi_in,
+  spi_out,
   SPI_SCK,
   SPI_CS,
   s00_axi_awaddr,
@@ -86,7 +88,9 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rstn RST" *)
 input wire rstn;
-inout wire SPI_D;
+output wire spi_oen;
+input wire spi_in;
+output wire spi_out;
 output wire SPI_SCK;
 output wire SPI_CS;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
@@ -136,7 +140,9 @@ input wire s00_axi_rready;
   ) inst (
     .clk(clk),
     .rstn(rstn),
-    .SPI_D(SPI_D),
+    .spi_oen(spi_oen),
+    .spi_in(spi_in),
+    .spi_out(spi_out),
     .SPI_SCK(SPI_SCK),
     .SPI_CS(SPI_CS),
     .s00_axi_awaddr(s00_axi_awaddr),

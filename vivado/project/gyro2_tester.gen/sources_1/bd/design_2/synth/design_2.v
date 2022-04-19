@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Sun Apr 17 22:54:36 2022
+//Date        : Mon Apr 18 23:50:15 2022
 //Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=18,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=19,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
 module design_2
    (DDR_addr,
     DDR_ba,
@@ -46,7 +46,7 @@ module design_2
     MCK_N,
     MCK_P,
     SPI_CSN,
-    SPI_D,
+    SPI_DN,
     SPI_SCK,
     SYNC_CK);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
@@ -84,7 +84,7 @@ module design_2
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCK_N CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCK_N, CLK_DOMAIN design_2_BiDirChannels_0_0_MCK_N, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output MCK_N;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCK_P CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCK_P, CLK_DOMAIN design_2_BiDirChannels_0_0_MCK_P, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output MCK_P;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_CSN DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_CSN, LAYERED_METADATA undef" *) output SPI_CSN;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_D DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_D, LAYERED_METADATA undef" *) inout SPI_D;
+  inout SPI_DN;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SPI_SCK DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SPI_SCK, LAYERED_METADATA undef" *) output SPI_SCK;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYNC_CK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYNC_CK, CLK_DOMAIN design_2_BiDirChannels_0_0_SYNCK, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output SYNC_CK;
 
@@ -173,6 +173,8 @@ module design_2
   wire RxFIFO_rxfifo_full;
   wire SPI_ip_0_SPI_CS;
   wire SPI_ip_0_SPI_SCK;
+  wire SPI_ip_0_spi_oen;
+  wire SPI_ip_0_spi_out;
   wire [47:0]TxFIFO_M00_AXIS_TDATA;
   wire TxFIFO_M00_AXIS_TLAST;
   wire [0:0]TxFIFO_M00_AXIS_TREADY;
@@ -249,6 +251,7 @@ module design_2
   wire data_processor_0_m_axis_TLAST;
   wire [0:0]data_processor_0_m_axis_TREADY;
   wire data_processor_0_m_axis_TVALID;
+  wire iobuf_xil_0_O;
   wire led_driver_0_led0;
   wire led_driver_0_led1;
   wire led_driver_0_led2;
@@ -754,7 +757,6 @@ module design_2
         .s00_axis_tvalid(axis_switch_3_M00_AXIS_TVALID));
   design_2_SPI_ip_0_0 SPI_ip_0
        (.SPI_CS(SPI_ip_0_SPI_CS),
-        .SPI_D(SPI_D),
         .SPI_SCK(SPI_ip_0_SPI_SCK),
         .clk(processing_system7_0_FCLK_CLK0),
         .rstn(rst_ps7_0_100M_peripheral_aresetn),
@@ -776,7 +778,10 @@ module design_2
         .s00_axi_wdata(ps7_0_axi_periph_M01_AXI_WDATA),
         .s00_axi_wready(ps7_0_axi_periph_M01_AXI_WREADY),
         .s00_axi_wstrb(ps7_0_axi_periph_M01_AXI_WSTRB),
-        .s00_axi_wvalid(ps7_0_axi_periph_M01_AXI_WVALID));
+        .s00_axi_wvalid(ps7_0_axi_periph_M01_AXI_WVALID),
+        .spi_in(iobuf_xil_0_O),
+        .spi_oen(SPI_ip_0_spi_oen),
+        .spi_out(SPI_ip_0_spi_out));
   design_2_axis_stream_txfifo_0_2 TxFIFO
        (.clk(processing_system7_0_FCLK_CLK0),
         .m00_axis_tdata(TxFIFO_M00_AXIS_TDATA),
@@ -1087,6 +1092,11 @@ module design_2
         .s_axis_tlast(axis_switch_1_M00_AXIS_TLAST),
         .s_axis_tready(axis_switch_1_M00_AXIS_TREADY),
         .s_axis_tvalid(axis_switch_1_M00_AXIS_TVALID));
+  design_2_iobuf_xil_0_0 iobuf_xil_0
+       (.I(SPI_ip_0_spi_out),
+        .IO(SPI_DN),
+        .O(iobuf_xil_0_O),
+        .T(SPI_ip_0_spi_oen));
   design_2_led_driver_0_0 led_driver_0
        (.clk(BiDirChannels_0_txclk),
         .led0(led_driver_0_led0),
