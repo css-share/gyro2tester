@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;dmaTest/src/helloworld.c&apos;" deleteContents="false" description="Delete resource &apos;dmaTest/src/helloworld.c&apos;" element1="/dmaTest/src/helloworld.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1650089065556"/>&#x0A;<refactoring comment="Delete resource &apos;dmaTest/src/helloworld_gyro.c&apos;" deleteContents="false" description="Delete resource &apos;dmaTest/src/helloworld_gyro.c&apos;" element1="/dmaTest/src/helloworld_gyro.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1650089420048"/>
-</session>

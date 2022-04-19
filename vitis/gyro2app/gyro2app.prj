@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="gyro2app" location="C:/Xilinx_projects/gyro2tester/vitis/gyro2app" platform="C:/Xilinx_projects/gyro2tester/vitis/gyro2spi_ptfmPrj/export/gyro2spi_ptfmPrj/gyro2spi_ptfmPrj.xpfm" platformUID="xilinx:zedboard::0.0(custom)" systemProject="gyro2app_system" sysConfig="gyro2spi_ptfmPrj" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="d0dba154ddbbf748f965e5099f035f46">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1499070579">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.600966430" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

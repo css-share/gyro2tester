@@ -1,6 +1,6 @@
 @echo off
 
-set vitis_root=C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper
+set vitis_root=C:\Xilinx_projects\gyro2tester\vitis\gyro2spi_ptfmPrj
 
 robocopy %vitis_root%\makefiles_fixes\zynq_fsbl\BiDirChannels_v1_0 %vitis_root%\zynq_fsbl\zynq_fsbl_bsp\ps7_cortexa9_0\libsrc\BiDirChannels_v1_0\src Makefile
 robocopy %vitis_root%\makefiles_fixes\zynq_fsbl\axis_stream_fifo_v1_0 %vitis_root%\zynq_fsbl\zynq_fsbl_bsp\ps7_cortexa9_0\libsrc\axis_stream_fifo_v1_0\src Makefile
