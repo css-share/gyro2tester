@@ -5411,3 +5411,9 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-7: Launch
 
 !ENTRY com.xilinx.sdk.utils 0 0 2022-04-18 21:56:30.846
 !MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-7: Launching Debugger_gyro2app-GDB
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-04-18 22:50:25.409
+!MESSAGE XSCT Command: [disconnect tcfchan#3], Thread: Thread-278
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-04-18 22:50:25.416
+!MESSAGE XSCT command with result: [disconnect tcfchan#3], Result: [null, ]. Thread: Thread-278

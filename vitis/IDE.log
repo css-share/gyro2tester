@@ -88,3 +88,4 @@ dow C:/Xilinx_projects/gyro2tester/vitis/gyro2app/Debug/gyro2app.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
+22:50:25 INFO  : Disconnected from the channel tcfchan#3.
