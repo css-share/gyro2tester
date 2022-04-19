@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;dmaTest/src/helloworld_gyro_1.c&apos; to &apos;helloworld_gyro.c&apos;" description="Rename resource &apos;helloworld_gyro_1.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/helloworld_gyro_1.c" name="helloworld_gyro.c" stamp="1650089439664" updateReferences="true"/>
-</session>
