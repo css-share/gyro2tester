@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650351029" LaunchIncrCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1650437630" LaunchIncrCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="VDS-TIMING-PB" Name="design_2_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="design_2_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="design_2_wrapper.dcp"/>
@@ -19,13 +19,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../ip_repo/common/led_driver.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../ip_repo/common/iobuf.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -94,15 +87,21 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_blk_mem_0_odd_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_blk_mem_0_even_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_blk_mem_1_even_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_blk_mem_1_even_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_blk_mem_0_even_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_iobuf_xil_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_2_blk_mem_2_odd_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_SPI_ip_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_led_driver_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_RxFIFO_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_3_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_axis_stream_txfifo_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_BiDirChannels_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_data_processor_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_2_iobuf_xil_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_2_axis_switch_0_0"/>

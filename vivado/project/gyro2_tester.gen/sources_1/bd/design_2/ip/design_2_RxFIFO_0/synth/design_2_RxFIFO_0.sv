@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:axis_stream_fifo:1.0
-// IP Revision: 61
+// IP Revision: 68
 
 (* X_CORE_INFO = "axis_stream_fifo_v1_0,Vivado 2021.2" *)
 (* CHECK_LICENSE_TYPE = "design_2_RxFIFO_0,axis_stream_fifo_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_2_RxFIFO_0,axis_stream_fifo_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axis_stream_fifo,x_ipVersion=1.0,x_ipCoreRevision=61,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S00_AXIS_TDATA_WIDTH=48,C_M00_AXIS_TDATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "design_2_RxFIFO_0,axis_stream_fifo_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axis_stream_fifo,x_ipVersion=1.0,x_ipCoreRevision=68,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_S00_AXIS_TDATA_WIDTH=48,C_M00_AXIS_TDATA_WIDTH=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_2_RxFIFO_0 (
   clk,
@@ -77,6 +77,48 @@ module design_2_RxFIFO_0 (
   s00_axi_rresp,
   s00_axi_rvalid,
   s00_axi_rready,
+  bram0_even_addr_a,
+  bram0_even_data_a,
+  bram0_even_en_a,
+  bram0_even_we_a,
+  bram0_even_addr_b,
+  bram0_even_en_b,
+  bram0_even_rdata_b,
+  bram0_odd_addr_a,
+  bram0_odd_data_a,
+  bram0_odd_en_a,
+  bram0_odd_we_a,
+  bram0_odd_addr_b,
+  bram0_odd_en_b,
+  bram0_odd_rdata_b,
+  bram1_even_addr_a,
+  bram1_even_data_a,
+  bram1_even_en_a,
+  bram1_even_we_a,
+  bram1_even_addr_b,
+  bram1_even_en_b,
+  bram1_even_rdata_b,
+  bram1_odd_addr_a,
+  bram1_odd_data_a,
+  bram1_odd_en_a,
+  bram1_odd_we_a,
+  bram1_odd_addr_b,
+  bram1_odd_en_b,
+  bram1_odd_rdata_b,
+  bram2_even_addr_a,
+  bram2_even_data_a,
+  bram2_even_en_a,
+  bram2_even_we_a,
+  bram2_even_addr_b,
+  bram2_even_en_b,
+  bram2_even_rdata_b,
+  bram2_odd_addr_a,
+  bram2_odd_data_a,
+  bram2_odd_en_a,
+  bram2_odd_we_a,
+  bram2_odd_addr_b,
+  bram2_odd_en_b,
+  bram2_odd_rdata_b,
   s00_axis_tdata,
   s00_axis_tstrb,
   s00_axis_tvalid,
@@ -136,6 +178,48 @@ output wire s00_axi_rvalid;
 m7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *)
 input wire s00_axi_rready;
+output wire [12 : 0] bram0_even_addr_a;
+output wire [15 : 0] bram0_even_data_a;
+output wire bram0_even_en_a;
+output wire bram0_even_we_a;
+output wire [12 : 0] bram0_even_addr_b;
+output wire bram0_even_en_b;
+input wire [15 : 0] bram0_even_rdata_b;
+output wire [12 : 0] bram0_odd_addr_a;
+output wire [15 : 0] bram0_odd_data_a;
+output wire bram0_odd_en_a;
+output wire bram0_odd_we_a;
+output wire [12 : 0] bram0_odd_addr_b;
+output wire bram0_odd_en_b;
+input wire [15 : 0] bram0_odd_rdata_b;
+output wire [12 : 0] bram1_even_addr_a;
+output wire [15 : 0] bram1_even_data_a;
+output wire bram1_even_en_a;
+output wire bram1_even_we_a;
+output wire [12 : 0] bram1_even_addr_b;
+output wire bram1_even_en_b;
+input wire [15 : 0] bram1_even_rdata_b;
+output wire [12 : 0] bram1_odd_addr_a;
+output wire [15 : 0] bram1_odd_data_a;
+output wire bram1_odd_en_a;
+output wire bram1_odd_we_a;
+output wire [12 : 0] bram1_odd_addr_b;
+output wire bram1_odd_en_b;
+input wire [15 : 0] bram1_odd_rdata_b;
+output wire [12 : 0] bram2_even_addr_a;
+output wire [15 : 0] bram2_even_data_a;
+output wire bram2_even_en_a;
+output wire bram2_even_we_a;
+output wire [12 : 0] bram2_even_addr_b;
+output wire bram2_even_en_b;
+input wire [15 : 0] bram2_even_rdata_b;
+output wire [12 : 0] bram2_odd_addr_a;
+output wire [15 : 0] bram2_odd_data_a;
+output wire bram2_odd_en_a;
+output wire bram2_odd_we_a;
+output wire [12 : 0] bram2_odd_addr_b;
+output wire bram2_odd_en_b;
+input wire [15 : 0] bram2_odd_rdata_b;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TDATA" *)
 input wire [47 : 0] s00_axis_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S00_AXIS TSTRB" *)
@@ -187,6 +271,48 @@ output wire m00_axis_tlast;
     .s00_axi_rresp(s00_axi_rresp),
     .s00_axi_rvalid(s00_axi_rvalid),
     .s00_axi_rready(s00_axi_rready),
+    .bram0_even_addr_a(bram0_even_addr_a),
+    .bram0_even_data_a(bram0_even_data_a),
+    .bram0_even_en_a(bram0_even_en_a),
+    .bram0_even_we_a(bram0_even_we_a),
+    .bram0_even_addr_b(bram0_even_addr_b),
+    .bram0_even_en_b(bram0_even_en_b),
+    .bram0_even_rdata_b(bram0_even_rdata_b),
+    .bram0_odd_addr_a(bram0_odd_addr_a),
+    .bram0_odd_data_a(bram0_odd_data_a),
+    .bram0_odd_en_a(bram0_odd_en_a),
+    .bram0_odd_we_a(bram0_odd_we_a),
+    .bram0_odd_addr_b(bram0_odd_addr_b),
+    .bram0_odd_en_b(bram0_odd_en_b),
+    .bram0_odd_rdata_b(bram0_odd_rdata_b),
+    .bram1_even_addr_a(bram1_even_addr_a),
+    .bram1_even_data_a(bram1_even_data_a),
+    .bram1_even_en_a(bram1_even_en_a),
+    .bram1_even_we_a(bram1_even_we_a),
+    .bram1_even_addr_b(bram1_even_addr_b),
+    .bram1_even_en_b(bram1_even_en_b),
+    .bram1_even_rdata_b(bram1_even_rdata_b),
+    .bram1_odd_addr_a(bram1_odd_addr_a),
+    .bram1_odd_data_a(bram1_odd_data_a),
+    .bram1_odd_en_a(bram1_odd_en_a),
+    .bram1_odd_we_a(bram1_odd_we_a),
+    .bram1_odd_addr_b(bram1_odd_addr_b),
+    .bram1_odd_en_b(bram1_odd_en_b),
+    .bram1_odd_rdata_b(bram1_odd_rdata_b),
+    .bram2_even_addr_a(bram2_even_addr_a),
+    .bram2_even_data_a(bram2_even_data_a),
+    .bram2_even_en_a(bram2_even_en_a),
+    .bram2_even_we_a(bram2_even_we_a),
+    .bram2_even_addr_b(bram2_even_addr_b),
+    .bram2_even_en_b(bram2_even_en_b),
+    .bram2_even_rdata_b(bram2_even_rdata_b),
+    .bram2_odd_addr_a(bram2_odd_addr_a),
+    .bram2_odd_data_a(bram2_odd_data_a),
+    .bram2_odd_en_a(bram2_odd_en_a),
+    .bram2_odd_we_a(bram2_odd_we_a),
+    .bram2_odd_addr_b(bram2_odd_addr_b),
+    .bram2_odd_en_b(bram2_odd_en_b),
+    .bram2_odd_rdata_b(bram2_odd_rdata_b),
     .s00_axis_tdata(s00_axis_tdata),
     .s00_axis_tstrb(s00_axis_tstrb),
     .s00_axis_tvalid(s00_axis_tvalid),

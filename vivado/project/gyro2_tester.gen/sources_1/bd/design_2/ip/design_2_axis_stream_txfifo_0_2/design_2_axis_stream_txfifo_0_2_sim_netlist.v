@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Mon Apr 18 23:52:44 2022
-// Host        : xsjl23779 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+// Date        : Tue Apr 19 13:55:48 2022
+// Host        : xsjl24913 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode funcsim
 //               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
 // Design      : design_2_axis_stream_txfifo_0_2
@@ -28977,12 +28977,12 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I4(slv_reg1[1]),
         .O(reg_data_out[1]));
   LUT4 #(
-    .INIT(16'h3202)) 
+    .INIT(16'h3B38)) 
     \axi_rdata[20]_i_1 
-       (.I0(\slv_reg0_reg_n_0_[20] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .I3(slv_reg1[20]),
+       (.I0(slv_reg1[20]),
+        .I1(axi_araddr[2]),
+        .I2(axi_araddr[3]),
+        .I3(\slv_reg0_reg_n_0_[20] ),
         .O(reg_data_out[20]));
   LUT4 #(
     .INIT(16'h3202)) 
@@ -29009,12 +29009,12 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I3(slv_reg1[23]),
         .O(reg_data_out[23]));
   LUT4 #(
-    .INIT(16'h3202)) 
+    .INIT(16'h3B38)) 
     \axi_rdata[24]_i_1 
-       (.I0(\slv_reg0_reg_n_0_[24] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .I3(slv_reg1[24]),
+       (.I0(slv_reg1[24]),
+        .I1(axi_araddr[2]),
+        .I2(axi_araddr[3]),
+        .I3(\slv_reg0_reg_n_0_[24] ),
         .O(reg_data_out[24]));
   LUT4 #(
     .INIT(16'h3202)) 
@@ -29041,12 +29041,12 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I3(slv_reg1[27]),
         .O(reg_data_out[27]));
   LUT4 #(
-    .INIT(16'h3202)) 
+    .INIT(16'h3B38)) 
     \axi_rdata[28]_i_1 
-       (.I0(\slv_reg0_reg_n_0_[28] ),
-        .I1(axi_araddr[3]),
-        .I2(axi_araddr[2]),
-        .I3(slv_reg1[28]),
+       (.I0(slv_reg1[28]),
+        .I1(axi_araddr[2]),
+        .I2(axi_araddr[3]),
+        .I3(\slv_reg0_reg_n_0_[28] ),
         .O(reg_data_out[28]));
   LUT4 #(
     .INIT(16'h3202)) 

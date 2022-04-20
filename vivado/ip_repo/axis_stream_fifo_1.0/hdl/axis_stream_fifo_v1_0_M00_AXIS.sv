@@ -172,7 +172,7 @@
 	      axis_tvalid_delay <= 1'b0;                                                               
 	      axis_tlast_delay <= 1'b0;                                                                
 	    end                                                                                        
-	  else                                                                                         
+	  else if (read_en)                                                                                        
 	    begin                                                                                      
 	      axis_tvalid_delay <= axis_tvalid;                                                        
 	      axis_tlast_delay <= axis_tlast;                                                          

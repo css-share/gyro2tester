@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Mon Apr 18 23:50:15 2022
+//Date        : Tue Apr 19 23:53:31 2022
 //Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=30,numReposBlks=19,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=36,numReposBlks=25,numNonXlnxBlks=1,numHierBlks=11,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
 module design_2
    (DDR_addr,
     DDR_ba,
@@ -170,6 +170,42 @@ module design_2
   wire [1:1]RxFIFO_M00_AXIS_TREADY;
   wire [3:0]RxFIFO_M00_AXIS_TSTRB;
   wire RxFIFO_M00_AXIS_TVALID;
+  wire [12:0]RxFIFO_bram0_even_addr_a;
+  wire [12:0]RxFIFO_bram0_even_addr_b;
+  wire [15:0]RxFIFO_bram0_even_data_a;
+  wire RxFIFO_bram0_even_en_a;
+  wire RxFIFO_bram0_even_en_b;
+  wire RxFIFO_bram0_even_we_a;
+  wire [12:0]RxFIFO_bram0_odd_addr_a;
+  wire [12:0]RxFIFO_bram0_odd_addr_b;
+  wire [15:0]RxFIFO_bram0_odd_data_a;
+  wire RxFIFO_bram0_odd_en_a;
+  wire RxFIFO_bram0_odd_en_b;
+  wire RxFIFO_bram0_odd_we_a;
+  wire [12:0]RxFIFO_bram1_even_addr_a;
+  wire [12:0]RxFIFO_bram1_even_addr_b;
+  wire [15:0]RxFIFO_bram1_even_data_a;
+  wire RxFIFO_bram1_even_en_a;
+  wire RxFIFO_bram1_even_en_b;
+  wire RxFIFO_bram1_even_we_a;
+  wire [12:0]RxFIFO_bram1_odd_addr_a;
+  wire [12:0]RxFIFO_bram1_odd_addr_b;
+  wire [15:0]RxFIFO_bram1_odd_data_a;
+  wire RxFIFO_bram1_odd_en_a;
+  wire RxFIFO_bram1_odd_en_b;
+  wire RxFIFO_bram1_odd_we_a;
+  wire [12:0]RxFIFO_bram2_even_addr_a;
+  wire [12:0]RxFIFO_bram2_even_addr_b;
+  wire [15:0]RxFIFO_bram2_even_data_a;
+  wire RxFIFO_bram2_even_en_a;
+  wire RxFIFO_bram2_even_en_b;
+  wire RxFIFO_bram2_even_we_a;
+  wire [12:0]RxFIFO_bram2_odd_addr_a;
+  wire [12:0]RxFIFO_bram2_odd_addr_b;
+  wire [15:0]RxFIFO_bram2_odd_data_a;
+  wire RxFIFO_bram2_odd_en_a;
+  wire RxFIFO_bram2_odd_en_b;
+  wire RxFIFO_bram2_odd_we_a;
   wire RxFIFO_rxfifo_full;
   wire SPI_ip_0_SPI_CS;
   wire SPI_ip_0_SPI_SCK;
@@ -246,6 +282,12 @@ module design_2
   wire axis_switch_3_M00_AXIS_TREADY;
   wire [5:0]axis_switch_3_M00_AXIS_TSTRB;
   wire [0:0]axis_switch_3_M00_AXIS_TVALID;
+  wire [15:0]blk_mem_0_even_doutb;
+  wire [15:0]blk_mem_0_odd_doutb;
+  wire [15:0]blk_mem_1_even_doutb;
+  wire [15:0]blk_mem_1_odd_doutb;
+  wire [15:0]blk_mem_2_even_doutb;
+  wire [15:0]blk_mem_2_odd_doutb;
   wire [31:0]data_processor_0_m_axis_TDATA;
   wire [3:0]data_processor_0_m_axis_TKEEP;
   wire data_processor_0_m_axis_TLAST;
@@ -723,7 +765,49 @@ module design_2
         .tx_rstn(txclk_reset_domain_peripheral_aresetn),
         .txclk(BiDirChannels_0_txclk));
   design_2_RxFIFO_0 RxFIFO
-       (.clk(processing_system7_0_FCLK_CLK0),
+       (.bram0_even_addr_a(RxFIFO_bram0_even_addr_a),
+        .bram0_even_addr_b(RxFIFO_bram0_even_addr_b),
+        .bram0_even_data_a(RxFIFO_bram0_even_data_a),
+        .bram0_even_en_a(RxFIFO_bram0_even_en_a),
+        .bram0_even_en_b(RxFIFO_bram0_even_en_b),
+        .bram0_even_rdata_b(blk_mem_0_even_doutb),
+        .bram0_even_we_a(RxFIFO_bram0_even_we_a),
+        .bram0_odd_addr_a(RxFIFO_bram0_odd_addr_a),
+        .bram0_odd_addr_b(RxFIFO_bram0_odd_addr_b),
+        .bram0_odd_data_a(RxFIFO_bram0_odd_data_a),
+        .bram0_odd_en_a(RxFIFO_bram0_odd_en_a),
+        .bram0_odd_en_b(RxFIFO_bram0_odd_en_b),
+        .bram0_odd_rdata_b(blk_mem_0_odd_doutb),
+        .bram0_odd_we_a(RxFIFO_bram0_odd_we_a),
+        .bram1_even_addr_a(RxFIFO_bram1_even_addr_a),
+        .bram1_even_addr_b(RxFIFO_bram1_even_addr_b),
+        .bram1_even_data_a(RxFIFO_bram1_even_data_a),
+        .bram1_even_en_a(RxFIFO_bram1_even_en_a),
+        .bram1_even_en_b(RxFIFO_bram1_even_en_b),
+        .bram1_even_rdata_b(blk_mem_1_even_doutb),
+        .bram1_even_we_a(RxFIFO_bram1_even_we_a),
+        .bram1_odd_addr_a(RxFIFO_bram1_odd_addr_a),
+        .bram1_odd_addr_b(RxFIFO_bram1_odd_addr_b),
+        .bram1_odd_data_a(RxFIFO_bram1_odd_data_a),
+        .bram1_odd_en_a(RxFIFO_bram1_odd_en_a),
+        .bram1_odd_en_b(RxFIFO_bram1_odd_en_b),
+        .bram1_odd_rdata_b(blk_mem_1_odd_doutb),
+        .bram1_odd_we_a(RxFIFO_bram1_odd_we_a),
+        .bram2_even_addr_a(RxFIFO_bram2_even_addr_a),
+        .bram2_even_addr_b(RxFIFO_bram2_even_addr_b),
+        .bram2_even_data_a(RxFIFO_bram2_even_data_a),
+        .bram2_even_en_a(RxFIFO_bram2_even_en_a),
+        .bram2_even_en_b(RxFIFO_bram2_even_en_b),
+        .bram2_even_rdata_b(blk_mem_2_even_doutb),
+        .bram2_even_we_a(RxFIFO_bram2_even_we_a),
+        .bram2_odd_addr_a(RxFIFO_bram2_odd_addr_a),
+        .bram2_odd_addr_b(RxFIFO_bram2_odd_addr_b),
+        .bram2_odd_data_a(RxFIFO_bram2_odd_data_a),
+        .bram2_odd_en_a(RxFIFO_bram2_odd_en_a),
+        .bram2_odd_en_b(RxFIFO_bram2_odd_en_b),
+        .bram2_odd_rdata_b(blk_mem_2_odd_doutb),
+        .bram2_odd_we_a(RxFIFO_bram2_odd_we_a),
+        .clk(processing_system7_0_FCLK_CLK0),
         .m00_axis_tdata(RxFIFO_M00_AXIS_TDATA),
         .m00_axis_tlast(RxFIFO_M00_AXIS_TLAST),
         .m00_axis_tready(RxFIFO_M00_AXIS_TREADY),
@@ -1071,6 +1155,66 @@ module design_2
         .s_axis_tready({axis_switch_2_M01_AXIS_TREADY,BiDirChannels_0_M00_AXIS_TREADY}),
         .s_axis_tstrb({axis_switch_2_M01_AXIS_TSTRB,BiDirChannels_0_M00_AXIS_TSTRB}),
         .s_axis_tvalid({axis_switch_2_M01_AXIS_TVALID,BiDirChannels_0_M00_AXIS_TVALID}));
+  design_2_blk_mem_1_even_1 blk_mem_0_even
+       (.addra(RxFIFO_bram0_even_addr_a),
+        .addrb(RxFIFO_bram0_even_addr_b),
+        .clka(processing_system7_0_FCLK_CLK0),
+        .clkb(processing_system7_0_FCLK_CLK0),
+        .dina(RxFIFO_bram0_even_data_a),
+        .doutb(blk_mem_0_even_doutb),
+        .ena(RxFIFO_bram0_even_en_a),
+        .enb(RxFIFO_bram0_even_en_b),
+        .wea(RxFIFO_bram0_even_we_a));
+  design_2_blk_mem_0_even_1 blk_mem_0_odd
+       (.addra(RxFIFO_bram0_odd_addr_a),
+        .addrb(RxFIFO_bram0_odd_addr_b),
+        .clka(processing_system7_0_FCLK_CLK0),
+        .clkb(processing_system7_0_FCLK_CLK0),
+        .dina(RxFIFO_bram0_odd_data_a),
+        .doutb(blk_mem_0_odd_doutb),
+        .ena(RxFIFO_bram0_odd_en_a),
+        .enb(RxFIFO_bram0_odd_en_b),
+        .wea(RxFIFO_bram0_odd_we_a));
+  design_2_blk_mem_0_even_0 blk_mem_1_even
+       (.addra(RxFIFO_bram1_even_addr_a),
+        .addrb(RxFIFO_bram1_even_addr_b),
+        .clka(processing_system7_0_FCLK_CLK0),
+        .clkb(processing_system7_0_FCLK_CLK0),
+        .dina(RxFIFO_bram1_even_data_a),
+        .doutb(blk_mem_1_even_doutb),
+        .ena(RxFIFO_bram1_even_en_a),
+        .enb(RxFIFO_bram1_even_en_b),
+        .wea(RxFIFO_bram1_even_we_a));
+  design_2_blk_mem_1_even_0 blk_mem_1_odd
+       (.addra(RxFIFO_bram1_odd_addr_a),
+        .addrb(RxFIFO_bram1_odd_addr_b),
+        .clka(processing_system7_0_FCLK_CLK0),
+        .clkb(processing_system7_0_FCLK_CLK0),
+        .dina(RxFIFO_bram1_odd_data_a),
+        .doutb(blk_mem_1_odd_doutb),
+        .ena(RxFIFO_bram1_odd_en_a),
+        .enb(RxFIFO_bram1_odd_en_b),
+        .wea(RxFIFO_bram1_odd_we_a));
+  design_2_blk_mem_2_odd_0 blk_mem_2_even
+       (.addra(RxFIFO_bram2_even_addr_a),
+        .addrb(RxFIFO_bram2_even_addr_b),
+        .clka(processing_system7_0_FCLK_CLK0),
+        .clkb(processing_system7_0_FCLK_CLK0),
+        .dina(RxFIFO_bram2_even_data_a),
+        .doutb(blk_mem_2_even_doutb),
+        .ena(RxFIFO_bram2_even_en_a),
+        .enb(RxFIFO_bram2_even_en_b),
+        .wea(RxFIFO_bram2_even_we_a));
+  design_2_blk_mem_0_odd_0 blk_mem_2_odd
+       (.addra(RxFIFO_bram2_odd_addr_a),
+        .addrb(RxFIFO_bram2_odd_addr_b),
+        .clka(processing_system7_0_FCLK_CLK0),
+        .clkb(processing_system7_0_FCLK_CLK0),
+        .dina(RxFIFO_bram2_odd_data_a),
+        .doutb(blk_mem_2_odd_doutb),
+        .ena(RxFIFO_bram2_odd_en_a),
+        .enb(RxFIFO_bram2_odd_en_b),
+        .wea(RxFIFO_bram2_odd_we_a));
   design_2_proc_sys_reset_0_2 clk_reset_domain
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),

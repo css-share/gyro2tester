@@ -38,11 +38,17 @@
       "BiDirChannels_0": "",
       "axis_switch_2": "",
       "axis_switch_3": "",
-      "RxFIFO": "",
       "led_driver_0": "",
       "SPI_ip_0": "",
       "iobuf_xil_0": "",
-      "TxFIFO": ""
+      "TxFIFO": "",
+      "blk_mem_1_even": "",
+      "blk_mem_1_odd": "",
+      "blk_mem_0_even": "",
+      "blk_mem_0_odd": "",
+      "blk_mem_2_odd": "",
+      "blk_mem_2_even": "",
+      "RxFIFO": ""
     },
     "interface_ports": {
       "DDR": {
@@ -3660,17 +3666,6 @@
           }
         }
       },
-      "RxFIFO": {
-        "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
-        "xci_name": "design_2_RxFIFO_0",
-        "xci_path": "ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci",
-        "inst_hier_path": "RxFIFO",
-        "parameters": {
-          "C_S00_AXIS_TDATA_WIDTH": {
-            "value": "48"
-          }
-        }
-      },
       "led_driver_0": {
         "vlnv": "xilinx.com:module_ref:led_driver:1.0",
         "xci_name": "design_2_led_driver_0_0",
@@ -3769,6 +3764,335 @@
         "parameters": {
           "ADDR_WIDTH": {
             "value": "11"
+          }
+        }
+      },
+      "blk_mem_1_even": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_2_blk_mem_0_even_0",
+        "xci_path": "ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.xci",
+        "inst_hier_path": "blk_mem_1_even",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_A_Write_Rate": {
+            "value": "50"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "16"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTB_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "Write_Width_B": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_1_odd": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_2_blk_mem_1_even_0",
+        "xci_path": "ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.xci",
+        "inst_hier_path": "blk_mem_1_odd",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_A_Write_Rate": {
+            "value": "50"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "16"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTB_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "Write_Width_B": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_0_even": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_2_blk_mem_1_even_1",
+        "xci_path": "ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.xci",
+        "inst_hier_path": "blk_mem_0_even",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_A_Write_Rate": {
+            "value": "50"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "16"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTB_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "Write_Width_B": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_0_odd": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_2_blk_mem_0_even_1",
+        "xci_path": "ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.xci",
+        "inst_hier_path": "blk_mem_0_odd",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_A_Write_Rate": {
+            "value": "50"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "16"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTB_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "Write_Width_B": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_2_odd": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_2_blk_mem_0_odd_0",
+        "xci_path": "ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.xci",
+        "inst_hier_path": "blk_mem_2_odd",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_A_Write_Rate": {
+            "value": "50"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "16"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTB_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "Write_Width_B": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_2_even": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "design_2_blk_mem_2_odd_0",
+        "xci_path": "ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.xci",
+        "inst_hier_path": "blk_mem_2_even",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Memory_Type": {
+            "value": "Simple_Dual_Port_RAM"
+          },
+          "Operating_Mode_A": {
+            "value": "NO_CHANGE"
+          },
+          "Port_A_Write_Rate": {
+            "value": "50"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Read_Width_B": {
+            "value": "16"
+          },
+          "Register_PortB_Output_of_Memory_Primitives": {
+            "value": "true"
+          },
+          "Use_Byte_Write_Enable": {
+            "value": "false"
+          },
+          "Use_RSTB_Pin": {
+            "value": "false"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "Write_Width_B": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "RxFIFO": {
+        "vlnv": "xilinx.com:user:axis_stream_fifo:1.0",
+        "xci_name": "design_2_RxFIFO_0",
+        "xci_path": "ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci",
+        "inst_hier_path": "RxFIFO",
+        "parameters": {
+          "C_S00_AXIS_TDATA_WIDTH": {
+            "value": "48"
           }
         }
       }
@@ -3981,6 +4305,222 @@
           "iobuf_xil_0/IO"
         ]
       },
+      "RxFIFO_bram0_even_addr_a": {
+        "ports": [
+          "RxFIFO/bram0_even_addr_a",
+          "blk_mem_0_even/addra"
+        ]
+      },
+      "RxFIFO_bram0_even_addr_b": {
+        "ports": [
+          "RxFIFO/bram0_even_addr_b",
+          "blk_mem_0_even/addrb"
+        ]
+      },
+      "RxFIFO_bram0_even_data_a": {
+        "ports": [
+          "RxFIFO/bram0_even_data_a",
+          "blk_mem_0_even/dina"
+        ]
+      },
+      "RxFIFO_bram0_even_en_a": {
+        "ports": [
+          "RxFIFO/bram0_even_en_a",
+          "blk_mem_0_even/ena"
+        ]
+      },
+      "RxFIFO_bram0_even_en_b": {
+        "ports": [
+          "RxFIFO/bram0_even_en_b",
+          "blk_mem_0_even/enb"
+        ]
+      },
+      "RxFIFO_bram0_even_we_a": {
+        "ports": [
+          "RxFIFO/bram0_even_we_a",
+          "blk_mem_0_even/wea"
+        ]
+      },
+      "RxFIFO_bram0_odd_addr_a": {
+        "ports": [
+          "RxFIFO/bram0_odd_addr_a",
+          "blk_mem_0_odd/addra"
+        ]
+      },
+      "RxFIFO_bram0_odd_addr_b": {
+        "ports": [
+          "RxFIFO/bram0_odd_addr_b",
+          "blk_mem_0_odd/addrb"
+        ]
+      },
+      "RxFIFO_bram0_odd_data_a": {
+        "ports": [
+          "RxFIFO/bram0_odd_data_a",
+          "blk_mem_0_odd/dina"
+        ]
+      },
+      "RxFIFO_bram0_odd_en_a": {
+        "ports": [
+          "RxFIFO/bram0_odd_en_a",
+          "blk_mem_0_odd/ena"
+        ]
+      },
+      "RxFIFO_bram0_odd_en_b": {
+        "ports": [
+          "RxFIFO/bram0_odd_en_b",
+          "blk_mem_0_odd/enb"
+        ]
+      },
+      "RxFIFO_bram0_odd_we_a": {
+        "ports": [
+          "RxFIFO/bram0_odd_we_a",
+          "blk_mem_0_odd/wea"
+        ]
+      },
+      "RxFIFO_bram1_even_addr_a": {
+        "ports": [
+          "RxFIFO/bram1_even_addr_a",
+          "blk_mem_1_even/addra"
+        ]
+      },
+      "RxFIFO_bram1_even_addr_b": {
+        "ports": [
+          "RxFIFO/bram1_even_addr_b",
+          "blk_mem_1_even/addrb"
+        ]
+      },
+      "RxFIFO_bram1_even_data_a": {
+        "ports": [
+          "RxFIFO/bram1_even_data_a",
+          "blk_mem_1_even/dina"
+        ]
+      },
+      "RxFIFO_bram1_even_en_a": {
+        "ports": [
+          "RxFIFO/bram1_even_en_a",
+          "blk_mem_1_even/ena"
+        ]
+      },
+      "RxFIFO_bram1_even_en_b": {
+        "ports": [
+          "RxFIFO/bram1_even_en_b",
+          "blk_mem_1_even/enb"
+        ]
+      },
+      "RxFIFO_bram1_even_we_a": {
+        "ports": [
+          "RxFIFO/bram1_even_we_a",
+          "blk_mem_1_even/wea"
+        ]
+      },
+      "RxFIFO_bram1_odd_addr_a": {
+        "ports": [
+          "RxFIFO/bram1_odd_addr_a",
+          "blk_mem_1_odd/addra"
+        ]
+      },
+      "RxFIFO_bram1_odd_addr_b": {
+        "ports": [
+          "RxFIFO/bram1_odd_addr_b",
+          "blk_mem_1_odd/addrb"
+        ]
+      },
+      "RxFIFO_bram1_odd_data_a": {
+        "ports": [
+          "RxFIFO/bram1_odd_data_a",
+          "blk_mem_1_odd/dina"
+        ]
+      },
+      "RxFIFO_bram1_odd_en_a": {
+        "ports": [
+          "RxFIFO/bram1_odd_en_a",
+          "blk_mem_1_odd/ena"
+        ]
+      },
+      "RxFIFO_bram1_odd_en_b": {
+        "ports": [
+          "RxFIFO/bram1_odd_en_b",
+          "blk_mem_1_odd/enb"
+        ]
+      },
+      "RxFIFO_bram1_odd_we_a": {
+        "ports": [
+          "RxFIFO/bram1_odd_we_a",
+          "blk_mem_1_odd/wea"
+        ]
+      },
+      "RxFIFO_bram2_even_addr_a": {
+        "ports": [
+          "RxFIFO/bram2_even_addr_a",
+          "blk_mem_2_even/addra"
+        ]
+      },
+      "RxFIFO_bram2_even_addr_b": {
+        "ports": [
+          "RxFIFO/bram2_even_addr_b",
+          "blk_mem_2_even/addrb"
+        ]
+      },
+      "RxFIFO_bram2_even_data_a": {
+        "ports": [
+          "RxFIFO/bram2_even_data_a",
+          "blk_mem_2_even/dina"
+        ]
+      },
+      "RxFIFO_bram2_even_en_a": {
+        "ports": [
+          "RxFIFO/bram2_even_en_a",
+          "blk_mem_2_even/ena"
+        ]
+      },
+      "RxFIFO_bram2_even_en_b": {
+        "ports": [
+          "RxFIFO/bram2_even_en_b",
+          "blk_mem_2_even/enb"
+        ]
+      },
+      "RxFIFO_bram2_even_we_a": {
+        "ports": [
+          "RxFIFO/bram2_even_we_a",
+          "blk_mem_2_even/wea"
+        ]
+      },
+      "RxFIFO_bram2_odd_addr_a": {
+        "ports": [
+          "RxFIFO/bram2_odd_addr_a",
+          "blk_mem_2_odd/addra"
+        ]
+      },
+      "RxFIFO_bram2_odd_addr_b": {
+        "ports": [
+          "RxFIFO/bram2_odd_addr_b",
+          "blk_mem_2_odd/addrb"
+        ]
+      },
+      "RxFIFO_bram2_odd_data_a": {
+        "ports": [
+          "RxFIFO/bram2_odd_data_a",
+          "blk_mem_2_odd/dina"
+        ]
+      },
+      "RxFIFO_bram2_odd_en_a": {
+        "ports": [
+          "RxFIFO/bram2_odd_en_a",
+          "blk_mem_2_odd/ena"
+        ]
+      },
+      "RxFIFO_bram2_odd_en_b": {
+        "ports": [
+          "RxFIFO/bram2_odd_en_b",
+          "blk_mem_2_odd/enb"
+        ]
+      },
+      "RxFIFO_bram2_odd_we_a": {
+        "ports": [
+          "RxFIFO/bram2_odd_we_a",
+          "blk_mem_2_odd/wea"
+        ]
+      },
       "RxFIFO_rxfifo_full": {
         "ports": [
           "RxFIFO/rxfifo_full",
@@ -4027,6 +4567,42 @@
         "ports": [
           "axi_dma_0/s2mm_introut",
           "xlconcat_1/In1"
+        ]
+      },
+      "blk_mem_0_even_doutb": {
+        "ports": [
+          "blk_mem_0_even/doutb",
+          "RxFIFO/bram0_even_rdata_b"
+        ]
+      },
+      "blk_mem_0_odd_doutb": {
+        "ports": [
+          "blk_mem_0_odd/doutb",
+          "RxFIFO/bram0_odd_rdata_b"
+        ]
+      },
+      "blk_mem_1_even_doutb": {
+        "ports": [
+          "blk_mem_1_even/doutb",
+          "RxFIFO/bram1_even_rdata_b"
+        ]
+      },
+      "blk_mem_1_odd_doutb": {
+        "ports": [
+          "blk_mem_1_odd/doutb",
+          "RxFIFO/bram1_odd_rdata_b"
+        ]
+      },
+      "blk_mem_2_even_doutb": {
+        "ports": [
+          "blk_mem_2_even/doutb",
+          "RxFIFO/bram2_even_rdata_b"
+        ]
+      },
+      "blk_mem_2_odd_doutb": {
+        "ports": [
+          "blk_mem_2_odd/doutb",
+          "RxFIFO/bram2_odd_rdata_b"
         ]
       },
       "iobuf_xil_0_O": {
@@ -4108,9 +4684,21 @@
           "axis_switch_3/s_axi_ctrl_aclk",
           "AXI_Register_Demux/M07_ACLK",
           "AXI_Register_Demux/M08_ACLK",
-          "RxFIFO/clk",
           "SPI_ip_0/clk",
-          "TxFIFO/clk"
+          "TxFIFO/clk",
+          "RxFIFO/clk",
+          "blk_mem_2_odd/clkb",
+          "blk_mem_2_odd/clka",
+          "blk_mem_2_even/clkb",
+          "blk_mem_2_even/clka",
+          "blk_mem_1_odd/clkb",
+          "blk_mem_1_odd/clka",
+          "blk_mem_1_even/clkb",
+          "blk_mem_1_even/clka",
+          "blk_mem_0_odd/clkb",
+          "blk_mem_0_odd/clka",
+          "blk_mem_0_even/clkb",
+          "blk_mem_0_even/clka"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -4145,9 +4733,9 @@
           "axis_switch_3/s_axi_ctrl_aresetn",
           "AXI_Register_Demux/M07_ARESETN",
           "AXI_Register_Demux/M08_ARESETN",
-          "RxFIFO/rst_n",
           "SPI_ip_0/rstn",
-          "TxFIFO/rstn"
+          "TxFIFO/rstn",
+          "RxFIFO/rst_n"
         ]
       },
       "txclk_reset_domain_peripheral_aresetn": {

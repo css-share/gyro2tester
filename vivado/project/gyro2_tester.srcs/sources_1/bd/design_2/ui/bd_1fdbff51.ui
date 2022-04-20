@@ -1,106 +1,154 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.88293",
-   "Default View_TopLeft":"2060,131",
+   "Default View_ScaleFactor":"1.01506",
+   "Default View_TopLeft":"222,-10",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 10 -x 3690 -y 660 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 10 -x 3690 -y 680 -defaultsOSRD
-preplace port port-id_SPI_SCK -pg 1 -lvl 10 -x 3690 -y 280 -defaultsOSRD
-preplace port port-id_SPI_CSN -pg 1 -lvl 10 -x 3690 -y 300 -defaultsOSRD
-preplace port port-id_DRX -pg 1 -lvl 0 -x 0 -y 1180 -defaultsOSRD
-preplace port port-id_DSYNC -pg 1 -lvl 10 -x 3690 -y 1150 -defaultsOSRD
-preplace port port-id_DTX -pg 1 -lvl 10 -x 3690 -y 1130 -defaultsOSRD
-preplace port port-id_SYNC_CK -pg 1 -lvl 10 -x 3690 -y 1210 -defaultsOSRD
-preplace port port-id_MCK_N -pg 1 -lvl 10 -x 3690 -y 1190 -defaultsOSRD
-preplace port port-id_MCK_P -pg 1 -lvl 10 -x 3690 -y 1170 -defaultsOSRD
-preplace port port-id_LED0 -pg 1 -lvl 10 -x 3690 -y 460 -defaultsOSRD
-preplace port port-id_LED1 -pg 1 -lvl 10 -x 3690 -y 1350 -defaultsOSRD
-preplace port port-id_LED2 -pg 1 -lvl 10 -x 3690 -y 1410 -defaultsOSRD
-preplace port port-id_LED3 -pg 1 -lvl 10 -x 3690 -y 1430 -defaultsOSRD
-preplace port port-id_LED4 -pg 1 -lvl 10 -x 3690 -y 1450 -defaultsOSRD
-preplace port port-id_LED5 -pg 1 -lvl 10 -x 3690 -y 1470 -defaultsOSRD
-preplace port port-id_LED6 -pg 1 -lvl 10 -x 3690 -y 1490 -defaultsOSRD
-preplace port port-id_LED7 -pg 1 -lvl 10 -x 3690 -y 1510 -defaultsOSRD
-preplace port port-id_SPI_DN -pg 1 -lvl 10 -x 3690 -y 150 -defaultsOSRD
-preplace inst AXI_Register_Demux -pg 1 -lvl 2 -x 830 -y 900 -defaultsOSRD
-preplace inst xlconcat_1 -pg 1 -lvl 7 -x 2600 -y 790 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 6 -x 2200 -y 740 -defaultsOSRD
-preplace inst axis_switch_0 -pg 1 -lvl 5 -x 1860 -y 710 -defaultsOSRD
-preplace inst axis_switch_1 -pg 1 -lvl 3 -x 1210 -y 740 -defaultsOSRD
-preplace inst data_processor_0 -pg 1 -lvl 4 -x 1550 -y 540 -defaultsOSRD
-preplace inst txclk_reset_domain -pg 1 -lvl 7 -x 2600 -y 1240 -defaultsOSRD
-preplace inst clk_reset_domain -pg 1 -lvl 1 -x 470 -y 710 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 8 -x 3100 -y 740 -defaultsOSRD
-preplace inst axi_smc -pg 1 -lvl 7 -x 2600 -y 650 -defaultsOSRD
-preplace inst BiDirChannels_0 -pg 1 -lvl 8 -x 3100 -y 1150 -defaultsOSRD
-preplace inst axis_switch_2 -pg 1 -lvl 7 -x 2600 -y 470 -defaultsOSRD
-preplace inst axis_switch_3 -pg 1 -lvl 9 -x 3520 -y 910 -defaultsOSRD
-preplace inst RxFIFO -pg 1 -lvl 5 -x 1860 -y 1020 -defaultsOSRD -orient R180
-preplace inst led_driver_0 -pg 1 -lvl 9 -x 3520 -y 1460 -defaultsOSRD
-preplace inst SPI_ip_0 -pg 1 -lvl 8 -x 3100 -y 270 -defaultsOSRD
-preplace inst iobuf_xil_0 -pg 1 -lvl 9 -x 3520 -y 20 -defaultsOSRD
-preplace inst TxFIFO -pg 1 -lvl 8 -x 3100 -y 450 -defaultsOSRD
-preplace netloc BiDirChannels_0_HSI_DAM 1 8 2 NJ 1130 NJ
-preplace netloc BiDirChannels_0_HSI_DAP 1 8 2 NJ 1150 NJ
-preplace netloc BiDirChannels_0_MCK_N 1 8 2 NJ 1190 NJ
-preplace netloc BiDirChannels_0_MCK_P 1 8 2 NJ 1170 NJ
-preplace netloc BiDirChannels_0_SYNCK 1 8 2 NJ 1210 NJ
-preplace netloc BiDirChannels_0_txclk 1 6 3 2420 1130 2780J 1290 3370
-preplace netloc HSI_A0_1 1 0 8 NJ 1180 650J 1200 1070J 1110 NJ 1110 NJ 1110 NJ 1110 NJ 1110 2820J
-preplace netloc RxFIFO_rxfifo_full 1 4 6 1720 1350 NJ 1350 NJ 1350 NJ 1350 NJ 1350 NJ
-preplace netloc SPI_ip_0_SPI_CS 1 8 2 NJ 300 NJ
-preplace netloc SPI_ip_0_SPI_SCK 1 8 2 NJ 280 NJ
-preplace netloc TxFIFO_txfifo_full 1 8 2 NJ 460 NJ
-preplace netloc axi_dma_0_mm2s_introut 1 6 1 N 780
-preplace netloc axi_dma_0_s2mm_introut 1 6 1 N 800
-preplace netloc led_driver_0_led0 1 9 1 NJ 1410
-preplace netloc led_driver_0_led1 1 9 1 NJ 1430
-preplace netloc led_driver_0_led2 1 9 1 NJ 1450
-preplace netloc led_driver_0_led3 1 9 1 NJ 1470
-preplace netloc led_driver_0_led4 1 9 1 NJ 1490
-preplace netloc led_driver_0_led5 1 9 1 NJ 1510
-preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 670 720n
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 9 20 810 660 1210 1060 860 1370 710 1700 830 2010 860 2390 320 2840 890 3350
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 9 30 1220 NJ 1220 NJ 1220 NJ 1220 NJ 1220 NJ 1220 2390 1120 2810J 1280 3330
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 8 670 1190 1040 870 1390 730 1690 840 2020 870 2410 330 2850 930 3360
-preplace netloc txclk_reset_domain_peripheral_aresetn 1 7 2 2790 1340 3340J
-preplace netloc xlconcat_1_dout 1 7 1 2810 780n
-preplace netloc SPI_ip_0_spi_oen 1 8 1 3380 30n
-preplace netloc iobuf_xil_0_O 1 7 3 2870 90 NJ 90 3660
-preplace netloc SPI_ip_0_spi_out 1 8 1 3330 10n
-preplace netloc Net 1 9 1 3670 30n
-preplace netloc AXI_Register_Demux_M00_AXI 1 2 3 1030 850 1380J 690 NJ
-preplace netloc AXI_Register_Demux_M06_AXI 1 2 1 1020 710n
-preplace netloc AXI_Register_Demux_M07_AXI 1 2 5 1010 440 NJ 440 NJ 440 NJ 440 NJ
-preplace netloc AXI_Register_Demux_M08_AXI 1 2 7 1050J 920 1410J 880 NJ 880 NJ 880 NJ 880 NJ 880 3360
-preplace netloc BiDirChannels_0_M00_AXIS 1 8 1 3370 850n
-preplace netloc RxFIFO_M00_AXIS 1 4 1 1710 670n
-preplace netloc TxFIFO_M00_AXIS 1 6 3 2420 360 NJ 360 3380
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 5 1070 890 NJ 890 NJ 890 NJ 890 2380
-preplace netloc axi_dma_0_M_AXI_MM2S 1 6 1 2400 620n
-preplace netloc axi_dma_0_M_AXI_S2MM 1 6 1 2420 640n
-preplace netloc axis_switch_0_M00_AXIS 1 5 1 N 710
-preplace netloc axis_switch_1_M00_AXIS 1 3 1 1360 520n
-preplace netloc axis_switch_1_M01_AXIS 1 3 5 1350J 340 NJ 340 NJ 340 NJ 340 2870
-preplace netloc axis_switch_2_M00_AXIS 1 7 1 2830 460n
-preplace netloc axis_switch_2_M01_AXIS 1 7 2 2810J 540 3380
-preplace netloc axis_switch_3_M00_AXIS 1 5 5 NJ 1030 NJ 1030 NJ 1030 NJ 1030 3660
-preplace netloc data_processor_0_m_axis 1 4 1 1690 530n
-preplace netloc processing_system7_0_DDR 1 8 2 NJ 660 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 8 2 NJ 680 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 8 680 1180 NJ 1180 NJ 1180 NJ 1180 NJ 1180 2410J 1140 2800J 1270 3340
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 6 980 240 NJ 240 NJ 240 NJ 240 NJ 240 NJ
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 6 1030J 900 NJ 900 NJ 900 NJ 900 NJ 900 2810
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 4 N 880 1400J 870 NJ 870 2000J
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 4 1000J 910 NJ 910 NJ 910 2000
-preplace netloc ps7_0_axi_periph_M05_AXI 1 2 6 990J 350 NJ 350 NJ 350 NJ 350 NJ 350 2860
-preplace netloc smartconnect_0_M00_AXI 1 7 1 2810 650n
-levelinfo -pg 1 0 470 830 1210 1550 1860 2200 2600 3100 3520 3690
-pagesize -pg 1 -db -bbox -sgen -80 -250 3810 1570
+preplace port DDR -pg 1 -lvl 11 -x 4110 -y 2260 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 11 -x 4110 -y 2280 -defaultsOSRD
+preplace port port-id_SPI_SCK -pg 1 -lvl 11 -x 4110 -y 1860 -defaultsOSRD
+preplace port port-id_SPI_CSN -pg 1 -lvl 11 -x 4110 -y 1880 -defaultsOSRD
+preplace port port-id_DRX -pg 1 -lvl 0 -x 0 -y 2570 -defaultsOSRD
+preplace port port-id_DSYNC -pg 1 -lvl 11 -x 4110 -y 2440 -defaultsOSRD
+preplace port port-id_DTX -pg 1 -lvl 11 -x 4110 -y 2420 -defaultsOSRD
+preplace port port-id_SYNC_CK -pg 1 -lvl 11 -x 4110 -y 2690 -defaultsOSRD
+preplace port port-id_MCK_N -pg 1 -lvl 11 -x 4110 -y 2650 -defaultsOSRD
+preplace port port-id_MCK_P -pg 1 -lvl 11 -x 4110 -y 2670 -defaultsOSRD
+preplace port port-id_LED0 -pg 1 -lvl 11 -x 4110 -y 2120 -defaultsOSRD
+preplace port port-id_LED1 -pg 1 -lvl 11 -x 4110 -y 1510 -defaultsOSRD
+preplace port port-id_LED2 -pg 1 -lvl 11 -x 4110 -y 2500 -defaultsOSRD
+preplace port port-id_LED3 -pg 1 -lvl 11 -x 4110 -y 2520 -defaultsOSRD
+preplace port port-id_LED4 -pg 1 -lvl 11 -x 4110 -y 2540 -defaultsOSRD
+preplace port port-id_LED5 -pg 1 -lvl 11 -x 4110 -y 2560 -defaultsOSRD
+preplace port port-id_LED6 -pg 1 -lvl 11 -x 4110 -y 2580 -defaultsOSRD
+preplace port port-id_LED7 -pg 1 -lvl 11 -x 4110 -y 2600 -defaultsOSRD
+preplace port port-id_SPI_DN -pg 1 -lvl 11 -x 4110 -y 1760 -defaultsOSRD
+preplace inst AXI_Register_Demux -pg 1 -lvl 2 -x 570 -y 1920 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 8 -x 3020 -y 2390 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 6 -x 2390 -y 1980 -defaultsOSRD
+preplace inst axis_switch_0 -pg 1 -lvl 5 -x 1920 -y 1960 -defaultsOSRD
+preplace inst axis_switch_1 -pg 1 -lvl 3 -x 960 -y 2310 -defaultsOSRD
+preplace inst data_processor_0 -pg 1 -lvl 4 -x 1280 -y 2000 -defaultsOSRD
+preplace inst txclk_reset_domain -pg 1 -lvl 8 -x 3020 -y 2820 -defaultsOSRD
+preplace inst clk_reset_domain -pg 1 -lvl 1 -x 210 -y 1740 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 9 -x 3510 -y 2340 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 8 -x 3020 -y 1930 -defaultsOSRD
+preplace inst BiDirChannels_0 -pg 1 -lvl 9 -x 3510 -y 2580 -defaultsOSRD
+preplace inst axis_switch_2 -pg 1 -lvl 8 -x 3020 -y 1710 -defaultsOSRD
+preplace inst axis_switch_3 -pg 1 -lvl 10 -x 3940 -y 1640 -defaultsOSRD
+preplace inst led_driver_0 -pg 1 -lvl 10 -x 3940 -y 2550 -defaultsOSRD
+preplace inst SPI_ip_0 -pg 1 -lvl 9 -x 3510 -y 1850 -defaultsOSRD
+preplace inst iobuf_xil_0 -pg 1 -lvl 9 -x 3510 -y 1670 -defaultsOSRD
+preplace inst TxFIFO -pg 1 -lvl 9 -x 3510 -y 2110 -defaultsOSRD
+preplace inst blk_mem_1_even -pg 1 -lvl 4 -x 1280 -y 460 -defaultsOSRD -orient R180
+preplace inst blk_mem_1_odd -pg 1 -lvl 4 -x 1280 -y 760 -defaultsOSRD -orient R180
+preplace inst blk_mem_0_even -pg 1 -lvl 4 -x 1280 -y 1660 -defaultsOSRD -orient R180
+preplace inst blk_mem_0_odd -pg 1 -lvl 4 -x 1280 -y 160 -defaultsOSRD -orient R180
+preplace inst blk_mem_2_odd -pg 1 -lvl 4 -x 1280 -y 1060 -defaultsOSRD -orient R180
+preplace inst blk_mem_2_even -pg 1 -lvl 4 -x 1280 -y 1360 -defaultsOSRD -orient R180
+preplace inst RxFIFO -pg 1 -lvl 5 -x 1920 -y 1360 -defaultsOSRD -orient R180
+preplace netloc BiDirChannels_0_HSI_DAM 1 9 2 3780J 2420 NJ
+preplace netloc BiDirChannels_0_HSI_DAP 1 9 2 3790J 2440 NJ
+preplace netloc BiDirChannels_0_MCK_N 1 9 2 3760J 2660 4090J
+preplace netloc BiDirChannels_0_MCK_P 1 9 2 3780J 2670 NJ
+preplace netloc BiDirChannels_0_SYNCK 1 9 2 3750J 2690 NJ
+preplace netloc BiDirChannels_0_txclk 1 7 3 2750 2200 NJ 2200 3750
+preplace netloc HSI_A0_1 1 0 9 NJ 2570 NJ 2570 NJ 2570 NJ 2570 NJ 2570 NJ 2570 NJ 2570 N 2570 NJ
+preplace netloc Net 1 9 2 3780J 1760 NJ
+preplace netloc RxFIFO_rxfifo_full 1 4 7 1700 1790 2150J 1780 NJ 1780 2700 1570 NJ 1570 3800J 1520 4090J
+preplace netloc SPI_ip_0_SPI_CS 1 9 2 NJ 1880 NJ
+preplace netloc SPI_ip_0_SPI_SCK 1 9 2 NJ 1860 NJ
+preplace netloc SPI_ip_0_spi_oen 1 8 2 3260 1760 3740
+preplace netloc SPI_ip_0_spi_out 1 8 2 3250 1740 3750
+preplace netloc TxFIFO_txfifo_full 1 9 2 NJ 2120 NJ
+preplace netloc axi_dma_0_mm2s_introut 1 6 2 N 2020 2720
+preplace netloc axi_dma_0_s2mm_introut 1 6 2 2590 2100 2700
+preplace netloc iobuf_xil_0_O 1 8 2 3270 1750 3740
+preplace netloc led_driver_0_led0 1 10 1 NJ 2500
+preplace netloc led_driver_0_led1 1 10 1 NJ 2520
+preplace netloc led_driver_0_led2 1 10 1 NJ 2540
+preplace netloc led_driver_0_led3 1 10 1 NJ 2560
+preplace netloc led_driver_0_led4 1 10 1 NJ 2580
+preplace netloc led_driver_0_led5 1 10 1 NJ 2600
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 390 1740n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 10 20 1640 400 1640 750 2010 1140 2080 1500 910 2180 1820 N 1820 2710 1840 3260 1940 3790
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 10 20 2710 NJ 2710 NJ 2710 NJ 2710 NJ 2710 NJ 2710 N 2710 2730 2710 NJ 2710 3740
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 9 410 1630 760 2030 1130 2120 1710 2120 2160 1800 N 1800 2740 1600 3210 1590 3800
+preplace netloc txclk_reset_domain_peripheral_aresetn 1 8 2 3240 2700 3800J
+preplace netloc xlconcat_1_dout 1 8 1 3270 2380n
+preplace netloc RxFIFO_bram0_even_addr_a 1 4 1 1690 1690n
+preplace netloc RxFIFO_bram0_even_data_a 1 4 1 1670 1670n
+preplace netloc RxFIFO_bram0_even_en_a 1 4 1 1620 1650n
+preplace netloc RxFIFO_bram0_even_we_a 1 4 1 1550 1630n
+preplace netloc RxFIFO_bram0_even_addr_b 1 4 1 1690 1610n
+preplace netloc RxFIFO_bram0_even_en_b 1 4 1 1440 1560n
+preplace netloc RxFIFO_bram0_odd_addr_a 1 4 1 1530 240n
+preplace netloc RxFIFO_bram0_odd_data_a 1 4 1 1570 200n
+preplace netloc RxFIFO_bram0_odd_en_a 1 4 1 1610 180n
+preplace netloc RxFIFO_bram0_odd_we_a 1 4 1 1650 160n
+preplace netloc RxFIFO_bram0_odd_addr_b 1 4 1 1680 120n
+preplace netloc RxFIFO_bram0_odd_en_b 1 4 1 1710 60n
+preplace netloc RxFIFO_bram1_even_addr_a 1 4 1 1520 540n
+preplace netloc RxFIFO_bram1_even_data_a 1 4 1 1560 500n
+preplace netloc RxFIFO_bram1_even_en_a 1 4 1 1600 480n
+preplace netloc RxFIFO_bram1_even_we_a 1 4 1 1640 460n
+preplace netloc RxFIFO_bram1_even_addr_b 1 4 1 1670 420n
+preplace netloc RxFIFO_bram1_even_en_b 1 4 1 1700 360n
+preplace netloc RxFIFO_bram1_odd_addr_a 1 4 1 1510 840n
+preplace netloc RxFIFO_bram1_odd_data_a 1 4 1 1550 800n
+preplace netloc RxFIFO_bram1_odd_en_a 1 4 1 1590 780n
+preplace netloc RxFIFO_bram1_odd_we_a 1 4 1 1630 760n
+preplace netloc RxFIFO_bram1_odd_addr_b 1 4 1 1660 720n
+preplace netloc RxFIFO_bram1_odd_en_b 1 4 1 1690 660n
+preplace netloc RxFIFO_bram2_even_addr_a 1 4 1 1620 1210n
+preplace netloc RxFIFO_bram2_even_data_a 1 4 1 1580 1190n
+preplace netloc RxFIFO_bram2_even_en_a 1 4 1 1540 1170n
+preplace netloc RxFIFO_bram2_even_we_a 1 4 1 1490 1150n
+preplace netloc RxFIFO_bram2_even_addr_b 1 4 1 1480 1130n
+preplace netloc RxFIFO_bram2_even_en_b 1 4 1 1470 1110n
+preplace netloc RxFIFO_bram2_odd_addr_a 1 4 1 1460 1090n
+preplace netloc RxFIFO_bram2_odd_data_a 1 4 1 1450 1070n
+preplace netloc RxFIFO_bram2_odd_en_a 1 4 1 1440 1050n
+preplace netloc RxFIFO_bram2_odd_we_a 1 4 1 1420 1030n
+preplace netloc RxFIFO_bram2_odd_addr_b 1 4 1 1420 1010n
+preplace netloc RxFIFO_bram2_odd_en_b 1 4 1 1620 960n
+preplace netloc blk_mem_2_odd_doutb 1 4 2 1420J 930 2130
+preplace netloc blk_mem_2_even_doutb 1 4 2 1430J 920 2140
+preplace netloc blk_mem_1_odd_doutb 1 4 2 NJ 680 2150
+preplace netloc blk_mem_1_even_doutb 1 4 2 NJ 380 2160
+preplace netloc blk_mem_0_odd_doutb 1 4 2 NJ 80 2170
+preplace netloc blk_mem_0_even_doutb 1 4 2 1420J 1800 2140
+preplace netloc AXI_Register_Demux_M00_AXI 1 2 3 770 1920 NJ 1920 1470J
+preplace netloc AXI_Register_Demux_M06_AXI 1 2 1 720 1960n
+preplace netloc AXI_Register_Demux_M07_AXI 1 2 6 800J 1830 NJ 1830 1660J 1810 NJ 1810 N 1810 2730
+preplace netloc AXI_Register_Demux_M08_AXI 1 2 8 730J 2020 1110J 2090 NJ 2090 2190J 1790 NJ 1790 2720 1580 NJ 1580 3740
+preplace netloc BiDirChannels_0_M00_AXIS 1 9 1 3770 1580n
+preplace netloc RxFIFO_M00_AXIS 1 4 1 1710 1730n
+preplace netloc TxFIFO_M00_AXIS 1 7 3 2750 1560 NJ 1560 3760
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 5 810 0 NJ 0 NJ 0 NJ 0 2570
+preplace netloc axi_dma_0_M_AXI_MM2S 1 6 2 2580 1900 N
+preplace netloc axi_dma_0_M_AXI_S2MM 1 6 2 2590 1920 N
+preplace netloc axis_switch_0_M00_AXIS 1 5 1 2210 1950n
+preplace netloc axis_switch_1_M00_AXIS 1 3 1 1100 1980n
+preplace netloc axis_switch_1_M01_AXIS 1 3 6 NJ 2320 NJ 2320 NJ 2320 NJ 2320 2740 2190 3200
+preplace netloc axis_switch_2_M00_AXIS 1 8 1 3240 1700n
+preplace netloc axis_switch_2_M01_AXIS 1 8 2 3230 1600 NJ
+preplace netloc axis_switch_3_M00_AXIS 1 5 6 N 1430 NJ 1430 N 1430 NJ 1430 NJ 1430 4080
+preplace netloc data_processor_0_m_axis 1 4 1 1700 1900n
+preplace netloc processing_system7_0_DDR 1 9 2 NJ 2260 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 9 2 NJ 2280 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 9 420 1620 NJ 1620 1120J 2100 NJ 2100 NJ 2100 2580J 2090 2740 2020 NJ 2020 3740
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 7 N 1860 NJ 1860 1670J 2080 2200J 1830 NJ 1830 2720 1820 NJ
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 7 790 1870 NJ 1870 1700J 1830 2170J 1840 NJ 1840 2730 1830 3230J
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 4 780J 1840 NJ 1840 NJ 1840 2140
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 4 720J 1820 NJ 1820 NJ 1820 2130
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 7 740 2110 NJ 2110 NJ 2110 NJ 2110 NJ 2110 2750 2080 NJ
+preplace netloc smartconnect_0_M00_AXI 1 8 1 3220 1930n
+levelinfo -pg 1 0 210 570 960 1280 1920 2390 2680 3020 3510 3940 4110
+pagesize -pg 1 -db -bbox -sgen -80 -20 4230 2920
 "
 }
 {

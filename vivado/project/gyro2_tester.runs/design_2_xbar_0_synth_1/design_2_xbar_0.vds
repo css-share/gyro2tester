@@ -2,17 +2,17 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Mon Apr 18 23:29:10 2022
-# Process ID: 22742
+# Start of session at: Tue Apr 19 19:52:50 2022
+# Process ID: 5712
 # Current directory: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_xbar_0_synth_1
 # Command line: vivado -log design_2_xbar_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_xbar_0.tcl
 # Log file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_xbar_0_synth_1/design_2_xbar_0.vds
 # Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_xbar_0_synth_1/vivado.jou
-# Running On: xsjl23936, OS: Linux, CPU Frequency: 3400.000 MHz, CPU Physical cores: 16, Host memory: 270207 MB
+# Running On: xsjl20348, OS: Linux, CPU Frequency: 3315.000 MHz, CPU Physical cores: 32, Host memory: 404103 MB
 #-----------------------------------------------------------
 source design_2_xbar_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_2_xbar_0, cache-ID = 737c0476663dbf3d.
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 23:29:37 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 19 19:53:18 2022...

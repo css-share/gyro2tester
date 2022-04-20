@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "design_2_iobuf_xil_0_0_synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 set_param ips.modRefOverrideMrefDirPath /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/mref
@@ -93,10 +92,7 @@ set_property ip_output_repo /home/cdickins/reuse/gyro2tester-main/vivado/project
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib {
-  /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/iobuf.v
-  /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/iobuf_xil.v
-}
+read_verilog -library xil_defaultlib /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/iobuf_xil.v
 read_ip -quiet /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci
 
 OPTRACE "Adding files" END { }
