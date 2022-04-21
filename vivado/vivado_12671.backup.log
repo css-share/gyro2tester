@@ -1,0 +1,1058 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Apr 20 09:48:44 2022
+# Process ID: 12671
+# Current directory: /home/cdickins/reuse/gyro2tester-main/vivado
+# Command line: vivado
+# Log file: /home/cdickins/reuse/gyro2tester-main/vivado/vivado.log
+# Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/vivado.jou
+# Running On: xsjcdickins40x, OS: Linux, CPU Frequency: 2600.248 MHz, CPU Physical cores: 8, Host memory: 33556 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp'.
+WARNING: [Project 1-865] Could not find the file /home/cdickins/reuse/gyro2tester-main/vivado/C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/synth_1/design_2_wrapper.dcp
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 8123.055 ; gain = 175.379 ; free physical = 5935 ; free virtual = 27914
+update_compile_order -fileset sources_1
+open_bd_design {/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd}
+Reading block design file </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd>...
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - AXI_Register_Demux
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_1
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding component instance block -- xilinx.com:ip:axis_switch:1.1 - axis_switch_0
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_rd_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:ip:axis_switch:1.1 - axis_switch_1
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_rd_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:module_ref:data_processor:1.0 - data_processor_0
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - txclk_reset_domain
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - clk_reset_domain
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:user:BiDirChannels:1.0 - BiDirChannels_0
+Adding component instance block -- xilinx.com:ip:axis_switch:1.1 - axis_switch_2
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_rd_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:ip:axis_switch:1.1 - axis_switch_3
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_wr_socket' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'S_AXI_CTRL_aximm_rd_socket' specified in the portmap, is not found on the block! 
+Adding component instance block -- xilinx.com:module_ref:led_driver:1.0 - led_driver_0
+Adding component instance block -- xilinx.com:user:axi4_pl_SPI_ip:1.0 - SPI_ip_0
+Adding component instance block -- xilinx.com:module_ref:iobuf_xil:1.0 - iobuf_xil_0
+Adding component instance block -- user.org:user:axis_stream_txfifo:2.0 - TxFIFO
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_1_even
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_1_odd
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_0_even
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_0_odd
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_2_odd
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_2_even
+Adding component instance block -- xilinx.com:user:axis_stream_fifo:1.0 - RxFIFO
+Successfully read diagram <design_2> from block design file </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd>
+open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 8517.238 ; gain = 0.000 ; free physical = 3084 ; free virtual = 25103
+group_bd_cells RX_BUFFER [get_bd_cells blk_mem_1_even] [get_bd_cells blk_mem_2_odd] [get_bd_cells blk_mem_2_even] [get_bd_cells blk_mem_0_even] [get_bd_cells RxFIFO] [get_bd_cells blk_mem_1_odd] [get_bd_cells blk_mem_0_odd]
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_2_odd/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_2_odd/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_2_even/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_2_even/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_1_odd/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_1_odd/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_1_even/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_0_odd/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_0_odd/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_0_even/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_0_even/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </RX_BUFFER/blk_mem_1_even/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+group_bd_cells LOOP1 [get_bd_cells axis_switch_0] [get_bd_cells axis_switch_1] [get_bd_cells data_processor_0]
+regenerate_bd_layout
+group_bd_cells LOOP2 [get_bd_cells axis_switch_2] [get_bd_cells axis_switch_3]
+regenerate_bd_layout
+group_bd_cells RESETS [get_bd_cells txclk_reset_domain] [get_bd_cells clk_reset_domain]
+regenerate_bd_layout
+group_bd_cells SPI [get_bd_cells SPI_ip_0] [get_bd_cells iobuf_xil_0]
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+group_bd_cells DMA [get_bd_cells axi_smc] [get_bd_cells axi_dma_0] [get_bd_cells xlconcat_1]
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+group_bd_cells REGISTER_DEMUX [get_bd_cells AXI_Register_Demux]
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+copy_bd_objs /  [get_bd_cells {RX_BUFFER/blk_mem_1_even}]
+set_property name blk_mem_tx_even [get_bd_cells blk_mem_1_even]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Write_Depth_A {24576}] [get_bd_cells blk_mem_tx_even]
+set_property location {3 958 -55} [get_bd_cells blk_mem_tx_even]
+copy_bd_objs /  [get_bd_cells {blk_mem_tx_even}]
+set_property name blk_mem_tx_odd [get_bd_cells blk_mem_tx_even1]
+ipx::edit_ip_in_project -upgrade true -name axis_stream_txfifo_v2_0_project -directory /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.tmp/axis_stream_txfifo_v2_0_project /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 10179.949 ; gain = 0.000 ; free physical = 2665 ; free virtual = 24825
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 10179.949 ; gain = 0.000 ; free physical = 2645 ; free virtual = 24805
+update_compile_order -fileset sources_1
+add_files -norecurse -copy_to /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/src /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/gen_sync_que_af.sv
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml' ignored by IP packager.
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg1'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg2'
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+set_property core_revision 21 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rstn': Bus parameter POLARITY is ACTIVE_LOW but port 'rstn' is not *resetn - please double check the POLARITY setting.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name axis_stream_txfifo_v2_0_project -directory /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.tmp/axis_stream_txfifo_v2_0_project /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 10179.949 ; gain = 0.000 ; free physical = 2692 ; free virtual = 24797
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 10179.949 ; gain = 0.000 ; free physical = 2716 ; free virtual = 24821
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg1'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg2'
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+set_property core_revision 22 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rstn': Bus parameter POLARITY is ACTIVE_LOW but port 'rstn' is not *resetn - please double check the POLARITY setting.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'
+upgrade_ip [get_ips  {design_2_RxFIFO_0 design_2_axis_stream_txfifo_0_2}] -log ip_upgrade.log
+Upgrading '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd'
+INFO: [IP_Flow 19-3420] Updated design_2_RxFIFO_0 to use current project options
+INFO: [IP_Flow 19-3422] Upgraded design_2_axis_stream_txfifo_0_2 (axis_stream_txfifo_v2.0 2.0) from revision 20 to revision 22
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_addr_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_addr_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_data_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_en_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_en_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_rdata_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_even_we_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_addr_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_addr_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_data_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_en_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_en_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_rdata_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram0_odd_we_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_addr_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_addr_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_data_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_en_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_en_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_rdata_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_even_we_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_addr_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_addr_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_data_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_en_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_en_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_rdata_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram1_odd_we_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_addr_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_addr_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_data_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_en_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_en_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_rdata_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_even_we_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_addr_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_addr_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_data_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_en_a'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_en_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_rdata_b'
+WARNING: [IP_Flow 19-4698] Upgrade has added port 'bram2_odd_we_a'
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_2_axis_stream_txfifo_0_2'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1279] The upgrade of 'design_2_axis_stream_txfifo_0_2' has identified issues that may require user intervention. Please review the upgrade log '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log', and verify that the upgraded IP is correctly configured.
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log'.
+upgrade_ip: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 10179.949 ; gain = 0.000 ; free physical = 2686 ; free virtual = 24784
+export_ip_user_files -of_objects [get_ips {design_2_RxFIFO_0 design_2_axis_stream_txfifo_0_2}] -no_script -sync -force -quiet
+set_property location {5.5 2132 585} [get_bd_cells blk_mem_tx_even]
+set_property location {6 2080 732} [get_bd_cells blk_mem_tx_odd]
+set_property name blk0_mem_tx_even [get_bd_cells blk_mem_tx_even]
+set_property name blk0_mem_tx_odd [get_bd_cells blk_mem_tx_odd]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Write_Depth_A {8192}] [get_bd_cells blk0_mem_tx_even]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Write_Depth_A {8192}] [get_bd_cells blk0_mem_tx_odd]
+copy_bd_objs /  [get_bd_cells {blk0_mem_tx_odd}]
+set_property name blk1_mem_tx_odd [get_bd_cells blk0_mem_tx_odd1]
+copy_bd_objs /  [get_bd_cells {blk1_mem_tx_odd}]
+set_property name blk1_mem_tx_even [get_bd_cells blk1_mem_tx_odd1]
+copy_bd_objs /  [get_bd_cells {blk1_mem_tx_even}]
+set_property name blk2_mem_tx_even [get_bd_cells blk1_mem_tx_even1]
+copy_bd_objs /  [get_bd_cells {blk2_mem_tx_even}]
+set_property name blk2_mem_tx_odd [get_bd_cells blk2_mem_tx_even1]
+set_property location {6 2210 450} [get_bd_cells blk0_mem_tx_even]
+set_property location {6 2235 578} [get_bd_cells blk0_mem_tx_odd]
+set_property location {6 2231 762} [get_bd_cells blk1_mem_tx_even]
+set_property location {6 2252 1054} [get_bd_cells blk2_mem_tx_even]
+set_property location {6.5 2361 1455} [get_bd_cells LOOP2]
+undo
+INFO: [Common 17-17] undo 'set_property location {6.5 2361 1455} [get_bd_cells LOOP2]'
+undo
+INFO: [Common 17-17] undo 'set_property location {6 2252 1054} [get_bd_cells blk2_mem_tx_even]'
+connect_bd_net [get_bd_pins blk2_mem_tx_odd/enb] [get_bd_pins TxFIFO/bram2_odd_en_b]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/enb> is being overridden by the user with net <TxFIFO_bram2_odd_en_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_odd_addr_b] [get_bd_pins blk2_mem_tx_odd/addrb]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/addrb> is being overridden by the user with net <TxFIFO_bram2_odd_addr_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_odd_we_a] [get_bd_pins blk2_mem_tx_odd/wea]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/wea> is being overridden by the user with net <TxFIFO_bram2_odd_we_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_odd_en_a] [get_bd_pins blk2_mem_tx_odd/ena]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/ena> is being overridden by the user with net <TxFIFO_bram2_odd_en_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_odd_data_a] [get_bd_pins blk2_mem_tx_odd/dina]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/dina> is being overridden by the user with net <TxFIFO_bram2_odd_data_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_odd_addr_a] [get_bd_pins blk2_mem_tx_odd/addra]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/addra> is being overridden by the user with net <TxFIFO_bram2_odd_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins blk2_mem_tx_odd/clka] [get_bd_pins blk2_mem_tx_odd/clkb]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/clka> is being overridden by the user with net <Net1>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/clkb> is being overridden by the user with net <Net1>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk2_mem_tx_odd/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/clka> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/clkb> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_even_en_b] [get_bd_pins blk2_mem_tx_even/enb]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/enb> is being overridden by the user with net <TxFIFO_bram2_even_en_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_even_addr_b] [get_bd_pins blk2_mem_tx_even/addrb]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/addrb> is being overridden by the user with net <TxFIFO_bram2_even_addr_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_even_we_a] [get_bd_pins blk2_mem_tx_even/wea]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/wea> is being overridden by the user with net <TxFIFO_bram2_even_we_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_even_en_a] [get_bd_pins blk2_mem_tx_even/ena]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/ena> is being overridden by the user with net <TxFIFO_bram2_even_en_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_even_data_a] [get_bd_pins blk2_mem_tx_even/dina]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/dina> is being overridden by the user with net <TxFIFO_bram2_even_data_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_even_addr_a] [get_bd_pins blk2_mem_tx_even/addra]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/addra> is being overridden by the user with net <TxFIFO_bram2_even_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins blk2_mem_tx_even/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/clkb> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk2_mem_tx_even/clka] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/clka> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_odd_en_b] [get_bd_pins blk1_mem_tx_odd/enb]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/enb> is being overridden by the user with net <TxFIFO_bram1_odd_en_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_odd_addr_b] [get_bd_pins blk1_mem_tx_odd/addrb]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/addrb> is being overridden by the user with net <TxFIFO_bram1_odd_addr_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk1_mem_tx_odd/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/clkb> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_odd_we_a] [get_bd_pins blk1_mem_tx_odd/wea]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/wea> is being overridden by the user with net <TxFIFO_bram1_odd_we_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_odd_en_a] [get_bd_pins blk1_mem_tx_odd/ena]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/ena> is being overridden by the user with net <TxFIFO_bram1_odd_en_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_odd_data_a] [get_bd_pins blk1_mem_tx_odd/dina]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/dina> is being overridden by the user with net <TxFIFO_bram1_odd_data_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins blk1_mem_tx_odd/clka] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/clka> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_odd_addr_a] [get_bd_pins blk1_mem_tx_odd/addra]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/addra> is being overridden by the user with net <TxFIFO_bram1_odd_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_even_en_b] [get_bd_pins blk1_mem_tx_even/enb]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/enb> is being overridden by the user with net <TxFIFO_bram1_even_en_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_even_addr_b] [get_bd_pins blk1_mem_tx_even/addrb]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/addrb> is being overridden by the user with net <TxFIFO_bram1_even_addr_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk1_mem_tx_even/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/clkb> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_even_we_a] [get_bd_pins blk1_mem_tx_even/wea]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/wea> is being overridden by the user with net <TxFIFO_bram1_even_we_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_even_en_a] [get_bd_pins blk1_mem_tx_even/ena]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/ena> is being overridden by the user with net <TxFIFO_bram1_even_en_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_even_data_a] [get_bd_pins blk1_mem_tx_even/dina]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/dina> is being overridden by the user with net <TxFIFO_bram1_even_data_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram1_even_addr_a] [get_bd_pins blk1_mem_tx_even/addra]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/addra> is being overridden by the user with net <TxFIFO_bram1_even_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins blk1_mem_tx_even/clka] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/clka> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_odd_en_b] [get_bd_pins blk0_mem_tx_odd/enb]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/enb> is being overridden by the user with net <TxFIFO_bram0_odd_en_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_odd_addr_b] [get_bd_pins blk0_mem_tx_odd/addrb]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/addrb> is being overridden by the user with net <TxFIFO_bram0_odd_addr_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk0_mem_tx_odd/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/clkb> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_odd_we_a] [get_bd_pins blk0_mem_tx_odd/wea]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/wea> is being overridden by the user with net <TxFIFO_bram0_odd_we_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_odd_en_a] [get_bd_pins blk0_mem_tx_odd/ena]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/ena> is being overridden by the user with net <TxFIFO_bram0_odd_en_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_odd_data_a] [get_bd_pins blk0_mem_tx_odd/dina]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/dina> is being overridden by the user with net <TxFIFO_bram0_odd_data_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_odd_addr_a] [get_bd_pins blk0_mem_tx_odd/addra]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/addra> is being overridden by the user with net <TxFIFO_bram0_odd_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins blk0_mem_tx_odd/clka] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/clka> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_even_en_b] [get_bd_pins blk0_mem_tx_even/enb]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/enb> is being overridden by the user with net <TxFIFO_bram0_even_en_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_even_addr_b] [get_bd_pins blk0_mem_tx_even/addrb]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/addrb> is being overridden by the user with net <TxFIFO_bram0_even_addr_b>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_even_we_a] [get_bd_pins blk0_mem_tx_even/wea]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/wea> is being overridden by the user with net <TxFIFO_bram0_even_we_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_even_en_a] [get_bd_pins blk0_mem_tx_even/ena]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/ena> is being overridden by the user with net <TxFIFO_bram0_even_en_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_even_data_a] [get_bd_pins blk0_mem_tx_even/dina]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/dina> is being overridden by the user with net <TxFIFO_bram0_even_data_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram0_even_addr_a] [get_bd_pins blk0_mem_tx_even/addra]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/addra> is being overridden by the user with net <TxFIFO_bram0_even_addr_a>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins blk0_mem_tx_even/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/clkb> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk0_mem_tx_even/clka] [get_bd_pins processing_system7_0/FCLK_CLK0]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/clka> is being overridden by the user with net </processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+connect_bd_net [get_bd_pins TxFIFO/bram2_odd_rdata_b] [get_bd_pins blk2_mem_tx_odd/doutb]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_odd/doutb> is being overridden by the user with net <blk2_mem_tx_odd_doutb>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk2_mem_tx_even/doutb] [get_bd_pins TxFIFO/bram2_even_rdata_b]
+WARNING: [BD 41-1306] The connection to interface pin </blk2_mem_tx_even/doutb> is being overridden by the user with net <blk2_mem_tx_even_doutb>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk1_mem_tx_odd/doutb] [get_bd_pins TxFIFO/bram1_odd_rdata_b]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_odd/doutb> is being overridden by the user with net <blk1_mem_tx_odd_doutb>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk1_mem_tx_even/doutb] [get_bd_pins TxFIFO/bram1_even_rdata_b]
+WARNING: [BD 41-1306] The connection to interface pin </blk1_mem_tx_even/doutb> is being overridden by the user with net <blk1_mem_tx_even_doutb>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk0_mem_tx_odd/doutb] [get_bd_pins TxFIFO/bram0_odd_rdata_b]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_odd/doutb> is being overridden by the user with net <blk0_mem_tx_odd_doutb>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+connect_bd_net [get_bd_pins blk0_mem_tx_even/doutb] [get_bd_pins TxFIFO/bram0_even_rdata_b]
+WARNING: [BD 41-1306] The connection to interface pin </blk0_mem_tx_even/doutb> is being overridden by the user with net <blk0_mem_tx_even_doutb>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+group_bd_cells TX_BUFFER [get_bd_cells blk1_mem_tx_odd] [get_bd_cells blk1_mem_tx_even] [get_bd_cells blk0_mem_tx_even] [get_bd_cells blk2_mem_tx_even] [get_bd_cells blk2_mem_tx_odd] [get_bd_cells blk0_mem_tx_odd] [get_bd_cells TxFIFO]
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk2_mem_tx_odd/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk2_mem_tx_odd/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk2_mem_tx_even/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk2_mem_tx_even/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk1_mem_tx_odd/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk1_mem_tx_even/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk1_mem_tx_even/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk0_mem_tx_odd/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk0_mem_tx_odd/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk0_mem_tx_even/clkb> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTB>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk0_mem_tx_even/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+WARNING: [BD 41-1306] The connection to interface pin </TX_BUFFER/blk1_mem_tx_odd/clka> is being overridden by the user with net <processing_system7_0_FCLK_CLK0>. This pin will not be connected as a part of interface connection <BRAM_PORTA>.
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4 -cluster_configuration lsf
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_2_smartconnect_0_0: SmartConnect design_2_smartconnect_0_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+CRITICAL WARNING: [BD 41-1761] Reset pin '/BiDirChannels_0/tx_rstn' is found to be associated with multiple clock pins, which are not compatible w.r.t frequency, phase and clock-domain. This may prevent design from functioning correctly. Please ensure same reset pin is either not associated with different clock pins or all associated clock pins are driven by same or compatible clock source(s). List of associated clock pins:
+/BiDirChannels_0/txclk
+/BiDirChannels_0/MCK_P
+/BiDirChannels_0/MCK_N
+/BiDirChannels_0/SYNCK
+
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/sim/design_2.v
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v
+Exporting to file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/hw_handoff/design_2_smartconnect_0_0.hwh
+Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/synth/design_2_smartconnect_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DMA/axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/TxFIFO .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block RX_BUFFER/RxFIFO .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/blk0_mem_tx_even .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/blk0_mem_tx_odd .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/blk1_mem_tx_odd .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/blk1_mem_tx_even .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/blk2_mem_tx_even .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/blk2_mem_tx_odd .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block REGISTER_DEMUX/AXI_Register_Demux/s00_couplers/auto_pc .
+Exporting to file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hw_handoff/design_2.hwh
+Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_smartconnect_0_0, cache-ID = 342fc652e03eb641; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_0, cache-ID = a7bb86cd648d609a; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_blk1_mem_tx_even_0, cache-ID = b4c81b1d30447f7e; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_blk_mem_1_even_2, cache-ID = b4c81b1d30447f7e; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_blk_mem_tx_even_0, cache-ID = b4c81b1d30447f7e; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_blk0_mem_tx_odd_0, cache-ID = b4c81b1d30447f7e; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_blk1_mem_tx_odd_0, cache-ID = b4c81b1d30447f7e; cache size = 188.679 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_blk2_mem_tx_even_0, cache-ID = b4c81b1d30447f7e; cache size = 188.679 MB.
+[Wed Apr 20 13:55:00 2022] Launched design_2_axis_stream_txfifo_0_2_synth_1, design_2_RxFIFO_0_synth_1, synth_1...
+Run output will be captured here:
+design_2_axis_stream_txfifo_0_2_synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1/runme.log
+design_2_RxFIFO_0_synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_RxFIFO_0_synth_1/runme.log
+synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/runme.log
+[Wed Apr 20 13:55:00 2022] Launched impl_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:01:07 ; elapsed = 00:01:22 . Memory (MB): peak = 10503.957 ; gain = 278.086 ; free physical = 2335 ; free virtual = 24394
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.30 . Memory (MB): peak = 10503.957 ; gain = 0.000 ; free physical = 2244 ; free virtual = 24185
+INFO: [Netlist 29-17] Analyzing 372 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.98 ; elapsed = 00:00:00.96 . Memory (MB): peak = 11012.355 ; gain = 0.000 ; free physical = 1656 ; free virtual = 23602
+Restored from archive | CPU: 0.980000 secs | Memory: 17.062256 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.98 ; elapsed = 00:00:00.96 . Memory (MB): peak = 11012.355 ; gain = 0.000 ; free physical = 1656 ; free virtual = 23602
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 11012.355 ; gain = 0.000 ; free physical = 1658 ; free virtual = 23604
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 135 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 128 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 5 instances
+
+open_run: Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 11247.465 ; gain = 743.508 ; free physical = 1523 ; free virtual = 23469
+report_utilization -name utilization_1
+open_bd_design {/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd}
+open_bd_design {/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd}
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.dcp' for cell 'design_2_i/BiDirChannels_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.dcp' for cell 'design_2_i/led_driver_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.dcp' for cell 'design_2_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.dcp' for cell 'design_2_i/DMA/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.dcp' for cell 'design_2_i/DMA/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_1'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.dcp' for cell 'design_2_i/LOOP1/data_processor_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_2'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_3'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_xbar_0/design_2_xbar_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.dcp' for cell 'design_2_i/RESETS/clk_reset_domain'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.dcp' for cell 'design_2_i/RESETS/txclk_reset_domain'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0.dcp' for cell 'design_2_i/RX_BUFFER/RxFIFO'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.dcp' for cell 'design_2_i/SPI/SPI_ip_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.dcp' for cell 'design_2_i/SPI/iobuf_xil_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.dcp' for cell 'design_2_i/TX_BUFFER/TxFIFO'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_2/design_2_blk_mem_1_even_2.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_tx_even_0/design_2_blk_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_odd_0/design_2_blk1_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk0_mem_tx_odd_0/design_2_blk0_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_even_0/design_2_blk1_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk2_mem_tx_even_0/design_2_blk2_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_odd'
+Netlist sorting complete. Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.32 . Memory (MB): peak = 11329.117 ; gain = 0.000 ; free physical = 1013 ; free virtual = 23148
+INFO: [Netlist 29-17] Analyzing 372 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:56]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:82]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-objects [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:82]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:87]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:87]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:87]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:88]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/u_clkdiv8/clk_div8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:88]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:88]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:93]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:106]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:106]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks spi_clk]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:106]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:117]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:117]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks spi_clk]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:117]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:118]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:118]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks spi_clk_4]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:118]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:119]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:119]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-to [get_clocks spi_clk_8]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:119]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:121]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:121]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:121]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:121]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks spi_clk]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:121]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:122]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:122]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:122]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:122]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks spi_clk]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:122]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:123]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:123]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:123]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:123]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks spi_clk_4]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:123]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:124]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:124]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:124]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:124]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks spi_clk_8]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:124]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:125]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:125]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:125]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:125]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks spi_clk_8]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:125]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:126]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:126]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:126]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:126]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_clocks spi_clk_4]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:126]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[2]/Q'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:137]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[3]/Q'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:137]
+CRITICAL WARNING: [Vivado 12-4739] set_case_analysis:No valid object(s) found for '-objects [get_pins {{design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[2]/Q} {design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[3]/Q}}]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:137]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:142]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_4'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:142]
+WARNING: [Vivado 12-627] No clocks matched 'spi_clk_8'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:142]
+WARNING: [Vivado 12-5846] Redefining clock group MULTI [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:142]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_0/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_1/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_2/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_3/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+INFO: [Project 1-1714] 60 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 11678.629 ; gain = 0.000 ; free physical = 863 ; free virtual = 22999
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 135 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 128 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 5 instances
+
+open_run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 11739.652 ; gain = 428.258 ; free physical = 817 ; free virtual = 22953
+WARNING: [Vivado 12-508] No pins matched '*SPI_ip_inst/u_clkdiv4*'.
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:56]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[2]/Q'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:133]
+WARNING: [Vivado 12-508] No pins matched 'design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[3]/Q'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:133]
+CRITICAL WARNING: [Vivado 12-4739] set_case_analysis:No valid object(s) found for '-objects [get_pins {{design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[2]/Q} {design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[3]/Q}}]'. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:133]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-5846] Redefining clock group MULTI [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:138]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_0/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_1/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_2/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_3/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+INFO: [Project 1-1714] 60 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 11741.539 ; gain = 1.887 ; free physical = 826 ; free virtual = 22963
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:56]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+WARNING: [Vivado 12-5846] Redefining clock group MULTI [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:138]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_0/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_1/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_2/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_3/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+INFO: [Project 1-1714] 60 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 11761.344 ; gain = 19.805 ; free physical = 815 ; free virtual = 22952
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4 -cluster_configuration lsf
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Wed Apr 20 16:51:21 2022] Launched synth_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/runme.log
+[Wed Apr 20 16:51:22 2022] Launched impl_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.log
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd]
+refresh_design
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.dcp' for cell 'design_2_i/BiDirChannels_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.dcp' for cell 'design_2_i/led_driver_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.dcp' for cell 'design_2_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.dcp' for cell 'design_2_i/DMA/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.dcp' for cell 'design_2_i/DMA/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_1'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.dcp' for cell 'design_2_i/LOOP1/data_processor_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_2'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_3'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_xbar_0/design_2_xbar_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.dcp' for cell 'design_2_i/RESETS/clk_reset_domain'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.dcp' for cell 'design_2_i/RESETS/txclk_reset_domain'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0.dcp' for cell 'design_2_i/RX_BUFFER/RxFIFO'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.dcp' for cell 'design_2_i/SPI/SPI_ip_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.dcp' for cell 'design_2_i/SPI/iobuf_xil_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.dcp' for cell 'design_2_i/TX_BUFFER/TxFIFO'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_2/design_2_blk_mem_1_even_2.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_tx_even_0/design_2_blk_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_odd_0/design_2_blk1_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk0_mem_tx_odd_0/design_2_blk0_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_odd'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_even_0/design_2_blk1_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk2_mem_tx_even_0/design_2_blk2_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_odd'
+Netlist sorting complete. Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.35 . Memory (MB): peak = 11761.344 ; gain = 0.000 ; free physical = 1013 ; free virtual = 22989
+INFO: [Netlist 29-17] Analyzing 372 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/I' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/O' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:56]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+WARNING: [Vivado 12-5846] Redefining clock group MULTI [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:138]
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_0/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP1/axis_switch_1/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_2/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
+     Instance: design_2_i/LOOP2/axis_switch_3/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
+  This will add unnecessary latency to the design. Please check the design for the following: 
+ 1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
+ 2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
+ [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+INFO: [Project 1-1714] 60 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 11819.160 ; gain = 57.816 ; free physical = 912 ; free virtual = 22887
+open_bd_design {/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd}
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+report_ip_status -name ip_status
+upgrade_ip [get_ips  {design_2_RxFIFO_0 design_2_axis_stream_txfifo_0_2}] -log ip_upgrade.log
+Upgrading '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd'
+INFO: [IP_Flow 19-3420] Updated design_2_RxFIFO_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_2_axis_stream_txfifo_0_2 to use current project options
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips {design_2_RxFIFO_0 design_2_axis_stream_txfifo_0_2}] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name axis_stream_txfifo_v2_0_project -directory /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.tmp/axis_stream_txfifo_v2_0_project /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 11980.449 ; gain = 0.000 ; free physical = 902 ; free virtual = 22882
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 11980.449 ; gain = 0.000 ; free physical = 901 ; free virtual = 22881
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_txfifo_2.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg1'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'RD_ADDR_WIDTH' by 16 for port or parameter 'rd_ptr_reg2'
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+set_property core_revision 23 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rstn': Bus parameter POLARITY is ACTIVE_LOW but port 'rstn' is not *resetn - please double check the POLARITY setting.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'
+report_ip_status -name ip_status 
+upgrade_ip -vlnv user.org:user:axis_stream_txfifo:2.0 [get_ips  design_2_axis_stream_txfifo_0_2] -log ip_upgrade.log
+Upgrading '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_2_axis_stream_txfifo_0_2 (axis_stream_txfifo_v2.0 2.0) from revision 22 to revision 23
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_2_axis_stream_txfifo_0_2] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv user.org:user:axis_stream_txfifo:2.0 [get_ips  design_2_axis_stream_txfifo_0_2] -log ip_upgrade.log
+Upgrading '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd'
+INFO: [IP_Flow 19-3420] Updated design_2_axis_stream_txfifo_0_2 to use current project options
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_2_axis_stream_txfifo_0_2] -no_script -sync -force -quiet
+ERROR: [Common 17-179] Fork failed: Cannot allocate memory
+report_ip_status -name ip_status 
+ipx::edit_ip_in_project -upgrade true -name axis_stream_fifo_v1_0_project -directory /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.tmp/axis_stream_fifo_v1_0_project /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 11985.234 ; gain = 0.000 ; free physical = 831 ; free virtual = 22811
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 11985.234 ; gain = 0.000 ; free physical = 830 ; free virtual = 22810
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/axis_stream_fifo_1.0/component.xml' ignored by IP packager.
+WARNING: [IP_Flow 19-5101] Packaging a component with a SystemVerilog top file is not fully supported. Please refer to UG1118 'Creating and Packaging Custom IP'.
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'WR_ADDR_WIDTH' by 16 for port or parameter 'wr_ptr_reg0'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'WR_ADDR_WIDTH' by 16 for port or parameter 'wr_ptr_reg1'
+INFO: [IP_Flow 19-1976] HDL Parser: Replacing 'WR_ADDR_WIDTH' by 16 for port or parameter 'wr_ptr_reg2'
+INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'.
+set_property core_revision 69 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:axis_stream_fifo:1.0 [get_ips  design_2_RxFIFO_0] -log ip_upgrade.log
+Upgrading '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_2_RxFIFO_0 (axis_stream_fifo_v1.0 1.0) from revision 68 to revision 69
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/ui/bd_1fdbff51.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cdickins/reuse/gyro2tester-main/vivado/project/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_2_RxFIFO_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4 -cluster_configuration lsf
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_2_smartconnect_0_0: SmartConnect design_2_smartconnect_0_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+CRITICAL WARNING: [BD 41-1761] Reset pin '/BiDirChannels_0/tx_rstn' is found to be associated with multiple clock pins, which are not compatible w.r.t frequency, phase and clock-domain. This may prevent design from functioning correctly. Please ensure same reset pin is either not associated with different clock pins or all associated clock pins are driven by same or compatible clock source(s). List of associated clock pins:
+/BiDirChannels_0/txclk
+/BiDirChannels_0/MCK_P
+/BiDirChannels_0/MCK_N
+/BiDirChannels_0/SYNCK
+
+Wrote  : </home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/sources_1/bd/design_2/design_2.bd> 
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.v
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/sim/design_2.v
+VHDL Output written to : /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v
+Exporting to file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/hw_handoff/design_2_smartconnect_0_0.hwh
+Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/synth/design_2_smartconnect_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block DMA/axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block TX_BUFFER/TxFIFO .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block RX_BUFFER/RxFIFO .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block REGISTER_DEMUX/AXI_Register_Demux/s00_couplers/auto_pc .
+Exporting to file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hw_handoff/design_2.hwh
+Generated Hardware Definition File /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/synth/design_2.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_auto_pc_0, cache-ID = a7bb86cd648d609a; cache size = 189.114 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_2_smartconnect_0_0, cache-ID = 342fc652e03eb641; cache size = 189.114 MB.
+ERROR: [Common 17-179] Fork failed: Cannot allocate memory
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+ERROR: [Common 17-179] Fork failed: Cannot allocate memory
+[Wed Apr 20 17:05:32 2022] Launched design_2_axis_stream_txfifo_0_2_synth_1, design_2_RxFIFO_0_synth_1, synth_1...
+Run output will be captured here:
+design_2_axis_stream_txfifo_0_2_synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1/runme.log
+design_2_RxFIFO_0_synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_RxFIFO_0_synth_1/runme.log
+synth_1: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/synth_1/runme.log
+[Wed Apr 20 17:05:32 2022] Launched impl_1...
+Run output will be captured here: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:01:07 ; elapsed = 00:01:17 . Memory (MB): peak = 12454.523 ; gain = 402.059 ; free physical = 817 ; free virtual = 22797
+ERROR: [Common 17-39] 'launch_runs' failed due to earlier errors.
+write_hw_platform -fixed -include_bit -force -file /home/cdickins/reuse/gyro2tester-main/vivado/project/design_2_wrapper.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: /home/cdickins/reuse/gyro2tester-main/vivado/project/design_2_wrapper.xsa ...
+INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: /home/cdickins/reuse/gyro2tester-main/vivado/project/design_2_wrapper.xsa
+INFO: [Hsi 55-2053] elapsed time for repository (/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/embeddedsw) loading 1 seconds
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 20 17:26:59 2022...

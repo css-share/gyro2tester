@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Tue Apr 19 23:55:29 2022
-| Host         : xsjlc190423 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+| Date         : Wed Apr 20 17:31:52 2022
+| Host         : xsjlc200177 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_utilization -file design_2_wrapper_utilization_synth.rpt -pb design_2_wrapper_utilization_synth.pb
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -166,12 +166,18 @@ Table of Contents
 | design_2_led_driver_0_0         |    1 |
 | design_2_iobuf_xil_0_0          |    1 |
 | design_2_data_processor_0_0     |    1 |
+| design_2_blk_mem_tx_even_0      |    1 |
 | design_2_blk_mem_2_odd_0        |    1 |
+| design_2_blk_mem_1_even_2       |    1 |
 | design_2_blk_mem_1_even_1       |    1 |
 | design_2_blk_mem_1_even_0       |    1 |
 | design_2_blk_mem_0_odd_0        |    1 |
 | design_2_blk_mem_0_even_1       |    1 |
 | design_2_blk_mem_0_even_0       |    1 |
+| design_2_blk2_mem_tx_even_0     |    1 |
+| design_2_blk1_mem_tx_odd_0      |    1 |
+| design_2_blk1_mem_tx_even_0     |    1 |
+| design_2_blk0_mem_tx_odd_0      |    1 |
 | design_2_axis_switch_3_0        |    1 |
 | design_2_axis_switch_2_0        |    1 |
 | design_2_axis_switch_1_0        |    1 |

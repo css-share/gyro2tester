@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Tue Apr 19 23:59:14 2022
-| Host         : xsjl20347 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Wed Apr 20 17:35:05 2022
+| Host         : xsjl20355 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -47,7 +47,7 @@ Related violations: <none>
 
 TIMING-14#2 Critical Warning
 LUT on the clock tree  
-The LUT design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/shift_reg[23]_i_3 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+The LUT design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/shift_reg[23]_i_3 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
 Related violations: <none>
 
 LUTAR-1#1 Warning
@@ -207,197 +207,197 @@ Related violations: <none>
 
 TIMING-20#1 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[0]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[10]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#3 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[11]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#4 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[12]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#5 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[1]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#6 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[2]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#7 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[3]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#8 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[4]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#9 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[5]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#10 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[6]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#11 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[7]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#12 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[8]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#13 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram0_odd_addr_b_reg[9]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#14 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[0]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#15 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[10]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#16 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[11]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#17 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[12]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#18 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[1]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#19 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[2]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#20 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[3]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#21 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[4]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#22 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[5]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#23 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[6]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#24 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[7]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#25 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[8]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#26 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram1_odd_addr_b_reg[9]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#27 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[0]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#28 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[10]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#29 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[11]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#30 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[12]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#31 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[1]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#32 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[2]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#33 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[3]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#34 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[4]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#35 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[5]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#36 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[6]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#37 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[7]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#38 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[8]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#39 Warning
 Non-clocked latch  
-The latch design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RxFIFO/inst/bram2_odd_addr_b_reg[9]/G is not reached by a timing clock
+The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-30#1 Warning
@@ -469,91 +469,91 @@ XDCH-2#1 Warning
 Same min and max delay values on IO port  
 The same input delay of 2.000 ns has been defined on port 'DRX' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_input_delay -clock [get_clocks txclk] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 97)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 93)
 Related violations: <none>
 
 XDCH-2#2 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'DSYNC' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#3 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'DTX' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#4 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED0' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#5 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED1' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#6 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED2' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#7 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED3' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#8 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED4' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#9 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED5' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#10 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED6' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#11 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED7' relative to clock txclk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 104)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#12 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'SPI_CSN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 106)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 102)
 Related violations: <none>
 
 XDCH-2#13 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'SPI_DN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 106)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 102)
 Related violations: <none>
 
 

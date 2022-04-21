@@ -79,13 +79,9 @@ set_property PACKAGE_PIN U14 [get_ports LED7]
 
 create_generated_clock -name txclk -source [get_pins {design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]}] -divide_by 2 [get_pins design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg/Q]
 
-create_generated_clock -name spi_clk -source [get_pins {design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]}] -divide_by 2 [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2]
-
-##create_generated_clock -name spi_clk_4 -source [get_pins {design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]}] -divide_by 4 [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4]
-##create_generated_clock -name spi_clk_8 -source [get_pins {design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]}] -divide_by 8 [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv8/clk_div8]
-
-create_generated_clock -name spi_clk_4 -source [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv2/clk_div2] -divide_by 2 [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4]
-create_generated_clock -name spi_clk_8 -source [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv4/clk_div4] -divide_by 2 [get_pins design_2_i/SPI_ip_0/inst/u_clkdiv8/clk_div8]
+create_generated_clock -name spi_clk -source [get_pins {design_2_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]}] -divide_by 2 [get_pins design_2_i/SPI/SPI_ip_0/inst/u_clkdiv2/clk_div2]
+create_generated_clock -name spi_clk_4 -source [get_pins design_2_i/SPI/SPI_ip_0/inst/u_clkdiv2/clk_div2] -divide_by 2 [get_pins design_2_i/SPI/SPI_ip_0/inst/u_clkdiv4/clk_div4]
+create_generated_clock -name spi_clk_8 -source [get_pins design_2_i/SPI/SPI_ip_0/inst/u_clkdiv4/clk_div4] -divide_by 2 [get_pins design_2_i/SPI/SPI_ip_0/inst/u_clkdiv8/clk_div8]
 
 
 ##set_clock_groups -name MULTIPLE -asynchronous -group [list [get_clocks clk_fpga_0] [get_clocks spi_clk] [get_clocks spi_clk_4] [get_clocks spi_clk_8]] -group [list [get_clocks txclk]]
@@ -134,7 +130,7 @@ set_false_path -from [get_clocks spi_clk_4] -to [get_clocks spi_clk_8]
 #set_case_analysis 0 [get_pins design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[2]]
 #set_case_analysis 0 [get_pins design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[3]]
 
-set_case_analysis 0 [get_pins {{design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[2]/Q} {design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[3]/Q}}]
+set_case_analysis 0 [get_pins {{design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[2]/Q} {design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[3]/Q}}]
 
 
 ##set_case_analysis 0 [get_pins [list design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[2] design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[3] ]]

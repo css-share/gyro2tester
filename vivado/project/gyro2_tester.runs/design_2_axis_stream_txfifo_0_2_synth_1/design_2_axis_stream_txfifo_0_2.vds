@@ -2,15 +2,16 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Tue Apr 19 13:54:38 2022
-# Process ID: 33789
+# Start of session at: Wed Apr 20 17:05:47 2022
+# Process ID: 13680
 # Current directory: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1
 # Command line: vivado -log design_2_axis_stream_txfifo_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_axis_stream_txfifo_0_2.tcl
 # Log file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1/design_2_axis_stream_txfifo_0_2.vds
 # Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1/vivado.jou
-# Running On: xsjl24913, OS: Linux, CPU Frequency: 3499.875 MHz, CPU Physical cores: 16, Host memory: 270190 MB
+# Running On: xsjl23630, OS: Linux, CPU Frequency: 2439.941 MHz, CPU Physical cores: 16, Host memory: 101121 MB
 #-----------------------------------------------------------
 source design_2_axis_stream_txfifo_0_2.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2879.207 ; gain = 2.020 ; free physical = 3771 ; free virtual = 55711
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
@@ -21,20 +22,22 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 34071
-WARNING: [Synth 8-2507] parameter declaration becomes local in axis_stream_txfifo_v2_0_S00_AXIS with formal parameter declaration list [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/src/axis_stream_txfifo_v2_0_S00_AXIS.sv:56]
+INFO: [Synth 8-7075] Helper process launched with PID 14244
+WARNING: [Synth 8-2507] parameter declaration becomes local in axis_stream_txfifo_v2_0_S00_AXIS with formal parameter declaration list [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/src/axis_stream_txfifo_v2_0_S00_AXIS.sv:56]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2949.812 ; gain = 0.000 ; free physical = 32239 ; free virtual = 143030
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2885.336 ; gain = 0.000 ; free physical = 1913 ; free virtual = 53938
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_2_axis_stream_txfifo_0_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/synth/design_2_axis_stream_txfifo_0_2.sv:56]
-INFO: [Synth 8-6157] synthesizing module 'axis_stream_txfifo_v2_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/hdl/axis_stream_txfifo_v2_0.sv:4]
-INFO: [Synth 8-6157] synthesizing module 'axis_stream_txfifo_v2_0_S00_AXI' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv:4]
-INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv:377]
-INFO: [Synth 8-6155] done synthesizing module 'axis_stream_txfifo_v2_0_S00_AXI' (1#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv:4]
-INFO: [Synth 8-6157] synthesizing module 'axis_stream_txfifo_v2_0_S00_AXIS' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/src/axis_stream_txfifo_v2_0_S00_AXIS.sv:4]
-INFO: [Synth 8-6155] done synthesizing module 'axis_stream_txfifo_v2_0_S00_AXIS' (2#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/src/axis_stream_txfifo_v2_0_S00_AXIS.sv:4]
-INFO: [Synth 8-6155] done synthesizing module 'axis_stream_txfifo_v2_0' (3#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/0f53/hdl/axis_stream_txfifo_v2_0.sv:4]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_stream_txfifo_0_2' (4#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/synth/design_2_axis_stream_txfifo_0_2.sv:56]
+INFO: [Synth 8-6157] synthesizing module 'axis_stream_txfifo_v2_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/hdl/axis_stream_txfifo_v2_0.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'axis_stream_txfifo_v2_0_S00_AXI' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv:4]
+INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv:377]
+INFO: [Synth 8-6155] done synthesizing module 'axis_stream_txfifo_v2_0_S00_AXI' (1#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'axis_stream_txfifo_v2_0_S00_AXIS' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/src/axis_stream_txfifo_v2_0_S00_AXIS.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'axis_stream_txfifo_v2_0_S00_AXIS' (2#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/src/axis_stream_txfifo_v2_0_S00_AXIS.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'gen_sync_que_af' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/src/gen_sync_que_af.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'gen_sync_que_af' (3#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/src/gen_sync_que_af.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'axis_stream_txfifo_v2_0' (4#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/6542/hdl/axis_stream_txfifo_v2_0.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_axis_stream_txfifo_0_2' (5#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/synth/design_2_axis_stream_txfifo_0_2.sv:56]
 WARNING: [Synth 8-7129] Port S_AXIS_TSTRB[3] in module axis_stream_txfifo_v2_0_S00_AXIS is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXIS_TSTRB[2] in module axis_stream_txfifo_v2_0_S00_AXIS is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXIS_TSTRB[1] in module axis_stream_txfifo_v2_0_S00_AXIS is either unconnected or has no load
@@ -46,68 +49,68 @@ WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module axis_stream_txfifo_v2_0_S
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module axis_stream_txfifo_v2_0_S00_AXI is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module axis_stream_txfifo_v2_0_S00_AXI is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2949.820 ; gain = 0.008 ; free physical = 30499 ; free virtual = 141290
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2885.344 ; gain = 0.008 ; free physical = 1597 ; free virtual = 53626
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2949.820 ; gain = 0.008 ; free physical = 32352 ; free virtual = 143145
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2885.344 ; gain = 0.008 ; free physical = 1461 ; free virtual = 53490
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2949.820 ; gain = 0.008 ; free physical = 32352 ; free virtual = 143145
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2885.344 ; gain = 0.008 ; free physical = 1461 ; free virtual = 53490
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2949.820 ; gain = 0.000 ; free physical = 32392 ; free virtual = 143186
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2885.344 ; gain = 0.000 ; free physical = 1425 ; free virtual = 53454
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2965.840 ; gain = 0.000 ; free physical = 33249 ; free virtual = 144043
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2969.176 ; gain = 0.000 ; free physical = 2099 ; free virtual = 54140
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2965.844 ; gain = 0.004 ; free physical = 33245 ; free virtual = 144040
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2969.180 ; gain = 0.004 ; free physical = 2097 ; free virtual = 54138
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2965.844 ; gain = 16.031 ; free physical = 33306 ; free virtual = 144101
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2969.180 ; gain = 83.844 ; free physical = 2078 ; free virtual = 54120
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2965.844 ; gain = 16.031 ; free physical = 33305 ; free virtual = 144101
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2969.180 ; gain = 83.844 ; free physical = 2078 ; free virtual = 54120
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2965.844 ; gain = 16.031 ; free physical = 33304 ; free virtual = 144099
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2969.180 ; gain = 83.844 ; free physical = 2078 ; free virtual = 54120
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 33337 ; free virtual = 144133
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 2058 ; free virtual = 54101
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   16 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
 +---Registers : 
 	               32 Bit    Registers := 4     
-	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 11    
-+---RAMs : 
-	              32K Bit	(2048 X 16 bit)          RAMs := 2     
+	                1 Bit    Registers := 19    
 +---Muxes : 
+	   2 Input   48 Bit        Muxes := 2     
 	   2 Input   32 Bit        Muxes := 7     
 	   4 Input   32 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 7     
-	   2 Input   11 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 10    
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 21    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -124,6 +127,12 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port bram0_even_en_a driven by constant 1
+INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port bram0_odd_en_a driven by constant 1
+INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port bram1_even_en_a driven by constant 1
+INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port bram1_odd_en_a driven by constant 1
+INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port bram2_even_en_a driven by constant 1
+INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port bram2_odd_en_a driven by constant 1
 INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port m00_axis_tstrb[5] driven by constant 0
 INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port m00_axis_tstrb[4] driven by constant 0
 INFO: [Synth 8-3917] design design_2_axis_stream_txfifo_0_2 has port m00_axis_tstrb[3] driven by constant 1
@@ -136,61 +145,46 @@ WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module design_2_axis_stream_tx
 WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[31] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[30] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[29] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[28] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[27] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[26] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[25] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[24] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[23] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[22] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[21] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[20] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[19] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[18] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[17] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axis_tdata[16] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[3] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[2] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[1] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[0] in module design_2_axis_stream_txfifo_0_2 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 33101 ; free virtual = 143909
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-Distributed RAM: Preliminary Mapping Report (see note below)
-+--------------------------------+-------------------+-----------+----------------------+---------------+
-|Module Name                     | RTL Object        | Inference | Size (Depth x Width) | Primitives    | 
-+--------------------------------+-------------------+-----------+----------------------+---------------+
-|design_2_axis_stream_txfifo_0_2 | inst/mem_even_reg | Implied   | 2 K x 16             | RAM64M x 576  | 
-|design_2_axis_stream_txfifo_0_2 | inst/mem_odd_reg  | Implied   | 2 K x 16             | RAM64M x 576  | 
-+--------------------------------+-------------------+-----------+----------------------+---------------+
-
-Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 2000 ; free virtual = 54048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 33159 ; free virtual = 143969
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1799 ; free virtual = 53889
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 33166 ; free virtual = 143972
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-Distributed RAM: Final Mapping Report
-+--------------------------------+-------------------+-----------+----------------------+---------------+
-|Module Name                     | RTL Object        | Inference | Size (Depth x Width) | Primitives    | 
-+--------------------------------+-------------------+-----------+----------------------+---------------+
-|design_2_axis_stream_txfifo_0_2 | inst/mem_even_reg | Implied   | 2 K x 16             | RAM64M x 576  | 
-|design_2_axis_stream_txfifo_0_2 | inst/mem_odd_reg  | Implied   | 2 K x 16             | RAM64M x 576  | 
-+--------------------------------+-------------------+-----------+----------------------+---------------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1799 ; free virtual = 53889
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 33180 ; free virtual = 143985
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1796 ; free virtual = 53886
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -208,37 +202,51 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34190 ; free virtual = 144999
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1584 ; free virtual = 53675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34190 ; free virtual = 144998
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1584 ; free virtual = 53675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34186 ; free virtual = 144995
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1584 ; free virtual = 53675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34185 ; free virtual = 144994
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1584 ; free virtual = 53675
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34185 ; free virtual = 144994
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1583 ; free virtual = 53674
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34184 ; free virtual = 144992
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1583 ; free virtual = 53674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Dynamic Shift Register Report:
++------------+---------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name      | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+---------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | rgfile_reg[3] | 49     | 49         | 49     | 0       | 0      | 0      | 0      | 
++------------+---------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -251,51 +259,46 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------+------+
-|      |Cell     |Count |
-+------+---------+------+
-|1     |CARRY4   |    12|
-|2     |LUT1     |     3|
-|3     |LUT2     |     4|
-|4     |LUT3     |    22|
-|5     |LUT4     |    40|
-|6     |LUT5     |   100|
-|7     |LUT6     |   691|
-|8     |MUXF7    |   257|
-|9     |MUXF8    |    68|
-|10    |RAM64M   |   640|
-|11    |RAM64X1D |   128|
-|12    |FDCE     |    81|
-|13    |FDPE     |     1|
-|14    |FDRE     |   180|
-|15    |FDSE     |     1|
-+------+---------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    12|
+|2     |LUT1   |     8|
+|3     |LUT2   |     5|
+|4     |LUT3   |    52|
+|5     |LUT4   |    88|
+|6     |LUT5   |    32|
+|7     |LUT6   |    35|
+|8     |SRL16E |    49|
+|9     |FDCE   |    57|
+|10    |FDPE   |     1|
+|11    |FDRE   |   128|
+|12    |FDSE   |     4|
++------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34183 ; free virtual = 144992
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1583 ; free virtual = 53674
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2965.852 ; gain = 0.016 ; free physical = 34225 ; free virtual = 145033
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 2965.852 ; gain = 16.039 ; free physical = 34226 ; free virtual = 145034
+Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2969.188 ; gain = 0.016 ; free physical = 1636 ; free virtual = 53727
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 2969.188 ; gain = 83.852 ; free physical = 1635 ; free virtual = 53727
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2965.852 ; gain = 0.000 ; free physical = 34268 ; free virtual = 145077
-INFO: [Netlist 29-17] Analyzing 1105 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2969.188 ; gain = 0.000 ; free physical = 1747 ; free virtual = 53843
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2965.852 ; gain = 0.000 ; free physical = 34192 ; free virtual = 145002
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2969.188 ; gain = 0.000 ; free physical = 1686 ; free virtual = 53782
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 768 instances were transformed.
-  RAM64M => RAM64M (RAMD64E(x4)): 640 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 128 instances
+No Unisim elements were transformed.
 
-Synth Design complete, checksum: f9387d30
+Synth Design complete, checksum: 209c063b
 INFO: [Common 17-83] Releasing license: Synthesis
-32 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+40 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:45 . Memory (MB): peak = 2965.852 ; gain = 22.168 ; free physical = 34391 ; free virtual = 145200
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:55 . Memory (MB): peak = 2969.188 ; gain = 89.980 ; free physical = 1887 ; free virtual = 53981
 INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1/design_2_axis_stream_txfifo_0_2.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_2_axis_stream_txfifo_0_2, cache-ID = 2e3f1d3392ccfe1b
-INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_2_axis_stream_txfifo_0_2, cache-ID = 8af9ad8697f6b6a7
+INFO: [Coretcl 2-1174] Renamed 4 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_axis_stream_txfifo_0_2_synth_1/design_2_axis_stream_txfifo_0_2.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_2_axis_stream_txfifo_0_2_utilization_synth.rpt -pb design_2_axis_stream_txfifo_0_2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 19 13:55:49 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 20 17:07:27 2022...
