@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/boot/fsbl.elf
+	C:/Xilinx_projects/gyro2tester/vitis/gyro2spiTest/_ide/bitstream/design_2_wrapper.bit
+	C:/Xilinx_projects/gyro2tester/vitis/gyro2spiTest/Debug/gyro2spiTest.elf
+}

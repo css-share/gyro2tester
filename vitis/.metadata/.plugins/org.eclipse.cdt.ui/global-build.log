@@ -1,6 +1,6 @@
-Nothing to build in platform 'gyro2spi_ptfmPrj'
+Nothing to build in platform 'design_2_wrapper_04-19-2022'
 
-21:56:08 **** Incremental Build of configuration Debug for project gyro2app ****
+02:54:19 **** Build of configuration Debug for project gyro2spiTest ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -8,20 +8,20 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/gyro2spi_ptfmPrj/export/gyro2spi_ptfmPrj/sw/gyro2spi_ptfmPrj/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 In file included from ../src/main.c:8:
-C:/Xilinx_projects/gyro2tester/vitis/gyro2spi_ptfmPrj/export/gyro2spi_ptfmPrj/sw/gyro2spi_ptfmPrj/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/standalone_ps7_cortexa9_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Xilinx_projects/gyro2tester/vitis/gyro2spi_ptfmPrj/export/gyro2spi_ptfmPrj/sw/gyro2spi_ptfmPrj/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/standalone_ps7_cortexa9_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
 ../src/main.c:239:2: warning: #warning CHECK FOR THE VALID DDR ADDRESS IN XPARAMETERS.H, DEFAULT SET TO 0x01000000 [-Wcpp]
   239 | #warning CHECK FOR THE VALID DDR ADDRESS IN XPARAMETERS.H, \
       |  ^~~~~~~
 In file included from ../src/main.c:6:
-C:/Xilinx_projects/gyro2tester/vitis/gyro2spi_ptfmPrj/export/gyro2spi_ptfmPrj/sw/gyro2spi_ptfmPrj/standalone_domain/bspinclude/include/xparameters.h:237:40: warning: initialization of 'Xuint32 *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  237 | #define XPAR_SPI_IP_0_S00_AXI_BASEADDR 0x43C10000
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/standalone_ps7_cortexa9_0/bspinclude/include/xparameters.h:253:40: warning: initialization of 'Xuint32 *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  253 | #define XPAR_SPI_IP_0_S00_AXI_BASEADDR 0x43C10000
       |                                        ^~~~~~~~~~
 ../src/main.c:319:26: note: in expansion of macro 'XPAR_SPI_IP_0_S00_AXI_BASEADDR'
   319 | Xuint32* debugWordAddr = XPAR_SPI_IP_0_S00_AXI_BASEADDR; //change this depending on where you want to write
@@ -102,14 +102,19 @@ At top level:
       |                ^~~~
 'Finished building: ../src/main.c'
 ' '
-'Building target: gyro2app.elf'
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: gyro2spiTest.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/gyro2spi_ptfmPrj/export/gyro2spi_ptfmPrj/sw/gyro2spi_ptfmPrj/standalone_domain/bsplib/lib -o "gyro2app.elf"  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: gyro2app.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper_04-19-2022/export/design_2_wrapper_04-19-2022/sw/design_2_wrapper_04-19-2022/standalone_ps7_cortexa9_0/bsplib/lib -o "gyro2spiTest.elf"  ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: gyro2spiTest.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size gyro2app.elf  |tee "gyro2app.elf.size"
+arm-none-eabi-size gyro2spiTest.elf  |tee "gyro2spiTest.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  76584	   3176	 108888	 188648	  2e0e8	gyro2app.elf
-'Finished building: gyro2app.elf.size'
+  76608	   3176	 108888	 188672	  2e100	gyro2spiTest.elf
+'Finished building: gyro2spiTest.elf.size'
 ' '
