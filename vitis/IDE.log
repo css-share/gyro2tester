@@ -230,3 +230,4 @@ con
 ----------------End of Script----------------
 
 18:14:02 INFO  : Launch script is exported to file 'C:\Xilinx_projects\gyro2tester\vitis\gyro2spiTest_system\_ide\scripts\debugger_gyro2spitest-default.tcl'
+18:15:42 INFO  : Disconnected from the channel tcfchan#4.
