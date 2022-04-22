@@ -1,83 +1,85 @@
+To monitor the LSF job for this run, please use any of the following commands in a new terminal window:
+bjobs -J /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_led_driver_0_0_synth_1/runme.sh
+bhist -l -J /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_led_driver_0_0_synth_1/runme.sh
 
 *** Running vivado
     with args -log design_2_led_driver_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_led_driver_0_0.tcl
 
 
-
 ****** Vivado v2021.2 (64-bit)
-  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
   **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source design_2_led_driver_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1350.164 ; gain = 0.000
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2924.930 ; gain = 2.020 ; free physical = 581 ; free virtual = 194984
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx_projects/gyro2tester/vivado/ip_repo'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
 Command: synth_design -top design_2_led_driver_0_0 -part xc7z020clg484-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 26984
+INFO: [Synth 8-7075] Helper process launched with PID 30683
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1403.746 ; gain = 53.582
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2931.059 ; gain = 0.000 ; free physical = 520 ; free virtual = 192610
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_2_led_driver_0_0' [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/synth/design_2_led_driver_0_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'led_driver' [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:20]
-WARNING: [Synth 8-151] case item 26'b00111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-WARNING: [Synth 8-151] case item 26'b01111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-WARNING: [Synth 8-151] case item 26'b10111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-WARNING: [Synth 8-151] case item 26'b11111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-WARNING: [Synth 8-151] case item 26'b00111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-WARNING: [Synth 8-151] case item 26'b01111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-WARNING: [Synth 8-151] case item 26'b10111111111111111111111111 is unreachable [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'led_driver' (1#1) [C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/led_driver.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_led_driver_0_0' (2#1) [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/synth/design_2_led_driver_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'design_2_led_driver_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/synth/design_2_led_driver_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'led_driver' [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:20]
+WARNING: [Synth 8-151] case item 26'b00111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+WARNING: [Synth 8-151] case item 26'b01111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+WARNING: [Synth 8-151] case item 26'b10111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+WARNING: [Synth 8-151] case item 26'b11111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+WARNING: [Synth 8-151] case item 26'b00111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+WARNING: [Synth 8-151] case item 26'b01111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+WARNING: [Synth 8-151] case item 26'b10111111111111111111111111 is unreachable [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'led_driver' (1#1) [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_led_driver_0_0' (2#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/synth/design_2_led_driver_0_0.v:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1467.129 ; gain = 116.965
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2931.066 ; gain = 0.008 ; free physical = 747 ; free virtual = 192385
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1485.000 ; gain = 134.836
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2931.066 ; gain = 0.008 ; free physical = 1589 ; free virtual = 193230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1485.000 ; gain = 134.836
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2931.066 ; gain = 0.008 ; free physical = 1589 ; free virtual = 193230
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.000 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2931.066 ; gain = 0.000 ; free physical = 1630 ; free virtual = 193270
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1573.352 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2947.086 ; gain = 0.000 ; free physical = 1371 ; free virtual = 193086
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1573.359 ; gain = 0.008
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2947.090 ; gain = 0.004 ; free physical = 1369 ; free virtual = 193084
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2947.090 ; gain = 16.031 ; free physical = 981 ; free virtual = 192802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2947.090 ; gain = 16.031 ; free physical = 981 ; free virtual = 192802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2947.090 ; gain = 16.031 ; free physical = 983 ; free virtual = 192805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 805 ; free virtual = 192626
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -102,25 +104,25 @@ WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 INFO: [Synth 8-3917] design design_2_led_driver_0_0 has port led4 driven by constant 0
 INFO: [Synth 8-3917] design design_2_led_driver_0_0 has port led5 driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 603 ; free virtual = 191174
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 1080 ; free virtual = 191100
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 1078 ; free virtual = 191098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 1116 ; free virtual = 191091
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -138,37 +140,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 947 ; free virtual = 190892
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 946 ; free virtual = 190892
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 946 ; free virtual = 190892
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 946 ; free virtual = 190891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 945 ; free virtual = 190891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 943 ; free virtual = 190889
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -190,18 +192,18 @@ Report Cell Usage:
 |4     |FDCE   |    26|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 942 ; free virtual = 190888
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1573.359 ; gain = 134.836
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1573.359 ; gain = 223.195
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2947.098 ; gain = 0.016 ; free physical = 985 ; free virtual = 190931
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2947.098 ; gain = 16.039 ; free physical = 975 ; free virtual = 190922
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1573.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2947.098 ; gain = 0.000 ; free physical = 761 ; free virtual = 190712
 INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1580.449 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2947.098 ; gain = 0.000 ; free physical = 531 ; free virtual = 189859
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -209,9 +211,9 @@ Synth Design complete, checksum: 9062eb79
 INFO: [Common 17-83] Releasing license: Synthesis
 23 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1580.449 ; gain = 230.285
-INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/design_2_led_driver_0_0_synth_1/design_2_led_driver_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_2_led_driver_0_0, cache-ID = 5777e4f5c9dca1a8
-INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/design_2_led_driver_0_0_synth_1/design_2_led_driver_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:44 . Memory (MB): peak = 2947.098 ; gain = 22.168 ; free physical = 591 ; free virtual = 189878
+INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_led_driver_0_0_synth_1/design_2_led_driver_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_2_led_driver_0_0, cache-ID = 159bab89ea43513d
+INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_led_driver_0_0_synth_1/design_2_led_driver_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_2_led_driver_0_0_utilization_synth.rpt -pb design_2_led_driver_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 21 21:40:09 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 17 22:56:34 2022...

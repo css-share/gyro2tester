@@ -289,7 +289,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
   end
   
  
-  always @(posedge txclk or negedge tx_rstn) 
+  always @(posedge txclk) 
     begin  
     if (~tx_rstn)   
        cur_state <= IDLE;  
@@ -298,7 +298,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
     end
 
 
-   always @(posedge txclk or negedge tx_rstn) 
+   always @(posedge txclk) 
     begin  
     if (~tx_rstn)   
       shift_reg <= 0;  
@@ -319,7 +319,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
 
 
 
-  always @(posedge txclk or negedge tx_rstn) 
+  always @(posedge txclk) 
     begin  
     if (~tx_rstn)   
        count_48 <= 0;
@@ -377,7 +377,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
   logic dsync_free;
   
   
-  always @(posedge txclk or negedge tx_rstn) 
+  always @(posedge txclk) 
     begin  
     if (~tx_rstn)   
        free_48_count <= 0;
@@ -431,7 +431,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
 
   
  
-always @(posedge txclk or negedge tx_rstn)
+always @(posedge txclk)
 begin
   if (~tx_rstn)
   serial_in_count <= 0;
@@ -441,7 +441,7 @@ begin
   serial_in_count <= serial_in_count + 1;
 end
  
-always @ (posedge txclk or negedge tx_rstn)
+always @ (posedge txclk)
 begin
   if (~tx_rstn)
     serial_in_reg <= 0;
@@ -452,7 +452,7 @@ end
 
 assign serial_in_load_d = ((serial_in_count == 6'h2f) && in_start_stop);
  
-always @ (posedge txclk or negedge tx_rstn)
+always @ (posedge txclk)
 begin
   if (~tx_rstn)
     serial_in_load <= 0;
@@ -484,31 +484,7 @@ end
 
  
   
-/*
-  gen_sync_que_srl #(
-                     .DPWR(2), 
-                     .WD(16), 
-                     .FILL_RG(1), 
-                     .FIFO_RESET(0), 
-                     .REG_IN(0) 
-                    )  u_rx_data_in  ( 
-                     .qout       (rx_fifo_data),
-                     .qempty     (), 
-                     .qfull      (),
-                     .ok_to_push (serial_in_ready), 
-                     .ok_to_pop  (rx_fifo_valid),
-                     .fill       (),
-                     .clk        (txclk), 
-                     .rst_n      (tx_rstn),
-                     .flush_n    (1'b1),				   
-                     .din        (serial_in_reg),
-                     .push       (serial_in_load & serial_in_ready),
-                     .pop        (rx_fifo_valid & rx_fifo_ready)
-                    );
-  
-*/
 
- 
 
  assign rx_fifo_last          = 1'b0;
 

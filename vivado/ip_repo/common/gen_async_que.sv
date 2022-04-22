@@ -63,14 +63,16 @@ end
 
 
 
-always_ff @(posedge wr_clk or negedge wrstn_c)      
+//always_ff @(posedge wr_clk or negedge wrstn_c) 
+always_ff @(posedge wr_clk)     
    if (!wrstn_c)      
       qempty_sticky_q <= 1;
    else
       qempty_sticky_q <= 0;
 
 
-always_ff @(posedge rd_clk or negedge rrstn_c)     
+//always_ff @(posedge rd_clk or negedge rrstn_c)
+always_ff @(posedge rd_clk)     
    begin
    if (!rrstn_c)
       qempty <= 1'b1;
@@ -92,7 +94,8 @@ always_comb
 end
 
 
-always_ff @(posedge wr_clk or negedge wrstn_c)     
+//always_ff @(posedge wr_clk or negedge wrstn_c)  
+always_ff @(posedge wr_clk)  
    begin
    if (!wrstn_c)
       qfull <= 1'b0;
@@ -104,7 +107,8 @@ always_ff @(posedge wr_clk or negedge wrstn_c)
 //
 // Almost Full Flag
 //
-always_ff @(posedge wr_clk or negedge wrstn_c)     
+//always_ff @(posedge wr_clk or negedge wrstn_c) 
+always_ff @(posedge wr_clk)    
  if (!wrstn_c)      
     q_afull   <= 1'b0;
   else if (fill_wr_nxt >= (DEPTH - AF))
@@ -125,7 +129,8 @@ always_comb
   wptr_gray_nxt = (w_bnext >> 1) ^ w_bnext;   //convert back to gray
 end
 
-always_ff @(posedge wr_clk or negedge wrstn_c)   
+//always_ff @(posedge wr_clk or negedge wrstn_c)
+always_ff @(posedge wr_clk)   
  if (!wrstn_c)    
     begin
     w_bnext_q <= '0; 
@@ -151,7 +156,8 @@ always_comb
   rptr_gray_nxt = (r_bnext >> 1) ^ r_bnext;   //convert back to gray
 end
 
-always_ff @(posedge rd_clk or negedge rrstn_c)   
+//always_ff @(posedge rd_clk or negedge rrstn_c)
+always_ff @(posedge rd_clk)   
  if (!rrstn_c)  
     begin
     rptr <= '0;
@@ -197,7 +203,8 @@ always_ff @(posedge rd_clk or negedge rrstn_c)
   end
 
 
-  always_ff @(posedge wr_clk or negedge wrstn_c)      
+//  always_ff @(posedge wr_clk or negedge wrstn_c)
+  always_ff @(posedge wr_clk)    
   if (!wrstn_c)    
   begin
     last_sampled_rd_ptr <= '0;
@@ -233,7 +240,8 @@ generate
         rgfile[w_bnext_q[DPWR-1:0]] <= din;
   end
   else begin
-     always_ff @(posedge wr_clk or negedge wrstn_c)    
+    // always_ff @(posedge wr_clk or negedge wrstn_c) 
+     always_ff @(posedge wr_clk )   
       if (!wrstn_c)      //rst_n)
       begin
         for (int e=0;e<DEPTH;e++) rgfile[e] <= '0;

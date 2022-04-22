@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Fri Apr 22 00:00:47 2022
--- Host        : AsusP8 running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+-- Date        : Fri Apr 15 21:56:09 2022
+-- Host        : xsjl23632 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0_sim_netlist.vhdl
+--               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0_sim_netlist.vhdl
 -- Design      : design_2_axis_switch_3_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -4727,7 +4727,7 @@ entity design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch is
   attribute C_ARB_ON_TLAST : integer;
   attribute C_ARB_ON_TLAST of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is 0;
   attribute C_AXIS_SIGNAL_SET : integer;
-  attribute C_AXIS_SIGNAL_SET of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is 31;
+  attribute C_AXIS_SIGNAL_SET of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is 23;
   attribute C_AXIS_TDATA_WIDTH : integer;
   attribute C_AXIS_TDATA_WIDTH of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is 48;
   attribute C_AXIS_TDEST_WIDTH : integer;
@@ -4817,7 +4817,7 @@ entity design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch is
   attribute P_SINGLE_SLAVE_CONNECTIVITY_ARRAY : string;
   attribute P_SINGLE_SLAVE_CONNECTIVITY_ARRAY of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is "1'b0";
   attribute P_TPAYLOAD_WIDTH : integer;
-  attribute P_TPAYLOAD_WIDTH of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is 61;
+  attribute P_TPAYLOAD_WIDTH of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch : entity is 55;
 end design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch;
 
 architecture STRUCTURE of design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch is
@@ -4857,6 +4857,12 @@ begin
   arb_user(0) <= \<const0>\;
   m_axis_tdest(0) <= \<const0>\;
   m_axis_tid(0) <= \<const0>\;
+  m_axis_tkeep(5) <= \<const0>\;
+  m_axis_tkeep(4) <= \<const0>\;
+  m_axis_tkeep(3) <= \<const0>\;
+  m_axis_tkeep(2) <= \<const0>\;
+  m_axis_tkeep(1) <= \<const0>\;
+  m_axis_tkeep(0) <= \<const0>\;
   m_axis_tuser(0) <= \<const0>\;
   s_axi_ctrl_awready <= \^s_axi_ctrl_awready\;
   s_axi_ctrl_bresp(1) <= \<const0>\;
@@ -5629,84 +5635,6 @@ GND: unisim.vcomponents.GND
       I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
       O => m_axis_tdata(9)
     );
-\m_axis_tkeep[0]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000005404"
-    )
-        port map (
-      I0 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[2]\,
-      I1 => s_axis_tkeep(0),
-      I2 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[0]\,
-      I3 => s_axis_tkeep(6),
-      I4 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[1]\,
-      I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
-      O => m_axis_tkeep(0)
-    );
-\m_axis_tkeep[1]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000005404"
-    )
-        port map (
-      I0 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[2]\,
-      I1 => s_axis_tkeep(1),
-      I2 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[0]\,
-      I3 => s_axis_tkeep(7),
-      I4 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[1]\,
-      I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
-      O => m_axis_tkeep(1)
-    );
-\m_axis_tkeep[2]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000005404"
-    )
-        port map (
-      I0 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[2]\,
-      I1 => s_axis_tkeep(2),
-      I2 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[0]\,
-      I3 => s_axis_tkeep(8),
-      I4 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[1]\,
-      I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
-      O => m_axis_tkeep(2)
-    );
-\m_axis_tkeep[3]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000005404"
-    )
-        port map (
-      I0 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[2]\,
-      I1 => s_axis_tkeep(3),
-      I2 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[0]\,
-      I3 => s_axis_tkeep(9),
-      I4 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[1]\,
-      I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
-      O => m_axis_tkeep(3)
-    );
-\m_axis_tkeep[4]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000005404"
-    )
-        port map (
-      I0 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[2]\,
-      I1 => s_axis_tkeep(4),
-      I2 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[0]\,
-      I3 => s_axis_tkeep(10),
-      I4 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[1]\,
-      I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
-      O => m_axis_tkeep(4)
-    );
-\m_axis_tkeep[5]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000005404"
-    )
-        port map (
-      I0 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[2]\,
-      I1 => s_axis_tkeep(5),
-      I2 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[0]\,
-      I3 => s_axis_tkeep(11),
-      I4 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[1]\,
-      I5 => \gen_static_router.gen_synch.ctrl_reg_synch_reg_n_0_[3]\,
-      O => m_axis_tkeep(5)
-    );
 \m_axis_tlast[0]_INST_0\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000005404"
@@ -5857,13 +5785,11 @@ entity design_2_axis_switch_3_0 is
     s_axis_tready : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axis_tdata : in STD_LOGIC_VECTOR ( 95 downto 0 );
     s_axis_tstrb : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    s_axis_tkeep : in STD_LOGIC_VECTOR ( 11 downto 0 );
     s_axis_tlast : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axis_tvalid : out STD_LOGIC_VECTOR ( 0 to 0 );
     m_axis_tready : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axis_tdata : out STD_LOGIC_VECTOR ( 47 downto 0 );
     m_axis_tstrb : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    m_axis_tkeep : out STD_LOGIC_VECTOR ( 5 downto 0 );
     m_axis_tlast : out STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_ctrl_aclk : in STD_LOGIC;
     s_axi_ctrl_aresetn : in STD_LOGIC;
@@ -5904,6 +5830,7 @@ architecture STRUCTURE of design_2_axis_switch_3_0 is
   signal NLW_inst_arb_user_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_m_axis_tdest_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_inst_m_axis_tid_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_inst_m_axis_tkeep_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_inst_m_axis_tuser_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_inst_s_axi_ctrl_bresp_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_s_axi_ctrl_rresp_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -5917,7 +5844,7 @@ architecture STRUCTURE of design_2_axis_switch_3_0 is
   attribute C_ARB_ON_TLAST : integer;
   attribute C_ARB_ON_TLAST of inst : label is 0;
   attribute C_AXIS_SIGNAL_SET : integer;
-  attribute C_AXIS_SIGNAL_SET of inst : label is 31;
+  attribute C_AXIS_SIGNAL_SET of inst : label is 23;
   attribute C_AXIS_TDATA_WIDTH : integer;
   attribute C_AXIS_TDATA_WIDTH of inst : label is 48;
   attribute C_AXIS_TDEST_WIDTH : integer;
@@ -6004,7 +5931,7 @@ architecture STRUCTURE of design_2_axis_switch_3_0 is
   attribute P_SINGLE_SLAVE_CONNECTIVITY_ARRAY : string;
   attribute P_SINGLE_SLAVE_CONNECTIVITY_ARRAY of inst : label is "1'b0";
   attribute P_TPAYLOAD_WIDTH : integer;
-  attribute P_TPAYLOAD_WIDTH of inst : label is 61;
+  attribute P_TPAYLOAD_WIDTH of inst : label is 55;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aclk : signal is "xilinx.com:signal:clock:1.0 CLKIF CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -6026,9 +5953,8 @@ architecture STRUCTURE of design_2_axis_switch_3_0 is
   attribute X_INTERFACE_INFO of s_axi_ctrl_wready : signal is "xilinx.com:interface:aximm:1.0 S_AXI_CTRL WREADY";
   attribute X_INTERFACE_INFO of s_axi_ctrl_wvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI_CTRL WVALID";
   attribute X_INTERFACE_INFO of m_axis_tdata : signal is "xilinx.com:interface:axis:1.0 M00_AXIS TDATA";
-  attribute X_INTERFACE_INFO of m_axis_tkeep : signal is "xilinx.com:interface:axis:1.0 M00_AXIS TKEEP";
   attribute X_INTERFACE_INFO of m_axis_tlast : signal is "xilinx.com:interface:axis:1.0 M00_AXIS TLAST";
-  attribute X_INTERFACE_PARAMETER of m_axis_tlast : signal is "XIL_INTERFACENAME M00_AXIS, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of m_axis_tlast : signal is "XIL_INTERFACENAME M00_AXIS, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axis_tready : signal is "xilinx.com:interface:axis:1.0 M00_AXIS TREADY";
   attribute X_INTERFACE_INFO of m_axis_tstrb : signal is "xilinx.com:interface:axis:1.0 M00_AXIS TSTRB";
   attribute X_INTERFACE_INFO of m_axis_tvalid : signal is "xilinx.com:interface:axis:1.0 M00_AXIS TVALID";
@@ -6040,9 +5966,8 @@ architecture STRUCTURE of design_2_axis_switch_3_0 is
   attribute X_INTERFACE_PARAMETER of s_axi_ctrl_rresp : signal is "XIL_INTERFACENAME S_AXI_CTRL, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_ctrl_wdata : signal is "xilinx.com:interface:aximm:1.0 S_AXI_CTRL WDATA";
   attribute X_INTERFACE_INFO of s_axis_tdata : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TDATA [47:0] [47:0], xilinx.com:interface:axis:1.0 S01_AXIS TDATA [47:0] [95:48]";
-  attribute X_INTERFACE_INFO of s_axis_tkeep : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TKEEP [5:0] [5:0], xilinx.com:interface:axis:1.0 S01_AXIS TKEEP [5:0] [11:6]";
   attribute X_INTERFACE_INFO of s_axis_tlast : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TLAST [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TLAST [0:0] [1:1]";
-  attribute X_INTERFACE_PARAMETER of s_axis_tlast : signal is "XIL_INTERFACENAME S00_AXIS, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0, XIL_INTERFACENAME S01_AXIS, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axis_tlast : signal is "XIL_INTERFACENAME S00_AXIS, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0, XIL_INTERFACENAME S01_AXIS, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN design_2_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axis_tready : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TREADY [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TREADY [0:0] [1:1]";
   attribute X_INTERFACE_INFO of s_axis_tstrb : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TSTRB [5:0] [5:0], xilinx.com:interface:axis:1.0 S01_AXIS TSTRB [5:0] [11:6]";
   attribute X_INTERFACE_INFO of s_axis_tvalid : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TVALID [0:0] [0:0], xilinx.com:interface:axis:1.0 S01_AXIS TVALID [0:0] [1:1]";
@@ -6071,7 +5996,7 @@ inst: entity work.design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch
       m_axis_tdata(47 downto 0) => m_axis_tdata(47 downto 0),
       m_axis_tdest(0) => NLW_inst_m_axis_tdest_UNCONNECTED(0),
       m_axis_tid(0) => NLW_inst_m_axis_tid_UNCONNECTED(0),
-      m_axis_tkeep(5 downto 0) => m_axis_tkeep(5 downto 0),
+      m_axis_tkeep(5 downto 0) => NLW_inst_m_axis_tkeep_UNCONNECTED(5 downto 0),
       m_axis_tlast(0) => m_axis_tlast(0),
       m_axis_tready(0) => m_axis_tready(0),
       m_axis_tstrb(5 downto 0) => m_axis_tstrb(5 downto 0),
@@ -6100,7 +6025,7 @@ inst: entity work.design_2_axis_switch_3_0_axis_switch_v1_1_25_axis_switch
       s_axis_tdata(95 downto 0) => s_axis_tdata(95 downto 0),
       s_axis_tdest(1 downto 0) => B"00",
       s_axis_tid(1 downto 0) => B"00",
-      s_axis_tkeep(11 downto 0) => s_axis_tkeep(11 downto 0),
+      s_axis_tkeep(11 downto 0) => B"111111111111",
       s_axis_tlast(1 downto 0) => s_axis_tlast(1 downto 0),
       s_axis_tready(1 downto 0) => s_axis_tready(1 downto 0),
       s_axis_tstrb(11 downto 0) => s_axis_tstrb(11 downto 0),

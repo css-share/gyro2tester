@@ -80,7 +80,7 @@ design_2_axis_switch_3_0_sc::design_2_axis_switch_3_0_sc(const sc_core::sc_modul
     model_param_props.addLong("C_S_AXI_CTRL_DATA_WIDTH", "32");
     model_param_props.addLong("C_COMMON_CLOCK", "0");
     model_param_props.addString("C_FAMILY", "zynq");
-    model_param_props.addBitString("C_AXIS_SIGNAL_SET", "00000000000000000000000000011111", 32);
+    model_param_props.addBitString("C_AXIS_SIGNAL_SET", "00000000000000000000000000010111", 32);
     model_param_props.addBitString("C_M_AXIS_CONNECTIVITY_ARRAY", "11", 2);
     model_param_props.addBitString("C_M_AXIS_BASETDEST_ARRAY", "0", 1);
     model_param_props.addBitString("C_M_AXIS_HIGHTDEST_ARRAY", "0", 1);
@@ -92,6 +92,8 @@ design_2_axis_switch_3_0_sc::design_2_axis_switch_3_0_sc(const sc_core::sc_modul
   S00_AXIS_TARGET_SOCKET = mp_impl->S00_AXIS_TARGET_SOCKET;
   M00_AXIS_INITIATOR_SOCKET = mp_impl->M00_AXIS_INITIATOR_SOCKET;
   S01_AXIS_TARGET_SOCKET = mp_impl->S01_AXIS_TARGET_SOCKET;
+  S_AXI_CTRL_wr_socket = mp_impl->S_AXI_CTRL_wr_socket;
+  S_AXI_CTRL_rd_socket = mp_impl->S_AXI_CTRL_rd_socket;
 }
 
 design_2_axis_switch_3_0_sc::~design_2_axis_switch_3_0_sc()

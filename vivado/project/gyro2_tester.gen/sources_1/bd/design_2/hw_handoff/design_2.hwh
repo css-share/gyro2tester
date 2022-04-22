@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 21 23:59:11 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 22 01:28:37 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_2" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -282,8 +282,8 @@
         </PORT>
         <PORT CLKFREQUENCY="50000000" DIR="O" NAME="txclk" SIGIS="clk" SIGNAME="BiDirChannels_0_txclk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RESETS_txclk_reset_domain" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="led_driver_0" PORT="clk"/>
+            <CONNECTION INSTANCE="RESETS_txclk_reset_domain" PORT="slowest_sync_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="DTX" SIGIS="undef" SIGNAME="BiDirChannels_0_DTX">
@@ -4397,7 +4397,7 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axis_tvalid"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="s_axis_tvalid"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="m_axis_tready" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tready">
@@ -4405,7 +4405,7 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axis_tready"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="s_axis_tready"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="95" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tdata">
@@ -4413,12 +4413,15 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axis_tdata"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="s_axis_tdata"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="11" NAME="m_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axis_tstrb">
+        <PORT DIR="O" LEFT="11" NAME="m_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axis_tstrb"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tstrb"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="1" NAME="m_axis_tlast" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tlast">
@@ -4426,7 +4429,7 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axis_tlast"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="s_axis_tlast"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axi_ctrl_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -4656,7 +4659,7 @@
         <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_AXIS_TUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000011111"/>
+        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000010111"/>
         <PARAMETER NAME="C_ARB_ON_MAX_XFERS" VALUE="1"/>
         <PARAMETER NAME="C_ARB_ON_NUM_CYCLES" VALUE="0"/>
         <PARAMETER NAME="C_ARB_ON_TLAST" VALUE="0"/>
@@ -4677,7 +4680,7 @@
         <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
         <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="6"/>
         <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
-        <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
         <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
         <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
         <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
@@ -4994,46 +4997,44 @@
             <CONNECTION INSTANCE="RESETS_clk_reset_domain" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tvalid">
+        <PORT DIR="I" LEFT="1" NAME="s_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="m00_axis_tvalid"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="m_axis_tvalid"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axis_tready" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tready">
+        <PORT DIR="O" LEFT="1" NAME="s_axis_tready" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="m00_axis_tready"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="m_axis_tready"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="95" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tdata">
+        <PORT DIR="I" LEFT="95" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="m00_axis_tdata"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="m_axis_tdata"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="s_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_m00_axis_tstrb">
+        <PORT DIR="I" LEFT="11" NAME="s_axis_tstrb" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="m00_axis_tstrb"/>
           </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="11" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tkeep">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="m_axis_tkeep"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="s_axis_tlast" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tlast">
+        <PORT DIR="I" LEFT="1" NAME="s_axis_tlast" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tlast">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="m00_axis_tlast"/>
           </CONNECTIONS>
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="m_axis_tlast"/>
+            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tlast"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="m_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_m_axis_tvalid">
@@ -5056,7 +5057,6 @@
             <CONNECTION INSTANCE="RX_BUFFER_RxFIFO" PORT="s00_axis_tstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="5" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="m_axis_tlast" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_m_axis_tlast">
           <CONNECTIONS>
             <CONNECTION INSTANCE="RX_BUFFER_RxFIFO" PORT="s00_axis_tlast"/>
@@ -5161,7 +5161,7 @@
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
           <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
@@ -5173,7 +5173,6 @@
             <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
             <PORTMAP LOGICAL="TSTRB" PHYSICAL="s_axis_tstrb"/>
-            <PORTMAP LOGICAL="TKEEP" PHYSICAL="s_axis_tkeep"/>
             <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
           </PORTMAPS>
         </BUSINTERFACE>
@@ -5184,7 +5183,7 @@
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
           <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
@@ -5196,18 +5195,17 @@
             <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
             <PORTMAP LOGICAL="TSTRB" PHYSICAL="m_axis_tstrb"/>
-            <PORTMAP LOGICAL="TKEEP" PHYSICAL="m_axis_tkeep"/>
             <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="LOOP2_data_processor_48_0_m_axis" NAME="S01_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+        <BUSINTERFACE BUSNAME="LOOP2_axis_switch_2_M01_AXIS" NAME="S01_AXIS" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
           <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="6"/>
           <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
           <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
           <PARAMETER NAME="HAS_TSTRB" VALUE="1"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
           <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
           <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
@@ -5219,7 +5217,6 @@
             <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
             <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
             <PORTMAP LOGICAL="TSTRB" PHYSICAL="s_axis_tstrb"/>
-            <PORTMAP LOGICAL="TKEEP" PHYSICAL="s_axis_tkeep"/>
             <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
           </PORTMAPS>
         </BUSINTERFACE>
@@ -5272,123 +5269,6 @@
             <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_ctrl_rready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_ctrl_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_ctrl_rresp"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/LOOP2/data_processor_48_0" HWVERSION="1.0" INSTANCE="LOOP2_data_processor_48_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="data_processor_48" VLNV="xilinx.com:module_ref:data_processor_48:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="init" VALUE="&quot;000&quot;"/>
-        <PARAMETER NAME="SetSlaveTready" VALUE="&quot;001&quot;"/>
-        <PARAMETER NAME="CheckSlaveTvalid" VALUE="&quot;010&quot;"/>
-        <PARAMETER NAME="ProcessTdata" VALUE="&quot;011&quot;"/>
-        <PARAMETER NAME="CheckTlast" VALUE="&quot;100&quot;"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_2_data_processor_48_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="RESETS_clk_reset_domain_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="RESETS_clk_reset_domain" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="47" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axis_tkeep" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="LOOP2_axis_switch_2_m_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="m_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="47" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="m_axis_tkeep" RIGHT="0" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tkeep">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tkeep"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="LOOP2_axis_switch_3_s_axis_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axis_tvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="state_reg" RIGHT="0" SIGIS="undef"/>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="LOOP2_data_processor_48_0_m_axis" NAME="m_axis" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="6"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_2_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
-            <PORTMAP LOGICAL="TKEEP" PHYSICAL="m_axis_tkeep"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="LOOP2_axis_switch_2_M01_AXIS" NAME="s_axis" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="6"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_2_processing_system7_0_0_FCLK_CLK0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
-            <PORTMAP LOGICAL="TKEEP" PHYSICAL="s_axis_tkeep"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -6204,12 +6084,12 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_awvalid">
+        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_awready">
+        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_awready"/>
           </CONNECTIONS>
@@ -6224,12 +6104,12 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_wvalid">
+        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_wready">
+        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_wready"/>
           </CONNECTIONS>
@@ -6239,12 +6119,12 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_bvalid">
+        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_bready">
+        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_bready"/>
           </CONNECTIONS>
@@ -6259,12 +6139,12 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_arvalid">
+        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_arready">
+        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_arready"/>
           </CONNECTIONS>
@@ -6279,12 +6159,12 @@
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_rvalid">
+        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_rready">
+        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="BiDirChannels_0_s00_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="BiDirChannels_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
@@ -7107,18 +6987,16 @@
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="RESETS_clk_reset_domain_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BiDirChannels_0" PORT="rst_n"/>
             <CONNECTION INSTANCE="RX_BUFFER_RxFIFO" PORT="rst_n"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="s_axi_ctrl_aresetn"/>
-            <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="LOOP1_data_processor_0" PORT="reset"/>
+            <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="aresetn"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="aresetn"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="aresetn"/>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="reset"/>
             <CONNECTION INSTANCE="SPI_SPI_ip_0" PORT="rstn"/>
             <CONNECTION INSTANCE="DMA_axi_dma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="DMA_axi_smc" PORT="aresetn"/>
@@ -7133,6 +7011,7 @@
             <CONNECTION INSTANCE="REGISTER_DEMUX_AXI_Register_Demux" PORT="M08_ARESETN"/>
             <CONNECTION INSTANCE="REGISTER_DEMUX_AXI_Register_Demux" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="rstn"/>
+            <CONNECTION INSTANCE="BiDirChannels_0" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -7177,14 +7056,14 @@
         <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="RESETS_txclk_reset_domain_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="BiDirChannels_0" PORT="tx_rstn"/>
             <CONNECTION INSTANCE="led_driver_0" PORT="rstn"/>
+            <CONNECTION INSTANCE="BiDirChannels_0" PORT="tx_rstn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="69" FULLNAME="/RX_BUFFER/RxFIFO" HWVERSION="1.0" INSTANCE="RX_BUFFER_RxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_fifo" VLNV="xilinx.com:user:axis_stream_fifo:1.0">
+    <MODULE COREREVISION="70" FULLNAME="/RX_BUFFER/RxFIFO" HWVERSION="1.0" INSTANCE="RX_BUFFER_RxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_fifo" VLNV="xilinx.com:user:axis_stream_fifo:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -9308,7 +9187,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="25" FULLNAME="/TX_BUFFER/TxFIFO" HWVERSION="2.0" INSTANCE="TX_BUFFER_TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
+    <MODULE COREREVISION="24" FULLNAME="/TX_BUFFER/TxFIFO" HWVERSION="2.0" INSTANCE="TX_BUFFER_TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -9447,11 +9326,14 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_even" PORT="dina"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram0_even_en_a" SIGIS="undef"/>
+        <PORT DIR="O" NAME="bram0_even_en_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_even_en_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_even" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram0_even_we_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_even_we_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_even" PORT="wea"/>
-            <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_even" PORT="ena"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="12" NAME="bram0_even_addr_b" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_even_addr_b">
@@ -9479,11 +9361,14 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_odd" PORT="dina"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram0_odd_en_a" SIGIS="undef"/>
+        <PORT DIR="O" NAME="bram0_odd_en_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_odd_en_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_odd" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram0_odd_we_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_odd_we_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_odd" PORT="wea"/>
-            <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_odd" PORT="ena"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="12" NAME="bram0_odd_addr_b" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_odd_addr_b">
@@ -9511,11 +9396,14 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_even" PORT="dina"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram1_even_en_a" SIGIS="undef"/>
+        <PORT DIR="O" NAME="bram1_even_en_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_even_en_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_even" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram1_even_we_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_even_we_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_even" PORT="wea"/>
-            <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_even" PORT="ena"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="12" NAME="bram1_even_addr_b" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_even_addr_b">
@@ -9543,11 +9431,14 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_odd" PORT="dina"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram1_odd_en_a" SIGIS="undef"/>
+        <PORT DIR="O" NAME="bram1_odd_en_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_odd_en_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_odd" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram1_odd_we_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_odd_we_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_odd" PORT="wea"/>
-            <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_odd" PORT="ena"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="12" NAME="bram1_odd_addr_b" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_odd_addr_b">
@@ -9575,11 +9466,14 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_even" PORT="dina"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram2_even_en_a" SIGIS="undef"/>
+        <PORT DIR="O" NAME="bram2_even_en_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_even_en_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_even" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram2_even_we_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_even_we_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_even" PORT="wea"/>
-            <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_even" PORT="ena"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="12" NAME="bram2_even_addr_b" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_even_addr_b">
@@ -9607,11 +9501,14 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_odd" PORT="dina"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="bram2_odd_en_a" SIGIS="undef"/>
+        <PORT DIR="O" NAME="bram2_odd_en_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_odd_en_a">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_odd" PORT="ena"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="bram2_odd_we_a" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_odd_we_a">
           <CONNECTIONS>
             <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_odd" PORT="wea"/>
-            <CONNECTION INSTANCE="TX_BUFFER_blk2_mem_tx_odd" PORT="ena"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="12" NAME="bram2_odd_addr_b" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_odd_addr_b">
@@ -9941,9 +9838,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_even_we_a">
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_even_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram0_even_we_a"/>
+            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram0_even_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_even_we_a">
@@ -10174,9 +10071,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_odd_we_a">
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_odd_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram0_odd_we_a"/>
+            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram0_odd_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram0_odd_we_a">
@@ -10407,9 +10304,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_even_we_a">
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_even_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram1_even_we_a"/>
+            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram1_even_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_even_we_a">
@@ -10640,9 +10537,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_odd_we_a">
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_odd_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram1_odd_we_a"/>
+            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram1_odd_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram1_odd_we_a">
@@ -10873,9 +10770,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_even_we_a">
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_even_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram2_even_we_a"/>
+            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram2_even_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_even_we_a">
@@ -11106,9 +11003,9 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_odd_we_a">
+        <PORT DIR="I" NAME="ena" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_odd_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram2_odd_we_a"/>
+            <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="bram2_odd_en_a"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="TX_BUFFER_TxFIFO_bram2_odd_we_a">
@@ -12567,7 +12464,6 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
-            <CONNECTION INSTANCE="BiDirChannels_0" PORT="clk"/>
             <CONNECTION INSTANCE="RX_BUFFER_blk_mem_2_odd" PORT="clkb"/>
             <CONNECTION INSTANCE="RX_BUFFER_blk_mem_2_odd" PORT="clka"/>
             <CONNECTION INSTANCE="RX_BUFFER_blk_mem_2_even" PORT="clkb"/>
@@ -12584,13 +12480,12 @@
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="aclk"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="s_axi_ctrl_aclk"/>
-            <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="aclk"/>
             <CONNECTION INSTANCE="LOOP1_data_processor_0" PORT="clk"/>
+            <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="aclk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="aclk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="aclk"/>
-            <CONNECTION INSTANCE="LOOP2_data_processor_48_0" PORT="clk"/>
             <CONNECTION INSTANCE="RESETS_clk_reset_domain" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="SPI_SPI_ip_0" PORT="clk"/>
             <CONNECTION INSTANCE="DMA_axi_dma_0" PORT="s_axi_lite_aclk"/>
@@ -12621,6 +12516,7 @@
             <CONNECTION INSTANCE="TX_BUFFER_blk0_mem_tx_even" PORT="clka"/>
             <CONNECTION INSTANCE="TX_BUFFER_blk1_mem_tx_odd" PORT="clka"/>
             <CONNECTION INSTANCE="TX_BUFFER_TxFIFO" PORT="clk"/>
+            <CONNECTION INSTANCE="BiDirChannels_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
