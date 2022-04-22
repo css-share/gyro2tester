@@ -14,5 +14,8 @@ platform create -name {design_2_wrapper}\
 
 platform write
 platform generate -domains 
-platform active {design_2_wrapper}
+platform generate
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
+platform generate -domains 
+platform clean
 platform generate

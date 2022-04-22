@@ -708,6 +708,7 @@
 						"ACLK": { "actual": "aclk"},
 						"ARESETN": { "actual": "aresetn"},
 						"TDATA": { "actual": "m_axis_tdata[47:0]"},
+						"TKEEP": { "actual": "m_axis_tkeep[5:0]"},
 						"TLAST": { "actual": "m_axis_tlast[0:0]"},
 						"TREADY": { "actual": "m_axis_tready[0:0]"},
 						"TSTRB": { "actual": "m_axis_tstrb[5:0]"},
@@ -720,6 +721,7 @@
 						"ACLK": { "actual": "aclk"},
 						"ARESETN": { "actual": "aresetn"},
 						"TDATA": { "actual": "s_axis_tdata[47:0]"},
+						"TKEEP": { "actual": "s_axis_tkeep[5:0]"},
 						"TLAST": { "actual": "s_axis_tlast[0:0]"},
 						"TREADY": { "actual": "s_axis_tready[0:0]"},
 						"TSTRB": { "actual": "s_axis_tstrb[5:0]"},
@@ -732,6 +734,7 @@
 						"ACLK": { "actual": "aclk"},
 						"ARESETN": { "actual": "aresetn"},
 						"TDATA": { "actual": "s_axis_tdata[95:48]"},
+						"TKEEP": { "actual": "s_axis_tkeep[11:6]"},
 						"TLAST": { "actual": "s_axis_tlast[1:1]"},
 						"TREADY": { "actual": "s_axis_tready[1:1]"},
 						"TSTRB": { "actual": "s_axis_tstrb[11:6]"},
@@ -759,6 +762,30 @@
 						"WDATA": { "actual": "s_axi_ctrl_wdata"},
 						"WREADY": { "actual": "s_axi_ctrl_wready"},
 						"WVALID": { "actual": "s_axi_ctrl_wvalid"}
+					}
+				},
+				"/LOOP2/data_processor_48_0/m_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "reset"},
+						"TDATA": { "actual": "m_axis_tdata"},
+						"TKEEP": { "actual": "m_axis_tkeep"},
+						"TLAST": { "actual": "m_axis_tlast"},
+						"TREADY": { "actual": "m_axis_tready"},
+						"TVALID": { "actual": "m_axis_tvalid"}
+					}
+				},
+				"/LOOP2/data_processor_48_0/s_axis": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "clk"},
+						"ARESETN": { "actual": "reset"},
+						"TDATA": { "actual": "s_axis_tdata"},
+						"TKEEP": { "actual": "s_axis_tkeep"},
+						"TLAST": { "actual": "s_axis_tlast"},
+						"TREADY": { "actual": "s_axis_tready"},
+						"TVALID": { "actual": "s_axis_tvalid"}
 					}
 				},
 				"/REGISTER_DEMUX/AXI_Register_Demux/M00_AXI": {

@@ -1,8 +1,8 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Wed Apr 20 17:05:09 2022
-//Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+//Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+//Date        : Thu Apr 21 23:59:04 2022
+//Host        : AsusP8 running 64-bit major release  (build 9200)
 //Command     : generate_target design_2.bd
 //Design      : design_2
 //Purpose     : IP block netlist
@@ -890,14 +890,18 @@ module LOOP2_imp_NW9JVA
   wire [0:0]axis_switch_2_M00_AXIS_TVALID;
   wire [95:48]axis_switch_2_M01_AXIS_TDATA;
   wire [1:1]axis_switch_2_M01_AXIS_TLAST;
-  wire [1:1]axis_switch_2_M01_AXIS_TREADY;
-  wire [11:6]axis_switch_2_M01_AXIS_TSTRB;
+  wire axis_switch_2_M01_AXIS_TREADY;
   wire [1:1]axis_switch_2_M01_AXIS_TVALID;
   wire [47:0]axis_switch_3_M00_AXIS_TDATA;
   wire [0:0]axis_switch_3_M00_AXIS_TLAST;
   wire [0:0]axis_switch_3_M00_AXIS_TREADY;
   wire [5:0]axis_switch_3_M00_AXIS_TSTRB;
   wire [0:0]axis_switch_3_M00_AXIS_TVALID;
+  wire [47:0]data_processor_48_0_m_axis_TDATA;
+  wire [3:0]data_processor_48_0_m_axis_TKEEP;
+  wire data_processor_48_0_m_axis_TLAST;
+  wire [1:1]data_processor_48_0_m_axis_TREADY;
+  wire data_processor_48_0_m_axis_TVALID;
   wire processing_system7_0_FCLK_CLK0;
   wire rst_ps7_0_100M_peripheral_aresetn;
 
@@ -961,7 +965,7 @@ module LOOP2_imp_NW9JVA
         .m_axis_tdata({axis_switch_2_M01_AXIS_TDATA,axis_switch_2_M00_AXIS_TDATA}),
         .m_axis_tlast({axis_switch_2_M01_AXIS_TLAST,axis_switch_2_M00_AXIS_TLAST}),
         .m_axis_tready({axis_switch_2_M01_AXIS_TREADY,axis_switch_2_M00_AXIS_TREADY}),
-        .m_axis_tstrb({axis_switch_2_M01_AXIS_TSTRB,axis_switch_2_M00_AXIS_TSTRB}),
+        .m_axis_tstrb(axis_switch_2_M00_AXIS_TSTRB),
         .m_axis_tvalid({axis_switch_2_M01_AXIS_TVALID,axis_switch_2_M00_AXIS_TVALID}),
         .s_axi_ctrl_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_ctrl_araddr(AXI_Register_Demux_M07_AXI_ARADDR[6:0]),
@@ -1012,11 +1016,25 @@ module LOOP2_imp_NW9JVA
         .s_axi_ctrl_wdata(AXI_Register_Demux_M08_AXI_WDATA),
         .s_axi_ctrl_wready(AXI_Register_Demux_M08_AXI_WREADY),
         .s_axi_ctrl_wvalid(AXI_Register_Demux_M08_AXI_WVALID),
-        .s_axis_tdata({axis_switch_2_M01_AXIS_TDATA,BiDirChannels_0_M00_AXIS_TDATA}),
-        .s_axis_tlast({axis_switch_2_M01_AXIS_TLAST,BiDirChannels_0_M00_AXIS_TLAST}),
-        .s_axis_tready({axis_switch_2_M01_AXIS_TREADY,BiDirChannels_0_M00_AXIS_TREADY}),
-        .s_axis_tstrb({axis_switch_2_M01_AXIS_TSTRB,BiDirChannels_0_M00_AXIS_TSTRB}),
-        .s_axis_tvalid({axis_switch_2_M01_AXIS_TVALID,BiDirChannels_0_M00_AXIS_TVALID}));
+        .s_axis_tdata({data_processor_48_0_m_axis_TDATA,BiDirChannels_0_M00_AXIS_TDATA}),
+        .s_axis_tkeep({1'b1,1'b1,data_processor_48_0_m_axis_TKEEP,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
+        .s_axis_tlast({data_processor_48_0_m_axis_TLAST,BiDirChannels_0_M00_AXIS_TLAST}),
+        .s_axis_tready({data_processor_48_0_m_axis_TREADY,BiDirChannels_0_M00_AXIS_TREADY}),
+        .s_axis_tstrb({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,BiDirChannels_0_M00_AXIS_TSTRB}),
+        .s_axis_tvalid({data_processor_48_0_m_axis_TVALID,BiDirChannels_0_M00_AXIS_TVALID}));
+  design_2_data_processor_48_0_0 data_processor_48_0
+       (.clk(processing_system7_0_FCLK_CLK0),
+        .m_axis_tdata(data_processor_48_0_m_axis_TDATA),
+        .m_axis_tkeep(data_processor_48_0_m_axis_TKEEP),
+        .m_axis_tlast(data_processor_48_0_m_axis_TLAST),
+        .m_axis_tready(data_processor_48_0_m_axis_TREADY),
+        .m_axis_tvalid(data_processor_48_0_m_axis_TVALID),
+        .reset(rst_ps7_0_100M_peripheral_aresetn),
+        .s_axis_tdata(axis_switch_2_M01_AXIS_TDATA),
+        .s_axis_tkeep({1'b1,1'b1,1'b1,1'b1}),
+        .s_axis_tlast(axis_switch_2_M01_AXIS_TLAST),
+        .s_axis_tready(axis_switch_2_M01_AXIS_TREADY),
+        .s_axis_tvalid(axis_switch_2_M01_AXIS_TVALID));
 endmodule
 
 module REGISTER_DEMUX_imp_1T65VR6
@@ -2590,37 +2608,31 @@ module TX_BUFFER_imp_QRKGWQ
   wire [12:0]TxFIFO_bram0_even_addr_a;
   wire [12:0]TxFIFO_bram0_even_addr_b;
   wire [15:0]TxFIFO_bram0_even_data_a;
-  wire TxFIFO_bram0_even_en_a;
   wire TxFIFO_bram0_even_en_b;
   wire TxFIFO_bram0_even_we_a;
   wire [12:0]TxFIFO_bram0_odd_addr_a;
   wire [12:0]TxFIFO_bram0_odd_addr_b;
   wire [15:0]TxFIFO_bram0_odd_data_a;
-  wire TxFIFO_bram0_odd_en_a;
   wire TxFIFO_bram0_odd_en_b;
   wire TxFIFO_bram0_odd_we_a;
   wire [12:0]TxFIFO_bram1_even_addr_a;
   wire [12:0]TxFIFO_bram1_even_addr_b;
   wire [15:0]TxFIFO_bram1_even_data_a;
-  wire TxFIFO_bram1_even_en_a;
   wire TxFIFO_bram1_even_en_b;
   wire TxFIFO_bram1_even_we_a;
   wire [12:0]TxFIFO_bram1_odd_addr_a;
   wire [12:0]TxFIFO_bram1_odd_addr_b;
   wire [15:0]TxFIFO_bram1_odd_data_a;
-  wire TxFIFO_bram1_odd_en_a;
   wire TxFIFO_bram1_odd_en_b;
   wire TxFIFO_bram1_odd_we_a;
   wire [12:0]TxFIFO_bram2_even_addr_a;
   wire [12:0]TxFIFO_bram2_even_addr_b;
   wire [15:0]TxFIFO_bram2_even_data_a;
-  wire TxFIFO_bram2_even_en_a;
   wire TxFIFO_bram2_even_en_b;
   wire TxFIFO_bram2_even_we_a;
   wire [12:0]TxFIFO_bram2_odd_addr_a;
   wire [12:0]TxFIFO_bram2_odd_addr_b;
   wire [15:0]TxFIFO_bram2_odd_data_a;
-  wire TxFIFO_bram2_odd_en_a;
   wire TxFIFO_bram2_odd_en_b;
   wire TxFIFO_bram2_odd_we_a;
   wire TxFIFO_txfifo_full;
@@ -2691,42 +2703,36 @@ module TX_BUFFER_imp_QRKGWQ
        (.bram0_even_addr_a(TxFIFO_bram0_even_addr_a),
         .bram0_even_addr_b(TxFIFO_bram0_even_addr_b),
         .bram0_even_data_a(TxFIFO_bram0_even_data_a),
-        .bram0_even_en_a(TxFIFO_bram0_even_en_a),
         .bram0_even_en_b(TxFIFO_bram0_even_en_b),
         .bram0_even_rdata_b(blk0_mem_tx_even_doutb),
         .bram0_even_we_a(TxFIFO_bram0_even_we_a),
         .bram0_odd_addr_a(TxFIFO_bram0_odd_addr_a),
         .bram0_odd_addr_b(TxFIFO_bram0_odd_addr_b),
         .bram0_odd_data_a(TxFIFO_bram0_odd_data_a),
-        .bram0_odd_en_a(TxFIFO_bram0_odd_en_a),
         .bram0_odd_en_b(TxFIFO_bram0_odd_en_b),
         .bram0_odd_rdata_b(blk0_mem_tx_odd_doutb),
         .bram0_odd_we_a(TxFIFO_bram0_odd_we_a),
         .bram1_even_addr_a(TxFIFO_bram1_even_addr_a),
         .bram1_even_addr_b(TxFIFO_bram1_even_addr_b),
         .bram1_even_data_a(TxFIFO_bram1_even_data_a),
-        .bram1_even_en_a(TxFIFO_bram1_even_en_a),
         .bram1_even_en_b(TxFIFO_bram1_even_en_b),
         .bram1_even_rdata_b(blk1_mem_tx_even_doutb),
         .bram1_even_we_a(TxFIFO_bram1_even_we_a),
         .bram1_odd_addr_a(TxFIFO_bram1_odd_addr_a),
         .bram1_odd_addr_b(TxFIFO_bram1_odd_addr_b),
         .bram1_odd_data_a(TxFIFO_bram1_odd_data_a),
-        .bram1_odd_en_a(TxFIFO_bram1_odd_en_a),
         .bram1_odd_en_b(TxFIFO_bram1_odd_en_b),
         .bram1_odd_rdata_b(blk1_mem_tx_odd_doutb),
         .bram1_odd_we_a(TxFIFO_bram1_odd_we_a),
         .bram2_even_addr_a(TxFIFO_bram2_even_addr_a),
         .bram2_even_addr_b(TxFIFO_bram2_even_addr_b),
         .bram2_even_data_a(TxFIFO_bram2_even_data_a),
-        .bram2_even_en_a(TxFIFO_bram2_even_en_a),
         .bram2_even_en_b(TxFIFO_bram2_even_en_b),
         .bram2_even_rdata_b(blk2_mem_tx_even_doutb),
         .bram2_even_we_a(TxFIFO_bram2_even_we_a),
         .bram2_odd_addr_a(TxFIFO_bram2_odd_addr_a),
         .bram2_odd_addr_b(TxFIFO_bram2_odd_addr_b),
         .bram2_odd_data_a(TxFIFO_bram2_odd_data_a),
-        .bram2_odd_en_a(TxFIFO_bram2_odd_en_a),
         .bram2_odd_en_b(TxFIFO_bram2_odd_en_b),
         .bram2_odd_rdata_b(blk2_mem_tx_odd_doutb),
         .bram2_odd_we_a(TxFIFO_bram2_odd_we_a),
@@ -2769,7 +2775,7 @@ module TX_BUFFER_imp_QRKGWQ
         .clkb(processing_system7_0_FCLK_CLK0),
         .dina(TxFIFO_bram0_even_data_a),
         .doutb(blk0_mem_tx_even_doutb),
-        .ena(TxFIFO_bram0_even_en_a),
+        .ena(TxFIFO_bram0_even_we_a),
         .enb(TxFIFO_bram0_even_en_b),
         .wea(TxFIFO_bram0_even_we_a));
   design_2_blk_mem_tx_even_0 blk0_mem_tx_odd
@@ -2779,7 +2785,7 @@ module TX_BUFFER_imp_QRKGWQ
         .clkb(processing_system7_0_FCLK_CLK0),
         .dina(TxFIFO_bram0_odd_data_a),
         .doutb(blk0_mem_tx_odd_doutb),
-        .ena(TxFIFO_bram0_odd_en_a),
+        .ena(TxFIFO_bram0_odd_we_a),
         .enb(TxFIFO_bram0_odd_en_b),
         .wea(TxFIFO_bram0_odd_we_a));
   design_2_blk1_mem_tx_odd_0 blk1_mem_tx_even
@@ -2789,7 +2795,7 @@ module TX_BUFFER_imp_QRKGWQ
         .clkb(processing_system7_0_FCLK_CLK0),
         .dina(TxFIFO_bram1_even_data_a),
         .doutb(blk1_mem_tx_even_doutb),
-        .ena(TxFIFO_bram1_even_en_a),
+        .ena(TxFIFO_bram1_even_we_a),
         .enb(TxFIFO_bram1_even_en_b),
         .wea(TxFIFO_bram1_even_we_a));
   design_2_blk0_mem_tx_odd_0 blk1_mem_tx_odd
@@ -2799,7 +2805,7 @@ module TX_BUFFER_imp_QRKGWQ
         .clkb(processing_system7_0_FCLK_CLK0),
         .dina(TxFIFO_bram1_odd_data_a),
         .doutb(blk1_mem_tx_odd_doutb),
-        .ena(TxFIFO_bram1_odd_en_a),
+        .ena(TxFIFO_bram1_odd_we_a),
         .enb(TxFIFO_bram1_odd_en_b),
         .wea(TxFIFO_bram1_odd_we_a));
   design_2_blk1_mem_tx_even_0 blk2_mem_tx_even
@@ -2809,7 +2815,7 @@ module TX_BUFFER_imp_QRKGWQ
         .clkb(processing_system7_0_FCLK_CLK0),
         .dina(TxFIFO_bram2_even_data_a),
         .doutb(blk2_mem_tx_even_doutb),
-        .ena(TxFIFO_bram2_even_en_a),
+        .ena(TxFIFO_bram2_even_we_a),
         .enb(TxFIFO_bram2_even_en_b),
         .wea(TxFIFO_bram2_even_we_a));
   design_2_blk2_mem_tx_even_0 blk2_mem_tx_odd
@@ -2819,12 +2825,12 @@ module TX_BUFFER_imp_QRKGWQ
         .clkb(processing_system7_0_FCLK_CLK0),
         .dina(TxFIFO_bram2_odd_data_a),
         .doutb(blk2_mem_tx_odd_doutb),
-        .ena(TxFIFO_bram2_odd_en_a),
+        .ena(TxFIFO_bram2_odd_we_a),
         .enb(TxFIFO_bram2_odd_en_b),
         .wea(TxFIFO_bram2_odd_we_a));
 endmodule
 
-(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=31,numNonXlnxBlks=1,numHierBlks=19,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_2,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_2,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=51,numReposBlks=32,numNonXlnxBlks=1,numHierBlks=19,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_2.hwdef" *) 
 module design_2
    (DDR_addr,
     DDR_ba,

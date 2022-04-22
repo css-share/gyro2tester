@@ -45,32 +45,32 @@
 /* Definitions for driver AXIDMA */
 #define XPAR_XAXIDMA_NUM_INSTANCES 1
 
-/* Definitions for peripheral AXI_DMA_0 */
-#define XPAR_AXI_DMA_0_DEVICE_ID 0
-#define XPAR_AXI_DMA_0_BASEADDR 0x40400000
-#define XPAR_AXI_DMA_0_HIGHADDR 0x4040FFFF
-#define XPAR_AXI_DMA_0_SG_INCLUDE_STSCNTRL_STRM 0
-#define XPAR_AXI_DMA_0_INCLUDE_MM2S_DRE 0
-#define XPAR_AXI_DMA_0_INCLUDE_S2MM_DRE 0
-#define XPAR_AXI_DMA_0_INCLUDE_MM2S 1
-#define XPAR_AXI_DMA_0_INCLUDE_S2MM 1
-#define XPAR_AXI_DMA_0_M_AXI_MM2S_DATA_WIDTH 32
-#define XPAR_AXI_DMA_0_M_AXI_S2MM_DATA_WIDTH 32
-#define XPAR_AXI_DMA_0_INCLUDE_SG 0
-#define XPAR_AXI_DMA_0_ENABLE_MULTI_CHANNEL 0
-#define XPAR_AXI_DMA_0_NUM_MM2S_CHANNELS 1
-#define XPAR_AXI_DMA_0_NUM_S2MM_CHANNELS 1
-#define XPAR_AXI_DMA_0_MM2S_BURST_SIZE 256
-#define XPAR_AXI_DMA_0_S2MM_BURST_SIZE 256
-#define XPAR_AXI_DMA_0_MICRO_DMA 0
-#define XPAR_AXI_DMA_0_ADDR_WIDTH 32
-#define XPAR_AXI_DMA_0_SG_LENGTH_WIDTH 26
+/* Definitions for peripheral DMA_AXI_DMA_0 */
+#define XPAR_DMA_AXI_DMA_0_DEVICE_ID 0
+#define XPAR_DMA_AXI_DMA_0_BASEADDR 0x40400000
+#define XPAR_DMA_AXI_DMA_0_HIGHADDR 0x4040FFFF
+#define XPAR_DMA_AXI_DMA_0_SG_INCLUDE_STSCNTRL_STRM 0
+#define XPAR_DMA_AXI_DMA_0_INCLUDE_MM2S_DRE 0
+#define XPAR_DMA_AXI_DMA_0_INCLUDE_S2MM_DRE 0
+#define XPAR_DMA_AXI_DMA_0_INCLUDE_MM2S 1
+#define XPAR_DMA_AXI_DMA_0_INCLUDE_S2MM 1
+#define XPAR_DMA_AXI_DMA_0_M_AXI_MM2S_DATA_WIDTH 32
+#define XPAR_DMA_AXI_DMA_0_M_AXI_S2MM_DATA_WIDTH 32
+#define XPAR_DMA_AXI_DMA_0_INCLUDE_SG 0
+#define XPAR_DMA_AXI_DMA_0_ENABLE_MULTI_CHANNEL 0
+#define XPAR_DMA_AXI_DMA_0_NUM_MM2S_CHANNELS 1
+#define XPAR_DMA_AXI_DMA_0_NUM_S2MM_CHANNELS 1
+#define XPAR_DMA_AXI_DMA_0_MM2S_BURST_SIZE 256
+#define XPAR_DMA_AXI_DMA_0_S2MM_BURST_SIZE 256
+#define XPAR_DMA_AXI_DMA_0_MICRO_DMA 0
+#define XPAR_DMA_AXI_DMA_0_ADDR_WIDTH 32
+#define XPAR_DMA_AXI_DMA_0_SG_LENGTH_WIDTH 26
 
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral AXI_DMA_0 */
-#define XPAR_AXIDMA_0_DEVICE_ID XPAR_AXI_DMA_0_DEVICE_ID
+/* Canonical definitions for peripheral DMA_AXI_DMA_0 */
+#define XPAR_AXIDMA_0_DEVICE_ID XPAR_DMA_AXI_DMA_0_DEVICE_ID
 #define XPAR_AXIDMA_0_BASEADDR 0x40400000
 #define XPAR_AXIDMA_0_SG_INCLUDE_STSCNTRL_STRM 0
 #define XPAR_AXIDMA_0_INCLUDE_MM2S 1
@@ -95,10 +95,10 @@
 /* Definitions for driver AXIS_STREAM_FIFO */
 #define XPAR_AXIS_STREAM_FIFO_NUM_INSTANCES 1
 
-/* Definitions for peripheral RXFIFO */
-#define XPAR_RXFIFO_DEVICE_ID 0
-#define XPAR_RXFIFO_S00_AXI_BASEADDR 0x43C30000
-#define XPAR_RXFIFO_S00_AXI_HIGHADDR 0x43C3FFFF
+/* Definitions for peripheral RX_BUFFER_RXFIFO */
+#define XPAR_RX_BUFFER_RXFIFO_DEVICE_ID 0
+#define XPAR_RX_BUFFER_RXFIFO_S00_AXI_BASEADDR 0x43C30000
+#define XPAR_RX_BUFFER_RXFIFO_S00_AXI_HIGHADDR 0x43C3FFFF
 
 
 /******************************************************************/
@@ -106,10 +106,10 @@
 /* Definitions for driver AXIS_STREAM_TXFIFO */
 #define XPAR_AXIS_STREAM_TXFIFO_NUM_INSTANCES 1
 
-/* Definitions for peripheral TXFIFO */
-#define XPAR_TXFIFO_DEVICE_ID 0
-#define XPAR_TXFIFO_S00_AXI_BASEADDR 0x43C40000
-#define XPAR_TXFIFO_S00_AXI_HIGHADDR 0x43C4FFFF
+/* Definitions for peripheral TX_BUFFER_TXFIFO */
+#define XPAR_TX_BUFFER_TXFIFO_DEVICE_ID 0
+#define XPAR_TX_BUFFER_TXFIFO_S00_AXI_BASEADDR 0x43C40000
+#define XPAR_TX_BUFFER_TXFIFO_S00_AXI_HIGHADDR 0x43C4FFFF
 
 
 /******************************************************************/
@@ -117,39 +117,71 @@
 /* Definitions for driver AXIS_SWITCH */
 #define XPAR_XAXIS_SWITCH_NUM_INSTANCES 4
 
-/* Definitions for peripheral AXIS_SWITCH_0 */
-#define XPAR_AXIS_SWITCH_0_DEVICE_ID 0
+/* Definitions for peripheral LOOP1_AXIS_SWITCH_0 */
+#define XPAR_LOOP1_AXIS_SWITCH_0_DEVICE_ID 0
+#define XPAR_LOOP1_AXIS_SWITCH_0_BASEADDR 0x43C00000
+#define XPAR_LOOP1_AXIS_SWITCH_0_HIGHADDR 0x43C0FFFF
+#define XPAR_LOOP1_AXIS_SWITCH_0_NUM_SI 2
+#define XPAR_LOOP1_AXIS_SWITCH_0_NUM_MI 1
+
+
+/* Definitions for peripheral LOOP1_AXIS_SWITCH_1 */
+#define XPAR_LOOP1_AXIS_SWITCH_1_DEVICE_ID 1
+#define XPAR_LOOP1_AXIS_SWITCH_1_BASEADDR 0x43C50000
+#define XPAR_LOOP1_AXIS_SWITCH_1_HIGHADDR 0x43C5FFFF
+#define XPAR_LOOP1_AXIS_SWITCH_1_NUM_SI 1
+#define XPAR_LOOP1_AXIS_SWITCH_1_NUM_MI 2
+
+
+/* Definitions for peripheral LOOP2_AXIS_SWITCH_2 */
+#define XPAR_LOOP2_AXIS_SWITCH_2_DEVICE_ID 2
+#define XPAR_LOOP2_AXIS_SWITCH_2_BASEADDR 0x43C60000
+#define XPAR_LOOP2_AXIS_SWITCH_2_HIGHADDR 0x43C6FFFF
+#define XPAR_LOOP2_AXIS_SWITCH_2_NUM_SI 1
+#define XPAR_LOOP2_AXIS_SWITCH_2_NUM_MI 2
+
+
+/* Definitions for peripheral LOOP2_AXIS_SWITCH_3 */
+#define XPAR_LOOP2_AXIS_SWITCH_3_DEVICE_ID 3
+#define XPAR_LOOP2_AXIS_SWITCH_3_BASEADDR 0x43C70000
+#define XPAR_LOOP2_AXIS_SWITCH_3_HIGHADDR 0x43C7FFFF
+#define XPAR_LOOP2_AXIS_SWITCH_3_NUM_SI 2
+#define XPAR_LOOP2_AXIS_SWITCH_3_NUM_MI 1
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral LOOP1_AXIS_SWITCH_0 */
+#define XPAR_AXIS_SWITCH_0_NUM_INSTANCES 0
+#define XPAR_AXIS_SWITCH_0_DEVICE_ID XPAR_LOOP1_AXIS_SWITCH_0_DEVICE_ID
 #define XPAR_AXIS_SWITCH_0_BASEADDR 0x43C00000
 #define XPAR_AXIS_SWITCH_0_HIGHADDR 0x43C0FFFF
 #define XPAR_AXIS_SWITCH_0_NUM_SI 2
 #define XPAR_AXIS_SWITCH_0_NUM_MI 1
 
-
-/* Definitions for peripheral AXIS_SWITCH_1 */
-#define XPAR_AXIS_SWITCH_1_DEVICE_ID 1
+/* Canonical definitions for peripheral LOOP1_AXIS_SWITCH_1 */
+#define XPAR_AXIS_SWITCH_1_NUM_INSTANCES 0
+#define XPAR_AXIS_SWITCH_1_DEVICE_ID XPAR_LOOP1_AXIS_SWITCH_1_DEVICE_ID
 #define XPAR_AXIS_SWITCH_1_BASEADDR 0x43C50000
 #define XPAR_AXIS_SWITCH_1_HIGHADDR 0x43C5FFFF
 #define XPAR_AXIS_SWITCH_1_NUM_SI 1
 #define XPAR_AXIS_SWITCH_1_NUM_MI 2
 
-
-/* Definitions for peripheral AXIS_SWITCH_2 */
-#define XPAR_AXIS_SWITCH_2_DEVICE_ID 2
+/* Canonical definitions for peripheral LOOP2_AXIS_SWITCH_2 */
+#define XPAR_AXIS_SWITCH_2_NUM_INSTANCES 0
+#define XPAR_AXIS_SWITCH_2_DEVICE_ID XPAR_LOOP2_AXIS_SWITCH_2_DEVICE_ID
 #define XPAR_AXIS_SWITCH_2_BASEADDR 0x43C60000
 #define XPAR_AXIS_SWITCH_2_HIGHADDR 0x43C6FFFF
 #define XPAR_AXIS_SWITCH_2_NUM_SI 1
 #define XPAR_AXIS_SWITCH_2_NUM_MI 2
 
-
-/* Definitions for peripheral AXIS_SWITCH_3 */
-#define XPAR_AXIS_SWITCH_3_DEVICE_ID 3
+/* Canonical definitions for peripheral LOOP2_AXIS_SWITCH_3 */
+#define XPAR_AXIS_SWITCH_3_NUM_INSTANCES 0
+#define XPAR_AXIS_SWITCH_3_DEVICE_ID XPAR_LOOP2_AXIS_SWITCH_3_DEVICE_ID
 #define XPAR_AXIS_SWITCH_3_BASEADDR 0x43C70000
 #define XPAR_AXIS_SWITCH_3_HIGHADDR 0x43C7FFFF
 #define XPAR_AXIS_SWITCH_3_NUM_SI 2
 #define XPAR_AXIS_SWITCH_3_NUM_MI 1
-
-
-/******************************************************************/
 
 
 /******************************************************************/
@@ -249,9 +281,9 @@
 /******************************************************************/
 
 
-/* Peripheral Definitions for peripheral SPI_IP_0 */
-#define XPAR_SPI_IP_0_S00_AXI_BASEADDR 0x43C10000
-#define XPAR_SPI_IP_0_S00_AXI_HIGHADDR 0x43C1FFFF
+/* Peripheral Definitions for peripheral SPI_SPI_IP_0 */
+#define XPAR_SPI_SPI_IP_0_S00_AXI_BASEADDR 0x43C10000
+#define XPAR_SPI_SPI_IP_0_S00_AXI_HIGHADDR 0x43C1FFFF
 
 
 /* Peripheral Definitions for peripheral PS7_AFI_0 */
@@ -349,7 +381,7 @@
 /******************************************************************/
 
 
-/* Canonical Definitions for peripheral SPI_IP_0 */
+/* Canonical Definitions for peripheral SPI_SPI_IP_0 */
 #define XPAR_AXI4_PL_SPI_IP_0_S00_AXI_BASEADDR 0x43C10000
 #define XPAR_AXI4_PL_SPI_IP_0_S00_AXI_HIGHADDR 0x43C1FFFF
 
@@ -437,14 +469,14 @@
 /******************************************************************/
 
 /* Definitions for Fabric interrupts connected to ps7_scugic_0 */
-#define XPAR_FABRIC_AXI_DMA_0_MM2S_INTROUT_INTR 61U
-#define XPAR_FABRIC_AXI_DMA_0_S2MM_INTROUT_INTR 62U
+#define XPAR_FABRIC_DMA_AXI_DMA_0_MM2S_INTROUT_INTR 61U
+#define XPAR_FABRIC_DMA_AXI_DMA_0_S2MM_INTROUT_INTR 62U
 
 /******************************************************************/
 
 /* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
-#define XPAR_FABRIC_AXIDMA_0_MM2S_INTROUT_VEC_ID XPAR_FABRIC_AXI_DMA_0_MM2S_INTROUT_INTR
-#define XPAR_FABRIC_AXIDMA_0_S2MM_INTROUT_VEC_ID XPAR_FABRIC_AXI_DMA_0_S2MM_INTROUT_INTR
+#define XPAR_FABRIC_AXIDMA_0_MM2S_INTROUT_VEC_ID XPAR_FABRIC_DMA_AXI_DMA_0_MM2S_INTROUT_INTR
+#define XPAR_FABRIC_AXIDMA_0_S2MM_INTROUT_VEC_ID XPAR_FABRIC_DMA_AXI_DMA_0_S2MM_INTROUT_INTR
 
 /******************************************************************/
 
