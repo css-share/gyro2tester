@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Fri Apr 22 01:28:29 2022
+//Date        : Fri Apr 22 17:16:41 2022
 //Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2

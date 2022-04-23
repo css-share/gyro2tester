@@ -30,58 +30,87 @@ module led_driver (
 
 
   reg [31:0] macro_count;
-  reg [25:0] micro_count;
-  reg [5:0] shift_reg;
+  reg [31:0] micro_count;
+  reg [5:0] cur_state;
+  reg [5:0] nxt_state;
+  reg clk_div;
+  reg clk_div_s;
+  wire clk_rising;
+  
+  
+localparam constantNumber = 50000000;
 
-  always @(posedge clk or negedge rstn)
+  
+  always @(posedge clk)
   begin
     if (!rstn) 
-      micro_count <= 26'h0000000;
-    else
+      micro_count <= 32'h00000000;
+    else if (micro_count == constantNumber - 1)
+      micro_count <= 32'h00000000;  
+    else  
       micro_count <= micro_count + 1;
   end 
 
 
-/*
-  always @(posedge clk or negedge rstn)
-  begin
-    if (~rstn)
-      macro_count <= 32'h00000000;
-    else if (micro_count == 32'hFFFFFFFF)
-      macro_count <= macro_count + 1;
-  end
-*/
+
+always @ (posedge clk)
+begin
+    if (!rstn)
+        clk_div <= 1'b0;
+    else if (micro_count == constantNumber - 1)
+        clk_div <= ~clk_div;
+    else
+        clk_div <= clk_div;
+end
 
 
+always @ (posedge clk)
+begin
+  if (!rstn)
+    clk_div_s <= 0;
+  else
+    clk_div_s <= clk_div;
+end
+  
+assign clk_rising = clk_div & !clk_div_s;
+
+  
+
+always @ (posedge clk)
+begin
+  if (!rstn)
+    cur_state <= 6'b000000;
+   else if (clk_rising)
+    cur_state <= nxt_state;
+end
+
+  
+
+          
 
   always @ (*)
-  begin
-  shift_reg = 6'b000000; 
-    case (micro_count)
-      26'h0FFFFFF : shift_reg = 6'b000001;
-      26'h1FFFFFF : shift_reg = 6'b000010; 
-      26'h2FFFFFF : shift_reg = 6'b000100;
-      26'h3FFFFFF : shift_reg = 6'b001000;
-      26'h4FFFFFF : shift_reg = 6'b010000;
-      26'h5FFFFFF : shift_reg = 6'b100000; 
-      26'h6FFFFFF : shift_reg = 6'b010000;
-      26'h7FFFFFF : shift_reg = 6'b001000; 
-      26'h8FFFFFF : shift_reg = 6'b000100; 
-      26'h9FFFFFF : shift_reg = 6'b000010; 
-      26'hAFFFFFF : shift_reg = 6'b000001; 
+  begin 
+    case (cur_state)
+      6'b000000 : nxt_state = 6'b000001; 
+      6'b000001 : nxt_state = 6'b000010;
+      6'b000010 : nxt_state = 6'b000100; 
+      6'b000100 : nxt_state = 6'b001000;
+      6'b001000 : nxt_state = 6'b010000;
+      6'b010000 : nxt_state = 6'b100000;
+      6'b100000 : nxt_state = 6'b000000; 
       default : begin
-        shift_reg = 6'b000000; 
+        nxt_state = 6'b000000; 
       end
     endcase
   end
   
 
-  assign led0 = shift_reg[0];
-  assign led1 = shift_reg[1];
-  assign led2 = shift_reg[2];
-  assign led3 = shift_reg[3];
-  assign led4 = shift_reg[4];
-  assign led5 = shift_reg[5];
+  assign led0 = cur_state[0];
+  assign led1 = cur_state[1];
+  assign led2 = cur_state[2];
+  assign led3 = cur_state[3];
+  assign led4 = cur_state[4];
+  assign led5 = cur_state[5];
 
 
 

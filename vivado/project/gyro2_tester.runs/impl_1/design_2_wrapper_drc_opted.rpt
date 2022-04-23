@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Fri Apr 22 01:33:33 2022
-| Host         : xsjl20346 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Fri Apr 22 17:23:29 2022
+| Host         : xsjl23789 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 | Command      : report_drc -file design_2_wrapper_drc_opted.rpt -pb design_2_wrapper_drc_opted.pb -rpx design_2_wrapper_drc_opted.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1

@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Sun Apr 17 22:56:32 2022
+// Date        : Fri Apr 22 17:18:40 2022
 // Host        : xsjl23947 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 // Command     : write_verilog -force -mode funcsim
 //               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0_sim_netlist.v
@@ -33,411 +33,786 @@ module design_2_led_driver_0_0
   output led4;
   output led5;
 
-  wire \<const0> ;
   wire clk;
   wire led0;
   wire led1;
   wire led2;
   wire led3;
+  wire led4;
+  wire led5;
   wire rstn;
 
-  assign led4 = \<const0> ;
-  assign led5 = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
   design_2_led_driver_0_0_led_driver inst
-       (.clk(clk),
-        .led0(led0),
-        .led1(led1),
-        .led2(led2),
-        .led3(led3),
+       (.D({led4,led3,led2,led1,led0,led5}),
+        .clk(clk),
         .rstn(rstn));
 endmodule
 
 (* ORIG_REF_NAME = "led_driver" *) 
 module design_2_led_driver_0_0_led_driver
-   (led0,
-    led1,
-    led2,
-    led3,
+   (D,
     clk,
     rstn);
-  output led0;
-  output led1;
-  output led2;
-  output led3;
+  output [5:0]D;
   input clk;
   input rstn;
 
+  wire [5:0]D;
+  wire \FSM_onehot_cur_state[1]_i_1_n_0 ;
+  wire \FSM_onehot_cur_state_reg_n_0_[0] ;
   wire clk;
-  wire led0;
-  wire led0_INST_0_i_1_n_0;
-  wire led0_INST_0_i_2_n_0;
-  wire led0_INST_0_i_3_n_0;
-  wire led0_INST_0_i_4_n_0;
-  wire led1;
-  wire led2;
-  wire led3;
-  wire \micro_count[0]_i_2_n_0 ;
-  wire \micro_count[0]_i_3_n_0 ;
-  wire [25:0]micro_count_reg;
-  wire \micro_count_reg[0]_i_1_n_0 ;
-  wire \micro_count_reg[0]_i_1_n_1 ;
-  wire \micro_count_reg[0]_i_1_n_2 ;
-  wire \micro_count_reg[0]_i_1_n_3 ;
-  wire \micro_count_reg[0]_i_1_n_4 ;
-  wire \micro_count_reg[0]_i_1_n_5 ;
-  wire \micro_count_reg[0]_i_1_n_6 ;
-  wire \micro_count_reg[0]_i_1_n_7 ;
-  wire \micro_count_reg[12]_i_1_n_0 ;
-  wire \micro_count_reg[12]_i_1_n_1 ;
-  wire \micro_count_reg[12]_i_1_n_2 ;
-  wire \micro_count_reg[12]_i_1_n_3 ;
-  wire \micro_count_reg[12]_i_1_n_4 ;
-  wire \micro_count_reg[12]_i_1_n_5 ;
-  wire \micro_count_reg[12]_i_1_n_6 ;
-  wire \micro_count_reg[12]_i_1_n_7 ;
-  wire \micro_count_reg[16]_i_1_n_0 ;
-  wire \micro_count_reg[16]_i_1_n_1 ;
-  wire \micro_count_reg[16]_i_1_n_2 ;
-  wire \micro_count_reg[16]_i_1_n_3 ;
-  wire \micro_count_reg[16]_i_1_n_4 ;
-  wire \micro_count_reg[16]_i_1_n_5 ;
-  wire \micro_count_reg[16]_i_1_n_6 ;
-  wire \micro_count_reg[16]_i_1_n_7 ;
-  wire \micro_count_reg[20]_i_1_n_0 ;
-  wire \micro_count_reg[20]_i_1_n_1 ;
-  wire \micro_count_reg[20]_i_1_n_2 ;
-  wire \micro_count_reg[20]_i_1_n_3 ;
-  wire \micro_count_reg[20]_i_1_n_4 ;
-  wire \micro_count_reg[20]_i_1_n_5 ;
-  wire \micro_count_reg[20]_i_1_n_6 ;
-  wire \micro_count_reg[20]_i_1_n_7 ;
-  wire \micro_count_reg[24]_i_1_n_3 ;
-  wire \micro_count_reg[24]_i_1_n_6 ;
-  wire \micro_count_reg[24]_i_1_n_7 ;
-  wire \micro_count_reg[4]_i_1_n_0 ;
-  wire \micro_count_reg[4]_i_1_n_1 ;
-  wire \micro_count_reg[4]_i_1_n_2 ;
-  wire \micro_count_reg[4]_i_1_n_3 ;
-  wire \micro_count_reg[4]_i_1_n_4 ;
-  wire \micro_count_reg[4]_i_1_n_5 ;
-  wire \micro_count_reg[4]_i_1_n_6 ;
-  wire \micro_count_reg[4]_i_1_n_7 ;
-  wire \micro_count_reg[8]_i_1_n_0 ;
-  wire \micro_count_reg[8]_i_1_n_1 ;
-  wire \micro_count_reg[8]_i_1_n_2 ;
-  wire \micro_count_reg[8]_i_1_n_3 ;
-  wire \micro_count_reg[8]_i_1_n_4 ;
-  wire \micro_count_reg[8]_i_1_n_5 ;
-  wire \micro_count_reg[8]_i_1_n_6 ;
-  wire \micro_count_reg[8]_i_1_n_7 ;
+  wire clk_div_i_1_n_0;
+  wire clk_div_reg_n_0;
+  wire clk_div_s;
+  wire clk_rising;
+  wire [31:1]data0;
+  wire [31:0]micro_count;
+  wire micro_count0_carry__0_n_0;
+  wire micro_count0_carry__0_n_1;
+  wire micro_count0_carry__0_n_2;
+  wire micro_count0_carry__0_n_3;
+  wire micro_count0_carry__1_n_0;
+  wire micro_count0_carry__1_n_1;
+  wire micro_count0_carry__1_n_2;
+  wire micro_count0_carry__1_n_3;
+  wire micro_count0_carry__2_n_0;
+  wire micro_count0_carry__2_n_1;
+  wire micro_count0_carry__2_n_2;
+  wire micro_count0_carry__2_n_3;
+  wire micro_count0_carry__3_n_0;
+  wire micro_count0_carry__3_n_1;
+  wire micro_count0_carry__3_n_2;
+  wire micro_count0_carry__3_n_3;
+  wire micro_count0_carry__4_n_0;
+  wire micro_count0_carry__4_n_1;
+  wire micro_count0_carry__4_n_2;
+  wire micro_count0_carry__4_n_3;
+  wire micro_count0_carry__5_n_0;
+  wire micro_count0_carry__5_n_1;
+  wire micro_count0_carry__5_n_2;
+  wire micro_count0_carry__5_n_3;
+  wire micro_count0_carry__6_n_2;
+  wire micro_count0_carry__6_n_3;
+  wire micro_count0_carry_n_0;
+  wire micro_count0_carry_n_1;
+  wire micro_count0_carry_n_2;
+  wire micro_count0_carry_n_3;
+  wire \micro_count[31]_i_2_n_0 ;
+  wire \micro_count[31]_i_3_n_0 ;
+  wire \micro_count[31]_i_4_n_0 ;
+  wire \micro_count[31]_i_5_n_0 ;
+  wire \micro_count[31]_i_6_n_0 ;
+  wire \micro_count[31]_i_7_n_0 ;
+  wire \micro_count[31]_i_8_n_0 ;
+  wire \micro_count[31]_i_9_n_0 ;
+  wire [31:0]micro_count_0;
   wire rstn;
-  wire [3:1]\NLW_micro_count_reg[24]_i_1_CO_UNCONNECTED ;
-  wire [3:2]\NLW_micro_count_reg[24]_i_1_O_UNCONNECTED ;
+  wire [3:2]NLW_micro_count0_carry__6_CO_UNCONNECTED;
+  wire [3:3]NLW_micro_count0_carry__6_O_UNCONNECTED;
 
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
-    led0_INST_0
-       (.I0(micro_count_reg[25]),
-        .I1(micro_count_reg[24]),
-        .I2(led0_INST_0_i_1_n_0),
-        .I3(led0_INST_0_i_2_n_0),
-        .I4(led0_INST_0_i_3_n_0),
-        .I5(led0_INST_0_i_4_n_0),
-        .O(led0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    led0_INST_0_i_1
-       (.I0(micro_count_reg[19]),
-        .I1(micro_count_reg[18]),
-        .I2(micro_count_reg[20]),
-        .I3(micro_count_reg[22]),
-        .I4(micro_count_reg[21]),
-        .I5(micro_count_reg[23]),
-        .O(led0_INST_0_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    led0_INST_0_i_2
-       (.I0(micro_count_reg[13]),
-        .I1(micro_count_reg[12]),
-        .I2(micro_count_reg[14]),
-        .I3(micro_count_reg[16]),
-        .I4(micro_count_reg[15]),
-        .I5(micro_count_reg[17]),
-        .O(led0_INST_0_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    led0_INST_0_i_3
-       (.I0(micro_count_reg[7]),
-        .I1(micro_count_reg[6]),
-        .I2(micro_count_reg[8]),
-        .I3(micro_count_reg[10]),
-        .I4(micro_count_reg[9]),
-        .I5(micro_count_reg[11]),
-        .O(led0_INST_0_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    led0_INST_0_i_4
-       (.I0(micro_count_reg[1]),
-        .I1(micro_count_reg[0]),
-        .I2(micro_count_reg[2]),
-        .I3(micro_count_reg[4]),
-        .I4(micro_count_reg[3]),
-        .I5(micro_count_reg[5]),
-        .O(led0_INST_0_i_4_n_0));
-  LUT6 #(
-    .INIT(64'h4000000000000000)) 
-    led1_INST_0
-       (.I0(micro_count_reg[25]),
-        .I1(micro_count_reg[24]),
-        .I2(led0_INST_0_i_1_n_0),
-        .I3(led0_INST_0_i_2_n_0),
-        .I4(led0_INST_0_i_3_n_0),
-        .I5(led0_INST_0_i_4_n_0),
-        .O(led1));
-  LUT6 #(
-    .INIT(64'h4000000000000000)) 
-    led2_INST_0
-       (.I0(micro_count_reg[24]),
-        .I1(micro_count_reg[25]),
-        .I2(led0_INST_0_i_1_n_0),
-        .I3(led0_INST_0_i_2_n_0),
-        .I4(led0_INST_0_i_3_n_0),
-        .I5(led0_INST_0_i_4_n_0),
-        .O(led2));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    led3_INST_0
-       (.I0(micro_count_reg[25]),
-        .I1(micro_count_reg[24]),
-        .I2(led0_INST_0_i_1_n_0),
-        .I3(led0_INST_0_i_2_n_0),
-        .I4(led0_INST_0_i_3_n_0),
-        .I5(led0_INST_0_i_4_n_0),
-        .O(led3));
   LUT1 #(
     .INIT(2'h1)) 
-    \micro_count[0]_i_2 
+    \FSM_onehot_cur_state[1]_i_1 
        (.I0(rstn),
-        .O(\micro_count[0]_i_2_n_0 ));
+        .O(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h2)) 
+    \FSM_onehot_cur_state[1]_i_2 
+       (.I0(clk_div_reg_n_0),
+        .I1(clk_div_s),
+        .O(clk_rising));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDSE #(
+    .INIT(1'b1)) 
+    \FSM_onehot_cur_state_reg[0] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(D[0]),
+        .Q(\FSM_onehot_cur_state_reg_n_0_[0] ),
+        .S(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_cur_state_reg[1] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(\FSM_onehot_cur_state_reg_n_0_[0] ),
+        .Q(D[1]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_cur_state_reg[2] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(D[1]),
+        .Q(D[2]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_cur_state_reg[3] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(D[2]),
+        .Q(D[3]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_cur_state_reg[4] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(D[3]),
+        .Q(D[4]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_cur_state_reg[5] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(D[4]),
+        .Q(D[5]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* FSM_ENCODED_STATES = "iSTATE:0000001,iSTATE0:0000010,iSTATE1:0000100,iSTATE2:0001000,iSTATE3:0010000,iSTATE4:0100000,iSTATE5:1000000," *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \FSM_onehot_cur_state_reg[6] 
+       (.C(clk),
+        .CE(clk_rising),
+        .D(D[5]),
+        .Q(D[0]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFE0001)) 
+    clk_div_i_1
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(clk_div_reg_n_0),
+        .O(clk_div_i_1_n_0));
+  FDRE clk_div_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(clk_div_i_1_n_0),
+        .Q(clk_div_reg_n_0),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE clk_div_s_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(clk_div_reg_n_0),
+        .Q(clk_div_s),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry
+       (.CI(1'b0),
+        .CO({micro_count0_carry_n_0,micro_count0_carry_n_1,micro_count0_carry_n_2,micro_count0_carry_n_3}),
+        .CYINIT(micro_count[0]),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[4:1]),
+        .S(micro_count[4:1]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__0
+       (.CI(micro_count0_carry_n_0),
+        .CO({micro_count0_carry__0_n_0,micro_count0_carry__0_n_1,micro_count0_carry__0_n_2,micro_count0_carry__0_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[8:5]),
+        .S(micro_count[8:5]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__1
+       (.CI(micro_count0_carry__0_n_0),
+        .CO({micro_count0_carry__1_n_0,micro_count0_carry__1_n_1,micro_count0_carry__1_n_2,micro_count0_carry__1_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[12:9]),
+        .S(micro_count[12:9]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__2
+       (.CI(micro_count0_carry__1_n_0),
+        .CO({micro_count0_carry__2_n_0,micro_count0_carry__2_n_1,micro_count0_carry__2_n_2,micro_count0_carry__2_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[16:13]),
+        .S(micro_count[16:13]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__3
+       (.CI(micro_count0_carry__2_n_0),
+        .CO({micro_count0_carry__3_n_0,micro_count0_carry__3_n_1,micro_count0_carry__3_n_2,micro_count0_carry__3_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[20:17]),
+        .S(micro_count[20:17]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__4
+       (.CI(micro_count0_carry__3_n_0),
+        .CO({micro_count0_carry__4_n_0,micro_count0_carry__4_n_1,micro_count0_carry__4_n_2,micro_count0_carry__4_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[24:21]),
+        .S(micro_count[24:21]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__5
+       (.CI(micro_count0_carry__4_n_0),
+        .CO({micro_count0_carry__5_n_0,micro_count0_carry__5_n_1,micro_count0_carry__5_n_2,micro_count0_carry__5_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[28:25]),
+        .S(micro_count[28:25]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 micro_count0_carry__6
+       (.CI(micro_count0_carry__5_n_0),
+        .CO({NLW_micro_count0_carry__6_CO_UNCONNECTED[3:2],micro_count0_carry__6_n_2,micro_count0_carry__6_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_micro_count0_carry__6_O_UNCONNECTED[3],data0[31:29]}),
+        .S({1'b0,micro_count[31:29]}));
   LUT1 #(
     .INIT(2'h1)) 
-    \micro_count[0]_i_3 
-       (.I0(micro_count_reg[0]),
-        .O(\micro_count[0]_i_3_n_0 ));
-  FDCE \micro_count_reg[0] 
+    \micro_count[0]_i_1 
+       (.I0(micro_count[0]),
+        .O(micro_count_0[0]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[10]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[10]),
+        .O(micro_count_0[10]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[11]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[11]),
+        .O(micro_count_0[11]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[12]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[12]),
+        .O(micro_count_0[12]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[13]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[13]),
+        .O(micro_count_0[13]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[14]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[14]),
+        .O(micro_count_0[14]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[15]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[15]),
+        .O(micro_count_0[15]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[16]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[16]),
+        .O(micro_count_0[16]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[17]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[17]),
+        .O(micro_count_0[17]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[18]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[18]),
+        .O(micro_count_0[18]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[19]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[19]),
+        .O(micro_count_0[19]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[1]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[1]),
+        .O(micro_count_0[1]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[20]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[20]),
+        .O(micro_count_0[20]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[21]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[21]),
+        .O(micro_count_0[21]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[22]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[22]),
+        .O(micro_count_0[22]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[23]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[23]),
+        .O(micro_count_0[23]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[24]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[24]),
+        .O(micro_count_0[24]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[25]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[25]),
+        .O(micro_count_0[25]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[26]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[26]),
+        .O(micro_count_0[26]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[27]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[27]),
+        .O(micro_count_0[27]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[28]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[28]),
+        .O(micro_count_0[28]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[29]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[29]),
+        .O(micro_count_0[29]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[2]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[2]),
+        .O(micro_count_0[2]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[30]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[30]),
+        .O(micro_count_0[30]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[31]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[31]),
+        .O(micro_count_0[31]));
+  LUT5 #(
+    .INIT(32'hFFFFFBFF)) 
+    \micro_count[31]_i_2 
+       (.I0(micro_count[18]),
+        .I1(micro_count[19]),
+        .I2(micro_count[16]),
+        .I3(micro_count[17]),
+        .I4(\micro_count[31]_i_6_n_0 ),
+        .O(\micro_count[31]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFEFF)) 
+    \micro_count[31]_i_3 
+       (.I0(micro_count[26]),
+        .I1(micro_count[27]),
+        .I2(micro_count[24]),
+        .I3(micro_count[25]),
+        .I4(\micro_count[31]_i_7_n_0 ),
+        .O(\micro_count[31]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFF7FFF)) 
+    \micro_count[31]_i_4 
+       (.I0(micro_count[2]),
+        .I1(micro_count[3]),
+        .I2(micro_count[0]),
+        .I3(micro_count[1]),
+        .I4(\micro_count[31]_i_8_n_0 ),
+        .O(\micro_count[31]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \micro_count[31]_i_5 
+       (.I0(micro_count[10]),
+        .I1(micro_count[11]),
+        .I2(micro_count[8]),
+        .I3(micro_count[9]),
+        .I4(\micro_count[31]_i_9_n_0 ),
+        .O(\micro_count[31]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \micro_count[31]_i_6 
+       (.I0(micro_count[21]),
+        .I1(micro_count[20]),
+        .I2(micro_count[23]),
+        .I3(micro_count[22]),
+        .O(\micro_count[31]_i_6_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \micro_count[31]_i_7 
+       (.I0(micro_count[29]),
+        .I1(micro_count[28]),
+        .I2(micro_count[31]),
+        .I3(micro_count[30]),
+        .O(\micro_count[31]_i_7_n_0 ));
+  LUT4 #(
+    .INIT(16'hFF7F)) 
+    \micro_count[31]_i_8 
+       (.I0(micro_count[5]),
+        .I1(micro_count[4]),
+        .I2(micro_count[6]),
+        .I3(micro_count[7]),
+        .O(\micro_count[31]_i_8_n_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \micro_count[31]_i_9 
+       (.I0(micro_count[13]),
+        .I1(micro_count[12]),
+        .I2(micro_count[15]),
+        .I3(micro_count[14]),
+        .O(\micro_count[31]_i_9_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[3]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[3]),
+        .O(micro_count_0[3]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[4]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[4]),
+        .O(micro_count_0[4]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[5]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[5]),
+        .O(micro_count_0[5]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[6]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[6]),
+        .O(micro_count_0[6]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[7]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[7]),
+        .O(micro_count_0[7]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[8]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[8]),
+        .O(micro_count_0[8]));
+  LUT5 #(
+    .INIT(32'hFFFE0000)) 
+    \micro_count[9]_i_1 
+       (.I0(\micro_count[31]_i_2_n_0 ),
+        .I1(\micro_count[31]_i_3_n_0 ),
+        .I2(\micro_count[31]_i_4_n_0 ),
+        .I3(\micro_count[31]_i_5_n_0 ),
+        .I4(data0[9]),
+        .O(micro_count_0[9]));
+  FDRE \micro_count_reg[0] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[0]_i_1_n_7 ),
-        .Q(micro_count_reg[0]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[0]_i_1 
-       (.CI(1'b0),
-        .CO({\micro_count_reg[0]_i_1_n_0 ,\micro_count_reg[0]_i_1_n_1 ,\micro_count_reg[0]_i_1_n_2 ,\micro_count_reg[0]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\micro_count_reg[0]_i_1_n_4 ,\micro_count_reg[0]_i_1_n_5 ,\micro_count_reg[0]_i_1_n_6 ,\micro_count_reg[0]_i_1_n_7 }),
-        .S({micro_count_reg[3:1],\micro_count[0]_i_3_n_0 }));
-  FDCE \micro_count_reg[10] 
+        .D(micro_count_0[0]),
+        .Q(micro_count[0]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[10] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[8]_i_1_n_5 ),
-        .Q(micro_count_reg[10]));
-  FDCE \micro_count_reg[11] 
+        .D(micro_count_0[10]),
+        .Q(micro_count[10]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[11] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[8]_i_1_n_4 ),
-        .Q(micro_count_reg[11]));
-  FDCE \micro_count_reg[12] 
+        .D(micro_count_0[11]),
+        .Q(micro_count[11]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[12] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[12]_i_1_n_7 ),
-        .Q(micro_count_reg[12]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[12]_i_1 
-       (.CI(\micro_count_reg[8]_i_1_n_0 ),
-        .CO({\micro_count_reg[12]_i_1_n_0 ,\micro_count_reg[12]_i_1_n_1 ,\micro_count_reg[12]_i_1_n_2 ,\micro_count_reg[12]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\micro_count_reg[12]_i_1_n_4 ,\micro_count_reg[12]_i_1_n_5 ,\micro_count_reg[12]_i_1_n_6 ,\micro_count_reg[12]_i_1_n_7 }),
-        .S(micro_count_reg[15:12]));
-  FDCE \micro_count_reg[13] 
+        .D(micro_count_0[12]),
+        .Q(micro_count[12]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[13] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[12]_i_1_n_6 ),
-        .Q(micro_count_reg[13]));
-  FDCE \micro_count_reg[14] 
+        .D(micro_count_0[13]),
+        .Q(micro_count[13]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[14] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[12]_i_1_n_5 ),
-        .Q(micro_count_reg[14]));
-  FDCE \micro_count_reg[15] 
+        .D(micro_count_0[14]),
+        .Q(micro_count[14]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[15] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[12]_i_1_n_4 ),
-        .Q(micro_count_reg[15]));
-  FDCE \micro_count_reg[16] 
+        .D(micro_count_0[15]),
+        .Q(micro_count[15]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[16] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[16]_i_1_n_7 ),
-        .Q(micro_count_reg[16]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[16]_i_1 
-       (.CI(\micro_count_reg[12]_i_1_n_0 ),
-        .CO({\micro_count_reg[16]_i_1_n_0 ,\micro_count_reg[16]_i_1_n_1 ,\micro_count_reg[16]_i_1_n_2 ,\micro_count_reg[16]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\micro_count_reg[16]_i_1_n_4 ,\micro_count_reg[16]_i_1_n_5 ,\micro_count_reg[16]_i_1_n_6 ,\micro_count_reg[16]_i_1_n_7 }),
-        .S(micro_count_reg[19:16]));
-  FDCE \micro_count_reg[17] 
+        .D(micro_count_0[16]),
+        .Q(micro_count[16]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[17] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[16]_i_1_n_6 ),
-        .Q(micro_count_reg[17]));
-  FDCE \micro_count_reg[18] 
+        .D(micro_count_0[17]),
+        .Q(micro_count[17]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[18] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[16]_i_1_n_5 ),
-        .Q(micro_count_reg[18]));
-  FDCE \micro_count_reg[19] 
+        .D(micro_count_0[18]),
+        .Q(micro_count[18]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[19] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[16]_i_1_n_4 ),
-        .Q(micro_count_reg[19]));
-  FDCE \micro_count_reg[1] 
+        .D(micro_count_0[19]),
+        .Q(micro_count[19]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[1] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[0]_i_1_n_6 ),
-        .Q(micro_count_reg[1]));
-  FDCE \micro_count_reg[20] 
+        .D(micro_count_0[1]),
+        .Q(micro_count[1]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[20] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[20]_i_1_n_7 ),
-        .Q(micro_count_reg[20]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[20]_i_1 
-       (.CI(\micro_count_reg[16]_i_1_n_0 ),
-        .CO({\micro_count_reg[20]_i_1_n_0 ,\micro_count_reg[20]_i_1_n_1 ,\micro_count_reg[20]_i_1_n_2 ,\micro_count_reg[20]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\micro_count_reg[20]_i_1_n_4 ,\micro_count_reg[20]_i_1_n_5 ,\micro_count_reg[20]_i_1_n_6 ,\micro_count_reg[20]_i_1_n_7 }),
-        .S(micro_count_reg[23:20]));
-  FDCE \micro_count_reg[21] 
+        .D(micro_count_0[20]),
+        .Q(micro_count[20]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[21] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[20]_i_1_n_6 ),
-        .Q(micro_count_reg[21]));
-  FDCE \micro_count_reg[22] 
+        .D(micro_count_0[21]),
+        .Q(micro_count[21]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[22] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[20]_i_1_n_5 ),
-        .Q(micro_count_reg[22]));
-  FDCE \micro_count_reg[23] 
+        .D(micro_count_0[22]),
+        .Q(micro_count[22]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[23] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[20]_i_1_n_4 ),
-        .Q(micro_count_reg[23]));
-  FDCE \micro_count_reg[24] 
+        .D(micro_count_0[23]),
+        .Q(micro_count[23]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[24] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[24]_i_1_n_7 ),
-        .Q(micro_count_reg[24]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[24]_i_1 
-       (.CI(\micro_count_reg[20]_i_1_n_0 ),
-        .CO({\NLW_micro_count_reg[24]_i_1_CO_UNCONNECTED [3:1],\micro_count_reg[24]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_micro_count_reg[24]_i_1_O_UNCONNECTED [3:2],\micro_count_reg[24]_i_1_n_6 ,\micro_count_reg[24]_i_1_n_7 }),
-        .S({1'b0,1'b0,micro_count_reg[25:24]}));
-  FDCE \micro_count_reg[25] 
+        .D(micro_count_0[24]),
+        .Q(micro_count[24]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[25] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[24]_i_1_n_6 ),
-        .Q(micro_count_reg[25]));
-  FDCE \micro_count_reg[2] 
+        .D(micro_count_0[25]),
+        .Q(micro_count[25]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[26] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[0]_i_1_n_5 ),
-        .Q(micro_count_reg[2]));
-  FDCE \micro_count_reg[3] 
+        .D(micro_count_0[26]),
+        .Q(micro_count[26]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[27] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[0]_i_1_n_4 ),
-        .Q(micro_count_reg[3]));
-  FDCE \micro_count_reg[4] 
+        .D(micro_count_0[27]),
+        .Q(micro_count[27]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[28] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[4]_i_1_n_7 ),
-        .Q(micro_count_reg[4]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[4]_i_1 
-       (.CI(\micro_count_reg[0]_i_1_n_0 ),
-        .CO({\micro_count_reg[4]_i_1_n_0 ,\micro_count_reg[4]_i_1_n_1 ,\micro_count_reg[4]_i_1_n_2 ,\micro_count_reg[4]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\micro_count_reg[4]_i_1_n_4 ,\micro_count_reg[4]_i_1_n_5 ,\micro_count_reg[4]_i_1_n_6 ,\micro_count_reg[4]_i_1_n_7 }),
-        .S(micro_count_reg[7:4]));
-  FDCE \micro_count_reg[5] 
+        .D(micro_count_0[28]),
+        .Q(micro_count[28]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[29] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[4]_i_1_n_6 ),
-        .Q(micro_count_reg[5]));
-  FDCE \micro_count_reg[6] 
+        .D(micro_count_0[29]),
+        .Q(micro_count[29]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[2] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[4]_i_1_n_5 ),
-        .Q(micro_count_reg[6]));
-  FDCE \micro_count_reg[7] 
+        .D(micro_count_0[2]),
+        .Q(micro_count[2]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[30] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[4]_i_1_n_4 ),
-        .Q(micro_count_reg[7]));
-  FDCE \micro_count_reg[8] 
+        .D(micro_count_0[30]),
+        .Q(micro_count[30]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[31] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[8]_i_1_n_7 ),
-        .Q(micro_count_reg[8]));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \micro_count_reg[8]_i_1 
-       (.CI(\micro_count_reg[4]_i_1_n_0 ),
-        .CO({\micro_count_reg[8]_i_1_n_0 ,\micro_count_reg[8]_i_1_n_1 ,\micro_count_reg[8]_i_1_n_2 ,\micro_count_reg[8]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\micro_count_reg[8]_i_1_n_4 ,\micro_count_reg[8]_i_1_n_5 ,\micro_count_reg[8]_i_1_n_6 ,\micro_count_reg[8]_i_1_n_7 }),
-        .S(micro_count_reg[11:8]));
-  FDCE \micro_count_reg[9] 
+        .D(micro_count_0[31]),
+        .Q(micro_count[31]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[3] 
        (.C(clk),
         .CE(1'b1),
-        .CLR(\micro_count[0]_i_2_n_0 ),
-        .D(\micro_count_reg[8]_i_1_n_6 ),
-        .Q(micro_count_reg[9]));
+        .D(micro_count_0[3]),
+        .Q(micro_count[3]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[4] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(micro_count_0[4]),
+        .Q(micro_count[4]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[5] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(micro_count_0[5]),
+        .Q(micro_count[5]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[6] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(micro_count_0[6]),
+        .Q(micro_count[6]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[7] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(micro_count_0[7]),
+        .Q(micro_count[7]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[8] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(micro_count_0[8]),
+        .Q(micro_count[8]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
+  FDRE \micro_count_reg[9] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(micro_count_0[9]),
+        .Q(micro_count[9]),
+        .R(\FSM_onehot_cur_state[1]_i_1_n_0 ));
 endmodule
 `ifndef GLBL
 `define GLBL

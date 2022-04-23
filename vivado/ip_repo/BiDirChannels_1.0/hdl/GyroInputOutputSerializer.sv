@@ -39,23 +39,6 @@ module GyroInputOutputSerializer (
   output logic        tx_fifo_tready,
   input               tx_fifo_tlast,
 
-/*
-  input  [15:0]       tx_fifo_data,
-  input               tx_fifo_valid,
-  output logic        tx_fifo_ready,
-  input               tx_fifo_last,
-
-  input  [15:0]       tx1_fifo_data,
-  input               tx1_fifo_valid,
-  output logic        tx1_fifo_ready,
-  input               tx1_fifo_last,
-
-  input  [15:0]       tx2_fifo_data,
-  input               tx2_fifo_valid,
-  output logic        tx2_fifo_ready,
-  input               tx2_fifo_last,
-*/
-				  
   output logic [47:0] rx_fifo_data,
   output logic        rx_fifo_valid,
   input               rx_fifo_ready,
@@ -400,15 +383,15 @@ clock_divider_by_10 SYNC_CLK_DIV (
 
   
 
- always_comb
-  begin
-    if (enable & out_start_stop)
-      MCK = mck_tx;
-    else
-      MCK = txclk;
-  end
+// always_comb
+//  begin
+//    if (enable & out_start_stop)
+//      MCK = mck_tx;
+//    else
+//      MCK = txclk;
+//  end
 
-
+assign MCK = ~txclk;
   
 //////////////////////////////////////////////
 // Input Channel                            //

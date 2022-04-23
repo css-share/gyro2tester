@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.904728",
-   "Default View_TopLeft":"686,-9",
+   "Default View_ScaleFactor":"0.944094",
+   "Default View_TopLeft":"-190,-10",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
@@ -27,7 +27,6 @@ preplace port port-id_LED6 -pg 1 -lvl 6 -x 2390 -y 1150 -defaultsOSRD
 preplace port port-id_LED7 -pg 1 -lvl 6 -x 2390 -y 1170 -defaultsOSRD
 preplace port port-id_SPI_DN -pg 1 -lvl 6 -x 2390 -y 980 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 5 -x 2077 -y 310 -defaultsOSRD
-preplace inst led_driver_0 -pg 1 -lvl 5 -x 2077 -y 1136 -defaultsOSRD
 preplace inst RX_BUFFER -pg 1 -lvl 5 -x 2077 -y 90 -defaultsOSRD
 preplace inst LOOP1 -pg 1 -lvl 3 -x 1170 -y 590 -defaultsOSRD
 preplace inst LOOP2 -pg 1 -lvl 4 -x 1540 -y 620 -defaultsOSRD
@@ -37,12 +36,13 @@ preplace inst DMA -pg 1 -lvl 4 -x 1540 -y 370 -defaultsOSRD
 preplace inst REGISTER_DEMUX -pg 1 -lvl 2 -x 787 -y 620 -defaultsOSRD
 preplace inst TX_BUFFER -pg 1 -lvl 5 -x 2077 -y 820 -defaultsOSRD
 preplace inst BiDirChannels_0 -pg 1 -lvl 5 -x 2077 -y 600 -defaultsOSRD
+preplace inst led_driver_0 -pg 1 -lvl 5 -x 2077 -y 1136 -defaultsOSRD
 preplace netloc BiDirChannels_0_HSI_DAM 1 5 1 NJ 580
 preplace netloc BiDirChannels_0_HSI_DAP 1 5 1 NJ 600
 preplace netloc BiDirChannels_0_MCK_N 1 5 1 NJ 640
 preplace netloc BiDirChannels_0_MCK_P 1 5 1 NJ 620
 preplace netloc BiDirChannels_0_SYNCK 1 5 1 NJ 660
-preplace netloc BiDirChannels_0_txclk 1 0 6 -60 918 590J 1192 NJ 1192 NJ 1192 1760 1246 2310
+preplace netloc BiDirChannels_0_txclk 1 0 6 -60 1120 NJ 1120 NJ 1120 NJ 1120 1710 1246 2310
 preplace netloc HSI_A0_1 1 0 5 -90J 460 NJ 460 NJ 460 1350J 470 1720J
 preplace netloc Net 1 5 1 2330J 980n
 preplace netloc RxFIFO_rxfifo_full 1 5 1 NJ 100
@@ -59,7 +59,7 @@ preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 1 600 630n
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -70 610 580 470 1010 470 1340 490 1730 470 2340
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 -80 450 NJ 450 NJ 450 1360J 460 NJ 460 2320
 preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 590 480 990 480 1370 500 1740
-preplace netloc txclk_reset_domain_peripheral_aresetn 1 1 4 610 932 NJ 932 NJ 932 1750
+preplace netloc txclk_reset_domain_peripheral_aresetn 1 1 4 N 820 NJ 820 NJ 820 1750
 preplace netloc xlconcat_1_dout 1 4 1 1720 350n
 preplace netloc AXI_Register_Demux_M00_AXI 1 2 1 1000 540n
 preplace netloc AXI_Register_Demux_M06_AXI 1 2 1 980 600n
@@ -75,7 +75,7 @@ preplace netloc axis_switch_2_M00_AXIS 1 4 1 1710 570n
 preplace netloc axis_switch_3_M00_AXIS 1 4 1 1700 80n
 preplace netloc processing_system7_0_DDR 1 5 1 NJ 230
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 250
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 610 170 NJ 170 NJ 170 NJ 170 2340
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 600 170 NJ 170 NJ 170 NJ 170 2340
 preplace netloc ps7_0_axi_periph_M01_AXI 1 2 3 950 780 NJ 780 1700J
 preplace netloc ps7_0_axi_periph_M02_AXI 1 2 3 940 710 1330J 510 1710J
 preplace netloc ps7_0_axi_periph_M03_AXI 1 2 2 970 340 NJ
