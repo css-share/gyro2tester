@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date                      : Fri Apr 22 17:24:27 2022
-| Host                      : xsjl23789 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+| Date                      : Mon Apr 25 20:58:11 2022
+| Host                      : xsjlc200176 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command                   : report_io -file design_2_wrapper_io_placed.rpt
 | Design                    : design_2_wrapper
 | Device                    : xc7z020
@@ -10,7 +10,7 @@ Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 | Package                   : clg484
 | Package Version           : FINAL 2012-06-26
 | Package Pin Delay Version : VERS. 2.0 2012-06-26
-----------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 IO Information
 

@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Fri Apr 22 01:30:04 2022
-| Host         : xsjl210014 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Mon Apr 25 20:54:11 2022
+| Host         : xsjl23955 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_utilization -file design_2_axis_stream_txfifo_0_2_utilization_synth.rpt -pb design_2_axis_stream_txfifo_0_2_utilization_synth.pb
 | Design       : design_2_axis_stream_txfifo_0_2
 | Device       : xc7z020clg484-1
@@ -31,15 +31,15 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  227 |     0 |          0 |     53200 |  0.43 |
-|   LUT as Logic             |  178 |     0 |          0 |     53200 |  0.33 |
+| Slice LUTs*                |  231 |     0 |          0 |     53200 |  0.43 |
+|   LUT as Logic             |  182 |     0 |          0 |     53200 |  0.34 |
 |   LUT as Memory            |   49 |     0 |          0 |     17400 |  0.28 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |   49 |     0 |            |           |       |
 | Slice Registers            |  190 |     0 |          0 |    106400 |  0.18 |
 |   Register as Flip Flop    |  190 |     0 |          0 |    106400 |  0.18 |
 |   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
-| F7 Muxes                   |    0 |     0 |          0 |     26600 |  0.00 |
+| F7 Muxes                   |    2 |     0 |          0 |     26600 | <0.01 |
 | F8 Muxes                   |    0 |     0 |          0 |     13300 |  0.00 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -150,15 +150,16 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  186 |        Flop & Latch |
-| LUT4     |   87 |                 LUT |
-| LUT3     |   69 |                 LUT |
+| LUT4     |   88 |                 LUT |
+| LUT3     |   66 |                 LUT |
 | SRL16E   |   49 |  Distributed Memory |
-| LUT5     |   32 |                 LUT |
+| LUT5     |   31 |                 LUT |
 | LUT6     |   21 |                 LUT |
 | CARRY4   |   12 |          CarryLogic |
-| LUT1     |    8 |                 LUT |
-| LUT2     |    5 |                 LUT |
+| LUT2     |   10 |                 LUT |
+| LUT1     |   10 |                 LUT |
 | FDSE     |    4 |        Flop & Latch |
+| MUXF7    |    2 |               MuxFx |
 +----------+------+---------------------+
 
 

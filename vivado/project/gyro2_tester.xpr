@@ -116,41 +116,20 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci">
-          <Proxy FileSetName="design_2_SPI_ip_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci">
-          <Proxy FileSetName="design_2_iobuf_xil_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xci">
-          <Proxy FileSetName="design_2_axi_dma_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_xbar_0/design_2_xbar_0.xci">
-          <Proxy FileSetName="design_2_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci">
-          <Proxy FileSetName="design_2_axis_stream_txfifo_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci">
-          <Proxy FileSetName="design_2_BiDirChannels_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci">
-          <Proxy FileSetName="design_2_led_driver_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.xci">
-          <Proxy FileSetName="design_2_blk_mem_1_even_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.xci">
-          <Proxy FileSetName="design_2_blk_mem_1_even_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.xci">
-          <Proxy FileSetName="design_2_blk_mem_2_odd_0"/>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.xci">
+          <Proxy FileSetName="design_2_blk_mem_0_even_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.xci">
           <Proxy FileSetName="design_2_blk_mem_0_odd_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.xci">
-          <Proxy FileSetName="design_2_blk_mem_0_even_0"/>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.xci">
+          <Proxy FileSetName="design_2_blk_mem_2_odd_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.xci">
+          <Proxy FileSetName="design_2_blk_mem_1_even_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.xci">
+          <Proxy FileSetName="design_2_blk_mem_1_even_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.xci">
           <Proxy FileSetName="design_2_blk_mem_0_even_1"/>
@@ -172,6 +151,27 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0.xci">
           <Proxy FileSetName="design_2_axis_switch_3_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci">
+          <Proxy FileSetName="design_2_SPI_ip_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci">
+          <Proxy FileSetName="design_2_iobuf_xil_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xci">
+          <Proxy FileSetName="design_2_axi_dma_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_xbar_0/design_2_xbar_0.xci">
+          <Proxy FileSetName="design_2_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci">
+          <Proxy FileSetName="design_2_axis_stream_txfifo_0_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci">
+          <Proxy FileSetName="design_2_BiDirChannels_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci">
+          <Proxy FileSetName="design_2_led_driver_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/design_2/hdl/design_2_wrapper.v">
@@ -336,6 +336,12 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="design_2_led_driver_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_led_driver_0_0" RelGenDir="$PGENDIR/design_2_led_driver_0_0">
+      <Config>
+        <Option Name="TopModule" Val="design_2_led_driver_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="design_2_axis_stream_txfifo_0_2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_axis_stream_txfifo_0_2" RelGenDir="$PGENDIR/design_2_axis_stream_txfifo_0_2">
       <Config>
         <Option Name="TopModule" Val="design_2_axis_stream_txfifo_0_2"/>
@@ -345,12 +351,6 @@
     <FileSet Name="design_2_BiDirChannels_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_BiDirChannels_0_0" RelGenDir="$PGENDIR/design_2_BiDirChannels_0_0">
       <Config>
         <Option Name="TopModule" Val="design_2_BiDirChannels_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="design_2_led_driver_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_led_driver_0_0" RelGenDir="$PGENDIR/design_2_led_driver_0_0">
-      <Config>
-        <Option Name="TopModule" Val="design_2_led_driver_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -547,9 +547,21 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_axis_stream_txfifo_0_2_synth_1" Type="Ft3:Synth" SrcSet="design_2_axis_stream_txfifo_0_2" Part="xc7z020clg484-1" ConstrsSet="design_2_axis_stream_txfifo_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_axis_stream_txfifo_0_2_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_axis_stream_txfifo_0_2_synth_1">
+    <Run Id="design_2_led_driver_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_led_driver_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_led_driver_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="design_2_axis_stream_txfifo_0_2_synth_1" Type="Ft3:Synth" SrcSet="design_2_axis_stream_txfifo_0_2" Part="xc7z020clg484-1" ConstrsSet="design_2_axis_stream_txfifo_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_axis_stream_txfifo_0_2_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_axis_stream_txfifo_0_2_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -558,16 +570,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="design_2_BiDirChannels_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_BiDirChannels_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_BiDirChannels_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_BiDirChannels_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_BiDirChannels_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_led_driver_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_led_driver_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_led_driver_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -869,9 +871,28 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_axis_stream_txfifo_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_axis_stream_txfifo_0_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_axis_stream_txfifo_0_2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_axis_stream_txfifo_0_2_impl_1">
+    <Run Id="design_2_led_driver_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_led_driver_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="design_2_axis_stream_txfifo_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_axis_stream_txfifo_0_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_axis_stream_txfifo_0_2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_axis_stream_txfifo_0_2_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -887,23 +908,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="design_2_BiDirChannels_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_BiDirChannels_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_BiDirChannels_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_BiDirChannels_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_led_driver_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_led_driver_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
           <Desc>Default settings for Implementation.</Desc>

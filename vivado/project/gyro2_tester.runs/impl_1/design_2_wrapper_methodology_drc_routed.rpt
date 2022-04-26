@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Fri Apr 22 17:26:35 2022
-| Host         : xsjl23789 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+| Date         : Mon Apr 25 20:59:08 2022
+| Host         : xsjlc200176 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -23,15 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 80
+             Violations found: 75
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                       | Violations |
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | TIMING-14 | Critical Warning | LUT on the clock tree                                             | 2          |
-| LUTAR-1   | Warning          | LUT drives async reset alert                                      | 6          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                      | 1          |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                 | 1          |
-| TIMING-10 | Warning          | Missing property on synchronizer                                  | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                                     | 5          |
+| TIMING-18 | Warning          | Missing input or output delay                                     | 6          |
 | TIMING-20 | Warning          | Non-clocked latch                                                 | 39         |
 | TIMING-30 | Warning          | Sub-optimal master source pin selection for generated clock       | 2          |
 | TIMING-47 | Warning          | False path or asynchronous clock group between synchronous clocks | 11         |
@@ -42,7 +41,7 @@ Table of Contents
 -----------------
 TIMING-14#1 Critical Warning
 LUT on the clock tree  
-The LUT design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/Q_i_4 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+The LUT design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/Q_i_3 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
 Related violations: <none>
 
 TIMING-14#2 Critical Warning
@@ -52,15 +51,7 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/FSM_onehot_cur_state[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rrstn_syncr/sync_1stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rrstn_syncr/sync_2stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wrstn_syncr/sync_1stg_reg[0]/CLR
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wrstn_syncr/sync_2stg_reg[0]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#2 Warning
-LUT drives async reset alert  
-LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg/CLR,
+LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg/CLR,
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[0]/CLR,
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[1]/CLR,
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[2]/CLR,
@@ -71,91 +62,8 @@ design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[6]/CLR,
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/out_clock_int_reg/CLR,
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[0]/CLR,
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wrstn_syncr/sync_1stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wrstn_syncr/sync_2stg_reg[0]/CLR
- (the first 15 of 17 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#3 Warning
-LUT drives async reset alert  
-LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/sync_1stg[3]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_rd_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_rd_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_rd_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_rd_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/last_sampled_wr_ptr_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/last_sampled_wr_ptr_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/last_sampled_wr_ptr_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[3]/CLR
- (the first 15 of 21 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#4 Warning
-LUT drives async reset alert  
-LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/sync_1stg[3]_i_1__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_rd_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_rd_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_rd_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_rd_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/last_sampled_wr_ptr_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/last_sampled_wr_ptr_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/last_sampled_wr_ptr_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_1stg_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/wr_2_rd_syncr/sync_2stg_reg[3]/CLR
- (the first 15 of 21 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#5 Warning
-LUT drives async reset alert  
-LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/w_bnext_q[2]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_wr_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_wr_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_wr_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/fill_wr_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/last_sampled_rd_ptr_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/last_sampled_rd_ptr_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/last_sampled_rd_ptr_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_tx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[3]/CLR
- (the first 15 of 26 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#6 Warning
-LUT drives async reset alert  
-LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/w_bnext_q[2]_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_wr_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_wr_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_wr_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/fill_wr_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/last_sampled_rd_ptr_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/last_sampled_rd_ptr_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/last_sampled_rd_ptr_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_1stg_reg[3]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[0]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[1]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[2]/CLR,
-design_2_i/BiDirChannels_0/inst/u_gyro_serialout/u_rx_async_stream_fifo/rd_2_wr_syncr/sync_2stg_reg[3]/CLR
- (the first 15 of 26 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[2]/CLR
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[3]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-9#1 Warning
@@ -163,32 +71,32 @@ Unknown CDC Logic
 One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
 Related violations: <none>
 
-TIMING-10#1 Warning
-Missing property on synchronizer  
-One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
-Related violations: <none>
-
 TIMING-18#1 Warning
 Missing input or output delay  
-An output delay is missing on DSYNC relative to clock(s) clk_fpga_0
+An input delay is missing on DRX relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on DTX relative to clock(s) clk_fpga_0
+An output delay is missing on DSYNC relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on LED0 relative to clock(s) clk_fpga_0
+An output delay is missing on DTX relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on LED1 relative to clock(s) clk_fpga_0
+An output delay is missing on LED0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on LED1 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#6 Warning
 Missing input or output delay  
 An output delay is missing on SYNC_CK relative to clock(s) clk_fpga_0
 Related violations: <none>

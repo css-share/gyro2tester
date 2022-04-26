@@ -12,8 +12,9 @@ bhist -l -J /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ru
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source design_2_xbar_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2943.715 ; gain = 2.020 ; free physical = 99858 ; free virtual = 213939
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_2_xbar_0, cache-ID = 737c0476663dbf3d.
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 22 01:29:30 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 25 20:53:35 2022...

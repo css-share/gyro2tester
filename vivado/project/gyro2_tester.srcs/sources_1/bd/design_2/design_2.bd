@@ -69,8 +69,8 @@
         "blk0_mem_tx_odd": "",
         "TxFIFO": ""
       },
-      "BiDirChannels_0": "",
-      "led_driver_0": ""
+      "led_driver_0": "",
+      "BiDirChannels_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -5742,12 +5742,6 @@
           }
         }
       },
-      "BiDirChannels_0": {
-        "vlnv": "xilinx.com:user:BiDirChannels:1.0",
-        "xci_name": "design_2_BiDirChannels_0_0",
-        "xci_path": "ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci",
-        "inst_hier_path": "BiDirChannels_0"
-      },
       "led_driver_0": {
         "vlnv": "xilinx.com:module_ref:led_driver:1.0",
         "xci_name": "design_2_led_driver_0_0",
@@ -5806,6 +5800,12 @@
             "direction": "O"
           }
         }
+      },
+      "BiDirChannels_0": {
+        "vlnv": "xilinx.com:user:BiDirChannels:1.0",
+        "xci_name": "design_2_BiDirChannels_0_0",
+        "xci_path": "ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci",
+        "inst_hier_path": "BiDirChannels_0"
       }
     },
     "interface_nets": {
@@ -6090,8 +6090,8 @@
       "txclk_reset_domain_peripheral_aresetn": {
         "ports": [
           "RESETS/peripheral_aresetn",
-          "BiDirChannels_0/tx_rstn",
-          "led_driver_0/rstn"
+          "led_driver_0/rstn",
+          "BiDirChannels_0/tx_rstn"
         ]
       },
       "xlconcat_1_dout": {
