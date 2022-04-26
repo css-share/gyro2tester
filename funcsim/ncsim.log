@@ -1,0 +1,296 @@
+ncsim(64): 15.22-s018: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncsim(64)	15.22-s018: Started on Apr 26, 2022 at 14:31:40 PDT
+ncsim
+    -NOWARN PRPASZ
+    -NOWARN PRHOPT
+    -NOWARN DLNCML
+    -messages
+    -64bit
+    +dontStopOnSimulError=1
+    -input ./test_one.tcl
+    worklib.test_top:module
+    -ncinitialize rand_2state:34546499
+    -noievlic
+
+Loading snapshot worklib.test_top:module .................... Done
+SVSEED default: 1
+ncsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+ncsim> 
+ncsim> 
+ncsim> database -shm gyro_waves
+Created SHM database gyro_waves
+ncsim> probe -create -all -dynamic -depth all 
+Created probe 1
+ncsim> 
+ncsim> 
+ncsim> ##run  15000000 ns
+ncsim> 
+ncsim> ##run  15000000 ns
+ncsim> 
+ncsim> 
+ncsim> run 55000000
+File was opened successfully : -2147483645
+502 ns simulation start
+REV iD 
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=20000008 RDATA=42622 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 8546000:
+---------------------------------------------------
+Setup SPI interface 
+Testing Write A5A5 to Addr 25 
+8746 ns Write 0000_A5A5 to SPI_REG2 SPI DATA
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=8 RDATA=a5a5 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 8790000:
+8990 ns Write 0000_0002 to SPI_REG1 SPI ADDR
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=4 RDATA=2 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 9034000:
+9234 ns Write 0000_0001 to SPI_REG0 SPI GO
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=0 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 9278000:
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=0 RDATA=0 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 9522000:
+---------------------------------------------------
+Read Back Addr 25 
+Testing Write A5A5 to Addr 25 
+9722 ns Write 0000_0025 to SPI_REG1
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=4 RDATA=2 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 9766000:
+---------------------------------------------------
+9966 ns Write 0000_0011 to SPI_REG0
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=0 RDATA=3 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 10010000:
+---------------------------------------------------
+10210 ns Write 0000_0000 to SPI_REG0
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=0 RDATA=0 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 10254000:
+---------------------------------------------------
+10454 ns Write 0000_0000 to SPI_REG3
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=c RDATA=a5a5 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 10498000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+SPI TEST DONE
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+DMA IN Tx Data
+10498 ns Write 0000_0001 to DMA_REG0
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=40000000 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 10542000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Enable TX FIFO
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=20000000 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 10786000:
+FILLING THE TX FIFO 
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=2000000c RDATA=80006000 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 108874000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+TX FIFO FIllED
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Read back from RXFIFO Reg 3 for fill level
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=3000000c RDATA=40000000 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 109118000:
+---------------------------------------------------
+Enable Rx to Fill               109318
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=30000000 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 109362000:
+Enable Outputs and MCK on BirDir
+139562 ns Write 0000_0001 to BIDIR_REG2
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=10000008 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 139606000:
+---------------------------------------------------
+Enable loopback on BirDir
+139806 ns Write 0000_0011 to BIDIR_REG0
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=10000000 RDATA=1020000 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 139850000:
+---------------------------------------------------
+Start out [bit 0] and in [bit 4] channels on BirDir
+140050 ns Write 0000_0001 to BIDIR_REG1
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=10000004 RDATA=11 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 140094000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+TX Looped Back to RX
+Wait for RX BUFFER FULL
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Read back from RXFIFO Reg 3 for fill level
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=3000000c RDATA=80003fff 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 25830278000:
+---------------------------------------------------
+Enable Rx to Drain             25830478
+25830478 ns Write 0000_0001 to RXFIFO_REG2
+Check the enable was set on RX reg0
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=30000008 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 25830522000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+RX DMA
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Turn On DMA Drain
+25830722 ns Write 0000_0001 to DMA_REG1
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=40000004 RDATA=1 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 25830766000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+RX FIFO Drained
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Reset the RX FIFO
+RX_DMA got Last Flag on data : bfffbffe
+Read back from RXFIFO Reg 3 for fill level and empty
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=3000000c RDATA=40000000 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 26092898000:
+---------------------------------------------------
+DMA OFF  Rx Data
+26093098 ns Write 0000_0000 to DMA_REG1
+Read back from AXI Slave
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=40000004 RDATA=0 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 26093142000:
+---------------------------------------------------
+26093342 ns Write 12C to disable halt
+26093342 ns Write 0000_0001 to RXFIFO_REG1
+Check the enable was set on RX reg0
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=30000008 RDATA=0 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 26093386000:
+---------------------------------------------------
+Check the enable was set on RX reg0
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=30000004 RDATA=0 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 26093630000:
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Wait for RX BUFFER Refill
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+Read back from RXFIFO Reg 3 for fill level
+ Write Accepted Bresp SLAVE GOOD for Index= 0
+
+ Read Response is Good ADDR=3000000c RDATA=80003fff 
+
+Check Pass: check_mem_32 in test_top.tb.u_cpu_master_axil_t.m_bfm.check_mem_32 at time 51777538000:
+---------------------------------------------------
+Ran until 55 MS + 0
+ncsim> 
+ncsim> 
+ncsim> 
+ncsim> exit
+TOOL:	ncsim(64)	15.22-s018: Exiting on Apr 26, 2022 at 14:32:39 PDT  (total: 00:00:59)

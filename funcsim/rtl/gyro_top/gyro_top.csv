@@ -1,0 +1,27 @@
+Interface Name,AMBA,AXI Suffix,Data Width,Addr Width,ID Width,RID Width,Burst Len Width,Burst Size Width,Burst type Width,Resp Width,Cache Width,strobe width,Prot Width,W User Width,R User Width,AW User Width,AR User Width,RESPUSER width,QOS Width,Connection Type,Sub block,Local Block Interface ,local m/s,Interface Hier,Parent Hier,Replication Type,Replication Num
+cpu_bidir_axil_if,AXIL,CPU_BIDIR,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,4,B2B,bidir_wrap,cpu_bidir_axil_if,consumer,gyro_top,gyro_top,none,0
+cpu_txfifo_axil_if,AXIL,CPU_TXFIFO,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,txfifo_wrap,cpu_txfifo_axil_if,consumer,gyro_top,gyro_top,none,0
+cpu_rxfifo_axil_if,AXIL,CPU_RXFIFO,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,rxfifo_wrap,cpu_rxfifo_axil_if,consumer,gyro_top,gyro_top,none,0
+cpu_spi_axil_if,AXIL,CPU_SPI,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,spi_1_0_wrap,cpu_spi_axil_if,consumer,gyro_top,gyro_top,none,0
+cpu_bidir_axil_if,AXIL,CPU_BIDIR,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,4,B2B,axi_inter_wrap,cpu_bidir_axil_if,producer,gyro_top,gyro_top,none,0
+cpu_txfifo_axil_if,AXIL,CPU_TXFIFO,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,axi_inter_wrap,cpu_txfifo_axil_if,producer,gyro_top,gyro_top,none,0
+cpu_rxfifo_axil_if,AXIL,CPU_RXFIFO,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,axi_inter_wrap,cpu_rxfifo_axil_if,producer,gyro_top,gyro_top,none,0
+cpu_dma_axil_if,AXIL,CPU_DMA,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,4,B2B,axi_inter_wrap,cpu_dma_axil_if,producer,gyro_top,gyro_top,none,0
+cpu_spi_axil_if,AXIL,CPU_SPI,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,axi_inter_wrap,cpu_spi_axil_if,producer,gyro_top,gyro_top,none,0
+cpu_master_axil_if,AXIL,CPU_MASTER,32,7,0,0,8,3,2,2,4,4,3,0,0,1,1,0,0,B2B,axi_inter_wrap,cpu_master_axil_if,consumer,gyro_top_tb,gyro_top,none,0
+txfifo_axis_if,AXIS,TXFIFO_STRM,32,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,txfifo_wrap,txfifo_axis_if,consumer,gyro_top,gyro_top,none,0
+rxfifo_axis_if,AXIS,RXFIFO_STRM,32,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,rxfifo_wrap,rxfifo_axis_if,producer,gyro_top,gyro_top,none,0
+txfifo_bidir0_axis_if,AXIS,TXFIFO_0_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,txfifo_wrap,txfifo_bidir0_axis_if,producer,gyro_top,gyro_top,none,0
+txfifo_bidir1_axis_if,AXIS,TXFIFO_1_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,txfifo_wrap,txfifo_bidir1_axis_if,producer,gyro_top,gyro_top,none,0
+txfifo_bidir2_axis_if,AXIS,TXFIFO_2_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,txfifo_wrap,txfifo_bidir2_axis_if,producer,gyro_top,gyro_top,none,0
+bidir_rxfifo_axis_if,AXIS,RXFIFO_0_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,rxfifo_wrap,bidir_rxfifo_axis_if,consumer,gyro_top,gyro_top,none,0
+txfifo_bidir0_axis_if,AXIS,TXFIFO_0_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,bidir_wrap,txfifo_bidir0_axis_if,consumer,gyro_top,gyro_top,none,0
+txfifo_bidir1_axis_if,AXIS,TXFIFO_1_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,bidir_wrap,txfifo_bidir1_axis_if,consumer,gyro_top,gyro_top,none,0
+txfifo_bidir2_axis_if,AXIS,TXFIFO_2_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,bidir_wrap,txfifo_bidir2_axis_if,consumer,gyro_top,gyro_top,none,0
+bidir_rxfifo_axis_if,AXIS,RXFIFO_0_STRM,16,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,bidir_wrap,bidir_rxfifo_axis_if,producer,gyro_top,gyro_top,none,0
+txfifo_axis_if,AXIS,TXFIFO_STRM,32,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,dma_wrap,txfifo_axis_if,producer,gyro_top,gyro_top,none,0
+rxfifo_axis_if,AXIS,RXFIFO_STRM,32,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,B2B,dma_wrap,rxfifo_axis_if,consumer,gyro_top,gyro_top,none,0
+cpu_dma_axil_if,AXIL,CPU_DMA,32,4,0,0,8,3,2,2,4,4,3,0,0,1,1,0,4,B2B,dma_wrap,cpu_dma_axil_if,consumer,gyro_top,gyro_top,none,0
+dma_sg_axi_if,AXI4,DMA_SG,32,4,0,0,8,3,2,2,4,4,3,0,0,4,4,0,0,B2B,dma_wrap,dma_sg_axi_if,producer,gyro_top_tb,gyro_top,none,0
+dma_r_cpu_axi_if,AXIR,DMA_R_CPU,32,4,0,0,8,3,2,2,4,4,3,0,0,4,4,0,0,B2B,dma_wrap,dma_r_cpu_axi_if,producer,gyro_top_tb,gyro_top,none,0
+dma_w_cpu_axi_if,AXIW,DMA_W_CPU,32,4,0,0,8,3,2,2,4,4,3,0,0,4,4,0,0,B2B,dma_wrap,dma_w_cpu_axi_if,producer,gyro_top_tb,gyro_top,none,0

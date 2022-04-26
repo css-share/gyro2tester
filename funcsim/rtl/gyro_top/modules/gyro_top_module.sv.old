@@ -1,0 +1,29 @@
+module gyro_top 	(
+                     input clk,
+                     input rstn,
+
+                     input        HSI_A0,
+                     input        HSI_A1,
+                     output logic HSI_DBM,
+                     output logic HSI_DBP,
+                     output logic HSI_DAM,
+                     output logic HSI_DAP,
+                     output logic HSI_DC,
+                     output logic HS_Clock,
+                     output logic MCK_P,
+                     output logic MCK_N,
+                     output logic SYNCK,    
+                     
+                     input        SPI_MISO,
+                     output logic SPI_MOSI,
+                     output logic SPI_SCK,
+                     output logic SPI_CS,
+                     output logic FSM_START,
+                     output logic FSM_DONE,
+                     
+                     axi_strm_if.consumer txfifo_axis_if,
+                     axi_strm_if.producer rxfifo_axis_if, 
+                     axil_rw_if.consumer cpu_master_axil_if   
+
+                     );
+endmodule
