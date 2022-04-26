@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Mon Apr 25 20:59:08 2022
-| Host         : xsjlc200176 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Tue Apr 26 12:23:42 2022
+| Host         : xsjlc200178 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 75
+             Violations found: 36
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                       | Violations |
 +-----------+------------------+-------------------------------------------------------------------+------------+
@@ -31,7 +31,6 @@ Table of Contents
 | LUTAR-1   | Warning          | LUT drives async reset alert                                      | 1          |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                 | 1          |
 | TIMING-18 | Warning          | Missing input or output delay                                     | 6          |
-| TIMING-20 | Warning          | Non-clocked latch                                                 | 39         |
 | TIMING-30 | Warning          | Sub-optimal master source pin selection for generated clock       | 2          |
 | TIMING-47 | Warning          | False path or asynchronous clock group between synchronous clocks | 11         |
 | XDCH-2    | Warning          | Same min and max delay values on IO port                          | 13         |
@@ -99,201 +98,6 @@ Related violations: <none>
 TIMING-18#6 Warning
 Missing input or output delay  
 An output delay is missing on SYNC_CK relative to clock(s) clk_fpga_0
-Related violations: <none>
-
-TIMING-20#1 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#2 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[10]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#3 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#4 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#5 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#6 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#7 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#8 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#9 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#10 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#11 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#12 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#13 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram0_odd_addr_b_reg[9]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#14 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#15 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[10]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#16 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#17 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#18 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#19 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#20 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#21 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#22 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#23 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#24 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#25 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#26 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram1_odd_addr_b_reg[9]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#27 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[0] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[0]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#28 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[10] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[10]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#29 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[11] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[11]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#30 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[12] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[12]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#31 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[1] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[1]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#32 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[2] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[2]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#33 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[3] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[3]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#34 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[4] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[4]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#35 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[5] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[5]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#36 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[6] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#37 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[7] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#38 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[8] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[8]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#39 Warning
-Non-clocked latch  
-The latch design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[9] cannot be properly analyzed as its control pin design_2_i/RX_BUFFER/RxFIFO/inst/bram2_odd_addr_b_reg[9]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-30#1 Warning
