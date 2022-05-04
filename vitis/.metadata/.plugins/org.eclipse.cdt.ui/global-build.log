@@ -1,22 +1,36 @@
-00:17:09 **** Incremental Build of configuration Debug for project dmaTest ****
+16:26:13 **** Clean-only build of configuration Debug for project dmaTest ****
+make clean 
+rm -rf  ./src/07_gyro_loop3_new_TxDataConst.o ./src/dma_controller.o ./src/platform.o  ./src/07_gyro_loop3_new_TxDataConst.d ./src/dma_controller.d ./src/platform.d  dmaTest.elf.size  dmaTest.elf
+' '
+16:26:17 **** Incremental Build of configuration Debug for project dmaTest ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/gyro_rx_testpattern.c'
+'Building file: ../src/07_gyro_loop3_new.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gyro_rx_testpattern.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/gyro_rx_testpattern.d" -MT"src/gyro_rx_testpattern.o" -o "src/gyro_rx_testpattern.o" "../src/gyro_rx_testpattern.c"
-'Finished building: ../src/gyro_rx_testpattern.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/07_gyro_loop3_new.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/07_gyro_loop3_new.d" -MT"src/07_gyro_loop3_new.o" -o "src/07_gyro_loop3_new.o" "../src/07_gyro_loop3_new.c"
+'Finished building: ../src/07_gyro_loop3_new.c'
+' '
+'Building file: ../src/dma_controller.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
+'Finished building: ../src/dma_controller.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
 ' '
 'Building target: dmaTest.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "dmaTest.elf"  ./src/dma_controller.o ./src/gyro_rx_testpattern.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "dmaTest.elf"  ./src/07_gyro_loop3_new.o ./src/dma_controller.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: dmaTest.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size dmaTest.elf  |tee "dmaTest.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  38368	   2248	  24504	  65120	   fe60	dmaTest.elf
+  38432	   2248	  24504	  65184	   fea0	dmaTest.elf
 'Finished building: dmaTest.elf.size'
 ' '

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;dmaTest/src/07_gyro_loop3_new.c&apos; to &apos;07_gyro_loop3_new_TxDataConst.c&apos;" description="Rename resource &apos;07_gyro_loop3_new.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/07_gyro_loop3_new.c" name="07_gyro_loop3_new_TxDataConst.c" stamp="1651394335986" updateReferences="true"/>
+</session>
