@@ -1,0 +1,259 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May  6 21:33:02 2022
+| Host         : xsjl20357 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
+| Design       : design_2_wrapper
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 36
++-----------+------------------+-------------------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                                       | Violations |
++-----------+------------------+-------------------------------------------------------------------+------------+
+| TIMING-14 | Critical Warning | LUT on the clock tree                                             | 2          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                      | 1          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                                 | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                                     | 6          |
+| TIMING-30 | Warning          | Sub-optimal master source pin selection for generated clock       | 2          |
+| TIMING-47 | Warning          | False path or asynchronous clock group between synchronous clocks | 11         |
+| XDCH-2    | Warning          | Same min and max delay values on IO port                          | 13         |
++-----------+------------------+-------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-14#1 Critical Warning
+LUT on the clock tree  
+The LUT design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/Q_i_3 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+Related violations: <none>
+
+TIMING-14#2 Critical Warning
+LUT on the clock tree  
+The LUT design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/shift_reg[23]_i_3 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[0]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[1]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[2]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[3]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[4]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[5]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/r_reg_reg[6]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/out_clock_int_reg/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[0]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[1]/CLR,
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[2]/CLR
+design_2_i/BiDirChannels_0/inst/u_gyro_serialout/SYNC_CLK_DIV/r_reg_reg[3]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on DRX relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An output delay is missing on DSYNC relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on DTX relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on LED0 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on LED1 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on SYNC_CK relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-30#1 Warning
+Sub-optimal master source pin selection for generated clock  
+The generated clock spi_clk_4 has a sub-optimal master source pin selection, timing can be pessimistic
+Related violations: <none>
+
+TIMING-30#2 Warning
+Sub-optimal master source pin selection for generated clock  
+The generated clock spi_clk_8 has a sub-optimal master source pin selection, timing can be pessimistic
+Related violations: <none>
+
+TIMING-47#1 Warning
+False path or asynchronous clock group between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks clk_fpga_0 and txclk (see constraint position 25 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#2 Warning
+False path or asynchronous clock group between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks txclk and clk_fpga_0 (see constraint position 25 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#3 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks clk_fpga_0 and spi_clk (see constraint position 15 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#4 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks clk_fpga_0 and spi_clk_4 (see constraint position 16 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#5 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks clk_fpga_0 and spi_clk_8 (see constraint position 17 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#6 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks spi_clk and spi_clk_4 (see constraint position 18 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#7 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks spi_clk and spi_clk_8 (see constraint position 19 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#8 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks spi_clk_4 and spi_clk (see constraint position 20 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#9 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks spi_clk_4 and spi_clk_8 (see constraint position 23 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#10 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks spi_clk_8 and spi_clk (see constraint position 21 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#11 Warning
+False path or asynchronous clock group between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks spi_clk_8 and spi_clk_4 (see constraint position 22 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via set_false_path or set_clock_groups may result in failure in hardware.
+Related violations: <none>
+
+XDCH-2#1 Warning
+Same min and max delay values on IO port  
+The same input delay of 2.000 ns has been defined on port 'DRX' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks txclk] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 93)
+Related violations: <none>
+
+XDCH-2#2 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'DSYNC' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#3 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'DTX' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#4 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED0' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#5 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED1' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#6 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED2' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#7 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED3' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#8 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED4' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#9 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED5' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#10 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED6' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#11 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'LED7' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#12 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'SPI_CSN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 102)
+Related violations: <none>
+
+XDCH-2#13 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'SPI_DN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 102)
+Related violations: <none>
+
+

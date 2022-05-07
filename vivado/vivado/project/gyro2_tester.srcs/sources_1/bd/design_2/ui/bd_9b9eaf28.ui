@@ -1,0 +1,73 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.665591",
+   "Default View_TopLeft":"-1448,-11",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port S00_AXI -pg 1 -lvl 0 -x -20 -y 920 -defaultsOSRD
+preplace port S00_AXIS -pg 1 -lvl 0 -x -20 -y 940 -defaultsOSRD
+preplace port M00_AXIS -pg 1 -lvl 3 -x 1020 -y 310 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -20 -y 960 -defaultsOSRD
+preplace port port-id_rst_n -pg 1 -lvl 0 -x -20 -y 980 -defaultsOSRD
+preplace port port-id_LED1 -pg 1 -lvl 3 -x 1020 -y 1230 -defaultsOSRD
+preplace inst blk_mem_1_even -pg 1 -lvl 2 -x 890 -y 150 -defaultsOSRD
+preplace inst blk_mem_2_odd -pg 1 -lvl 2 -x 890 -y 1690 -defaultsOSRD
+preplace inst blk_mem_2_even -pg 1 -lvl 2 -x 890 -y 1390 -defaultsOSRD
+preplace inst blk_mem_0_even -pg 1 -lvl 2 -x 890 -y 770 -defaultsOSRD
+preplace inst blk_mem_1_odd -pg 1 -lvl 2 -x 890 -y 470 -defaultsOSRD
+preplace inst blk_mem_0_odd -pg 1 -lvl 2 -x 890 -y 1070 -defaultsOSRD
+preplace inst RxFIFO -pg 1 -lvl 1 -x 250 -y 1010 -defaultsOSRD
+preplace netloc RxFIFO_bram0_even_addr_a 1 1 1 780 680n
+preplace netloc RxFIFO_bram0_even_addr_b 1 1 1 750 760n
+preplace netloc RxFIFO_bram0_even_data_a 1 1 1 780 700n
+preplace netloc RxFIFO_bram0_even_en_a 1 1 1 770 720n
+preplace netloc RxFIFO_bram0_even_en_b 1 1 1 720 780n
+preplace netloc RxFIFO_bram0_even_we_a 1 1 1 760 740n
+preplace netloc RxFIFO_bram0_odd_addr_a 1 1 1 690 800n
+preplace netloc RxFIFO_bram0_odd_addr_b 1 1 1 600 880n
+preplace netloc RxFIFO_bram0_odd_data_a 1 1 1 670 820n
+preplace netloc RxFIFO_bram0_odd_en_a 1 1 1 650 840n
+preplace netloc RxFIFO_bram0_odd_en_b 1 1 1 580 900n
+preplace netloc RxFIFO_bram0_odd_we_a 1 1 1 630 860n
+preplace netloc RxFIFO_bram1_even_addr_a 1 1 1 470 70n
+preplace netloc RxFIFO_bram1_even_addr_b 1 1 1 570 190n
+preplace netloc RxFIFO_bram1_even_data_a 1 1 1 480 110n
+preplace netloc RxFIFO_bram1_even_en_a 1 1 1 490 130n
+preplace netloc RxFIFO_bram1_even_en_b 1 1 1 590 250n
+preplace netloc RxFIFO_bram1_even_we_a 1 1 1 540 150n
+preplace netloc RxFIFO_bram1_odd_addr_a 1 1 1 620 390n
+preplace netloc RxFIFO_bram1_odd_addr_b 1 1 1 710 510n
+preplace netloc RxFIFO_bram1_odd_data_a 1 1 1 640 430n
+preplace netloc RxFIFO_bram1_odd_en_a 1 1 1 660 450n
+preplace netloc RxFIFO_bram1_odd_en_b 1 1 1 730 570n
+preplace netloc RxFIFO_bram1_odd_we_a 1 1 1 680 470n
+preplace netloc RxFIFO_bram2_even_addr_a 1 1 1 570 1160n
+preplace netloc RxFIFO_bram2_even_addr_b 1 1 1 530 1240n
+preplace netloc RxFIFO_bram2_even_data_a 1 1 1 560 1180n
+preplace netloc RxFIFO_bram2_even_en_a 1 1 1 550 1200n
+preplace netloc RxFIFO_bram2_even_en_b 1 1 1 520 1260n
+preplace netloc RxFIFO_bram2_even_we_a 1 1 1 540 1220n
+preplace netloc RxFIFO_bram2_odd_addr_a 1 1 1 510 1280n
+preplace netloc RxFIFO_bram2_odd_addr_b 1 1 1 470 1360n
+preplace netloc RxFIFO_bram2_odd_data_a 1 1 1 500 1300n
+preplace netloc RxFIFO_bram2_odd_en_a 1 1 1 490 1320n
+preplace netloc RxFIFO_bram2_odd_en_b 1 1 1 460 1380n
+preplace netloc RxFIFO_bram2_odd_we_a 1 1 1 480 1340n
+preplace netloc RxFIFO_rxfifo_full 1 1 2 700J 1230 NJ
+preplace netloc blk_mem_0_even_doutb 1 0 2 30 570 630J
+preplace netloc blk_mem_0_odd_doutb 1 0 2 40 580 740J
+preplace netloc blk_mem_1_even_doutb 1 0 2 10 230 NJ
+preplace netloc blk_mem_1_odd_doutb 1 0 2 20 550 NJ
+preplace netloc blk_mem_2_even_doutb 1 0 2 30 1470 NJ
+preplace netloc blk_mem_2_odd_doutb 1 0 2 40 1770 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 0 560 610
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 0 1 NJ 980
+preplace netloc RxFIFO_M00_AXIS 1 1 2 500J 310 NJ
+preplace netloc axis_switch_3_M00_AXIS 1 0 1 NJ 940
+preplace netloc ps7_0_axi_periph_M04_AXI 1 0 1 NJ 920
+levelinfo -pg 1 -20 250 890 1020
+pagesize -pg 1 -db -bbox -sgen -140 -10 1140 1850
+"
+}
+
