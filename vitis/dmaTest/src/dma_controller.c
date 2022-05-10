@@ -1,8 +1,15 @@
 #include "xaxidma.h"
 #include "xil_printf.h"
 #include "dma_controller.h"
+#include "gyro_application.h"
 
 int RingIndex;
+
+u32 Buffer_Not_Full(UINTPTR BuffAddr)
+{
+	return ((XAxi_ReadReg(BuffAddr) & BUFFER_IDLE_MASK) ? FALSE : TRUE);
+}
+
 
 u32 XAxiDma_MM2Stransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length){
 

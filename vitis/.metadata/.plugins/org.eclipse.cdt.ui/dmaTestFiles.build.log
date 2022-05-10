@@ -1,0 +1,18 @@
+22:05:24 **** Build of configuration Debug for project dmaTestFiles ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/01_gyro_txrx_loop1.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/01_gyro_txrx_loop1.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/01_gyro_txrx_loop1.d" -MT"src/01_gyro_txrx_loop1.o" -o "src/01_gyro_txrx_loop1.o" "../src/01_gyro_txrx_loop1.c"
+../src/01_gyro_txrx_loop1.c:6:10: fatal error: dma_controller.h: No such file or directory
+    6 | #include "dma_controller.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [src/subdir.mk:50: src/01_gyro_txrx_loop1.o] Error 1
+make: *** [makefile:34: all] Error 2
+
+22:05:24 Build Finished (took 333ms)
+

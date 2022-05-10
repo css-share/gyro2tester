@@ -301,10 +301,10 @@ static XScuGic intc;
 //Xuint32* baseaddr_p           = (Xuint32*) XPAR_AXI4_PL_INTERRUPT_GE_0_S00_AXI_BASEADDR; //from gyro1 firmware
 //Xuint32* baseaddr_p           = (Xuint32*) 0x43C00000; //this address from gyro1 block design. Does not exist in gyro2 block design.
 
-Xuint32* baseaddr_spi         = (Xuint32*) XPAR_SPI_IP_0_S00_AXI_BASEADDR;
-Xuint32* baseaddr_channel     = (Xuint32*) XPAR_BIDIRCHANNELS_0_S00_AXI_BASEADDR;
-Xuint32* baseaddr_rx_fifo     = (Xuint32*) XPAR_RXFIFO_S00_AXI_BASEADDR;
-Xuint32* baseaddr_tx_fifo     = (Xuint32*) XPAR_TXFIFO_S00_AXI_BASEADDR;
+Xuint32* baseaddr_spi         = (Xuint32*) 0x43C10000;
+Xuint32* baseaddr_channel     = (Xuint32*) 0x43C20000;
+Xuint32* baseaddr_rx_fifo     = (Xuint32*) 0x43C30000;
+Xuint32* baseaddr_tx_fifo     = (Xuint32*) 0x43C40000;
 
 Xuint32* fpgaBaseAddress;
 Xuint16	 fpgaAddressOffset;
@@ -316,7 +316,7 @@ Xuint32  fpgaControlWords[4]   = 	{0,0,0,0};
 Xuint32  fpgaRxControlWords[4] = 	{0,0,0,0};
 Xuint32  fpgaTxControlWords[4] = 	{0,0,0,0};
 
-Xuint32* debugWordAddr = XPAR_SPI_IP_0_S00_AXI_BASEADDR;	//change this depending on where you want to write
+Xuint32* debugWordAddr =  (Xuint32*) 0x43C10000;	//change this depending on where you want to write
 Xuint32  debugWordData = 0x00000000;						//change this depending on what you want to write
 
 
