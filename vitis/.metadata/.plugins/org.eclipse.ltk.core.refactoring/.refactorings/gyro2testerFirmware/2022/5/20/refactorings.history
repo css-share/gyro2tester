@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;gyro2testerFirmware/src/test_case_loop3_asic.c&apos; to &apos;dmaTest.c&apos;" description="Rename resource &apos;test_case_loop3_asic.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/test_case_loop3_asic.c" name="dmaTest.c" stamp="1652242578039" updateReferences="true"/>
+</session>

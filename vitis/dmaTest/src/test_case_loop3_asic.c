@@ -82,17 +82,6 @@ int main(){
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 
 	Value = 0x0000;
-
-
-   // for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
-  //  	 Value = fscanf(textfile, "%x", &num[Index]);
-
-  //  	 TxBufferPtr[Index] = Value;
-
-  //  }
-
-   // fclose(textfile);
-
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 		TxBufferPtr[Index] = Value;
 
@@ -119,7 +108,7 @@ int main(){
     xil_printf("Testing Test Case Loop 3 of the DMA TX/RX \r\n");
     xil_printf("---------------------------------------------------\r\n");
     xil_printf("---------------------------------------------------\r\n");
-
+/*
     ///////////////////////////////////////////////
     // Chip Setup Config                         //
     ///////////////////////////////////////////////
@@ -212,7 +201,7 @@ int main(){
     XAxi_WriteReg(SPI_REG0, 0x0000000F);
     nops(10000);
     xil_printf("SPI Read Addr 20 Data %x \r\n", XAxi_ReadReg(SPI_REG3));
-
+*/
 
     ///////////////////////////////////////////////
     // AXI Stream Switches  1 & 2 LOOP           //
@@ -221,7 +210,7 @@ int main(){
 
 
 
-6    XAxi_WriteReg(SW0_REG1, 0x00000001);
+    XAxi_WriteReg(SW0_REG1, 0x00000001);
     XAxi_WriteReg(SW0_REG0, 0x00000002);
 
     XAxi_WriteReg(SW1_REG1, 0x80000000);
