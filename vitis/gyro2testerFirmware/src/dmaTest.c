@@ -11,7 +11,6 @@ XAxiDma AxiDma; //DMA device instance definition
 
 
 int runDmaTest(void){
-    init_platform();
 	  
 //    xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
 
@@ -71,13 +70,13 @@ int runDmaTest(void){
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 
 		if(Index<0x4000){					// first 16k is Tx Carrier data
-			TxBufferPtr[Index] = 0x8001;
+			TxBufferPtr[Index] = 0x8127;
 		}
 		else if(Index < 0x8000){			// second 16k is Tx Node data
-			TxBufferPtr[Index] = 0x7FFF;
+			TxBufferPtr[Index] = 0xC123;
 		}
 		else{								// third 16k is Tx Anti-Node data
-			TxBufferPtr[Index] = 0x3667;
+			TxBufferPtr[Index] = 0x4777;
 		}
 	}
 #endif

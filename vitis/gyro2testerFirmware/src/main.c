@@ -13,12 +13,13 @@
 #include "xttcps.h"
 #include "xgpiops.h"
 #include "dmaTest.h"
+#include "xaxidma.h"
+#include "dma_controller.h"
 
 
 
 
 //#define FAKE_IC		//used to send data back when no IC present
-#define FAKE_DATA	//used to create an array of data for COM test
 
 /* ===== Code to deal with the DMA IP ===== */
 
@@ -162,13 +163,7 @@ extern void xil_printf(const char *format, ...);
 #define DMM_MUX_SEL_CARRIER				0x0009
 #define DMM_MUX_SEL_ATB					0x000A
 u8 dmm_mux_setting = DMM_MUX_SEL_ATB;	//initially dmm set to monitor ATB
-
-// MIO state indicators
-#define MIO_OUT_STATE_MUX_ENABLE_BIT	0x01
-#define MIO_OUT_STATE_VFUSE_CTRL_BIT	0x02
-u8 MIO_output_state = 0;
-
-//configuration constants
+//
 #define CONFIG_MCK_DIV_1				0x00000	// base frequency is 50MHz
 #define CONFIG_MCK_DIV_2				0x10000	// div2 is 25MHz
 #define CONFIG_MCK_DIV_4				0x20000	// div4 is 12.5MHz
@@ -178,27 +173,6 @@ u8 MIO_output_state = 0;
 #define CONFIG_MCK_DIV_64				0x60000
 #define CONFIG_MCK_DIV_128				0x70000
 u32 MCK_div_setting = CONFIG_MCK_DIV_1;
-//
-#define CONFIG_PACKET_SIZE_64_SAMPLES	0x0000
-#define CONFIG_PACKET_SIZE_128_SAMPLES	0x1000
-#define CONFIG_PACKET_SIZE_256_SAMPLES	0x2000
-#define CONFIG_PACKET_SIZE_512_SAMPLES	0x3000
-#define CONFIG_PACKET_SIZE_1024_SAMPLES	0x4000
-#define CONFIG_PACKET_SIZE_2048_SAMPLES	0x5000
-#define CONFIG_PACKET_SIZE_4096_SAMPLES	0x6000
-#define CONFIG_PACKET_SIZE_8192_SAMPLES	0x7000
-u32 packet_size_setting = CONFIG_PACKET_SIZE_4096_SAMPLES;
-//
-#define CONFIG_INPUT_CHANNEL_HSIA0		0x00
-#define CONFIG_INPUT_CHANNEL_HSIA1		0x10
-u32 HSI_input_channel_setting = CONFIG_INPUT_CHANNEL_HSIA0;
-//
-#define CONFIG_OUTPUT_CHANNEL_HSIDAP	0x0
-#define CONFIG_OUTPUT_CHANNEL_HSIDAM	0x1
-#define CONFIG_OUTPUT_CHANNEL_HSIDBP	0x2
-#define CONFIG_OUTPUT_CHANNEL_HSIDBM	0x3
-#define CONFIG_OUTPUT_CHANNEL_HSIDC		0x4
-u32 HSI_output_channel_setting = CONFIG_OUTPUT_CHANNEL_HSIDAP;
 //
 #define CONFIG_SPI_CLK_DIV_1			0x0	// base frequency is 25MHz
 #define CONFIG_SPI_CLK_DIV_2			0x1	// div2 is 12.5MHz
@@ -215,16 +189,7 @@ unsigned int SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_4;
 #define DIV_64		64
 #define DIV_128		128
 
-#ifdef FAKE_DATA
-static void load_sawtooth_up_data(void);
-static void load_sawtooth_down_data(void);
-#define SAWTOOTH_MAX_VALUE 100
-#define SAWTOOTH_STEP_VALUE 1
-#endif
 /*
- * Device hardware build related constants.
- */
-
 #define DMA_DEV_ID		XPAR_AXIDMA_0_DEVICE_ID
 
 #ifdef XPAR_AXI_7SDDR_0_S_AXI_BASEADDR
@@ -272,6 +237,7 @@ int TxDataType = RAMP_UP;
 
 #define MAX_PKT_LEN_BYTES		8192	// this is Bytes
 #define MARK_UNCACHEABLE        0x701
+*/
 
 // triple timer counter
 #define DELAY_TIMER_DEVICE_ID	XPAR_XTTCPS_0_DEVICE_ID
@@ -279,9 +245,11 @@ int TxDataType = RAMP_UP;
 #define	TICK_TIMER_FREQ_HZ	100000  /* Tick timer counter's output frequency */
 #define TICKS_PER_CHANGE_PERIOD	TICK_TIMER_FREQ_HZ /* Tick signals per update */
 
+/*
 int numberHsiRxDataSamples;
 Xuint32 outputDataBuffer[MAX_PKT_LEN_BYTES/4];
 Xuint32 previousADCdataBuffer[MAX_PKT_LEN_BYTES/4];
+*/
 
 typedef struct {
 	u32 OutputHz;	/* Output frequency */
@@ -325,8 +293,8 @@ Xuint32  debugWordData = 0x00000000;						//change this depending on what you wa
 
 volatile unsigned char debugType = 7;
 
-Xuint32 u32debugWords[MAX_PKT_LEN_BYTES/4];
-Xuint32	TxBufferData[MAX_PKT_LEN_BYTES];
+//Xuint32 u32debugWords[MAX_PKT_LEN_BYTES/4];
+//Xuint32	TxBufferData[MAX_PKT_LEN_BYTES];
 
 u8 uartReceivingHsiTxData = FALSE;
 u8 finishedReceivingTxData = FALSE;
@@ -427,8 +395,8 @@ static void Uart550_Setup(void);
 #endif
 
 static int  initSPI();
-static void readSPIStatus();
-static void setSPIControl(Xuint32 v);
+//static void readSPIStatus();
+//static void setSPIControl(Xuint32 v);
 static void disableSPI();
 static void enableSPI();
 
@@ -438,16 +406,16 @@ unsigned int readGyroRegister(unsigned char address);
 void modify_register(unsigned int *data, unsigned int address,
 					unsigned int newVal);
 
-static int readGyroTxFIFODebugData();
-static int readGyroRxFIFODebugData();
+//static int readGyroTxFIFODebugData();
+//static int readGyroRxFIFODebugData();
 
-static int resetGyroTxFIFO();
-static int resetGyroRxFIFO();
+//static int resetGyroTxFIFO();
+//static int resetGyroRxFIFO();
 
-static int resetGyroTxFIFOLooping();
-static int setGyroTxFIFOLooping();
+//static int resetGyroTxFIFOLooping();
+//static int setGyroTxFIFOLooping();
 
-static void changeTxBuffer(void);
+//static void changeTxBuffer(void);
 
 static void storeFpgaTxControlWords(void);
 static void storeFpgaRxControlWords(void);
@@ -513,26 +481,6 @@ int setGyroChannelConfiguration(unsigned int v){
     // bit 18:16 is to divide clock by 1/2/4/8/16/32/64/128
     // with div128 (7 Hex) we get 50 MHz divided by 128 = 390 KHz.
     //
-    // bits 14:12 are to select the packet size.
-    //  000 is 64 samples  (32 words)
-    //  001 is 128 samples  (64 words)
-    //  010 is 256 samples (128 words)
-    //  011 is 512 samples (256 words)
-    //  100 is 1024 samples  (512 words)
-    //  101 is 2048 samples  (1024 words)
-    //  110 is 4096 samples (2048 words)
-    //  111 is 8192 samples (4096 words)
-    //
-    // bits 6:4 - control the in+channel:
-    //   00 is HSI_A0
-    //   01 is HSI_A1
-    //   10 and 11 inactive.
-    // bits 2:0  - control the out_channel:
-    //   000 is HSI_DAP
-    //   001 is HSI_DAM
-    //   010 is HSI_DBP
-    //   011 is HGSI_DBM
-    //	 100 is HSI_DC
     //=======================================================
 */
 
@@ -540,15 +488,6 @@ int setGyroChannelConfiguration(unsigned int v){
 	Xuint32 x;
     x = (Xuint32)(v);
   *(baseaddr_channel+0) = x;
-  return 0;
-}
-
-// -------------------------------------------------------------------
-int setGyroChannelControl(unsigned int v){
-  // --- clear GYRO stream channel registers
-	Xuint32 x;
-    x = (Xuint32)(v);
-  *(baseaddr_channel+1) = x;
   return 0;
 }
 // -------------------------------------------------------------------
@@ -615,87 +554,6 @@ int setGyroChannelControl(unsigned int v){
 	 *(baseaddr_channel+2) = regSetting | 0x2;
  }
 */
-
-// -------------------------------------------------------------------
-int readGyroRxFIFODebugData(){
-  // ---
-	/*
-  xil_printf("Gyro RxFIFO Debug Word 0: 0x%08x\n\r", *(baseaddr_rx_fifo+0));
-  xil_printf("Gyro RxFIFO Debug Word 1: 0x%08x\n\r", *(baseaddr_rx_fifo+1));
-  xil_printf("Gyro RxFIFO Debug Word 2: 0x%08x\n\r", *(baseaddr_rx_fifo+2));
-  xil_printf("Gyro RxFIFO Debug Word 3: 0x%08x\n\r", *(baseaddr_rx_fifo+3));
-   */
-/*
-	debugWord32_1 = *(baseaddr_rx_fifo+0);
-	debugWord32_2 = *(baseaddr_rx_fifo+1);
-	debugWord32_3 = *(baseaddr_rx_fifo+2);
-	debugWord32_4 = *(baseaddr_rx_fifo+3);
-	debugWord32_5 = *(baseaddr_rx_fifo+4);
-	debugWord32_6 = *(baseaddr_rx_fifo+5);
-	debugWord32_7 = *(baseaddr_rx_fifo+1000);
-	debugWord32_8 = *(baseaddr_rx_fifo+1001);
-	debugWord32_9 = *(baseaddr_rx_fifo+1002);
-	debugWord32_10 = *(baseaddr_rx_fifo+1003);
-*/
-
-	debugWord32_0 = *((Xuint32*)(RX_BUFFER_BASE+0));
-	debugWord32_1 = *((Xuint32*)(RX_BUFFER_BASE+1));
-	debugWord32_2 = *((Xuint32*)(RX_BUFFER_BASE+2));
-	debugWord32_3 = *((Xuint32*)(RX_BUFFER_BASE+3));
-	debugWord32_4 = *((Xuint32*)(RX_BUFFER_BASE+4));
-	debugWord32_5 = *((Xuint32*)(RX_BUFFER_BASE+5));
-	debugWord32_6 = *((Xuint32*)(RX_BUFFER_BASE+6));
-	debugWord32_7 = *((Xuint32*)(RX_BUFFER_BASE+7));
-	debugWord32_8 = *((Xuint32*)(RX_BUFFER_BASE+8));
-	debugWord32_9 = *((Xuint32*)(RX_BUFFER_BASE+9));
-
-	u16 wordNumber;
-	u8 *RxBytePtr = (u8 *) RX_BUFFER_BASE;
-
-	for (wordNumber=0; wordNumber<10; wordNumber++)
-	{
-		u32debugWords[wordNumber] =
-				(u32)RxBytePtr[wordNumber*4] >> 2		|
-				(u32)RxBytePtr[wordNumber*4 + 1] << 6 	|
-				(u32)RxBytePtr[wordNumber*4 + 2] << 14 	|
-				(u32)RxBytePtr[wordNumber*4 + 3] << 22 	;
-	}
-
-	/*
-	idx = 0;
-		for(Index = 0; Index < MAX_PKT_LEN_BYTES; Index+=4) {
-			m0 = ((unsigned int)RxPacket[Index+1]<<8) | (0x00FF & (unsigned int)RxPacket[Index]);
-			m1 = ((unsigned int)RxPacket[Index+3]<<8) | (0x00FF & (unsigned int)RxPacket[Index+2]);
-			v0 = m0 >> 2;
-			v1 = m1 >> 2;
-			//xil_printf("Sample: %d: %x%x\r\n",idx,v0,v1);
-			outputDataBuffer[idx] = (v0 << 16) | (0x0000FFFF & v1);
-			//xil_printf("Index: %d: %x\r\n",idx,outputDataBuffer[idx]);
-			idx++;
-		}
-		numberHsiRxDataSamples = idx*2;
-*/
-  return 0;
-}
-
-// -------------------------------------------------------------------
-int resetGyroTxFIFO(){
-	*(baseaddr_tx_fifo+0) = 0x00000001;
-	*(baseaddr_tx_fifo+0) = 0x00000000;
-	  return 0;
-}
-
-// -------------------------------------------------------------------
-int resetGyroTxFIFOLooping(){
-	*(baseaddr_tx_fifo+1) = 0x00000000;
-	  return 0;
-}
-
-// -------------------------------------------------------------------
-int setGyroTxFIFOLooping(){
-	*(baseaddr_tx_fifo+1) = 0x00000001;
-	  return 0;
-}
 
 // -------------------------------------------------------------------
 void storeFpgaTxControlWords(void){
@@ -944,57 +802,6 @@ void enableSPI(){
 // -----------------------------------------------------------------------
 //   DMA FUNCTIONS
 // ---------- functions from dma -----------------------------------------
-static void TxDataFromUartToDma(u16 tx_buffer_offset)
-{
-	u16 dataPoint,dataPointNumber,dataShifted,bufIndex;
-	u16 maxNumPoints = MAX_PKT_LEN_BYTES / 2;	// number of 16 bit data points
-
-
-	u8* HsiTxBuffer = (u8 *) (TX_BUFFER_BASE + tx_buffer_offset);
-
-	for(dataPointNumber = 0; dataPointNumber<maxNumPoints; dataPointNumber++){
-
-		//########################################################
-		// build the data point from 2 bytes in the uart buffer
-		// first byte in buffer is least significant, second is most significant
-		dataPoint = UartRxData[(2*dataPointNumber)+1] + (UartRxData[2*dataPointNumber] << 8);
-		//########################################################
-
-
-		//########################################################
-		// FPGA sends 16-bit data from 32-bit buffer with each pair of points swapped
-		// ie: 1,0,3,2,5,4,7,6....
-		// so need to swap datapoints in each pair when loading the buffer
-		if (dataPointNumber & 0x01)
-		{
-			bufIndex = dataPointNumber-1; // odd datapoints get bumped down to previous spot in buffer
-		}
-		else
-		{
-			bufIndex = dataPointNumber+1;	// even datapoints get bumped up to next spot in buffer
-		}
-		//########################################################
-
-		dataShifted = dataPoint << 4;
-
-		HsiTxBuffer[bufIndex*2] = (u8)(dataShifted & 0xFF);	// fill low byte of buffer
-		HsiTxBuffer[bufIndex*2+1] = (u8)(dataShifted >> 8);	// fill high byte of buffer
-	}
-}
-
-
-// -------------------------------------------------------------------
-void enableFpgaTxBufferOutputs(void)
-{
-	setGyroChannelControl(0x00000001);
-}
-
-
-// -------------------------------------------------------------------
-void disableFpgaTxBufferOutputs(void)
-{
-	setGyroChannelControl(0x00000000);
-}
 
 // -------------------------------------------------------------------
 void nops(unsigned int num) {
@@ -1324,7 +1131,7 @@ void read_uart_bytes(void)
 			}
 			send_byte_over_UART(ProgramOTP_VbgTrim(UartRxData[1]));
 			break;
-
+/*
 		case (CMD_FILL_TX_BUFFER_P_CHAN):
 			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
 			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
@@ -1382,7 +1189,7 @@ void read_uart_bytes(void)
 			resetGyroTxFIFOLooping();
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
-
+*/
 		case (CMD_READ_FPGA_TX_CTRL_WORDS):
 			storeFpgaTxControlWords();
 			// send 16 bytes (the four 32-bit words read from fpga space)
@@ -1406,11 +1213,11 @@ void read_uart_bytes(void)
 			// send 16 bytes (the four 32-bit words read from fpga space)
 			send_data_over_UART(16,(u8*)&fpgaSpiControlWords[0]);
 			break;
-
+/*
 		case (CMD_READ_PACKETS):
 			send_data_over_UART(getNumBytesToSend(UartRxData),(u8*)outputDataBuffer);
 			break;
-
+*/
 		case (CMD_FPGA_ALL_OUTPUTS_LOW):
 			disableSPI();
 			disableGyroChannel();
@@ -1423,10 +1230,6 @@ void read_uart_bytes(void)
 			enableGyroChannel();
 			enableHSIGyroChannel();
 			FPGA_outputs_state = 1;		// 1=on, 2=off
-			break;
-
-		case (CMD_DISABLE_MIO_OUTPUTS):
-			disable_MIO();
 			break;
 
 		case (CMD_ENABLE_DMM_MUX):
@@ -1502,8 +1305,7 @@ void read_uart_bytes(void)
 			changeMCLKdivision(UartRxData[1]);
 
 			// use new variable in call to configuration function
-			setGyroChannelConfiguration(MCK_div_setting | packet_size_setting |
-					HSI_input_channel_setting | HSI_output_channel_setting);
+			setGyroChannelConfiguration(MCK_div_setting);
 			break;
 
 		case (CMD_GET_SPICLK_DIV):
@@ -1527,63 +1329,6 @@ void read_uart_bytes(void)
 			setSPIClockDivision(SPI_clock_division_setting);
 			break;
 
-		case (CMD_GET_PACKET_SIZE):
-			send_byte_over_UART( (u8)(packet_size_setting>>12) );
-			break;
-
-		case (CMD_SET_PACKET_SIZE):
-			//verify byte for packet size setting was received after command byte
-			if (numBytesReceived<2)
-			{
-				return;
-			}
-
-			// second byte received has the packet size setting
-			packet_size_setting = (u32)UartRxData[1] << 12;
-
-			// use new variable in call to configuration function
-			setGyroChannelConfiguration(MCK_div_setting | packet_size_setting |
-					HSI_input_channel_setting | HSI_output_channel_setting);
-			break;
-
-		case (CMD_GET_DAC_SELECTION):
-			send_byte_over_UART( (u8)HSI_output_channel_setting );
-			break;
-
-		case (CMD_SET_DAC_SELECTION):
-			//verify DAC selection setting byte was received after command byte
-			if (numBytesReceived<2)
-			{
-				return;
-			}
-
-			// second byte received has the DAC selection
-			HSI_output_channel_setting = UartRxData[1];
-
-			// use new variable in call to configuration function
-			setGyroChannelConfiguration(MCK_div_setting | packet_size_setting |
-					HSI_input_channel_setting | HSI_output_channel_setting);
-			break;
-
-		case (CMD_GET_ADC_SELECTION):
-			send_byte_over_UART( (u8)HSI_input_channel_setting );
-			break;
-
-		case (CMD_SET_ADC_SELECTION):
-			//verify ADC selection setting byte was received after command byte
-			if (numBytesReceived<2)
-			{
-				return;
-			}
-
-			// second byte received has the ADC selection
-			changeHSI_ADC_selection(UartRxData[1]);
-
-			// use new variable in call to configuration function
-			setGyroChannelConfiguration(MCK_div_setting | packet_size_setting |
-					HSI_input_channel_setting | HSI_output_channel_setting);
-			break;
-
 		case (CMD_CHANGE_DMM_MUX_SETTING):
 			//verify MUX selection setting byte was received after command byte
 			if (numBytesReceived<2)
@@ -1601,16 +1346,6 @@ void read_uart_bytes(void)
 			sendConfigBytesOverUart();
 			break;
 
-		case (CMD_ENABLE_VFUSE):
-			enable_Vfuse();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_DISABLE_VFUSE):
-			disable_Vfuse();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
 		case (CMD_CLR_HSCK_ERR_FLAG):
 			clearHSCKerrorFlag();
 			break;
@@ -1622,19 +1357,15 @@ void read_uart_bytes(void)
 
 		case (CMD_RUN_DMA_TEST):
 			runDmaTest();
+			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
 		case (CMD_READ_RX_FPGA_DATA):
 			// send the entire Rx data buffer(all 3 channels)
-			//RxBufferPtr = (u16 *)RX_BUFFER_BASE;
-			send_data_over_UART(0x18000,(u8*)RX_BUFFER_BASE);
+			send_data_over_UART(MAX_PKT_LEN,(u8*)RX_BUFFER_BASE);
 			break;
 
 		case (CMD_DEBUG1):
-			if (debugType == 1)
-			{
-				readGyroRxFIFODebugData();
-			}
 			if (debugType == 2)
 			{
 				// try writing to RX buffer space in fpga
@@ -1744,13 +1475,9 @@ u8 readHSCKerrorFlag(void)
 //------------------------------------------------------------
 void sendConfigBytesOverUart(void)
 {
-	send_byte_over_UART( (u8)HSI_output_channel_setting );		//DAC channel mux selection
-	send_byte_over_UART( (u8)(HSI_input_channel_setting>>4) );	//ADC channel mux selection
 	send_byte_over_UART( (u8)(MCK_div_setting>>16) );
 	send_byte_over_UART( (u8)SPI_clock_division_setting );
-	send_byte_over_UART( (u8)(packet_size_setting>>12) );
 	send_byte_over_UART( (u8)(dmm_mux_setting));
-	send_byte_over_UART( (u8)(MIO_output_state));
 }
 //------------------------------------------------------------
 
@@ -1802,20 +1529,6 @@ void setDmmMuxAddressLines(u32 addr3, u32 addr2, u32 addr1, u32 addr0)
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A1_OUTPUT_PIN, addr1);
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A2_OUTPUT_PIN, addr2);
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A3_OUTPUT_PIN, addr3);
-}
-
-
-//------------------------------------------------------------
-void changeHSI_ADC_selection(u8 selection)
-{
-	switch (selection){
-		case (0):
-		HSI_input_channel_setting = CONFIG_INPUT_CHANNEL_HSIA0;
-			break;
-		case (1):
-		HSI_input_channel_setting = CONFIG_INPUT_CHANNEL_HSIA1;
-			break;
-	}
 }
 //------------------------------------------------------------
 
@@ -1903,7 +1616,6 @@ void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
 {
 	unsigned int reg0,reg1,i,TADCresult;
 	u16 testADCinitialConditions,testADCstartConditions;
-	u8 firstSetup = 1;
 
 	//store original register 0,1 setting
 	readSPI(&reg0,0);
@@ -2186,7 +1898,7 @@ Xuint8 ProgramOTP(u32 otp32ProgramValue)
 	otp32TestValue = readOTP32bits() | otp32ProgramValue;
 
 	//turn Vfuse on (NVM programming voltage)
-	enable_Vfuse();
+//	enable_Vfuse();
 
 	//delay for Vfuse to come up
 	SetTimerDuration(65000, 10);
@@ -2250,7 +1962,7 @@ Xuint8 ProgramOTP(u32 otp32ProgramValue)
 		writeSPI_non_blocking_orig(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
 	}
 
-	disable_Vfuse();		// programming done so disable voltage
+//	disable_Vfuse();		// programming done so disable voltage
 
 	//enable read operations
 	writeSPI_non_blocking_orig(2,0x0001);		//RSWEN=1
@@ -2363,7 +2075,6 @@ void init_MIO_gpio(void)
 //------------------------------------------------------------
 void enable_dmm_mux(void){
 	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_ENABLE_OUTPUT_PIN, 1);
-	MIO_output_state  |= MIO_OUT_STATE_MUX_ENABLE_BIT;
 }
 //------------------------------------------------------------
 
@@ -2371,52 +2082,6 @@ void enable_dmm_mux(void){
 //------------------------------------------------------------
 void disable_dmm_mux(void){
 	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_ENABLE_OUTPUT_PIN, 0);
-	MIO_output_state  &= ~MIO_OUT_STATE_MUX_ENABLE_BIT;
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void disable_MIO(void){
-	XGpioPs_WritePin(&MIO_gpio, VFUSE_MIO_OUTPUT_PIN, 0);
-	XGpioPs_WritePin(&MIO_gpio, HSI_RX_CAPTURE_PULSE_OUTPUT_PIN, 0);
-	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A0_OUTPUT_PIN, 0);
-	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A1_OUTPUT_PIN, 0);
-	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A2_OUTPUT_PIN, 0);
-	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A3_OUTPUT_PIN, 0);
-	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_ENABLE_OUTPUT_PIN, 0);
-	dmm_mux_setting = DMM_MUX_SEL_TXP0;
-	MIO_output_state = 0;
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void enable_Vfuse(void){
-	XGpioPs_WritePin(&MIO_gpio, VFUSE_MIO_OUTPUT_PIN, 1);
-	MIO_output_state  |= MIO_OUT_STATE_VFUSE_CTRL_BIT;
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void disable_Vfuse(void){
-	XGpioPs_WritePin(&MIO_gpio, VFUSE_MIO_OUTPUT_PIN, 0);
-	MIO_output_state  &= ~MIO_OUT_STATE_VFUSE_CTRL_BIT;
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void start_HSI_capture_duration_pulse(void){
-	XGpioPs_WritePin(&MIO_gpio, HSI_RX_CAPTURE_PULSE_OUTPUT_PIN, 1);
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void end_HSI_capture_duration_pulse(void){
-	XGpioPs_WritePin(&MIO_gpio, HSI_RX_CAPTURE_PULSE_OUTPUT_PIN, 0);
 }
 //------------------------------------------------------------
 
