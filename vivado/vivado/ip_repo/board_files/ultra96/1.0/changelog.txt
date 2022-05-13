@@ -1,4 +1,0 @@
-######### Ultra96 change log ############
-1.0
-Ultra96 Initial Vivado Support 
-
