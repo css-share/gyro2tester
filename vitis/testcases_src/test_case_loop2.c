@@ -38,19 +38,6 @@ int main(){
 		RxBufferPtr[Index] = 0x0000;
 	}
 
-  //  FILE    *textfile;
-  //  FILE    *results;
-
-   // results = fopen("gyro_results.log", "w");
-//	textfile = fopen("/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/testbench/test_data_16_packed.txt", "r");
-
-
-
-	//if(textfile == NULL)
-//	return 1;
-
-
-
 
 	// Initialize the XAxiDma device
 	CfgPtr = XAxiDma_LookupConfig(DMA_DEV_ID);
@@ -76,14 +63,6 @@ int main(){
 	Value = 0x0000;
 
 
-   // for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
-  //  	 Value = fscanf(textfile, "%x", &num[Index]);
-
-  //  	 TxBufferPtr[Index] = Value;
-
-  //  }
-
-   // fclose(textfile);
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 		TxBufferPtr[Index] = Value;
@@ -158,7 +137,7 @@ int main(){
 	    }
 	 }
 
-	 xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+	 xil_printf("Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 
 	 xil_printf("Enable RX FIFO PUSH  \r\n");
 	 XAxi_WriteReg(RXFIFO_REG0,0x00000001);
@@ -171,16 +150,12 @@ int main(){
 	 }
 
 
-	xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+	xil_printf("Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
 
 	xil_printf("Enable RX FIFO POP \r\n");
-	XAxi_WriteReg(RXFIFO_REG2, 0x00000001);
+	XAxi_WriteReg(RXFIFO_REG0, 0x00000003);
 
-//	while(!(Buffer_Not_Full(RXFIFO_REG3))){
-//		    if (Buffer_Not_Full(RXFIFO_REG3) == FALSE){
-//		    			xil_printf("RXBUFFER still Draining...\r\n");
-//		    }
-//		 }
+
 
 
     while(XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA)){
@@ -189,9 +164,6 @@ int main(){
     		}
 
     	}
-
-
-
 
 
 
@@ -205,8 +177,6 @@ int main(){
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
 		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-
 	}
 
 	XAxiDma_Reset(&AxiDma);

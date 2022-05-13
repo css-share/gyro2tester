@@ -19,7 +19,7 @@
         output wire [31:0] DATA_WORD_1, // write register for control-flow
         output wire [31:0] DATA_WORD_2, // debug data
         input  wire [31:0] DATA_WORD_3, // debug data
-        
+        input              spi_clken,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -220,6 +220,13 @@
 	// and the slave is ready to accept the write address and write data.
 	assign slv_reg_wren = axi_wready && S_AXI_WVALID && axi_awready && S_AXI_AWVALID;
 
+
+  logic slv_reg0_clr;
+  logic [31:0] slv_reg0_clr_mask;
+  assign slv_reg0_clr_mask = 32'hFFFE;
+
+
+  
 	always @( posedge S_AXI_ACLK )
 	begin
 	  if ( S_AXI_ARESETN == 1'b0 )
@@ -228,7 +235,14 @@
 	      slv_reg1 <= 0;
 	      slv_reg2 <= 0;
 	      slv_reg3 <= 0;
-	    end 
+	    end
+      else if (slv_reg1_clr)
+        begin
+	      slv_reg0 <= slv_reg0 & slv_reg0_clr_mask; // self clearing bit
+	      slv_reg1 <= slv_reg1;
+	      slv_reg2 <= slv_reg2;
+	      slv_reg3 <= slv_reg3;
+	    end      
 	  else begin
 	    if (slv_reg_wren)
 	      begin
@@ -271,6 +285,16 @@
 	      end
 	  end
 	end    
+
+   	always @( posedge S_AXI_ACLK )
+	begin
+	  if ( S_AXI_ARESETN == 1'b0 )
+          slv_reg0_clr <= 1'b0;
+      else if (slv_reg0[0] & !slv_reg0_clr & spi_clken)
+          slv_reg0_clr <= 1'b1;
+      else
+          slv_reg0_clr <= 1'b0;
+    end  
 
 	// Implement write response logic generation
 	// The write response and response valid signals are asserted by the slave 

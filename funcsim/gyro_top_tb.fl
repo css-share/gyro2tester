@@ -1,7 +1,7 @@
 
 +incdir+$RTL_ROOT/gyro_top
 +incdir+$PROJ_DIR/funcsim
-
++incdir+$PROJ_DIR/funcsim/tests
 
 $RTL_ROOT/include/amba_interfaces.sv
 
@@ -19,8 +19,8 @@ $IP_ROOT/BiDirChannels_1.0/hdl/BiDirChannels_v1_0_S00_AXI.sv
 $IP_ROOT/BiDirChannels_1.0/hdl/GyroInputOutputSerializer.sv
 $IP_ROOT/BiDirChannels_1.0/hdl/BiDirChannels_v1_0.sv
 
-$IP_ROOT/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.v
-$IP_ROOT/SPI_ip_1.0/hdl/SPI_ip_v1_0.v
+$IP_ROOT/SPI_ip_1.0/hdl/SPI_ip_v1_0_S00_AXI.sv
+$IP_ROOT/SPI_ip_1.0/hdl/SPI_ip_v1_0.sv
 
 $IP_ROOT/common/gen_sync_que_srl.sv
 $IP_ROOT/common/gen_sync_que_af.sv
@@ -28,6 +28,7 @@ $IP_ROOT/common/gen_async_que.sv
 $IP_ROOT/common/syncr.sv
 
 $IP_ROOT/common/pipe_que_2xn.sv
+$IP_ROOT/common/pipe_que_48_32.sv
 $IP_ROOT/common/dff.sv
 $IP_ROOT/common/iobuf_ch.v
 $IP_ROOT/common/clock_divider_by_2.sv
@@ -63,6 +64,8 @@ $RTL_ROOT/gyro_top/ip_wrappers/spi_1_0_wrap.sv
 $RTL_ROOT/gyro_top/ip_wrappers/txfifo_wrap.sv
 
 $RTL_ROOT/gyro_top/gyro_top.sv
+
+$PROJ_DIR/funcsim/models/axi_lite_regs.sv
 $PROJ_DIR/funcsim/models/rtl_tp_ram.v
 $PROJ_DIR/funcsim/models/file_streamer_32bit.v
 $PROJ_DIR/funcsim/models/file_writer.sv
@@ -76,5 +79,5 @@ $PROJ_DIR/funcsim/models/spi_dummy_reg.sv
 
 $PROJ_DIR/funcsim/gyro_top_tb.sv
 
-$PROJ_DIR/funcsim/tests/basic_core.sv
+
 

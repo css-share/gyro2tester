@@ -35,13 +35,12 @@
         "clk_reset_domain": ""
       },
       "SPI": {
-        "SPI_ip_0": "",
-        "iobuf_xil_0": ""
+        "iobuf_xil_0": "",
+        "SPI_ip_0": ""
       },
       "DMA": {
         "axi_smc": "",
-        "axi_dma_0": "",
-        "xlconcat_1": ""
+        "axi_dma_0": ""
       },
       "REGISTER_DEMUX": {
         "AXI_Register_Demux": {
@@ -70,6 +69,7 @@
         "TxFIFO": ""
       },
       "led_driver_0": "",
+      "xlconcat_1": "",
       "BiDirChannels_0": ""
     },
     "interface_ports": {
@@ -1579,6 +1579,15 @@
           "PCW_S_AXI_HP0_ID_WIDTH": {
             "value": "6"
           },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP2_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP3_DATA_WIDTH": {
+            "value": "64"
+          },
           "PCW_TPIU_PERIPHERAL_CLKSRC": {
             "value": "External"
           },
@@ -2137,6 +2146,9 @@
             "direction": "I"
           },
           "LED1": {
+            "direction": "O"
+          },
+          "irq_full": {
             "direction": "O"
           }
         },
@@ -2706,6 +2718,12 @@
             "ports": [
               "RxFIFO/bram2_odd_we_a",
               "blk_mem_2_odd/wea"
+            ]
+          },
+          "RxFIFO_irq_full": {
+            "ports": [
+              "RxFIFO/irq_full",
+              "irq_full"
             ]
           },
           "RxFIFO_rxfifo_full": {
@@ -3379,12 +3397,6 @@
           }
         },
         "components": {
-          "SPI_ip_0": {
-            "vlnv": "xilinx.com:user:axi4_pl_SPI_ip:1.0",
-            "xci_name": "design_2_SPI_ip_0_0",
-            "xci_path": "ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci",
-            "inst_hier_path": "SPI/SPI_ip_0"
-          },
           "iobuf_xil_0": {
             "vlnv": "xilinx.com:module_ref:iobuf_xil:1.0",
             "xci_name": "design_2_iobuf_xil_0_0",
@@ -3409,6 +3421,12 @@
                 "direction": "IO"
               }
             }
+          },
+          "SPI_ip_0": {
+            "vlnv": "xilinx.com:user:axi4_pl_SPI_ip:1.0",
+            "xci_name": "design_2_SPI_ip_0_0",
+            "xci_path": "ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci",
+            "inst_hier_path": "SPI/SPI_ip_0"
           }
         },
         "interface_nets": {
@@ -3502,10 +3520,13 @@
             "type": "rst",
             "direction": "I"
           },
-          "dout": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
+          "mm2s_introut": {
+            "type": "intr",
+            "direction": "O"
+          },
+          "s2mm_introut": {
+            "type": "intr",
+            "direction": "O"
           }
         },
         "components": {
@@ -3648,12 +3669,6 @@
                 }
               }
             }
-          },
-          "xlconcat_1": {
-            "vlnv": "xilinx.com:ip:xlconcat:2.1",
-            "xci_name": "design_2_xlconcat_1_0",
-            "xci_path": "ip/design_2_xlconcat_1_0/design_2_xlconcat_1_0.xci",
-            "inst_hier_path": "DMA/xlconcat_1"
           }
         },
         "interface_nets": {
@@ -3698,13 +3713,13 @@
           "axi_dma_0_mm2s_introut": {
             "ports": [
               "axi_dma_0/mm2s_introut",
-              "xlconcat_1/In0"
+              "mm2s_introut"
             ]
           },
           "axi_dma_0_s2mm_introut": {
             "ports": [
               "axi_dma_0/s2mm_introut",
-              "xlconcat_1/In1"
+              "s2mm_introut"
             ]
           },
           "processing_system7_0_FCLK_CLK0": {
@@ -3721,12 +3736,6 @@
               "axi_resetn",
               "axi_dma_0/axi_resetn",
               "axi_smc/aresetn"
-            ]
-          },
-          "xlconcat_1_dout": {
-            "ports": [
-              "xlconcat_1/dout",
-              "dout"
             ]
           }
         }
@@ -5086,6 +5095,9 @@
           },
           "LED0": {
             "direction": "O"
+          },
+          "irq_full": {
+            "direction": "O"
           }
         },
         "components": {
@@ -5674,6 +5686,12 @@
               "blk2_mem_tx_odd/wea"
             ]
           },
+          "TxFIFO_irq_full": {
+            "ports": [
+              "TxFIFO/irq_full",
+              "irq_full"
+            ]
+          },
           "TxFIFO_txfifo_full": {
             "ports": [
               "TxFIFO/txfifo_full",
@@ -5798,6 +5816,17 @@
           },
           "led5": {
             "direction": "O"
+          }
+        }
+      },
+      "xlconcat_1": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "design_2_xlconcat_1_0",
+        "xci_path": "ip/design_2_xlconcat_1_0/design_2_xlconcat_1_0.xci",
+        "inst_hier_path": "xlconcat_1",
+        "parameters": {
+          "NUM_PORTS": {
+            "value": "4"
           }
         }
       },
@@ -5974,6 +6003,18 @@
           "led_driver_0/clk"
         ]
       },
+      "DMA_mm2s_introut": {
+        "ports": [
+          "DMA/mm2s_introut",
+          "xlconcat_1/In0"
+        ]
+      },
+      "DMA_s2mm_introut": {
+        "ports": [
+          "DMA/s2mm_introut",
+          "xlconcat_1/In1"
+        ]
+      },
       "HSI_A0_1": {
         "ports": [
           "DRX",
@@ -5984,6 +6025,12 @@
         "ports": [
           "SPI_DN",
           "SPI/SPI_DN"
+        ]
+      },
+      "RX_BUFFER_irq_full": {
+        "ports": [
+          "RX_BUFFER/irq_full",
+          "xlconcat_1/In2"
         ]
       },
       "RxFIFO_rxfifo_full": {
@@ -6002,6 +6049,12 @@
         "ports": [
           "SPI/SPI_SCK",
           "SPI_SCK"
+        ]
+      },
+      "TX_BUFFER_irq_full": {
+        "ports": [
+          "TX_BUFFER/irq_full",
+          "xlconcat_1/In3"
         ]
       },
       "TxFIFO_txfifo_full": {
@@ -6096,7 +6149,7 @@
       },
       "xlconcat_1_dout": {
         "ports": [
-          "DMA/dout",
+          "xlconcat_1/dout",
           "processing_system7_0/IRQ_F2P"
         ]
       }

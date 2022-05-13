@@ -14,13 +14,46 @@
 //                                                          //
 //                                                          //
 //////////////////////////////////////////////////////////////
-
+`timescale 1ns/1ps
 
 `include "gyro_parameters.vh"
 
 
-//import axi4stream_vip_pkg::*;
-//import design_1_axi4stream_vip_0_0_pkg::*;
+`include "gyro_addr_def.svh"
+`define AXI4_MASTER tb.u_cpu_master_axil_t
+
+
+//`define SPI_TEST
+//`define LOOP1_TEST
+//`define LOOP2_TEST
+//`define LOOP3_TEST
+`define LOOP3_RXBYP_TEST
+//`define RXPAT_TEST
+//`define LOOP2_TXPAT_TEST
+//`define LOOP3_TXPAT_TEST
+//`define LOOP3_SRTXPAT_TEST
+//`define SRRXPAT_TEST
+//`define ALL_TESTS
+
+
+
+`define FILENAME_PATH /home/cdickins/reuse/gyro2tester-main/funcsim/tests
+
+
+`define TEST_32_PACKED        `"`FILENAME_PATH/test_data_32_packed.txt`"
+`define LOOP1_RESULTS         `"`FILENAME_PATH/test_loop1_results.txt`"
+`define LOOP2_RESULTS         `"`FILENAME_PATH/test_loop2_results.txt`"
+`define LOOP3_RESULTS         `"`FILENAME_PATH/test_loop3_results.txt`"
+`define LOOP3_RESULTS_RXBYP   `"`FILENAME_PATH/test_loop3_rxbyp_results.txt`"
+`define RXPAT_RESULTS         `"`FILENAME_PATH/test_rx_pattern_results.txt`"
+`define LOOP2_TXPAT_RESULTS   `"`FILENAME_PATH/test_loop2_txpattern_results.txt`" 
+`define LOOP3_TXPAT_RESULTS   `"`FILENAME_PATH/test_loop3_txpattern_results.txt`"
+`define LOOP3_SRTXPAT_RESULTS `"`FILENAME_PATH/test_loop3_srtx_pattern_results.txt`"
+`define SRRXPAT_RESULTS       `"`FILENAME_PATH/test_srrx_pattern_results.txt`"
+
+
+
+
 
 module gyro_top_tb ;
 
@@ -43,12 +76,7 @@ logic rstn;
 
 logic HSI_A0;
 logic HSI_A1;
-//logic HSI_DBM;
-//logic HSI_DBP;
-//logic HSI_DAM;
-//logic HSI_DAP;
-//logic HSI_DC;
-//logic HS_Clock;
+
 logic DTX;
 logic DSYNC;
 logic MCK_P;
@@ -147,7 +175,15 @@ logic [31:0] dout;
  
 
 
+  reg sim_error;
 
+
+  event terminate_sim;
+  event system_reset;
+  event reset_done;
+
+
+ 
 
 
   
@@ -160,6 +196,23 @@ logic [31:0] dout;
 //                 |___|_| |_|\__\___|_|  |_|  \__,_|\___\___||___/              // 
 //                                                                               // 
 // ------------------------------------------------------------------------------// 
+
+   //////////////////////////////////////////////////
+   // Each testcase will be written as a task then //
+   // we will call them one at a time below in the //
+   // main initial statment                        //
+   //////////////////////////////////////////////////
+//  `include "compare_files.sv"
+  `include "test_case_spi.sv"
+//  `include "test_case_loop1.sv"
+//  `include "test_case_loop2.sv"
+  `include "test_case_loop3.sv"
+  `include "test_case_loop3_rxbyp.sv"  
+//  `include "test_case_rx_pattern.sv"
+//  `include "test_case_loop2_txpattern.sv"  
+//  `include "test_case_loop3_txpattern.sv" 
+//  `include "test_case_loop3_srtx_pattern.sv" 
+//  `include "test_case_srrx_pattern.sv" 
 
 
 ////////////////////////////////////
@@ -198,7 +251,12 @@ initial
       rstn <= 1'b1;
   end
 
-
+   
+initial 
+  begin       
+     sim_error = 1'b0;
+  end
+    
    
 //initial
 //  begin
@@ -207,8 +265,105 @@ initial
 //  end
 
 
+///////////////////////////////////////////////////
+// System reset event                            //
+///////////////////////////////////////////////////
+    initial
+      forever begin 
+        @(system_reset); 
+        $display ("Full System reset before test");
+
+        rstn = 1'b0;
+        repeat(20)@(posedge clk);        
+        rstn = 1'b1;
+        @(posedge clk);
+        
+        repeat(5) @(posedge clk);
+          
+        -> reset_done;
+      end
+  
+
+///////////////////////////////////////////////////
+// Simulation End event                          //
+///////////////////////////////////////////////////
+    initial
+    @ (terminate_sim)  begin
+    $display ("###################################################");      
+    $display ("Terminating simulation");
+    if (sim_error == 0) begin
+      $display ("Simulation Result : PASSED");
+    end
+    else begin
+      $display ("Simulation Result : FAILED");
+    end
+    $display ("###################################################");
+    #1 $finish;
+    end
+  
+
+  
+    ///////////////////////////////////////////////////
+    // This is the Main program here                 //
+    // Add in any new test case tasks                //
+    ///////////////////////////////////////////////////
+
+    initial 
+    begin
+
+     `ifdef SPI_TEST
+         test_spi();
+     `endif    
 
 
+     `ifdef RXPAT_TEST   
+         test_rx_pattern(.test_fin(`TEST_32_PACKED), .test_fout(`RXPAT_RESULTS));
+     `endif
+     
+     `ifdef LOOP1_TEST   
+         test_loop1(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS));
+     `endif
+
+
+     `ifdef LOOP2_TXPAT_TEST   
+         test_loop2_txpattern(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP2_TXPAT_RESULTS));
+     `endif
+
+     `ifdef LOOP2_TEST   
+         test_loop2(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP2_RESULTS));
+     `endif
+
+     `ifdef LOOP3_TEST   
+         test_loop3();
+     `endif
+
+
+     `ifdef LOOP3_RXBYP_TEST   
+         test_loop3_rxbyp();
+     `endif
+
+    
+     `ifdef LOOP3_TXPAT_TEST   
+         test_loop3_txpattern(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP3_TXPAT_RESULTS));
+     `endif
+   
+     `ifdef LOOP3_SRTXPAT_TEST   
+         test_loop3_srtx_pattern(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP3_SRTXPAT_RESULTS));
+     `endif
+      
+     `ifdef SRRXPAT_TEST   
+         test_srrx_pattern(.test_fin(`TEST_32_PACKED), .test_fout(`SRRXPAT_RESULTS));
+     `endif
+
+
+       #5 -> terminate_sim;
+     end
+
+     
+
+
+
+  
   
 /////////////////////////////////////////////////////////////////////////////
 // AXI LIGHT DECLARATION FOR cpu_master_axil_if 
@@ -224,30 +379,6 @@ initial
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-// AXI DECLARATION FOR txfifo_axis_if 
-/////////////////////////////////////////////////////////////////////////////
-
-// axi_strm_if #(.DW(TXFIFO_STRM_DW),
-//               .SW(TXFIFO_STRM_SW),
-//               .UW(TXFIFO_STRM_UW))
-//               txfifo_axis_if ();  
-   
-
-
-/////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-// AXI DECLARATION FOR rxfifo_axis_if 
-/////////////////////////////////////////////////////////////////////////////
-
-// axi_strm_if #(.DW(RXFIFO_STRM_DW),
-//               .SW(RXFIFO_STRM_SW),
-//               .UW(RXFIFO_STRM_UW))
-//               rxfifo_axis_if ();  
-   
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 // AXI DECLARATION FOR dma_sg_axi_if 
@@ -339,9 +470,8 @@ initial
                     .dma_w_cpu_axi_if                 (dma_w_cpu_axi_if.producer),   
                     
                        
-                    .cpu_master_axil_if   (cpu_master_axil_if.consumer)
-                 //   .txfifo_axis_if       (txfifo_axis_if.consumer),
-                 //   .rxfifo_axis_if       (rxfifo_axis_if.producer)
+                    .cpu_master_axil_if                (cpu_master_axil_if.consumer)
+
                    );
 
 

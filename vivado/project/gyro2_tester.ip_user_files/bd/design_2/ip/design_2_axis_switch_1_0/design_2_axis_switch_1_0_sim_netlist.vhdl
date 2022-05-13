@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Mon Apr 11 16:13:43 2022
+-- Date        : Mon Apr 11 16:13:42 2022
 -- Host        : xsjlc190407 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
--- Command     : write_vhdl -force -mode funcsim
---               /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top design_2_axis_switch_1_0 -prefix
+--               design_2_axis_switch_1_0_ design_2_axis_switch_1_0_sim_netlist.vhdl
 -- Design      : design_2_axis_switch_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -30,8 +30,6 @@ entity design_2_axis_switch_1_0_axis_register_slice_v1_1_25_axisc_register_slice
     s_axis_tvalid : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 36 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_register_slice_v1_1_25_axisc_register_slice : entity is "axis_register_slice_v1_1_25_axisc_register_slice";
 end design_2_axis_switch_1_0_axis_register_slice_v1_1_25_axisc_register_slice;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_register_slice_v1_1_25_axisc_register_slice is
@@ -1729,8 +1727,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_read is
     s_axi_ctrl_arvalid : in STD_LOGIC;
     s_axi_ctrl_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_read : entity is "axis_switch_v1_1_25_axi_ctrl_read";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_read;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_read is
@@ -2738,8 +2734,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_write is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_ctrl_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_write : entity is "axis_switch_v1_1_25_axi_ctrl_write";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_write;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_write is
@@ -3617,8 +3611,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_reg_bank_16x32 is
     D : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_ctrl_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_reg_bank_16x32 : entity is "axis_switch_v1_1_25_reg_bank_16x32";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_reg_bank_16x32;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_reg_bank_16x32 is
@@ -4742,8 +4734,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config_dp is
     \gen_mi_mux_in[0].mi_mux_in_reg[3]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \gen_mi_mux_in[1].mi_mux_in_reg[7]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config_dp : entity is "axis_switch_v1_1_25_static_router_config_dp";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config_dp;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config_dp is
@@ -5470,8 +5460,6 @@ entity design_2_axis_switch_1_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of design_2_axis_switch_1_0_xpm_cdc_single : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of design_2_axis_switch_1_0_xpm_cdc_single : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of design_2_axis_switch_1_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -5727,8 +5715,6 @@ entity design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_clock_synchronizer is
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_clock_synchronizer : entity is "axis_infrastructure_v1_1_0_clock_synchronizer";
 end design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_clock_synchronizer;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_clock_synchronizer is
@@ -5791,8 +5777,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_top is
     s_axi_ctrl_arvalid : in STD_LOGIC;
     s_axi_ctrl_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_top : entity is "axis_switch_v1_1_25_axi_ctrl_top";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_top;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_axi_ctrl_top is
@@ -5893,8 +5877,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_axisc_decoder is
     s_axis_tvalid : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 36 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_axisc_decoder : entity is "axis_switch_v1_1_25_axisc_decoder";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_axisc_decoder;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_axisc_decoder is
@@ -5940,8 +5922,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config is
     \gen_mi_mux_in[0].mi_mux_in_reg[3]\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \gen_mi_mux_in[1].mi_mux_in_reg[7]\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config : entity is "axis_switch_v1_1_25_static_router_config";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router_config is
@@ -6274,8 +6254,6 @@ entity design_2_axis_switch_1_0_xpm_cdc_handshake is
   attribute DEST_SYNC_FF of design_2_axis_switch_1_0_xpm_cdc_handshake : entity is 4;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of design_2_axis_switch_1_0_xpm_cdc_handshake : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_xpm_cdc_handshake : entity is "xpm_cdc_handshake";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of design_2_axis_switch_1_0_xpm_cdc_handshake : entity is 0;
   attribute SRC_SYNC_FF : integer;
@@ -6665,8 +6643,6 @@ entity design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_cdc_handshake is
     aclk : in STD_LOGIC;
     \FSM_onehot_state_reg[4]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_cdc_handshake : entity is "axis_infrastructure_v1_1_0_cdc_handshake";
 end design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_cdc_handshake;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_infrastructure_v1_1_0_cdc_handshake is
@@ -6741,8 +6717,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router is
     s_axi_ctrl_arvalid : in STD_LOGIC;
     s_axi_ctrl_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router : entity is "axis_switch_v1_1_25_static_router";
 end design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router;
 
 architecture STRUCTURE of design_2_axis_switch_1_0_axis_switch_v1_1_25_static_router is
@@ -6941,8 +6915,6 @@ entity design_2_axis_switch_1_0_axis_switch_v1_1_25_axis_switch is
   attribute LP_MERGEDOWN_MUX of design_2_axis_switch_1_0_axis_switch_v1_1_25_axis_switch : entity is 0;
   attribute LP_NUM_SYNCHRONIZER_STAGES : integer;
   attribute LP_NUM_SYNCHRONIZER_STAGES of design_2_axis_switch_1_0_axis_switch_v1_1_25_axis_switch : entity is 4;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of design_2_axis_switch_1_0_axis_switch_v1_1_25_axis_switch : entity is "axis_switch_v1_1_25_axis_switch";
   attribute P_DECODER_CONNECTIVITY_ARRAY : string;
   attribute P_DECODER_CONNECTIVITY_ARRAY of design_2_axis_switch_1_0_axis_switch_v1_1_25_axis_switch : entity is "2'b11";
   attribute P_SINGLE_SLAVE_CONNECTIVITY_ARRAY : string;

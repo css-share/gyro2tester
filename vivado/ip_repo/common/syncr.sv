@@ -36,7 +36,7 @@ module syncr #(parameter WD = 2,  RANK = 2, GRAY_MODE = 0, RESETV = 0)  //OPTION
      `define IVAL {WD{1'b0}};
      end
 
-//(* ASYNC_REG = "TRUE" *) logic [WD-1:0]  sync_1stg={WD{1'b0}}, sync_2stg={WD{1'b0}};
+
 (* ASYNC_REG = "TRUE" *) logic [WD-1:0]  sync_1stg; //=`IVAL;
 
 

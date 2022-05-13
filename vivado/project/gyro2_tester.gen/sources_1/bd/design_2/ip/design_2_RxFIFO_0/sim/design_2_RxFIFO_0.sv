@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:axis_stream_fifo:1.0
-// IP Revision: 71
+// IP Revision: 81
 
 `timescale 1ns/1ps
 
@@ -57,6 +57,7 @@ module design_2_RxFIFO_0 (
   clk,
   rst_n,
   rxfifo_full,
+  irq_full,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -137,6 +138,7 @@ input wire clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 input wire rst_n;
 output wire rxfifo_full;
+output wire irq_full;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [3 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -251,6 +253,7 @@ output wire m00_axis_tlast;
     .clk(clk),
     .rst_n(rst_n),
     .rxfifo_full(rxfifo_full),
+    .irq_full(irq_full),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

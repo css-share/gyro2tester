@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Tue Apr 26 12:17:48 2022
--- Host        : xsjlc200178 running 64-bit CentOS Linux release 7.4.1708 (Core)
+-- Date        : Thu May 12 16:58:43 2022
+-- Host        : xsjl20356 running 64-bit CentOS Linux release 7.4.1708 (Core)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_stub.vhdl
 -- Design      : design_2_axis_stream_txfifo_0_2
@@ -17,6 +17,7 @@ entity design_2_axis_stream_txfifo_0_2 is
     clk : in STD_LOGIC;
     rstn : in STD_LOGIC;
     txfifo_full : out STD_LOGIC;
+    irq_full : out STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
@@ -96,7 +97,7 @@ architecture stub of design_2_axis_stream_txfifo_0_2 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,rstn,txfifo_full,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,bram0_even_addr_a[12:0],bram0_even_data_a[15:0],bram0_even_en_a,bram0_even_we_a,bram0_even_addr_b[12:0],bram0_even_en_b,bram0_even_rdata_b[15:0],bram0_odd_addr_a[12:0],bram0_odd_data_a[15:0],bram0_odd_en_a,bram0_odd_we_a,bram0_odd_addr_b[12:0],bram0_odd_en_b,bram0_odd_rdata_b[15:0],bram1_even_addr_a[12:0],bram1_even_data_a[15:0],bram1_even_en_a,bram1_even_we_a,bram1_even_addr_b[12:0],bram1_even_en_b,bram1_even_rdata_b[15:0],bram1_odd_addr_a[12:0],bram1_odd_data_a[15:0],bram1_odd_en_a,bram1_odd_we_a,bram1_odd_addr_b[12:0],bram1_odd_en_b,bram1_odd_rdata_b[15:0],bram2_even_addr_a[12:0],bram2_even_data_a[15:0],bram2_even_en_a,bram2_even_we_a,bram2_even_addr_b[12:0],bram2_even_en_b,bram2_even_rdata_b[15:0],bram2_odd_addr_a[12:0],bram2_odd_data_a[15:0],bram2_odd_en_a,bram2_odd_we_a,bram2_odd_addr_b[12:0],bram2_odd_en_b,bram2_odd_rdata_b[15:0],s00_axis_tready,s00_axis_tdata[31:0],s00_axis_tstrb[3:0],s00_axis_tlast,s00_axis_tvalid,m00_axis_tvalid,m00_axis_tdata[47:0],m00_axis_tstrb[5:0],m00_axis_tlast,m00_axis_tready";
+attribute black_box_pad_pin of stub : architecture is "clk,rstn,txfifo_full,irq_full,s00_axi_awaddr[3:0],s00_axi_awprot[2:0],s00_axi_awvalid,s00_axi_awready,s00_axi_wdata[31:0],s00_axi_wstrb[3:0],s00_axi_wvalid,s00_axi_wready,s00_axi_bresp[1:0],s00_axi_bvalid,s00_axi_bready,s00_axi_araddr[3:0],s00_axi_arprot[2:0],s00_axi_arvalid,s00_axi_arready,s00_axi_rdata[31:0],s00_axi_rresp[1:0],s00_axi_rvalid,s00_axi_rready,bram0_even_addr_a[12:0],bram0_even_data_a[15:0],bram0_even_en_a,bram0_even_we_a,bram0_even_addr_b[12:0],bram0_even_en_b,bram0_even_rdata_b[15:0],bram0_odd_addr_a[12:0],bram0_odd_data_a[15:0],bram0_odd_en_a,bram0_odd_we_a,bram0_odd_addr_b[12:0],bram0_odd_en_b,bram0_odd_rdata_b[15:0],bram1_even_addr_a[12:0],bram1_even_data_a[15:0],bram1_even_en_a,bram1_even_we_a,bram1_even_addr_b[12:0],bram1_even_en_b,bram1_even_rdata_b[15:0],bram1_odd_addr_a[12:0],bram1_odd_data_a[15:0],bram1_odd_en_a,bram1_odd_we_a,bram1_odd_addr_b[12:0],bram1_odd_en_b,bram1_odd_rdata_b[15:0],bram2_even_addr_a[12:0],bram2_even_data_a[15:0],bram2_even_en_a,bram2_even_we_a,bram2_even_addr_b[12:0],bram2_even_en_b,bram2_even_rdata_b[15:0],bram2_odd_addr_a[12:0],bram2_odd_data_a[15:0],bram2_odd_en_a,bram2_odd_we_a,bram2_odd_addr_b[12:0],bram2_odd_en_b,bram2_odd_rdata_b[15:0],s00_axis_tready,s00_axis_tdata[31:0],s00_axis_tstrb[3:0],s00_axis_tlast,s00_axis_tvalid,m00_axis_tvalid,m00_axis_tdata[47:0],m00_axis_tstrb[5:0],m00_axis_tlast,m00_axis_tready";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "axis_stream_txfifo_v2_0,Vivado 2021.2";
 begin

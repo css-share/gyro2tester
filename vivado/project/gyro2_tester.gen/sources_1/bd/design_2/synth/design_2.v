@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-//Date        : Tue Apr 26 12:15:58 2022
+//Date        : Thu May 12 15:40:51 2022
 //Host        : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 //Command     : generate_target design_2.bd
 //Design      : design_2
@@ -70,7 +70,8 @@ module DMA_imp_MEFHMS
     S_AXI_LITE_wready,
     S_AXI_LITE_wvalid,
     axi_resetn,
-    dout,
+    mm2s_introut,
+    s2mm_introut,
     s_axi_lite_aclk);
   output [31:0]M00_AXI_araddr;
   output [1:0]M00_AXI_arburst;
@@ -132,7 +133,8 @@ module DMA_imp_MEFHMS
   output [0:0]S_AXI_LITE_wready;
   input [0:0]S_AXI_LITE_wvalid;
   input axi_resetn;
-  output [1:0]dout;
+  output mm2s_introut;
+  output s2mm_introut;
   input s_axi_lite_aclk;
 
   wire [31:0]axi_dma_0_M_AXIS_MM2S_TDATA;
@@ -227,7 +229,6 @@ module DMA_imp_MEFHMS
   wire smartconnect_0_M00_AXI_WREADY;
   wire [7:0]smartconnect_0_M00_AXI_WSTRB;
   wire smartconnect_0_M00_AXI_WVALID;
-  wire [1:0]xlconcat_1_dout;
 
   assign M00_AXI_araddr[31:0] = smartconnect_0_M00_AXI_ARADDR;
   assign M00_AXI_arburst[1:0] = smartconnect_0_M00_AXI_ARBURST;
@@ -271,7 +272,7 @@ module DMA_imp_MEFHMS
   assign axis_switch_0_M00_AXIS_TKEEP = S_AXIS_S2MM_tkeep[3:0];
   assign axis_switch_0_M00_AXIS_TLAST = S_AXIS_S2MM_tlast;
   assign axis_switch_0_M00_AXIS_TVALID = S_AXIS_S2MM_tvalid;
-  assign dout[1:0] = xlconcat_1_dout;
+  assign mm2s_introut = axi_dma_0_mm2s_introut;
   assign processing_system7_0_FCLK_CLK0 = s_axi_lite_aclk;
   assign ps7_0_axi_periph_M03_AXI_ARADDR = S_AXI_LITE_araddr[31:0];
   assign ps7_0_axi_periph_M03_AXI_ARVALID = S_AXI_LITE_arvalid[0];
@@ -282,6 +283,7 @@ module DMA_imp_MEFHMS
   assign ps7_0_axi_periph_M03_AXI_WDATA = S_AXI_LITE_wdata[31:0];
   assign ps7_0_axi_periph_M03_AXI_WVALID = S_AXI_LITE_wvalid[0];
   assign rst_ps7_0_100M_peripheral_aresetn = axi_resetn;
+  assign s2mm_introut = axi_dma_0_s2mm_introut;
   assign smartconnect_0_M00_AXI_ARREADY = M00_AXI_arready;
   assign smartconnect_0_M00_AXI_AWREADY = M00_AXI_awready;
   assign smartconnect_0_M00_AXI_BRESP = M00_AXI_bresp[1:0];
@@ -422,10 +424,6 @@ module DMA_imp_MEFHMS
         .S01_AXI_wvalid(axi_dma_0_M_AXI_S2MM_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(rst_ps7_0_100M_peripheral_aresetn));
-  design_2_xlconcat_1_0 xlconcat_1
-       (.In0(axi_dma_0_mm2s_introut),
-        .In1(axi_dma_0_s2mm_introut),
-        .dout(xlconcat_1_dout));
 endmodule
 
 module LOOP1_imp_UYGTN7
@@ -2105,6 +2103,7 @@ module RX_BUFFER_imp_1JAE102
     S00_AXI_wstrb,
     S00_AXI_wvalid,
     clk,
+    irq_full,
     rst_n);
   output LED1;
   output [31:0]M00_AXIS_tdata;
@@ -2137,6 +2136,7 @@ module RX_BUFFER_imp_1JAE102
   input [3:0]S00_AXI_wstrb;
   input [0:0]S00_AXI_wvalid;
   input clk;
+  output irq_full;
   input rst_n;
 
   wire [31:0]RxFIFO_M00_AXIS_TDATA;
@@ -2180,6 +2180,7 @@ module RX_BUFFER_imp_1JAE102
   wire RxFIFO_bram2_odd_en_a;
   wire RxFIFO_bram2_odd_en_b;
   wire RxFIFO_bram2_odd_we_a;
+  wire RxFIFO_irq_full;
   wire RxFIFO_rxfifo_full;
   wire [47:0]axis_switch_3_M00_AXIS_TDATA;
   wire [0:0]axis_switch_3_M00_AXIS_TLAST;
@@ -2233,6 +2234,7 @@ module RX_BUFFER_imp_1JAE102
   assign axis_switch_3_M00_AXIS_TLAST = S00_AXIS_tlast[0];
   assign axis_switch_3_M00_AXIS_TSTRB = S00_AXIS_tstrb[5:0];
   assign axis_switch_3_M00_AXIS_TVALID = S00_AXIS_tvalid[0];
+  assign irq_full = RxFIFO_irq_full;
   assign processing_system7_0_FCLK_CLK0 = clk;
   assign ps7_0_axi_periph_M04_AXI_ARADDR = S00_AXI_araddr[31:0];
   assign ps7_0_axi_periph_M04_AXI_ARPROT = S00_AXI_arprot[2:0];
@@ -2290,6 +2292,7 @@ module RX_BUFFER_imp_1JAE102
         .bram2_odd_rdata_b(blk_mem_2_odd_doutb),
         .bram2_odd_we_a(RxFIFO_bram2_odd_we_a),
         .clk(processing_system7_0_FCLK_CLK0),
+        .irq_full(RxFIFO_irq_full),
         .m00_axis_tdata(RxFIFO_M00_AXIS_TDATA),
         .m00_axis_tlast(RxFIFO_M00_AXIS_TLAST),
         .m00_axis_tready(RxFIFO_M00_AXIS_TREADY),
@@ -2549,6 +2552,7 @@ module TX_BUFFER_imp_QRKGWQ
     S00_AXI_wstrb,
     S00_AXI_wvalid,
     clk,
+    irq_full,
     rstn);
   output LED0;
   output [47:0]M00_AXIS_tdata;
@@ -2580,6 +2584,7 @@ module TX_BUFFER_imp_QRKGWQ
   input [3:0]S00_AXI_wstrb;
   input S00_AXI_wvalid;
   input clk;
+  output irq_full;
   input rstn;
 
   wire [47:0]TxFIFO_M00_AXIS_TDATA;
@@ -2623,6 +2628,7 @@ module TX_BUFFER_imp_QRKGWQ
   wire TxFIFO_bram2_odd_en_a;
   wire TxFIFO_bram2_odd_en_b;
   wire TxFIFO_bram2_odd_we_a;
+  wire TxFIFO_irq_full;
   wire TxFIFO_txfifo_full;
   wire [31:0]axis_switch_1_M01_AXIS_TDATA;
   wire axis_switch_1_M01_AXIS_TLAST;
@@ -2674,6 +2680,7 @@ module TX_BUFFER_imp_QRKGWQ
   assign axis_switch_1_M01_AXIS_TDATA = S00_AXIS_tdata[31:0];
   assign axis_switch_1_M01_AXIS_TLAST = S00_AXIS_tlast;
   assign axis_switch_1_M01_AXIS_TVALID = S00_AXIS_tvalid;
+  assign irq_full = TxFIFO_irq_full;
   assign processing_system7_0_FCLK_CLK0 = clk;
   assign ps7_0_axi_periph_M05_AXI_ARADDR = S00_AXI_araddr[31:0];
   assign ps7_0_axi_periph_M05_AXI_ARPROT = S00_AXI_arprot[2:0];
@@ -2731,6 +2738,7 @@ module TX_BUFFER_imp_QRKGWQ
         .bram2_odd_rdata_b(blk2_mem_tx_odd_doutb),
         .bram2_odd_we_a(TxFIFO_bram2_odd_we_a),
         .clk(processing_system7_0_FCLK_CLK0),
+        .irq_full(TxFIFO_irq_full),
         .m00_axis_tdata(TxFIFO_M00_AXIS_TDATA),
         .m00_axis_tlast(TxFIFO_M00_AXIS_TLAST),
         .m00_axis_tready(TxFIFO_M00_AXIS_TREADY),
@@ -2978,8 +2986,11 @@ module design_2
   wire BiDirChannels_0_MCK_P;
   wire BiDirChannels_0_SYNCK;
   wire BiDirChannels_0_txclk;
+  wire DMA_mm2s_introut;
+  wire DMA_s2mm_introut;
   wire HSI_A0_1;
   wire Net;
+  wire RX_BUFFER_irq_full;
   wire [31:0]RxFIFO_M00_AXIS_TDATA;
   wire [0:0]RxFIFO_M00_AXIS_TLAST;
   wire [0:0]RxFIFO_M00_AXIS_TREADY;
@@ -2988,6 +2999,7 @@ module design_2
   wire RxFIFO_rxfifo_full;
   wire SPI_ip_0_SPI_CS;
   wire SPI_ip_0_SPI_SCK;
+  wire TX_BUFFER_irq_full;
   wire [47:0]TxFIFO_M00_AXIS_TDATA;
   wire TxFIFO_M00_AXIS_TLAST;
   wire TxFIFO_M00_AXIS_TREADY;
@@ -3213,7 +3225,7 @@ module design_2
   wire [7:0]smartconnect_0_M00_AXI_WSTRB;
   wire smartconnect_0_M00_AXI_WVALID;
   wire [0:0]txclk_reset_domain_peripheral_aresetn;
-  wire [1:0]xlconcat_1_dout;
+  wire [3:0]xlconcat_1_dout;
 
   assign DSYNC = BiDirChannels_0_HSI_DAP;
   assign DTX = BiDirChannels_0_HSI_DAM;
@@ -3332,7 +3344,8 @@ module design_2
         .S_AXI_LITE_wready(ps7_0_axi_periph_M03_AXI_WREADY),
         .S_AXI_LITE_wvalid(ps7_0_axi_periph_M03_AXI_WVALID),
         .axi_resetn(rst_ps7_0_100M_peripheral_aresetn),
-        .dout(xlconcat_1_dout),
+        .mm2s_introut(DMA_mm2s_introut),
+        .s2mm_introut(DMA_s2mm_introut),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0));
   LOOP1_imp_UYGTN7 LOOP1
        (.M00_AXIS_tdata(axis_switch_0_M00_AXIS_TDATA),
@@ -3680,6 +3693,7 @@ module design_2
         .S00_AXI_wstrb(ps7_0_axi_periph_M04_AXI_WSTRB),
         .S00_AXI_wvalid(ps7_0_axi_periph_M04_AXI_WVALID),
         .clk(processing_system7_0_FCLK_CLK0),
+        .irq_full(RX_BUFFER_irq_full),
         .rst_n(rst_ps7_0_100M_peripheral_aresetn));
   SPI_imp_1GZSG7G SPI
        (.S00_AXI_araddr(ps7_0_axi_periph_M01_AXI_ARADDR),
@@ -3737,6 +3751,7 @@ module design_2
         .S00_AXI_wstrb(ps7_0_axi_periph_M05_AXI_WSTRB),
         .S00_AXI_wvalid(ps7_0_axi_periph_M05_AXI_WVALID),
         .clk(processing_system7_0_FCLK_CLK0),
+        .irq_full(TX_BUFFER_irq_full),
         .rstn(rst_ps7_0_100M_peripheral_aresetn));
   design_2_led_driver_0_0 led_driver_0
        (.clk(BiDirChannels_0_txclk),
@@ -3851,6 +3866,12 @@ module design_2
         .S_AXI_HP0_WSTRB(smartconnect_0_M00_AXI_WSTRB),
         .S_AXI_HP0_WVALID(smartconnect_0_M00_AXI_WVALID),
         .USB0_VBUS_PWRFAULT(1'b0));
+  design_2_xlconcat_1_0 xlconcat_1
+       (.In0(DMA_mm2s_introut),
+        .In1(DMA_s2mm_introut),
+        .In2(RX_BUFFER_irq_full),
+        .In3(TX_BUFFER_irq_full),
+        .dout(xlconcat_1_dout));
 endmodule
 
 module design_2_ps7_0_axi_periph_0

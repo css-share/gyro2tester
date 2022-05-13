@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Mon Apr 11 16:13:43 2022
+-- Date        : Mon Apr 11 16:13:41 2022
 -- Host        : xsjlc190407 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
--- Command     : write_vhdl -force -mode synth_stub
---               /home/cdickins/reuse/gyro2tester-main_v2/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_2_axis_switch_1_0 -prefix
+--               design_2_axis_switch_1_0_ design_2_axis_switch_1_0_stub.vhdl
 -- Design      : design_2_axis_switch_1_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

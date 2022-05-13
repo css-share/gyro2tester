@@ -18,8 +18,7 @@ XAxiDma AxiDma; //DMA device instance definition
 int main(){
     init_platform();
 
-    print("Putting the board into Gyro Functional mode\n\r");
-	  
+    print("Putting the board into Gyro Functional mode\n\r")
     xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
 
 
@@ -71,14 +70,6 @@ int main(){
 	Value = 0x0000;
 
 
-  //  for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
-  //  	 Value = fscanf(textfile, "%x", &num[Index]);
-
-  //  	 TxBufferPtr[Index] = Value;
-
-   // }
-
-  //  fclose(textfile);
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 		TxBufferPtr[Index] = Value;
@@ -149,12 +140,6 @@ int main(){
 
 
 
-
-
-
-
-
-
     ////////////////////////////////////////////////////////////////////////
     // END OF EDIT SECTION                                                //
     ////////////////////////////////////////////////////////////////////////
@@ -164,12 +149,9 @@ int main(){
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
 		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-
 	}
 
 	XAxiDma_Reset(&AxiDma);
-
     cleanup_platform();
     return 0;
 }

@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1fabb112</spirit:value>
+            <spirit:value>7d5c6c57</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1fabb112</spirit:value>
+            <spirit:value>7d5c6c57</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -740,32 +740,32 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/SPI_ip_v1_0_S00_AXI.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:name>hdl/SPI_ip_v1_0_S00_AXI.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/dff.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/SPI_ip_v1_0.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_12aaf220</spirit:userFileType>
+        <spirit:name>hdl/SPI_ip_v1_0.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_05c805a5</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/SPI_ip_v1_0_S00_AXI.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:name>hdl/SPI_ip_v1_0_S00_AXI.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>src/dff.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/SPI_ip_v1_0.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:name>hdl/SPI_ip_v1_0.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -883,11 +883,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>axi4_pl_SPI_ip_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>19</xilinx:coreRevision>
+      <xilinx:coreRevision>30</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:user:SPI_ip:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2022-04-19T02:34:20Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2022-05-12T17:47:45Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:SPI_ip:1.0_ARCHIVE_LOCATION">c:/Xilinx/Vivado/projects/ip_repo/SPI_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="xilinx.com:user:axi4_pl_SPI_ip:1.0_ARCHIVE_LOCATION">c:/Docs/gyro_tester_gold/ip_repo/SPI_ip_1.0</xilinx:tag>
@@ -975,14 +975,155 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@15e5be3_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@17f0d5a7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@6b96802b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63d6de60_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a7ad06c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d4dda27_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f62b438_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68220ee_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b387a6e_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7db5e7dd_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20779b8c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31015be2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2442e432_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3085dccd_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24f20010_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2eeabbb4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25cdbfb4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f5e9937_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@217fc14c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74122009_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6df2ff2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d38597e_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@683c2db1_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f7c86e5_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@397f25dd_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@635e9eb2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33c18e0f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@162300b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4eb47976_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6141350a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c764ba7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f4059c1_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b86520d_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2114184_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18b86dd0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64f7d15b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@540e12f0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c955b94_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49620602_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2d680cfc_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30c8308c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58d61ad6_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47c679cf_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@322480f2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67bc45db_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e9002de_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31b489df_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33b6f9e1_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34890e41_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@316f0864_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c2f4c4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2fdec57e_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65802aa4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b49f9b5_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@499f71fe_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e8b9ed3_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@423fa2c7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41c5f3ca_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@127994aa_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bf2a7f9_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13bc67dd_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f2438e3_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@53bedc1f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e776718_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b655439_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4257703d_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2079fc2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a9535cb_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7724e8e0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c40964e_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42bca55d_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dde6de2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ede4a4b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@785319ab_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4767bf09_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6457bb5d_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13418a6c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e7a874a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1cf46dd8_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f9acc3_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2082f057_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3230fdf5_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3de3f2d1_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e3eee5_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5181ac3f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74dd8c33_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66dbb1f9_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3df8b9ad_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@729a555f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b4570a0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17679a6_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e61a673_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24a8e3ef_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5066908c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6649fe54_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@166927f4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63a59efc_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68ac9e14_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f590f23_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5025b777_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b29ef69_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cb6cec2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26e7754a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65bde8f2_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5277925_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68373466_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55833655_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75556542_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42b17917_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d474698_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6cfb4931_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f83b466_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a3fb8b7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32fb7320_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1859679d_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2189a6b5_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4dd7c011_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7856b8fc_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a1e107_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38408e0a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28c6f0e4_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30a4e8bd_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2de6967f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@352c35aa_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22065f33_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57528252_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@88d7c33_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67e9e37b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72f7ed0a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@773d15fb_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ac01738_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60422a12_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d7cf588_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c8c75b0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43f352d7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56afce09_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f1374df_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13412d8b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@104e8db7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c408d96_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ffef80_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f440ade_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@278df417_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ed974f7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/SPI_ip_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="41297713"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2917a479"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="d8e263d9"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="7501ec33"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="67c51e1c"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="cf2933c1"/>
     </xilinx:packagingInfo>

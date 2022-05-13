@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:axis_stream_txfifo:2.0
-// IP Revision: 26
+// IP Revision: 32
 
 (* X_CORE_INFO = "axis_stream_txfifo_v2_0,Vivado 2021.2" *)
 (* CHECK_LICENSE_TYPE = "design_2_axis_stream_txfifo_0_2,axis_stream_txfifo_v2_0,{}" *)
@@ -57,6 +57,7 @@ module design_2_axis_stream_txfifo_0_2 (
   clk,
   rstn,
   txfifo_full,
+  irq_full,
   s00_axi_awaddr,
   s00_axi_awprot,
   s00_axi_awvalid,
@@ -137,6 +138,7 @@ input wire clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rstn RST" *)
 input wire rstn;
 output wire txfifo_full;
+output wire irq_full;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *)
 input wire [3 : 0] s00_axi_awaddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *)
@@ -254,6 +256,7 @@ input wire m00_axis_tready;
     .clk(clk),
     .rstn(rstn),
     .txfifo_full(txfifo_full),
+    .irq_full(irq_full),
     .s00_axi_awaddr(s00_axi_awaddr),
     .s00_axi_awprot(s00_axi_awprot),
     .s00_axi_awvalid(s00_axi_awvalid),

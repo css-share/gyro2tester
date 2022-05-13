@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:BiDirChannels:1.0
-// IP Revision: 129
+// IP Revision: 131
 
 (* X_CORE_INFO = "BiDirChannels_v1_0,Vivado 2021.2" *)
 (* CHECK_LICENSE_TYPE = "design_2_BiDirChannels_0_0,BiDirChannels_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_2_BiDirChannels_0_0,BiDirChannels_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=BiDirChannels,x_ipVersion=1.0,x_ipCoreRevision=129,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_M00_AXIS_TDATA_WIDTH=48,C_S00_AXIS_TDATA_WIDTH=48}" *)
+(* CORE_GENERATION_INFO = "design_2_BiDirChannels_0_0,BiDirChannels_v1_0,{x_ipProduct=Vivado 2021.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=BiDirChannels,x_ipVersion=1.0,x_ipCoreRevision=131,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4,C_M00_AXIS_TDATA_WIDTH=48,C_S00_AXIS_TDATA_WIDTH=48,C_M00_AXIS_START_COUNT=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_2_BiDirChannels_0_0 (
   DRX,
@@ -187,7 +187,8 @@ input wire m00_axis_tready;
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(4),  // Width of S_AXI address bus
     .C_M00_AXIS_TDATA_WIDTH(48),  // Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-    .C_S00_AXIS_TDATA_WIDTH(48)  // AXI4Stream sink: Data Width
+    .C_S00_AXIS_TDATA_WIDTH(48),  // AXI4Stream sink: Data Width
+    .C_M00_AXIS_START_COUNT(4)
   ) inst (
     .DRX(DRX),
     .clk(clk),

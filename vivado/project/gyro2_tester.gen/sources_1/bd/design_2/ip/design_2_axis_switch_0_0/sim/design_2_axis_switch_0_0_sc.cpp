@@ -92,8 +92,6 @@ design_2_axis_switch_0_0_sc::design_2_axis_switch_0_0_sc(const sc_core::sc_modul
   S00_AXIS_TARGET_SOCKET = mp_impl->S00_AXIS_TARGET_SOCKET;
   M00_AXIS_INITIATOR_SOCKET = mp_impl->M00_AXIS_INITIATOR_SOCKET;
   S01_AXIS_TARGET_SOCKET = mp_impl->S01_AXIS_TARGET_SOCKET;
-  S_AXI_CTRL_wr_socket = mp_impl->S_AXI_CTRL_wr_socket;
-  S_AXI_CTRL_rd_socket = mp_impl->S_AXI_CTRL_rd_socket;
 }
 
 design_2_axis_switch_0_0_sc::~design_2_axis_switch_0_0_sc()

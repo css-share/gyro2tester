@@ -35,16 +35,18 @@ rm -rf *.log
 
 
 ncvlog -64BIT -SV -NOCOPYRIGHT -MESSAGES -STATUS -NOWARN MRSTA  -NOWARN DLNCML +define+NO_ASSERT -LOGFILE nc_tb_comp.log -APPEND_LOG -f $PROJ_DIR/funcsim/gyro_top_tb.fl
-ncelab -64BIT -NOCOPYRIGHT  -NOTIMINGCHECKS -MESSAGES -STATUS -NOWARN "CUVWSP" -NOWARN "BNDWRN"  -NOWARN DLNCML -TIMESCALE 1ns/1ps -ACCESS +rwc -LOGFILE nc_elab.log -APPEND_LOG worklib.test_top
+ncelab -64BIT -NOCOPYRIGHT  -NOTIMINGCHECKS -MESSAGES -STATUS -NOWARN "CUVWSP" -NOWARN "BNDWRN"  -NOWARN DLNCML -TIMESCALE 1ns/1ps -ACCESS +rwc -LOGFILE nc_elab.log -APPEND_LOG worklib.gyro_top_tb
 
 
 set tswitch = $1
 if ("x$1" == "x-gui") then
     echo "INFO : Running Sim with GUI" 
-    ncsim -messages -gui -64bit +dontStopOnSimulError=1 -input ./test_one.tcl worklib.test_top:module -ncinitialize rand_2state:34546499
+    ncsim -messages -gui -64bit +dontStopOnSimulError=1 -input ./test_one.tcl worklib.gyro_top_tb:module -ncinitialize rand_2state:34546499
 else
     echo "INFO : Running Sim with command line" 
-    ncsim  -NOWARN PRPASZ -NOWARN PRHOPT -NOWARN DLNCML -messages -64bit +dontStopOnSimulError=1 -input ./test_one.tcl worklib.test_top:module -ncinitialize rand_2state:34546499
+
+ ncsim  -NOWARN PRPASZ -NOWARN PRHOPT -NOWARN DLNCML -messages -64bit +dontStopOnSimulError=1 -input ./test_one.tcl worklib.gyro_top_tb:module -ncinitialize rand_2state:34546499
+
     set tswitch = ""
 endif
 

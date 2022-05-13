@@ -1,6 +1,847 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 15:39:02 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0 (Rev. 81)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 13:38:58 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 80) to (Rev. 81)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 11:14:45 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 79) to (Rev. 80)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 11:04:45 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 78) to (Rev. 79)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 10:50:53 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 29) to (Rev. 30)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 10:46:16 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 77) to (Rev. 78)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 10:46:16 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0) from (Rev. 130) to (Rev. 131)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 10:43:58 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 31) to (Rev. 32)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 10:42:36 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0 (Rev. 29)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 10:42:36 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0 (Rev. 130)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 09:51:38 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 76) to (Rev. 77)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 09:45:46 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 75) to (Rev. 76)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 08:50:14 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 74) to (Rev. 75)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 01:07:27 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 28) to (Rev. 29)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 00:57:25 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 27) to (Rev. 28)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May 12 00:06:26 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 26) to (Rev. 27)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 23:51:31 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 25) to (Rev. 26)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 23:44:30 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 24) to (Rev. 25)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 23:02:29 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0 (Rev. 74)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 23:01:20 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 30) to (Rev. 31)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 23:01:20 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 73) to (Rev. 74)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 22:55:51 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 23) to (Rev. 24)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed May 11 11:05:55 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 22) to (Rev. 23)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 10 15:26:01 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 21) to (Rev. 22)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 10 14:48:44 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 20) to (Rev. 21)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 10 14:43:09 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0) from (Rev. 19) to (Rev. 20)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 10 14:30:43 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 29) to (Rev. 30)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 10 14:24:18 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 72) to (Rev. 73)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 10 14:18:46 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_SPI_ip_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_SPI_ip_0_0 (xilinx.com:user:axi4_pl_SPI_ip:1.0 (Rev. 19)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May  6 21:21:12 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 28) to (Rev. 29)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May  6 13:48:18 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 27) to (Rev. 28)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May  6 13:27:17 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0 (Rev. 27)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May  6 11:23:59 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_axis_stream_txfifo_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_2_axis_stream_txfifo_0_2 (user.org:user:axis_stream_txfifo:2.0) from (Rev. 26) to (Rev. 27)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_2_axis_stream_txfifo_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'irq_full'
+
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Fri May  6 11:09:17 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0) from (Rev. 71) to (Rev. 72)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_2_RxFIFO_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'irq_full'
+
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May  5 20:24:51 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_RxFIFO_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_RxFIFO_0 (xilinx.com:user:axis_stream_fifo:1.0 (Rev. 71)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May  5 14:29:57 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0) from (Rev. 129) to (Rev. 130)
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May  5 13:45:57 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0 (Rev. 129)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May  5 13:28:40 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0 (Rev. 129)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Thu May  5 11:21:44 2022
+| Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_2_BiDirChannels_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_2_BiDirChannels_0_0 (xilinx.com:user:BiDirChannels:1.0 (Rev. 129)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
 | Date         : Tue Apr 26 12:14:32 2022
 | Host         : xsjcdickins40x running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : upgrade_ip

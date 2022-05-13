@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_dma_pkg" />
+            <top_module name="axi_vip_pkg" />
+            <top_module name="glbl" />
+            <top_module name="lib_pkg" />
+            <top_module name="std" />
+            <top_module name="tb" />
+            <top_module name="vcomponents" />
+            <top_module name="xil_common_vip_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="260,956.180 ns"></ZoomStartTime>
+      <ZoomEndTime time="262,011.681 ns"></ZoomEndTime>
+      <Cursor1Time time="261,495.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="368"></NameColumnWidth>
+      <ValueColumnWidth column_width="125"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="57" />
+   <wave_markers>
+      <marker label="" time="996550000" />
+      <marker label="" time="169685000" />
+      <marker label="" time="271432662" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb/tb_ACLK">
+      <obj_property name="ElementShortName">tb_ACLK</obj_property>
+      <obj_property name="ObjectShortName">tb_ACLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/tb_ARESETn">
+      <obj_property name="ElementShortName">tb_ARESETn</obj_property>
+      <obj_property name="ObjectShortName">tb_ARESETn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/SPI_D">
+      <obj_property name="ElementShortName">SPI_D</obj_property>
+      <obj_property name="ObjectShortName">SPI_D</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/SPI_SCK">
+      <obj_property name="ElementShortName">SPI_SCK</obj_property>
+      <obj_property name="ObjectShortName">SPI_SCK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/SPI_CS">
+      <obj_property name="ElementShortName">SPI_CS</obj_property>
+      <obj_property name="ObjectShortName">SPI_CS</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/data_reg_0">
+      <obj_property name="ElementShortName">data_reg_0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_reg_0[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/data_reg_1">
+      <obj_property name="ElementShortName">data_reg_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_reg_1[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/data_reg_2">
+      <obj_property name="ElementShortName">data_reg_2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_reg_2[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/data_reg_3">
+      <obj_property name="ElementShortName">data_reg_3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_reg_3[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/spi_adr">
+      <obj_property name="ElementShortName">spi_adr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_adr[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/spi_raddr">
+      <obj_property name="ElementShortName">spi_raddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_raddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_spi_dummy/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_rdata">
+      <obj_property name="ElementShortName">spi_rdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_rdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/cur_state">
+      <obj_property name="ElementShortName">cur_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_clk">
+      <obj_property name="ElementShortName">spi_clk</obj_property>
+      <obj_property name="ObjectShortName">spi_clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/shift_count">
+      <obj_property name="ElementShortName">shift_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_count[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_dir">
+      <obj_property name="ElementShortName">spi_dir</obj_property>
+      <obj_property name="ObjectShortName">spi_dir</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_start">
+      <obj_property name="ElementShortName">spi_start</obj_property>
+      <obj_property name="ObjectShortName">spi_start</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_adr">
+      <obj_property name="ElementShortName">spi_adr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_adr[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_wdata">
+      <obj_property name="ElementShortName">spi_wdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_wdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_rdata">
+      <obj_property name="ElementShortName">spi_rdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_rdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/shift_reg">
+      <obj_property name="ElementShortName">shift_reg[23:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_reg[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/clk_mux_out">
+      <obj_property name="ElementShortName">clk_mux_out</obj_property>
+      <obj_property name="ObjectShortName">clk_mux_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_spi_dummy/spi_oe">
+      <obj_property name="ElementShortName">spi_oe</obj_property>
+      <obj_property name="ObjectShortName">spi_oe</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/spi_count_neg">
+      <obj_property name="ElementShortName">spi_count_neg[5:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_count_neg[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_spi_dummy/spi_count">
+      <obj_property name="ElementShortName">spi_count[5:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_count[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_spi_dummy/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_busy">
+      <obj_property name="ElementShortName">spi_busy</obj_property>
+      <obj_property name="ObjectShortName">spi_busy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_clr">
+      <obj_property name="ElementShortName">slv_reg0_clr</obj_property>
+      <obj_property name="ObjectShortName">slv_reg0_clr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0">
+      <obj_property name="ElementShortName">slv_reg0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/DATA_WORD_0[0]">
+      <obj_property name="ElementShortName">[0]</obj_property>
+      <obj_property name="ObjectShortName">[0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/DATA_WORD_0">
+      <obj_property name="ElementShortName">DATA_WORD_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WORD_0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/cur_state">
+      <obj_property name="ElementShortName">cur_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_busy_remove">
+      <obj_property name="ElementShortName">spi_busy_remove</obj_property>
+      <obj_property name="ObjectShortName">spi_busy_remove</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_busy_remove_ss">
+      <obj_property name="ElementShortName">spi_busy_remove_ss</obj_property>
+      <obj_property name="ObjectShortName">spi_busy_remove_ss</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_busy_remove_s">
+      <obj_property name="ElementShortName">spi_busy_remove_s</obj_property>
+      <obj_property name="ObjectShortName">spi_busy_remove_s</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/SPI/SPI_ip_0/inst/spi_busy_clr">
+      <obj_property name="ElementShortName">spi_busy_clr</obj_property>
+      <obj_property name="ObjectShortName">spi_busy_clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider913" type="divider">
+      <obj_property name="label">RXBUFFER</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/s00_axis_tdata">
+      <obj_property name="ElementShortName">s00_axis_tdata[47:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/s00_axis_tvalid">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/s00_axis_tready">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/s00_axis_tlast">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/m00_axis_tdata">
+      <obj_property name="ElementShortName">m00_axis_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/m00_axis_tvalid">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/m00_axis_tready">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/m00_axis_tlast">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/reg_word2">
+      <obj_property name="ElementShortName">reg_word2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_word2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/tx_byte_count">
+      <obj_property name="ElementShortName">tx_byte_count[47:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_byte_count[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/rx_byte_count">
+      <obj_property name="ElementShortName">rx_byte_count[47:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_byte_count[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/gen_tx_last">
+      <obj_property name="ElementShortName">gen_tx_last</obj_property>
+      <obj_property name="ObjectShortName">gen_tx_last</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/gen_rx_last">
+      <obj_property name="ElementShortName">gen_rx_last</obj_property>
+      <obj_property name="ObjectShortName">gen_rx_last</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/cur_state">
+      <obj_property name="ElementShortName">cur_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/tx_axis_data">
+      <obj_property name="ElementShortName">tx_axis_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_axis_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/tx_axis_vld">
+      <obj_property name="ElementShortName">tx_axis_vld</obj_property>
+      <obj_property name="ObjectShortName">tx_axis_vld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/tx_axis_rdy">
+      <obj_property name="ElementShortName">tx_axis_rdy</obj_property>
+      <obj_property name="ObjectShortName">tx_axis_rdy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/u_pipe_que_48_32/tx_axis_last">
+      <obj_property name="ElementShortName">tx_axis_last</obj_property>
+      <obj_property name="ObjectShortName">tx_axis_last</obj_property>
+   </wvobject>
+</wave_config>

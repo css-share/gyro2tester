@@ -392,8 +392,6 @@ void design_2_axis_switch_0_0::before_end_of_elaboration()
 
     // S_AXI_CTRL' transactor sockets
 
-    mp_impl->S_AXI_CTRL_wr_socket->bind(*(mp_S_AXI_CTRL_transactor->wr_socket));
-    mp_impl->S_AXI_CTRL_rd_socket->bind(*(mp_S_AXI_CTRL_transactor->rd_socket));
   }
   else
   {
@@ -738,8 +736,6 @@ void design_2_axis_switch_0_0::before_end_of_elaboration()
 
     // S_AXI_CTRL' transactor sockets
 
-    mp_impl->S_AXI_CTRL_wr_socket->bind(*(mp_S_AXI_CTRL_transactor->wr_socket));
-    mp_impl->S_AXI_CTRL_rd_socket->bind(*(mp_S_AXI_CTRL_transactor->rd_socket));
   }
   else
   {
@@ -1084,8 +1080,6 @@ void design_2_axis_switch_0_0::before_end_of_elaboration()
 
     // S_AXI_CTRL' transactor sockets
 
-    mp_impl->S_AXI_CTRL_wr_socket->bind(*(mp_S_AXI_CTRL_transactor->wr_socket));
-    mp_impl->S_AXI_CTRL_rd_socket->bind(*(mp_S_AXI_CTRL_transactor->rd_socket));
   }
   else
   {
@@ -1413,8 +1407,6 @@ void design_2_axis_switch_0_0::before_end_of_elaboration()
   // configure 'S_AXI_CTRL' transactor
   if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("design_2_axis_switch_0_0", "S_AXI_CTRL_TLM_MODE") != 1)
   {
-    mp_impl->S_AXI_CTRL_wr_socket->bind(*(mp_S_AXI_CTRL_transactor->wr_socket));
-    mp_impl->S_AXI_CTRL_rd_socket->bind(*(mp_S_AXI_CTRL_transactor->rd_socket));
   
   }
   else
@@ -1748,8 +1740,6 @@ void design_2_axis_switch_0_0::before_end_of_elaboration()
   // configure 'S_AXI_CTRL' transactor
   if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("design_2_axis_switch_0_0", "S_AXI_CTRL_TLM_MODE") != 1)
   {
-    mp_impl->S_AXI_CTRL_wr_socket->bind(*(mp_S_AXI_CTRL_transactor->wr_socket));
-    mp_impl->S_AXI_CTRL_rd_socket->bind(*(mp_S_AXI_CTRL_transactor->rd_socket));
   
   }
   else

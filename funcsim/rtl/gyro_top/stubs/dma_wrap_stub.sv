@@ -198,7 +198,7 @@ end // always_comb begin
 ////////////////////////////////////////////////////
 // Use this CPU slave for 4 registers of our model /
 ////////////////////////////////////////////////////
- axis_stream_txfifo_v2_0_S00_AXI # ( 
+ axi_lite_regs # ( 
                                    .C_S_AXI_DATA_WIDTH(CPU_DMA_DW),
                                    .C_S_AXI_ADDR_WIDTH(CPU_DMA_AW)
  ) axi_dma_cpu_registers_inst (
