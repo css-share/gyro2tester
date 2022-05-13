@@ -6,14 +6,20 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="CMD_READ_REGISTER"/>
+		<item key="selection" value="SPI_REG0, 0x0000001"/>
 		<list key="findhistory">
+			<item value="SPI_REG0, 0x0000000"/>
+			<item value="SPI_BUSY(SPI_REG0)"/>
+			<item value="SPI_BUSY()"/>
 			<item value="CMD_READ_REGISTER"/>
 			<item value=", resp"/>
 			<item value="32&apos;h"/>
 			<item value="tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SPI_REG0, 0x0000001"/>
+			<item value="SPI_BUSY(SPI_REG3)"/>
+			<item value="SPI_BUSY(SPI_REG0)"/>
 			<item value=""/>
 			<item value="0x"/>
 			<item value="XAxi_WriteReg("/>

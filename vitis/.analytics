@@ -288,3 +288,60 @@ timestamp=[2022-05-11 23:06:18], mode=BUILD, duration=0:00:00.230, duration_ms=2
 timestamp=[2022-05-12 00:53:17], mode=BUILD, duration=0:00:00.551, duration_ms=551, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
 timestamp=[2022-05-12 00:57:19], mode=BUILD, duration=0:00:00.590, duration_ms=590, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
 timestamp=[2022-05-12 01:36:30], mode=BUILD, duration=0:00:00.550, duration_ms=550, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:19:07], mode=WORKBENCH_START, duration=0:00:08.339, duration_ms=8339, data={}
+timestamp=[2022-05-12 20:19:08], mode=WORKBENCH_UI_INIT, duration=0:00:00.650, duration_ms=650, data={editors_count=6, platform_editors_count=0, projects_count=8, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,design_2_wrapper,dmaTest,dmaTestFiles,dmaTestFiles_system,dmaTest_system,gyro2testerFirmware,gyro2testerFirmware_system}
+timestamp=[2022-05-12 20:19:08], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.070, duration_ms=70, data={}
+timestamp=[2022-05-12 20:20:15], mode=PLATFORM_GENERATION, duration=0:00:04.928, duration_ms=4928, data={name=design_2_wrapper}
+timestamp=[2022-05-12 20:20:34], mode=PLATFORM_GENERATION, duration=0:00:14.579, duration_ms=14579, data={name=design_2_wrapper}
+timestamp=[2022-05-12 20:20:53], mode=PLATFORM_GENERATION, duration=0:00:04.398, duration_ms=4398, data={name=design_2_wrapper}
+timestamp=[2022-05-12 20:20:53], mode=BUILD, duration=0:00:00.140, duration_ms=140, data={name=gyro2testerFirmware, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 20:20:53], mode=BUILD, duration=0:00:00.100, duration_ms=100, data={name=gyro2testerFirmware_system, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 20:21:10], mode=PLATFORM_GENERATION, duration=0:00:13.083, duration_ms=13083, data={name=design_2_wrapper}
+timestamp=[2022-05-12 20:21:14], mode=BUILD, duration=0:00:01.020, duration_ms=1020, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:21:26], mode=BUILD, duration=0:00:05.076, duration_ms=5076, data={name=gyro2testerFirmware_system, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:21:43], mode=BUILD, duration=0:00:00.190, duration_ms=190, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:33:45], mode=BUILD, duration=0:00:00.150, duration_ms=150, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 20:33:52], mode=BUILD, duration=0:00:00.780, duration_ms=780, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:35:36], mode=BUILD, duration=0:00:00.100, duration_ms=100, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 20:35:36], mode=BUILD, duration=0:00:00.080, duration_ms=80, data={name=dmaTest_system, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 20:35:43], mode=BUILD, duration=0:00:00.740, duration_ms=740, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:35:56], mode=BUILD, duration=0:00:05.060, duration_ms=5060, data={name=dmaTest_system, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:35:56], mode=BUILD, duration=0:00:00.240, duration_ms=240, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:37:46], mode=WORKBENCH_START, duration=0:00:08.622, duration_ms=8622, data={}
+timestamp=[2022-05-12 20:37:47], mode=WORKBENCH_UI_INIT, duration=0:00:00.680, duration_ms=680, data={editors_count=1, platform_editors_count=0, projects_count=8, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,design_2_wrapper,dmaTest,dmaTestFiles,dmaTestFiles_system,dmaTest_system,gyro2testerFirmware,gyro2testerFirmware_system}
+timestamp=[2022-05-12 20:37:48], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.050, duration_ms=50, data={}
+timestamp=[2022-05-12 20:38:05], mode=BUILD, duration=0:00:00.310, duration_ms=310, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 20:43:33], mode=BUILD, duration=0:00:00.170, duration_ms=170, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 20:43:34], mode=BUILD, duration=0:00:00.790, duration_ms=790, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:19:32], mode=PLATFORM_GENERATION, duration=0:00:04.478, duration_ms=4478, data={name=design_2_wrapper}
+timestamp=[2022-05-12 21:19:52], mode=PLATFORM_GENERATION, duration=0:00:13.570, duration_ms=13570, data={name=design_2_wrapper}
+timestamp=[2022-05-12 21:20:09], mode=BUILD, duration=0:00:00.193, duration_ms=193, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:20:14], mode=BUILD, duration=0:00:00.150, duration_ms=150, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 21:20:14], mode=BUILD, duration=0:00:00.093, duration_ms=93, data={name=dmaTest_system, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 21:20:18], mode=BUILD, duration=0:00:00.796, duration_ms=796, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:20:30], mode=BUILD, duration=0:00:05.125, duration_ms=5125, data={name=dmaTest_system, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:20:30], mode=BUILD, duration=0:00:00.095, duration_ms=95, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 21:20:35], mode=BUILD, duration=0:00:00.741, duration_ms=741, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:26:29], mode=BUILD, duration=0:00:00.558, duration_ms=558, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:32:56], mode=BUILD, duration=0:00:00.144, duration_ms=144, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 21:32:57], mode=BUILD, duration=0:00:00.541, duration_ms=541, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:33:55], mode=BUILD, duration=0:00:00.095, duration_ms=95, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 21:33:56], mode=BUILD, duration=0:00:00.497, duration_ms=497, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:37:13], mode=BUILD, duration=0:00:00.681, duration_ms=681, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:40:38], mode=BUILD, duration=0:00:00.452, duration_ms=452, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:41:58], mode=BUILD, duration=0:00:00.502, duration_ms=502, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:50:26], mode=BUILD, duration=0:00:00.546, duration_ms=546, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:55:07], mode=BUILD, duration=0:00:00.544, duration_ms=544, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 21:59:59], mode=BUILD, duration=0:00:00.544, duration_ms=544, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 22:53:36], mode=BUILD, duration=0:00:00.114, duration_ms=114, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 22:53:37], mode=BUILD, duration=0:00:00.737, duration_ms=737, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 23:00:09], mode=BUILD, duration=0:00:00.543, duration_ms=543, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 23:29:21], mode=PLATFORM_GENERATION, duration=0:00:04.408, duration_ms=4408, data={name=design_2_wrapper}
+timestamp=[2022-05-12 23:29:38], mode=PLATFORM_GENERATION, duration=0:00:13.366, duration_ms=13366, data={name=design_2_wrapper}
+timestamp=[2022-05-12 23:29:44], mode=BUILD, duration=0:00:00.091, duration_ms=91, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 23:29:44], mode=BUILD, duration=0:00:00.088, duration_ms=88, data={name=dmaTest_system, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 23:29:51], mode=BUILD, duration=0:00:00.758, duration_ms=758, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 23:30:05], mode=BUILD, duration=0:00:04.910, duration_ms=4910, data={name=dmaTest_system, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 23:30:22], mode=BUILD, duration=0:00:00.091, duration_ms=91, data={name=dmaTest, configuration=Debug, clean_build=true}
+timestamp=[2022-05-12 23:30:32], mode=BUILD, duration=0:00:00.753, duration_ms=753, data={name=dmaTest, configuration=Debug, clean_build=false}
+timestamp=[2022-05-12 23:35:23], mode=BUILD, duration=0:00:00.544, duration_ms=544, data={name=dmaTest, configuration=Debug, clean_build=false}

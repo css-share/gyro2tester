@@ -1266,64 +1266,6 @@
   <spirit:model>
     <spirit:views>
       <spirit:view>
-        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
-        <spirit:displayName>Verilog Simulation</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:modelName>BiDirChannels_v1_0</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 12 17:52:08 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c7dadaf9</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_verilogsimulationwrapper</spirit:name>
-        <spirit:displayName>Verilog Simulation Wrapper</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:modelName>design_2_BiDirChannels_0_0</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_verilogsimulationwrapper_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 12 17:52:08 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c7dadaf9</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_softwaredriver</spirit:name>
-        <spirit:displayName>Software Driver</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 12 17:52:08 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4031944f</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
         <spirit:name>xilinx_verilogsynthesis</spirit:name>
         <spirit:displayName>Verilog Synthesis</spirit:displayName>
         <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -1335,11 +1277,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 12 17:52:08 UTC 2022</spirit:value>
+            <spirit:value>Fri May 13 06:19:41 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4031944f</spirit:value>
+            <spirit:value>9:d4c4018c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1350,7 +1292,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4031944f</spirit:value>
+            <spirit:value>9:d4c4018c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1366,11 +1308,69 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 12 23:57:23 UTC 2022</spirit:value>
+            <spirit:value>Fri May 13 06:19:41 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4031944f</spirit:value>
+            <spirit:value>9:d4c4018c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+        <spirit:displayName>Verilog Simulation</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>BiDirChannels_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri May 13 06:19:41 UTC 2022</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:532f4f3a</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsimulationwrapper</spirit:name>
+        <spirit:displayName>Verilog Simulation Wrapper</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>design_2_BiDirChannels_0_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsimulationwrapper_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri May 13 06:19:41 UTC 2022</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:532f4f3a</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_softwaredriver</spirit:name>
+        <spirit:displayName>Software Driver</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Fri May 13 06:19:41 UTC 2022</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:d4c4018c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1384,11 +1384,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu May 12 23:59:56 UTC 2022</spirit:value>
+            <spirit:value>Fri May 13 06:20:56 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4031944f</spirit:value>
+            <spirit:value>9:d4c4018c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2022,41 +2022,88 @@
   </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/BiDirChannels_v1_0_S00_AXI.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/hdl/GyroInputOutputSerializer.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/clock_divider_by_10.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/clock_divider_by_2.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/dff.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/gen_sync_que_af.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/mux_8x1_1bit.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/src/upCounter8Bits.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8b5e/hdl/BiDirChannels_v1_0.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesiswrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>synth/design_2_BiDirChannels_0_0.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/BiDirChannels_v1_0_S00_AXI.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/BiDirChannels_v1_0_S00_AXI.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/hdl/GyroInputOutputSerializer.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/hdl/GyroInputOutputSerializer.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/clock_divider_by_10.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/clock_divider_by_10.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/clock_divider_by_2.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/clock_divider_by_2.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/dff.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/dff.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/gen_sync_que_af.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/gen_sync_que_af.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/mux_8x1_1bit.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/mux_8x1_1bit.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/upCounter8Bits.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/src/upCounter8Bits.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/46ef/hdl/BiDirChannels_v1_0.sv</spirit:name>
+        <spirit:name>../../ipshared/8b5e/hdl/BiDirChannels_v1_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2093,53 +2140,6 @@
       <spirit:file>
         <spirit:name>drivers/BiDirChannels_v1_0/src/BiDirChannels_selftest.c</spirit:name>
         <spirit:fileType>cSource</spirit:fileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/BiDirChannels_v1_0_S00_AXI.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/hdl/GyroInputOutputSerializer.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/clock_divider_by_10.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/clock_divider_by_2.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/dff.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/gen_sync_que_af.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/mux_8x1_1bit.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/src/upCounter8Bits.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/46ef/hdl/BiDirChannels_v1_0.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogsynthesiswrapper_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>synth/design_2_BiDirChannels_0_0.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2270,7 +2270,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>BiDirChannels_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>131</xilinx:coreRevision>
+      <xilinx:coreRevision>132</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:BiDirChannels:1.0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/BiDirChannels_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2209ef83_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/BiDirChannels_1.0</xilinx:tag>
@@ -2528,6 +2528,24 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@1a14984b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@787feee7_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@77d89e6a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12fc67f5_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@613f20d_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@606930f9_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18a35ef3_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fd9092_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@546875b5_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61e54664_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cf12446_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a1e0343_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d19d837_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cf2610b_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3aacab18_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@551b5d53_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d145ad_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@97beb98_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9dfc8ad_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d6d3d99_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@79dc0604_ARCHIVE_LOCATION">c:/Xilinx_projects/gyro2tester/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
@@ -2633,7 +2651,7 @@
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="325a00ab"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1d36b8d6"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1667321f"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1dc87580"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="5d57c6d9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="8a8332f3"/>

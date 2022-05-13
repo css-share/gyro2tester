@@ -98,7 +98,7 @@ extern "C" {
 # define BUFFER_IDLE_MASK  0x80000000
 # define RXBUFFER_IDLE_MASK  0x80000000
 
-
+# define SPI_BUSY_MASK 0x80000000
 
 
 

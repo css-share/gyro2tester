@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Thu May 12 16:59:55 2022
--- Host        : xsjle190081 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+-- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+-- Date        : Thu May 12 23:20:56 2022
+-- Host        : AsusP8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0_sim_netlist.vhdl
+--               c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0_sim_netlist.vhdl
 -- Design      : design_2_BiDirChannels_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,15 +24,17 @@ entity design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI is
     s00_axis_tready : out STD_LOGIC;
     Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
     \slv_reg0_reg[31]_0\ : out STD_LOGIC;
+    MCK_P : out STD_LOGIC;
+    \slv_reg2_reg[0]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     qempty_reg : out STD_LOGIC;
     \slv_reg0_reg[30]_0\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \slv_reg2_reg[0]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     mux_out : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     clk : in STD_LOGIC;
     s00_axis_tready_0 : in STD_LOGIC;
     rst_n : in STD_LOGIC;
+    txclk : in STD_LOGIC;
     qempty : in STD_LOGIC;
     DRX : in STD_LOGIC;
     \serial_in_reg_reg[0]\ : in STD_LOGIC;
@@ -54,10 +56,10 @@ end design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI;
 
 architecture STRUCTURE of design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI is
   signal \^q\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal Q_i_3_n_0 : STD_LOGIC;
   signal Q_i_4_n_0 : STD_LOGIC;
   signal Q_i_5_n_0 : STD_LOGIC;
   signal Q_i_6_n_0 : STD_LOGIC;
+  signal Q_i_7_n_0 : STD_LOGIC;
   signal aw_en_i_1_n_0 : STD_LOGIC;
   signal aw_en_reg_n_0 : STD_LOGIC;
   signal axi_araddr : STD_LOGIC_VECTOR ( 3 downto 2 );
@@ -206,18 +208,27 @@ begin
       I2 => \^q\(0),
       O => qempty_reg
     );
-Q_i_1: unisim.vcomponents.LUT4
+MCK_P_INST_0: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => \^slv_reg2_reg[0]_0\(0),
+      I1 => txclk,
+      O => MCK_P
+    );
+Q_i_2: unisim.vcomponents.LUT4
     generic map(
       INIT => X"FFFE"
     )
         port map (
-      I0 => Q_i_3_n_0,
-      I1 => Q_i_4_n_0,
-      I2 => Q_i_5_n_0,
-      I3 => Q_i_6_n_0,
+      I0 => Q_i_4_n_0,
+      I1 => Q_i_5_n_0,
+      I2 => Q_i_6_n_0,
+      I3 => Q_i_7_n_0,
       O => mux_out
     );
-Q_i_2: unisim.vcomponents.LUT2
+Q_i_3: unisim.vcomponents.LUT2
     generic map(
       INIT => X"B"
     )
@@ -226,7 +237,7 @@ Q_i_2: unisim.vcomponents.LUT2
       I1 => rst_n,
       O => \slv_reg0_reg[31]_0\
     );
-Q_i_3: unisim.vcomponents.LUT5
+Q_i_4: unisim.vcomponents.LUT5
     generic map(
       INIT => X"44400040"
     )
@@ -236,9 +247,9 @@ Q_i_3: unisim.vcomponents.LUT5
       I2 => Q_reg(1),
       I3 => sel0(2),
       I4 => Q_reg(5),
-      O => Q_i_3_n_0
+      O => Q_i_4_n_0
     );
-Q_i_4: unisim.vcomponents.LUT5
+Q_i_5: unisim.vcomponents.LUT5
     generic map(
       INIT => X"88800080"
     )
@@ -248,9 +259,9 @@ Q_i_4: unisim.vcomponents.LUT5
       I2 => Q_reg(2),
       I3 => sel0(2),
       I4 => Q_reg(6),
-      O => Q_i_4_n_0
+      O => Q_i_5_n_0
     );
-Q_i_5: unisim.vcomponents.LUT5
+Q_i_6: unisim.vcomponents.LUT5
     generic map(
       INIT => X"11100010"
     )
@@ -260,9 +271,9 @@ Q_i_5: unisim.vcomponents.LUT5
       I2 => clk,
       I3 => sel0(2),
       I4 => Q_reg(3),
-      O => Q_i_5_n_0
+      O => Q_i_6_n_0
     );
-Q_i_6: unisim.vcomponents.LUT5
+Q_i_7: unisim.vcomponents.LUT5
     generic map(
       INIT => X"44400040"
     )
@@ -272,7 +283,7 @@ Q_i_6: unisim.vcomponents.LUT5
       I2 => Q_reg(0),
       I3 => sel0(2),
       I4 => Q_reg(4),
-      O => Q_i_6_n_0
+      O => Q_i_7_n_0
     );
 aw_en_i_1: unisim.vcomponents.LUT6
     generic map(
@@ -2085,10 +2096,10 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_clock_divider_by_10 is
   signal \r_reg[2]_i_1_n_0\ : STD_LOGIC;
   signal \r_reg[3]_i_1_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of out_clock_int_i_1 : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \r_reg[0]_i_1__0\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \r_reg[2]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \r_reg[3]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of out_clock_int_i_1 : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \r_reg[0]_i_1__0\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \r_reg[2]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \r_reg[3]_i_1\ : label is "soft_lutpair13";
 begin
   SYNCK <= \^synck\;
 out_clock_int_i_1: unisim.vcomponents.LUT5
@@ -2193,7 +2204,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_2_BiDirChannels_0_0_dff is
   port (
     Q_reg_0 : out STD_LOGIC;
-    MCK_N : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[1]\ : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[0]\ : out STD_LOGIC;
     \count_48_reg[2]\ : out STD_LOGIC;
@@ -2204,6 +2214,7 @@ entity design_2_BiDirChannels_0_0_dff is
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
     \FSM_onehot_cur_state_reg[1]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     Q_reg_1 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    MCK_N : out STD_LOGIC;
     txclk_s_reg_0 : out STD_LOGIC;
     Q_reg_2 : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[2]\ : out STD_LOGIC;
@@ -2223,7 +2234,8 @@ entity design_2_BiDirChannels_0_0_dff is
     \rx_testpattern_reg[15]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \rx_testpattern_reg[15]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \rx_testpattern_reg[15]_1\ : in STD_LOGIC;
-    DSYNC : in STD_LOGIC;
+    \serial_in_count_reg[0]\ : in STD_LOGIC;
+    \serial_in_count_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \FSM_onehot_cur_state_reg[2]_0\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -2231,26 +2243,27 @@ entity design_2_BiDirChannels_0_0_dff is
 end design_2_BiDirChannels_0_0_dff;
 
 architecture STRUCTURE of design_2_BiDirChannels_0_0_dff is
+  signal D0 : STD_LOGIC;
   signal \FSM_onehot_cur_state[2]_i_3_n_0\ : STD_LOGIC;
   signal \FSM_onehot_cur_state[2]_i_5_n_0\ : STD_LOGIC;
-  signal \^mck_n\ : STD_LOGIC;
   signal \^q_reg_0\ : STD_LOGIC;
   signal \^serial_in_load_d\ : STD_LOGIC;
   signal shift_reg_shift : STD_LOGIC;
   signal \^txclk_s_reg\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_onehot_cur_state[2]_i_2\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of MCK_N_INST_0 : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \FSM_onehot_cur_state[2]_i_2\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of MCK_N_INST_0 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of Q_i_1 : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \count_48[4]_i_3\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \count_48[5]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \free_48_count[6]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \serial_in_count[5]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \serial_in_count[5]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of serial_in_load_i_1 : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \serial_in_reg[47]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \shift_reg[47]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \test_pattern[15]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of txclk_s_i_1 : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \test_pattern[15]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of txclk_s_i_1 : label is "soft_lutpair8";
 begin
-  MCK_N <= \^mck_n\;
   Q_reg_0 <= \^q_reg_0\;
   serial_in_load_d <= \^serial_in_load_d\;
   txclk_s_reg <= \^txclk_s_reg\;
@@ -2327,20 +2340,29 @@ begin
       I5 => txclk_s,
       O => \FSM_onehot_cur_state[2]_i_5_n_0\
     );
-MCK_N_INST_0: unisim.vcomponents.LUT1
+MCK_N_INST_0: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"B"
+    )
+        port map (
+      I0 => \^q_reg_0\,
+      I1 => \serial_in_count_reg[0]_0\(0),
+      O => MCK_N
+    );
+Q_i_1: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => \^q_reg_0\,
-      O => \^mck_n\
+      O => D0
     );
 Q_reg: unisim.vcomponents.FDCE
      port map (
       C => mux_out,
       CE => '1',
       CLR => Q_reg_3,
-      D => \^mck_n\,
+      D => D0,
       Q => \^q_reg_0\
     );
 \count_48[3]_i_1\: unisim.vcomponents.LUT6
@@ -2417,15 +2439,16 @@ Q_reg: unisim.vcomponents.FDCE
       I5 => \rx_testpattern_reg[15]_1\,
       O => \^serial_in_load_d\
     );
-\serial_in_count[5]_i_1\: unisim.vcomponents.LUT4
+\serial_in_count[5]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FF40"
+      INIT => X"FFFF0080"
     )
         port map (
-      I0 => txclk_s,
-      I1 => \^q_reg_0\,
-      I2 => DSYNC,
-      I3 => Q_reg_3,
+      I0 => \serial_in_count_reg[0]\,
+      I1 => \serial_in_count_reg[0]_0\(0),
+      I2 => \^q_reg_0\,
+      I3 => txclk_s,
+      I4 => Q_reg_3,
       O => SR(0)
     );
 serial_in_load_i_1: unisim.vcomponents.LUT2
@@ -2521,148 +2544,148 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_gen_sync_que_af is
   attribute srl_name : string;
   attribute srl_name of \rgfile_reg[3][0]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][0]_srl4 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \rgfile_reg[3][0]_srl4_i_1__0\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][0]_srl4_i_1__0\ : label is "soft_lutpair37";
   attribute srl_bus_name of \rgfile_reg[3][10]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][10]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][10]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][10]_srl4_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][10]_srl4_i_1\ : label is "soft_lutpair32";
   attribute srl_bus_name of \rgfile_reg[3][11]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][11]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][11]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][11]_srl4_i_1\ : label is "soft_lutpair31";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][11]_srl4_i_1\ : label is "soft_lutpair32";
   attribute srl_bus_name of \rgfile_reg[3][12]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][12]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][12]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][12]_srl4_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][12]_srl4_i_1\ : label is "soft_lutpair31";
   attribute srl_bus_name of \rgfile_reg[3][13]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][13]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][13]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][13]_srl4_i_1\ : label is "soft_lutpair30";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][13]_srl4_i_1\ : label is "soft_lutpair31";
   attribute srl_bus_name of \rgfile_reg[3][14]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][14]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][14]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][14]_srl4_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][14]_srl4_i_1\ : label is "soft_lutpair30";
   attribute srl_bus_name of \rgfile_reg[3][15]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][15]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][15]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][15]_srl4_i_1\ : label is "soft_lutpair29";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][15]_srl4_i_1\ : label is "soft_lutpair30";
   attribute srl_bus_name of \rgfile_reg[3][16]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][16]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][16]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][16]_srl4_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][16]_srl4_i_1\ : label is "soft_lutpair29";
   attribute srl_bus_name of \rgfile_reg[3][17]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][17]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][17]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][17]_srl4_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][17]_srl4_i_1\ : label is "soft_lutpair28";
   attribute srl_bus_name of \rgfile_reg[3][18]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][18]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][18]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][18]_srl4_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][18]_srl4_i_1\ : label is "soft_lutpair27";
   attribute srl_bus_name of \rgfile_reg[3][19]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][19]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][19]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][19]_srl4_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][19]_srl4_i_1\ : label is "soft_lutpair26";
   attribute srl_bus_name of \rgfile_reg[3][1]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][1]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][1]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][1]_srl4_i_1\ : label is "soft_lutpair36";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][1]_srl4_i_1\ : label is "soft_lutpair37";
   attribute srl_bus_name of \rgfile_reg[3][20]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][20]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][20]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][20]_srl4_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][20]_srl4_i_1\ : label is "soft_lutpair25";
   attribute srl_bus_name of \rgfile_reg[3][21]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][21]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][21]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][21]_srl4_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][21]_srl4_i_1\ : label is "soft_lutpair24";
   attribute srl_bus_name of \rgfile_reg[3][22]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][22]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][22]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][22]_srl4_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][22]_srl4_i_1\ : label is "soft_lutpair23";
   attribute srl_bus_name of \rgfile_reg[3][23]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][23]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][23]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][23]_srl4_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][23]_srl4_i_1\ : label is "soft_lutpair22";
   attribute srl_bus_name of \rgfile_reg[3][24]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][24]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][24]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][24]_srl4_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][24]_srl4_i_1\ : label is "soft_lutpair21";
   attribute srl_bus_name of \rgfile_reg[3][25]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][25]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][25]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][25]_srl4_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][25]_srl4_i_1\ : label is "soft_lutpair20";
   attribute srl_bus_name of \rgfile_reg[3][26]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][26]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][26]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][26]_srl4_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][26]_srl4_i_1\ : label is "soft_lutpair19";
   attribute srl_bus_name of \rgfile_reg[3][27]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][27]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][27]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][27]_srl4_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][27]_srl4_i_1\ : label is "soft_lutpair18";
   attribute srl_bus_name of \rgfile_reg[3][28]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][28]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][28]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][28]_srl4_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][28]_srl4_i_1\ : label is "soft_lutpair17";
   attribute srl_bus_name of \rgfile_reg[3][29]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][29]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][29]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][29]_srl4_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][29]_srl4_i_1\ : label is "soft_lutpair16";
   attribute srl_bus_name of \rgfile_reg[3][2]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][2]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][2]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][2]_srl4_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][2]_srl4_i_1\ : label is "soft_lutpair36";
   attribute srl_bus_name of \rgfile_reg[3][30]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][30]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][30]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][30]_srl4_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][30]_srl4_i_1\ : label is "soft_lutpair15";
   attribute srl_bus_name of \rgfile_reg[3][31]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][31]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][31]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][31]_srl4_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][31]_srl4_i_1\ : label is "soft_lutpair14";
   attribute srl_bus_name of \rgfile_reg[3][32]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][32]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][32]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][32]_srl4_i_1\ : label is "soft_lutpair28";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][32]_srl4_i_1\ : label is "soft_lutpair29";
   attribute srl_bus_name of \rgfile_reg[3][33]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][33]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][33]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][33]_srl4_i_1\ : label is "soft_lutpair27";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][33]_srl4_i_1\ : label is "soft_lutpair28";
   attribute srl_bus_name of \rgfile_reg[3][34]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][34]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][34]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][34]_srl4_i_1\ : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][34]_srl4_i_1\ : label is "soft_lutpair27";
   attribute srl_bus_name of \rgfile_reg[3][35]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][35]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][35]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][35]_srl4_i_1\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][35]_srl4_i_1\ : label is "soft_lutpair26";
   attribute srl_bus_name of \rgfile_reg[3][36]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][36]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][36]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][36]_srl4_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][36]_srl4_i_1\ : label is "soft_lutpair25";
   attribute srl_bus_name of \rgfile_reg[3][37]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][37]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][37]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][37]_srl4_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][37]_srl4_i_1\ : label is "soft_lutpair24";
   attribute srl_bus_name of \rgfile_reg[3][38]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][38]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][38]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][38]_srl4_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][38]_srl4_i_1\ : label is "soft_lutpair23";
   attribute srl_bus_name of \rgfile_reg[3][39]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][39]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][39]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][39]_srl4_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][39]_srl4_i_1\ : label is "soft_lutpair22";
   attribute srl_bus_name of \rgfile_reg[3][3]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][3]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][3]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][3]_srl4_i_1\ : label is "soft_lutpair35";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][3]_srl4_i_1\ : label is "soft_lutpair36";
   attribute srl_bus_name of \rgfile_reg[3][40]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][40]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][40]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][40]_srl4_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][40]_srl4_i_1\ : label is "soft_lutpair21";
   attribute srl_bus_name of \rgfile_reg[3][41]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][41]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][41]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][41]_srl4_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][41]_srl4_i_1\ : label is "soft_lutpair20";
   attribute srl_bus_name of \rgfile_reg[3][42]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][42]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][42]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][42]_srl4_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][42]_srl4_i_1\ : label is "soft_lutpair19";
   attribute srl_bus_name of \rgfile_reg[3][43]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][43]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][43]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][43]_srl4_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][43]_srl4_i_1\ : label is "soft_lutpair18";
   attribute srl_bus_name of \rgfile_reg[3][44]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][44]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][44]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][44]_srl4_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][44]_srl4_i_1\ : label is "soft_lutpair17";
   attribute srl_bus_name of \rgfile_reg[3][45]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][45]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][45]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][45]_srl4_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][45]_srl4_i_1\ : label is "soft_lutpair16";
   attribute srl_bus_name of \rgfile_reg[3][46]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][46]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][46]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][46]_srl4_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][46]_srl4_i_1\ : label is "soft_lutpair15";
   attribute srl_bus_name of \rgfile_reg[3][47]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][47]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][47]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][47]_srl4_i_2\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][47]_srl4_i_2\ : label is "soft_lutpair14";
   attribute srl_bus_name of \rgfile_reg[3][4]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][4]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][4]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][4]_srl4_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][4]_srl4_i_1\ : label is "soft_lutpair35";
   attribute srl_bus_name of \rgfile_reg[3][5]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][5]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][5]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][5]_srl4_i_1\ : label is "soft_lutpair34";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][5]_srl4_i_1\ : label is "soft_lutpair35";
   attribute srl_bus_name of \rgfile_reg[3][6]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][6]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][6]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][6]_srl4_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][6]_srl4_i_1\ : label is "soft_lutpair34";
   attribute srl_bus_name of \rgfile_reg[3][7]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][7]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][7]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][7]_srl4_i_1\ : label is "soft_lutpair33";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][7]_srl4_i_1\ : label is "soft_lutpair34";
   attribute srl_bus_name of \rgfile_reg[3][8]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][8]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][8]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][8]_srl4_i_1\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][8]_srl4_i_1\ : label is "soft_lutpair33";
   attribute srl_bus_name of \rgfile_reg[3][9]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][9]_srl4\ : label is "\inst/u_gyro_serialout/u_rx_buff_in/rgfile_reg[3][9]_srl4 ";
-  attribute SOFT_HLUTNM of \rgfile_reg[3][9]_srl4_i_1\ : label is "soft_lutpair32";
+  attribute SOFT_HLUTNM of \rgfile_reg[3][9]_srl4_i_1\ : label is "soft_lutpair33";
 begin
 \fill[0]_i_1__0\: unisim.vcomponents.LUT1
     generic map(
@@ -4025,10 +4048,10 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_gen_sync_que_af_0 is
   signal \rptr[1]_i_1_n_0\ : STD_LOGIC;
   signal tx_fifo_tdata_t : STD_LOGIC_VECTOR ( 47 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \fill[0]_i_1\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \fill[1]_i_1\ : label is "soft_lutpair39";
-  attribute SOFT_HLUTNM of \fill[2]_i_2\ : label is "soft_lutpair37";
-  attribute SOFT_HLUTNM of qfull_i_1 : label is "soft_lutpair37";
+  attribute SOFT_HLUTNM of \fill[0]_i_1\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \fill[1]_i_1\ : label is "soft_lutpair40";
+  attribute SOFT_HLUTNM of \fill[2]_i_2\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of qfull_i_1 : label is "soft_lutpair38";
   attribute srl_bus_name : string;
   attribute srl_bus_name of \rgfile_reg[3][0]_srl4\ : label is "\inst/u_gyro_serialout/u_tx_buff_in/rgfile_reg[3] ";
   attribute srl_name : string;
@@ -4127,8 +4150,8 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_gen_sync_que_af_0 is
   attribute srl_name of \rgfile_reg[3][8]_srl4\ : label is "\inst/u_gyro_serialout/u_tx_buff_in/rgfile_reg[3][8]_srl4 ";
   attribute srl_bus_name of \rgfile_reg[3][9]_srl4\ : label is "\inst/u_gyro_serialout/u_tx_buff_in/rgfile_reg[3] ";
   attribute srl_name of \rgfile_reg[3][9]_srl4\ : label is "\inst/u_gyro_serialout/u_tx_buff_in/rgfile_reg[3][9]_srl4 ";
-  attribute SOFT_HLUTNM of \rptr[0]_i_1\ : label is "soft_lutpair38";
-  attribute SOFT_HLUTNM of \rptr[1]_i_1\ : label is "soft_lutpair38";
+  attribute SOFT_HLUTNM of \rptr[0]_i_1\ : label is "soft_lutpair39";
+  attribute SOFT_HLUTNM of \rptr[1]_i_1\ : label is "soft_lutpair39";
 begin
   qempty <= \^qempty\;
   qfull_reg_0 <= \^qfull_reg_0\;
@@ -5560,12 +5583,12 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_upCounter8Bits is
   signal r_next : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal \r_reg[6]_i_2_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \r_reg[0]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \r_reg[1]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \r_reg[2]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \r_reg[3]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \r_reg[4]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \r_reg[6]_i_2\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \r_reg[0]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \r_reg[1]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \r_reg[2]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \r_reg[3]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \r_reg[4]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \r_reg[6]_i_2\ : label is "soft_lutpair9";
 begin
   Q(6 downto 0) <= \^q\(6 downto 0);
 \r_reg[0]_i_1\: unisim.vcomponents.LUT1
@@ -5717,7 +5740,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_2_BiDirChannels_0_0_clock_divider_by_2 is
   port (
     Q_reg : out STD_LOGIC;
-    MCK_N : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[1]\ : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[0]\ : out STD_LOGIC;
     \count_48_reg[2]\ : out STD_LOGIC;
@@ -5728,6 +5750,7 @@ entity design_2_BiDirChannels_0_0_clock_divider_by_2 is
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
     \FSM_onehot_cur_state_reg[1]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     Q_reg_0 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    MCK_N : out STD_LOGIC;
     txclk_s_reg_0 : out STD_LOGIC;
     Q_reg_1 : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[2]\ : out STD_LOGIC;
@@ -5747,7 +5770,8 @@ entity design_2_BiDirChannels_0_0_clock_divider_by_2 is
     \rx_testpattern_reg[15]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \rx_testpattern_reg[15]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \rx_testpattern_reg[15]_1\ : in STD_LOGIC;
-    DSYNC : in STD_LOGIC;
+    \serial_in_count_reg[0]\ : in STD_LOGIC;
+    \serial_in_count_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \FSM_onehot_cur_state_reg[2]_0\ : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -5758,7 +5782,6 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_clock_divider_by_2 is
 begin
 ff0: entity work.design_2_BiDirChannels_0_0_dff
      port map (
-      DSYNC => DSYNC,
       E(0) => E(0),
       \FSM_onehot_cur_state_reg[0]\ => \FSM_onehot_cur_state_reg[0]\,
       \FSM_onehot_cur_state_reg[0]_0\ => \FSM_onehot_cur_state_reg[0]_0\,
@@ -5785,6 +5808,8 @@ ff0: entity work.design_2_BiDirChannels_0_0_dff
       \rx_testpattern_reg[15]\(1 downto 0) => \rx_testpattern_reg[15]\(1 downto 0),
       \rx_testpattern_reg[15]_0\(1 downto 0) => \rx_testpattern_reg[15]_0\(1 downto 0),
       \rx_testpattern_reg[15]_1\ => \rx_testpattern_reg[15]_1\,
+      \serial_in_count_reg[0]\ => \serial_in_count_reg[0]\,
+      \serial_in_count_reg[0]_0\(0) => \serial_in_count_reg[0]_0\(0),
       serial_in_load_d => serial_in_load_d,
       \shift_reg_reg[0]\ => \shift_reg_reg[0]\,
       test_pattern_0 => test_pattern_0,
@@ -5801,11 +5826,11 @@ entity design_2_BiDirChannels_0_0_GyroInputOutputSerializer is
   port (
     qfull_reg : out STD_LOGIC;
     qempty : out STD_LOGIC;
-    Q_reg : out STD_LOGIC;
-    MCK_N : out STD_LOGIC;
+    txclk : out STD_LOGIC;
     SYNCK : out STD_LOGIC;
     \FSM_onehot_cur_state_reg[1]_0\ : out STD_LOGIC;
     DSYNC : out STD_LOGIC;
+    MCK_N : out STD_LOGIC;
     \r_reg_reg[6]\ : out STD_LOGIC_VECTOR ( 6 downto 0 );
     DTX : out STD_LOGIC;
     \shift_reg_reg[47]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -5815,8 +5840,8 @@ entity design_2_BiDirChannels_0_0_GyroInputOutputSerializer is
     clk : in STD_LOGIC;
     mux_out : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    \serial_in_count_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axis_tvalid : in STD_LOGIC;
-    DSYNC_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     \shift_reg_reg[47]_1\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axis_tdata : in STD_LOGIC_VECTOR ( 47 downto 0 );
     \FSM_onehot_cur_state_reg[2]_0\ : in STD_LOGIC;
@@ -5828,6 +5853,7 @@ entity design_2_BiDirChannels_0_0_GyroInputOutputSerializer is
 end design_2_BiDirChannels_0_0_GyroInputOutputSerializer;
 
 architecture STRUCTURE of design_2_BiDirChannels_0_0_GyroInputOutputSerializer is
+  signal CLK_DIV2_n_1 : STD_LOGIC;
   signal CLK_DIV2_n_12 : STD_LOGIC;
   signal CLK_DIV2_n_13 : STD_LOGIC;
   signal CLK_DIV2_n_14 : STD_LOGIC;
@@ -5837,11 +5863,10 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_GyroInputOutputSerializer i
   signal CLK_DIV2_n_3 : STD_LOGIC;
   signal CLK_DIV2_n_4 : STD_LOGIC;
   signal CLK_DIV2_n_5 : STD_LOGIC;
-  signal CLK_DIV2_n_6 : STD_LOGIC;
-  signal CLK_DIV2_n_9 : STD_LOGIC;
-  signal \^dsync\ : STD_LOGIC;
+  signal CLK_DIV2_n_8 : STD_LOGIC;
   signal DSYNC_INST_0_i_1_n_0 : STD_LOGIC;
   signal DSYNC_INST_0_i_2_n_0 : STD_LOGIC;
+  signal DSYNC_INST_0_i_3_n_0 : STD_LOGIC;
   signal \^fsm_onehot_cur_state_reg[1]_0\ : STD_LOGIC;
   signal count_48 : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal \count_48[0]_i_1_n_0\ : STD_LOGIC;
@@ -5858,6 +5883,7 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_GyroInputOutputSerializer i
   signal \free_48_count[4]_i_1_n_0\ : STD_LOGIC;
   signal \free_48_count[5]_i_1_n_0\ : STD_LOGIC;
   signal \free_48_count[6]_i_2_n_0\ : STD_LOGIC;
+  signal \free_48_count[6]_i_3_n_0\ : STD_LOGIC;
   signal \free_48_count_reg_n_0_[0]\ : STD_LOGIC;
   signal \free_48_count_reg_n_0_[1]\ : STD_LOGIC;
   signal \free_48_count_reg_n_0_[2]\ : STD_LOGIC;
@@ -6025,66 +6051,66 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_GyroInputOutputSerializer i
   signal \NLW_test_pattern0_carry__2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_test_pattern0_carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of DSYNC_INST_0_i_1 : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of DSYNC_INST_0 : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of DSYNC_INST_0_i_2 : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of DTX_INST_0 : label is "soft_lutpair50";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_onehot_cur_state_reg[0]\ : label is "SHIFT:010,IDLE:001,LOAD:100";
   attribute FSM_ENCODED_STATES of \FSM_onehot_cur_state_reg[1]\ : label is "SHIFT:010,IDLE:001,LOAD:100";
   attribute FSM_ENCODED_STATES of \FSM_onehot_cur_state_reg[2]\ : label is "SHIFT:010,IDLE:001,LOAD:100";
-  attribute SOFT_HLUTNM of \count_48[0]_i_1\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \count_48[1]_i_1\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \count_48[2]_i_1\ : label is "soft_lutpair43";
-  attribute SOFT_HLUTNM of \count_48[4]_i_2\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \count_48[5]_i_2\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \count_48[5]_i_3\ : label is "soft_lutpair40";
-  attribute SOFT_HLUTNM of \free_48_count[0]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \free_48_count[1]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \free_48_count[2]_i_1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \free_48_count[3]_i_1\ : label is "soft_lutpair44";
-  attribute SOFT_HLUTNM of \free_48_count[4]_i_1\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \free_48_count[5]_i_1\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \free_48_count[6]_i_2\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \rx_testpattern[0]_i_3\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \count_48[0]_i_1\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \count_48[1]_i_1\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \count_48[2]_i_1\ : label is "soft_lutpair44";
+  attribute SOFT_HLUTNM of \count_48[4]_i_2\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \count_48[5]_i_2\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \count_48[5]_i_3\ : label is "soft_lutpair41";
+  attribute SOFT_HLUTNM of \free_48_count[1]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \free_48_count[2]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \free_48_count[3]_i_1\ : label is "soft_lutpair45";
+  attribute SOFT_HLUTNM of \free_48_count[4]_i_1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \free_48_count[5]_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \free_48_count[6]_i_2\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \free_48_count[6]_i_3\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \rx_testpattern[0]_i_3\ : label is "soft_lutpair46";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \rx_testpattern_reg[0]_i_2\ : label is 11;
   attribute ADDER_THRESHOLD of \rx_testpattern_reg[12]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \rx_testpattern_reg[4]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \rx_testpattern_reg[8]_i_1\ : label is 11;
-  attribute SOFT_HLUTNM of \serial_in_count[0]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \serial_in_count[1]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \serial_in_count[2]_i_1\ : label is "soft_lutpair45";
-  attribute SOFT_HLUTNM of \serial_in_count[3]_i_1\ : label is "soft_lutpair42";
-  attribute SOFT_HLUTNM of \serial_in_count[4]_i_1\ : label is "soft_lutpair42";
+  attribute SOFT_HLUTNM of \serial_in_count[0]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \serial_in_count[1]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \serial_in_count[2]_i_1\ : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \serial_in_count[3]_i_1\ : label is "soft_lutpair43";
+  attribute SOFT_HLUTNM of \serial_in_count[4]_i_1\ : label is "soft_lutpair43";
   attribute ADDER_THRESHOLD of test_pattern0_carry : label is 35;
   attribute ADDER_THRESHOLD of \test_pattern0_carry__0\ : label is 35;
   attribute ADDER_THRESHOLD of \test_pattern0_carry__1\ : label is 35;
   attribute ADDER_THRESHOLD of \test_pattern0_carry__2\ : label is 35;
-  attribute SOFT_HLUTNM of \test_pattern[0]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \test_pattern[10]_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \test_pattern[11]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \test_pattern[12]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \test_pattern[13]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \test_pattern[14]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \test_pattern[15]_i_2\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \test_pattern[1]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \test_pattern[2]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \test_pattern[3]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \test_pattern[4]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \test_pattern[5]_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \test_pattern[6]_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \test_pattern[7]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \test_pattern[8]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \test_pattern[9]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \test_pattern[0]_i_1\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \test_pattern[10]_i_1\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \test_pattern[11]_i_1\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \test_pattern[12]_i_1\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \test_pattern[13]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \test_pattern[14]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \test_pattern[15]_i_2\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \test_pattern[1]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \test_pattern[2]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \test_pattern[3]_i_1\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \test_pattern[4]_i_1\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \test_pattern[5]_i_1\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \test_pattern[6]_i_1\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \test_pattern[7]_i_1\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \test_pattern[8]_i_1\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \test_pattern[9]_i_1\ : label is "soft_lutpair55";
 begin
-  DSYNC <= \^dsync\;
   \FSM_onehot_cur_state_reg[1]_0\ <= \^fsm_onehot_cur_state_reg[1]_0\;
   \shift_reg_reg[47]_0\(0) <= \^shift_reg_reg[47]_0\(0);
 CLK_DIV2: entity work.design_2_BiDirChannels_0_0_clock_divider_by_2
      port map (
-      DSYNC => \^dsync\,
       E(0) => free_48_count,
-      \FSM_onehot_cur_state_reg[0]\ => CLK_DIV2_n_3,
+      \FSM_onehot_cur_state_reg[0]\ => CLK_DIV2_n_2,
       \FSM_onehot_cur_state_reg[0]_0\ => CLK_DIV2_n_16,
-      \FSM_onehot_cur_state_reg[1]\ => CLK_DIV2_n_2,
+      \FSM_onehot_cur_state_reg[1]\ => CLK_DIV2_n_1,
       \FSM_onehot_cur_state_reg[1]_0\(0) => shift_reg,
       \FSM_onehot_cur_state_reg[1]_1\ => CLK_DIV2_n_15,
       \FSM_onehot_cur_state_reg[1]_2\ => \^fsm_onehot_cur_state_reg[1]_0\,
@@ -6093,26 +6119,28 @@ CLK_DIV2: entity work.design_2_BiDirChannels_0_0_clock_divider_by_2
       MCK_N => MCK_N,
       Q(1) => \free_48_count_reg_n_0_[6]\,
       Q(0) => \free_48_count_reg_n_0_[5]\,
-      Q_reg => Q_reg,
+      Q_reg => txclk,
       Q_reg_0(0) => p_9_in,
       Q_reg_1 => CLK_DIV2_n_13,
       Q_reg_2 => qempty_reg,
-      SR(0) => CLK_DIV2_n_9,
+      SR(0) => CLK_DIV2_n_8,
       count_48(5 downto 0) => count_48(5 downto 0),
-      \count_48_reg[2]\ => CLK_DIV2_n_4,
-      \count_48_reg[4]\ => CLK_DIV2_n_6,
+      \count_48_reg[2]\ => CLK_DIV2_n_3,
+      \count_48_reg[4]\ => CLK_DIV2_n_5,
       \count_48_reg[4]_0\ => \count_48[4]_i_2_n_0\,
-      \free_48_count_reg[0]\ => DSYNC_INST_0_i_1_n_0,
+      \free_48_count_reg[0]\ => \free_48_count[6]_i_3_n_0\,
       mux_out => mux_out,
       p_0_in6_in => p_0_in6_in,
       \rx_testpattern_reg[15]\(1 downto 0) => Q(1 downto 0),
       \rx_testpattern_reg[15]_0\(1 downto 0) => serial_in_count_reg(5 downto 4),
       \rx_testpattern_reg[15]_1\ => \rx_testpattern[0]_i_3_n_0\,
+      \serial_in_count_reg[0]\ => DSYNC_INST_0_i_1_n_0,
+      \serial_in_count_reg[0]_0\(0) => \serial_in_count_reg[0]_0\(0),
       serial_in_load_d => serial_in_load_d,
-      \shift_reg_reg[0]\ => DSYNC_INST_0_i_2_n_0,
+      \shift_reg_reg[0]\ => DSYNC_INST_0_i_3_n_0,
       test_pattern_0 => test_pattern_0,
       txclk_s => txclk_s,
-      txclk_s_reg => CLK_DIV2_n_5,
+      txclk_s_reg => CLK_DIV2_n_4,
       txclk_s_reg_0 => CLK_DIV2_n_12
     );
 CLK_DIV_CNTR: entity work.design_2_BiDirChannels_0_0_upCounter8Bits
@@ -6121,32 +6149,40 @@ CLK_DIV_CNTR: entity work.design_2_BiDirChannels_0_0_upCounter8Bits
       clk => clk,
       \r_reg_reg[6]_0\ => qempty_reg
     );
-DSYNC_INST_0: unisim.vcomponents.LUT6
+DSYNC_INST_0: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"00101010FF101010"
+      INIT => X"8"
     )
         port map (
       I0 => DSYNC_INST_0_i_1_n_0,
-      I1 => \free_48_count_reg_n_0_[5]\,
-      I2 => \free_48_count_reg_n_0_[6]\,
-      I3 => DSYNC_0(0),
-      I4 => Q(0),
-      I5 => DSYNC_INST_0_i_2_n_0,
-      O => \^dsync\
+      I1 => \serial_in_count_reg[0]_0\(0),
+      O => DSYNC
     );
-DSYNC_INST_0_i_1: unisim.vcomponents.LUT5
+DSYNC_INST_0_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFFFFFF"
+      INIT => X"0000FFFF04000400"
     )
         port map (
-      I0 => \free_48_count_reg_n_0_[3]\,
-      I1 => \free_48_count_reg_n_0_[1]\,
-      I2 => \free_48_count_reg_n_0_[0]\,
-      I3 => \free_48_count_reg_n_0_[2]\,
-      I4 => \free_48_count_reg_n_0_[4]\,
+      I0 => DSYNC_INST_0_i_2_n_0,
+      I1 => \free_48_count_reg_n_0_[4]\,
+      I2 => \free_48_count_reg_n_0_[5]\,
+      I3 => \free_48_count_reg_n_0_[6]\,
+      I4 => DSYNC_INST_0_i_3_n_0,
+      I5 => Q(0),
       O => DSYNC_INST_0_i_1_n_0
     );
-DSYNC_INST_0_i_2: unisim.vcomponents.LUT6
+DSYNC_INST_0_i_2: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => \free_48_count_reg_n_0_[2]\,
+      I1 => \free_48_count_reg_n_0_[0]\,
+      I2 => \free_48_count_reg_n_0_[1]\,
+      I3 => \free_48_count_reg_n_0_[3]\,
+      O => DSYNC_INST_0_i_2_n_0
+    );
+DSYNC_INST_0_i_3: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFFFFFFFFFE"
     )
@@ -6157,7 +6193,7 @@ DSYNC_INST_0_i_2: unisim.vcomponents.LUT6
       I3 => count_48(1),
       I4 => count_48(3),
       I5 => count_48(5),
-      O => DSYNC_INST_0_i_2_n_0
+      O => DSYNC_INST_0_i_3_n_0
     );
 DTX_INST_0: unisim.vcomponents.LUT3
     generic map(
@@ -6166,7 +6202,7 @@ DTX_INST_0: unisim.vcomponents.LUT3
         port map (
       I0 => \^fsm_onehot_cur_state_reg[1]_0\,
       I1 => \^shift_reg_reg[47]_0\(0),
-      I2 => DSYNC_0(0),
+      I2 => \serial_in_count_reg[0]_0\(0),
       O => DTX
     );
 \FSM_onehot_cur_state_reg[0]\: unisim.vcomponents.FDRE
@@ -6274,7 +6310,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
 \count_48_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_2,
+      CE => CLK_DIV2_n_1,
       D => \count_48[0]_i_1_n_0\,
       Q => count_48(0),
       R => qempty_reg
@@ -6282,7 +6318,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
 \count_48_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_2,
+      CE => CLK_DIV2_n_1,
       D => \count_48[1]_i_1_n_0\,
       Q => count_48(1),
       R => qempty_reg
@@ -6290,7 +6326,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
 \count_48_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_2,
+      CE => CLK_DIV2_n_1,
       D => \count_48[2]_i_1_n_0\,
       Q => count_48(2),
       R => qempty_reg
@@ -6298,8 +6334,8 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
 \count_48_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_2,
-      D => CLK_DIV2_n_4,
+      CE => CLK_DIV2_n_1,
+      D => CLK_DIV2_n_3,
       Q => count_48(3),
       R => qempty_reg
     );
@@ -6307,14 +6343,14 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
      port map (
       C => clk,
       CE => '1',
-      D => CLK_DIV2_n_6,
+      D => CLK_DIV2_n_5,
       Q => count_48(4),
       R => '0'
     );
 \count_48_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_2,
+      CE => CLK_DIV2_n_1,
       D => \count_48[5]_i_2_n_0\,
       Q => count_48(5),
       R => qempty_reg
@@ -6374,7 +6410,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       INIT => X"89"
     )
         port map (
-      I0 => DSYNC_INST_0_i_1_n_0,
+      I0 => \free_48_count[6]_i_3_n_0\,
       I1 => \free_48_count_reg_n_0_[5]\,
       I2 => \free_48_count_reg_n_0_[6]\,
       O => \free_48_count[5]_i_1_n_0\
@@ -6384,10 +6420,22 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       INIT => X"A4"
     )
         port map (
-      I0 => DSYNC_INST_0_i_1_n_0,
+      I0 => \free_48_count[6]_i_3_n_0\,
       I1 => \free_48_count_reg_n_0_[5]\,
       I2 => \free_48_count_reg_n_0_[6]\,
       O => \free_48_count[6]_i_2_n_0\
+    );
+\free_48_count[6]_i_3\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFFFFFF"
+    )
+        port map (
+      I0 => \free_48_count_reg_n_0_[3]\,
+      I1 => \free_48_count_reg_n_0_[1]\,
+      I2 => \free_48_count_reg_n_0_[0]\,
+      I3 => \free_48_count_reg_n_0_[2]\,
+      I4 => \free_48_count_reg_n_0_[4]\,
+      O => \free_48_count[6]_i_3_n_0\
     );
 \free_48_count_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -6853,7 +6901,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       CE => p_9_in,
       D => p_0_in(0),
       Q => serial_in_count_reg(0),
-      R => CLK_DIV2_n_9
+      R => CLK_DIV2_n_8
     );
 \serial_in_count_reg[1]\: unisim.vcomponents.FDRE
      port map (
@@ -6861,7 +6909,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       CE => p_9_in,
       D => p_0_in(1),
       Q => serial_in_count_reg(1),
-      R => CLK_DIV2_n_9
+      R => CLK_DIV2_n_8
     );
 \serial_in_count_reg[2]\: unisim.vcomponents.FDRE
      port map (
@@ -6869,7 +6917,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       CE => p_9_in,
       D => p_0_in(2),
       Q => serial_in_count_reg(2),
-      R => CLK_DIV2_n_9
+      R => CLK_DIV2_n_8
     );
 \serial_in_count_reg[3]\: unisim.vcomponents.FDRE
      port map (
@@ -6877,7 +6925,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       CE => p_9_in,
       D => p_0_in(3),
       Q => serial_in_count_reg(3),
-      R => CLK_DIV2_n_9
+      R => CLK_DIV2_n_8
     );
 \serial_in_count_reg[4]\: unisim.vcomponents.FDRE
      port map (
@@ -6885,7 +6933,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       CE => p_9_in,
       D => p_0_in(4),
       Q => serial_in_count_reg(4),
-      R => CLK_DIV2_n_9
+      R => CLK_DIV2_n_8
     );
 \serial_in_count_reg[5]\: unisim.vcomponents.FDRE
      port map (
@@ -6893,7 +6941,7 @@ SYNC_CLK_DIV: entity work.design_2_BiDirChannels_0_0_clock_divider_by_10
       CE => p_9_in,
       D => p_0_in(5),
       Q => serial_in_count_reg(5),
-      R => CLK_DIV2_n_9
+      R => CLK_DIV2_n_8
     );
 serial_in_load_reg: unisim.vcomponents.FDRE
      port map (
@@ -7999,7 +8047,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[0]_i_1_n_0\,
       Q => test_pattern(0),
       R => qempty_reg
@@ -8007,7 +8055,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[10]_i_1_n_0\,
       Q => test_pattern(10),
       R => qempty_reg
@@ -8015,7 +8063,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[11]_i_1_n_0\,
       Q => test_pattern(11),
       R => qempty_reg
@@ -8023,7 +8071,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[12]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[12]_i_1_n_0\,
       Q => test_pattern(12),
       R => qempty_reg
@@ -8031,7 +8079,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[13]_i_1_n_0\,
       Q => test_pattern(13),
       R => qempty_reg
@@ -8039,7 +8087,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[14]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[14]_i_1_n_0\,
       Q => test_pattern(14),
       R => qempty_reg
@@ -8047,7 +8095,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[15]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[15]_i_2_n_0\,
       Q => test_pattern(15),
       R => qempty_reg
@@ -8055,7 +8103,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[1]_i_1_n_0\,
       Q => test_pattern(1),
       R => qempty_reg
@@ -8063,7 +8111,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[2]_i_1_n_0\,
       Q => test_pattern(2),
       R => qempty_reg
@@ -8071,7 +8119,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[3]_i_1_n_0\,
       Q => test_pattern(3),
       R => qempty_reg
@@ -8079,7 +8127,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[4]_i_1_n_0\,
       Q => test_pattern(4),
       R => qempty_reg
@@ -8087,7 +8135,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[5]_i_1_n_0\,
       Q => test_pattern(5),
       R => qempty_reg
@@ -8095,7 +8143,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[6]_i_1_n_0\,
       Q => test_pattern(6),
       R => qempty_reg
@@ -8103,7 +8151,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[7]_i_1_n_0\,
       Q => test_pattern(7),
       R => qempty_reg
@@ -8111,7 +8159,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[8]_i_1_n_0\,
       Q => test_pattern(8),
       R => qempty_reg
@@ -8119,7 +8167,7 @@ test_pattern0_carry_i_4: unisim.vcomponents.LUT1
 \test_pattern_reg[9]\: unisim.vcomponents.FDRE
      port map (
       C => clk,
-      CE => CLK_DIV2_n_3,
+      CE => CLK_DIV2_n_2,
       D => \test_pattern[9]_i_1_n_0\,
       Q => test_pattern(9),
       R => qempty_reg
@@ -8199,7 +8247,7 @@ u_tx_buff_in: entity work.design_2_BiDirChannels_0_0_gen_sync_que_af_0
       p_0_in6_in => p_0_in6_in,
       qempty => qempty,
       qempty_reg_0 => qempty_reg,
-      qempty_reg_1 => CLK_DIV2_n_5,
+      qempty_reg_1 => CLK_DIV2_n_4,
       qfull_reg_0 => qfull_reg,
       s00_axis_tdata(47 downto 0) => s00_axis_tdata(47 downto 0),
       s00_axis_tvalid => s00_axis_tvalid,
@@ -8214,16 +8262,17 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_2_BiDirChannels_0_0_BiDirChannels_v1_0 is
   port (
-    MCK_P : out STD_LOGIC;
+    txclk : out STD_LOGIC;
     m00_axis_tdata : out STD_LOGIC_VECTOR ( 47 downto 0 );
     s00_axi_awready : out STD_LOGIC;
     s00_axi_wready : out STD_LOGIC;
     s00_axi_arready : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    MCK_N : out STD_LOGIC;
     s00_axi_rvalid : out STD_LOGIC;
-    DSYNC : out STD_LOGIC;
     s00_axis_tready : out STD_LOGIC;
+    DSYNC : out STD_LOGIC;
+    MCK_N : out STD_LOGIC;
+    MCK_P : out STD_LOGIC;
     DTX : out STD_LOGIC;
     m00_axis_tvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
@@ -8250,8 +8299,8 @@ end design_2_BiDirChannels_0_0_BiDirChannels_v1_0;
 
 architecture STRUCTURE of design_2_BiDirChannels_0_0_BiDirChannels_v1_0 is
   signal BiDirChannels_v1_0_S00_AXI_inst_n_11 : STD_LOGIC;
+  signal BiDirChannels_v1_0_S00_AXI_inst_n_13 : STD_LOGIC;
   signal BiDirChannels_v1_0_S00_AXI_inst_n_8 : STD_LOGIC;
-  signal BiDirChannels_v1_0_S00_AXI_inst_n_9 : STD_LOGIC;
   signal \baseClockMux/mux_out\ : STD_LOGIC;
   signal data2 : STD_LOGIC;
   signal data3 : STD_LOGIC;
@@ -8265,14 +8314,17 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0_BiDirChannels_v1_0 is
   signal p_0_in : STD_LOGIC;
   signal p_1_out : STD_LOGIC_VECTOR ( 0 to 0 );
   signal qempty : STD_LOGIC;
+  signal \^txclk\ : STD_LOGIC;
   signal u_gyro_serialout_n_0 : STD_LOGIC;
   signal u_gyro_serialout_n_13 : STD_LOGIC;
-  signal u_gyro_serialout_n_5 : STD_LOGIC;
+  signal u_gyro_serialout_n_4 : STD_LOGIC;
 begin
+  txclk <= \^txclk\;
 BiDirChannels_v1_0_S00_AXI_inst: entity work.design_2_BiDirChannels_0_0_BiDirChannels_v1_0_S00_AXI
      port map (
       D(0) => p_1_out(0),
       DRX => DRX,
+      MCK_P => MCK_P,
       Q(1) => data_word_1(4),
       Q(0) => data_word_1(0),
       Q_reg(6) => data7,
@@ -8285,7 +8337,7 @@ BiDirChannels_v1_0_S00_AXI_inst: entity work.design_2_BiDirChannels_0_0_BiDirCha
       clk => clk,
       mux_out => \baseClockMux/mux_out\,
       qempty => qempty,
-      qempty_reg => BiDirChannels_v1_0_S00_AXI_inst_n_9,
+      qempty_reg => BiDirChannels_v1_0_S00_AXI_inst_n_11,
       rst_n => rst_n,
       s00_axi_araddr(1 downto 0) => s00_axi_araddr(1 downto 0),
       s00_axi_arready => s00_axi_arready,
@@ -8304,25 +8356,24 @@ BiDirChannels_v1_0_S00_AXI_inst: entity work.design_2_BiDirChannels_0_0_BiDirCha
       s00_axi_wvalid => s00_axi_wvalid,
       s00_axis_tready => s00_axis_tready,
       s00_axis_tready_0 => u_gyro_serialout_n_0,
-      \serial_in_reg_reg[0]\ => u_gyro_serialout_n_5,
+      \serial_in_reg_reg[0]\ => u_gyro_serialout_n_4,
       \serial_in_reg_reg[0]_0\(0) => p_0_in,
       \slv_reg0_reg[30]_0\(1) => data_word_0(30),
-      \slv_reg0_reg[30]_0\(0) => BiDirChannels_v1_0_S00_AXI_inst_n_11,
+      \slv_reg0_reg[30]_0\(0) => BiDirChannels_v1_0_S00_AXI_inst_n_13,
       \slv_reg0_reg[31]_0\ => BiDirChannels_v1_0_S00_AXI_inst_n_8,
-      \slv_reg2_reg[0]_0\(0) => data_word_2
+      \slv_reg2_reg[0]_0\(0) => data_word_2,
+      txclk => \^txclk\
     );
 u_gyro_serialout: entity work.design_2_BiDirChannels_0_0_GyroInputOutputSerializer
      port map (
       D(0) => p_1_out(0),
       DSYNC => DSYNC,
-      DSYNC_0(0) => data_word_2,
       DTX => DTX,
-      \FSM_onehot_cur_state_reg[1]_0\ => u_gyro_serialout_n_5,
-      \FSM_onehot_cur_state_reg[2]_0\ => BiDirChannels_v1_0_S00_AXI_inst_n_9,
+      \FSM_onehot_cur_state_reg[1]_0\ => u_gyro_serialout_n_4,
+      \FSM_onehot_cur_state_reg[2]_0\ => BiDirChannels_v1_0_S00_AXI_inst_n_11,
       MCK_N => MCK_N,
       Q(1) => data_word_1(4),
       Q(0) => data_word_1(0),
-      Q_reg => MCK_P,
       SYNCK => SYNCK,
       clk => clk,
       m00_axis_tdata(47 downto 0) => m00_axis_tdata(47 downto 0),
@@ -8341,9 +8392,11 @@ u_gyro_serialout: entity work.design_2_BiDirChannels_0_0_GyroInputOutputSerializ
       \r_reg_reg[6]\(0) => u_gyro_serialout_n_13,
       s00_axis_tdata(47 downto 0) => s00_axis_tdata(47 downto 0),
       s00_axis_tvalid => s00_axis_tvalid,
+      \serial_in_count_reg[0]_0\(0) => data_word_2,
       \shift_reg_reg[47]_0\(0) => p_0_in,
       \shift_reg_reg[47]_1\(1) => data_word_0(30),
-      \shift_reg_reg[47]_1\(0) => BiDirChannels_v1_0_S00_AXI_inst_n_11
+      \shift_reg_reg[47]_1\(0) => BiDirChannels_v1_0_S00_AXI_inst_n_13,
+      txclk => \^txclk\
     );
 end STRUCTURE;
 library IEEE;
@@ -8405,7 +8458,6 @@ end design_2_BiDirChannels_0_0;
 architecture STRUCTURE of design_2_BiDirChannels_0_0 is
   signal \<const0>\ : STD_LOGIC;
   signal \<const1>\ : STD_LOGIC;
-  signal \^mck_p\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of MCK_N : signal is "xilinx.com:signal:clock:1.0 MCK_N CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -8455,7 +8507,6 @@ architecture STRUCTURE of design_2_BiDirChannels_0_0 is
   attribute X_INTERFACE_INFO of s00_axis_tdata : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TDATA";
   attribute X_INTERFACE_INFO of s00_axis_tstrb : signal is "xilinx.com:interface:axis:1.0 S00_AXIS TSTRB";
 begin
-  MCK_P <= \^mck_p\;
   m00_axis_tlast <= \<const0>\;
   m00_axis_tstrb(5) <= \<const0>\;
   m00_axis_tstrb(4) <= \<const0>\;
@@ -8467,7 +8518,6 @@ begin
   s00_axi_bresp(0) <= \<const0>\;
   s00_axi_rresp(1) <= \<const0>\;
   s00_axi_rresp(0) <= \<const0>\;
-  txclk <= \^mck_p\;
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
@@ -8482,7 +8532,7 @@ inst: entity work.design_2_BiDirChannels_0_0_BiDirChannels_v1_0
       DSYNC => DSYNC,
       DTX => DTX,
       MCK_N => MCK_N,
-      MCK_P => \^mck_p\,
+      MCK_P => MCK_P,
       SYNCK => SYNCK,
       clk => clk,
       m00_axis_tdata(47 downto 0) => m00_axis_tdata(47 downto 0),
@@ -8506,6 +8556,7 @@ inst: entity work.design_2_BiDirChannels_0_0_BiDirChannels_v1_0
       s00_axi_wvalid => s00_axi_wvalid,
       s00_axis_tdata(47 downto 0) => s00_axis_tdata(47 downto 0),
       s00_axis_tready => s00_axis_tready,
-      s00_axis_tvalid => s00_axis_tvalid
+      s00_axis_tvalid => s00_axis_tvalid,
+      txclk => txclk
     );
 end STRUCTURE;

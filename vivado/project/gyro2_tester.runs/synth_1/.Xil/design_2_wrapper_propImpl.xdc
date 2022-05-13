@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc rfile:../../../gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc rfile:../../../gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:37 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN C15 [get_ports MCK_P]
 set_property src_info {type:XDC file:1 line:38 export:INPUT save:INPUT read:READ} [current_design]

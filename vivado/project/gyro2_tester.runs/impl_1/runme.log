@@ -1,57 +1,55 @@
-To monitor the LSF job for this run, please use any of the following commands in a new terminal window:
-bjobs -J /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.sh
-bhist -l -J /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/runme.sh
 
 *** Running vivado
     with args -log design_2_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source design_2_wrapper.tcl -notrace
 
 
+
 ****** Vivado v2021.2 (64-bit)
-  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
   **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source design_2_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2679.941 ; gain = 2.020 ; free physical = 197695 ; free virtual = 621605
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1353.359 ; gain = 0.000
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
-add_files: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2760.094 ; gain = 80.152 ; free physical = 194486 ; free virtual = 618482
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx_projects/gyro2tester/vivado/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
+add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1353.359 ; gain = 0.000
 Command: link_design -top design_2_wrapper -part xc7z020clg484-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.dcp' for cell 'design_2_i/BiDirChannels_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.dcp' for cell 'design_2_i/led_driver_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.dcp' for cell 'design_2_i/processing_system7_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.dcp' for cell 'design_2_i/DMA/axi_dma_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.dcp' for cell 'design_2_i/DMA/axi_smc'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_1'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.dcp' for cell 'design_2_i/LOOP1/data_processor_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_2'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_3'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_xbar_0/design_2_xbar_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/xbar'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/s00_couplers/auto_pc'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.dcp' for cell 'design_2_i/RESETS/clk_reset_domain'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.dcp' for cell 'design_2_i/RESETS/txclk_reset_domain'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0.dcp' for cell 'design_2_i/RX_BUFFER/RxFIFO'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_even'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_odd'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_even'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_odd'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_even'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_odd'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.dcp' for cell 'design_2_i/SPI/SPI_ip_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.dcp' for cell 'design_2_i/SPI/iobuf_xil_0'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.dcp' for cell 'design_2_i/TX_BUFFER/TxFIFO'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_2/design_2_blk_mem_1_even_2.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_even'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_tx_even_0/design_2_blk_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_odd'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_odd_0/design_2_blk1_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_even'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk0_mem_tx_odd_0/design_2_blk0_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_odd'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_even_0/design_2_blk1_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_even'
-INFO: [Project 1-454] Reading design checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk2_mem_tx_even_0/design_2_blk2_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_odd'
-Netlist sorting complete. Time (s): cpu = 00:00:00.30 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2760.094 ; gain = 0.000 ; free physical = 187900 ; free virtual = 611739
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.dcp' for cell 'design_2_i/BiDirChannels_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.dcp' for cell 'design_2_i/led_driver_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.dcp' for cell 'design_2_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.dcp' for cell 'design_2_i/DMA/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.dcp' for cell 'design_2_i/DMA/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_0_0/design_2_axis_switch_0_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_1_0/design_2_axis_switch_1_0.dcp' for cell 'design_2_i/LOOP1/axis_switch_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_data_processor_0_0/design_2_data_processor_0_0.dcp' for cell 'design_2_i/LOOP1/data_processor_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_2_0/design_2_axis_switch_2_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_2'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_switch_3_0/design_2_axis_switch_3_0.dcp' for cell 'design_2_i/LOOP2/axis_switch_3'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_xbar_0/design_2_xbar_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.dcp' for cell 'design_2_i/REGISTER_DEMUX/AXI_Register_Demux/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.dcp' for cell 'design_2_i/RESETS/clk_reset_domain'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.dcp' for cell 'design_2_i/RESETS/txclk_reset_domain'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_RxFIFO_0/design_2_RxFIFO_0.dcp' for cell 'design_2_i/RX_BUFFER/RxFIFO'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_even'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_0_odd'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_even'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_1_odd'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_even'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.dcp' for cell 'design_2_i/RX_BUFFER/blk_mem_2_odd'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.dcp' for cell 'design_2_i/SPI/SPI_ip_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.dcp' for cell 'design_2_i/SPI/iobuf_xil_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.dcp' for cell 'design_2_i/TX_BUFFER/TxFIFO'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_1_even_2/design_2_blk_mem_1_even_2.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk_mem_tx_even_0/design_2_blk_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk0_mem_tx_odd'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_odd_0/design_2_blk1_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk0_mem_tx_odd_0/design_2_blk0_mem_tx_odd_0.dcp' for cell 'design_2_i/TX_BUFFER/blk1_mem_tx_odd'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk1_mem_tx_even_0/design_2_blk1_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_even'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_blk2_mem_tx_even_0/design_2_blk2_mem_tx_even_0.dcp' for cell 'design_2_i/TX_BUFFER/blk2_mem_tx_odd'
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.904 . Memory (MB): peak = 1353.359 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 417 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2021.2
@@ -65,57 +63,57 @@ WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because
 WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
 WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
 WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'design_2_i/SPI/iobuf_xil_0/T' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:52]
-WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:56]
-WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:61]
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
-WARNING: [Vivado 12-5846] Redefining clock group MULTI [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:138]
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
-Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
-Finished Parsing XDC File [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xdc] for cell 'design_2_i/processing_system7_0/inst'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1_board.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_1/design_2_proc_sys_reset_0_1.xdc] for cell 'design_2_i/RESETS/txclk_reset_domain/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2_board.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xdc] for cell 'design_2_i/RESETS/clk_reset_domain/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0_board.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_1/bd_0c5c_psr_aclk_0.xdc] for cell 'design_2_i/DMA/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:56]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Parsing XDC File [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+WARNING: [Vivado 12-5846] Redefining clock group MULTI [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc:138]
+Finished Parsing XDC File [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc]
+Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axi_dma_0_0/design_2_axi_dma_0_0_clocks.xdc] for cell 'design_2_i/DMA/axi_dma_0/U0'
 WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
      Instance: design_2_i/LOOP1/axis_switch_0/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
   This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
  2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+ [C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
 WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
      Instance: design_2_i/LOOP1/axis_switch_1/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
   This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
  2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+ [C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
 WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
      Instance: design_2_i/LOOP2/axis_switch_2/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
   This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
  2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+ [C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
 WARNING: [XPM_CDC_HANDSHAKE: TCL-1000] The source and destination clocks are the same. 
      Instance: design_2_i/LOOP2/axis_switch_3/inst/gen_static_router.gen_synch.inst_cdc_handshake/inst_xpm_cdc_handshake 
   This will add unnecessary latency to the design. Please check the design for the following: 
  1) Manually instantiated XPM_CDC modules: Xilinx recommends that you remove these modules. 
  2) Xilinx IP that contains XPM_CDC modules: Verify the connections to the IP to determine whether you can safely ignore this message.
- [/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
+ [C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_handshake.tcl:19]
 INFO: [Project 1-1714] 60 XPM XDC files have been applied to the design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3358.734 ; gain = 0.000 ; free physical = 186032 ; free virtual = 609578
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1991.770 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 119 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
@@ -125,24 +123,24 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 
 41 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 3358.734 ; gain = 598.641 ; free physical = 186049 ; free virtual = 609594
+link_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 1991.770 ; gain = 638.410
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 Running DRC as a precondition to command opt_design
 
 Starting DRC Task
-INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.84 . Memory (MB): peak = 3358.734 ; gain = 0.000 ; free physical = 185979 ; free virtual = 609526
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1991.770 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 263616f4a
+Ending Cache Timing Information Task | Checksum: 1f90e6fed
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.75 . Memory (MB): peak = 3358.734 ; gain = 0.000 ; free physical = 185781 ; free virtual = 609328
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.931 . Memory (MB): peak = 1991.770 ; gain = 0.000
 
 Starting Logic Optimization Task
 
@@ -154,48 +152,48 @@ INFO: [Opt 31-1287] Pulled Inverter design_2_i/RX_BUFFER/RxFIFO/inst/rxfifo_full
 INFO: [Opt 31-1287] Pulled Inverter design_2_i/TX_BUFFER/TxFIFO/inst/u_tx_buff_out/tlast_i_1 into driver instance design_2_i/TX_BUFFER/TxFIFO/inst/u_tx_buff_out/rd_ptr_reg[13]_i_4, which resulted in an inversion of 4 pins
 INFO: [Opt 31-138] Pushed 41 inverter(s) to 142 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 26972a580
+Phase 1 Retarget | Checksum: 1d5f9a7f3
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.82 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 187599 ; free virtual = 611150
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2262.418 ; gain = 1.109
 INFO: [Opt 31-389] Phase Retarget created 101 cells and removed 265 cells
 INFO: [Opt 31-1021] In phase Retarget, 30 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 2 load pin(s).
-Phase 2 Constant propagation | Checksum: 1ed706080
+Phase 2 Constant propagation | Checksum: 22d73de9a
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.98 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 188950 ; free virtual = 612505
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2262.418 ; gain = 1.109
 INFO: [Opt 31-389] Phase Constant propagation created 22 cells and removed 197 cells
 INFO: [Opt 31-1021] In phase Constant propagation, 40 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 1e4ecb3bb
+Phase 3 Sweep | Checksum: 25cf743fd
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 189100 ; free virtual = 612678
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2262.418 ; gain = 1.109
 INFO: [Opt 31-389] Phase Sweep created 6 cells and removed 330 cells
-INFO: [Opt 31-1021] In phase Sweep, 52 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Sweep, 51 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 BUFG optimization
-INFO: [Opt 31-194] Inserted BUFG design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg_0_BUFG_inst to drive 94 load(s) on clock net design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg_0_BUFG
-INFO: [Opt 31-194] Inserted BUFG design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/spi_clk_BUFG_inst to drive 54 load(s) on clock net design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/spi_clk_BUFG
+INFO: [Opt 31-194] Inserted BUFG design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg_0_BUFG_inst to drive 95 load(s) on clock net design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg_0_BUFG
+INFO: [Opt 31-194] Inserted BUFG design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/spi_clk_BUFG_inst to drive 55 load(s) on clock net design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/spi_clk_BUFG
 INFO: [Opt 31-193] Inserted 2 BUFG(s) on clock nets
-Phase 4 BUFG optimization | Checksum: 293a1e798
+Phase 4 BUFG optimization | Checksum: 1d5af933f
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 189763 ; free virtual = 613345
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2262.418 ; gain = 1.109
 INFO: [Opt 31-662] Phase BUFG optimization created 2 cells of which 2 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 293a1e798
+Phase 5 Shift Register Optimization | Checksum: 1d5af933f
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 190175 ; free virtual = 613758
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2262.418 ; gain = 1.109
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
 INFO: [Opt 31-1287] Pulled Inverter design_2_i/REGISTER_DEMUX/AXI_Register_Demux/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/skid_buffer[1]_i_1 into driver instance design_2_i/REGISTER_DEMUX/AXI_Register_Demux/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/skid_buffer[34]_i_2, which resulted in an inversion of 22 pins
-Phase 6 Post Processing Netlist | Checksum: 2572615c2
+Phase 6 Post Processing Netlist | Checksum: 199336165
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 190210 ; free virtual = 613795
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2262.418 ; gain = 1.109
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 2 cells
 INFO: [Opt 31-1021] In phase Post Processing Netlist, 30 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 Opt_design Change Summary
@@ -207,7 +205,7 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Retarget                     |             101  |             265  |                                             30  |
 |  Constant propagation         |              22  |             197  |                                             40  |
-|  Sweep                        |               6  |             330  |                                             52  |
+|  Sweep                        |               6  |             330  |                                             51  |
 |  BUFG optimization            |               2  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
 |  Post Processing Netlist      |               0  |               2  |                                             30  |
@@ -217,18 +215,18 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3515.754 ; gain = 0.000 ; free physical = 190125 ; free virtual = 613711
-Ending Logic Optimization Task | Checksum: 23ad2d5f3
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 2262.418 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 242771bd9
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3515.754 ; gain = 0.004 ; free physical = 190123 ; free virtual = 613710
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2262.418 ; gain = 1.109
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
-INFO: [Pwropt 34-9] Applying IDT optimizations ...
 
 Finished Running Vector-less Activity Propagation
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
 
 
@@ -236,117 +234,118 @@ Starting PowerOpt Patch Enables Task
 INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 54 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
 Number of BRAM Ports augmented: 55 newly gated: 48 Total Ports: 108
-Ending PowerOpt Patch Enables Task | Checksum: 2368583ae
+Ending PowerOpt Patch Enables Task | Checksum: 1e0e4ab8b
 
-Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3847.980 ; gain = 0.000 ; free physical = 192644 ; free virtual = 616309
-Ending Power Optimization Task | Checksum: 2368583ae
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.456 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1e0e4ab8b
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3847.980 ; gain = 332.227 ; free physical = 192661 ; free virtual = 616330
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2512.184 ; gain = 249.766
 
 Starting Final Cleanup Task
 
 Starting Logic Optimization Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Logic Optimization Task | Checksum: 1c67d0574
+Ending Logic Optimization Task | Checksum: 1b42143fa
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3847.980 ; gain = 0.000 ; free physical = 194821 ; free virtual = 618780
-Ending Final Cleanup Task | Checksum: 1c67d0574
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 1b42143fa
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3847.980 ; gain = 0.000 ; free physical = 194796 ; free virtual = 618765
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3847.980 ; gain = 0.000 ; free physical = 194794 ; free virtual = 618763
-Ending Netlist Obfuscation Task | Checksum: 1c67d0574
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1b42143fa
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3847.980 ; gain = 0.000 ; free physical = 194792 ; free virtual = 618762
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2512.184 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 77 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:18 . Memory (MB): peak = 3847.980 ; gain = 489.246 ; free physical = 194791 ; free virtual = 618761
+opt_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 2512.184 ; gain = 520.414
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3847.980 ; gain = 0.000 ; free physical = 194694 ; free virtual = 618684
-INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_opt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 2512.184 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file design_2_wrapper_drc_opted.rpt -pb design_2_wrapper_drc_opted.pb -rpx design_2_wrapper_drc_opted.rpx
 Command: report_drc -file design_2_wrapper_drc_opted.rpt -pb design_2_wrapper_drc_opted.pb -rpx design_2_wrapper_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_3/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_4/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_5/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_6/O
-INFO: [DRC 23-27] Running DRC with 8 threads
-INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_drc_opted.rpt.
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_7/O
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_drc_opted.rpt.
 report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2512.184 ; gain = 0.000
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
-INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 Running DRC as a precondition to command place_design
-INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 Starting Placer Task
-INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192017 ; free virtual = 616439
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18b02330d
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1435a9407
 
-Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192015 ; free virtual = 616439
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192013 ; free virtual = 616437
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-WARNING: [Place 30-568] A LUT 'design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1' is driving clock pin of 1 registers. This could lead to large hold time violations. First few involved registers are:
+WARNING: [Place 30-568] A LUT 'design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2' is driving clock pin of 1 registers. This could lead to large hold time violations. First few involved registers are:
 	design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg {FDCE}
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 16ad9b8ed
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 164a9cf5b
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191868 ; free virtual = 616372
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 156290b58
+Phase 1.3 Build Placer Netlist Model | Checksum: 1ed739c4e
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191867 ; free virtual = 616470
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 156290b58
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1ed739c4e
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191852 ; free virtual = 616455
-Phase 1 Placer Initialization | Checksum: 156290b58
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1ed739c4e
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191790 ; free virtual = 616396
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 1cffa76a7
+Phase 2.1 Floorplanning | Checksum: 19dd79037
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191609 ; free virtual = 616237
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1e966d0d7
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 22c89d290
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192112 ; free virtual = 616754
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 1e966d0d7
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 22c89d290
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192103 ; free virtual = 616747
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2.4 Global Placement Core
 
 Phase 2.4.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 512 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 503 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-1138] End 1 Pass. Optimized 189 nets or LUTs. Breaked 0 LUT, combined 189 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 193 nets or LUTs. Breaked 0 LUT, combined 193 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -357,7 +356,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191702 ; free virtual = 616663
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -366,7 +365,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |            189  |                   189  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |            193  |                   193  |           0  |           1  |  00:00:00  |
 |  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
@@ -375,64 +374,64 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |            189  |                   189  |           0  |           4  |  00:00:00  |
+|  Total                                            |            0  |            193  |                   193  |           0  |           4  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.4.1 Physical Synthesis In Placer | Checksum: 1fb559970
+Phase 2.4.1 Physical Synthesis In Placer | Checksum: 107f7d472
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:13 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191688 ; free virtual = 616651
-Phase 2.4 Global Placement Core | Checksum: 1b1df120d
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 2.4 Global Placement Core | Checksum: d1fad3d6
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:14 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191731 ; free virtual = 616699
-Phase 2 Global Placement | Checksum: 1b1df120d
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 2 Global Placement | Checksum: d1fad3d6
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:14 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191736 ; free virtual = 616703
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 175b09d4c
+Phase 3.1 Commit Multi Column Macros | Checksum: 12f9d6630
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:14 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191727 ; free virtual = 616698
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 253300dc5
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 104d0b111
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:15 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191704 ; free virtual = 616687
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 198a31973
+Phase 3.3 Area Swap Optimization | Checksum: a025230b
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:15 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191686 ; free virtual = 616671
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 1dc0c2ecd
+Phase 3.4 Pipeline Register Optimization | Checksum: e7223dbe
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:15 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191680 ; free virtual = 616666
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:22 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 24d38a6e3
+Phase 3.5 Fast Optimization | Checksum: 5a0dd504
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:16 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191645 ; free virtual = 616636
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 1e28b4172
+Phase 3.6 Small Shape Detail Placement | Checksum: 175a307bd
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:19 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192238 ; free virtual = 617265
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:27 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 224517af3
+Phase 3.7 Re-assign LUT pins | Checksum: 188004d4c
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:20 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192098 ; free virtual = 617129
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:28 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 1bcb18342
+Phase 3.8 Pipeline Register Optimization | Checksum: 1b675e48e
 
-Time (s): cpu = 00:00:45 ; elapsed = 00:00:20 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192086 ; free virtual = 617120
-Phase 3 Detail Placement | Checksum: 1bcb18342
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:28 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1b675e48e
 
-Time (s): cpu = 00:00:45 ; elapsed = 00:00:20 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192081 ; free virtual = 617116
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:28 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -440,41 +439,41 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 1f83dcd77
+Post Placement Optimization Initialization | Checksum: 2103fae64
 
 Phase 4.1.1.1 BUFG Insertion
 
 Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
-INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.552 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 193cc3a35
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.174 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1c8c97dc9
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.41 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191664 ; free virtual = 616809
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.837 . Memory (MB): peak = 2512.184 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 1ca5ab0ad
+Ending Physical Synthesis Task | Checksum: 20e981f96
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.46 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191590 ; free virtual = 616735
-Phase 4.1.1.1 BUFG Insertion | Checksum: 1f83dcd77
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.886 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 2103fae64
 
-Time (s): cpu = 00:00:52 ; elapsed = 00:00:23 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191537 ; free virtual = 616683
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 4.1.1.2 Post Placement Timing Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.552. For the most accurate timing information please run report_timing.
-Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 25288c67b
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.174. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 23b550424
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:23 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191561 ; free virtual = 616707
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:23 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191560 ; free virtual = 616706
-Phase 4.1 Post Commit Optimization | Checksum: 25288c67b
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 23b550424
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:23 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191490 ; free virtual = 616638
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 25288c67b
+Phase 4.2 Post Placement Cleanup | Checksum: 23b550424
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191485 ; free virtual = 616639
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
 
@@ -493,40 +492,40 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: 25288c67b
+Phase 4.3.1 Print Estimated Congestion | Checksum: 23b550424
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191441 ; free virtual = 616596
-Phase 4.3 Placer Reporting | Checksum: 25288c67b
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 23b550424
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191421 ; free virtual = 616576
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191406 ; free virtual = 616562
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191404 ; free virtual = 616560
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1803010c8
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 223a4ef97
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191362 ; free virtual = 616517
-Ending Placer Task | Checksum: bc872893
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
+Ending Placer Task | Checksum: 186215b16
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:24 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191383 ; free virtual = 616541
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:34 . Memory (MB): peak = 2512.184 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 112 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:25 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191510 ; free virtual = 616669
+place_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:36 . Memory (MB): peak = 2512.184 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.72 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191300 ; free virtual = 616492
-INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_placed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191243 ; free virtual = 616415
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:01 . Memory (MB): peak = 2512.184 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2512.184 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_io -file design_2_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.25 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191229 ; free virtual = 616401
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 2512.184 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file design_2_wrapper_utilization_placed.rpt -pb design_2_wrapper_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file design_2_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 191207 ; free virtual = 616382
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 2512.184 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
@@ -540,157 +539,148 @@ Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.72 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 192133 ; free virtual = 617349
-INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_physopt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:01 . Memory (MB): peak = 2512.184 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 Running DRC as a precondition to command route_design
-WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_3/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_4/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_5/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_6/O
-INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_7/O
+INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 
 Starting Routing Task
-INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
 
 Phase 1 Build RT Design
-Checksum: PlaceDB: 9fec65a9 ConstDB: 0 ShapeSum: 1c9ac2ea RouteDB: 0
-Post Restoration Checksum: NetGraph: 82889148 NumContArr: e8d9b465 Constraints: 0 Timing: 0
-Phase 1 Build RT Design | Checksum: 16b6245ad
+Checksum: PlaceDB: b83ce08e ConstDB: 0 ShapeSum: cde47a88 RouteDB: 0
+Post Restoration Checksum: NetGraph: 4732146 NumContArr: b2594aea Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: b6cc6c30
 
-Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 202435 ; free virtual = 628471
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 16b6245ad
+Phase 2.1 Create Timer | Checksum: b6cc6c30
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 3860.004 ; gain = 0.000 ; free physical = 202348 ; free virtual = 628384
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 16b6245ad
+Phase 2.2 Fix Topology Constraints | Checksum: b6cc6c30
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 3868.000 ; gain = 7.996 ; free physical = 202215 ; free virtual = 628251
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2512.184 ; gain = 0.000
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 16b6245ad
+Phase 2.3 Pre Route Cleanup | Checksum: b6cc6c30
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 3868.000 ; gain = 7.996 ; free physical = 202143 ; free virtual = 628181
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:23 . Memory (MB): peak = 2512.184 ; gain = 0.000
+ Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 29f010089
+Phase 2.4 Update Timing | Checksum: 1224a7f59
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:22 . Memory (MB): peak = 3898.883 ; gain = 38.879 ; free physical = 201875 ; free virtual = 627925
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.654  | TNS=0.000  | WHS=-0.345 | THS=-238.480|
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 2533.977 ; gain = 21.793
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.290  | TNS=0.000  | WHS=-0.493 | THS=-329.569|
 
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.0152221 %
-  Global Horizontal Routing Utilization  = 0.00380325 %
+  Global Vertical Routing Utilization    = 0.0157399 %
+  Global Horizontal Routing Utilization  = 0.00346518 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 12765
+  Number of Failed Nets               = 12791
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 12757
+  Number of Unrouted Nets             = 12783
   Number of Partially Routed Nets     = 8
-  Number of Node Overlaps             = 18
+  Number of Node Overlaps             = 20
 
-Phase 2 Router Initialization | Checksum: 27a472629
+Phase 2 Router Initialization | Checksum: 130287727
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 3898.883 ; gain = 38.879 ; free physical = 201623 ; free virtual = 627676
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:32 . Memory (MB): peak = 2555.922 ; gain = 43.738
 
 Phase 3 Initial Routing
 
 Phase 3.1 Global Routing
-Phase 3.1 Global Routing | Checksum: 27a472629
+Phase 3.1 Global Routing | Checksum: 130287727
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:23 . Memory (MB): peak = 3898.883 ; gain = 38.879 ; free physical = 201623 ; free virtual = 627675
-Phase 3 Initial Routing | Checksum: 144b40702
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:32 . Memory (MB): peak = 2555.922 ; gain = 43.738
+Phase 3 Initial Routing | Checksum: 1b5cb0e06
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:25 . Memory (MB): peak = 3923.883 ; gain = 63.879 ; free physical = 201651 ; free virtual = 627706
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:35 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 984
- Number of Nodes with overlaps = 93
- Number of Nodes with overlaps = 23
- Number of Nodes with overlaps = 9
- Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 892
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 3
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.374  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.855  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: f5e2b1d8
+Phase 4.1 Global Iteration 0 | Checksum: 18022486d
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:42 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 198560 ; free virtual = 625452
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:43 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 4.2 Global Iteration 1
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.374  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.855  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 1651b2b1c
+Phase 4.2 Global Iteration 1 | Checksum: 101beab6a
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:42 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 198077 ; free virtual = 624996
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:43 . Memory (MB): peak = 2564.805 ; gain = 52.621
+Phase 4 Rip-up And Reroute | Checksum: 101beab6a
 
-Phase 4.3 Global Iteration 2
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 1
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.374  | TNS=0.000  | WHS=N/A    | THS=N/A    |
-
-Phase 4.3 Global Iteration 2 | Checksum: 1523380c6
-
-Time (s): cpu = 00:01:06 ; elapsed = 00:00:43 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197573 ; free virtual = 624506
-Phase 4 Rip-up And Reroute | Checksum: 1523380c6
-
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197441 ; free virtual = 624375
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:43 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 1523380c6
+Phase 5.1 Delay CleanUp | Checksum: 101beab6a
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197491 ; free virtual = 624425
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:43 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1523380c6
+Phase 5.2 Clock Skew Optimization | Checksum: 101beab6a
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197487 ; free virtual = 624421
-Phase 5 Delay and Skew Optimization | Checksum: 1523380c6
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:43 . Memory (MB): peak = 2564.805 ; gain = 52.621
+Phase 5 Delay and Skew Optimization | Checksum: 101beab6a
 
-Time (s): cpu = 00:01:07 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197478 ; free virtual = 624412
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:43 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 14e7ceaaf
+Phase 6.1.1 Update Timing | Checksum: 741e6e16
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197375 ; free virtual = 624313
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.374  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:45 . Memory (MB): peak = 2564.805 ; gain = 52.621
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.970  | TNS=0.000  | WHS=0.015  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 1cbd825ff
+Phase 6.1 Hold Fix Iter | Checksum: 10ccc02f5
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197374 ; free virtual = 624313
-Phase 6 Post Hold Fix | Checksum: 1cbd825ff
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:45 . Memory (MB): peak = 2564.805 ; gain = 52.621
+Phase 6 Post Hold Fix | Checksum: 10ccc02f5
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:44 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197378 ; free virtual = 624316
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:45 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 3.08533 %
-  Global Horizontal Routing Utilization  = 3.47693 %
+  Global Vertical Routing Utilization    = 2.80791 %
+  Global Horizontal Routing Utilization  = 3.46771 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -700,62 +690,64 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 16ca2a23f
+Phase 7 Route finalize | Checksum: a929fd56
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:45 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197451 ; free virtual = 624330
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:45 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 16ca2a23f
+Phase 8 Verifying routed nets | Checksum: a929fd56
 
-Time (s): cpu = 00:01:09 ; elapsed = 00:00:45 . Memory (MB): peak = 3944.883 ; gain = 84.879 ; free physical = 197438 ; free virtual = 624332
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:45 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1888c7593
+Phase 9 Depositing Routes | Checksum: 178e2b14d
 
-Time (s): cpu = 00:01:10 ; elapsed = 00:00:45 . Memory (MB): peak = 3946.887 ; gain = 86.883 ; free physical = 197279 ; free virtual = 624218
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:46 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=1.374  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.970  | TNS=0.000  | WHS=0.015  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 1888c7593
+Phase 10 Post Router Timing | Checksum: 178e2b14d
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:00:46 . Memory (MB): peak = 3946.887 ; gain = 86.883 ; free physical = 197094 ; free virtual = 624034
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 2564.805 ; gain = 52.621
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:01:12 ; elapsed = 00:00:46 . Memory (MB): peak = 3946.887 ; gain = 86.883 ; free physical = 197087 ; free virtual = 624027
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 2564.805 ; gain = 52.621
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-137 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+136 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:01:19 ; elapsed = 00:00:48 . Memory (MB): peak = 3946.887 ; gain = 86.883 ; free physical = 196792 ; free virtual = 623732
+route_design: Time (s): cpu = 00:01:11 ; elapsed = 00:00:52 . Memory (MB): peak = 2564.805 ; gain = 52.621
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.87 . Memory (MB): peak = 3946.887 ; gain = 0.000 ; free physical = 194448 ; free virtual = 621420
-INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_routed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 3946.898 ; gain = 0.012 ; free physical = 197343 ; free virtual = 624326
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 2569.227 ; gain = 4.422
+INFO: [Common 17-1381] The checkpoint 'C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 2569.227 ; gain = 4.422
 INFO: [runtcl-4] Executing : report_drc -file design_2_wrapper_drc_routed.rpt -pb design_2_wrapper_drc_routed.pb -rpx design_2_wrapper_drc_routed.rpx
 Command: report_drc -file design_2_wrapper_drc_routed.rpt -pb design_2_wrapper_drc_routed.pb -rpx design_2_wrapper_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
-WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_3/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_4/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_5/O
 WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_6/O
-INFO: [DRC 23-27] Running DRC with 8 threads
-INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_drc_routed.rpt.
+WARNING: [Timing 38-172] LUT was found on clock network. Both rising/falling clock edges are propagated from LUT output pin. Use set_clock_sense to specify if that clock should be inverted or not. e.g. set_clock_sense -positive/-negative design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_7/O
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_drc_routed.rpt.
 report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2579.863 ; gain = 10.637
 INFO: [runtcl-4] Executing : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 Command: report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [DRC 23-133] Running Methodology with 8 threads
-INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_methodology_drc_routed.rpt.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.runs/impl_1/design_2_wrapper_methodology_drc_routed.rpt.
 report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2579.863 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_power -file design_2_wrapper_power_routed.rpt -pb design_2_wrapper_power_summary_routed.pb -rpx design_2_wrapper_power_routed.rpx
 Command: report_power -file design_2_wrapper_power_routed.rpt -pb design_2_wrapper_power_summary_routed.pb -rpx design_2_wrapper_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
@@ -764,18 +756,18 @@ Running Vector-less Activity Propagation...
 Finished Running Vector-less Activity Propagation
 WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
 Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
-149 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+148 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
 INFO: [runtcl-4] Executing : report_route_status -file design_2_wrapper_route_status.rpt -pb design_2_wrapper_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file design_2_wrapper_timing_summary_routed.rpt -pb design_2_wrapper_timing_summary_routed.pb -rpx design_2_wrapper_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
 INFO: [runtcl-4] Executing : report_incremental_reuse -file design_2_wrapper_incremental_reuse_routed.rpt
 INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
 INFO: [runtcl-4] Executing : report_clock_utilization -file design_2_wrapper_clock_utilization_routed.rpt
 INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file design_2_wrapper_bus_skew_routed.rpt -pb design_2_wrapper_bus_skew_routed.pb -rpx design_2_wrapper_bus_skew_routed.rpx
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
 INFO: [Memdata 28-167] Found XPM memory block design_2_i/DMA/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_2_i/DMA/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_2_i/DMA/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_2_i/DMA/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
 INFO: [Memdata 28-167] Found XPM memory block design_2_i/DMA/axi_smc/inst/s01_nodes/s01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the design_2_i/DMA/axi_smc/inst/s01_nodes/s01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
@@ -798,13 +790,13 @@ Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 Running DRC as a precondition to command write_bitstream
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
-INFO: [DRC 23-27] Running DRC with 8 threads
-WARNING: [DRC PDRC-153] Gated clock check: Net design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/mux_out is a gated clock net sourced by a combinational pin design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1/O, cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC PDRC-153] Gated clock check: Net design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/mux_out is a gated clock net sourced by a combinational pin design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2/O, cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg
 INFO: [Vivado 12-3199] DRC finished with 0 Errors, 2 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
 Loading data files...
 Loading site data...
 Loading route data...
@@ -813,8 +805,9 @@ Creating bitmap...
 Creating bitstream...
 Writing bitstream ./design_2_wrapper.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 INFO: [Common 17-83] Releasing license: Implementation
-28 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 4293.895 ; gain = 298.961 ; free physical = 194759 ; free virtual = 621913
-INFO: [Common 17-206] Exiting Vivado at Thu May 12 17:06:12 2022...
+write_bitstream: Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 3074.391 ; gain = 468.809
+INFO: [Common 17-206] Exiting Vivado at Thu May 12 23:26:10 2022...

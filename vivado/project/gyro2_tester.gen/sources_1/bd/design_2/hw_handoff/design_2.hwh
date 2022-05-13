@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May 12 15:40:55 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May 12 23:19:41 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_2" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -244,7 +244,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="131" FULLNAME="/BiDirChannels_0" HWVERSION="1.0" INSTANCE="BiDirChannels_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BiDirChannels" VLNV="xilinx.com:user:BiDirChannels:1.0">
+    <MODULE COREREVISION="132" FULLNAME="/BiDirChannels_0" HWVERSION="1.0" INSTANCE="BiDirChannels_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BiDirChannels" VLNV="xilinx.com:user:BiDirChannels:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -6837,8 +6837,8 @@
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="s_axi_ctrl_aresetn"/>
-            <CONNECTION INSTANCE="LOOP1_data_processor_0" PORT="reset"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="LOOP1_data_processor_0" PORT="reset"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="s_axi_ctrl_aresetn"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="aresetn"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axi_ctrl_aresetn"/>
@@ -6909,7 +6909,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="81" FULLNAME="/RX_BUFFER/RxFIFO" HWVERSION="1.0" INSTANCE="RX_BUFFER_RxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_fifo" VLNV="xilinx.com:user:axis_stream_fifo:1.0">
+    <MODULE COREREVISION="82" FULLNAME="/RX_BUFFER/RxFIFO" HWVERSION="1.0" INSTANCE="RX_BUFFER_RxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_fifo" VLNV="xilinx.com:user:axis_stream_fifo:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -8804,7 +8804,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="30" FULLNAME="/SPI/SPI_ip_0" HWVERSION="1.0" INSTANCE="SPI_SPI_ip_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi4_pl_SPI_ip" VLNV="xilinx.com:user:axi4_pl_SPI_ip:1.0">
+    <MODULE COREREVISION="31" FULLNAME="/SPI/SPI_ip_0" HWVERSION="1.0" INSTANCE="SPI_SPI_ip_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi4_pl_SPI_ip" VLNV="xilinx.com:user:axi4_pl_SPI_ip:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -9038,7 +9038,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="32" FULLNAME="/TX_BUFFER/TxFIFO" HWVERSION="2.0" INSTANCE="TX_BUFFER_TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
+    <MODULE COREREVISION="33" FULLNAME="/TX_BUFFER/TxFIFO" HWVERSION="2.0" INSTANCE="TX_BUFFER_TxFIFO" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_stream_txfifo" VLNV="user.org:user:axis_stream_txfifo:2.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -12336,8 +12336,8 @@
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_1" PORT="aclk"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="s_axi_ctrl_aclk"/>
-            <CONNECTION INSTANCE="LOOP1_data_processor_0" PORT="clk"/>
             <CONNECTION INSTANCE="LOOP1_axis_switch_0" PORT="aclk"/>
+            <CONNECTION INSTANCE="LOOP1_data_processor_0" PORT="clk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_2" PORT="s_axi_ctrl_aclk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="aclk"/>
             <CONNECTION INSTANCE="LOOP2_axis_switch_3" PORT="s_axi_ctrl_aclk"/>

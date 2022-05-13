@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Thu May 12 17:05:47 2022
-| Host         : xsjlc200176 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Thu May 12 23:25:35 2022
+| Host         : AsusP8 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_2_wrapper_drc_routed.rpt -pb design_2_wrapper_drc_routed.pb -rpx design_2_wrapper_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -36,12 +36,12 @@ Table of Contents
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
-Net design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/mux_out is a gated clock net sourced by a combinational pin design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1/O, cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/mux_out is a gated clock net sourced by a combinational pin design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2/O, cell design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
+A LUT design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
 design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV2/ff0/Q_reg
 Related violations: <none>
 

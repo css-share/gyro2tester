@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="56" Path="/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.xpr">
+<Project Version="7" Minor="56" Path="C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="f59460b2149d4cf4a6aa7b199c412960"/>
@@ -57,20 +57,20 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="zedboard"/>
-    <Option Name="WTXSimLaunchSim" Val="156"/>
+    <Option Name="WTXSimLaunchSim" Val="157"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="29"/>
-    <Option Name="WTModelSimExportSim" Val="29"/>
-    <Option Name="WTQuestaExportSim" Val="29"/>
+    <Option Name="WTXSimExportSim" Val="30"/>
+    <Option Name="WTModelSimExportSim" Val="30"/>
+    <Option Name="WTQuestaExportSim" Val="30"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="29"/>
-    <Option Name="WTRivieraExportSim" Val="29"/>
-    <Option Name="WTActivehdlExportSim" Val="29"/>
+    <Option Name="WTVcsExportSim" Val="30"/>
+    <Option Name="WTRivieraExportSim" Val="30"/>
+    <Option Name="WTActivehdlExportSim" Val="30"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -116,47 +116,41 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci">
-          <Proxy FileSetName="design_2_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.xci">
-          <Proxy FileSetName="design_2_blk_mem_0_even_0"/>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.xci">
+          <Proxy FileSetName="design_2_blk_mem_0_even_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_odd_0/design_2_blk_mem_0_odd_0.xci">
           <Proxy FileSetName="design_2_blk_mem_0_odd_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.xci">
-          <Proxy FileSetName="design_2_blk_mem_2_odd_0"/>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_0/design_2_blk_mem_0_even_0.xci">
+          <Proxy FileSetName="design_2_blk_mem_0_even_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci">
+          <Proxy FileSetName="design_2_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_1_even_1/design_2_blk_mem_1_even_1.xci">
           <Proxy FileSetName="design_2_blk_mem_1_even_1"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_2_odd_0/design_2_blk_mem_2_odd_0.xci">
+          <Proxy FileSetName="design_2_blk_mem_2_odd_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_1_even_0/design_2_blk_mem_1_even_0.xci">
           <Proxy FileSetName="design_2_blk_mem_1_even_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_blk_mem_0_even_1/design_2_blk_mem_0_even_1.xci">
-          <Proxy FileSetName="design_2_blk_mem_0_even_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci">
           <Proxy FileSetName="design_2_RxFIFO_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_data_processor_0_0/design_2_data_processor_0_0.xci">
-          <Proxy FileSetName="design_2_data_processor_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci">
-          <Proxy FileSetName="design_2_iobuf_xil_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci">
-          <Proxy FileSetName="design_2_SPI_ip_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci">
+          <Proxy FileSetName="design_2_BiDirChannels_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci">
           <Proxy FileSetName="design_2_axis_stream_txfifo_0_2"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci">
+          <Proxy FileSetName="design_2_SPI_ip_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci">
           <Proxy FileSetName="design_2_led_driver_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci">
-          <Proxy FileSetName="design_2_BiDirChannels_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/design_2/hdl/design_2_wrapper.v">
@@ -196,14 +190,39 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop3_srtx_pattern.sv">
+      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop3_txpattern.sv">
         <FileInfo SFType="VHeader">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop3_txpattern.sv">
+      <File Path="$PPRDIR/../ip_repo/testbench/gyro_addr_map.svh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop1.sv">
+        <FileInfo SFType="VHeader">
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../ip_repo/testbench/compare_files.sv">
+        <FileInfo SFType="VHeader">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../ip_repo/testbench/test_case_spi.sv">
+        <FileInfo SFType="VHeader">
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="IsVisible" Val="1"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop2.sv">
         <FileInfo SFType="VHeader">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -217,26 +236,6 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/test_case_rx_pattern.sv">
-        <FileInfo SFType="VHeader">
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop1.sv">
-        <FileInfo SFType="VHeader">
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop2.sv">
-        <FileInfo SFType="VHeader">
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop3.sv">
         <FileInfo SFType="VHeader">
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -244,21 +243,16 @@
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/compare_files.sv">
+      <File Path="$PPRDIR/../ip_repo/testbench/test_case_rx_pattern.sv">
         <FileInfo SFType="VHeader">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/gyro_addr_map.svh">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="IsVisible" Val="1"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../ip_repo/testbench/test_case_spi.sv">
+      <File Path="$PPRDIR/../ip_repo/testbench/test_case_loop3_srtx_pattern.sv">
         <FileInfo SFType="VHeader">
+          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
           <Attr Name="IsVisible" Val="1"/>
         </FileInfo>
@@ -312,18 +306,6 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_2_data_processor_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_data_processor_0_0" RelGenDir="$PGENDIR/design_2_data_processor_0_0">
-      <Config>
-        <Option Name="TopModule" Val="design_2_data_processor_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="design_2_iobuf_xil_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_iobuf_xil_0_0" RelGenDir="$PGENDIR/design_2_iobuf_xil_0_0">
-      <Config>
-        <Option Name="TopModule" Val="design_2_iobuf_xil_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="design_2_blk_mem_0_even_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_blk_mem_0_even_0" RelGenDir="$PGENDIR/design_2_blk_mem_0_even_0">
       <Config>
         <Option Name="TopModule" Val="design_2_blk_mem_0_even_0"/>
@@ -360,12 +342,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_2_led_driver_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_led_driver_0_0" RelGenDir="$PGENDIR/design_2_led_driver_0_0">
-      <Config>
-        <Option Name="TopModule" Val="design_2_led_driver_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="design_2_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_processing_system7_0_0" RelGenDir="$PGENDIR/design_2_processing_system7_0_0">
       <Config>
         <Option Name="TopModule" Val="design_2_processing_system7_0_0"/>
@@ -378,9 +354,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_2_SPI_ip_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_SPI_ip_0_0" RelGenDir="$PGENDIR/design_2_SPI_ip_0_0">
+    <FileSet Name="design_2_led_driver_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_led_driver_0_0" RelGenDir="$PGENDIR/design_2_led_driver_0_0">
       <Config>
-        <Option Name="TopModule" Val="design_2_SPI_ip_0_0"/>
+        <Option Name="TopModule" Val="design_2_led_driver_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="design_2_BiDirChannels_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_BiDirChannels_0_0" RelGenDir="$PGENDIR/design_2_BiDirChannels_0_0">
+      <Config>
+        <Option Name="TopModule" Val="design_2_BiDirChannels_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -390,9 +372,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="design_2_BiDirChannels_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_BiDirChannels_0_0" RelGenDir="$PGENDIR/design_2_BiDirChannels_0_0">
+    <FileSet Name="design_2_SPI_ip_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_2_SPI_ip_0_0" RelGenDir="$PGENDIR/design_2_SPI_ip_0_0">
       <Config>
-        <Option Name="TopModule" Val="design_2_BiDirChannels_0_0"/>
+        <Option Name="TopModule" Val="design_2_SPI_ip_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -408,18 +390,15 @@
     <Simulator Name="Questa">
       <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
-    <Simulator Name="Xcelium">
-      <Option Name="Description" Val="Xcelium Parallel Simulator"/>
-    </Simulator>
-    <Simulator Name="VCS">
-      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
-    </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
     </Simulator>
+    <Simulator Name="ActiveHDL">
+      <Option Name="Description" Val="Active-HDL Simulator"/>
+    </Simulator>
   </Simulators>
   <Runs Version="1" Minor="15">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" IncrementalCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" WriteIncrSynthDcp="true" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PPRDIR/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" IncrementalCheckpoint="$PPRDIR/synth_1/design_2_wrapper.dcp" WriteIncrSynthDcp="true" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -429,7 +408,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_data_processor_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_data_processor_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_data_processor_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_data_processor_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_data_processor_0_0_synth_1">
+    <Run Id="design_2_blk_mem_0_even_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_0_even_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_0_even_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_0_even_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_0_even_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -439,7 +418,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_iobuf_xil_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_iobuf_xil_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_iobuf_xil_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_iobuf_xil_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_iobuf_xil_0_0_synth_1">
+    <Run Id="design_2_blk_mem_1_even_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_1_even_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_1_even_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_1_even_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_1_even_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -449,7 +428,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_blk_mem_0_even_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_0_even_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_0_even_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_0_even_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_0_even_0_synth_1">
+    <Run Id="design_2_blk_mem_1_even_1_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_1_even_1" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_1_even_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_1_even_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_1_even_1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -459,7 +438,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_blk_mem_1_even_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_1_even_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_1_even_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_1_even_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_1_even_0_synth_1">
+    <Run Id="design_2_blk_mem_0_even_1_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_0_even_1" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_0_even_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_0_even_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_0_even_1_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -469,7 +448,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_blk_mem_1_even_1_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_1_even_1" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_1_even_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_1_even_1_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_1_even_1_synth_1">
+    <Run Id="design_2_blk_mem_0_odd_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_0_odd_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_0_odd_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_0_odd_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_0_odd_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -479,7 +458,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_blk_mem_0_even_1_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_0_even_1" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_0_even_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_0_even_1_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_0_even_1_synth_1">
+    <Run Id="design_2_blk_mem_2_odd_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_2_odd_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_2_odd_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_2_odd_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_2_odd_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -489,7 +468,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_blk_mem_0_odd_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_0_odd_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_0_odd_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_0_odd_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_0_odd_0_synth_1">
+    <Run Id="design_2_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_processing_system7_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_processing_system7_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
@@ -499,37 +478,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_blk_mem_2_odd_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_blk_mem_2_odd_0" Part="xc7z020clg484-1" ConstrsSet="design_2_blk_mem_2_odd_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_blk_mem_2_odd_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_blk_mem_2_odd_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_led_driver_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_led_driver_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_led_driver_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_processing_system7_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_processing_system7_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_RxFIFO_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_RxFIFO_0" Part="xc7z020clg484-1" ConstrsSet="design_2_RxFIFO_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_RxFIFO_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_RxFIFO_0_synth_1">
+    <Run Id="design_2_RxFIFO_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_RxFIFO_0" Part="xc7z020clg484-1" ConstrsSet="design_2_RxFIFO_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_RxFIFO_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_RxFIFO_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -541,7 +490,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_SPI_ip_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_SPI_ip_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_SPI_ip_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_SPI_ip_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_SPI_ip_0_0_synth_1">
+    <Run Id="design_2_led_driver_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_led_driver_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_led_driver_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -553,7 +502,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_axis_stream_txfifo_0_2_synth_1" Type="Ft3:Synth" SrcSet="design_2_axis_stream_txfifo_0_2" Part="xc7z020clg484-1" ConstrsSet="design_2_axis_stream_txfifo_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_axis_stream_txfifo_0_2_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_axis_stream_txfifo_0_2_synth_1">
+    <Run Id="design_2_BiDirChannels_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_BiDirChannels_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_BiDirChannels_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_BiDirChannels_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_BiDirChannels_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -565,7 +514,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_BiDirChannels_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_BiDirChannels_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_BiDirChannels_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_BiDirChannels_0_0_synth_1" IncludeInArchive="true" IsChild="false" ClusterConfiguration="lsf" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_BiDirChannels_0_0_synth_1">
+    <Run Id="design_2_axis_stream_txfifo_0_2_synth_1" Type="Ft3:Synth" SrcSet="design_2_axis_stream_txfifo_0_2" Part="xc7z020clg484-1" ConstrsSet="design_2_axis_stream_txfifo_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_axis_stream_txfifo_0_2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_axis_stream_txfifo_0_2_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -577,7 +526,19 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" ClusterConfiguration="lsf" AutoIncrementalDir="$PPRDIR/../C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.srcs/utils_1/imports/impl_1">
+    <Run Id="design_2_SPI_ip_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_2_SPI_ip_0_0" Part="xc7z020clg484-1" ConstrsSet="design_2_SPI_ip_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_2_SPI_ip_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_SPI_ip_0_0_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
@@ -591,40 +552,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_data_processor_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_data_processor_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_data_processor_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_data_processor_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="design_2_iobuf_xil_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_iobuf_xil_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_iobuf_xil_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_iobuf_xil_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
@@ -731,23 +658,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_led_driver_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_led_driver_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="design_2_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_processing_system7_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
@@ -784,7 +694,26 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_SPI_ip_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_SPI_ip_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_SPI_ip_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_SPI_ip_0_0_impl_1">
+    <Run Id="design_2_led_driver_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_led_driver_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_led_driver_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_led_driver_0_0_impl_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="design_2_BiDirChannels_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_BiDirChannels_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_BiDirChannels_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_BiDirChannels_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
           <Desc>Default settings for Implementation.</Desc>
@@ -822,7 +751,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="design_2_BiDirChannels_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_BiDirChannels_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_BiDirChannels_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_BiDirChannels_0_0_impl_1">
+    <Run Id="design_2_SPI_ip_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="design_2_SPI_ip_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_2_SPI_ip_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_2_SPI_ip_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
           <Desc>Default settings for Implementation.</Desc>

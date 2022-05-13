@@ -9,18 +9,6 @@
 
 XAxiDma AxiDma; //DMA device instance definition
 
-void nops(unsigned int num) {
-    int i;
-    for(i = 0; i < num; i++) {
-        asm("nop");
-    }
-}
-
-
-void SPI_BUSY()
-{
-        return ((XAxi_ReadReg(SPI_REG0) & SPI_BUSY_MASK) ? TRUE : FALSE);
-}
 
 
 
@@ -112,77 +100,142 @@ int main(){
     // Chip Setup Config                         //
     ///////////////////////////////////////////////
 
+
+
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    // READ 0x5 to Reg 0
+    XAxi_WriteReg(SPI_REG1, 0x00000000);    // Address
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
+	    			xil_printf("SPI still busy...\r\n");
+	    }
+	 }
+
     // Write 0x5 to Reg 0
     xil_printf("Write 0x5 to Reg 0 \r\n");
     XAxi_WriteReg(SPI_REG2, 0x00000005);    // Write Data
     XAxi_WriteReg(SPI_REG1, 0x00000000);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000D);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001D);    // Execute
 
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
-    
+
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    // Read 0xA64C to Reg 1
+    XAxi_WriteReg(SPI_REG1, 0x00000001);    // Address
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
+	    			xil_printf("SPI still busy...\r\n");
+	    }
+	 }
     // Write 0xA64C to Reg 1
     xil_printf("Write 0xA64C to Reg 1 \r\n");
     XAxi_WriteReg(SPI_REG2, 0x0000A64C);    // Write Data
     XAxi_WriteReg(SPI_REG1, 0x00000001);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000D);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001D);    // Execute
 
 
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
 
+
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    // Read 0x5 to Reg 2
+       XAxi_WriteReg(SPI_REG1, 0x00000002);    // Address
+       XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+       while(SPI_BUSY(SPI_REG3)){
+   	    if (SPI_BUSY(SPI_REG3) == TRUE){
+   	    			xil_printf("SPI still busy...\r\n");
+   	    }
+   	 }
     // Write 0x5 to Reg 2
     xil_printf("Write 0x5 to Reg 0 \r\n"); 
     XAxi_WriteReg(SPI_REG2, 0x00000005);    // Write Data
     XAxi_WriteReg(SPI_REG1, 0x00000002);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000D);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001D);    // Execute
 
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
 
 
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    // Read 0xA64C to Reg 3
+    XAxi_WriteReg(SPI_REG1, 0x00000003);    // Address
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
+	    			xil_printf("SPI still busy...\r\n");
+	    }
+	 }
     // Write 0xA64C to Reg 3
     xil_printf("Write 0xA64C to Reg 1 \r\n");
     XAxi_WriteReg(SPI_REG2, 0x0000A64C);    // Write Data
     XAxi_WriteReg(SPI_REG1, 0x00000003);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000D);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001D);    // Execute
 
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
 
 
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    // Read 0x2000 to Reg 16 (0x10)
+    XAxi_WriteReg(SPI_REG1, 0x00000010);    // Address
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
+	    			xil_printf("SPI still busy...\r\n");
+	    }
+	 }
     // Write 0x2000 to Reg 16 (0x10)
     xil_printf("Write 0x2000 to Reg 16 \r\n");
     XAxi_WriteReg(SPI_REG2, 0x00002000);    // Write Data
     XAxi_WriteReg(SPI_REG1, 0x00000010);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000D);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001D);    // Execute
 
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
 
+
+    ////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////
+    XAxi_WriteReg(SPI_REG1, 0x00000014);    // Address
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
+	    			xil_printf("SPI still busy...\r\n");
+	    }
+	 }
     // Write 0x1000 to Reg 20 (0x14)
     xil_printf("Write 0x1000 to Reg 20 \r\n");
     XAxi_WriteReg(SPI_REG2, 0x00001000);    // Write Data
     XAxi_WriteReg(SPI_REG1, 0x00000014);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000D);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001D);    // Execute
 
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
@@ -194,10 +247,10 @@ int main(){
 
     // READ 0x5 to Reg 0
     XAxi_WriteReg(SPI_REG1, 0x00000000);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000F);    // Execute
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
  
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
@@ -207,9 +260,9 @@ int main(){
 
     // Read 0xA64C to Reg 1
     XAxi_WriteReg(SPI_REG1, 0x00000001);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000F);    // Execute
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
@@ -218,9 +271,9 @@ int main(){
 
     // Read 0x5 to Reg 2
     XAxi_WriteReg(SPI_REG1, 0x00000002);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000F);    // Execute
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
@@ -229,9 +282,9 @@ int main(){
 
     // Read 0xA64C to Reg 3
     XAxi_WriteReg(SPI_REG1, 0x00000003);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000F);    // Execute
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
@@ -240,9 +293,9 @@ int main(){
 
     // Read 0x2000 to Reg 16 (0x10)
     XAxi_WriteReg(SPI_REG1, 0x00000010);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000F);    // Execute
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }
@@ -252,9 +305,9 @@ int main(){
     // Read 0x1000 to Reg 20 (0x14)
 
     XAxi_WriteReg(SPI_REG1, 0x00000014);    // Address
-    XAxi_WriteReg(SPI_REG0, 0x0000000F);    // Execute
-    while(SPI_BUSY()){
-	    if (SPI_BUSY() == TRUE){
+    XAxi_WriteReg(SPI_REG0, 0x0000001F);    // Execute
+    while(SPI_BUSY(SPI_REG3)){
+	    if (SPI_BUSY(SPI_REG3) == TRUE){
 	    			xil_printf("SPI still busy...\r\n");
 	    }
 	 }

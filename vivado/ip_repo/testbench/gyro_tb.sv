@@ -40,7 +40,7 @@
 
 
 // Overwrite this path at the command line with +define+{your_path}
-`define FILENAME_PATH /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/testbench
+`define FILENAME_PATH C:/Xilinx_projects/gyro2tester/vivado/ip_repo/testbench
 
 
 `define TEST_32_PACKED        `"`FILENAME_PATH/test_data_32_packed.txt`"

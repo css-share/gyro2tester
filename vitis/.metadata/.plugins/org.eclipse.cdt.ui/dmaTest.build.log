@@ -1,10 +1,29 @@
-03:32:32 **** Build of configuration Debug for project dmaTest ****
+23:35:23 **** Incremental Build of configuration Debug for project dmaTest ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/test_case_loop3asic.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test_case_loop3asic.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/test_case_loop3asic.d" -MT"src/test_case_loop3asic.o" -o "src/test_case_loop3asic.o" "../src/test_case_loop3asic.c"
+../src/test_case_loop3asic.c: In function 'main':
+../src/test_case_loop3asic.c:111:11: warning: implicit declaration of function 'SPI_BUSY' [-Wimplicit-function-declaration]
+  111 |     while(SPI_BUSY(SPI_REG3)){
+      |           ^~~~~~~~
+'Finished building: ../src/test_case_loop3asic.c'
+' '
+'Building target: dmaTest.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "dmaTest.elf"  ./src/dma_controller.o ./src/platform.o ./src/test_case_loop3asic.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: dmaTest.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size dmaTest.elf  |tee "dmaTest.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  41128	   2248	  24504	  67880	  10928	dmaTest.elf
+'Finished building: dmaTest.elf.size'
+' '
 
-03:32:33 Build Finished (took 180ms)
+23:35:23 Build Finished (took 531ms)
 

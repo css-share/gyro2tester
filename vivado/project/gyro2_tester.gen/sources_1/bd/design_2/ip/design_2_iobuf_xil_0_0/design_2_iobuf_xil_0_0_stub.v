@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Tue Apr 19 13:55:35 2022
-// Host        : xsjl24913 running 64-bit CentOS Linux release 7.4.1708 (Core)
-// Command     : write_verilog -force -mode synth_stub
-//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0_stub.v
+// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+// Date        : Thu Apr 21 21:40:09 2022
+// Host        : AsusP8 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub -rename_top design_2_iobuf_xil_0_0 -prefix
+//               design_2_iobuf_xil_0_0_ design_2_iobuf_xil_0_0_stub.v
 // Design      : design_2_iobuf_xil_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
