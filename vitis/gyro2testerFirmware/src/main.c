@@ -103,6 +103,7 @@ extern void xil_printf(const char *format, ...);
 #define CMD_ENABLE_DMM_MUX 				0xC7	// enable the DMM mux by setting enable line high
 #define CMD_DISABLE_DMM_MUX				0xC8	// disable the DMM mux by setting disable line low
 #define CMD_RUN_DMA_TEST 				0xC9	// run the DMA test script
+#define CMD_RUN_DMA_TEST_RX_BYPASS		0xCA	// run the DMA test with RX in bypass mode
 #define CMD_DEBUG1						0xD0	// used for whatever debugging necessary
 #define CMD_STORE_RX_FIFO_DATA 			0xD1	// stores data in RX FIFO in array in ARM
 #define CMD_READ_STORED_RX_FIFO_DATA 	0xD2	// read data stored in ARM array for RX FIFO data
@@ -270,6 +271,10 @@ typedef struct {
 // address of AXI PL interrupt generator
 //Xuint32* baseaddr_p           = (Xuint32*) XPAR_AXI4_PL_INTERRUPT_GE_0_S00_AXI_BASEADDR; //from gyro1 firmware
 //Xuint32* baseaddr_p           = (Xuint32*) 0x43C00000; //this address from gyro1 block design. Does not exist in gyro2 block design.
+
+#define SPI_ENABLE_BIT	0x00000010
+#define SPI_START_BIT	0x00000001
+#define SPI_READ_BIT	0x00000002
 
 Xuint32* baseaddr_spi         = (Xuint32*) 0x43C10000;
 Xuint32* baseaddr_channel     = (Xuint32*) 0x43C20000;
@@ -764,12 +769,12 @@ int writeSPI(unsigned int address, unsigned int data){
 unsigned int writeGyroRegister(unsigned int address, unsigned int data){
 	Xuint32 clkSelBits;
 
-	clkSelBits = *(baseaddr_spi+0) & 0xC;			// store clock select bits[3:2]
-	*(baseaddr_spi+0) = clkSelBits & ~0x03;			// clear direction and start bits[1:0]
-	*(baseaddr_spi+1) = address & 0x7F;				// set address
-	*(baseaddr_spi+2) = data & 0xFFFF;				// set data
-	*(baseaddr_spi+0) = clkSelBits | 0x1;			// set start bit to initiate transfer
-
+	clkSelBits = *(baseaddr_spi+0) & 0xC;				// store clock select bits[3:2]
+	*(baseaddr_spi+0) = clkSelBits | SPI_ENABLE_BIT;	// clear direction and start bits[1:0]
+	*(baseaddr_spi+1) = address & 0x7F;					// set address
+	*(baseaddr_spi+2) = data & 0xFFFF;					// set data
+	*(baseaddr_spi+0) = clkSelBits | SPI_START_BIT		// set start bit to initiate transfer
+								   | SPI_ENABLE_BIT;
 	return 0;
 }
 
@@ -778,14 +783,16 @@ unsigned int readGyroRegister(unsigned char address){
 	Xuint32 		clkSelBits;
 	unsigned int 	registerReadData;
 
-	clkSelBits = *(baseaddr_spi+0) & 0xC;			// store clock select bits[3:2]
-	*(baseaddr_spi+0) = (clkSelBits | 0x2) & ~0x01;	// set read bit[1], clear start bit[0]
-	*(baseaddr_spi+1) = address & 0x7F;				// set address
-	*(baseaddr_spi+0) = clkSelBits | 0x3;			// set start bit[0] to initiate transfer
+	clkSelBits = *(baseaddr_spi+0) & 0xC;				// store clock select bits[3:2]
+	*(baseaddr_spi+0) = clkSelBits | SPI_ENABLE_BIT		// set read bit[1], clear start bit[0]
+						| SPI_READ_BIT;
+	*(baseaddr_spi+1) = address & 0x7F;					// set address
+	*(baseaddr_spi+0) = clkSelBits | SPI_ENABLE_BIT		// set start bit[0] to initiate transfer
+						| SPI_READ_BIT | SPI_START_BIT;
 	nops(10000);										// wait for data clocked in
-	registerReadData = *(baseaddr_spi+3) & 0xFFFF;
+	registerReadData = *(baseaddr_spi+3);
 
-	return registerReadData; // read data is in 16 lsbs
+	return registerReadData;
 }
 
 
@@ -1034,6 +1041,7 @@ void read_uart_bytes(void)
 	u8 numBytesReceived = 0;
 	u8 byteToSend;
 	u16 numPoints;
+	u32 numBytesToSend;
 	u16 TxData;
 	u32 otpBytes;
 	unsigned int commandByte,regAddr,regData;
@@ -1360,9 +1368,19 @@ void read_uart_bytes(void)
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
+		case (CMD_RUN_DMA_TEST_RX_BYPASS):
+			runDmaTestRxBypass();
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
 		case (CMD_READ_RX_FPGA_DATA):
+
+			// first byte received is command, second byte is signal to measure,
+			// third and fourth bytes are 16-bit number of measurements MSbyte(3rd) LSbyte(4th)
+			numBytesToSend = (u32)( (UartRxData[1]<<16) + (UartRxData[2]<<8) + (UartRxData[3]) );
+
 			// send the entire Rx data buffer(all 3 channels)
-			send_data_over_UART(MAX_PKT_LEN,(u8*)RX_BUFFER_BASE);
+			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
 
 		case (CMD_DEBUG1):
@@ -2089,7 +2107,7 @@ void disable_dmm_mux(void){
 int main() {
     init_platform();
 
-    xil_printf("FPGA Build REViD %x \r\n", XAxiDma_ReadReg(0x43C40000,0x00000008));
+//    xil_printf("FPGA Build REViD %x \r\n", XAxiDma_ReadReg(0x43C40000,0x00000008));
 /*
     *(baseaddr_p+0) = 0x00000000;
     *(baseaddr_p+1) = 0x00000000;

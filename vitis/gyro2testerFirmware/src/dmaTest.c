@@ -6,13 +6,13 @@
 #include "dma_controller.h"
 #include "gyro_application.h"
 
-XAxiDma AxiDma; //DMA device instance definition
+
 
 
 
 int runDmaTest(void){
-	  
-//    xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
+
+	XAxiDma AxiDma; //DMA device instance definition
 
     XAxiDma_Config *CfgPtr; //DMA configuration pointer
 
