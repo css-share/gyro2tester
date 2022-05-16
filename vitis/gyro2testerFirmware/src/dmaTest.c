@@ -149,7 +149,7 @@ int runDmaTest(void){
 //	 xil_printf("Enable RX FIFO PUSH  \r\n");
 	 XAxi_WriteReg(RXFIFO_REG0,0x00000001);
 
-     XAxi_WriteReg(BIDIR_REG0, 0x00000000);
+     XAxi_WriteReg(BIDIR_REG0, 0x01000000);
      XAxi_WriteReg(BIDIR_REG2, 0x00000001);
      XAxi_WriteReg(BIDIR_REG1, 0x00000011);
 

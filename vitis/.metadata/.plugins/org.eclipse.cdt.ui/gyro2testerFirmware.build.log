@@ -1,4 +1,4 @@
-02:55:03 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
+15:31:14 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,77 +6,42 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 In file included from ../src/main.c:8:
-C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
-../src/main.c:329:27: warning: initialization of 'u32 *' {aka 'long unsigned int *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
-  329 | u32*   debugBaseAddress = 0x43C40000;
-      |                           ^~~~~~~~~~
-../src/main.c: In function 'read_uart_bytes':
-../src/main.c:1372:4: warning: implicit declaration of function 'runDmaTestRxBypass' [-Wimplicit-function-declaration]
- 1372 |    runDmaTestRxBypass();
-      |    ^~~~~~~~~~~~~~~~~~
-../src/main.c: At top level:
-../src/main.c:434:13: warning: 'setGyroChannelControl' declared 'static' but never defined [-Wunused-function]
-  434 | static int  setGyroChannelControl(unsigned int v);
-      |             ^~~~~~~~~~~~~~~~~~~~~
-../src/main.c:435:13: warning: 'TxDataFromUartToDma' declared 'static' but never defined [-Wunused-function]
-  435 | static void TxDataFromUartToDma(u16 tx_buffer_offset);
-      |             ^~~~~~~~~~~~~~~~~~~
-../src/main.c:436:13: warning: 'enableFpgaTxBufferOutputs' declared 'static' but never defined [-Wunused-function]
-  436 | static void enableFpgaTxBufferOutputs(void);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:437:13: warning: 'disableFpgaTxBufferOutputs' declared 'static' but never defined [-Wunused-function]
-  437 | static void disableFpgaTxBufferOutputs(void);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:457:13: warning: 'start_HSI_capture_duration_pulse' declared 'static' but never defined [-Wunused-function]
-  457 | static void start_HSI_capture_duration_pulse(void);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:458:13: warning: 'end_HSI_capture_duration_pulse' declared 'static' but never defined [-Wunused-function]
-  458 | static void end_HSI_capture_duration_pulse(void);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:462:13: warning: 'changeHSI_ADC_selection' declared 'static' but never defined [-Wunused-function]
-  462 | static void changeHSI_ADC_selection(u8 selection);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:468:13: warning: 'enable_Vfuse' declared 'static' but never defined [-Wunused-function]
-  468 | static void enable_Vfuse(void);
-      |             ^~~~~~~~~~~~
-../src/main.c:469:13: warning: 'disable_MIO' declared 'static' but never defined [-Wunused-function]
-  469 | static void disable_MIO(void);
-      |             ^~~~~~~~~~~
-../src/main.c:472:13: warning: 'disable_Vfuse' declared 'static' but never defined [-Wunused-function]
-  472 | static void disable_Vfuse(void);
-      |             ^~~~~~~~~~~~~
-../src/main.c:2043:6: warning: 'init_MIO_gpio' defined but not used [-Wunused-function]
- 2043 | void init_MIO_gpio(void)
+../src/main.c:1540:6: warning: 'init_MIO_gpio' defined but not used [-Wunused-function]
+ 1540 | void init_MIO_gpio(void)
       |      ^~~~~~~~~~~~~
-../src/main.c:1729:6: warning: 'send_Tx_data_over_UART' defined but not used [-Wunused-function]
- 1729 | void send_Tx_data_over_UART(unsigned int num_points_to_send)
+../src/main.c:1277:5: warning: 'InitializeDelayTimer' defined but not used [-Wunused-function]
+ 1277 | int InitializeDelayTimer(void)
+      |     ^~~~~~~~~~~~~~~~~~~~
+../src/main.c:1229:6: warning: 'send_Tx_data_over_UART' defined but not used [-Wunused-function]
+ 1229 | void send_Tx_data_over_UART(unsigned int num_points_to_send)
       |      ^~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:1711:14: warning: 'getNumBytesToSend' defined but not used [-Wunused-function]
- 1711 | unsigned int getNumBytesToSend(u8 *RxData)
+../src/main.c:1211:14: warning: 'getNumBytesToSend' defined but not used [-Wunused-function]
+ 1211 | unsigned int getNumBytesToSend(u8 *RxData)
       |              ^~~~~~~~~~~~~~~~~
-../src/main.c:835:6: warning: 'setupUartToReceiveTxData' defined but not used [-Wunused-function]
-  835 | void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
+../src/main.c:511:6: warning: 'setupUartToReceiveTxData' defined but not used [-Wunused-function]
+  511 | void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
       |      ^~~~~~~~~~~~~~~~~~~~~~~~
 'Finished building: ../src/main.c'
 ' '
 'Building target: gyro2testerFirmware.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dmaTest-RxBypass.o ./src/dmaTest.o ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dmaTest-RxBypass.o ./src/dmaTest.o ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: gyro2testerFirmware.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  65316	   3168	  49656	 118140	  1cd7c	gyro2testerFirmware.elf
+  62716	   3160	  33208	  99084	  1830c	gyro2testerFirmware.elf
 'Finished building: gyro2testerFirmware.elf.size'
 ' '
 
-02:55:04 Build Finished (took 658ms)
+15:31:15 Build Finished (took 1s.130ms)
 

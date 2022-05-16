@@ -5,7 +5,8 @@
 #include "xparameters.h"
 #include "dma_controller.h"
 #include "gyro_application.h"
-//#define MAX_LINE_LENGTH 1000
+
+#define NUM_BYTES_TO_CAPTURE 0x018000
 
 XAxiDma AxiDma; //DMA device instance definition
 
@@ -139,7 +140,7 @@ int main(){
 	 xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 
 	 xil_printf("Set the RX Transfer len  \r\n");
-	 XAxi_WriteReg(RXFIFO_REG2,0x00018000);
+	 XAxi_WriteReg(RXFIFO_REG2,NUM_BYTES_TO_CAPTURE);
 
 
 	 xil_printf("Enable RX FIFO PUSH & POP with Buffer bypass  \r\n");

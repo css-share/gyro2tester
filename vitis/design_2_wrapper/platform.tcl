@@ -42,3 +42,4 @@ platform generate
 platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
 platform clean
 platform generate
+platform generate -domains standalone_domain,zynq_fsbl 

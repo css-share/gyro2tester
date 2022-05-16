@@ -1,11 +1,11 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_gyro2testerFirmware-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_gyro2testerFirmware-Default
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_gyro2testerFirmware-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_gyro2testerFirmware-GDB,org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-GDB
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-Default/activeLaunchMode=embrun
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
-org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-GDB/activeLaunchMode=embrun
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-GDB/activeLaunchMode=embdebug
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_dmaTest-GDB/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_gyro2testerFirmware-Default/activeLaunchMode=embrun
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_gyro2testerFirmware-GDB/activeLaunchMode=embdebug

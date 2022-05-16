@@ -6,17 +6,28 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="SPI_REG0, 0x0000001"/>
+		<item key="selection" value="initSPI"/>
 		<list key="findhistory">
-			<item value="SPI_REG0, 0x0000000"/>
-			<item value="SPI_BUSY(SPI_REG0)"/>
-			<item value="SPI_BUSY()"/>
-			<item value="CMD_READ_REGISTER"/>
-			<item value=", resp"/>
-			<item value="32&apos;h"/>
-			<item value="tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`"/>
+			<item value="initSPI"/>
+			<item value="CMD_FPGA_ALL_OUTPUTS_ENABLED"/>
+			<item value="RX_TRANSFER_LENGTH_BYTES"/>
+			<item value="setupUartToReceiveTxData"/>
+			<item value="flag"/>
+			<item value="numAddressesToRead"/>
+			<item value="debugOffset"/>
+			<item value="debugWord32_0"/>
+			<item value="debugBaseAddress"/>
+			<item value="FPGA_channel_state"/>
+			<item value="FPGA_hsi_state"/>
+			<item value="enableSPI"/>
+			<item value="debugWordAddr"/>
+			<item value="fpgaControlWords"/>
+			<item value="fpgaSpiControlWords"/>
 		</list>
 		<list key="replacehistory">
+			<item value="fpgaBiDirControlWords"/>
+			<item value="fpgaControlWords"/>
+			<item value="sendFpgaConfigBytesOverUart"/>
 			<item value="SPI_REG0, 0x0000001"/>
 			<item value="SPI_BUSY(SPI_REG3)"/>
 			<item value="SPI_BUSY(SPI_REG0)"/>
@@ -26,8 +37,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1240"/>
-		<item key="DIALOG_Y_ORIGIN" value="598"/>
+		<item key="DIALOG_X_ORIGIN" value="1426"/>
+		<item key="DIALOG_Y_ORIGIN" value="541"/>
 		<item key="DIALOG_WIDTH" value="284"/>
 		<item key="DIALOG_HEIGHT" value="356"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

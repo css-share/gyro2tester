@@ -15,13 +15,9 @@
 #include "dmaTest.h"
 #include "xaxidma.h"
 #include "dma_controller.h"
+#include "dmaTest-RxBypass.h"
 
 
-
-
-//#define FAKE_IC		//used to send data back when no IC present
-
-/* ===== Code to deal with the DMA IP ===== */
 
 #include "xaxidma.h"
 #include "xdebug.h"
@@ -57,24 +53,10 @@ extern void xil_printf(const char *format, ...);
 #define CMD_READ_DATA					0x61	// read data from tester - should be followed by
 												// 4 bytes(unsigned int) for num words to be
 												// sent (msbyte first)
-#define CMD_LOAD_SAWTOOTH_UP_DATA		0x62	// load test data1(sawtooth up) into TxData array
-#define CMD_LOAD_SAWTOOTH_DOWN_DATA		0x63	// load test data1(sawtooth down) into TxData array
 #define CMD_PROG_OTP_CHIP_ID			0x81	// program the chip ID into OTP memory
 #define CMD_PROG_OTP_VBG_TRIM			0x82	// program the bandgap trim value into OTP memory
 #define CMD_READ_OTP_DATA				0x83	// read the 32-bit data stored in 2 16-bit OTP registers
-#define CMD_READ_PACKETS				0x45	// read packet data
-#define CMD_CAL_ADC0 					0x90	// perform calibration on ADC0
-#define CMD_CAL_ADC1  					0x91	// perform calibration on ADC1
-#define CMD_READ_ADC0_CAL 				0x92	// read/transmit calibration values for ADC0
-#define CMD_READ_ADC1_CAL 				0x93	// read/transmit calibration values for ADC1
-#define CMD_FAST_CAL_ADC0				0x94	// perform fast calibration on ADC0
-#define CMD_FAST_CAL_ADC1				0x95	// perform fast calibration on ADC1
-#define CMD_LOOP_ADC_ACQUISITIONS		0xA0	// loops AXI commands to read ADC samples --for debug only--
-#define CMD_START_ADC_ACQUISITIONS		0xA1	// read values via HSI bus into RxFIFO until full
 #define CMD_FILL_DAC_TXFIFO				0xA2	// fill the TxFIFO with values and send via HSI bus
-#define CMD_CAPTURE_ADC0_CAL_DATA		0xA3	// run calibration while capturing ADC0 data
-#define CMD_CAPTURE_ADC1_CAL_DATA		0xA4	// run calibration while capturing ADC1 data
-#define CMD_CAPTURE_DATA_UNTIL_NEW		0xA5	// run ADC captures and test data until != old data
 #define CMD_FPGA_ALL_OUTPUTS_LOW		0xA7	// set all FPGA outputs low for safe power down
 #define CMD_FPGA_ALL_OUTPUTS_ENABLED 	0xA8	// enable all FPGA outputs after power supplies turned on
 #define CMD_FPGA_GET_OUTPUTS_STATE  	0xA9	// read the enabled/disabled state of FPGA outputs
@@ -87,16 +69,7 @@ extern void xil_printf(const char *format, ...);
 #define CMD_GET_MCLK_DIV				0xB1	// send MCLK division setting over uart
 #define	CMD_SET_SPICLK_DIV				0xB2	// set the SPI clock division setting
 #define CMD_GET_SPICLK_DIV				0xB3	// send the SPI clock division setting over uart
-#define CMD_SET_PACKET_SIZE				0xB4	// set the FIFO packet size
-#define CMD_GET_PACKET_SIZE				0xB5	// send the packet size over uart
-#define CMD_GET_DAC_SELECTION			0xB6	// send the current DAC(TX channel) selected for HSI dout over UART
-#define	CMD_SET_DAC_SELECTION			0xB7	// set the current DAC(TX channel) selected for HSI dout
-#define CMD_GET_ADC_SELECTION			0xB8	// send the current ADC(RX channel) mux selection over UART
-#define CMD_SET_ADC_SELECTION			0xB9	// set the current ADC(RX channel) mux selection
 #define CMD_GET_CONFIG_SETTINGS			0xBA	// send all config settings over uart
-#define CMD_ENABLE_VFUSE				0xBE	// set Vfuse control bit high to enable Vfuse
-#define CMD_DISABLE_VFUSE				0xBF	// set Vfuse control bit low to disable Vfuse
-#define CMD_CLR_HSCK_ERR_FLAG			0xC0	// clear the HSCK error flag in CORE STATUS register
 #define CMD_READ_CORE_STATUS_REG		0xC1	// read the CORE STATUS register and return register setting
 #define CMD_CHANGE_DMM_MUX_SETTING		0xC5	// change the mux selection the DMM is connected to
 #define CMD_DISABLE_MIO_OUTPUTS			0xC6	// disable MIO outputs so power down is safe
@@ -105,29 +78,18 @@ extern void xil_printf(const char *format, ...);
 #define CMD_RUN_DMA_TEST 				0xC9	// run the DMA test script
 #define CMD_RUN_DMA_TEST_RX_BYPASS		0xCA	// run the DMA test with RX in bypass mode
 #define CMD_DEBUG1						0xD0	// used for whatever debugging necessary
-#define CMD_STORE_RX_FIFO_DATA 			0xD1	// stores data in RX FIFO in array in ARM
-#define CMD_READ_STORED_RX_FIFO_DATA 	0xD2	// read data stored in ARM array for RX FIFO data
 #define CMD_SET_RX_FIFO_RESET_BIT  		0xD3	// set fpga control register bit to reset Rx fifo
 #define CMD_CLEAR_RX_FIFO_RESET_BIT 	0xD4	// clear fpga control register bit to reset Rx fifo
-#define CMD_SET_RX_FIFO_ACQUIRE_BIT 	0xD5	// set fpga control register bit to start Rx fifo acquire
-#define CMD_CLEAR_RX_FIFO_ACQUIRE_BIT 	0xD6	// clear fpga control register bit to start Rx fifo acquire
 #define CMD_FILL_TX_BUFFER_P_CHAN		0xE1	// fill the buffer in fpga for Tx P channel data output
 #define CMD_FILL_TX_BUFFER_M_CHAN 		0xE2	// fill the buffer in fpga for Tx M channel data output
 #define CMD_FILL_TX_BUFFER_CARRIER_CHAN 0xE3	// fill the buffer in fpga for Tx carrier channel data output
-#define CMD_READ_TX_P_BUFFER_DATA 		0xE4	// read contents of Tx P channel data from FPGA
-#define CMD_READ_TX_M_BUFFER_DATA 		0xE5	// read contents of Tx M channel data from FPGA
-#define CMD_READ_TX_CAR_BUFFER_DATA 	0xE6	// read contents of Tx carrier channel data from FPGA
 #define CMD_ENABLE_FPGA_TX_DATA_OUTPUT 	0xE7	// write gyro channel control register: LSB = 1
 #define CMD_DISABLE_FPGA_TX_DATA_OUTPUT 0xE8	// write gyro channel control register: LSB = 0
 #define CMD_RESET_TX_FIFO 				0xE9	// set, then clear the reset bit in baseaddr_tx_fifo+0 register
-#define CMD_ENABLE_TX_FIFO_LOOPING 		0xEA	// set bit for Tx fifo looping.. maybe for Pedro's failed looping attempt
-#define CMD_DISABLE_TX_FIFO_LOOPING		0xEB	// clear bit for Tx fifo looping.. maybe for Pedro's failed looping attempt
 #define CMD_READ_FPGA_TX_CTRL_WORDS 	0xEC	// read the 32-bit control words in fpga Tx section
 #define CMD_READ_FPGA_RX_CTRL_WORDS 	0xED	// read the 32-bit control words in fpga Rx section
 #define CMD_READ_FPGA_CONTROL_WORDS		0xEE	// read the 32-bit control words in fpga logic section
 #define CMD_READ_FPGA_SPI_CTRL_WORDS    0xEF	// read the 32-bit control words in fpga SPI section
-#define CMD_ENABLE_HSI_SIGNALS 			0xF0	// enable the HSI signal outputs on the fpga
-#define CMD_DISABLE_HSI_SIGNALS 		0xF1	// disable the HSI signal outputs on the fpga
 #define CMD_ENABLE_GYRO_CHANNEL 		0xF2	// enable the gyro channel outputs on the fpga
 #define CMD_DISABLE_GYRO_CHANNEL 		0xF3	// disable the gyro channel outputs on the fpga
 
@@ -151,6 +113,9 @@ extern void xil_printf(const char *format, ...);
 #define TADC_VEXTSEL					0x0040
 #define	TADC_RESET						0x0002
 #define TADC_START						0x0001
+
+#define MAX_TADC_RESULTS_SIZE 512
+static u16 testADCresults[MAX_TADC_RESULTS_SIZE];
 
 // settings for DMM mux
 #define DMM_MUX_SEL_TXP0				0x0001
@@ -190,55 +155,6 @@ unsigned int SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_4;
 #define DIV_64		64
 #define DIV_128		128
 
-/*
-#define DMA_DEV_ID		XPAR_AXIDMA_0_DEVICE_ID
-
-#ifdef XPAR_AXI_7SDDR_0_S_AXI_BASEADDR
-#define DDR_BASE_ADDR		XPAR_AXI_7SDDR_0_S_AXI_BASEADDR
-#elif XPAR_MIG7SERIES_0_BASEADDR
-#define DDR_BASE_ADDR	XPAR_MIG7SERIES_0_BASEADDR
-#elif XPAR_MIG_0_BASEADDR
-#define DDR_BASE_ADDR	XPAR_MIG_0_BASEADDR
-#elif XPAR_PSU_DDR_0_S_AXI_BASEADDR
-#define DDR_BASE_ADDR	XPAR_PSU_DDR_0_S_AXI_BASEADDR
-#endif
-
-#ifndef DDR_BASE_ADDR
-#warning CHECK FOR THE VALID DDR ADDRESS IN XPARAMETERS.H, \
-			DEFAULT SET TO 0x01000000
-#define MEM_BASE_ADDR		0x01000000
-#else
-#define MEM_BASE_ADDR		(DDR_BASE_ADDR + 0x1000000)
-#endif
-
-#define TX_BD_SPACE_BASE	(MEM_BASE_ADDR)
-#define TX_BD_SPACE_HIGH	(MEM_BASE_ADDR + 0x0000FFFF) // was FFFF
-#define TX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00010000)
-#define TX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x0001FFFF)
-
-#define RX_BD_SPACE_BASE	(MEM_BASE_ADDR + 0x00020000) // was 1000
-#define RX_BD_SPACE_HIGH	(MEM_BASE_ADDR + 0x0002FFFF) // was 1FFF
-#define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00030000)
-#define RX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x0003FFFF)
-
-#define TX_CHAN_P_OFFSET		0
-#define TX_CHAN_M_OFFSET		8192
-#define TX_CHAN_CARRIER_OFFSET	16384
-
-// names for Tx channels, buffers
-#define TX_CHANNEL_HSI_DATA_P 		1
-#define TX_CHANNEL_HSI_DATA_M 		2
-#define TX_CHANNEL_HSI_DATA_CARRIER	3
-
-// type of data to load into buffers for Tx channel HSI data out
-#define RAMP_UP 	1
-#define RAMP_DOWN 	2
-#define TRIANGLE 	3
-int TxDataType = RAMP_UP;
-
-#define MAX_PKT_LEN_BYTES		8192	// this is Bytes
-#define MARK_UNCACHEABLE        0x701
-*/
 
 // triple timer counter
 #define DELAY_TIMER_DEVICE_ID	XPAR_XTTCPS_0_DEVICE_ID
@@ -272,9 +188,12 @@ typedef struct {
 //Xuint32* baseaddr_p           = (Xuint32*) XPAR_AXI4_PL_INTERRUPT_GE_0_S00_AXI_BASEADDR; //from gyro1 firmware
 //Xuint32* baseaddr_p           = (Xuint32*) 0x43C00000; //this address from gyro1 block design. Does not exist in gyro2 block design.
 
-#define SPI_ENABLE_BIT	0x00000010
-#define SPI_START_BIT	0x00000001
-#define SPI_READ_BIT	0x00000002
+#define SPI_ENABLE_BIT		0x00000010
+#define SPI_CLK_SEL_BITS	0x0000000C
+#define SPI_START_BIT		0x00000001
+#define SPI_READ_BIT		0x00000002
+
+#define MCK_CLK_SEL_BITS	0x000F0000	// clock select in bits[19:16] of BiDir Control register
 
 Xuint32* baseaddr_spi         = (Xuint32*) 0x43C10000;
 Xuint32* baseaddr_channel     = (Xuint32*) 0x43C20000;
@@ -287,7 +206,7 @@ Xuint32	 fpgaDataToWrite;
 Xuint32  fpgaDataReadFromFpga;
 
 Xuint32  fpgaSpiControlWords[4] =	{0,0,0,0};
-Xuint32  fpgaControlWords[4]   = 	{0,0,0,0};
+Xuint32  fpgaBiDirControlWords[4] =	{0,0,0,0};
 Xuint32  fpgaRxControlWords[4] = 	{0,0,0,0};
 Xuint32  fpgaTxControlWords[4] = 	{0,0,0,0};
 
@@ -315,21 +234,6 @@ u8 byte4 = 0x04;
 
 u16 i = 0;
 
-u32 debugWord32_0 = 0;
-u32 debugWord32_1 = 0;
-u32 debugWord32_2 = 0;
-u32 debugWord32_3 = 0;
-u32 debugWord32_4 = 0;
-u32 debugWord32_5 = 0;
-u32 debugWord32_6 = 0;
-u32 debugWord32_7 = 0;
-u32 debugWord32_8 = 0;
-u32 debugWord32_9 = 0;
-u32 debugWord32[4096];
-u32*			debugBaseAddress = 0x43C40000;
-unsigned int	debugOffset = 0;
-unsigned int 	numAddressesToRead = 1000;
-
 
 int flag;
 int setup_interrupt_system();
@@ -342,14 +246,8 @@ static u8 UartRxData[UART_RX_BUFFER_SIZE];	// Buffer for Receiving Data
 static u8 UartTxData[UART_TX_BUFFER_SIZE];	// Buffer for Transmitting Data
 u16 numUartBytesReceived;
 
-u16 ADC_calData[8];			// store ADC cal data read from chip before transmit
 
-u8	FPGA_outputs_state = 1; 	// 1=on, 2=0ff
-u8  FPGA_hsi_state = 1;			// 1=enabled, 2=disabled
-u8  FPGA_channel_state = 1;     //
-
-#define MAX_TADC_RESULTS_SIZE 512
-static u16 testADCresults[MAX_TADC_RESULTS_SIZE];
+u8	FPGA_outputs_state = 2; 	// 1=on, 2=0ff
 
 #define WAVEFORM_DATA_ARRAY_SIZE 10
 static volatile u16 TxFifoData[WAVEFORM_DATA_ARRAY_SIZE];
@@ -364,8 +262,6 @@ static XTtcPs DelayTimer;		/* Timer counter instance */
 static u8 TimerErrorCount;		/* Errors seen at interrupt time */
 static volatile u8 timerRunning;
 
-
-// --- DMA Device Global Variables.
 
 int Status;
 XAxiDma_Config *Config;
@@ -382,7 +278,6 @@ XGpioPs MIO_gpio;
 #define DIRECTION_OUTPUT 1
 #define DIRECTION_INPUT 0
 
-//XAxiDma AxiDma; // DMA device instance
 
 // Buffer for transmit packet. Must be 32-bit aligned to be used by DMA.
 u32 *Packet = (u32 *) TX_BUFFER_BASE;
@@ -399,9 +294,6 @@ u32 *Packet = (u32 *) TX_BUFFER_BASE;
 static void Uart550_Setup(void);
 #endif
 
-static int  initSPI();
-//static void readSPIStatus();
-//static void setSPIControl(Xuint32 v);
 static void disableSPI();
 static void enableSPI();
 
@@ -411,30 +303,10 @@ unsigned int readGyroRegister(unsigned char address);
 void modify_register(unsigned int *data, unsigned int address,
 					unsigned int newVal);
 
-//static int readGyroTxFIFODebugData();
-//static int readGyroRxFIFODebugData();
-
-//static int resetGyroTxFIFO();
-//static int resetGyroRxFIFO();
-
-//static int resetGyroTxFIFOLooping();
-//static int setGyroTxFIFOLooping();
-
-//static void changeTxBuffer(void);
-
 static void storeFpgaTxControlWords(void);
 static void storeFpgaRxControlWords(void);
-static void storeFpgaControlWords(void);
+static void storefpgaBiDirControlWords(void);
 static void storeFpgaSpiControlWords(void);
-static void disableGyroChannel();
-static void enableGyroChannel();
-static void disableHSIGyroChannel();
-static void enableHSIGyroChannel();
-static int  setGyroChannelConfiguration(unsigned int v);
-static int  setGyroChannelControl(unsigned int v);
-static void TxDataFromUartToDma(u16 tx_buffer_offset);
-static void enableFpgaTxBufferOutputs(void);
-static void disableFpgaTxBufferOutputs(void);
 static int 	SetupUartPs(XScuGic *IntcInstPtr, XUartPs *UartInstPtr,
 					u16 DeviceId, u16 UartIntrId);
 static void setupUartToReceiveTxData(u8 lsByte, u8 msByte);
@@ -454,111 +326,22 @@ static Xuint8 ProgramOTP(u32 otp32BitValue);
 static Xuint8 ProgramOTP_chipID(u32 id);
 static Xuint8 ProgramOTP_VbgTrim(u8 trimVal);
 static u32 readOTP32bits(void);
-static void start_HSI_capture_duration_pulse(void);
-static void end_HSI_capture_duration_pulse(void);
 static void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings);
 static void changeSPIclockDivision(u8 divSetting);
 static void changeMCLKdivision(u8 divSetting);
-static void changeHSI_ADC_selection(u8 selection);
 static void changeMuxSelection(u8 selection);
 static void setDmmMuxAddressLines(u32 addr3, u32 addr2, u32 addr1, u32 addr0);
-static void sendConfigBytesOverUart(void);
+static void sendFpgaConfigBytesOverUart(void);
 static unsigned int read_test_ADC_result(void);
 static void init_MIO_gpio(void);
-static void enable_Vfuse(void);
-static void disable_MIO(void);
+static void	initUart(void);
 static void disable_dmm_mux(void);
 static void enable_dmm_mux(void);
-static void disable_Vfuse(void);
-static void clearHSCKerrorFlag(void);
-static u8 readHSCKerrorFlag(void);
 
 
 
 
 
-// -------------------------------------------------------------------
-int setGyroChannelConfiguration(unsigned int v){
-/*
-    //=======================================================
-    // setGyroChannelConfiguration() description:
-    //
-    // bit 18:16 is to divide clock by 1/2/4/8/16/32/64/128
-    // with div128 (7 Hex) we get 50 MHz divided by 128 = 390 KHz.
-    //
-    //=======================================================
-*/
-
-  // --- clear GYRO stream channel registers
-	Xuint32 x;
-    x = (Xuint32)(v);
-  *(baseaddr_channel+0) = x;
-  return 0;
-}
-// -------------------------------------------------------------------
-
-
-//===============================================================
-// restored from old code with functional HSI bus
- void disableGyroChannel(){
-	  *(baseaddr_channel+2) = 0x00000000;
-	  FPGA_hsi_state = 2;
-	  FPGA_channel_state = 2;
- }
- // -------------------------------------------------------------------
-
- void enableGyroChannel(){
-	  *(baseaddr_channel+2) = 0x00000011;
-	  FPGA_hsi_state = 1;
-	  FPGA_channel_state = 1;
- }
- // -------------------------------------------------------------------
-
- void disableHSIGyroChannel(){
-	 if(FPGA_channel_state == 1){ // 1=enabled, 2=disabled
-	  *(baseaddr_channel+2) = 0x000000001;
-	  FPGA_hsi_state = 2;
-	 }
-
- }
- // -------------------------------------------------------------------
-
- void enableHSIGyroChannel(){
-	 if(FPGA_channel_state == 1){
-	  *(baseaddr_channel+2) = 0x000000011;
-	  FPGA_hsi_state = 1;
-	 }
- }
-//===============================================================
-
-
-
-/*
-// -------------------------------------------------------------------
- void disableGyroChannel(){
-	 Xuint32 regSetting;
-	 regSetting = *(baseaddr_channel+2);
-	 *(baseaddr_channel+2) = regSetting & 0xFFFFFFFE;
- }
- // -------------------------------------------------------------------
- void enableGyroChannel(){
-	 Xuint32 regSetting;
-	 regSetting = *(baseaddr_channel+2);
-	 *(baseaddr_channel+2) = regSetting | 0x1;
- }
- // -------------------------------------------------------------------
- void disableHSIGyroChannel(){
-	 Xuint32 regSetting;
-	 regSetting = *(baseaddr_channel+2);
-	 *(baseaddr_channel+2) = regSetting & 0xFFFFFFFD;
- }
- // -------------------------------------------------------------------
- void enableHSIGyroChannel(){
-	 Xuint32 regSetting;
-	 regSetting = *(baseaddr_channel+2);
-	 *(baseaddr_channel+2) = regSetting | 0x2;
- }
-*/
 
 // -------------------------------------------------------------------
 void storeFpgaTxControlWords(void){
@@ -568,6 +351,8 @@ void storeFpgaTxControlWords(void){
 	fpgaTxControlWords[2] = *(baseaddr_tx_fifo+2);
 	fpgaTxControlWords[3] = *(baseaddr_tx_fifo+3);
 }
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
 void storeFpgaRxControlWords(void){
@@ -577,28 +362,19 @@ void storeFpgaRxControlWords(void){
 	fpgaRxControlWords[2] = *(baseaddr_rx_fifo+2);
 	fpgaRxControlWords[3] = *(baseaddr_rx_fifo+3);
 }
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
-void storeFpgaControlWords(void){
+void storefpgaBiDirControlWords(void){
 
-	fpgaControlWords[0] = *(baseaddr_channel+0);
-	fpgaControlWords[1] = *(baseaddr_channel+1);
-	fpgaControlWords[2] = *(baseaddr_channel+2);
-	fpgaControlWords[3] = *(baseaddr_channel+3);
+	fpgaBiDirControlWords[0] = *(baseaddr_channel+0);
+	fpgaBiDirControlWords[1] = *(baseaddr_channel+1);
+	fpgaBiDirControlWords[2] = *(baseaddr_channel+2);
+	fpgaBiDirControlWords[3] = *(baseaddr_channel+3);
 }
-
-
 // -------------------------------------------------------------------
-//   SPI FUNCTIONS
-// -------------------------------------------------------------------
-int initSPI(){
-    // clear SPI registers
-    *(baseaddr_spi+0) = 0x00000000;
-    *(baseaddr_spi+1) = 0x00000000;
-    *(baseaddr_spi+2) = 0x00000000;
-    *(baseaddr_spi+3) = 0x00000000;
-    return 0;
-}
+
 
 // -------------------------------------------------------------------
 void storeFpgaSpiControlWords(void){
@@ -608,207 +384,103 @@ void storeFpgaSpiControlWords(void){
 	fpgaSpiControlWords[2] = *(baseaddr_spi+2);
 	fpgaSpiControlWords[3] = *(baseaddr_spi+3);
 }
+// -------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------
+ void setMCKdivision(unsigned int mckDivSetting){
+	Xuint32 x;
+
+	x = *(baseaddr_channel) & ~MCK_CLK_SEL_BITS;	// read all but clk sel bits
+	*(baseaddr_channel) = x | mckDivSetting;
+}
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
  void setSPIClockDivision(unsigned int v){
    Xuint32 x;
 
-   x = (Xuint32)((v<<2) & 0x0000000C);
+   x = (Xuint32) ((v<<2) & SPI_CLK_SEL_BITS);
    *(baseaddr_spi) = x;
 }
+// -------------------------------------------------------------------
 
- // -------------------------------------------------------------------
-  int readSPIClockDivision(){
-     Xuint32 x;
-     x = *(baseaddr_spi+3);
-     return (((int)x) & 0x00000007);
-}
 
 // -------------------------------------------------------------------
-int writeSPI_blocking(unsigned int address, unsigned int data){
-	Xuint32 d, m;
-	int x, y, v;
-
-	x = (address & 0x0000007f) << 16;
-	y = ((0x0000FFFF) & data);
-	v = 0x80000000 | (x | y);
-    m = (Xuint32)v;
-//    xil_printf("== m  0x%08x \n",m);
-	*(baseaddr_spi+0) = m;
-	while(1){
-	  d = *(baseaddr_spi+1);
-//	  xil_printf("== read d  0x%08x \n",d);
-
-	  v = (unsigned int)d;
-	  if(v & 0x80000000){
-		break;
-	  }
-
-    }
-    *(baseaddr_spi+0) = 0x00000000;
-    return 0;
+unsigned int readSPIClockDivision(void){
+     return (int) (*(baseaddr_spi) & SPI_CLK_SEL_BITS >> 2);
 }
 // -------------------------------------------------------------------
- int writeSPI_non_blocking(unsigned int address, unsigned int data){
-    Xuint32 d, m;
-    int i, x, y, v;
-    int clk_div, delay;
 
-    clk_div = readSPIClockDivision(); // binary representation
-    delay = 16000;
-
-    x = (address & 0x0000007f) << 16;
-    y = ((0x0000FFFF) & data);
-    v = 0x80000000 | (x | y);
-    m = (Xuint32)v;
-
-   *(baseaddr_spi+0) = m;
-   //*(baseaddr_spi+0) = 0x80800F57; // debug only...
-
-   for(i = 0; i <= clk_div; i++){
-     nops(delay << i);
-     d = *(baseaddr_spi+1);
-     v = (unsigned int)d;
-     if(v & 0x80000000){
-       *(baseaddr_spi+0) = 0x00000000;
-       return 0;
-     }
-   }
-   *(baseaddr_spi+0) = 0x00000000;
-   return 1;
- }
-
- // -------------------------------------------------------------------
-int writeSPI_non_blocking_orig(unsigned int address, unsigned int data){
-	Xuint32 d, m;
-	int i, x, y, v;
-	int delay;
-
-	delay = 2000;
-	x = (address & 0x0000007f) << 16;
-	y = ((0x0000FFFF) & data);
-	v = 0x80000000 | (x | y);
-    m = (Xuint32)v;
-    //xil_printf("== m  0x%08x \n\r",m);
-	*(baseaddr_spi+0) = m;
-    //*(baseaddr_spi+0) = 0x80800F51; // debug only....
-    for(i = 0; i < 5; i++){
-    	nops(delay << i);
-	  d = *(baseaddr_spi+1);
-	   //xil_printf("== read d  0x%08x \n\r",d);
-	  v = (unsigned int)d;
-	  if(v & 0x80000000){
-		*(baseaddr_spi+0) = 0x00000000;
-		return 0;
-	  }
-    }
-    *(baseaddr_spi+0) = 0x00000000;
-    return 1;
-}
-
-// -------------------------------------------------------------------
-int readSPI(unsigned int *data, unsigned int address){
-  Xuint32 d, m;
-  int i, x, v, r;
-  int res, delay, clk_div;
-
-  clk_div = readSPIClockDivision(); // binary representation
-  delay = 16000;
-
-  res = 1;
-  *data = 0x00000000;           // clears result
-  x = ((address & 0x0000007F) << 16) | 0x00800000;	// DEBUG: the 8F51 is a test pattern
-  v = (0x80000000 | x);         // set the start bit
-  m = (Xuint32)v;
-  *(baseaddr_spi+0) = m;
-  for(i = 0; i < clk_div; i++){
-    nops(delay << i);
-    d = *(baseaddr_spi+1);
-    r = (unsigned int)d;
-    if(r & 0x80000000){
-      *data = (0x0000FFFF & r); // only lower 16 bits matter
-      res = 0;
-#ifdef FAKE_IC
-      *data = (0x0000ABCD);
-#endif
-      break;
-    }
-  }
-  v = (0x7FFFFFFF & x);
-  m = (Xuint32)v;
-  *(baseaddr_spi+0) = m;        // clear start
-  return res;
-}
-
-// -------------------------------------------------------------------
-int writeSPI(unsigned int address, unsigned int data){
-	Xuint32 d, m;
-	int x, y, v;
-
-	x = (address & 0x0000007f) << 16;
-	y = ((0x0000FFFF) & data);
-	v = 0x80000000 | (x | y);
-    m = (Xuint32)v;
-//    xil_printf("== m  0x%08x \n",m);
-	*(baseaddr_spi+0) = m;
-	while(1){
-	  d = *(baseaddr_spi+1);
-//	  xil_printf("== read d  0x%08x \n",d);
-
-	  v = (unsigned int)d;
-	  if(v & 0x80000000){
-		break;
-	  }
-
-    }
-    *(baseaddr_spi+0) = 0x00000000;
-    return 0;
-}
 
 // -------------------------------------------------------------------
 unsigned int writeGyroRegister(unsigned int address, unsigned int data){
-	Xuint32 clkSelBits;
+	Xuint32 		spiControReg,clkSelBits,enableBit;
 
-	clkSelBits = *(baseaddr_spi+0) & 0xC;				// store clock select bits[3:2]
-	*(baseaddr_spi+0) = clkSelBits | SPI_ENABLE_BIT;	// clear direction and start bits[1:0]
-	*(baseaddr_spi+1) = address & 0x7F;					// set address
-	*(baseaddr_spi+2) = data & 0xFFFF;					// set data
-	*(baseaddr_spi+0) = clkSelBits | SPI_START_BIT		// set start bit to initiate transfer
-								   | SPI_ENABLE_BIT;
+	spiControReg = *(baseaddr_spi+0);
+
+	clkSelBits = spiControReg & SPI_CLK_SEL_BITS;		// store clock select bits
+	enableBit = spiControReg & SPI_ENABLE_BIT;			// store clock select bits
+
+	*(baseaddr_spi+0) = clkSelBits | enableBit;			// setup for a register write
+	*(baseaddr_spi+1) = address;						// set register address to write
+	*(baseaddr_spi+2) = data;							// set data to write
+	*(baseaddr_spi+0) = clkSelBits | enableBit | 		// set start bit[0] to initiate transfer
+						SPI_START_BIT;
 	return 0;
 }
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
 unsigned int readGyroRegister(unsigned char address){
-	Xuint32 		clkSelBits;
-	unsigned int 	registerReadData;
+	Xuint32 		spiControReg,clkSelBits,enableBit;
 
-	clkSelBits = *(baseaddr_spi+0) & 0xC;				// store clock select bits[3:2]
-	*(baseaddr_spi+0) = clkSelBits | SPI_ENABLE_BIT		// set read bit[1], clear start bit[0]
+	spiControReg = *(baseaddr_spi+0);
+
+	clkSelBits = spiControReg & SPI_CLK_SEL_BITS;		// store clock select bits
+	enableBit = spiControReg & SPI_ENABLE_BIT;			// store clock select bits
+
+	*(baseaddr_spi+0) = clkSelBits | enableBit			// setup for a register read
 						| SPI_READ_BIT;
-	*(baseaddr_spi+1) = address & 0x7F;					// set address
-	*(baseaddr_spi+0) = clkSelBits | SPI_ENABLE_BIT		// set start bit[0] to initiate transfer
+	*(baseaddr_spi+1) = address;						// set register address to read
+	*(baseaddr_spi+0) = clkSelBits | enableBit			// set start bit[0] to initiate transfer
 						| SPI_READ_BIT | SPI_START_BIT;
 	nops(10000);										// wait for data clocked in
-	registerReadData = *(baseaddr_spi+3);
 
-	return registerReadData;
+	return *(baseaddr_spi+3);
 }
+// -------------------------------------------------------------------
 
 
 // -------------------------------------------------------------------
 void disableSPI(){
-    *(baseaddr_spi+2) = 0x00000000;
+    *(baseaddr_spi+0) = *(baseaddr_spi+0) & ~(0x00000010);
 }
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
 void enableSPI(){
-//    *(baseaddr_spi+2) = 0x00000001;
+	*(baseaddr_spi+0) = *(baseaddr_spi+0) | 0x00000010;
 }
+// -------------------------------------------------------------------
 
-// -----------------------------------------------------------------------
-//   DMA FUNCTIONS
-// ---------- functions from dma -----------------------------------------
+
+// -------------------------------------------------------------------
+void disableHSI(){
+    *(baseaddr_channel+2) = 0x00000000;
+}
+// -------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------
+void enableHSI(){
+    *(baseaddr_channel+2) = 0x00000001;
+}
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
 void nops(unsigned int num) {
@@ -819,6 +491,8 @@ void nops(unsigned int num) {
 }
 // -------------------------------------------------------------------
 
+
+// -------------------------------------------------------------------
 void waitForDataOverUart(void)
 {
 	u8 abortUartWaiting = FALSE;	//this is a way to use debugger to
@@ -830,6 +504,8 @@ void waitForDataOverUart(void)
 		XUartPs_Recv(&UartPs, UartRxData, 0); //request 0 bytes to abort receive operation
 	}
 }
+// -------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------
 void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
@@ -1039,7 +715,6 @@ int SetupUartInterruptSystem(XScuGic *IntcInstancePtr,
 void read_uart_bytes(void)
 {
 	u8 numBytesReceived = 0;
-	u8 byteToSend;
 	u16 numPoints;
 	u32 numBytesToSend;
 	u16 TxData;
@@ -1139,65 +814,7 @@ void read_uart_bytes(void)
 			}
 			send_byte_over_UART(ProgramOTP_VbgTrim(UartRxData[1]));
 			break;
-/*
-		case (CMD_FILL_TX_BUFFER_P_CHAN):
-			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
-			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
-			waitForDataOverUart();
-			TxDataFromUartToDma(TX_CHAN_P_OFFSET);
-//			sendTxDmaPacket(&AxiDma, TX_CHAN_P_OFFSET);
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
 
-		case (CMD_FILL_TX_BUFFER_M_CHAN):
-			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
-			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
-			waitForDataOverUart();
-			TxDataFromUartToDma(TX_CHAN_M_OFFSET);
-//			sendTxDmaPacket(&AxiDma, TX_CHAN_M_OFFSET);
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_FILL_TX_BUFFER_CARRIER_CHAN):
-			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
-			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
-			waitForDataOverUart();
-			TxDataFromUartToDma(TX_CHAN_CARRIER_OFFSET);
-//			sendTxDmaPacket(&AxiDma, TX_CHAN_CARRIER_OFFSET);
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_READ_TX_P_BUFFER_DATA):
-//			storeTxBufferDataInArray(TX_CHAN_P_OFFSET);
-			send_data_over_UART(getNumBytesToSend(UartRxData),(u8*)TxBufferData);
-			break;
-
-		case (CMD_ENABLE_FPGA_TX_DATA_OUTPUT):
-			enableFpgaTxBufferOutputs();
-			setGyroTxFIFOLooping();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_DISABLE_FPGA_TX_DATA_OUTPUT):
-			disableFpgaTxBufferOutputs();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_RESET_TX_FIFO):
-			resetGyroTxFIFO();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_ENABLE_TX_FIFO_LOOPING):
-			setGyroTxFIFOLooping();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_DISABLE_TX_FIFO_LOOPING):
-			resetGyroTxFIFOLooping();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-*/
 		case (CMD_READ_FPGA_TX_CTRL_WORDS):
 			storeFpgaTxControlWords();
 			// send 16 bytes (the four 32-bit words read from fpga space)
@@ -1211,9 +828,9 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_READ_FPGA_CONTROL_WORDS):
-			storeFpgaControlWords();
+			storefpgaBiDirControlWords();
 			// send 16 bytes (the four 32-bit words read from fpga space)
-			send_data_over_UART(16,(u8*)&fpgaControlWords[0]);
+			send_data_over_UART(16,(u8*)&fpgaBiDirControlWords[0]);
 			break;
 
 		case (CMD_READ_FPGA_SPI_CTRL_WORDS):
@@ -1228,16 +845,18 @@ void read_uart_bytes(void)
 */
 		case (CMD_FPGA_ALL_OUTPUTS_LOW):
 			disableSPI();
-			disableGyroChannel();
-			disableHSIGyroChannel();
+			disableHSI();
 			FPGA_outputs_state = 2;		// 1=on, 2=off
 			break;
 
 		case (CMD_FPGA_ALL_OUTPUTS_ENABLED):
 			enableSPI();
-			enableGyroChannel();
-			enableHSIGyroChannel();
+			enableHSI();
 			FPGA_outputs_state = 1;		// 1=on, 2=off
+			break;
+
+		case (CMD_FPGA_GET_OUTPUTS_STATE):
+			send_byte_over_UART(FPGA_outputs_state);
 			break;
 
 		case (CMD_ENABLE_DMM_MUX):
@@ -1248,30 +867,6 @@ void read_uart_bytes(void)
 		case (CMD_DISABLE_DMM_MUX):
 			disable_dmm_mux();
 			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_ENABLE_HSI_SIGNALS):
-			enableHSIGyroChannel();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_DISABLE_HSI_SIGNALS):
-			disableHSIGyroChannel();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_ENABLE_GYRO_CHANNEL):
-			enableGyroChannel();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_DISABLE_GYRO_CHANNEL):
-			disableGyroChannel();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_FPGA_GET_OUTPUTS_STATE):
-			send_byte_over_UART(FPGA_outputs_state);
 			break;
 
 		case (CMD_RUN_TADC_CONVERSION):
@@ -1313,7 +908,7 @@ void read_uart_bytes(void)
 			changeMCLKdivision(UartRxData[1]);
 
 			// use new variable in call to configuration function
-			setGyroChannelConfiguration(MCK_div_setting);
+			setMCKdivision(MCK_div_setting);
 			break;
 
 		case (CMD_GET_SPICLK_DIV):
@@ -1351,16 +946,7 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_GET_CONFIG_SETTINGS):
-			sendConfigBytesOverUart();
-			break;
-
-		case (CMD_CLR_HSCK_ERR_FLAG):
-			clearHSCKerrorFlag();
-			break;
-
-		case (CMD_READ_CORE_STATUS_REG):
-			byteToSend = readHSCKerrorFlag();
-			send_byte_over_UART(byteToSend);
+			sendFpgaConfigBytesOverUart();
 			break;
 
 		case (CMD_RUN_DMA_TEST):
@@ -1379,119 +965,32 @@ void read_uart_bytes(void)
 			// third and fourth bytes are 16-bit number of measurements MSbyte(3rd) LSbyte(4th)
 			numBytesToSend = (u32)( (UartRxData[1]<<16) + (UartRxData[2]<<8) + (UartRxData[3]) );
 
-			// send the entire Rx data buffer(all 3 channels)
+			// send the requested number of bytes from the Rx buffer in DMA
 			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
-
+/*
+		case (CMD_FILL_TX_BUFFER_P_CHAN):
+			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
+			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
+			waitForDataOverUart();
+			TxDataFromUartToDma(TX_CHAN_P_OFFSET);
+//			sendTxDmaPacket(&AxiDma, TX_CHAN_P_OFFSET);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+*/
 		case (CMD_DEBUG1):
-			if (debugType == 2)
+			if (debugType == 1)
 			{
-				// try writing to RX buffer space in fpga
-				u8Ptr = (u8 *)RX_BUFFER_BASE;
-				u8Ptr[0] = byte4;
-				u8Ptr[1] = byte3;
-				u8Ptr[2] = byte2;
-				u8Ptr[3] = byte1;
-			}
-			if (debugType == 3)
-			{
-				// try writing to TX buffer space in fpga
-				for(i=5;i<9;i++){
-					*(baseaddr_tx_fifo+i) = 0x0FFF0FFF;
-				}
-			}
-			if (debugType == 4)
-			{
-				// try reading from TX buffer space in fpga
-				for(i=0;i<100;i++){
-					debugWord32[i] = *(baseaddr_tx_fifo+i);
-				}
-			}
-			if (debugType == 5)
-			{
-				// read a block from TX buffer space in fpga
-				// starting with dynamic offset
-				for(i=0;i<numAddressesToRead;i++){
-					debugWord32[i] = *(debugBaseAddress+debugOffset+i);
-				}
-			}
-			if (debugType == 6)
-			{
-				// make changes in debugger to below variables to write desired
-				// value to the desired FPGA address space
-				*(debugWordAddr) = debugWordData;
+
 			}
 			break;
-			if (debugType == 7)
-			{
-			    *(baseaddr_spi+0) = 0xabcd1234;
-			    *(baseaddr_spi+1) = 0xaa55aa55;
-			    *(baseaddr_spi+2) = 0x87654321;
-			    *(baseaddr_spi+3) = 0x12345678;
-			}
-			break;
-
 	}
 }
 //------------------------------------------------------------
 
 
 //------------------------------------------------------------
-void clearHSCKerrorFlag(void)
-{
-	unsigned int reg0;
-
-	// store original register0 setting
-	readSPI(&reg0,0);
-
-	// turn on RST_HSCK_ERR bit to clear flag
-	writeSPI_non_blocking(0, reg0|0x80);
-
-	// turn off RST_HSCK_ERR bit to enable flag again
-	writeSPI_non_blocking(0, reg0&0xFF7F);
-
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-u8 readHSCKerrorFlag(void)
-{
-	unsigned int reg0;
-	unsigned int coreStatusReg;
-	u8 HSCKerrFlagStatus;
-
-	// store original register0 setting
-	readSPI(&reg0,0);
-
-	// turn on RBKSEL0 bit
-	writeSPI_non_blocking(0, reg0|0x200);
-
-	// read core status register
-	readSPI(&coreStatusReg,0);
-
-	// restore register0 original setting
-	writeSPI_non_blocking(0, reg0);
-
-	// flag status: 1=set, 2=cleared, zero invalid since
-	// not a good value to send over UART
-	if (coreStatusReg & 4)
-	{
-		HSCKerrFlagStatus = 1;
-	}
-	else
-	{
-		HSCKerrFlagStatus = 2;
-	}
-
-	return HSCKerrFlagStatus;
-
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void sendConfigBytesOverUart(void)
+void sendFpgaConfigBytesOverUart(void)
 {
 	send_byte_over_UART( (u8)(MCK_div_setting>>16) );
 	send_byte_over_UART( (u8)SPI_clock_division_setting );
@@ -1535,12 +1034,11 @@ void changeMuxSelection(u8 selection)
 			setDmmMuxAddressLines(1,0,0,1);
 			break;
 		}
-
-
 }
 //------------------------------------------------------------
 
 
+//------------------------------------------------------------
 void setDmmMuxAddressLines(u32 addr3, u32 addr2, u32 addr1, u32 addr0)
 {
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A0_OUTPUT_PIN, addr0);
@@ -1611,23 +1109,25 @@ unsigned int read_test_ADC_result(void)
 	unsigned int reg0,reg1readBack;
 
 	//store original register 0 setting
-	readSPI(&reg0,0);
+	reg0 = readGyroRegister(0);
 
 	//set register 1 readback mode to read-only, this is
 	//controlled by register 0 bit 10
-	writeSPI_non_blocking(0,reg0|0x0400);
+	writeGyroRegister(0,reg0|0x0400);
 
 	//read the state of TESTADC readback register
-	readSPI(&reg1readBack,1);
+	reg1readBack = readGyroRegister(1);
 
 	//fist 12 bits are ADC value, mask others
 	reg1readBack &= 0xFFF;
 
 	//turn register1 readback mode off
-	writeSPI_non_blocking(0,reg0);
+	writeGyroRegister(0,reg0);
 
 	return reg1readBack;
 }
+//------------------------------------------------------------
+
 
 //------------------------------------------------------------
 void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
@@ -1636,12 +1136,12 @@ void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
 	u16 testADCinitialConditions,testADCstartConditions;
 
 	//store original register 0,1 setting
-	readSPI(&reg0,0);
-	readSPI(&reg1,1);
+	reg0 = readGyroRegister(0);
+	reg1 = readGyroRegister(1);
 
 	//set register 1 readback mode to read-only, this is
 	//controlled by register 0 bit 10
-	writeSPI_non_blocking(0,reg0|0x0400);
+	writeGyroRegister(0,reg0|0x0400);
 
 	if (numReadings > MAX_TADC_RESULTS_SIZE)
 	{
@@ -1669,7 +1169,7 @@ void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
 
 	// need to set initial conditions and led ADC settle before looping
 	// through successive measurements
-	writeSPI_non_blocking(1,testADCinitialConditions);
+	writeGyroRegister(1,testADCinitialConditions);
 
 	SetTimerDuration(65535, 8);		// delay for 5msec after initial mux setting
 	timerRunning = 1;				// set flag that is cleared in timer ISR
@@ -1682,10 +1182,10 @@ void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
 	for (i=0; i < numReadings; i++)
 	{
 		// initial tadc setting for desired measurement
-		writeSPI_non_blocking(1,testADCinitialConditions);
+		writeGyroRegister(1,testADCinitialConditions);
 
 		// start test ADC conversion
-		writeSPI_non_blocking(1,testADCstartConditions);
+		writeGyroRegister(1,testADCstartConditions);
 
 		// wait for conversion to complete
 		timerRunning = 1;
@@ -1693,15 +1193,15 @@ void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
 		while(timerRunning);
 
 		// store result in array
-		readSPI((unsigned int*)&TADCresult,1);
+		TADCresult = readGyroRegister(1);
 
 		// 12-bit result is in LSBs of 16-bit register
 		testADCresults[i] = TADCresult & 0xFFF;
 	}
 
 	//restore register 0 with RBKSEL1 turned off
-	writeSPI_non_blocking(0,reg0&0xFBFF);
-	writeSPI_non_blocking(1,reg1);
+	writeGyroRegister(0,reg0&0xFBFF);
+	writeGyroRegister(1,reg1);
 
 }
 //------------------------------------------------------------
@@ -1833,7 +1333,6 @@ int InitializeDelayTimer(void)
 //------------------------------------------------------------
 
 
-
 //------------------------------------------------------------
 void SetTimerDuration(XInterval num10nsecCounts, u8 prescalar)
 {
@@ -1849,7 +1348,6 @@ void SetTimerDuration(XInterval num10nsecCounts, u8 prescalar)
 	XTtcPs_SetPrescaler(&DelayTimer, prescalar);
 }
 //------------------------------------------------------------
-
 
 
 //------------------------------------------------------------
@@ -1892,7 +1390,6 @@ Xuint8 ProgramOTP_chipID(u32 id)
 //------------------------------------------------------------
 
 
-
 //------------------------------------------------------------
 Xuint8 ProgramOTP_VbgTrim(u8 trimVal)
 {
@@ -1902,7 +1399,6 @@ Xuint8 ProgramOTP_VbgTrim(u8 trimVal)
 	return ProgramOTP((u32)trimVal);
 }
 //------------------------------------------------------------
-
 
 
 //------------------------------------------------------------
@@ -1930,20 +1426,20 @@ Xuint8 ProgramOTP(u32 otp32ProgramValue)
 	// loop through all 32 bits in otp register to clear out any 1s
 	for(i=0;i<32;i++)
 	{
-		writeSPI_non_blocking_orig(2,0x0010);		//CLKM=1
-		writeSPI_non_blocking_orig(2,0x0000);		//CLKM=0
-		writeSPI_non_blocking_orig(2,0x0020);		//CLKS=1
-		writeSPI_non_blocking_orig(2,0x0000);		//CLKS=0
+		writeGyroRegister(2,0x0010);		//CLKM=1
+		writeGyroRegister(2,0x0000);		//CLKM=0
+		writeGyroRegister(2,0x0020);		//CLKS=1
+		writeGyroRegister(2,0x0000);		//CLKS=0
 
 	}
 
 	// shift a 1 into bit position 0
-	writeSPI_non_blocking_orig(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
-	writeSPI_non_blocking_orig(2,0x8010);		//DIN=1,CLKM=1,CLKS=0
-	writeSPI_non_blocking_orig(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
-	writeSPI_non_blocking_orig(2,0x8020);		//DIN=1,CLKM=0,CLKS=1
-	writeSPI_non_blocking_orig(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
-	writeSPI_non_blocking_orig(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
+	writeGyroRegister(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
+	writeGyroRegister(2,0x8010);		//DIN=1,CLKM=1,CLKS=0
+	writeGyroRegister(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
+	writeGyroRegister(2,0x8020);		//DIN=1,CLKM=0,CLKS=1
+	writeGyroRegister(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
+	writeGyroRegister(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
 
 	// check each bit position to see if it should be programmed
 	// to a '1', then shift bit to next position
@@ -1952,12 +1448,12 @@ Xuint8 ProgramOTP(u32 otp32ProgramValue)
 		// check if this bit should be programmed
 		if (otp32ProgramValue & (x << i) )
 		{
-			writeSPI_non_blocking_orig(2,0x4000);	//SHORTEN=1,IZAPEN=0,WE=0
-			writeSPI_non_blocking_orig(2,0x6000);	//SHORTEN=1,IZAPEN=1,WE=0
+			writeGyroRegister(2,0x4000);	//SHORTEN=1,IZAPEN=0,WE=0
+			writeGyroRegister(2,0x6000);	//SHORTEN=1,IZAPEN=1,WE=0
 			// wait 1<t<10us, ensure spi transfer time takes care of this
 			// if no delay is used
-			writeSPI_non_blocking_orig(2,0x7000);	//SHORTEN=1,IZAPEN=1,WE=1
-			writeSPI_non_blocking_orig(2,0x3000);	//SHORTEN=0,IZAPEN=1,WE=1
+			writeGyroRegister(2,0x7000);	//SHORTEN=1,IZAPEN=1,WE=1
+			writeGyroRegister(2,0x3000);	//SHORTEN=0,IZAPEN=1,WE=1
 
 			//delay 25usec for zap time
 			/*timerRunning = 1;
@@ -1967,42 +1463,42 @@ Xuint8 ProgramOTP(u32 otp32ProgramValue)
 			// delay above was not needed because delay
 			// between spi register write completions is ~25usec
 
-			writeSPI_non_blocking_orig(2,0x7000);	//SHORTEN=1,IZAPEN=1,WE=1
-			writeSPI_non_blocking_orig(2,0x6000);	//SHORTEN=1,IZAPEN=1,WE=0
-			writeSPI_non_blocking_orig(2,0x4000);	//SHORTEN=1,IZAPEN=0,WE=0
-			writeSPI_non_blocking_orig(2,0x0000);	//SHORTEN=0,IZAPEN=0,WE=0
+			writeGyroRegister(2,0x7000);	//SHORTEN=1,IZAPEN=1,WE=1
+			writeGyroRegister(2,0x6000);	//SHORTEN=1,IZAPEN=1,WE=0
+			writeGyroRegister(2,0x4000);	//SHORTEN=1,IZAPEN=0,WE=0
+			writeGyroRegister(2,0x0000);	//SHORTEN=0,IZAPEN=0,WE=0
 		}
 
 		//shift bit to next position in register
-		writeSPI_non_blocking_orig(2,0x0010);		//DIN=0,CLKM=1,CLKS=0
-		writeSPI_non_blocking_orig(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
-		writeSPI_non_blocking_orig(2,0x0020);		//DIN=0,CLKM=0,CLKS=1
-		writeSPI_non_blocking_orig(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
+		writeGyroRegister(2,0x0010);		//DIN=0,CLKM=1,CLKS=0
+		writeGyroRegister(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
+		writeGyroRegister(2,0x0020);		//DIN=0,CLKM=0,CLKS=1
+		writeGyroRegister(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
 	}
 
 //	disable_Vfuse();		// programming done so disable voltage
 
 	//enable read operations
-	writeSPI_non_blocking_orig(2,0x0001);		//RSWEN=1
+	writeGyroRegister(2,0x0001);		//RSWEN=1
 	// wait min 4.5usec
-	writeSPI_non_blocking_orig(2,0x0003);		//BANK=1,RSWEN=1
-	writeSPI_non_blocking_orig(2,0x0007);		//READ=1,BANK=1,RSWEN=1
+	writeGyroRegister(2,0x0003);		//BANK=1,RSWEN=1
+	writeGyroRegister(2,0x0007);		//READ=1,BANK=1,RSWEN=1
 
 	//test for correct value in NVM register
 	if (otp32TestValue != readOTP32bits()) readbackErrorCode |= 0x01;
 
 	//set fuse block in read mode (low current)
-	writeSPI_non_blocking_orig(2,0x0047);		//BIASL=1,READ=1,BANK=1,RSWEN=1
+	writeGyroRegister(2,0x0047);		//BIASL=1,READ=1,BANK=1,RSWEN=1
 	//test for correct value in NVM register
 	if (otp32TestValue != readOTP32bits()) readbackErrorCode |= 0x02;
 
 	//set fuse block in read mode (high current)
-	writeSPI_non_blocking_orig(2,0x000F);		//BIASH=1,READ=1,BANK=1,RSWEN=1
+	writeGyroRegister(2,0x000F);		//BIASH=1,READ=1,BANK=1,RSWEN=1
 	//test for correct value in NVM register
 	if (otp32TestValue != readOTP32bits()) readbackErrorCode |= 0x04;
 
 	//clear all bits in the OTP programming register
-	writeSPI_non_blocking_orig(2,0x0000);
+	writeGyroRegister(2,0x0000);
 
 	return readbackErrorCode;
 }
@@ -2019,24 +1515,25 @@ u32 readOTP32bits(void)
 	u32 otp32bitResult;
 
 	// read value of register 3 to restore later
-	readSPI(&reg3originalValue,3);
+	reg3originalValue = readGyroRegister(3);
 
 	// set 2 RBKSEL bits in order to read OTP register values
-	writeSPI_non_blocking_orig(3,(0x0300|reg3originalValue));
+	writeGyroRegister(3,(0x0300|reg3originalValue));
 
 	// read lower 16 bits of 32 bit result
-	readSPI(&regReadResult,2);
+	regReadResult = readGyroRegister(2);
 	otp32bitResult = regReadResult;
 
 	// read upper 16 bits of 32 bit result
-	readSPI(&regReadResult,3);
+	regReadResult = readGyroRegister(3);
 	otp32bitResult += (regReadResult << 16);
 
 	// restore register 3 original value
-	writeSPI_non_blocking_orig(3,reg3originalValue);
+	writeGyroRegister(3,reg3originalValue);
 
 	return otp32bitResult;
 }
+//------------------------------------------------------------
 
 
 //------------------------------------------------------------
@@ -2091,6 +1588,17 @@ void init_MIO_gpio(void)
 
 
 //------------------------------------------------------------
+void initUart(void){
+	Status = SetupUartPs(&interrupt_controller, &UartPs,
+					UARTPS_DEVICE_ID, UART_INT_IRQ_ID);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed to set up UartPs\r\n");
+	}
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
 void enable_dmm_mux(void){
 	XGpioPs_WritePin(&MIO_gpio, DMM_MUX_ENABLE_OUTPUT_PIN, 1);
 }
@@ -2107,110 +1615,22 @@ void disable_dmm_mux(void){
 int main() {
     init_platform();
 
-//    xil_printf("FPGA Build REViD %x \r\n", XAxiDma_ReadReg(0x43C40000,0x00000008));
-/*
-    *(baseaddr_p+0) = 0x00000000;
-    *(baseaddr_p+1) = 0x00000000;
-    *(baseaddr_p+2) = 0x00000000;
-    *(baseaddr_p+3) = 0x00000000;
-    // set interrupt_0/1 of AXI PL interrupt generator to 1
-    *(baseaddr_p+0) = 0x00000001;
-    *(baseaddr_p+1) = 0x00000002;
-*/
-    //init_MIO_gpio();
-    //enable_dmm_mux();
-    //changeMuxSelection(dmm_mux_setting);	// set initial setting
+    setSPIClockDivision(SPI_clock_division_setting);
+    initUart();
 
-    // clear SPI registers
-    initSPI();
-    enableSPI();
-    setSPIClockDivision(SPI_clock_division_setting); // needs to be 0,1,2 or 3
-    //readSPIStatus();
-/*
-    // set interrupt_0/1 of AXI PL interrupt generator to 0
-    *(baseaddr_p+0) = 0x00000000;
-    *(baseaddr_p+1) = 0x00000000;
-    *(baseaddr_p+2) = 0x00000000;
-*/
-
-
-    //initADCdataBuffers();
-    //resetGyroTxFIFO();
-    //resetGyroRxFIFO();
-    //initGyroChannel();
-
-
-    // --- loopback mode, POL = 0, in and out channels = 00
-
-    //=======================================================
-    // setGyroChannelConfiguration() description:
+    //===============================================
+    //===============================================
+    // just for debugging
     //
-    // bit 18:16 is to divide clock by 1/2/4/8/16/32/64/128
-    // with div128 (7 Hex) we get 50 MHz divided by 128 = 390 KHz.
-    //
-    // bits 14:12 are to select the packet size.
-    //  000 is 64 samples  (32 words)
-    //  001 is 128 samples  (64 words)
-    //  010 is 256 samples (128 words)
-    //  011 is 512 samples (256 words)
-    //  100 is 1024 samples  (512 words)
-    //  101 is 2048 samples  (1024 words)
-    //  110 is 4096 samples (2048 words)
-    //  111 is 8192 samples (4096 words)
-    //
-    // bits 6:4 - control the in+channel:
-    //   00 is HSI_A0
-    //   01 is HSI_A1
-    //   10 and 11 inactive.
-    // bits 2:0  - control the out_channel:
-    //   000 is HSI_DAP
-    //   001 is HSI_DAM
-    //   010 is HSI_DBP
-    //   011 is HGSI_DBM
-    //	 100 is HSI_DC
-    //=======================================================
-//    setGyroChannelConfiguration(MCK_div_setting | packet_size_setting |
-//    		HSI_input_channel_setting | HSI_output_channel_setting);
-
-
-
-//    setGyroChannelControl(0x00000000);
-
-
-//    initDMADevice();
-
-    // --- stopping both channels
-//	setGyroChannelControl(0x00000000);
-
-
-
-    // initial state is disabled so fpga is not driving unpowered IC pins
-    // if power supply is not turned on when code is initially executed
-//    disableSPI();
-//	disableGyroChannel();
-//	disableHSIGyroChannel();
+	enableSPI();
+	enableHSI();
 	FPGA_outputs_state = 1;		// 1=on, 2=off
+//    runDmaTestRxBypass();
+    runDmaTest();
+    //===============================================
+    //===============================================
 
-
-    //#################################################################
-    //#################################################################
-    // code below here is merged from zedboard project used to develop
-    // UART interrupts for received data
-    //#################################################################
-    //#################################################################
     int looping = 1;
-
-	Status = SetupUartPs(&interrupt_controller, &UartPs,
-					UARTPS_DEVICE_ID, UART_INT_IRQ_ID);
-	if (Status != XST_SUCCESS) {
-		xil_printf("Failed to set up UartPs\r\n");
-		return XST_FAILURE;
-	}
-
-	xil_printf("  waiting for received UART data...\n");
-
-	InitializeDelayTimer();
-	//readWaveformData();
 
 	while(looping){// loop here and let interrupts drive further actions
 
@@ -2226,10 +1646,6 @@ int main() {
 
 
 	}
-	// end of code merge for UART interrupts
-	//#################################################################
-	//#################################################################
-
 
 
     cleanup_platform();
