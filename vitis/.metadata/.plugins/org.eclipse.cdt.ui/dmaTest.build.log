@@ -1,10 +1,25 @@
-04:57:13 **** Incremental Build of configuration Debug for project dmaTest ****
+03:33:11 **** Incremental Build of configuration Debug for project dmaTest ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/gyro_TxBufferSetup.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gyro_TxBufferSetup.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/gyro_TxBufferSetup.d" -MT"src/gyro_TxBufferSetup.o" -o "src/gyro_TxBufferSetup.o" "../src/gyro_TxBufferSetup.c"
+'Finished building: ../src/gyro_TxBufferSetup.c'
+' '
+'Building target: dmaTest.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "dmaTest.elf"  ./src/dma_controller.o ./src/gyro_TxBufferSetup.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: dmaTest.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size dmaTest.elf  |tee "dmaTest.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  38736	   2248	  24504	  65488	   ffd0	dmaTest.elf
+'Finished building: dmaTest.elf.size'
+' '
 
-04:57:13 Build Finished (took 495ms)
+03:33:11 Build Finished (took 546ms)
 

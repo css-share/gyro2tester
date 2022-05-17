@@ -1,46 +1,22 @@
-Nothing to build in platform 'design_2_wrapper'
-
-15:31:14 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
+03:33:11 **** Incremental Build of configuration Debug for project dmaTest ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/main.c'
+'Building file: ../src/gyro_TxBufferSetup.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/main.c:8:
-C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
-  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
-      |  ^~~~~~~
-C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
-  103 | #warning  Please refer the Standalone BSP UG647 for further details
-      |  ^~~~~~~
-../src/main.c:1540:6: warning: 'init_MIO_gpio' defined but not used [-Wunused-function]
- 1540 | void init_MIO_gpio(void)
-      |      ^~~~~~~~~~~~~
-../src/main.c:1277:5: warning: 'InitializeDelayTimer' defined but not used [-Wunused-function]
- 1277 | int InitializeDelayTimer(void)
-      |     ^~~~~~~~~~~~~~~~~~~~
-../src/main.c:1229:6: warning: 'send_Tx_data_over_UART' defined but not used [-Wunused-function]
- 1229 | void send_Tx_data_over_UART(unsigned int num_points_to_send)
-      |      ^~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:1211:14: warning: 'getNumBytesToSend' defined but not used [-Wunused-function]
- 1211 | unsigned int getNumBytesToSend(u8 *RxData)
-      |              ^~~~~~~~~~~~~~~~~
-../src/main.c:511:6: warning: 'setupUartToReceiveTxData' defined but not used [-Wunused-function]
-  511 | void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-'Finished building: ../src/main.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/gyro_TxBufferSetup.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/gyro_TxBufferSetup.d" -MT"src/gyro_TxBufferSetup.o" -o "src/gyro_TxBufferSetup.o" "../src/gyro_TxBufferSetup.c"
+'Finished building: ../src/gyro_TxBufferSetup.c'
 ' '
-'Building target: gyro2testerFirmware.elf'
+'Building target: dmaTest.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dmaTest-RxBypass.o ./src/dmaTest.o ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: gyro2testerFirmware.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "dmaTest.elf"  ./src/dma_controller.o ./src/gyro_TxBufferSetup.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: dmaTest.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
+arm-none-eabi-size dmaTest.elf  |tee "dmaTest.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  62716	   3160	  33208	  99084	  1830c	gyro2testerFirmware.elf
-'Finished building: gyro2testerFirmware.elf.size'
+  38736	   2248	  24504	  65488	   ffd0	dmaTest.elf
+'Finished building: dmaTest.elf.size'
 ' '
