@@ -1,3 +1,7 @@
 1652680164220	Delete resource 'dmaTest/src/test_case_loop3asic.c'
 1652695799566	Delete resource 'gyro2testerFirmware/src/main2.c'
 1652767749561	Delete resource 'dmaTest/src/test_case_loop3_rxbyp_dataFromAsic.c'
+1653002938416	Delete resource 'dmaTest/src/gyro_RXDcaptureTest.c'
+1653035827319	Delete resource 'dmaTest/src/test_case_spi.c'
+1653036478689	Delete resource 'dmaTest/src/gyro_RXDcaptureTest_RxBypass.c'
+1653040087679	Delete resource 'dmaTest/src/test_case_NormalMode_AsicData.c'

@@ -93,9 +93,10 @@ extern void xil_printf(const char *format, ...);
 #define CMD_ENABLE_GYRO_CHANNEL 		0xF2	// enable the gyro channel outputs on the fpga
 #define CMD_DISABLE_GYRO_CHANNEL 		0xF3	// disable the gyro channel outputs on the fpga
 
-
-#define RESPONSE_ADC_ACQUIRE_DONE		0x55	// indicates finished with ADC data acquisition
+#define RESPONSE_WRITE_SUCCESS			0x52	// write completed and readback of value was successful
+#define RESPONSE_WRITE_FAIL				0x53	// write completed but readback of value written failed
 #define RESPONSE_CMD_DONE				0x54	// indicates command received and action has been taken
+#define RESPONSE_ADC_ACQUIRE_DONE		0x55	// indicates finished with ADC data acquisition
 #define RESPONSE_READY_FOR_TX_DATA  	0x56	// indicates ready UART is ready to receive Tx data
 
 // test ADC mux settings
@@ -192,6 +193,7 @@ typedef struct {
 #define SPI_CLK_SEL_BITS	0x0000000C
 #define SPI_START_BIT		0x00000001
 #define SPI_READ_BIT		0x00000002
+#define SPI_BUSY_BIT		0x80000000
 
 #define MCK_CLK_SEL_BITS	0x000F0000	// clock select in bits[19:16] of BiDir Control register
 
@@ -416,19 +418,30 @@ unsigned int readSPIClockDivision(void){
 
 // -------------------------------------------------------------------
 unsigned int writeGyroRegister(unsigned int address, unsigned int data){
+	// returns 0 on success, 1 of readback fail
 	Xuint32 		spiControReg,clkSelBits,enableBit;
+	Xuint16			readbackValue;
+
 
 	spiControReg = *(baseaddr_spi+0);
 
-	clkSelBits = spiControReg & SPI_CLK_SEL_BITS;		// store clock select bits
-	enableBit = spiControReg & SPI_ENABLE_BIT;			// store clock select bits
+	clkSelBits = spiControReg & SPI_CLK_SEL_BITS;		// store clock select setting
+	enableBit = spiControReg & SPI_ENABLE_BIT;			// store enable bit setting
 
 	*(baseaddr_spi+0) = clkSelBits | enableBit;			// setup for a register write
 	*(baseaddr_spi+1) = address;						// set register address to write
 	*(baseaddr_spi+2) = data;							// set data to write
 	*(baseaddr_spi+0) = clkSelBits | enableBit | 		// set start bit[0] to initiate transfer
 						SPI_START_BIT;
-	return 0;
+	while (*(baseaddr_spi+3) & SPI_BUSY_BIT);			// wait for write to complete
+
+	readbackValue = readGyroRegister(address);			// check result
+	if (readbackValue == data){
+		return 0; // return 0 on success
+	}
+	else{
+		return 1; // return 1 on readback fail
+	}
 }
 // -------------------------------------------------------------------
 
@@ -447,9 +460,9 @@ unsigned int readGyroRegister(unsigned char address){
 	*(baseaddr_spi+1) = address;						// set register address to read
 	*(baseaddr_spi+0) = clkSelBits | enableBit			// set start bit[0] to initiate transfer
 						| SPI_READ_BIT | SPI_START_BIT;
-	nops(10000);										// wait for data clocked in
+	while (*(baseaddr_spi+3) & SPI_BUSY_BIT);			// wait for read to complete
 
-	return *(baseaddr_spi+3);
+	return *(baseaddr_spi+3) & 0xFFFF;
 }
 // -------------------------------------------------------------------
 
@@ -758,7 +771,13 @@ void read_uart_bytes(void)
 			}
 			regAddr = (unsigned int)UartRxData[1];
 			regData = (UartRxData[2]<<8) | UartRxData[3];
-			writeGyroRegister(regAddr,regData);
+
+			if ( writeGyroRegister(regAddr,regData) ){	// write returns 1 on failed readback
+				send_byte_over_UART(RESPONSE_WRITE_FAIL);
+			}
+			else{
+				send_byte_over_UART(RESPONSE_WRITE_SUCCESS);
+			}
 			break;
 
 		case (CMD_READ_FPGA_REGISTER):
@@ -1617,7 +1636,7 @@ int main() {
 
     setSPIClockDivision(SPI_clock_division_setting);
     initUart();
-
+/*
     //===============================================
     //===============================================
     // just for debugging
@@ -1625,11 +1644,14 @@ int main() {
 	enableSPI();
 	enableHSI();
 	FPGA_outputs_state = 1;		// 1=on, 2=off
-//    runDmaTestRxBypass();
-    runDmaTest();
+	//
+	// uncomment one of the below tests to run
+	runDmaTestRxBypass();
+    //runDmaTest();
+	//
     //===============================================
     //===============================================
-
+*/
     int looping = 1;
 
 	while(looping){// loop here and let interrupts drive further actions

@@ -14,6 +14,7 @@
 #define MIN_PKT_LEN		    0x01 //(1 byte)
 #define NUM_TRANSFERS
 
+u32 SPI_BUSY(UINTPTR BuffAddr);
 
 u32 Buffer_Not_Full(UINTPTR BuffAddr);
 

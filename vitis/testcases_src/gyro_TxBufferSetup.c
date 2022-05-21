@@ -77,8 +77,6 @@ int main(){
 	// EDIT AFTER HERE                           //
 	///////////////////////////////////////////////
 
-    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
-
     ///////////////////////////////////////////////
     // AXI Stream Switches  1 & 2 LOOP           //
     ///////////////////////////////////////////////
@@ -98,9 +96,12 @@ int main(){
     ///////////////////////////////////////////////
 
 
+    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+
+
     xil_printf("Enable TX FIFO \r\n");
     XAxi_WriteReg(TXFIFO_REG0, 0x00000001);
-    xil_printf("Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+    xil_printf("Fill Levels after Tx Fifo enabled %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 
 
     xil_printf("Send in TX DATA \r\n");
@@ -122,7 +123,8 @@ int main(){
 	XAxi_WriteReg(BIDIR_REG0, 0x00000000);		// bit24= 1 for loopback TXD into RXD, 0 for asic RXD
 	XAxi_WriteReg(BIDIR_REG2, 0x00000001);		// bit0 enables BiDir block
 	XAxi_WriteReg(BIDIR_REG1, 0x00000011);		// serial data enable: bit0=out, bit1=in
-    print("Tx Fifo setup done. Data should be streaming out TXD pin \r\n");
+
+	xil_printf("Tx Fifo setup done. Data should be streaming out TXD pin \r\n");
 
 
     
@@ -141,7 +143,7 @@ int main(){
 			TxBufferPtr[Index] = 0x1111;
 		}
 	}
-
+    xil_printf("Data changed in DDR Tx buffers FIFO \r\n");
 
 	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
 	XAxiDma_Reset(&AxiDma);
@@ -149,11 +151,14 @@ int main(){
 
     xil_printf("Disable TX FIFO \r\n");
     XAxi_WriteReg(TXFIFO_REG0, 0x00000000);
-    xil_printf("Disabled Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+    xil_printf("After disabled, Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 
     xil_printf("Clear TX FIFO \r\n");
     XAxi_WriteReg(TXFIFO_REG1, 0x00000001);
-    xil_printf("Cleared Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+    xil_printf("After clear bit set, Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+    xil_printf("Clear bit status %x \r\n", XAxi_ReadReg(TXFIFO_REG1));
+
+    xil_printf("Clear bit set low again \r\n");
     XAxi_WriteReg(TXFIFO_REG1, 0x00000000);
     xil_printf("After clear set low again, Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 
