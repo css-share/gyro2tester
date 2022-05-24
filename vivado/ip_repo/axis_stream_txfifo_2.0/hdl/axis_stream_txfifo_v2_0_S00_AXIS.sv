@@ -31,6 +31,7 @@
 		input wire  S_AXIS_TLAST,
 		// Data is in valid
 		input wire  S_AXIS_TVALID,
+        input        clear,
         output logic fifo_wren,
         output logic [C_S_AXIS_TDATA_WIDTH-1 : 0] fifo_wdata,
         output logic [15:0] write_pointer
@@ -121,7 +122,12 @@
 	    begin
 	      write_pointer <= 0;
 	      writes_done <= 1'b0;
-	    end  
+	    end 
+      else if (clear)
+ 	    begin
+	      write_pointer <= 0;
+	      writes_done <= 1'b0;
+	    end         
 	  else
 	    if (write_pointer <= NUMBER_OF_INPUT_WORDS-1)
 	      begin

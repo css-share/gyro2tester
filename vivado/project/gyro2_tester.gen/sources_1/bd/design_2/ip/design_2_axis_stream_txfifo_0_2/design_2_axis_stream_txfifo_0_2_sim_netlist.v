@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Thu May 12 23:20:56 2022
-// Host        : AsusP8 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+// Date        : Tue May 24 13:39:05 2022
+// Host        : xsjl23781 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
+//               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
 // Design      : design_2_axis_stream_txfifo_0_2
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -305,8 +305,8 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
     s00_axi_arready,
     \FSM_sequential_cur_state_reg[1]_0 ,
     s00_axi_rdata,
-    s00_axis_tready,
     bram2_odd_addr_b,
+    s00_axis_tready,
     bram2_odd_we_a,
     bram2_even_we_a,
     bram1_odd_we_a,
@@ -329,6 +329,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
     s00_axi_arvalid,
     s00_axi_wstrb,
     s00_axis_tvalid,
+    s00_axis_tlast,
     m00_axis_tready,
     rstn,
     s00_axis_tdata,
@@ -339,16 +340,15 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
     bram2_odd_rdata_b,
     bram2_even_rdata_b,
     s00_axi_bready,
-    s00_axi_rready,
-    s00_axis_tlast);
+    s00_axi_rready);
   output [48:0]out;
   output s00_axi_wready;
   output s00_axi_awready;
   output s00_axi_arready;
   output \FSM_sequential_cur_state_reg[1]_0 ;
   output [31:0]s00_axi_rdata;
-  output s00_axis_tready;
   output [12:0]bram2_odd_addr_b;
+  output s00_axis_tready;
   output bram2_odd_we_a;
   output bram2_even_we_a;
   output bram1_odd_we_a;
@@ -371,6 +371,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   input s00_axi_arvalid;
   input [3:0]s00_axi_wstrb;
   input s00_axis_tvalid;
+  input s00_axis_tlast;
   input m00_axis_tready;
   input rstn;
   input [31:0]s00_axis_tdata;
@@ -382,18 +383,16 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   input [15:0]bram2_even_rdata_b;
   input s00_axi_bready;
   input s00_axi_rready;
-  input s00_axis_tlast;
 
-  wire \FSM_sequential_cur_state[0]_i_10_n_0 ;
+  wire \FSM_sequential_cur_state[0]_i_3_n_0 ;
   wire \FSM_sequential_cur_state[0]_i_4_n_0 ;
-  wire \FSM_sequential_cur_state[0]_i_9_n_0 ;
+  wire \FSM_sequential_cur_state[1]_i_3_n_0 ;
   wire \FSM_sequential_cur_state[1]_i_4_n_0 ;
   wire \FSM_sequential_cur_state[1]_i_6_n_0 ;
   wire \FSM_sequential_cur_state[1]_i_7_n_0 ;
-  wire \FSM_sequential_cur_state[1]_i_8_n_0 ;
-  wire \FSM_sequential_cur_state[1]_i_9_n_0 ;
   wire \FSM_sequential_cur_state_reg[1]_0 ;
   wire axis_stream_txfifo_v2_0_S00_AXI_inst_n_1;
+  wire axis_stream_txfifo_v2_0_S00_AXI_inst_n_28;
   wire axis_stream_txfifo_v2_0_S00_AXI_inst_n_6;
   wire [15:0]bram0_even_rdata_b;
   wire bram0_even_we_a;
@@ -458,9 +457,9 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   wire \rd_ptr_reg_reg[7]_i_1_n_6 ;
   wire \rd_ptr_reg_reg[7]_i_1_n_7 ;
   wire rdata_even_vld;
-  wire rdata_even_vld0;
   wire rdata_even_vld_s;
   wire rdata_odd_vld;
+  wire rdata_odd_vld0;
   wire rdata_odd_vld_s;
   wire rstn;
   wire [1:0]s00_axi_araddr;
@@ -483,6 +482,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   wire s00_axis_tready;
   wire s00_axis_tvalid;
   wire [16:0]slv_reg0;
+  wire slv_reg1;
   wire [15:0]slv_reg3;
   wire \slv_reg3_reg_n_0_[0] ;
   wire \slv_reg3_reg_n_0_[10] ;
@@ -507,18 +507,17 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   wire txfifo_empty;
   wire u_tx_buff_out_n_0;
   wire u_tx_buff_out_n_2;
-  wire u_tx_buff_out_n_4;
+  wire u_tx_buff_out_n_7;
+  wire u_txfifo_wr_chn_n_0;
   wire u_txfifo_wr_chn_n_1;
   wire u_txfifo_wr_chn_n_10;
   wire u_txfifo_wr_chn_n_11;
   wire u_txfifo_wr_chn_n_12;
   wire u_txfifo_wr_chn_n_13;
   wire u_txfifo_wr_chn_n_14;
-  wire u_txfifo_wr_chn_n_15;
-  wire u_txfifo_wr_chn_n_16;
   wire u_txfifo_wr_chn_n_2;
+  wire u_txfifo_wr_chn_n_22;
   wire u_txfifo_wr_chn_n_23;
-  wire u_txfifo_wr_chn_n_24;
   wire u_txfifo_wr_chn_n_3;
   wire u_txfifo_wr_chn_n_4;
   wire u_txfifo_wr_chn_n_5;
@@ -562,72 +561,58 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   wire [3:3]\NLW_rd_ptr_reg_reg[13]_i_3_CO_UNCONNECTED ;
   wire [3:3]\NLW_wr_ptr_pattern_reg[12]_i_1_CO_UNCONNECTED ;
 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \FSM_sequential_cur_state[0]_i_10 
-       (.I0(wr_ptr_pattern_reg[13]),
-        .I1(wr_ptr_pattern_reg[12]),
-        .I2(wr_ptr_pattern_reg[15]),
-        .I3(wr_ptr_pattern_reg[14]),
-        .O(\FSM_sequential_cur_state[0]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \FSM_sequential_cur_state[0]_i_4 
-       (.I0(wr_ptr_pattern_reg[3]),
-        .I1(wr_ptr_pattern_reg[2]),
-        .I2(\FSM_sequential_cur_state[0]_i_9_n_0 ),
-        .I3(\FSM_sequential_cur_state[1]_i_7_n_0 ),
-        .I4(\FSM_sequential_cur_state[0]_i_10_n_0 ),
-        .I5(\FSM_sequential_cur_state[1]_i_9_n_0 ),
-        .O(\FSM_sequential_cur_state[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \FSM_sequential_cur_state[0]_i_9 
-       (.I0(wr_ptr_pattern_reg[0]),
-        .I1(wr_ptr_pattern_reg[1]),
-        .O(\FSM_sequential_cur_state[0]_i_9_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFF7)) 
-    \FSM_sequential_cur_state[1]_i_4 
-       (.I0(wr_ptr_pattern_reg[15]),
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_cur_state[0]_i_3 
+       (.I0(\FSM_sequential_cur_state[1]_i_7_n_0 ),
         .I1(wr_ptr_pattern_reg[14]),
-        .I2(\FSM_sequential_cur_state[1]_i_6_n_0 ),
-        .I3(\FSM_sequential_cur_state[1]_i_7_n_0 ),
-        .I4(\FSM_sequential_cur_state[1]_i_8_n_0 ),
-        .I5(\FSM_sequential_cur_state[1]_i_9_n_0 ),
+        .I2(wr_ptr_pattern_reg[15]),
+        .I3(wr_ptr_pattern_reg[12]),
+        .I4(wr_ptr_pattern_reg[13]),
+        .O(\FSM_sequential_cur_state[0]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_cur_state[0]_i_4 
+       (.I0(\FSM_sequential_cur_state[1]_i_6_n_0 ),
+        .I1(wr_ptr_pattern_reg[0]),
+        .I2(wr_ptr_pattern_reg[1]),
+        .I3(wr_ptr_pattern_reg[2]),
+        .I4(wr_ptr_pattern_reg[3]),
+        .O(\FSM_sequential_cur_state[0]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'hFEFFFFFF)) 
+    \FSM_sequential_cur_state[1]_i_3 
+       (.I0(\FSM_sequential_cur_state[1]_i_6_n_0 ),
+        .I1(wr_ptr_pattern_reg[2]),
+        .I2(wr_ptr_pattern_reg[3]),
+        .I3(wr_ptr_pattern_reg[14]),
+        .I4(wr_ptr_pattern_reg[15]),
+        .O(\FSM_sequential_cur_state[1]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \FSM_sequential_cur_state[1]_i_4 
+       (.I0(\FSM_sequential_cur_state[1]_i_7_n_0 ),
+        .I1(wr_ptr_pattern_reg[0]),
+        .I2(wr_ptr_pattern_reg[1]),
+        .I3(wr_ptr_pattern_reg[12]),
+        .I4(wr_ptr_pattern_reg[13]),
         .O(\FSM_sequential_cur_state[1]_i_4_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \FSM_sequential_cur_state[1]_i_6 
-       (.I0(wr_ptr_pattern_reg[2]),
-        .I1(wr_ptr_pattern_reg[3]),
-        .O(\FSM_sequential_cur_state[1]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \FSM_sequential_cur_state[1]_i_7 
+    \FSM_sequential_cur_state[1]_i_6 
        (.I0(wr_ptr_pattern_reg[6]),
         .I1(wr_ptr_pattern_reg[5]),
         .I2(wr_ptr_pattern_reg[7]),
         .I3(wr_ptr_pattern_reg[4]),
-        .O(\FSM_sequential_cur_state[1]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+        .O(\FSM_sequential_cur_state[1]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \FSM_sequential_cur_state[1]_i_8 
-       (.I0(wr_ptr_pattern_reg[13]),
-        .I1(wr_ptr_pattern_reg[12]),
-        .I2(wr_ptr_pattern_reg[1]),
-        .I3(wr_ptr_pattern_reg[0]),
-        .O(\FSM_sequential_cur_state[1]_i_8_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \FSM_sequential_cur_state[1]_i_9 
+    \FSM_sequential_cur_state[1]_i_7 
        (.I0(wr_ptr_pattern_reg[11]),
         .I1(wr_ptr_pattern_reg[10]),
         .I2(wr_ptr_pattern_reg[9]),
         .I3(wr_ptr_pattern_reg[8]),
-        .O(\FSM_sequential_cur_state[1]_i_9_n_0 ));
+        .O(\FSM_sequential_cur_state[1]_i_7_n_0 ));
   (* FSM_ENCODED_STATES = "IDLE:00,EMPTY:01,FULL:10" *) 
   FDRE \FSM_sequential_cur_state_reg[0] 
        (.C(clk),
@@ -643,13 +628,13 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .Q(cur_state[1]),
         .R(axis_stream_txfifo_v2_0_S00_AXI_inst_n_1));
   design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI axis_stream_txfifo_v2_0_S00_AXI_inst
-       (.D(nxt_state),
-        .\FSM_sequential_cur_state_reg[0] (u_tx_buff_out_n_0),
+       (.D(nxt_state[0]),
+        .\FSM_sequential_cur_state_reg[0] (u_tx_buff_out_n_2),
         .\FSM_sequential_cur_state_reg[0]_0 (cur_state),
-        .\FSM_sequential_cur_state_reg[0]_1 (u_txfifo_wr_chn_n_24),
-        .\FSM_sequential_cur_state_reg[0]_2 (\FSM_sequential_cur_state[0]_i_4_n_0 ),
-        .\FSM_sequential_cur_state_reg[1] (u_txfifo_wr_chn_n_23),
-        .\FSM_sequential_cur_state_reg[1]_0 (\FSM_sequential_cur_state[1]_i_4_n_0 ),
+        .\FSM_sequential_cur_state_reg[0]_1 (u_txfifo_wr_chn_n_22),
+        .\FSM_sequential_cur_state_reg[0]_2 (\FSM_sequential_cur_state[0]_i_3_n_0 ),
+        .\FSM_sequential_cur_state_reg[0]_3 (\FSM_sequential_cur_state[0]_i_4_n_0 ),
+        .\FSM_sequential_cur_state_reg[0]_4 (u_txfifo_wr_chn_n_23),
         .Q({slv_reg0[16],slv_reg0[0]}),
         .axi_arready_reg_0(s00_axi_arready),
         .axi_awready_reg_0(s00_axi_awready),
@@ -677,46 +662,49 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .s00_axi_wvalid(s00_axi_wvalid),
         .s00_axis_tdata(s00_axis_tdata),
         .sel(axis_stream_txfifo_v2_0_S00_AXI_inst_n_6),
-        .\slv_reg3_reg[0] (u_txfifo_wr_chn_n_1),
-        .\slv_reg3_reg[10] (u_txfifo_wr_chn_n_11),
-        .\slv_reg3_reg[11] (u_txfifo_wr_chn_n_12),
-        .\slv_reg3_reg[12] (u_txfifo_wr_chn_n_13),
-        .\slv_reg3_reg[13] (u_txfifo_wr_chn_n_14),
-        .\slv_reg3_reg[14] (u_txfifo_wr_chn_n_15),
-        .\slv_reg3_reg[15] (u_txfifo_wr_chn_n_16),
-        .\slv_reg3_reg[1] (u_txfifo_wr_chn_n_2),
-        .\slv_reg3_reg[2] (u_txfifo_wr_chn_n_3),
-        .\slv_reg3_reg[3] (u_txfifo_wr_chn_n_4),
-        .\slv_reg3_reg[4] (u_txfifo_wr_chn_n_5),
-        .\slv_reg3_reg[5] (u_txfifo_wr_chn_n_6),
-        .\slv_reg3_reg[6] (u_txfifo_wr_chn_n_7),
-        .\slv_reg3_reg[7] (u_txfifo_wr_chn_n_8),
-        .\slv_reg3_reg[8] (u_txfifo_wr_chn_n_9),
-        .\slv_reg3_reg[9] (u_txfifo_wr_chn_n_10),
-        .\wr_ptr_pattern_reg[15] (slv_reg3));
-  LUT4 #(
-    .INIT(16'hEFFF)) 
+        .\slv_reg0_reg[16]_0 (slv_reg3),
+        .\slv_reg1_reg[0]_0 (slv_reg1),
+        .\slv_reg1_reg[0]_1 (axis_stream_txfifo_v2_0_S00_AXI_inst_n_28),
+        .\slv_reg3_reg[0] (u_txfifo_wr_chn_n_0),
+        .\slv_reg3_reg[10] (u_txfifo_wr_chn_n_10),
+        .\slv_reg3_reg[11] (u_txfifo_wr_chn_n_11),
+        .\slv_reg3_reg[12] (u_txfifo_wr_chn_n_12),
+        .\slv_reg3_reg[13] (u_txfifo_wr_chn_n_13),
+        .\slv_reg3_reg[14] (u_txfifo_wr_chn_n_14),
+        .\slv_reg3_reg[1] (u_txfifo_wr_chn_n_1),
+        .\slv_reg3_reg[2] (u_txfifo_wr_chn_n_2),
+        .\slv_reg3_reg[3] (u_txfifo_wr_chn_n_3),
+        .\slv_reg3_reg[4] (u_txfifo_wr_chn_n_4),
+        .\slv_reg3_reg[5] (u_txfifo_wr_chn_n_5),
+        .\slv_reg3_reg[6] (u_txfifo_wr_chn_n_6),
+        .\slv_reg3_reg[7] (u_txfifo_wr_chn_n_7),
+        .\slv_reg3_reg[8] (u_txfifo_wr_chn_n_8),
+        .\slv_reg3_reg[9] (u_txfifo_wr_chn_n_9));
+  LUT5 #(
+    .INIT(32'hFFFFFBFF)) 
     \rd_ptr_reg[13]_i_5 
-       (.I0(rd_ptr_reg_reg[14]),
-        .I1(rd_ptr_reg_reg[15]),
-        .I2(bram2_odd_addr_b[7]),
-        .I3(bram2_odd_addr_b[2]),
+       (.I0(rd_ptr_reg_reg[15]),
+        .I1(bram2_odd_addr_b[2]),
+        .I2(rd_ptr_reg_reg[14]),
+        .I3(bram2_odd_addr_b[7]),
+        .I4(\rd_ptr_reg[13]_i_7_n_0 ),
         .O(\rd_ptr_reg[13]_i_5_n_0 ));
-  LUT4 #(
-    .INIT(16'h7FFF)) 
+  LUT5 #(
+    .INIT(32'hFFFF7FFF)) 
     \rd_ptr_reg[13]_i_6 
-       (.I0(bram2_odd_addr_b[12]),
-        .I1(bram2_odd_addr_b[10]),
-        .I2(bram2_odd_addr_b[11]),
-        .I3(bram2_odd_addr_b[8]),
+       (.I0(bram2_odd_addr_b[1]),
+        .I1(bram2_odd_addr_b[9]),
+        .I2(bram2_odd_addr_b[10]),
+        .I3(bram2_odd_addr_b[12]),
+        .I4(\rd_ptr_reg[13]_i_8_n_0 ),
         .O(\rd_ptr_reg[13]_i_6_n_0 ));
   LUT4 #(
     .INIT(16'h7FFF)) 
     \rd_ptr_reg[13]_i_7 
-       (.I0(bram2_odd_addr_b[4]),
+       (.I0(bram2_odd_addr_b[11]),
         .I1(bram2_odd_addr_b[3]),
-        .I2(bram2_odd_addr_b[9]),
-        .I3(bram2_odd_addr_b[1]),
+        .I2(bram2_odd_addr_b[8]),
+        .I3(bram2_odd_addr_b[4]),
         .O(\rd_ptr_reg[13]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'h7FFF)) 
@@ -736,19 +724,19 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[3]_i_1_n_7 ),
         .Q(rd_ptr_reg_reg[0]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[10] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[11]_i_1_n_5 ),
         .Q(bram2_odd_addr_b[9]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[11] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[11]_i_1_n_4 ),
         .Q(bram2_odd_addr_b[10]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \rd_ptr_reg_reg[11]_i_1 
        (.CI(\rd_ptr_reg_reg[7]_i_1_n_0 ),
@@ -762,13 +750,13 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[13]_i_3_n_7 ),
         .Q(bram2_odd_addr_b[11]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[13] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[13]_i_3_n_6 ),
         .Q(bram2_odd_addr_b[12]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \rd_ptr_reg_reg[13]_i_3 
        (.CI(\rd_ptr_reg_reg[11]_i_1_n_0 ),
@@ -782,31 +770,31 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[13]_i_3_n_5 ),
         .Q(rd_ptr_reg_reg[14]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[15] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[13]_i_3_n_4 ),
         .Q(rd_ptr_reg_reg[15]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[1] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[3]_i_1_n_6 ),
         .Q(bram2_odd_addr_b[0]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[2] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[3]_i_1_n_5 ),
         .Q(bram2_odd_addr_b[1]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[3] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[3]_i_1_n_4 ),
         .Q(bram2_odd_addr_b[2]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \rd_ptr_reg_reg[3]_i_1 
        (.CI(1'b0),
@@ -820,25 +808,25 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[7]_i_1_n_7 ),
         .Q(bram2_odd_addr_b[3]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[5] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[7]_i_1_n_6 ),
         .Q(bram2_odd_addr_b[4]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[6] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[7]_i_1_n_5 ),
         .Q(bram2_odd_addr_b[5]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[7] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[7]_i_1_n_4 ),
         .Q(bram2_odd_addr_b[6]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \rd_ptr_reg_reg[7]_i_1 
        (.CI(\rd_ptr_reg_reg[3]_i_1_n_0 ),
@@ -852,17 +840,17 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[11]_i_1_n_7 ),
         .Q(bram2_odd_addr_b[7]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE \rd_ptr_reg_reg[9] 
        (.C(clk),
         .CE(p_3_in),
         .D(\rd_ptr_reg_reg[11]_i_1_n_6 ),
         .Q(bram2_odd_addr_b[8]),
-        .R(u_tx_buff_out_n_4));
+        .R(u_tx_buff_out_n_7));
   FDRE rdata_even_vld_reg
        (.C(clk),
         .CE(1'b1),
-        .D(rdata_even_vld0),
+        .D(u_tx_buff_out_n_0),
         .Q(rdata_even_vld),
         .R(axis_stream_txfifo_v2_0_S00_AXI_inst_n_1));
   FDRE rdata_even_vld_s_reg
@@ -874,7 +862,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
   FDRE rdata_odd_vld_reg
        (.C(clk),
         .CE(1'b1),
-        .D(u_tx_buff_out_n_2),
+        .D(rdata_odd_vld0),
         .Q(rdata_odd_vld),
         .R(axis_stream_txfifo_v2_0_S00_AXI_inst_n_1));
   FDRE rdata_odd_vld_s_reg
@@ -1017,7 +1005,13 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .I1(cur_state[0]),
         .O(\FSM_sequential_cur_state_reg[1]_0 ));
   design_2_axis_stream_txfifo_0_2_gen_sync_que_af u_tx_buff_out
-       (.Q(slv_reg0[0]),
+       (.D(nxt_state[1]),
+        .\FSM_sequential_cur_state_reg[1] (u_txfifo_wr_chn_n_22),
+        .\FSM_sequential_cur_state_reg[1]_0 (slv_reg1),
+        .\FSM_sequential_cur_state_reg[1]_1 (\FSM_sequential_cur_state_reg[1]_0 ),
+        .\FSM_sequential_cur_state_reg[1]_2 (\rd_ptr_reg[13]_i_5_n_0 ),
+        .\FSM_sequential_cur_state_reg[1]_3 (\rd_ptr_reg[13]_i_6_n_0 ),
+        .Q(cur_state),
         .bram0_even_rdata_b(bram0_even_rdata_b),
         .bram0_odd_rdata_b(bram0_odd_rdata_b),
         .bram1_even_rdata_b(bram1_even_rdata_b),
@@ -1032,21 +1026,19 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .out(out),
         .p_3_in(p_3_in),
         .rd_ptr_reg_reg(rd_ptr_reg_reg[0]),
-        .\rd_ptr_reg_reg[0]_0 (\rd_ptr_reg[13]_i_6_n_0 ),
-        .\rd_ptr_reg_reg[0]_1 (\rd_ptr_reg[13]_i_7_n_0 ),
-        .\rd_ptr_reg_reg[0]_2 (\rd_ptr_reg[13]_i_8_n_0 ),
-        .\rd_ptr_reg_reg[14] (u_tx_buff_out_n_0),
-        .rd_ptr_reg_reg_0_sp_1(\rd_ptr_reg[13]_i_5_n_0 ),
-        .rdata_even_vld0(rdata_even_vld0),
+        .rd_ptr_reg_reg_0_sp_1(u_tx_buff_out_n_0),
+        .rdata_even_vld_reg(slv_reg0[0]),
         .rdata_even_vld_s(rdata_even_vld_s),
-        .rdata_odd_vld_reg(cur_state),
+        .rdata_odd_vld0(rdata_odd_vld0),
         .rdata_odd_vld_s(rdata_odd_vld_s),
         .\rptr_reg[0]_0 (axis_stream_txfifo_v2_0_S00_AXI_inst_n_1),
         .rstn(rstn),
-        .rstn_0(u_tx_buff_out_n_4),
+        .rstn_0(u_tx_buff_out_n_7),
         .\slv_reg0_reg[0] (u_tx_buff_out_n_2));
   design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS u_txfifo_wr_chn
        (.D(\FSM_sequential_cur_state_reg[1]_0 ),
+        .\FSM_sequential_cur_state_reg[1] (\FSM_sequential_cur_state[1]_i_3_n_0 ),
+        .\FSM_sequential_cur_state_reg[1]_0 (\FSM_sequential_cur_state[1]_i_4_n_0 ),
         .Q(slv_reg0[16]),
         .bram0_even_we_a(bram0_even_we_a),
         .bram0_odd_we_a(bram0_odd_we_a),
@@ -1055,29 +1047,29 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0
         .bram2_even_we_a(bram2_even_we_a),
         .bram2_odd_we_a(bram2_odd_we_a),
         .clk(clk),
+        .mst_exec_state_reg_0(axis_stream_txfifo_v2_0_S00_AXI_inst_n_1),
         .out({wr_ptr_pattern_reg[15:14],wr_ptr_pattern_reg[0]}),
         .s00_axis_tlast(s00_axis_tlast),
         .s00_axis_tready(s00_axis_tready),
         .s00_axis_tvalid(s00_axis_tvalid),
-        .\write_pointer_reg[0]_0 (u_txfifo_wr_chn_n_1),
-        .\write_pointer_reg[0]_1 (axis_stream_txfifo_v2_0_S00_AXI_inst_n_1),
-        .\write_pointer_reg[10]_0 (u_txfifo_wr_chn_n_11),
-        .\write_pointer_reg[11]_0 (u_txfifo_wr_chn_n_12),
-        .\write_pointer_reg[12]_0 (u_txfifo_wr_chn_n_13),
-        .\write_pointer_reg[13]_0 (u_txfifo_wr_chn_n_14),
-        .\write_pointer_reg[13]_1 (u_txfifo_wr_chn_n_23),
-        .\write_pointer_reg[13]_2 (u_txfifo_wr_chn_n_24),
-        .\write_pointer_reg[14]_0 (u_txfifo_wr_chn_n_15),
-        .\write_pointer_reg[15]_0 (u_txfifo_wr_chn_n_16),
-        .\write_pointer_reg[1]_0 (u_txfifo_wr_chn_n_2),
-        .\write_pointer_reg[2]_0 (u_txfifo_wr_chn_n_3),
-        .\write_pointer_reg[3]_0 (u_txfifo_wr_chn_n_4),
-        .\write_pointer_reg[4]_0 (u_txfifo_wr_chn_n_5),
-        .\write_pointer_reg[5]_0 (u_txfifo_wr_chn_n_6),
-        .\write_pointer_reg[6]_0 (u_txfifo_wr_chn_n_7),
-        .\write_pointer_reg[7]_0 (u_txfifo_wr_chn_n_8),
-        .\write_pointer_reg[8]_0 (u_txfifo_wr_chn_n_9),
-        .\write_pointer_reg[9]_0 (u_txfifo_wr_chn_n_10));
+        .\slv_reg0_reg[16] (u_txfifo_wr_chn_n_22),
+        .\write_pointer_reg[0]_0 (u_txfifo_wr_chn_n_0),
+        .\write_pointer_reg[0]_1 (u_txfifo_wr_chn_n_23),
+        .\write_pointer_reg[10]_0 (u_txfifo_wr_chn_n_10),
+        .\write_pointer_reg[11]_0 (u_txfifo_wr_chn_n_11),
+        .\write_pointer_reg[12]_0 (u_txfifo_wr_chn_n_12),
+        .\write_pointer_reg[13]_0 (u_txfifo_wr_chn_n_13),
+        .\write_pointer_reg[14]_0 (u_txfifo_wr_chn_n_14),
+        .\write_pointer_reg[14]_1 (axis_stream_txfifo_v2_0_S00_AXI_inst_n_28),
+        .\write_pointer_reg[1]_0 (u_txfifo_wr_chn_n_1),
+        .\write_pointer_reg[2]_0 (u_txfifo_wr_chn_n_2),
+        .\write_pointer_reg[3]_0 (u_txfifo_wr_chn_n_3),
+        .\write_pointer_reg[4]_0 (u_txfifo_wr_chn_n_4),
+        .\write_pointer_reg[5]_0 (u_txfifo_wr_chn_n_5),
+        .\write_pointer_reg[6]_0 (u_txfifo_wr_chn_n_6),
+        .\write_pointer_reg[7]_0 (u_txfifo_wr_chn_n_7),
+        .\write_pointer_reg[8]_0 (u_txfifo_wr_chn_n_8),
+        .\write_pointer_reg[9]_0 (u_txfifo_wr_chn_n_9));
   LUT1 #(
     .INIT(2'h1)) 
     \wr_ptr_pattern[0]_i_3 
@@ -1223,9 +1215,11 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     s00_axi_rvalid,
     sel,
     Q,
+    \slv_reg1_reg[0]_0 ,
     D,
     irq_full,
-    \wr_ptr_pattern_reg[15] ,
+    \slv_reg0_reg[16]_0 ,
+    \slv_reg1_reg[0]_1 ,
     bram2_odd_addr_a,
     bram2_even_data_a,
     bram2_odd_data_a,
@@ -1237,11 +1231,10 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     s00_axi_wstrb,
     \FSM_sequential_cur_state_reg[0] ,
     \FSM_sequential_cur_state_reg[0]_0 ,
-    \FSM_sequential_cur_state_reg[1] ,
-    \FSM_sequential_cur_state_reg[1]_0 ,
     \FSM_sequential_cur_state_reg[0]_1 ,
     \FSM_sequential_cur_state_reg[0]_2 ,
-    \slv_reg3_reg[15] ,
+    \FSM_sequential_cur_state_reg[0]_3 ,
+    \FSM_sequential_cur_state_reg[0]_4 ,
     \slv_reg3_reg[14] ,
     \slv_reg3_reg[13] ,
     \slv_reg3_reg[12] ,
@@ -1274,9 +1267,11 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   output s00_axi_rvalid;
   output sel;
   output [1:0]Q;
-  output [1:0]D;
+  output [0:0]\slv_reg1_reg[0]_0 ;
+  output [0:0]D;
   output irq_full;
-  output [15:0]\wr_ptr_pattern_reg[15] ;
+  output [15:0]\slv_reg0_reg[16]_0 ;
+  output \slv_reg1_reg[0]_1 ;
   output [12:0]bram2_odd_addr_a;
   output [15:0]bram2_even_data_a;
   output [15:0]bram2_odd_data_a;
@@ -1288,11 +1283,10 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   input [3:0]s00_axi_wstrb;
   input \FSM_sequential_cur_state_reg[0] ;
   input [1:0]\FSM_sequential_cur_state_reg[0]_0 ;
-  input \FSM_sequential_cur_state_reg[1] ;
-  input \FSM_sequential_cur_state_reg[1]_0 ;
   input \FSM_sequential_cur_state_reg[0]_1 ;
   input \FSM_sequential_cur_state_reg[0]_2 ;
-  input \slv_reg3_reg[15] ;
+  input \FSM_sequential_cur_state_reg[0]_3 ;
+  input \FSM_sequential_cur_state_reg[0]_4 ;
   input \slv_reg3_reg[14] ;
   input \slv_reg3_reg[13] ;
   input \slv_reg3_reg[12] ;
@@ -1318,15 +1312,14 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   input [1:0]s00_axi_awaddr;
   input [1:0]s00_axi_araddr;
 
-  wire [1:0]D;
+  wire [0:0]D;
+  wire \FSM_sequential_cur_state[0]_i_2_n_0 ;
   wire \FSM_sequential_cur_state_reg[0] ;
   wire [1:0]\FSM_sequential_cur_state_reg[0]_0 ;
   wire \FSM_sequential_cur_state_reg[0]_1 ;
   wire \FSM_sequential_cur_state_reg[0]_2 ;
-  wire \FSM_sequential_cur_state_reg[0]_i_2_n_0 ;
-  wire \FSM_sequential_cur_state_reg[1] ;
-  wire \FSM_sequential_cur_state_reg[1]_0 ;
-  wire \FSM_sequential_cur_state_reg[1]_i_2_n_0 ;
+  wire \FSM_sequential_cur_state_reg[0]_3 ;
+  wire \FSM_sequential_cur_state_reg[0]_4 ;
   wire [1:0]Q;
   wire aw_en_i_1_n_0;
   wire aw_en_reg_n_0;
@@ -1374,6 +1367,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   wire \slv_reg0[23]_i_1_n_0 ;
   wire \slv_reg0[31]_i_1_n_0 ;
   wire \slv_reg0[7]_i_1_n_0 ;
+  wire [15:0]\slv_reg0_reg[16]_0 ;
   wire \slv_reg0_reg_n_0_[10] ;
   wire \slv_reg0_reg_n_0_[11] ;
   wire \slv_reg0_reg_n_0_[13] ;
@@ -1403,22 +1397,52 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   wire \slv_reg0_reg_n_0_[7] ;
   wire \slv_reg0_reg_n_0_[8] ;
   wire \slv_reg0_reg_n_0_[9] ;
-  wire [31:1]slv_reg1;
   wire \slv_reg1[15]_i_1_n_0 ;
   wire \slv_reg1[23]_i_1_n_0 ;
   wire \slv_reg1[31]_i_1_n_0 ;
   wire \slv_reg1[31]_i_3_n_0 ;
   wire \slv_reg1[7]_i_1_n_0 ;
-  wire slv_reg1_0;
   wire slv_reg1_clr;
   wire slv_reg1_clr0;
+  wire [0:0]\slv_reg1_reg[0]_0 ;
+  wire \slv_reg1_reg[0]_1 ;
+  wire \slv_reg1_reg_n_0_[10] ;
+  wire \slv_reg1_reg_n_0_[11] ;
+  wire \slv_reg1_reg_n_0_[12] ;
+  wire \slv_reg1_reg_n_0_[13] ;
+  wire \slv_reg1_reg_n_0_[14] ;
+  wire \slv_reg1_reg_n_0_[15] ;
+  wire \slv_reg1_reg_n_0_[16] ;
+  wire \slv_reg1_reg_n_0_[17] ;
+  wire \slv_reg1_reg_n_0_[18] ;
+  wire \slv_reg1_reg_n_0_[19] ;
+  wire \slv_reg1_reg_n_0_[1] ;
+  wire \slv_reg1_reg_n_0_[20] ;
+  wire \slv_reg1_reg_n_0_[21] ;
+  wire \slv_reg1_reg_n_0_[22] ;
+  wire \slv_reg1_reg_n_0_[23] ;
+  wire \slv_reg1_reg_n_0_[24] ;
+  wire \slv_reg1_reg_n_0_[25] ;
+  wire \slv_reg1_reg_n_0_[26] ;
+  wire \slv_reg1_reg_n_0_[27] ;
+  wire \slv_reg1_reg_n_0_[28] ;
+  wire \slv_reg1_reg_n_0_[29] ;
+  wire \slv_reg1_reg_n_0_[2] ;
+  wire \slv_reg1_reg_n_0_[30] ;
+  wire \slv_reg1_reg_n_0_[31] ;
+  wire \slv_reg1_reg_n_0_[3] ;
+  wire \slv_reg1_reg_n_0_[4] ;
+  wire \slv_reg1_reg_n_0_[5] ;
+  wire \slv_reg1_reg_n_0_[6] ;
+  wire \slv_reg1_reg_n_0_[7] ;
+  wire \slv_reg1_reg_n_0_[8] ;
+  wire \slv_reg1_reg_n_0_[9] ;
   wire \slv_reg3_reg[0] ;
   wire \slv_reg3_reg[10] ;
   wire \slv_reg3_reg[11] ;
   wire \slv_reg3_reg[12] ;
   wire \slv_reg3_reg[13] ;
   wire \slv_reg3_reg[14] ;
-  wire \slv_reg3_reg[15] ;
   wire \slv_reg3_reg[1] ;
   wire \slv_reg3_reg[2] ;
   wire \slv_reg3_reg[3] ;
@@ -1429,37 +1453,27 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   wire \slv_reg3_reg[8] ;
   wire \slv_reg3_reg[9] ;
   wire slv_reg_rden__0;
-  wire [15:0]\wr_ptr_pattern_reg[15] ;
 
   LUT6 #(
-    .INIT(64'h000500053F373337)) 
+    .INIT(64'hAAAAAAAABFBBBBBB)) 
     \FSM_sequential_cur_state[0]_i_1 
-       (.I0(\FSM_sequential_cur_state_reg[0]_i_2_n_0 ),
+       (.I0(\FSM_sequential_cur_state[0]_i_2_n_0 ),
         .I1(\FSM_sequential_cur_state_reg[0] ),
         .I2(\FSM_sequential_cur_state_reg[0]_0 [1]),
         .I3(\FSM_sequential_cur_state_reg[0]_0 [0]),
-        .I4(\FSM_sequential_cur_state_reg[1]_i_2_n_0 ),
-        .I5(slv_reg1_0),
-        .O(D[0]));
-  LUT5 #(
-    .INIT(32'h00030A33)) 
-    \FSM_sequential_cur_state[1]_i_1 
-       (.I0(\FSM_sequential_cur_state_reg[0] ),
-        .I1(\FSM_sequential_cur_state_reg[1]_i_2_n_0 ),
-        .I2(\FSM_sequential_cur_state_reg[0]_0 [0]),
-        .I3(\FSM_sequential_cur_state_reg[0]_0 [1]),
-        .I4(slv_reg1_0),
-        .O(D[1]));
-  MUXF7 \FSM_sequential_cur_state_reg[0]_i_2 
-       (.I0(\FSM_sequential_cur_state_reg[0]_1 ),
-        .I1(\FSM_sequential_cur_state_reg[0]_2 ),
-        .O(\FSM_sequential_cur_state_reg[0]_i_2_n_0 ),
-        .S(Q[1]));
-  MUXF7 \FSM_sequential_cur_state_reg[1]_i_2 
-       (.I0(\FSM_sequential_cur_state_reg[1] ),
-        .I1(\FSM_sequential_cur_state_reg[1]_0 ),
-        .O(\FSM_sequential_cur_state_reg[1]_i_2_n_0 ),
-        .S(Q[1]));
+        .I4(\FSM_sequential_cur_state_reg[0]_1 ),
+        .I5(\slv_reg1_reg[0]_0 ),
+        .O(D));
+  LUT6 #(
+    .INIT(64'h0000001011111111)) 
+    \FSM_sequential_cur_state[0]_i_2 
+       (.I0(\FSM_sequential_cur_state_reg[0]_0 [0]),
+        .I1(\FSM_sequential_cur_state_reg[0]_0 [1]),
+        .I2(Q[1]),
+        .I3(\FSM_sequential_cur_state_reg[0]_2 ),
+        .I4(\FSM_sequential_cur_state_reg[0]_3 ),
+        .I5(\FSM_sequential_cur_state_reg[0]_4 ),
+        .O(\FSM_sequential_cur_state[0]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFFFF88880FFF8888)) 
     aw_en_i_1
@@ -1504,7 +1518,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .D(\axi_araddr[3]_i_1_n_0 ),
         .Q(axi_araddr[3]),
         .R(rstn_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
     .INIT(4'h2)) 
     axi_arready_i_1
@@ -1589,52 +1603,52 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[0]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [0]),
-        .I1(slv_reg1_0),
+        .I1(\slv_reg1_reg[0]_0 ),
         .I2(axi_araddr[2]),
         .I3(Q[0]),
         .I4(axi_araddr[3]),
         .O(reg_data_out[0]));
   LUT5 #(
-    .INIT(32'hA0A0CFC0)) 
+    .INIT(32'hAFFCA0FC)) 
     \axi_rdata[10]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [10]),
-        .I1(slv_reg1[10]),
-        .I2(axi_araddr[2]),
-        .I3(\slv_reg0_reg_n_0_[10] ),
-        .I4(axi_araddr[3]),
+        .I1(\slv_reg0_reg_n_0_[10] ),
+        .I2(axi_araddr[3]),
+        .I3(axi_araddr[2]),
+        .I4(\slv_reg1_reg_n_0_[10] ),
         .O(reg_data_out[10]));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[11]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [11]),
-        .I1(slv_reg1[11]),
+        .I1(\slv_reg1_reg_n_0_[11] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[11] ),
         .I4(axi_araddr[3]),
         .O(reg_data_out[11]));
   LUT5 #(
-    .INIT(32'hBBFC88FC)) 
+    .INIT(32'hA0A0CFC0)) 
     \axi_rdata[12]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [12]),
-        .I1(axi_araddr[3]),
-        .I2(slv_reg0),
-        .I3(axi_araddr[2]),
-        .I4(slv_reg1[12]),
+        .I1(\slv_reg1_reg_n_0_[12] ),
+        .I2(axi_araddr[2]),
+        .I3(slv_reg0),
+        .I4(axi_araddr[3]),
         .O(reg_data_out[12]));
   LUT5 #(
-    .INIT(32'hA0A0CFC0)) 
+    .INIT(32'hAFFCA0FC)) 
     \axi_rdata[13]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [13]),
-        .I1(slv_reg1[13]),
-        .I2(axi_araddr[2]),
-        .I3(\slv_reg0_reg_n_0_[13] ),
-        .I4(axi_araddr[3]),
+        .I1(\slv_reg0_reg_n_0_[13] ),
+        .I2(axi_araddr[3]),
+        .I3(axi_araddr[2]),
+        .I4(\slv_reg1_reg_n_0_[13] ),
         .O(reg_data_out[13]));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[14]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [14]),
-        .I1(slv_reg1[14]),
+        .I1(\slv_reg1_reg_n_0_[14] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[14] ),
         .I4(axi_araddr[3]),
@@ -1643,15 +1657,16 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[15]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [15]),
-        .I1(slv_reg1[15]),
+        .I1(\slv_reg1_reg_n_0_[15] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[15] ),
         .I4(axi_araddr[3]),
         .O(reg_data_out[15]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h33B8)) 
     \axi_rdata[16]_i_1 
-       (.I0(slv_reg1[16]),
+       (.I0(\slv_reg1_reg_n_0_[16] ),
         .I1(axi_araddr[2]),
         .I2(Q[1]),
         .I3(axi_araddr[3]),
@@ -1659,7 +1674,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[17]_i_1 
-       (.I0(slv_reg1[17]),
+       (.I0(\slv_reg1_reg_n_0_[17] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[17] ),
         .I3(axi_araddr[3]),
@@ -1667,7 +1682,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h3B38)) 
     \axi_rdata[18]_i_1 
-       (.I0(slv_reg1[18]),
+       (.I0(\slv_reg1_reg_n_0_[18] ),
         .I1(axi_araddr[2]),
         .I2(axi_araddr[3]),
         .I3(\slv_reg0_reg_n_0_[18] ),
@@ -1675,7 +1690,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[19]_i_1 
-       (.I0(slv_reg1[19]),
+       (.I0(\slv_reg1_reg_n_0_[19] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[19] ),
         .I3(axi_araddr[3]),
@@ -1687,12 +1702,12 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(\slv_reg0_reg_n_0_[1] ),
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
-        .I4(slv_reg1[1]),
+        .I4(\slv_reg1_reg_n_0_[1] ),
         .O(reg_data_out[1]));
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[20]_i_1 
-       (.I0(slv_reg1[20]),
+       (.I0(\slv_reg1_reg_n_0_[20] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[20] ),
         .I3(axi_araddr[3]),
@@ -1700,7 +1715,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[21]_i_1 
-       (.I0(slv_reg1[21]),
+       (.I0(\slv_reg1_reg_n_0_[21] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[21] ),
         .I3(axi_araddr[3]),
@@ -1708,7 +1723,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[22]_i_1 
-       (.I0(slv_reg1[22]),
+       (.I0(\slv_reg1_reg_n_0_[22] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[22] ),
         .I3(axi_araddr[3]),
@@ -1716,7 +1731,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[23]_i_1 
-       (.I0(slv_reg1[23]),
+       (.I0(\slv_reg1_reg_n_0_[23] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[23] ),
         .I3(axi_araddr[3]),
@@ -1724,7 +1739,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[24]_i_1 
-       (.I0(slv_reg1[24]),
+       (.I0(\slv_reg1_reg_n_0_[24] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[24] ),
         .I3(axi_araddr[3]),
@@ -1732,7 +1747,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[25]_i_1 
-       (.I0(slv_reg1[25]),
+       (.I0(\slv_reg1_reg_n_0_[25] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[25] ),
         .I3(axi_araddr[3]),
@@ -1740,7 +1755,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[26]_i_1 
-       (.I0(slv_reg1[26]),
+       (.I0(\slv_reg1_reg_n_0_[26] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[26] ),
         .I3(axi_araddr[3]),
@@ -1748,7 +1763,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[27]_i_1 
-       (.I0(slv_reg1[27]),
+       (.I0(\slv_reg1_reg_n_0_[27] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[27] ),
         .I3(axi_araddr[3]),
@@ -1756,7 +1771,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[28]_i_1 
-       (.I0(slv_reg1[28]),
+       (.I0(\slv_reg1_reg_n_0_[28] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[28] ),
         .I3(axi_araddr[3]),
@@ -1764,7 +1779,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT4 #(
     .INIT(16'h00B8)) 
     \axi_rdata[29]_i_1 
-       (.I0(slv_reg1[29]),
+       (.I0(\slv_reg1_reg_n_0_[29] ),
         .I1(axi_araddr[2]),
         .I2(\slv_reg0_reg_n_0_[29] ),
         .I3(axi_araddr[3]),
@@ -1773,7 +1788,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[2]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [2]),
-        .I1(slv_reg1[2]),
+        .I1(\slv_reg1_reg_n_0_[2] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[2] ),
         .I4(axi_araddr[3]),
@@ -1782,7 +1797,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[30]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [16]),
-        .I1(slv_reg1[30]),
+        .I1(\slv_reg1_reg_n_0_[30] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[30] ),
         .I4(axi_araddr[3]),
@@ -1791,7 +1806,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[31]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [17]),
-        .I1(slv_reg1[31]),
+        .I1(\slv_reg1_reg_n_0_[31] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[31] ),
         .I4(axi_araddr[3]),
@@ -1800,7 +1815,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[3]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [3]),
-        .I1(slv_reg1[3]),
+        .I1(\slv_reg1_reg_n_0_[3] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[3] ),
         .I4(axi_araddr[3]),
@@ -1809,7 +1824,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[4]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [4]),
-        .I1(slv_reg1[4]),
+        .I1(\slv_reg1_reg_n_0_[4] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[4] ),
         .I4(axi_araddr[3]),
@@ -1821,13 +1836,13 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(\slv_reg0_reg_n_0_[5] ),
         .I2(axi_araddr[3]),
         .I3(axi_araddr[2]),
-        .I4(slv_reg1[5]),
+        .I4(\slv_reg1_reg_n_0_[5] ),
         .O(reg_data_out[5]));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[6]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [6]),
-        .I1(slv_reg1[6]),
+        .I1(\slv_reg1_reg_n_0_[6] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[6] ),
         .I4(axi_araddr[3]),
@@ -1836,7 +1851,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[7]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [7]),
-        .I1(slv_reg1[7]),
+        .I1(\slv_reg1_reg_n_0_[7] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[7] ),
         .I4(axi_araddr[3]),
@@ -1845,19 +1860,19 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
     .INIT(32'hA0A0CFC0)) 
     \axi_rdata[8]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [8]),
-        .I1(slv_reg1[8]),
+        .I1(\slv_reg1_reg_n_0_[8] ),
         .I2(axi_araddr[2]),
         .I3(\slv_reg0_reg_n_0_[8] ),
         .I4(axi_araddr[3]),
         .O(reg_data_out[8]));
   LUT5 #(
-    .INIT(32'hAFFCA0FC)) 
+    .INIT(32'hA0A0CFC0)) 
     \axi_rdata[9]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [9]),
-        .I1(\slv_reg0_reg_n_0_[9] ),
-        .I2(axi_araddr[3]),
-        .I3(axi_araddr[2]),
-        .I4(slv_reg1[9]),
+        .I1(\slv_reg1_reg_n_0_[9] ),
+        .I2(axi_araddr[2]),
+        .I3(\slv_reg0_reg_n_0_[9] ),
+        .I4(axi_araddr[3]),
         .O(reg_data_out[9]));
   FDRE \axi_rdata_reg[0] 
        (.C(clk),
@@ -2051,7 +2066,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .D(reg_data_out[9]),
         .Q(s00_axi_rdata[9]),
         .R(rstn_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h08F8)) 
     axi_rvalid_i_1
@@ -2089,7 +2104,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[0]),
         .O(bram2_even_data_a[0]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[10]_INST_0 
@@ -2097,7 +2112,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[10]),
         .O(bram2_even_data_a[10]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[11]_INST_0 
@@ -2105,7 +2120,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[11]),
         .O(bram2_even_data_a[11]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[12]_INST_0 
@@ -2113,7 +2128,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[12]),
         .O(bram2_even_data_a[12]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[13]_INST_0 
@@ -2121,7 +2136,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[13]),
         .O(bram2_even_data_a[13]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[14]_INST_0 
@@ -2137,7 +2152,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[15]),
         .O(bram2_even_data_a[15]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[1]_INST_0 
@@ -2145,7 +2160,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[1]),
         .O(bram2_even_data_a[1]));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[2]_INST_0 
@@ -2153,7 +2168,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[2]),
         .O(bram2_even_data_a[2]));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[3]_INST_0 
@@ -2161,7 +2176,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[3]),
         .O(bram2_even_data_a[3]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[4]_INST_0 
@@ -2169,7 +2184,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[4]),
         .O(bram2_even_data_a[4]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[5]_INST_0 
@@ -2177,7 +2192,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[5]),
         .O(bram2_even_data_a[5]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[6]_INST_0 
@@ -2185,7 +2200,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[6]),
         .O(bram2_even_data_a[6]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[7]_INST_0 
@@ -2193,7 +2208,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[7]),
         .O(bram2_even_data_a[7]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[8]_INST_0 
@@ -2201,7 +2216,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[8]),
         .O(bram2_even_data_a[8]));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_even_data_a[9]_INST_0 
@@ -2313,7 +2328,6 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(\slv_reg3_reg[9] ),
         .O(bram2_odd_addr_a[9]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[0]_INST_0 
@@ -2321,7 +2335,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[16]),
         .O(bram2_odd_data_a[0]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[10]_INST_0 
@@ -2329,7 +2343,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[26]),
         .O(bram2_odd_data_a[10]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[11]_INST_0 
@@ -2337,7 +2351,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[27]),
         .O(bram2_odd_data_a[11]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[12]_INST_0 
@@ -2345,7 +2359,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[28]),
         .O(bram2_odd_data_a[12]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[13]_INST_0 
@@ -2353,7 +2367,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[29]),
         .O(bram2_odd_data_a[13]));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[14]_INST_0 
@@ -2369,7 +2383,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[31]),
         .O(bram2_odd_data_a[15]));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[1]_INST_0 
@@ -2377,7 +2391,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[17]),
         .O(bram2_odd_data_a[1]));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[2]_INST_0 
@@ -2385,7 +2399,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[18]),
         .O(bram2_odd_data_a[2]));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[3]_INST_0 
@@ -2393,7 +2407,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[19]),
         .O(bram2_odd_data_a[3]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[4]_INST_0 
@@ -2401,7 +2415,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[20]),
         .O(bram2_odd_data_a[4]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[5]_INST_0 
@@ -2409,7 +2423,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[21]),
         .O(bram2_odd_data_a[5]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[6]_INST_0 
@@ -2417,7 +2431,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[22]),
         .O(bram2_odd_data_a[6]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[7]_INST_0 
@@ -2425,7 +2439,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[23]),
         .O(bram2_odd_data_a[7]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[8]_INST_0 
@@ -2433,7 +2447,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(Q[1]),
         .I2(s00_axis_tdata[24]),
         .O(bram2_odd_data_a[8]));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bram2_odd_data_a[9]_INST_0 
@@ -2687,7 +2701,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[10]_i_1 
-       (.I0(slv_reg1[10]),
+       (.I0(\slv_reg1_reg_n_0_[10] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[10]),
         .O(p_2_in[10]));
@@ -2695,7 +2709,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[11]_i_1 
-       (.I0(slv_reg1[11]),
+       (.I0(\slv_reg1_reg_n_0_[11] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[11]),
         .O(p_2_in[11]));
@@ -2703,7 +2717,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[12]_i_1 
-       (.I0(slv_reg1[12]),
+       (.I0(\slv_reg1_reg_n_0_[12] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[12]),
         .O(p_2_in[12]));
@@ -2711,7 +2725,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[13]_i_1 
-       (.I0(slv_reg1[13]),
+       (.I0(\slv_reg1_reg_n_0_[13] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[13]),
         .O(p_2_in[13]));
@@ -2719,7 +2733,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[14]_i_1 
-       (.I0(slv_reg1[14]),
+       (.I0(\slv_reg1_reg_n_0_[14] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[14]),
         .O(p_2_in[14]));
@@ -2736,32 +2750,32 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[15]_i_2 
-       (.I0(slv_reg1[15]),
+       (.I0(\slv_reg1_reg_n_0_[15] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[15]),
         .O(p_2_in[15]));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[16]_i_1 
        (.I0(s00_axi_wdata[16]),
         .I1(slv_reg1_clr),
         .O(p_2_in[16]));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[17]_i_1 
        (.I0(s00_axi_wdata[17]),
         .I1(slv_reg1_clr),
         .O(p_2_in[17]));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[18]_i_1 
        (.I0(s00_axi_wdata[18]),
         .I1(slv_reg1_clr),
         .O(p_2_in[18]));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[19]_i_1 
@@ -2772,25 +2786,25 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[1]_i_1 
-       (.I0(slv_reg1[1]),
+       (.I0(\slv_reg1_reg_n_0_[1] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[1]),
         .O(p_2_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[20]_i_1 
        (.I0(s00_axi_wdata[20]),
         .I1(slv_reg1_clr),
         .O(p_2_in[20]));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[21]_i_1 
        (.I0(s00_axi_wdata[21]),
         .I1(slv_reg1_clr),
         .O(p_2_in[21]));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[22]_i_1 
@@ -2806,49 +2820,49 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I3(axi_awaddr[2]),
         .I4(axi_awaddr[3]),
         .O(\slv_reg1[23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[23]_i_2 
        (.I0(s00_axi_wdata[23]),
         .I1(slv_reg1_clr),
         .O(p_2_in[23]));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[24]_i_1 
        (.I0(s00_axi_wdata[24]),
         .I1(slv_reg1_clr),
         .O(p_2_in[24]));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[25]_i_1 
        (.I0(s00_axi_wdata[25]),
         .I1(slv_reg1_clr),
         .O(p_2_in[25]));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[26]_i_1 
        (.I0(s00_axi_wdata[26]),
         .I1(slv_reg1_clr),
         .O(p_2_in[26]));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[27]_i_1 
        (.I0(s00_axi_wdata[27]),
         .I1(slv_reg1_clr),
         .O(p_2_in[27]));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[28]_i_1 
        (.I0(s00_axi_wdata[28]),
         .I1(slv_reg1_clr),
         .O(p_2_in[28]));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[29]_i_1 
@@ -2859,11 +2873,11 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[2]_i_1 
-       (.I0(slv_reg1[2]),
+       (.I0(\slv_reg1_reg_n_0_[2] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[2]),
         .O(p_2_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[30]_i_1 
@@ -2879,7 +2893,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I3(axi_awaddr[2]),
         .I4(axi_awaddr[3]),
         .O(\slv_reg1[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg1[31]_i_2 
@@ -2898,7 +2912,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[3]_i_1 
-       (.I0(slv_reg1[3]),
+       (.I0(\slv_reg1_reg_n_0_[3] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[3]),
         .O(p_2_in[3]));
@@ -2906,7 +2920,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[4]_i_1 
-       (.I0(slv_reg1[4]),
+       (.I0(\slv_reg1_reg_n_0_[4] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[4]),
         .O(p_2_in[4]));
@@ -2914,7 +2928,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[5]_i_1 
-       (.I0(slv_reg1[5]),
+       (.I0(\slv_reg1_reg_n_0_[5] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[5]),
         .O(p_2_in[5]));
@@ -2922,7 +2936,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[6]_i_1 
-       (.I0(slv_reg1[6]),
+       (.I0(\slv_reg1_reg_n_0_[6] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[6]),
         .O(p_2_in[6]));
@@ -2939,7 +2953,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[7]_i_2 
-       (.I0(slv_reg1[7]),
+       (.I0(\slv_reg1_reg_n_0_[7] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[7]),
         .O(p_2_in[7]));
@@ -2947,7 +2961,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[8]_i_1 
-       (.I0(slv_reg1[8]),
+       (.I0(\slv_reg1_reg_n_0_[8] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[8]),
         .O(p_2_in[8]));
@@ -2955,14 +2969,15 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg1[9]_i_1 
-       (.I0(slv_reg1[9]),
+       (.I0(\slv_reg1_reg_n_0_[9] ),
         .I1(slv_reg1_clr),
         .I2(s00_axi_wdata[9]),
         .O(p_2_in[9]));
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     slv_reg1_clr_i_1
-       (.I0(slv_reg1_0),
+       (.I0(\slv_reg1_reg[0]_0 ),
         .I1(slv_reg1_clr),
         .O(slv_reg1_clr0));
   FDRE slv_reg1_clr_reg
@@ -2975,193 +2990,193 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[0]),
-        .Q(slv_reg1_0),
+        .Q(\slv_reg1_reg[0]_0 ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[10] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[10]),
-        .Q(slv_reg1[10]),
+        .Q(\slv_reg1_reg_n_0_[10] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[11] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[11]),
-        .Q(slv_reg1[11]),
+        .Q(\slv_reg1_reg_n_0_[11] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[12] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[12]),
-        .Q(slv_reg1[12]),
+        .Q(\slv_reg1_reg_n_0_[12] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[13] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[13]),
-        .Q(slv_reg1[13]),
+        .Q(\slv_reg1_reg_n_0_[13] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[14] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[14]),
-        .Q(slv_reg1[14]),
+        .Q(\slv_reg1_reg_n_0_[14] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[15] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[15]),
-        .Q(slv_reg1[15]),
+        .Q(\slv_reg1_reg_n_0_[15] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[16] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[16]),
-        .Q(slv_reg1[16]),
+        .Q(\slv_reg1_reg_n_0_[16] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[17] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[17]),
-        .Q(slv_reg1[17]),
+        .Q(\slv_reg1_reg_n_0_[17] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[18] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[18]),
-        .Q(slv_reg1[18]),
+        .Q(\slv_reg1_reg_n_0_[18] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[19] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[19]),
-        .Q(slv_reg1[19]),
+        .Q(\slv_reg1_reg_n_0_[19] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[1] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[1]),
-        .Q(slv_reg1[1]),
+        .Q(\slv_reg1_reg_n_0_[1] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[20] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[20]),
-        .Q(slv_reg1[20]),
+        .Q(\slv_reg1_reg_n_0_[20] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[21] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[21]),
-        .Q(slv_reg1[21]),
+        .Q(\slv_reg1_reg_n_0_[21] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[22] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[22]),
-        .Q(slv_reg1[22]),
+        .Q(\slv_reg1_reg_n_0_[22] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[23] 
        (.C(clk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(p_2_in[23]),
-        .Q(slv_reg1[23]),
+        .Q(\slv_reg1_reg_n_0_[23] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[24] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[24]),
-        .Q(slv_reg1[24]),
+        .Q(\slv_reg1_reg_n_0_[24] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[25] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[25]),
-        .Q(slv_reg1[25]),
+        .Q(\slv_reg1_reg_n_0_[25] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[26] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[26]),
-        .Q(slv_reg1[26]),
+        .Q(\slv_reg1_reg_n_0_[26] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[27] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[27]),
-        .Q(slv_reg1[27]),
+        .Q(\slv_reg1_reg_n_0_[27] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[28] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[28]),
-        .Q(slv_reg1[28]),
+        .Q(\slv_reg1_reg_n_0_[28] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[29] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[29]),
-        .Q(slv_reg1[29]),
+        .Q(\slv_reg1_reg_n_0_[29] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[2] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[2]),
-        .Q(slv_reg1[2]),
+        .Q(\slv_reg1_reg_n_0_[2] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[30] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[30]),
-        .Q(slv_reg1[30]),
+        .Q(\slv_reg1_reg_n_0_[30] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[31] 
        (.C(clk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(p_2_in[31]),
-        .Q(slv_reg1[31]),
+        .Q(\slv_reg1_reg_n_0_[31] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[3] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[3]),
-        .Q(slv_reg1[3]),
+        .Q(\slv_reg1_reg_n_0_[3] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[4] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[4]),
-        .Q(slv_reg1[4]),
+        .Q(\slv_reg1_reg_n_0_[4] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[5] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[5]),
-        .Q(slv_reg1[5]),
+        .Q(\slv_reg1_reg_n_0_[5] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[6] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[6]),
-        .Q(slv_reg1[6]),
+        .Q(\slv_reg1_reg_n_0_[6] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[7] 
        (.C(clk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(p_2_in[7]),
-        .Q(slv_reg1[7]),
+        .Q(\slv_reg1_reg_n_0_[7] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[8] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[8]),
-        .Q(slv_reg1[8]),
+        .Q(\slv_reg1_reg_n_0_[8] ),
         .R(rstn_0));
   FDRE \slv_reg1_reg[9] 
        (.C(clk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(p_2_in[9]),
-        .Q(slv_reg1[9]),
+        .Q(\slv_reg1_reg_n_0_[9] ),
         .R(rstn_0));
   (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
@@ -3170,7 +3185,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[0]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[0] ),
-        .O(\wr_ptr_pattern_reg[15] [0]));
+        .O(\slv_reg0_reg[16]_0 [0]));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3178,7 +3193,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[10]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[10] ),
-        .O(\wr_ptr_pattern_reg[15] [10]));
+        .O(\slv_reg0_reg[16]_0 [10]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3186,7 +3201,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[11]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[11] ),
-        .O(\wr_ptr_pattern_reg[15] [11]));
+        .O(\slv_reg0_reg[16]_0 [11]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3194,7 +3209,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[12]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[12] ),
-        .O(\wr_ptr_pattern_reg[15] [12]));
+        .O(\slv_reg0_reg[16]_0 [12]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3202,7 +3217,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[13]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[13] ),
-        .O(\wr_ptr_pattern_reg[15] [13]));
+        .O(\slv_reg0_reg[16]_0 [13]));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3210,15 +3225,14 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[14]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[14] ),
-        .O(\wr_ptr_pattern_reg[15] [14]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+        .O(\slv_reg0_reg[16]_0 [14]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \slv_reg3[15]_i_1 
-       (.I0(out[15]),
-        .I1(Q[1]),
-        .I2(\slv_reg3_reg[15] ),
-        .O(\wr_ptr_pattern_reg[15] [15]));
+       (.I0(Q[1]),
+        .I1(out[15]),
+        .O(\slv_reg0_reg[16]_0 [15]));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3226,7 +3240,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[1]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[1] ),
-        .O(\wr_ptr_pattern_reg[15] [1]));
+        .O(\slv_reg0_reg[16]_0 [1]));
   (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3234,7 +3248,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[2]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[2] ),
-        .O(\wr_ptr_pattern_reg[15] [2]));
+        .O(\slv_reg0_reg[16]_0 [2]));
   (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3242,7 +3256,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[3]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[3] ),
-        .O(\wr_ptr_pattern_reg[15] [3]));
+        .O(\slv_reg0_reg[16]_0 [3]));
   (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3250,7 +3264,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[4]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[4] ),
-        .O(\wr_ptr_pattern_reg[15] [4]));
+        .O(\slv_reg0_reg[16]_0 [4]));
   (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3258,7 +3272,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[5]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[5] ),
-        .O(\wr_ptr_pattern_reg[15] [5]));
+        .O(\slv_reg0_reg[16]_0 [5]));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3266,7 +3280,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[6]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[6] ),
-        .O(\wr_ptr_pattern_reg[15] [6]));
+        .O(\slv_reg0_reg[16]_0 [6]));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3274,7 +3288,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[7]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[7] ),
-        .O(\wr_ptr_pattern_reg[15] [7]));
+        .O(\slv_reg0_reg[16]_0 [7]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3282,7 +3296,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[8]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[8] ),
-        .O(\wr_ptr_pattern_reg[15] [8]));
+        .O(\slv_reg0_reg[16]_0 [8]));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -3290,7 +3304,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
        (.I0(out[9]),
         .I1(Q[1]),
         .I2(\slv_reg3_reg[9] ),
-        .O(\wr_ptr_pattern_reg[15] [9]));
+        .O(\slv_reg0_reg[16]_0 [9]));
   LUT3 #(
     .INIT(8'h08)) 
     slv_reg_rden
@@ -3298,7 +3312,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(s00_axi_arvalid),
         .I2(s00_axi_rvalid),
         .O(slv_reg_rden__0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h70)) 
     \wr_ptr_pattern[0]_i_1 
@@ -3306,12 +3320,18 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I1(out[14]),
         .I2(Q[1]),
         .O(sel));
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  LUT2 #(
+    .INIT(4'hB)) 
+    \write_pointer[0]_i_1 
+       (.I0(\slv_reg1_reg[0]_0 ),
+        .I1(rstn),
+        .O(\slv_reg1_reg[0]_1 ));
 endmodule
 
 (* ORIG_REF_NAME = "axis_stream_txfifo_v2_0_S00_AXIS" *) 
 module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
-   (s00_axis_tready,
-    \write_pointer_reg[0]_0 ,
+   (\write_pointer_reg[0]_0 ,
     \write_pointer_reg[1]_0 ,
     \write_pointer_reg[2]_0 ,
     \write_pointer_reg[3]_0 ,
@@ -3326,23 +3346,25 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
     \write_pointer_reg[12]_0 ,
     \write_pointer_reg[13]_0 ,
     \write_pointer_reg[14]_0 ,
-    \write_pointer_reg[15]_0 ,
+    s00_axis_tready,
     bram2_odd_we_a,
     bram2_even_we_a,
     bram1_odd_we_a,
     bram1_even_we_a,
     bram0_odd_we_a,
     bram0_even_we_a,
-    \write_pointer_reg[13]_1 ,
-    \write_pointer_reg[13]_2 ,
+    \slv_reg0_reg[16] ,
     \write_pointer_reg[0]_1 ,
+    mst_exec_state_reg_0,
     clk,
+    \write_pointer_reg[14]_1 ,
     out,
     Q,
     D,
     s00_axis_tvalid,
+    \FSM_sequential_cur_state_reg[1] ,
+    \FSM_sequential_cur_state_reg[1]_0 ,
     s00_axis_tlast);
-  output s00_axis_tready;
   output \write_pointer_reg[0]_0 ;
   output \write_pointer_reg[1]_0 ;
   output \write_pointer_reg[2]_0 ;
@@ -3358,29 +3380,35 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   output \write_pointer_reg[12]_0 ;
   output \write_pointer_reg[13]_0 ;
   output \write_pointer_reg[14]_0 ;
-  output \write_pointer_reg[15]_0 ;
+  output s00_axis_tready;
   output bram2_odd_we_a;
   output bram2_even_we_a;
   output bram1_odd_we_a;
   output bram1_even_we_a;
   output bram0_odd_we_a;
   output bram0_even_we_a;
-  output \write_pointer_reg[13]_1 ;
-  output \write_pointer_reg[13]_2 ;
-  input \write_pointer_reg[0]_1 ;
+  output \slv_reg0_reg[16] ;
+  output \write_pointer_reg[0]_1 ;
+  input mst_exec_state_reg_0;
   input clk;
+  input \write_pointer_reg[14]_1 ;
   input [2:0]out;
   input [0:0]Q;
   input [0:0]D;
   input s00_axis_tvalid;
+  input \FSM_sequential_cur_state_reg[1] ;
+  input \FSM_sequential_cur_state_reg[1]_0 ;
   input s00_axis_tlast;
 
   wire [0:0]D;
-  wire \FSM_sequential_cur_state[0]_i_5_n_0 ;
   wire \FSM_sequential_cur_state[0]_i_6_n_0 ;
   wire \FSM_sequential_cur_state[0]_i_7_n_0 ;
   wire \FSM_sequential_cur_state[0]_i_8_n_0 ;
   wire \FSM_sequential_cur_state[1]_i_5_n_0 ;
+  wire \FSM_sequential_cur_state[1]_i_8_n_0 ;
+  wire \FSM_sequential_cur_state[1]_i_9_n_0 ;
+  wire \FSM_sequential_cur_state_reg[1] ;
+  wire \FSM_sequential_cur_state_reg[1]_0 ;
   wire [0:0]Q;
   wire bram0_even_we_a;
   wire bram0_even_we_a_INST_0_i_1_n_0;
@@ -3392,38 +3420,37 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   wire bram2_even_we_a_INST_0_i_1_n_0;
   wire bram2_odd_we_a;
   wire clk;
-  wire fifo_wren;
+  wire mst_exec_state;
   wire mst_exec_state_i_1_n_0;
+  wire mst_exec_state_reg_0;
   wire [2:0]out;
   wire s00_axis_tlast;
   wire s00_axis_tready;
   wire s00_axis_tvalid;
-  wire \write_pointer[0]_i_3_n_0 ;
+  wire \slv_reg0_reg[16] ;
+  wire \write_pointer[0]_i_2_n_0 ;
+  wire \write_pointer[0]_i_4_n_0 ;
   wire \write_pointer_reg[0]_0 ;
   wire \write_pointer_reg[0]_1 ;
-  wire \write_pointer_reg[0]_i_2_n_0 ;
-  wire \write_pointer_reg[0]_i_2_n_1 ;
-  wire \write_pointer_reg[0]_i_2_n_2 ;
-  wire \write_pointer_reg[0]_i_2_n_3 ;
-  wire \write_pointer_reg[0]_i_2_n_4 ;
-  wire \write_pointer_reg[0]_i_2_n_5 ;
-  wire \write_pointer_reg[0]_i_2_n_6 ;
-  wire \write_pointer_reg[0]_i_2_n_7 ;
+  wire \write_pointer_reg[0]_i_3_n_0 ;
+  wire \write_pointer_reg[0]_i_3_n_1 ;
+  wire \write_pointer_reg[0]_i_3_n_2 ;
+  wire \write_pointer_reg[0]_i_3_n_3 ;
+  wire \write_pointer_reg[0]_i_3_n_4 ;
+  wire \write_pointer_reg[0]_i_3_n_5 ;
+  wire \write_pointer_reg[0]_i_3_n_6 ;
+  wire \write_pointer_reg[0]_i_3_n_7 ;
   wire \write_pointer_reg[10]_0 ;
   wire \write_pointer_reg[11]_0 ;
   wire \write_pointer_reg[12]_0 ;
-  wire \write_pointer_reg[12]_i_1_n_1 ;
   wire \write_pointer_reg[12]_i_1_n_2 ;
   wire \write_pointer_reg[12]_i_1_n_3 ;
-  wire \write_pointer_reg[12]_i_1_n_4 ;
   wire \write_pointer_reg[12]_i_1_n_5 ;
   wire \write_pointer_reg[12]_i_1_n_6 ;
   wire \write_pointer_reg[12]_i_1_n_7 ;
   wire \write_pointer_reg[13]_0 ;
-  wire \write_pointer_reg[13]_1 ;
-  wire \write_pointer_reg[13]_2 ;
   wire \write_pointer_reg[14]_0 ;
-  wire \write_pointer_reg[15]_0 ;
+  wire \write_pointer_reg[14]_1 ;
   wire \write_pointer_reg[1]_0 ;
   wire \write_pointer_reg[2]_0 ;
   wire \write_pointer_reg[3]_0 ;
@@ -3453,70 +3480,84 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
   wire writes_done_i_1_n_0;
   wire writes_done_i_2_n_0;
   wire writes_done_i_3_n_0;
-  wire writes_done_i_4_n_0;
-  wire writes_done_i_5_n_0;
-  wire [3:3]\NLW_write_pointer_reg[12]_i_1_CO_UNCONNECTED ;
+  wire [3:2]\NLW_write_pointer_reg[12]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_write_pointer_reg[12]_i_1_O_UNCONNECTED ;
 
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \FSM_sequential_cur_state[0]_i_3 
-       (.I0(\FSM_sequential_cur_state[0]_i_5_n_0 ),
-        .I1(\FSM_sequential_cur_state[0]_i_6_n_0 ),
-        .I2(\FSM_sequential_cur_state[0]_i_7_n_0 ),
-        .I3(\write_pointer_reg[13]_0 ),
-        .I4(\write_pointer_reg[12]_0 ),
-        .I5(\FSM_sequential_cur_state[0]_i_8_n_0 ),
-        .O(\write_pointer_reg[13]_2 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
     \FSM_sequential_cur_state[0]_i_5 
-       (.I0(\write_pointer_reg[7]_0 ),
-        .I1(\write_pointer_reg[6]_0 ),
-        .I2(\write_pointer_reg[5]_0 ),
-        .I3(\write_pointer_reg[4]_0 ),
-        .O(\FSM_sequential_cur_state[0]_i_5_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
+       (.I0(\FSM_sequential_cur_state[0]_i_6_n_0 ),
+        .I1(\write_pointer_reg[0]_0 ),
+        .I2(\write_pointer_reg[12]_0 ),
+        .I3(\write_pointer_reg[11]_0 ),
+        .I4(\FSM_sequential_cur_state[0]_i_7_n_0 ),
+        .I5(\FSM_sequential_cur_state[0]_i_8_n_0 ),
+        .O(\write_pointer_reg[0]_1 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \FSM_sequential_cur_state[0]_i_6 
-       (.I0(\write_pointer_reg[3]_0 ),
-        .I1(\write_pointer_reg[2]_0 ),
-        .I2(\write_pointer_reg[1]_0 ),
-        .I3(\write_pointer_reg[0]_0 ),
+       (.I0(\write_pointer_reg[4]_0 ),
+        .I1(\write_pointer_reg[3]_0 ),
+        .I2(\write_pointer_reg[7]_0 ),
+        .I3(\write_pointer_reg[8]_0 ),
+        .I4(\write_pointer_reg[6]_0 ),
+        .I5(\write_pointer_reg[9]_0 ),
         .O(\FSM_sequential_cur_state[0]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \FSM_sequential_cur_state[0]_i_7 
-       (.I0(\write_pointer_reg[15]_0 ),
-        .I1(\write_pointer_reg[14]_0 ),
-        .O(\FSM_sequential_cur_state[0]_i_7_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
+    \FSM_sequential_cur_state[0]_i_7 
+       (.I0(\write_pointer_reg[10]_0 ),
+        .I1(\write_pointer_reg[5]_0 ),
+        .I2(\write_pointer_reg[2]_0 ),
+        .I3(\write_pointer_reg[1]_0 ),
+        .O(\FSM_sequential_cur_state[0]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
     \FSM_sequential_cur_state[0]_i_8 
-       (.I0(\write_pointer_reg[9]_0 ),
-        .I1(\write_pointer_reg[8]_0 ),
-        .I2(\write_pointer_reg[11]_0 ),
-        .I3(\write_pointer_reg[10]_0 ),
+       (.I0(Q),
+        .I1(\write_pointer_reg[14]_0 ),
+        .I2(\write_pointer_reg[13]_0 ),
         .O(\FSM_sequential_cur_state[0]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'h1111111033333333)) 
-    \FSM_sequential_cur_state[1]_i_3 
-       (.I0(\write_pointer_reg[13]_0 ),
-        .I1(\write_pointer_reg[15]_0 ),
-        .I2(writes_done_i_4_n_0),
-        .I3(writes_done_i_5_n_0),
-        .I4(\FSM_sequential_cur_state[1]_i_5_n_0 ),
-        .I5(\write_pointer_reg[14]_0 ),
-        .O(\write_pointer_reg[13]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
+    .INIT(64'hE0E0E0E0E0EFEFEF)) 
+    \FSM_sequential_cur_state[1]_i_2 
+       (.I0(\FSM_sequential_cur_state_reg[1] ),
+        .I1(\FSM_sequential_cur_state_reg[1]_0 ),
+        .I2(Q),
+        .I3(\write_pointer_reg[14]_0 ),
+        .I4(\write_pointer_reg[13]_0 ),
+        .I5(\FSM_sequential_cur_state[1]_i_5_n_0 ),
+        .O(\slv_reg0_reg[16] ));
+  LUT6 #(
+    .INIT(64'h2000000000000000)) 
     \FSM_sequential_cur_state[1]_i_5 
-       (.I0(\write_pointer_reg[1]_0 ),
-        .I1(\write_pointer_reg[11]_0 ),
-        .I2(\write_pointer_reg[7]_0 ),
+       (.I0(\FSM_sequential_cur_state[1]_i_8_n_0 ),
+        .I1(\FSM_sequential_cur_state[1]_i_9_n_0 ),
+        .I2(\write_pointer_reg[4]_0 ),
+        .I3(\write_pointer_reg[1]_0 ),
+        .I4(\write_pointer_reg[12]_0 ),
+        .I5(\write_pointer_reg[5]_0 ),
         .O(\FSM_sequential_cur_state[1]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \FSM_sequential_cur_state[1]_i_8 
+       (.I0(\write_pointer_reg[11]_0 ),
+        .I1(\write_pointer_reg[8]_0 ),
+        .I2(\write_pointer_reg[0]_0 ),
+        .I3(\write_pointer_reg[6]_0 ),
+        .I4(\write_pointer_reg[9]_0 ),
+        .I5(\write_pointer_reg[10]_0 ),
+        .O(\FSM_sequential_cur_state[1]_i_8_n_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    \FSM_sequential_cur_state[1]_i_9 
+       (.I0(\write_pointer_reg[3]_0 ),
+        .I1(\write_pointer_reg[2]_0 ),
+        .I2(\write_pointer_reg[7]_0 ),
+        .I3(\write_pointer_reg[14]_0 ),
+        .O(\FSM_sequential_cur_state[1]_i_9_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT5 #(
     .INIT(32'hAAAAAAAE)) 
     bram0_even_we_a_INST_0
@@ -3527,16 +3568,16 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .I4(out[0]),
         .O(bram0_even_we_a));
   LUT6 #(
-    .INIT(64'h0000000000010000)) 
+    .INIT(64'h0000000000000040)) 
     bram0_even_we_a_INST_0_i_1
-       (.I0(\write_pointer_reg[15]_0 ),
-        .I1(\write_pointer_reg[14]_0 ),
-        .I2(\write_pointer_reg[13]_0 ),
-        .I3(Q),
-        .I4(fifo_wren),
-        .I5(D),
+       (.I0(D),
+        .I1(mst_exec_state),
+        .I2(s00_axis_tvalid),
+        .I3(\write_pointer_reg[13]_0 ),
+        .I4(\write_pointer_reg[14]_0 ),
+        .I5(Q),
         .O(bram0_even_we_a_INST_0_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT5 #(
     .INIT(32'hAAAEAAAA)) 
     bram0_odd_we_a_INST_0
@@ -3546,7 +3587,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .I3(out[1]),
         .I4(out[0]),
         .O(bram0_odd_we_a));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT5 #(
     .INIT(32'hAAAABAAA)) 
     bram1_even_we_a_INST_0
@@ -3557,16 +3598,16 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .I4(out[0]),
         .O(bram1_even_we_a));
   LUT6 #(
-    .INIT(64'h0000000000000400)) 
+    .INIT(64'h0000100000000000)) 
     bram1_even_we_a_INST_0_i_1
        (.I0(Q),
-        .I1(fifo_wren),
-        .I2(D),
+        .I1(D),
+        .I2(mst_exec_state),
         .I3(\write_pointer_reg[13]_0 ),
-        .I4(\write_pointer_reg[15]_0 ),
-        .I5(\write_pointer_reg[14]_0 ),
+        .I4(\write_pointer_reg[14]_0 ),
+        .I5(s00_axis_tvalid),
         .O(bram1_even_we_a_INST_0_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT5 #(
     .INIT(32'hBAAAAAAA)) 
     bram1_odd_we_a_INST_0
@@ -3576,7 +3617,7 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .I3(Q),
         .I4(out[0]),
         .O(bram1_odd_we_a));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT5 #(
     .INIT(32'hAAAABAAA)) 
     bram2_even_we_a_INST_0
@@ -3587,16 +3628,16 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .I4(out[0]),
         .O(bram2_even_we_a));
   LUT6 #(
-    .INIT(64'h0000000000000400)) 
+    .INIT(64'h0010000000000000)) 
     bram2_even_we_a_INST_0_i_1
        (.I0(Q),
-        .I1(fifo_wren),
-        .I2(D),
-        .I3(\write_pointer_reg[14]_0 ),
-        .I4(\write_pointer_reg[15]_0 ),
-        .I5(\write_pointer_reg[13]_0 ),
+        .I1(D),
+        .I2(mst_exec_state),
+        .I3(\write_pointer_reg[13]_0 ),
+        .I4(\write_pointer_reg[14]_0 ),
+        .I5(s00_axis_tvalid),
         .O(bram2_even_we_a_INST_0_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT5 #(
     .INIT(32'hBAAAAAAA)) 
     bram2_odd_we_a_INST_0
@@ -3611,110 +3652,114 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
     mst_exec_state_i_1
        (.I0(s00_axis_tvalid),
         .I1(writes_done),
-        .I2(s00_axis_tready),
+        .I2(mst_exec_state),
         .O(mst_exec_state_i_1_n_0));
   FDRE mst_exec_state_reg
        (.C(clk),
         .CE(1'b1),
         .D(mst_exec_state_i_1_n_0),
-        .Q(s00_axis_tready),
-        .R(\write_pointer_reg[0]_1 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \write_pointer[0]_i_1 
-       (.I0(s00_axis_tready),
-        .I1(s00_axis_tvalid),
-        .O(fifo_wren));
+        .Q(mst_exec_state),
+        .R(mst_exec_state_reg_0));
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  LUT3 #(
+    .INIT(8'h2A)) 
+    s00_axis_tready_INST_0
+       (.I0(mst_exec_state),
+        .I1(\write_pointer_reg[13]_0 ),
+        .I2(\write_pointer_reg[14]_0 ),
+        .O(s00_axis_tready));
+  LUT4 #(
+    .INIT(16'h2A00)) 
+    \write_pointer[0]_i_2 
+       (.I0(s00_axis_tvalid),
+        .I1(\write_pointer_reg[14]_0 ),
+        .I2(\write_pointer_reg[13]_0 ),
+        .I3(mst_exec_state),
+        .O(\write_pointer[0]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \write_pointer[0]_i_3 
+    \write_pointer[0]_i_4 
        (.I0(\write_pointer_reg[0]_0 ),
-        .O(\write_pointer[0]_i_3_n_0 ));
+        .O(\write_pointer[0]_i_4_n_0 ));
   FDRE \write_pointer_reg[0] 
        (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[0]_i_2_n_7 ),
+        .CE(\write_pointer[0]_i_2_n_0 ),
+        .D(\write_pointer_reg[0]_i_3_n_7 ),
         .Q(\write_pointer_reg[0]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \write_pointer_reg[0]_i_2 
+  CARRY4 \write_pointer_reg[0]_i_3 
        (.CI(1'b0),
-        .CO({\write_pointer_reg[0]_i_2_n_0 ,\write_pointer_reg[0]_i_2_n_1 ,\write_pointer_reg[0]_i_2_n_2 ,\write_pointer_reg[0]_i_2_n_3 }),
+        .CO({\write_pointer_reg[0]_i_3_n_0 ,\write_pointer_reg[0]_i_3_n_1 ,\write_pointer_reg[0]_i_3_n_2 ,\write_pointer_reg[0]_i_3_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\write_pointer_reg[0]_i_2_n_4 ,\write_pointer_reg[0]_i_2_n_5 ,\write_pointer_reg[0]_i_2_n_6 ,\write_pointer_reg[0]_i_2_n_7 }),
-        .S({\write_pointer_reg[3]_0 ,\write_pointer_reg[2]_0 ,\write_pointer_reg[1]_0 ,\write_pointer[0]_i_3_n_0 }));
+        .O({\write_pointer_reg[0]_i_3_n_4 ,\write_pointer_reg[0]_i_3_n_5 ,\write_pointer_reg[0]_i_3_n_6 ,\write_pointer_reg[0]_i_3_n_7 }),
+        .S({\write_pointer_reg[3]_0 ,\write_pointer_reg[2]_0 ,\write_pointer_reg[1]_0 ,\write_pointer[0]_i_4_n_0 }));
   FDRE \write_pointer_reg[10] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[8]_i_1_n_5 ),
         .Q(\write_pointer_reg[10]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[11] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[8]_i_1_n_4 ),
         .Q(\write_pointer_reg[11]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[12] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[12]_i_1_n_7 ),
         .Q(\write_pointer_reg[12]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[12]_i_1 
        (.CI(\write_pointer_reg[8]_i_1_n_0 ),
-        .CO({\NLW_write_pointer_reg[12]_i_1_CO_UNCONNECTED [3],\write_pointer_reg[12]_i_1_n_1 ,\write_pointer_reg[12]_i_1_n_2 ,\write_pointer_reg[12]_i_1_n_3 }),
+        .CO({\NLW_write_pointer_reg[12]_i_1_CO_UNCONNECTED [3:2],\write_pointer_reg[12]_i_1_n_2 ,\write_pointer_reg[12]_i_1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\write_pointer_reg[12]_i_1_n_4 ,\write_pointer_reg[12]_i_1_n_5 ,\write_pointer_reg[12]_i_1_n_6 ,\write_pointer_reg[12]_i_1_n_7 }),
-        .S({\write_pointer_reg[15]_0 ,\write_pointer_reg[14]_0 ,\write_pointer_reg[13]_0 ,\write_pointer_reg[12]_0 }));
+        .O({\NLW_write_pointer_reg[12]_i_1_O_UNCONNECTED [3],\write_pointer_reg[12]_i_1_n_5 ,\write_pointer_reg[12]_i_1_n_6 ,\write_pointer_reg[12]_i_1_n_7 }),
+        .S({1'b0,\write_pointer_reg[14]_0 ,\write_pointer_reg[13]_0 ,\write_pointer_reg[12]_0 }));
   FDRE \write_pointer_reg[13] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[12]_i_1_n_6 ),
         .Q(\write_pointer_reg[13]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[14] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[12]_i_1_n_5 ),
         .Q(\write_pointer_reg[14]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
-  FDRE \write_pointer_reg[15] 
-       (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[12]_i_1_n_4 ),
-        .Q(\write_pointer_reg[15]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[1] 
        (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[0]_i_2_n_6 ),
+        .CE(\write_pointer[0]_i_2_n_0 ),
+        .D(\write_pointer_reg[0]_i_3_n_6 ),
         .Q(\write_pointer_reg[1]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[2] 
        (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[0]_i_2_n_5 ),
+        .CE(\write_pointer[0]_i_2_n_0 ),
+        .D(\write_pointer_reg[0]_i_3_n_5 ),
         .Q(\write_pointer_reg[2]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[3] 
        (.C(clk),
-        .CE(fifo_wren),
-        .D(\write_pointer_reg[0]_i_2_n_4 ),
+        .CE(\write_pointer[0]_i_2_n_0 ),
+        .D(\write_pointer_reg[0]_i_3_n_4 ),
         .Q(\write_pointer_reg[3]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[4] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[4]_i_1_n_7 ),
         .Q(\write_pointer_reg[4]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[4]_i_1 
-       (.CI(\write_pointer_reg[0]_i_2_n_0 ),
+       (.CI(\write_pointer_reg[0]_i_3_n_0 ),
         .CO({\write_pointer_reg[4]_i_1_n_0 ,\write_pointer_reg[4]_i_1_n_1 ,\write_pointer_reg[4]_i_1_n_2 ,\write_pointer_reg[4]_i_1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
@@ -3722,28 +3767,28 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .S({\write_pointer_reg[7]_0 ,\write_pointer_reg[6]_0 ,\write_pointer_reg[5]_0 ,\write_pointer_reg[4]_0 }));
   FDRE \write_pointer_reg[5] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[4]_i_1_n_6 ),
         .Q(\write_pointer_reg[5]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[6] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[4]_i_1_n_5 ),
         .Q(\write_pointer_reg[6]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[7] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[4]_i_1_n_4 ),
         .Q(\write_pointer_reg[7]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   FDRE \write_pointer_reg[8] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[8]_i_1_n_7 ),
         .Q(\write_pointer_reg[8]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \write_pointer_reg[8]_i_1 
        (.CI(\write_pointer_reg[4]_i_1_n_0 ),
@@ -3754,86 +3799,70 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXIS
         .S({\write_pointer_reg[11]_0 ,\write_pointer_reg[10]_0 ,\write_pointer_reg[9]_0 ,\write_pointer_reg[8]_0 }));
   FDRE \write_pointer_reg[9] 
        (.C(clk),
-        .CE(fifo_wren),
+        .CE(\write_pointer[0]_i_2_n_0 ),
         .D(\write_pointer_reg[8]_i_1_n_6 ),
         .Q(\write_pointer_reg[9]_0 ),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(\write_pointer_reg[14]_1 ));
   LUT6 #(
-    .INIT(64'hFFFF55D5FFFF00C0)) 
+    .INIT(64'h00000000B8F8F8F8)) 
     writes_done_i_1
-       (.I0(fifo_wren),
+       (.I0(writes_done),
         .I1(writes_done_i_2_n_0),
-        .I2(\write_pointer_reg[15]_0 ),
-        .I3(writes_done_i_3_n_0),
-        .I4(s00_axis_tlast),
-        .I5(writes_done),
+        .I2(writes_done_i_3_n_0),
+        .I3(\write_pointer_reg[14]_0 ),
+        .I4(\write_pointer_reg[13]_0 ),
+        .I5(\write_pointer_reg[14]_1 ),
         .O(writes_done_i_1_n_0));
   (* SOFT_HLUTNM = "soft_lutpair56" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    writes_done_i_2
-       (.I0(\write_pointer_reg[14]_0 ),
-        .I1(\write_pointer_reg[13]_0 ),
-        .O(writes_done_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
-  LUT5 #(
-    .INIT(32'hEFFFFFFF)) 
-    writes_done_i_3
-       (.I0(writes_done_i_4_n_0),
-        .I1(writes_done_i_5_n_0),
-        .I2(\write_pointer_reg[1]_0 ),
-        .I3(\write_pointer_reg[11]_0 ),
-        .I4(\write_pointer_reg[7]_0 ),
-        .O(writes_done_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    writes_done_i_4
-       (.I0(\write_pointer_reg[8]_0 ),
-        .I1(\write_pointer_reg[5]_0 ),
-        .I2(\write_pointer_reg[0]_0 ),
-        .I3(\write_pointer_reg[4]_0 ),
-        .I4(\write_pointer_reg[3]_0 ),
-        .I5(\write_pointer_reg[12]_0 ),
-        .O(writes_done_i_4_n_0));
   LUT4 #(
-    .INIT(16'h7FFF)) 
-    writes_done_i_5
-       (.I0(\write_pointer_reg[10]_0 ),
-        .I1(\write_pointer_reg[9]_0 ),
-        .I2(\write_pointer_reg[6]_0 ),
-        .I3(\write_pointer_reg[2]_0 ),
-        .O(writes_done_i_5_n_0));
+    .INIT(16'hD5FF)) 
+    writes_done_i_2
+       (.I0(mst_exec_state),
+        .I1(\write_pointer_reg[13]_0 ),
+        .I2(\write_pointer_reg[14]_0 ),
+        .I3(s00_axis_tvalid),
+        .O(writes_done_i_2_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  LUT3 #(
+    .INIT(8'hBA)) 
+    writes_done_i_3
+       (.I0(s00_axis_tlast),
+        .I1(\write_pointer_reg[13]_0 ),
+        .I2(\FSM_sequential_cur_state[1]_i_5_n_0 ),
+        .O(writes_done_i_3_n_0));
   FDRE writes_done_reg
        (.C(clk),
         .CE(1'b1),
         .D(writes_done_i_1_n_0),
         .Q(writes_done),
-        .R(\write_pointer_reg[0]_1 ));
+        .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "gen_sync_que_af" *) 
 module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
-   (\rd_ptr_reg_reg[14] ,
-    p_3_in,
+   (rd_ptr_reg_reg_0_sp_1,
+    D,
     \slv_reg0_reg[0] ,
     m00_axis_tvalid,
-    rstn_0,
+    p_3_in,
+    rdata_odd_vld0,
     nxt_state1,
-    rdata_even_vld0,
+    rstn_0,
     out,
     \rptr_reg[0]_0 ,
     clk,
-    rd_ptr_reg_reg_0_sp_1,
-    \rd_ptr_reg_reg[0]_0 ,
-    \rd_ptr_reg_reg[0]_1 ,
-    \rd_ptr_reg_reg[0]_2 ,
-    Q,
-    rdata_odd_vld_reg,
     rd_ptr_reg_reg,
+    Q,
+    rdata_even_vld_reg,
+    \FSM_sequential_cur_state_reg[1] ,
+    \FSM_sequential_cur_state_reg[1]_0 ,
     m00_axis_tready,
     rdata_odd_vld_s,
     rdata_even_vld_s,
     rstn,
+    \FSM_sequential_cur_state_reg[1]_1 ,
+    \FSM_sequential_cur_state_reg[1]_2 ,
+    \FSM_sequential_cur_state_reg[1]_3 ,
     bram0_odd_rdata_b,
     bram0_even_rdata_b,
     bram1_odd_rdata_b,
@@ -3841,27 +3870,29 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
     bram2_odd_rdata_b,
     bram2_even_rdata_b,
     in);
-  output \rd_ptr_reg_reg[14] ;
-  output p_3_in;
+  output rd_ptr_reg_reg_0_sp_1;
+  output [0:0]D;
   output \slv_reg0_reg[0] ;
   output m00_axis_tvalid;
-  output rstn_0;
+  output p_3_in;
+  output rdata_odd_vld0;
   output nxt_state1;
-  output rdata_even_vld0;
+  output rstn_0;
   output [48:0]out;
   input \rptr_reg[0]_0 ;
   input clk;
-  input rd_ptr_reg_reg_0_sp_1;
-  input \rd_ptr_reg_reg[0]_0 ;
-  input \rd_ptr_reg_reg[0]_1 ;
-  input \rd_ptr_reg_reg[0]_2 ;
-  input [0:0]Q;
-  input [1:0]rdata_odd_vld_reg;
   input [0:0]rd_ptr_reg_reg;
+  input [1:0]Q;
+  input [0:0]rdata_even_vld_reg;
+  input \FSM_sequential_cur_state_reg[1] ;
+  input [0:0]\FSM_sequential_cur_state_reg[1]_0 ;
   input m00_axis_tready;
   input rdata_odd_vld_s;
   input rdata_even_vld_s;
   input rstn;
+  input [0:0]\FSM_sequential_cur_state_reg[1]_1 ;
+  input \FSM_sequential_cur_state_reg[1]_2 ;
+  input \FSM_sequential_cur_state_reg[1]_3 ;
   input [15:0]bram0_odd_rdata_b;
   input [15:0]bram0_even_rdata_b;
   input [15:0]bram1_odd_rdata_b;
@@ -3870,7 +3901,13 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
   input [15:0]bram2_even_rdata_b;
   input [0:0]in;
 
-  wire [0:0]Q;
+  wire [0:0]D;
+  wire \FSM_sequential_cur_state_reg[1] ;
+  wire [0:0]\FSM_sequential_cur_state_reg[1]_0 ;
+  wire [0:0]\FSM_sequential_cur_state_reg[1]_1 ;
+  wire \FSM_sequential_cur_state_reg[1]_2 ;
+  wire \FSM_sequential_cur_state_reg[1]_3 ;
+  wire [1:0]Q;
   wire [15:0]bram0_even_rdata_b;
   wire [15:0]bram0_odd_rdata_b;
   wire [15:0]bram1_even_rdata_b;
@@ -3902,14 +3939,10 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
   wire qfull1_out;
   wire qfull_reg_n_0;
   wire [0:0]rd_ptr_reg_reg;
-  wire \rd_ptr_reg_reg[0]_0 ;
-  wire \rd_ptr_reg_reg[0]_1 ;
-  wire \rd_ptr_reg_reg[0]_2 ;
-  wire \rd_ptr_reg_reg[14] ;
   wire rd_ptr_reg_reg_0_sn_1;
-  wire rdata_even_vld0;
+  wire [0:0]rdata_even_vld_reg;
   wire rdata_even_vld_s;
-  wire [1:0]rdata_odd_vld_reg;
+  wire rdata_odd_vld0;
   wire rdata_odd_vld_s;
   wire [1:0]rptr;
   wire \rptr[0]_i_1_n_0 ;
@@ -3920,13 +3953,23 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
   wire \slv_reg0_reg[0] ;
   wire tx_mid_qfull;
 
-  assign rd_ptr_reg_reg_0_sn_1 = rd_ptr_reg_reg_0_sp_1;
+  assign rd_ptr_reg_reg_0_sp_1 = rd_ptr_reg_reg_0_sn_1;
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  LUT5 #(
+    .INIT(32'h00030A33)) 
+    \FSM_sequential_cur_state[1]_i_1 
+       (.I0(\slv_reg0_reg[0] ),
+        .I1(\FSM_sequential_cur_state_reg[1] ),
+        .I2(Q[0]),
+        .I3(Q[1]),
+        .I4(\FSM_sequential_cur_state_reg[1]_0 ),
+        .O(D));
   LUT1 #(
     .INIT(2'h1)) 
     \fill[0]_i_1 
        (.I0(\fill_reg_n_0_[0] ),
         .O(\fill[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT5 #(
     .INIT(32'h2FD0D02F)) 
     \fill[1]_i_1 
@@ -3998,14 +4041,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I4(rdata_even_vld_s),
         .I5(q_afull_i_4_n_0),
         .O(q_afull05_out));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT2 #(
     .INIT(4'h8)) 
     q_afull_i_3
        (.I0(\fill_reg_n_0_[0] ),
         .I1(\fill_reg_n_0_[1] ),
         .O(q_afull_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT2 #(
     .INIT(4'h2)) 
     q_afull_i_4
@@ -4050,51 +4093,51 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .D(qfull1_out),
         .Q(qfull_reg_n_0),
         .R(\rptr_reg[0]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \rd_ptr_reg[13]_i_1 
        (.I0(rstn),
-        .I1(\rd_ptr_reg_reg[14] ),
+        .I1(\slv_reg0_reg[0] ),
         .O(rstn_0));
   LUT5 #(
-    .INIT(32'h00040000)) 
+    .INIT(32'h00000020)) 
     \rd_ptr_reg[13]_i_2 
-       (.I0(rdata_odd_vld_reg[0]),
-        .I1(rdata_odd_vld_reg[1]),
-        .I2(qfull_reg_n_0),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(rdata_even_vld_reg),
         .I3(tx_mid_qfull),
-        .I4(Q),
+        .I4(qfull_reg_n_0),
         .O(p_3_in));
-  LUT5 #(
-    .INIT(32'hFFFEFFFF)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFF7)) 
     \rd_ptr_reg[13]_i_4 
-       (.I0(rd_ptr_reg_reg_0_sn_1),
-        .I1(\rd_ptr_reg_reg[0]_0 ),
-        .I2(\rd_ptr_reg_reg[0]_1 ),
-        .I3(\rd_ptr_reg_reg[0]_2 ),
-        .I4(p_3_in),
-        .O(\rd_ptr_reg_reg[14] ));
-  LUT6 #(
-    .INIT(64'h0000000000000200)) 
-    rdata_even_vld_i_1
-       (.I0(Q),
-        .I1(tx_mid_qfull),
-        .I2(qfull_reg_n_0),
-        .I3(rdata_odd_vld_reg[1]),
-        .I4(rdata_odd_vld_reg[0]),
-        .I5(rd_ptr_reg_reg),
-        .O(rdata_even_vld0));
-  LUT6 #(
-    .INIT(64'h0000020000000000)) 
-    rdata_odd_vld_i_1
-       (.I0(Q),
-        .I1(tx_mid_qfull),
-        .I2(qfull_reg_n_0),
-        .I3(rdata_odd_vld_reg[1]),
-        .I4(rdata_odd_vld_reg[0]),
-        .I5(rd_ptr_reg_reg),
+       (.I0(\FSM_sequential_cur_state_reg[1]_1 ),
+        .I1(rdata_even_vld_reg),
+        .I2(tx_mid_qfull),
+        .I3(qfull_reg_n_0),
+        .I4(\FSM_sequential_cur_state_reg[1]_2 ),
+        .I5(\FSM_sequential_cur_state_reg[1]_3 ),
         .O(\slv_reg0_reg[0] ));
+  LUT6 #(
+    .INIT(64'h0000000000000400)) 
+    rdata_even_vld_i_1
+       (.I0(rd_ptr_reg_reg),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(rdata_even_vld_reg),
+        .I4(tx_mid_qfull),
+        .I5(qfull_reg_n_0),
+        .O(rd_ptr_reg_reg_0_sn_1));
+  LUT6 #(
+    .INIT(64'h0000000000000800)) 
+    rdata_odd_vld_i_1
+       (.I0(rd_ptr_reg_reg),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(rdata_even_vld_reg),
+        .I4(tx_mid_qfull),
+        .I5(qfull_reg_n_0),
+        .O(rdata_odd_vld0));
   (* srl_bus_name = "\inst/u_tx_buff_out/rgfile_reg[3] " *) 
   (* srl_name = "\inst/u_tx_buff_out/rgfile_reg[3][0]_srl4 " *) 
   SRL16E #(
@@ -5128,7 +5171,7 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
     \rptr[0]_i_1 
        (.I0(rptr[0]),
         .O(\rptr[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT5 #(
     .INIT(32'h2FD0D02F)) 
     \rptr[1]_i_1 
@@ -5150,11 +5193,11 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .D(\rptr[1]_i_1_n_0 ),
         .Q(rptr[1]),
         .S(\rptr_reg[0]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT1 #(
     .INIT(2'h1)) 
     tlast_i_1
-       (.I0(\rd_ptr_reg_reg[14] ),
+       (.I0(\slv_reg0_reg[0] ),
         .O(nxt_state1));
 endmodule
 `ifndef GLBL

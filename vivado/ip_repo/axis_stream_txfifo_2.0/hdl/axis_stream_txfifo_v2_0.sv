@@ -233,6 +233,7 @@
        .S_AXIS_TSTRB      (s00_axis_tstrb),
 	   .S_AXIS_TLAST      (s00_axis_tlast),
 	   .S_AXIS_TVALID     (s00_axis_tvalid),
+       .clear             (clear),
        .fifo_wren         (fifo_wren),
        .fifo_wdata        (fifo_wdata),
        .write_pointer     (write_pointer)
@@ -243,7 +244,7 @@
    ///////////////////////////////////////
    // Rev ID Register 2                 //
    ///////////////////////////////////////
-   assign slv_reg2 = 32'h00051222;
+   assign slv_reg2 = 32'h00052422;
   
 
    ///////////////////////////////////////

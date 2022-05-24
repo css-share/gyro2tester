@@ -30,7 +30,9 @@
 //`define LOOP3_TEST
 //`define RXPAT_TEST
 //`define LOOP2_TXPAT_TEST
-`define LOOP2_RXBYP_TEST
+//`define LOOP2_RXBYP_TEST
+//`define LOOP2_TEST_RESTART
+`define LOOP3_TEST_RESTART
 //`define LOOP3_RXBYP_TEST
 //`define LOOP3_TXPAT_TEST
 //`define LOOP3_SRTXPAT_TEST
@@ -40,7 +42,7 @@
 
 
 // Overwrite this path at the command line with +define+{your_path}
-`define FILENAME_PATH C:/Xilinx_projects/gyro2tester/vivado/ip_repo/testbench
+`define FILENAME_PATH /home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/testbench
 
 
 `define TEST_32_PACKED        `"`FILENAME_PATH/test_data_32_packed.txt`"
@@ -54,6 +56,12 @@
 `define SRRXPAT_RESULTS       `"`FILENAME_PATH/test_srrx_pattern_results.txt`"
 `define LOOP2_RXBYP_RESULTS   `"`FILENAME_PATH/test_loop2_rxbyp_results.txt`"
 `define LOOP3_RXBYP_RESULTS   `"`FILENAME_PATH/test_loop3_rxbyp_results.txt`"
+`define LOOP2_RESTART_RESULTS   `"`FILENAME_PATH/test_loop2_restart_results.txt`"
+`define LOOP2_RESTART_RESULTS2   `"`FILENAME_PATH/test_loop2_restart_results_2.txt`"
+`define LOOP3_RESTART_RESULTS   `"`FILENAME_PATH/test_loop3_restart_results.txt`"
+`define LOOP3_RESTART_RESULTS2   `"`FILENAME_PATH/test_loop3_restart_results_2.txt`"
+
+
 
 module tb;
 
@@ -104,7 +112,9 @@ module tb;
   `include "test_case_srrx_pattern.sv" 
   `include "test_case_loop2_rxbyp.sv"  
   `include "test_case_loop3_rxbyp.sv"  
-   
+  `include "test_case_loop2_restart.sv"  
+  `include "test_case_loop3_restart.sv"  
+      
     initial 
     begin       
         tb_ACLK = 1'b0;
@@ -223,7 +233,23 @@ module tb;
       //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
      `endif
 
+    `ifdef LOOP2_TEST_RESTART   
+         test_loop2_restart(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP2_RESTART_RESULTS), .test_fout_2(`LOOP2_RESTART_RESULTS2));
+      //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
+    `endif
 
+
+   `ifdef LOOP3_TEST_RESTART   
+         test_loop3_restart(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP3_RESTART_RESULTS), .test_fout_2(`LOOP3_RESTART_RESULTS2));
+      //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
+    `endif
+
+
+
+
+
+
+      
       
 /*
 

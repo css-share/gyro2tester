@@ -1,14 +1,14 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_infrastructure_v1_1_0 -L axi_vip_v1_1_11 -L processing_system7_vip_v1_0_13 -L blk_mem_gen_v8_4_5 -L axis_infrastructure_v1_1_0 -L axis_register_slice_v1_1_25 -L axis_switch_v1_1_25 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L xlconstant_v1_1_7 -L smartconnect_v1_0 -L axi_register_slice_v2_1_25 -L lib_pkg_v1_0_2 -L fifo_generator_v13_2_6 -L lib_fifo_v1_0_15 -L lib_srl_fifo_v1_0_2 -L axi_datamover_v5_1_27 -L axi_sg_v4_1_14 -L axi_dma_v7_1_26 -L generic_baseblocks_v2_1_0 -L axi_data_fifo_v2_1_24 -L axi_crossbar_v2_1_26 -L xlconcat_v2_1_4 -L axi_protocol_converter_v2_1_25 -L uvm -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
+Running: /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L axi_infrastructure_v1_1_0 -L axi_vip_v1_1_11 -L processing_system7_vip_v1_0_13 -L blk_mem_gen_v8_4_5 -L axis_infrastructure_v1_1_0 -L axis_register_slice_v1_1_25 -L axis_switch_v1_1_25 -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L xlconstant_v1_1_7 -L smartconnect_v1_0 -L axi_register_slice_v2_1_25 -L lib_pkg_v1_0_2 -L fifo_generator_v13_2_6 -L lib_fifo_v1_0_15 -L lib_srl_fifo_v1_0_2 -L axi_datamover_v5_1_27 -L axi_sg_v4_1_14 -L axi_dma_v7_1_26 -L generic_baseblocks_v2_1_0 -L axi_data_fifo_v2_1_24 -L axi_crossbar_v2_1_26 -L xlconcat_v2_1_4 -L axi_protocol_converter_v2_1_25 -L uvm -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'm_axis_tkeep' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:690]
-WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 27 for port 'm_axi_arprot' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5345]
-WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 27 for port 'm_axi_awprot' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5349]
-WARNING: [VRFC 10-3091] actual bit length 24 differs from formal bit length 36 for port 'm_axi_wstrb' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5361]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'IRQ_F2P' [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_processing_system7_0_0/sim/design_2_processing_system7_0_0.v:677]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'm_axis_tkeep' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:690]
+WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 27 for port 'm_axi_arprot' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5345]
+WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 27 for port 'm_axi_awprot' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5349]
+WARNING: [VRFC 10-3091] actual bit length 24 differs from formal bit length 36 for port 'm_axi_wstrb' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5361]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 16 for port 'IRQ_F2P' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_processing_system7_0_0/sim/design_2_processing_system7_0_0.v:677]
 WARNING: [VRFC 10-3091] actual bit length 128 differs from formal bit length 64 for port 'WR_DATA_STRB' [/scratch/proj/xbuilds/SWIP/2021.2_1021_0703/infra/XSIM/lin/.cxl.ip/incl/processing_system7_vip_v1_0_13_axi_gp.v:208]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 6 for port 'm_axi_bid' [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:5546]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 6 for port 'm_axi_rid' [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:5564]
@@ -27,14 +27,14 @@ WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 9 for
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'm_axi_bid' [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7157]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 3 for port 'm_axi_rid' [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7175]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'm_axi_rdata' [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:7176]
-WARNING: [VRFC 10-5021] port 'mm2s_prmry_reset_out_n' is not connected on this instance [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:296]
-WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/sim/bd_0c5c.v:990]
+WARNING: [VRFC 10-5021] port 'mm2s_prmry_reset_out_n' is not connected on this instance [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:296]
+WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/sim/bd_0c5c.v:990]
 WARNING: [VRFC 10-5021] port 'ACLK2X' is not connected on this instance [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/axis_switch_v1_1/hdl/axis_switch_v1_1_vl_rfs.v:722]
 WARNING: [VRFC 10-5021] port 'aclk2x' is not connected on this instance [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/axi_protocol_converter_v2_1/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4376]
 WARNING: [VRFC 10-5021] port 'aclk2x' is not connected on this instance [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/axi_protocol_converter_v2_1/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4631]
-WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:2057]
-WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:2065]
-WARNING: [VRFC 10-5021] port 'ENET0_GMII_RXD' is not connected on this instance [C:/Xilinx_projects/gyro2tester/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_processing_system7_0_0/sim/design_2_processing_system7_0_0.v:289]
+WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:2057]
+WARNING: [VRFC 10-5021] port 'mb_reset' is not connected on this instance [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:2065]
+WARNING: [VRFC 10-5021] port 'ENET0_GMII_RXD' is not connected on this instance [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_processing_system7_0_0/sim/design_2_processing_system7_0_0.v:289]
 WARNING: [VRFC 10-3027] 'ocm_wr_strb_port0' was previously declared with a different range [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:3809]
 WARNING: [VRFC 10-3705] select index 64 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:6134]
 WARNING: [VRFC 10-3705] select index 128 into 'wrp_strb' is out of bounds [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:10898]
@@ -48,10 +48,10 @@ WARNING: [VRFC 10-3705] select index 4 into 'rresp_time_cnt' is out of bounds [/
 WARNING: [VRFC 10-3705] select index 4 into 'rd_fifo_rd_ptr' is out of bounds [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/processing_system7_vip_v1_0/hdl/processing_system7_vip_v1_0_vl_rfs.sv:8391]
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/data_processor.v" Line 1. Module data_processor doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Xilinx_projects/gyro2tester/funcsim/models/spi_dummy_reg.sv" Line 1. Module spi_dummy_reg doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Xilinx_projects/gyro2tester/vivado/ip_repo/common/data_processor.v" Line 1. Module data_processor doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Xilinx_projects/gyro2tester/funcsim/models/spi_dummy_reg.sv" Line 1. Module spi_dummy_reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/data_processor.v" Line 1. Module data_processor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/cdickins/reuse/gyro2tester-main/funcsim/models/spi_dummy_reg.sv" Line 1. Module spi_dummy_reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/data_processor.v" Line 1. Module data_processor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/cdickins/reuse/gyro2tester-main/funcsim/models/spi_dummy_reg.sv" Line 1. Module spi_dummy_reg doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package std.standard
