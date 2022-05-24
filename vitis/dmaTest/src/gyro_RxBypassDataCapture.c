@@ -6,6 +6,7 @@
 #include "dma_controller.h"
 #include "gyro_application.h"
 
+//#define PRINT_STATEMENTS
 #define NUM_BYTES_TO_CAPTURE 0x018000
 
 XAxiDma AxiDma; //DMA device instance definition
@@ -13,9 +14,10 @@ XAxiDma AxiDma; //DMA device instance definition
 int main(){
     init_platform();
 
-//    xil_printf("Putting the board into Gyro Functional mode\n\r");
-//    xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
-
+#ifdef PRINT_STATEMENTS
+    xil_printf("Putting the board into Gyro Functional mode\n\r");
+    xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
+#endif
 
 
     ///////////////////////////////////////////////
@@ -33,7 +35,7 @@ int main(){
 	RxBufferPtr = (u16 *)RX_BUFFER_BASE;
 
 	// Initialize memory to all zeros
-	for(Index = 0; Index < MAX_PKT_LEN; Index ++){
+	for(Index = 0; Index < NUM_BYTES_TO_CAPTURE; Index ++){
 		TxBufferPtr[Index] = 0x0000;
 		RxBufferPtr[Index] = 0x0000;
 	}
@@ -60,11 +62,9 @@ int main(){
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 
+
 	Value = 0x0000;
-
-
-
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
+	for(Index = 0; Index < NUM_BYTES_TO_CAPTURE/2; Index ++){
 		TxBufferPtr[Index] = Value;
 
 		if(Value == 0xBFFF){
@@ -76,24 +76,27 @@ int main(){
 	}
 
 	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
-	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, NUM_BYTES_TO_CAPTURE);
 
 	XAxiDma_Reset(&AxiDma);
 
+
+
+#ifdef PRINT_STATEMENTS
 	///////////////////////////////////////////////
 	// EDIT AFTER HERE                           //
 	///////////////////////////////////////////////
 
-//    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
-//    xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+    xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
 
-//    xil_printf("Testing Test Case Loop 3 with the RX buffer bypassed of the DMA TX/RX \r\n");
-//    xil_printf("---------------------------------------------------\r\n");
-//    xil_printf("---------------------------------------------------\r\n");
+    xil_printf("Testing Test Case Loop 3 with the RX buffer bypassed of the DMA TX/RX \r\n");
+    xil_printf("---------------------------------------------------\r\n");
+    xil_printf("---------------------------------------------------\r\n");
     ///////////////////////////////////////////////
     // AXI Stream Switches  1 & 2 LOOP           //
     ///////////////////////////////////////////////
-
+#endif
 
 
 
@@ -112,19 +115,28 @@ int main(){
     XAxi_WriteReg(SW3_REG0, 0x00000002);
 
 
-//    xil_printf("Turn on RX DMA path ready to receive \r\n");
+#ifdef PRINT_STATEMENTS
+    xil_printf("Turn on RX DMA path ready to receive \r\n");
+#endif
     XAxi_WriteReg(S2MM_DMACR, 0x00000001);
     XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE);
     XAxi_WriteReg(S2MM_SA_MSB, 0x00000000);
     XAxi_WriteReg(S2MM_LENGTH, MAX_PKT_LEN);
 
 
-//    xil_printf("Enable TX FIFO \r\n");
+#ifdef PRINT_STATEMENTS
+    xil_printf("Enable TX FIFO \r\n");
+#endif
     XAxi_WriteReg(TXFIFO_REG0, 0x00000001);
-//    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+
+#ifdef PRINT_STATEMENTS
+    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+#endif
 
 
-//    xil_printf("Send in TX DATA \r\n");
+#ifdef PRINT_STATEMENTS
+    xil_printf("Send in TX DATA \r\n");
+#endif
     XAxi_WriteReg(MM2S_DMACR, 0x00000001);
     XAxi_WriteReg(MM2S_SA, TX_BUFFER_BASE);
     XAxi_WriteReg(MM2S_SA_MSB, 0x00000000);
@@ -133,23 +145,36 @@ int main(){
 
 	while(Buffer_Not_Full(TXFIFO_REG3)){
 	    if (Buffer_Not_Full(TXFIFO_REG3) == TRUE){
-//	    			xil_printf("TXBUFFER still busy...\r\n");
+#ifdef PRINT_STATEMENTS
+	    			xil_printf("TXBUFFER still busy...\r\n");
+#endif
 	    }
 	 }
 
-//	 xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+#ifdef PRINT_STATEMENTS
+	 xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+#endif
 
-//	 xil_printf("Set the RX Transfer len  \r\n");
+
+
+#ifdef PRINT_STATEMENTS
+	 xil_printf("Set the RX Transfer len  \r\n");
+#endif
 	 XAxi_WriteReg(RXFIFO_REG2,NUM_BYTES_TO_CAPTURE);
 
 
-//	 xil_printf("Enable RX FIFO PUSH & POP with Buffer bypass  \r\n");
+
+#ifdef PRINT_STATEMENTS
+	 xil_printf("Enable RX FIFO PUSH & POP with Buffer bypass  \r\n");
+#endif
 	 XAxi_WriteReg(RXFIFO_REG0,0x00000013);
 
 
 
 
-//     xil_printf("Enable Bidir serial loopback \r\n");
+#ifdef PRINT_STATEMENTS
+     xil_printf("Enable Bidir serial loopback \r\n");
+#endif
      XAxi_WriteReg(BIDIR_REG0, 0x00000000);
      XAxi_WriteReg(BIDIR_REG2, 0x00000001);
      XAxi_WriteReg(BIDIR_REG1, 0x00000011);
@@ -159,7 +184,9 @@ int main(){
 
     while(XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA)){
     		if (XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA) == TRUE){
-//    			xil_printf("S2MM channel is busy...\r\n");
+#ifdef PRINT_STATEMENTS
+    			xil_printf("S2MM channel is busy...\r\n");
+#endif
     		}
 
     	}
@@ -168,12 +195,14 @@ int main(){
     ////////////////////////////////////////////////////////////////////////
     // END OF EDIT SECTION                                                //
     ////////////////////////////////////////////////////////////////////////
-
-//    print("Results of test_case_loop3_rxbyp \n\r");
     
+#ifdef PRINT_STATEMENTS
+    print("Results of test_case_loop3_rxbyp \n\r");
+#endif
 
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
-		xil_printf("%x\r\n",(unsigned int)RxBufferPtr[Index]);
+
+	for(Index = 0; Index < NUM_BYTES_TO_CAPTURE/2; Index++) {
+		xil_printf("%04x\r\n",(unsigned int)RxBufferPtr[Index]);
 	}
 
 	XAxiDma_Reset(&AxiDma);
