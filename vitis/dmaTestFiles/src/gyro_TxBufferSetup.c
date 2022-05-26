@@ -28,7 +28,7 @@ int main(){
 
 
 
-	// Initialize memory to all zeros
+	// Initialize DDR memory to all zeros
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 		TxBufferPtr[Index] = 0x0000;
 		RxBufferPtr[Index] = 0x0000;

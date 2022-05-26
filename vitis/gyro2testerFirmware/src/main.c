@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
 #include <stdlib.h>
 #include "platform.h"
@@ -12,38 +11,25 @@
 #include "xil_exception.h"
 #include "xttcps.h"
 #include "xgpiops.h"
-#include "dmaTest.h"
-#include "xaxidma.h"
 #include "dma_controller.h"
-#include "dmaTest-RxBypass.h"
-
-
-
 #include "xaxidma.h"
 #include "xdebug.h"
-
-#ifdef __aarch64__
-#include "xil_mmu.h"
-#endif
-
-#if defined(XPAR_UARTNS550_0_BASEADDR)
-#include "xuartns550_l.h"       /* to use uartns550 */
-#endif
 
 #if (!defined(DEBUG))
 extern void xil_printf(const char *format, ...);
 #endif
 
+
 /******************** Constant Definitions **********************************/
-#define UARTPS_DEVICE_ID	XPAR_XUARTPS_0_DEVICE_ID
-#define INTC_DEVICE_ID		XPAR_SCUGIC_SINGLE_DEVICE_ID
-#define UART_INT_IRQ_ID		XPAR_XUARTPS_1_INTR
-#define UART_BASEADDR		XPAR_XUARTPS_0_BASEADDR
+#define UARTPS_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
+#define INTC_DEVICE_ID			XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define UART_INT_IRQ_ID			XPAR_XUARTPS_1_INTR
+#define UART_BASEADDR			XPAR_XUARTPS_0_BASEADDR
 #define UART_RX_BUFFER_SIZE		8200
 #define UART_TX_BUFFER_SIZE		1000
 
 // possible states for main while loop used to drive actions
-#define SERVICE_UART		0x04
+#define SERVICE_UART			0x04
 
 #define CMD_READ_REGISTER				0x41	// read 16-bit contents of gyro ic register
 #define CMD_WRITE_REGISTER				0x42	// write 16-bit value to gyro ic register
@@ -216,6 +202,7 @@ Xuint32* debugWordAddr =  (Xuint32*) 0x43C10000;	//change this depending on wher
 Xuint32  debugWordData = 0x00000000;						//change this depending on what you want to write
 
 
+XAxiDma axiDma; 				// DMA device instance
 
 volatile unsigned char debugType = 7;
 
@@ -266,7 +253,6 @@ static volatile u8 timerRunning;
 
 
 int Status;
-XAxiDma_Config *Config;
 
 XGpioPs MIO_gpio;
 #define MIO_GPIO_BANK 0
@@ -969,12 +955,12 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_RUN_DMA_TEST):
-			runDmaTest();
+//			runDmaTest();
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
 		case (CMD_RUN_DMA_TEST_RX_BYPASS):
-			runDmaTestRxBypass();
+//			runDmaTestRxBypass();
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
@@ -1222,41 +1208,6 @@ void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings)
 	writeGyroRegister(0,reg0&0xFBFF);
 	writeGyroRegister(1,reg1);
 
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-unsigned int getNumBytesToSend(u8 *RxData)
-{
-	unsigned int num_points = 0;
-
-	// most significant byte in number sent first
-	num_points += RxData[1];
-	num_points = num_points << 8;
-
-	// least significant byte in number sent next
-	num_points += RxData[2];
-
-	return num_points;
-
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void send_Tx_data_over_UART(unsigned int num_points_to_send)
-{
-	int i;
-	// send the data array to the transmit buffer as space is available
-	for (i = 0; i < num_points_to_send; i++) {
-		/* Wait until there is space in TX FIFO */
-		 while (XUartPs_IsTransmitFull(XPAR_XUARTPS_0_BASEADDR));
-
-		/* Write the byte into the TX FIFO */
-		XUartPs_WriteReg(XPAR_XUARTPS_0_BASEADDR, XUARTPS_FIFO_OFFSET,
-				UartTxData[i]);
-	}
 }
 //------------------------------------------------------------
 
@@ -1636,11 +1587,34 @@ int main() {
 
     setSPIClockDivision(SPI_clock_division_setting);
     initUart();
+
 /*
-    //===============================================
-    //===============================================
-    // just for debugging
-    //
+	//===============================================
+	//===============================================
+	// Section below for debugging Tx data updates.
+	// Comment out when not testing.
+	//
+	enableHSI();
+	initDMA(&axiDma);
+	initializeHsiDataStreams();
+	setupTxDdrBuffers1();
+	updateTxDataStream(&axiDma);
+	setupTxDdrBuffers2();
+	updateTxDataStream(&axiDma);
+	setupTxDdrBuffers1();
+	updateTxDataStream(&axiDma);
+	//
+	//===============================================
+	//===============================================
+*/
+
+
+/*
+	//===============================================
+	//===============================================
+	// Section below for debugging Rx data captures.
+	// Comment out when not testing.
+	//
 	enableSPI();
 	enableHSI();
 	FPGA_outputs_state = 1;		// 1=on, 2=off

@@ -1,47 +1,10 @@
-23:34:35 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
+00:47:06 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/main.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/main.c:8:
-C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
-  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
-      |  ^~~~~~~
-C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
-  103 | #warning  Please refer the Standalone BSP UG647 for further details
-      |  ^~~~~~~
-../src/main.c:1559:6: warning: 'init_MIO_gpio' defined but not used [-Wunused-function]
- 1559 | void init_MIO_gpio(void)
-      |      ^~~~~~~~~~~~~
-../src/main.c:1296:5: warning: 'InitializeDelayTimer' defined but not used [-Wunused-function]
- 1296 | int InitializeDelayTimer(void)
-      |     ^~~~~~~~~~~~~~~~~~~~
-../src/main.c:1248:6: warning: 'send_Tx_data_over_UART' defined but not used [-Wunused-function]
- 1248 | void send_Tx_data_over_UART(unsigned int num_points_to_send)
-      |      ^~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:1230:14: warning: 'getNumBytesToSend' defined but not used [-Wunused-function]
- 1230 | unsigned int getNumBytesToSend(u8 *RxData)
-      |              ^~~~~~~~~~~~~~~~~
-../src/main.c:524:6: warning: 'setupUartToReceiveTxData' defined but not used [-Wunused-function]
-  524 | void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-'Finished building: ../src/main.c'
-' '
-'Building target: gyro2testerFirmware.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dmaTest-RxBypass.o ./src/dmaTest.o ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: gyro2testerFirmware.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  62844	   3160	  33208	  99212	  1838c	gyro2testerFirmware.elf
-'Finished building: gyro2testerFirmware.elf.size'
-' '
+make[1]: Nothing to be done for 'main-build'.
 
-23:34:36 Build Finished (took 640ms)
+00:47:06 Build Finished (took 180ms)
 
