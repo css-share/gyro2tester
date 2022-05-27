@@ -195,6 +195,39 @@ int main(){
     XAxi_WriteReg(MM2S_DMACR, 0x00000004);
     XAxi_WriteReg(S2MM_DMACR, 0x00000004);
 
+
+
+
+	// Initialize the XAxiDma device
+	CfgPtr = XAxiDma_LookupConfig(DMA_DEV_ID);
+	if (!CfgPtr) {
+		xil_printf("No config found for %d\r\n", DMA_DEV_ID);
+		return XST_FAILURE;
+	}
+
+	Status = XAxiDma_CfgInitialize(&AxiDma, CfgPtr);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Initialization failed %d\r\n", Status);
+		return XST_FAILURE;
+	}
+
+	if(XAxiDma_HasSg(&AxiDma)){
+		xil_printf("Device configured as SG mode \r\n");
+		return XST_FAILURE;
+	}
+
+	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+
+
+	XAxiDma_Reset(&AxiDma);
+
+
+
+
+
+
     ////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
 

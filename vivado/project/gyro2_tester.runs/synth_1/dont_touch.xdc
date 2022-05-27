@@ -51,11 +51,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_pr
 # IP: bd/design_2/ip/design_2_proc_sys_reset_0_2/design_2_proc_sys_reset_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_proc_sys_reset_0_2 || ORIG_REF_NAME==design_2_proc_sys_reset_0_2} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_iobuf_xil_0_0 || ORIG_REF_NAME==design_2_iobuf_xil_0_0} -quiet] -quiet
-
 # IP: bd/design_2/ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_SPI_ip_0_0 || ORIG_REF_NAME==design_2_SPI_ip_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_iobuf_xil_0_0/design_2_iobuf_xil_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_iobuf_xil_0_0 || ORIG_REF_NAME==design_2_iobuf_xil_0_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_smartconnect_0_0/design_2_smartconnect_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_smartconnect_0_0 || ORIG_REF_NAME==design_2_smartconnect_0_0} -quiet] -quiet
@@ -93,11 +93,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_ax
 # IP: bd/design_2/ip/design_2_xlconcat_1_0/design_2_xlconcat_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_xlconcat_1_0 || ORIG_REF_NAME==design_2_xlconcat_1_0} -quiet] -quiet
 
-# IP: bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_led_driver_0_0 || ORIG_REF_NAME==design_2_led_driver_0_0} -quiet] -quiet
-
 # IP: bd/design_2/ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_BiDirChannels_0_0 || ORIG_REF_NAME==design_2_BiDirChannels_0_0} -quiet] -quiet
+
+# IP: bd/design_2/ip/design_2_led_driver_0_0/design_2_led_driver_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_led_driver_0_0 || ORIG_REF_NAME==design_2_led_driver_0_0} -quiet] -quiet
 
 # IP: bd/design_2/ip/design_2_auto_pc_0/design_2_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_2_auto_pc_0 || ORIG_REF_NAME==design_2_auto_pc_0} -quiet] -quiet

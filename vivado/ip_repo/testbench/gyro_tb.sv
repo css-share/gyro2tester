@@ -31,8 +31,9 @@
 //`define RXPAT_TEST
 //`define LOOP2_TXPAT_TEST
 //`define LOOP2_RXBYP_TEST
+`define LOOP2_RXBYP_RESTART_TEST
 //`define LOOP2_TEST_RESTART
-`define LOOP3_TEST_RESTART
+//`define LOOP3_TEST_RESTART
 //`define LOOP3_RXBYP_TEST
 //`define LOOP3_TXPAT_TEST
 //`define LOOP3_SRTXPAT_TEST
@@ -46,6 +47,7 @@
 
 
 `define TEST_32_PACKED        `"`FILENAME_PATH/test_data_32_packed.txt`"
+`define TEST_32_PACKED_REV    `"`FILENAME_PATH/test_data_32_packed_reversed.txt`"
 `define LOOP1_RESULTS         `"`FILENAME_PATH/test_loop1_results.txt`"
 `define LOOP2_RESULTS         `"`FILENAME_PATH/test_loop2_results.txt`"
 `define LOOP3_RESULTS         `"`FILENAME_PATH/test_loop3_results.txt`"
@@ -58,10 +60,10 @@
 `define LOOP3_RXBYP_RESULTS   `"`FILENAME_PATH/test_loop3_rxbyp_results.txt`"
 `define LOOP2_RESTART_RESULTS   `"`FILENAME_PATH/test_loop2_restart_results.txt`"
 `define LOOP2_RESTART_RESULTS2   `"`FILENAME_PATH/test_loop2_restart_results_2.txt`"
-`define LOOP3_RESTART_RESULTS   `"`FILENAME_PATH/test_loop3_restart_results.txt`"
-`define LOOP3_RESTART_RESULTS2   `"`FILENAME_PATH/test_loop3_restart_results_2.txt`"
-
-
+`define LOOP3_RESTART_RESULTS         `"`FILENAME_PATH/test_loop3_restart_results.txt`"
+`define LOOP3_RESTART_RESULTS2        `"`FILENAME_PATH/test_loop3_restart_results_2.txt`"
+`define LOOP2_RXBYP_RESTART_RESULTS   `"`FILENAME_PATH/test_loop2_rxbyp_restart_results.txt`"
+`define LOOP2_RXBYP_RESTART_RESULTS2  `"`FILENAME_PATH/test_loop2_rxbyp_restart_results_2.txt`"
 
 module tb;
 
@@ -114,7 +116,11 @@ module tb;
   `include "test_case_loop3_rxbyp.sv"  
   `include "test_case_loop2_restart.sv"  
   `include "test_case_loop3_restart.sv"  
-      
+  `include "test_case_loop2_rxbyp_restart.sv"
+
+
+
+  
     initial 
     begin       
         tb_ACLK = 1'b0;
@@ -234,7 +240,7 @@ module tb;
      `endif
 
     `ifdef LOOP2_TEST_RESTART   
-         test_loop2_restart(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP2_RESTART_RESULTS), .test_fout_2(`LOOP2_RESTART_RESULTS2));
+         test_loop2_restart(.test_fin(`TEST_32_PACKED), .test_fin_2(`TEST_32_PACKED_REV), .test_fout(`LOOP2_RESTART_RESULTS), .test_fout_2(`LOOP2_RESTART_RESULTS2));
       //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
     `endif
 
@@ -246,7 +252,10 @@ module tb;
 
 
 
-
+   `ifdef LOOP2_RXBYP_RESTART_TEST  
+         test_loop2_rxbyp_restart(.test_fin(`TEST_32_PACKED), .test_fin_2(`TEST_32_PACKED_REV), .test_fout(`LOOP2_RXBYP_RESTART_RESULTS), .test_fout_2(`LOOP2_RXBYP_RESTART_RESULTS2));
+      //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
+    `endif
 
 
       

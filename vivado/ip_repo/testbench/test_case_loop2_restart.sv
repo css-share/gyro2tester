@@ -17,7 +17,7 @@
 //////////////////////////////////////////////////////////////
 
     
-  task test_loop2_restart(input [2047:0] test_fin, input [1023:0] test_fout,  input [1023:0] test_fout_2);
+  task test_loop2_restart(input [2047:0] test_fin, input [2047:0] test_fin_2, input [1023:0] test_fout,  input [1023:0] test_fout_2);
     begin
 
     -> system_reset;
@@ -158,10 +158,11 @@
       $display ("Reset the TX DMA");
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_DMACR,4, 32'h00000004, resp);     
       $display ("Reset the RX DMA");      
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`S2MM_DMACR,4, 32'h00000004, resp);  
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`S2MM_DMACR,4, 32'h00000004, resp);
+                          
 
-
-
+      $display ("Write some data into the memory");
+      tb.u_dut.design_2_i.processing_system7_0.inst.pre_load_mem_from_file(test_fin_2,`TX_BUFFER_BASE, 32768);
 
       
      
