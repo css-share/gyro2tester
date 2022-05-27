@@ -11451,3 +11451,64 @@ con
 
 22:04:00 INFO  : Launch script is exported to file 'C:\Xilinx_projects\gyro2tester\vitis\dmaTest_system\_ide\scripts\systemdebugger_dmatest_system_standalone.tcl'
 22:38:23 INFO  : Disconnected from the channel tcfchan#31.
+01:05:37 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Xilinx_projects\gyro2tester\vitis\temp_xsdb_launch_script.tcl
+01:05:40 INFO  : XSCT server has started successfully.
+01:05:40 INFO  : plnx-install-location is set to ''
+01:05:40 INFO  : Successfully done setting XSCT server connection channel  
+01:05:40 INFO  : Successfully done setting workspace for the tool. 
+01:05:42 INFO  : Platform repository initialization has completed.
+01:05:42 INFO  : Registering command handlers for Vitis TCF services
+01:05:42 INFO  : Successfully done query RDI_DATADIR 
+01:07:38 INFO  : Hardware specification for platform project 'design_2_wrapper' is updated.
+01:11:04 ERROR : Error encountered while removing 'C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper' from custom repository paths
+Reason: No Platforms Found.
+
+
+01:11:04 INFO  : Result from executing command 'removePlatformRepo': 
+01:11:24 INFO  : Result from executing command 'getProjects': design_2_wrapper
+01:11:24 INFO  : Result from executing command 'getPlatforms': 
+01:11:40 INFO  : Checking for BSP changes to sync application flags for project 'dmaTest'...
+01:11:44 INFO  : The hardware specification used by project 'dmaTest' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+01:11:44 INFO  : The file 'C:\Xilinx_projects\gyro2tester\vitis\dmaTest\_ide\bitstream\design_2_wrapper.bit' stored in project is removed.
+01:11:44 INFO  : The updated bitstream files are copied from platform to folder 'C:\Xilinx_projects\gyro2tester\vitis\dmaTest\_ide\bitstream' in project 'dmaTest'.
+01:11:44 INFO  : The file 'C:\Xilinx_projects\gyro2tester\vitis\dmaTest\_ide\psinit\ps7_init.tcl' stored in project is removed.
+01:11:50 INFO  : The updated ps init files are copied from platform to folder 'C:\Xilinx_projects\gyro2tester\vitis\dmaTest\_ide\psinit' in project 'dmaTest'.
+01:20:12 INFO  : Checking for BSP changes to sync application flags for project 'dmaTest'...
+01:20:21 INFO  : Checking for BSP changes to sync application flags for project 'dmaTest'...
+01:20:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:20:30 INFO  : Jtag cable 'Digilent Zed 210248AA59A3' is selected.
+01:20:31 INFO  : 'jtag frequency' command is executed.
+01:20:31 INFO  : Context for 'APU' is selected.
+01:20:31 INFO  : System reset is completed.
+01:20:34 INFO  : 'after 3000' command is executed.
+01:20:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}' command is executed.
+01:20:36 INFO  : Device configured successfully with "C:/Xilinx_projects/gyro2tester/vitis/dmaTest/_ide/bitstream/design_2_wrapper.bit"
+01:20:36 INFO  : Context for 'APU' is selected.
+01:20:37 INFO  : Hardware design and registers information is loaded from 'C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa'.
+01:20:37 INFO  : 'configparams force-mem-access 1' command is executed.
+01:20:37 INFO  : Context for 'APU' is selected.
+01:20:37 INFO  : Sourcing of 'C:/Xilinx_projects/gyro2tester/vitis/dmaTest/_ide/psinit/ps7_init.tcl' is done.
+01:20:39 INFO  : 'ps7_init' command is executed.
+01:20:39 INFO  : 'ps7_post_config' command is executed.
+01:20:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:20:40 INFO  : The application 'C:/Xilinx_projects/gyro2tester/vitis/dmaTest/Debug/dmaTest.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:20:40 INFO  : 'configparams force-mem-access 0' command is executed.
+01:20:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}
+fpga -file C:/Xilinx_projects/gyro2tester/vitis/dmaTest/_ide/bitstream/design_2_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Xilinx_projects/gyro2tester/vitis/dmaTest/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Xilinx_projects/gyro2tester/vitis/dmaTest/Debug/dmaTest.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+

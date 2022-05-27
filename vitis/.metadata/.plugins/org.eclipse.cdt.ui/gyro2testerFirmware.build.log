@@ -1,10 +1,92 @@
-00:47:06 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
+00:23:30 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/dma_controller.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
+In file included from C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xaxidma_bdring.h:60,
+                 from C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xaxidma.h:467,
+                 from ../src/dma_controller.c:1:
+../src/dma_controller.c: In function 'initDMA':
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/dma_controller.c:18:10: note: in expansion of macro 'XST_FAILURE'
+   18 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/dma_controller.c:9:6: note: declared here
+    9 | void initDMA(XAxiDma *axiDmaPtr){
+      |      ^~~~~~~
+In file included from C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xaxidma_bdring.h:60,
+                 from C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xaxidma.h:467,
+                 from ../src/dma_controller.c:1:
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/dma_controller.c:24:10: note: in expansion of macro 'XST_FAILURE'
+   24 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/dma_controller.c:9:6: note: declared here
+    9 | void initDMA(XAxiDma *axiDmaPtr){
+      |      ^~~~~~~
+In file included from C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xaxidma_bdring.h:60,
+                 from C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xaxidma.h:467,
+                 from ../src/dma_controller.c:1:
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/dma_controller.c:29:10: note: in expansion of macro 'XST_FAILURE'
+   29 |   return XST_FAILURE;
+      |          ^~~~~~~~~~~
+../src/dma_controller.c:9:6: note: declared here
+    9 | void initDMA(XAxiDma *axiDmaPtr){
+      |      ^~~~~~~
+'Finished building: ../src/dma_controller.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:7:
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+../src/main.c:316:21: warning: 'getNumBytesToSend' declared 'static' but never defined [-Wunused-function]
+  316 | static unsigned int getNumBytesToSend(u8 *RxData);
+      |                     ^~~~~~~~~~~~~~~~~
+../src/main.c:317:13: warning: 'send_Tx_data_over_UART' declared 'static' but never defined [-Wunused-function]
+  317 | static void send_Tx_data_over_UART(unsigned int num_points_to_send);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:1544:6: warning: 'init_MIO_gpio' defined but not used [-Wunused-function]
+ 1544 | void init_MIO_gpio(void)
+      |      ^~~~~~~~~~~~~
+../src/main.c:1281:5: warning: 'InitializeDelayTimer' defined but not used [-Wunused-function]
+ 1281 | int InitializeDelayTimer(void)
+      |     ^~~~~~~~~~~~~~~~~~~~
+../src/main.c:520:6: warning: 'setupUartToReceiveTxData' defined but not used [-Wunused-function]
+  520 | void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:245:11: warning: 'UartTxData' defined but not used [-Wunused-variable]
+  245 | static u8 UartTxData[UART_TX_BUFFER_SIZE]; // Buffer for Transmitting Data
+      |           ^~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: gyro2testerFirmware.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: gyro2testerFirmware.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62012	   3160	  35080	 100252	  1879c	gyro2testerFirmware.elf
+'Finished building: gyro2testerFirmware.elf.size'
+' '
 
-00:47:06 Build Finished (took 180ms)
+00:23:31 Build Finished (took 820ms)
 

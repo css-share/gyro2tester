@@ -12,7 +12,7 @@ XAxiDma AxiDma; //DMA device instance definition
 int main(){
     init_platform();
 
-    print("Putting the board into Gyro Functional mode\n\r");	  
+    xil_printf("\r\n\nPutting the board into Gyro Functional mode\r\n");
     xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
 
 
@@ -59,19 +59,11 @@ int main(){
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 
+	// load Tx DDR buffer with up counter data
 	Value = 0x0000;
-
-
-
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 		TxBufferPtr[Index] = Value;
-
-		if(Value == 0xBFFF){
-			Value = 0x0000;
-		}
-		else{
-			Value = (Value + 1);
-		}
+		Value = (Value + 1);
 	}
 
 	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
@@ -171,7 +163,8 @@ int main(){
 
 
 
-    print("Results of test_case_loop3 \n\r");
+	xil_printf("Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+	xil_printf("Results of test_case_loop3 \r\n");
     
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
@@ -184,9 +177,18 @@ int main(){
     // RESTART                                                            //
     ////////////////////////////////////////////////////////////////////////
 
+
+	// load Tx DDR buffer with down counter data and clear Rx buffer
+	Value = 0xFFFF;
+	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
+		TxBufferPtr[Index] = Value;
+		RxBufferPtr[Index] = 0x5555;
+		Value = (Value - 1);
+	}
     
 
-    print("Restart test_case_loop3 \n\r");
+
+    print("Restart test_case_loop3 \r\n");
 
     XAxi_WriteReg(TXFIFO_REG0,0x00000000);
     XAxi_WriteReg(RXFIFO_REG0,0x00000000);
@@ -296,7 +298,7 @@ int main(){
 
 
 
-    print("Results of test_case_loop3 \n\r");
+    print("Results of test_case_loop3 \r\n");
     
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {

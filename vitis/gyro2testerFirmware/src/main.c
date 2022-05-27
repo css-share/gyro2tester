@@ -39,6 +39,16 @@ extern void xil_printf(const char *format, ...);
 #define CMD_READ_DATA					0x61	// read data from tester - should be followed by
 												// 4 bytes(unsigned int) for num words to be
 												// sent (msbyte first)
+#define CMD_UPDATE_TX_CAR_DATA_DC 		0x70	// update the Tx Carrier data buffer with single DC value
+#define CMD_UPDATE_TX_NODE_DATA_DC 		0x71	// update the Tx Node data buffer with single DC value
+#define CMD_UPDATE_TX_ANODE_DATA_DC		0x72	// update the Tx Anti-node data buffer with single DC value
+#define CMD_UPDATE_TX_CAR_DATA_SINE 	0x73	// update the Tx Carrier data buffer with sinewave data
+#define CMD_UPDATE_TX_NODE_DATA_SINE 	0x74	// update the Tx Node data buffer with sinewave data
+#define CMD_UPDATE_TX_ANODE_DATA_SINE 	0x75	// update the Tx Anti-node data buffer with sinewave data
+#define CMD_UPDATE_TX_CAR_DATA_RAMP 	0x76	// update the Tx Carrier data buffer with ramp data
+#define CMD_UPDATE_TX_NODE_DATA_RAMP 	0x77	// update the Tx Node data buffer with ramp data
+#define CMD_UPDATE_TX_ANODE_DATA_RAMP 	0x78	// update the Tx Anti-node data buffer with ramp data
+#define CMD_UPDATE_FPGA_TX_DATA_STREAM	0x7F	// reload FPGA block ram and restart the Tx data stream
 #define CMD_PROG_OTP_CHIP_ID			0x81	// program the chip ID into OTP memory
 #define CMD_PROG_OTP_VBG_TRIM			0x82	// program the bandgap trim value into OTP memory
 #define CMD_READ_OTP_DATA				0x83	// read the 32-bit data stored in 2 16-bit OTP registers
@@ -716,7 +726,7 @@ void read_uart_bytes(void)
 	u8 numBytesReceived = 0;
 	u16 numPoints;
 	u32 numBytesToSend;
-	u16 TxData;
+	u16 TxData,TxDcValue;
 	u32 otpBytes;
 	unsigned int commandByte,regAddr,regData;
 
@@ -970,7 +980,7 @@ void read_uart_bytes(void)
 			// third and fourth bytes are 16-bit number of measurements MSbyte(3rd) LSbyte(4th)
 			numBytesToSend = (u32)( (UartRxData[1]<<16) + (UartRxData[2]<<8) + (UartRxData[3]) );
 
-			// send the requested number of bytes from the Rx buffer in DMA
+			// send the requested number of bytes from the Rx buffer in DDR
 			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
 /*
@@ -989,6 +999,30 @@ void read_uart_bytes(void)
 
 			}
 			break;
+
+		case (CMD_UPDATE_TX_CAR_DATA_DC):
+			TxDcValue = (UartRxData[1]<<8) + UartRxData[2];
+			updateDdrTxBufferWithConstant(CARRIER_CHANNEL,TxDcValue);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_NODE_DATA_DC):
+			TxDcValue = (UartRxData[1]<<8) + UartRxData[2];
+			updateDdrTxBufferWithConstant(NODE_CHANNEL,TxDcValue);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_ANODE_DATA_DC):
+			TxDcValue = (UartRxData[1]<<8) + UartRxData[2];
+			updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,TxDcValue);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_FPGA_TX_DATA_STREAM):
+			updateTxDataStream(&axiDma);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
 	}
 }
 //------------------------------------------------------------
@@ -1587,6 +1621,8 @@ int main() {
 
     setSPIClockDivision(SPI_clock_division_setting);
     initUart();
+	initDMA(&axiDma);
+	initializeHsiDataStreams();
 
 /*
 	//===============================================

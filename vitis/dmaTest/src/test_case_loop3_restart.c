@@ -179,7 +179,7 @@ int main(){
 
 
 	// load Tx DDR buffer with down counter data and clear Rx buffer
-	Value = 0x4000;
+	Value = 0xFFFF;
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
 		TxBufferPtr[Index] = Value;
 		RxBufferPtr[Index] = 0x5555;
@@ -196,6 +196,39 @@ int main(){
     XAxi_WriteReg(RXFIFO_REG1,0x00000001);
     XAxi_WriteReg(MM2S_DMACR, 0x00000004);
     XAxi_WriteReg(S2MM_DMACR, 0x00000004);
+
+
+
+
+	// Initialize the XAxiDma device
+	CfgPtr = XAxiDma_LookupConfig(DMA_DEV_ID);
+	if (!CfgPtr) {
+		xil_printf("No config found for %d\r\n", DMA_DEV_ID);
+		return XST_FAILURE;
+	}
+
+	Status = XAxiDma_CfgInitialize(&AxiDma, CfgPtr);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Initialization failed %d\r\n", Status);
+		return XST_FAILURE;
+	}
+
+	if(XAxiDma_HasSg(&AxiDma)){
+		xil_printf("Device configured as SG mode \r\n");
+		return XST_FAILURE;
+	}
+
+	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+
+
+	XAxiDma_Reset(&AxiDma);
+
+
+
+
+
 
     ////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
@@ -269,8 +302,9 @@ int main(){
     
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
-		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n",
-				Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
+		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
+	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
+
 	}
 
 

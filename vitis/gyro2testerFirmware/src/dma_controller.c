@@ -117,7 +117,11 @@ void initializeHsiDataStreams(void){
 	xil_printf("Configure Bidir block \r\n");
 #endif
 	XAxi_WriteReg(BIDIR_REG0, 0x00000000);		// bit24= 1 for loopback TXD into RXD, 0 for asic RXD
-//	XAxi_WriteReg(BIDIR_REG2, 0x00000001);		// bit0 enables BiDir block
+	// next line should only be uncommented if running this function as part of a test.
+	// Normal operation is to load FPGA code and run with all outputs disabled until
+	// gyro chip is powered up. Only enable FPGA outputs after gyro chip is powered.
+	// BIDIR_REG2, bit0 is used to enable/disable the BiDir block
+//	XAxi_WriteReg(BIDIR_REG2, 0x00000001);		// bit0=1 enables BiDir block
 	XAxi_WriteReg(BIDIR_REG1, 0x00000011);		// serial data enable: bit0=out, bit1=in
 
 #ifdef PRINT_DEBUGS
@@ -193,6 +197,39 @@ void updateTxDataStream(XAxiDma *axiDmaPtr){
 
     XAxiDma_Reset(axiDmaPtr);
 
+}
+//=========================================================================
+
+
+
+
+
+
+//=========================================================================
+void updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue){
+	unsigned int Index,channelOffset;
+	u16 *TxBufferPtr;
+	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
+
+	// set the offset for data loading loop below
+	switch (TxChannel){
+
+		case (CARRIER_CHANNEL):
+			channelOffset = CARRIER_CHAN_TX_BUFF_OFFSET;
+			break;
+
+		case (NODE_CHANNEL):
+			channelOffset = NODE_CHAN_TX_BUFF_OFFSET;
+			break;
+
+		case (ANTINODE_CHANNEL):
+			channelOffset = ANTINODE_CHAN_TX_BUFF_OFFSET;
+			break;
+	}
+
+	for(Index = 0; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
+			TxBufferPtr[Index + channelOffset] = dcValue;
+	}
 }
 //=========================================================================
 
