@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="initSPI"/>
+		<item key="selection" value="TxDdrBufferCar"/>
 		<list key="findhistory">
+			<item value="TxDdrBufferCar"/>
+			<item value="CMD_UPDATE_TX_CAR_DATA_SINE"/>
+			<item value="UartRxData"/>
+			<item value="SERVICE_UART"/>
+			<item value="uartReceivingHsiTxData"/>
+			<item value="setupUartToReceiveTxData"/>
+			<item value="finishedReceivingTxData"/>
+			<item value="waitForDataOverUart"/>
+			<item value="send_byte_over_UART"/>
+			<item value="CMD_UPDATE_TX_ANODE_DATA_DC"/>
 			<item value="initSPI"/>
 			<item value="CMD_FPGA_ALL_OUTPUTS_ENABLED"/>
 			<item value="RX_TRANSFER_LENGTH_BYTES"/>
-			<item value="setupUartToReceiveTxData"/>
 			<item value="flag"/>
 			<item value="numAddressesToRead"/>
-			<item value="debugOffset"/>
-			<item value="debugWord32_0"/>
-			<item value="debugBaseAddress"/>
-			<item value="FPGA_channel_state"/>
-			<item value="FPGA_hsi_state"/>
-			<item value="enableSPI"/>
-			<item value="debugWordAddr"/>
-			<item value="fpgaControlWords"/>
-			<item value="fpgaSpiControlWords"/>
 		</list>
 		<list key="replacehistory">
 			<item value="fpgaBiDirControlWords"/>

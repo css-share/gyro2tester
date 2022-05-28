@@ -56,3 +56,4 @@ platform active {design_2_wrapper}
 platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
 platform clean
 platform generate
+platform generate

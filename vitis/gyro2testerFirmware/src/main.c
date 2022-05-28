@@ -25,12 +25,13 @@ extern void xil_printf(const char *format, ...);
 #define INTC_DEVICE_ID			XPAR_SCUGIC_SINGLE_DEVICE_ID
 #define UART_INT_IRQ_ID			XPAR_XUARTPS_1_INTR
 #define UART_BASEADDR			XPAR_XUARTPS_0_BASEADDR
-#define UART_RX_BUFFER_SIZE		8200
-#define UART_TX_BUFFER_SIZE		1000
+#define UART_RX_BUFFER_SIZE		0x10000
+#define UART_TX_BUFFER_SIZE		0x10000
 
 // possible states for main while loop used to drive actions
 #define SERVICE_UART			0x04
 
+// commands that can be received from the python application
 #define CMD_READ_REGISTER				0x41	// read 16-bit contents of gyro ic register
 #define CMD_WRITE_REGISTER				0x42	// write 16-bit value to gyro ic register
 #define CMD_WRITE_FPGA_REGISTER			0x43	// write 32-bit value to FPGA register
@@ -307,7 +308,7 @@ static void storefpgaBiDirControlWords(void);
 static void storeFpgaSpiControlWords(void);
 static int 	SetupUartPs(XScuGic *IntcInstPtr, XUartPs *UartInstPtr,
 					u16 DeviceId, u16 UartIntrId);
-static void setupUartToReceiveTxData(u8 lsByte, u8 msByte);
+static void setupUartToReceiveTxData(u8 *dataBuffer, u8 lsByte,u8 midByte, u8 msByte);
 static void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData);
 static int 	SetupUartInterruptSystem(XScuGic *IntcInstancePtr,
 					XUartPs *UartInstancePtr,
@@ -517,7 +518,7 @@ void waitForDataOverUart(void)
 
 
 // -------------------------------------------------------------------
-void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
+void setupUartToReceiveTxData(u8 *dataBuffer, u8 msByte, u8 midByte, u8 lsByte)
 {
 	u16 numBytesToReceive;
 
@@ -525,8 +526,8 @@ void setupUartToReceiveTxData(u8 msByte, u8 lsByte)
 	uartReceivingHsiTxData = TRUE;
 	finishedReceivingTxData = FALSE;
 
-	numBytesToReceive = lsByte + (msByte<<8);
-	XUartPs_Recv(&UartPs, UartRxData, numBytesToReceive);
+	numBytesToReceive = lsByte + (msByte<<16) + (midByte<<8);
+	XUartPs_Recv(&UartPs, dataBuffer, numBytesToReceive);
 }
 // -------------------------------------------------------------------
 
@@ -728,6 +729,7 @@ void read_uart_bytes(void)
 	u32 numBytesToSend;
 	u16 TxData,TxDcValue;
 	u32 otpBytes;
+	u8 *TxDdrBufferPtr;
 	unsigned int commandByte,regAddr,regData;
 
 	// loop through Uart Rx buffer and store received data
@@ -974,6 +976,15 @@ void read_uart_bytes(void)
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
+		case (CMD_FILL_TX_BUFFER_P_CHAN):
+			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
+			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
+			waitForDataOverUart();
+			TxDataFromUartToDma(TX_CHAN_P_OFFSET);
+			sendTxDmaPacket(&AxiDma, TX_CHAN_P_OFFSET);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
 		case (CMD_READ_RX_FPGA_DATA):
 
 			// first byte received is command, second byte is signal to measure,
@@ -983,16 +994,15 @@ void read_uart_bytes(void)
 			// send the requested number of bytes from the Rx buffer in DDR
 			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
-/*
-		case (CMD_FILL_TX_BUFFER_P_CHAN):
-			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
+
+		case (CMD_UPDATE_TX_CAR_DATA_SINE):
+			TxDdrBufferPtr = (u8 *)(TX_BUFFER_BASE + CARRIER_CHAN_TX_BUFF_OFFSET);
+			setupUartToReceiveTxData(TxDdrBufferPtr,UartRxData[1],UartRxData[2],UartRxData[3]);
 			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
 			waitForDataOverUart();
-			TxDataFromUartToDma(TX_CHAN_P_OFFSET);
-//			sendTxDmaPacket(&AxiDma, TX_CHAN_P_OFFSET);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
-*/
+
 		case (CMD_DEBUG1):
 			if (debugType == 1)
 			{
@@ -1018,8 +1028,8 @@ void read_uart_bytes(void)
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
-		case (CMD_UPDATE_FPGA_TX_DATA_STREAM):
-			updateTxDataStream(&axiDma);
+		case (CMD_UPDATE_FPGA_TX_DATA_STREAM):	// stop TXD stream, load Tx DDR buffers into FPGA block ram, and
+			updateTxDataStream(&axiDma);		// start the TXD data stream again
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
