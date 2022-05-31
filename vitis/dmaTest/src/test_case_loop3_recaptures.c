@@ -25,8 +25,7 @@ int main(){
 	int Status, Index;
 	u16 *TxBufferPtr;
 	u16 *RxBufferPtr;
-	u16 Value;
-	//unsigned int num[MAX_PKT_LEN];
+	u16 numDataPointsToCheck,numRecaptures;
 
 	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
 	RxBufferPtr = (u16 *)RX_BUFFER_BASE;
@@ -60,10 +59,16 @@ int main(){
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 
 	// load Tx DDR buffer with up counter data
-	Value = 0x0000;
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
-		TxBufferPtr[Index] = Value;
-		Value = (Value + 1);
+		if(Index < 0x4000){
+			TxBufferPtr[Index] = Index;				// 16k datapoint Car buffer is ramp up from zero
+		}
+		else if(Index < 0x8000){
+			TxBufferPtr[Index] = 0xFFFF - Index;	// 16k datapoint Node buffer is ramp down from 0xBFFF to 0x8000
+		}
+		else{
+			TxBufferPtr[Index] = 0x2000 + Index;	// 16k datapoint Anti-node buffer is ramp up from 0xA000 to 0xDFFF
+		}
 	}
 
 	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
@@ -164,152 +169,89 @@ int main(){
 
 
 	xil_printf("Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
-	xil_printf("Results of test_case_loop3 \r\n");
+	xil_printf("Results of test_case_loop3_recaptures.c, initial capture\r\n");
     
 
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
-		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
+	numDataPointsToCheck = MAX_PKT_LEN/2;
+	numRecaptures = 3;
+
+	for(Index = 0; Index < numDataPointsToCheck; Index++) {
+		xil_printf("Datapoint %04x:  RX %04x / TX %04x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
 
 	}
-
-    ////////////////////////////////////////////////////////////////////////
-    // RESTART                                                            //
-    ////////////////////////////////////////////////////////////////////////
-
-
-	// load Tx DDR buffer with down counter data and clear Rx buffer
-	Value = 0xFFFF;
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
-		TxBufferPtr[Index] = Value;
-		RxBufferPtr[Index] = 0x5555;
-		Value = (Value - 1);
-	}
-    
-
-
-    print("Restart test_case_loop3 \r\n");
-
-    XAxi_WriteReg(TXFIFO_REG0,0x00000000);
-    XAxi_WriteReg(RXFIFO_REG0,0x00000000);
-    XAxi_WriteReg(TXFIFO_REG1,0x00000001);
-    XAxi_WriteReg(RXFIFO_REG1,0x00000001);
-    XAxi_WriteReg(MM2S_DMACR, 0x00000004);
-    XAxi_WriteReg(S2MM_DMACR, 0x00000004);
-
-
-
-
-	// Initialize the XAxiDma device
-	CfgPtr = XAxiDma_LookupConfig(DMA_DEV_ID);
-	if (!CfgPtr) {
-		xil_printf("No config found for %d\r\n", DMA_DEV_ID);
-		return XST_FAILURE;
-	}
-
-	Status = XAxiDma_CfgInitialize(&AxiDma, CfgPtr);
-	if (Status != XST_SUCCESS) {
-		xil_printf("Initialization failed %d\r\n", Status);
-		return XST_FAILURE;
-	}
-
-	if(XAxiDma_HasSg(&AxiDma)){
-		xil_printf("Device configured as SG mode \r\n");
-		return XST_FAILURE;
-	}
-
-	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
-	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
-
-
-
-	XAxiDma_Reset(&AxiDma);
-
-
 
 
 
 
     ////////////////////////////////////////////////////////////////////////
+    // RECAPTURES RESTART THE RX FIFO ONLY                                //
     ////////////////////////////////////////////////////////////////////////
 
+	for(int i=0; i<numRecaptures; i++){
 
-    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
-    xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
-
-
-   xil_printf("Turn on RX DMA path ready to receive \r\n");
-    XAxi_WriteReg(S2MM_DMACR, 0x00000001);
-    XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE);
-    XAxi_WriteReg(S2MM_SA_MSB, 0x00000000);
-    XAxi_WriteReg(S2MM_LENGTH, MAX_PKT_LEN);
+		// clear Rx buffer
+		for(Index = 0; Index < MAX_PKT_LEN/2; Index ++){
+			RxBufferPtr[Index] = 0x5555;
+		}
 
 
-    xil_printf("Enable TX FIFO \r\n");
-    XAxi_WriteReg(TXFIFO_REG0, 0x00000001);
-    xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
+		xil_printf("\r\nRestart test_case_loop3_recaptures.c, recapture# %d \r\n",i+1);
+
+		Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+		XAxiDma_Reset(&AxiDma);
 
 
-    xil_printf("Send in TX DATA \r\n");
-    XAxi_WriteReg(MM2S_DMACR, 0x00000001);
-    XAxi_WriteReg(MM2S_SA, TX_BUFFER_BASE);
-    XAxi_WriteReg(MM2S_SA_MSB, 0x00000000);
-    XAxi_WriteReg(MM2S_LENGTH, MAX_PKT_LEN);
+		XAxi_WriteReg(RXFIFO_REG0,0x00000000);	// disable RxFifo push/pop
+		XAxi_WriteReg(RXFIFO_REG1,0x00000001);	// bit0=1 to clear RxFifo
+		XAxi_WriteReg(RXFIFO_REG1,0x00000000);	// bit0=1 to clear RxFifo
 
 
-	while(Buffer_Not_Full(TXFIFO_REG3)){
-	    if (Buffer_Not_Full(TXFIFO_REG3) == TRUE){
-	    			xil_printf("TXBUFFER still busy...\r\n");
-	    }
-	 }
-
-	 xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
-
-	 xil_printf("Enable RX FIFO PUSH  \r\n");
-	 XAxi_WriteReg(RXFIFO_REG0,0x00000001);
+		xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
 
 
-     xil_printf("Enable Bidir serial loopback \r\n");
-     XAxi_WriteReg(BIDIR_REG0, 0x01000000);
-     XAxi_WriteReg(BIDIR_REG2, 0x00000001);
-     XAxi_WriteReg(BIDIR_REG1, 0x00000011);
+	    xil_printf("Turn on RX DMA path ready to receive \r\n");
+		XAxi_WriteReg(S2MM_DMACR, 0x00000001);
+		XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE);
+		XAxi_WriteReg(S2MM_SA_MSB, 0x00000000);
+		XAxi_WriteReg(S2MM_LENGTH, MAX_PKT_LEN);
 
 
 
-	while(Buffer_Not_Full(RXFIFO_REG3)){
-	    if (Buffer_Not_Full(RXFIFO_REG3) == TRUE){
-	    			xil_printf("RXBUFFER still busy...\r\n");
-	    }
-	 }
-
-
-	xil_printf("Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
-
-	xil_printf("Enable RX FIFO POP \r\n");
-	XAxi_WriteReg(RXFIFO_REG0, 0x00000003);
-
-
-    while(XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA)){
-    		if (XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA) == TRUE){
-    			xil_printf("S2MM channel is busy...\r\n");
-    		}
-
-    	}
+		 xil_printf("Enable RX FIFO PUSH  \r\n");
+		 XAxi_WriteReg(RXFIFO_REG0,0x00000001);
 
 
 
-    print("Results of test_case_loop3 \r\n");
-    
+		while(Buffer_Not_Full(RXFIFO_REG3)){
+			if (Buffer_Not_Full(RXFIFO_REG3) == TRUE){
+						xil_printf("RXBUFFER still busy...\r\n");
+			}
+		 }
 
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
-		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
 
+		xil_printf("Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+
+		xil_printf("Enable RX FIFO POP \r\n");
+		XAxi_WriteReg(RXFIFO_REG0, 0x00000003);
+
+
+		while(XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA)){
+				if (XAxiDma_Busy(&AxiDma,XAXIDMA_DEVICE_TO_DMA) == TRUE){
+					xil_printf("S2MM channel is busy...\r\n");
+				}
+
+			}
+
+
+		xil_printf("Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+
+		xil_printf("Results of test_case_loop3_recaptures.c, recapture# %d  \r\n",i+1);
+
+
+		for(Index = 0; Index < numDataPointsToCheck; Index++) {
+			xil_printf("Datapoint %04x:  RX DATA %04x \r\n", Index, (unsigned int)RxBufferPtr[Index]);
+		}
 	}
-
-
-
-
 
 
     ////////////////////////////////////////////////////////////////////////

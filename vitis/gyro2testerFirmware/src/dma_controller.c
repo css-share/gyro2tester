@@ -6,7 +6,7 @@
 int RingIndex;
 
 
-void initDMA(XAxiDma *axiDmaPtr){
+u8 initDMA(XAxiDma *axiDmaPtr){
 
 	int Status;
 	XAxiDma_Config *CfgPtr; //DMA configuration pointer
@@ -31,6 +31,10 @@ void initDMA(XAxiDma *axiDmaPtr){
 
 	XAxiDma_IntrDisable(axiDmaPtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
 	XAxiDma_IntrDisable(axiDmaPtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+	XAxiDma_Reset(axiDmaPtr);
+
+	return 0;
 }
 //=========================================================================
 
@@ -39,7 +43,7 @@ void initDMA(XAxiDma *axiDmaPtr){
 
 
 //=========================================================================
-void initializeHsiDataStreams(void){
+void initializeHsiDataStreams(XAxiDma *axiDmaPtr){
 	int Index;
 	u16 *TxBufferPtr;
 	u16 *RxBufferPtr;
@@ -47,7 +51,7 @@ void initializeHsiDataStreams(void){
 	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
 	RxBufferPtr = (u16 *)RX_BUFFER_BASE;
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("\r\n\nTesting HSI Data Functions...\r\n");
     xil_printf("FPGA Build REViD %x \r\n", XAxi_ReadReg(TXFIFO_REG2));
     xil_printf("Initializing all DDR Tx/Rx buffers to zero \r\n");
@@ -60,6 +64,7 @@ void initializeHsiDataStreams(void){
 		RxBufferPtr[Index] = 0x0000;
 	}
 
+	XAxiDma_Reset(axiDmaPtr);
 
     ///////////////////////////////////////////////
     // AXI Stream Switch Settings                //
@@ -81,17 +86,17 @@ void initializeHsiDataStreams(void){
 
 
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("Initial Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
     xil_printf("Enable TX FIFO \r\n");
 #endif
     XAxi_WriteReg(TXFIFO_REG0, 0x00000001);
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("Fill Levels after Tx Fifo enabled %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 #endif
 
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("Send in TX DATA \r\n");
 #endif
     XAxi_WriteReg(MM2S_DMACR, 0x00000001);
@@ -102,29 +107,32 @@ void initializeHsiDataStreams(void){
 
 	while(Buffer_Not_Full(TXFIFO_REG3)){
 	    if (Buffer_Not_Full(TXFIFO_REG3) == TRUE){
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
 	    			xil_printf("TXBUFFER still busy...\r\n");
 #endif
 	    }
 	 }
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
 	xil_printf("Filled Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
 #endif
 
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
 	xil_printf("Configure Bidir block \r\n");
 #endif
-	XAxi_WriteReg(BIDIR_REG0, 0x00000000);		// bit24= 1 for loopback TXD into RXD, 0 for asic RXD
+	// next line should not be necessary if register default of 0x00000000 is wanted
+	//XAxi_WriteReg(BIDIR_REG0, 0x00000000);		// bit24=1 for loopback
+
 	// next line should only be uncommented if running this function as part of a test.
 	// Normal operation is to load FPGA code and run with all outputs disabled until
 	// gyro chip is powered up. Only enable FPGA outputs after gyro chip is powered.
 	// BIDIR_REG2, bit0 is used to enable/disable the BiDir block
-//	XAxi_WriteReg(BIDIR_REG2, 0x00000001);		// bit0=1 enables BiDir block
+	//XAxi_WriteReg(BIDIR_REG2, 0x00000001);		// bit0=1 enables BiDir block
+
 	XAxi_WriteReg(BIDIR_REG1, 0x00000011);		// serial data enable: bit0=out, bit1=in
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
 	xil_printf("Tx Fifo setup done. Data should be streaming out TXD pin \r\n");
 #endif
 }
@@ -142,28 +150,28 @@ void updateTxDataStream(XAxiDma *axiDmaPtr){
 	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
 	XAxiDma_Reset(axiDmaPtr);
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("\r\n    ***** Prints for updateTxDataStream() ***** \r\n");
     xil_printf("Disable TX FIFO \r\n");
 #endif
     XAxi_WriteReg(TXFIFO_REG0, 0x00000000);
 
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("After disabled, Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
     xil_printf("Clear TX FIFO \r\n");
 #endif
 
     XAxi_WriteReg(TXFIFO_REG1, 0x00000001);
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("After clear bit set, Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
     xil_printf("Clear bit status %x \r\n", XAxi_ReadReg(TXFIFO_REG1));
 #endif
 
     XAxi_WriteReg(TXFIFO_REG1, 0x00000000);
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("Clear bit set low again \r\n");
     xil_printf("After clear set low again, Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
     xil_printf("Send in new TX DATA \r\n");
@@ -176,20 +184,20 @@ void updateTxDataStream(XAxiDma *axiDmaPtr){
 
 	while(Buffer_Not_Full(TXFIFO_REG3)){
 	    if (Buffer_Not_Full(TXFIFO_REG3) == TRUE){
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
 	    	xil_printf("TXBUFFER still busy...\r\n");
 #endif
 	    }
 	 }
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
 	xil_printf("New filled Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
     xil_printf("Enable TX FIFO \r\n");
 #endif
 
     XAxi_WriteReg(TXFIFO_REG0, 0x00000001);
 
-#ifdef PRINT_DEBUGS
+#ifdef PRINT_TX_DEBUGS
     xil_printf("Tx Fifo Levels %x \r\n", XAxi_ReadReg(TXFIFO_REG3));
     xil_printf("Tx Fifo setup done. New data should be streaming out TXD pin \r\n");
 #endif
@@ -207,7 +215,7 @@ void updateTxDataStream(XAxiDma *axiDmaPtr){
 
 //=========================================================================
 void updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue){
-	unsigned int Index,channelOffset;
+	unsigned int Index,channelDdrBufferOffset;
 	u16 *TxBufferPtr;
 	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
 
@@ -215,20 +223,20 @@ void updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue){
 	switch (TxChannel){
 
 		case (CARRIER_CHANNEL):
-			channelOffset = CARRIER_CHAN_TX_BUFF_OFFSET;
+			channelDdrBufferOffset = CARRIER_CHAN_TX_BUFF_OFFSET;
 			break;
 
 		case (NODE_CHANNEL):
-			channelOffset = NODE_CHAN_TX_BUFF_OFFSET;
+			channelDdrBufferOffset = NODE_CHAN_TX_BUFF_OFFSET;
 			break;
 
 		case (ANTINODE_CHANNEL):
-			channelOffset = ANTINODE_CHAN_TX_BUFF_OFFSET;
+			channelDdrBufferOffset = ANTINODE_CHAN_TX_BUFF_OFFSET;
 			break;
 	}
 
 	for(Index = 0; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
-			TxBufferPtr[Index + channelOffset] = dcValue;
+			TxBufferPtr[Index + channelDdrBufferOffset] = dcValue;
 	}
 }
 //=========================================================================
@@ -239,7 +247,40 @@ void updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue){
 
 
 //=========================================================================
-void setupTxDdrBuffers1(void){
+void updateDdrTxBufferWithRamp(u8 TxChannel,u16 rampStartValue){
+	u16 Index,channelDdrBufferOffset;
+	u16 *TxBufferPtr;
+	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
+
+	// set the offset for data loading loop below
+	switch (TxChannel){
+
+		case (CARRIER_CHANNEL):
+			channelDdrBufferOffset = CARRIER_CHAN_TX_BUFF_OFFSET;
+			break;
+
+		case (NODE_CHANNEL):
+			channelDdrBufferOffset = NODE_CHAN_TX_BUFF_OFFSET;
+			break;
+
+		case (ANTINODE_CHANNEL):
+			channelDdrBufferOffset = ANTINODE_CHAN_TX_BUFF_OFFSET;
+			break;
+	}
+
+	for(Index = 0; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
+			TxBufferPtr[Index + channelDdrBufferOffset] = rampStartValue + Index;
+	}
+}
+//=========================================================================
+
+
+
+
+
+
+//=========================================================================
+void setupTxDdrBuffersPattern1(void){
 	unsigned int Index;
 	u16 *TxBufferPtr;
 	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
@@ -264,7 +305,7 @@ void setupTxDdrBuffers1(void){
 
 
 //=========================================================================
-void setupTxDdrBuffers2(void){
+void setupTxDdrBuffersPattern2(void){
 	unsigned int Index;
 	u16 *TxBufferPtr;
 	TxBufferPtr = (u16 *)TX_BUFFER_BASE;

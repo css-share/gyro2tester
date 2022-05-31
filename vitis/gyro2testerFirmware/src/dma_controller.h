@@ -3,7 +3,8 @@
 
 #include "xaxidma.h"
 
-//#define PRINT_DEBUGS
+//#define PRINT_TX_DEBUGS
+//#define PRINT_RX_DEBUGS
 
 #define DMA_DEV_ID		    XPAR_AXIDMA_0_DEVICE_ID
 #define DMA_BASEADDR        XPAR_AXIDMA_0_BASEADDR
@@ -22,6 +23,7 @@
 #define TEMP_SENSE_CHANNEL				3
 
 #define NUM_DATAPOINTS_PER_TX_CHANNEL	0x4000
+#define NUM_BYTES_PER_TX_CHANNEL		(NUM_DATAPOINTS_PER_TX_CHANNEL << 1)  // 2 bytes per datapoint
 
 #define CARRIER_CHAN_TX_BUFF_OFFSET		0
 #define NODE_CHAN_TX_BUFF_OFFSET		NUM_DATAPOINTS_PER_TX_CHANNEL
@@ -30,18 +32,19 @@
 
 
 //=============================
-void initDMA(XAxiDma *axiDmaPtr);
-void initializeHsiDataStreams(void);
-void updateTxDataStream(XAxiDma *axiDmaPtr);
-void updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue);
-void setupTxDdrBuffers1(void);
-void setupTxDdrBuffers2(void);
-u32 Buffer_Not_Full(UINTPTR BuffAddr);
-u32 XAxiDma_MM2Stransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length);
-u32 XAxiDma_MM2StransferCnfg(XAxiDma *InstancePtr, UINTPTR BuffAddr);
-void XAxiDma_MM2StransferRun(XAxiDma *InstancePtr, u32 Length);
-u32 XAxiDma_S2MMtransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length);
-u32 XAxiDma_S2MMtransferCnfg(XAxiDma *InstancePtr, UINTPTR BuffAddr);
-void XAxiDma_S2MMtransferRun(XAxiDma *InstancePtr, u32 Length);
+u8 		initDMA(XAxiDma *axiDmaPtr);
+void 	initializeHsiDataStreams(XAxiDma *axiDmaPtr);
+void 	updateTxDataStream(XAxiDma *axiDmaPtr);
+void 	updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue);
+void 	updateDdrTxBufferWithRamp(u8 TxChannel,u16 rampStartValue);
+void 	setupTxDdrBuffersPattern1(void);
+void 	setupTxDdrBuffersPattern2(void);
+u32 	Buffer_Not_Full(UINTPTR BuffAddr);
+u32 	XAxiDma_MM2Stransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length);
+u32 	XAxiDma_MM2StransferCnfg(XAxiDma *InstancePtr, UINTPTR BuffAddr);
+void 	XAxiDma_MM2StransferRun(XAxiDma *InstancePtr, u32 Length);
+u32 	XAxiDma_S2MMtransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length);
+u32 	XAxiDma_S2MMtransferCnfg(XAxiDma *InstancePtr, UINTPTR BuffAddr);
+void 	XAxiDma_S2MMtransferRun(XAxiDma *InstancePtr, u32 Length);
 
 #endif /* DMA_CONTROLLER_H_ */

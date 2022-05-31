@@ -278,9 +278,9 @@ XGpioPs MIO_gpio;
 #define DIRECTION_INPUT 0
 
 
-// Buffer for transmit packet. Must be 32-bit aligned to be used by DMA.
-u32 *Packet = (u32 *) TX_BUFFER_BASE;
-
+u16 *HsiTxDataCarBuffer =      (u16 *) (TX_BUFFER_BASE + CARRIER_CHAN_TX_BUFF_OFFSET);
+u16 *HsiTxDataNodeBuffer =     (u16 *) (TX_BUFFER_BASE + NODE_CHAN_TX_BUFF_OFFSET);
+u16 *HsiTxDataAntinodeBuffer = (u16 *) (TX_BUFFER_BASE + ANTINODE_CHAN_TX_BUFF_OFFSET);
 
 /**************************** Type Definitions *******************************/
 
@@ -308,7 +308,8 @@ static void storefpgaBiDirControlWords(void);
 static void storeFpgaSpiControlWords(void);
 static int 	SetupUartPs(XScuGic *IntcInstPtr, XUartPs *UartInstPtr,
 					u16 DeviceId, u16 UartIntrId);
-static void setupUartToReceiveTxData(u8 *dataBuffer, u8 lsByte,u8 midByte, u8 msByte);
+static void setupUartToReceiveHsiTxData(u8 lsByte,u8 midByte, u8 msByte);
+static void sendReceivedHsiTxDataToDdrBuffer(u16 *DdrTxBuffer);
 static void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData);
 static int 	SetupUartInterruptSystem(XScuGic *IntcInstancePtr,
 					XUartPs *UartInstancePtr,
@@ -503,6 +504,15 @@ void nops(unsigned int num) {
 
 
 // -------------------------------------------------------------------
+void sendReceivedHsiTxDataToDdrBuffer(u16 *ddrTxBuffer){
+    for(i = 0; i < NUM_DATAPOINTS_PER_TX_CHANNEL; i++) {
+        ddrTxBuffer[i] = UartRxData[2*i] + (UartRxData[(2*i)+1]<<8);
+    }
+}
+// -------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------
 void waitForDataOverUart(void)
 {
 	u8 abortUartWaiting = FALSE;	//this is a way to use debugger to
@@ -518,7 +528,7 @@ void waitForDataOverUart(void)
 
 
 // -------------------------------------------------------------------
-void setupUartToReceiveTxData(u8 *dataBuffer, u8 msByte, u8 midByte, u8 lsByte)
+void setupUartToReceiveHsiTxData(u8 msByte, u8 midByte, u8 lsByte)
 {
 	u16 numBytesToReceive;
 
@@ -526,8 +536,9 @@ void setupUartToReceiveTxData(u8 *dataBuffer, u8 msByte, u8 midByte, u8 lsByte)
 	uartReceivingHsiTxData = TRUE;
 	finishedReceivingTxData = FALSE;
 
-	numBytesToReceive = lsByte + (msByte<<16) + (midByte<<8);
-	XUartPs_Recv(&UartPs, dataBuffer, numBytesToReceive);
+	numBytesToReceive = (msByte<<16) + (midByte<<8) + lsByte;
+	//XUartPs_Recv(&UartPs, dataBuffer, numBytesToReceive);
+	XUartPs_Recv(&UartPs, UartRxData, numBytesToReceive);
 }
 // -------------------------------------------------------------------
 
@@ -727,7 +738,7 @@ void read_uart_bytes(void)
 	u8 numBytesReceived = 0;
 	u16 numPoints;
 	u32 numBytesToSend;
-	u16 TxData,TxDcValue;
+	u16 TxData,TxDcValue,rampStartValue;
 	u32 otpBytes;
 	u8 *TxDdrBufferPtr;
 	unsigned int commandByte,regAddr,regData;
@@ -975,7 +986,7 @@ void read_uart_bytes(void)
 //			runDmaTestRxBypass();
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
-
+/*
 		case (CMD_FILL_TX_BUFFER_P_CHAN):
 			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
 			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
@@ -984,9 +995,8 @@ void read_uart_bytes(void)
 			sendTxDmaPacket(&AxiDma, TX_CHAN_P_OFFSET);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
-
+*/
 		case (CMD_READ_RX_FPGA_DATA):
-
 			// first byte received is command, second byte is signal to measure,
 			// third and fourth bytes are 16-bit number of measurements MSbyte(3rd) LSbyte(4th)
 			numBytesToSend = (u32)( (UartRxData[1]<<16) + (UartRxData[2]<<8) + (UartRxData[3]) );
@@ -995,19 +1005,35 @@ void read_uart_bytes(void)
 			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
 
-		case (CMD_UPDATE_TX_CAR_DATA_SINE):
-			TxDdrBufferPtr = (u8 *)(TX_BUFFER_BASE + CARRIER_CHAN_TX_BUFF_OFFSET);
-			setupUartToReceiveTxData(TxDdrBufferPtr,UartRxData[1],UartRxData[2],UartRxData[3]);
-			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
-			waitForDataOverUart();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
 		case (CMD_DEBUG1):
 			if (debugType == 1)
 			{
 
 			}
+			break;
+
+		case (CMD_UPDATE_TX_CAR_DATA_SINE):
+			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
+			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
+			waitForDataOverUart();
+			sendReceivedHsiTxDataToDdrBuffer(HsiTxDataCarBuffer);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_NODE_DATA_SINE):
+			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
+			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
+			waitForDataOverUart();
+			sendReceivedHsiTxDataToDdrBuffer(HsiTxDataNodeBuffer);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_ANODE_DATA_SINE):
+			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
+			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
+			waitForDataOverUart();
+			sendReceivedHsiTxDataToDdrBuffer(HsiTxDataAntinodeBuffer);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
 		case (CMD_UPDATE_TX_CAR_DATA_DC):
@@ -1025,6 +1051,24 @@ void read_uart_bytes(void)
 		case (CMD_UPDATE_TX_ANODE_DATA_DC):
 			TxDcValue = (UartRxData[1]<<8) + UartRxData[2];
 			updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,TxDcValue);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_CAR_DATA_RAMP):
+			rampStartValue = (UartRxData[1]<<8) + UartRxData[2];
+			updateDdrTxBufferWithRamp(CARRIER_CHANNEL,TxDcValue);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_NODE_DATA_RAMP):
+			rampStartValue = (UartRxData[1]<<8) + UartRxData[2];
+			updateDdrTxBufferWithRamp(NODE_CHANNEL,TxDcValue);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_UPDATE_TX_ANODE_DATA_RAMP):
+			rampStartValue = (UartRxData[1]<<8) + UartRxData[2];
+			updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,TxDcValue);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
@@ -1632,7 +1676,7 @@ int main() {
     setSPIClockDivision(SPI_clock_division_setting);
     initUart();
 	initDMA(&axiDma);
-	initializeHsiDataStreams();
+	initializeHsiDataStreams(&axiDma);
 
 /*
 	//===============================================
@@ -1643,11 +1687,11 @@ int main() {
 	enableHSI();
 	initDMA(&axiDma);
 	initializeHsiDataStreams();
-	setupTxDdrBuffers1();
+	setupTxDdrBuffersPattern1();
 	updateTxDataStream(&axiDma);
-	setupTxDdrBuffers2();
+	setupTxDdrBuffersPattern2();
 	updateTxDataStream(&axiDma);
-	setupTxDdrBuffers1();
+	setupTxDdrBuffersPattern1();
 	updateTxDataStream(&axiDma);
 	//
 	//===============================================
