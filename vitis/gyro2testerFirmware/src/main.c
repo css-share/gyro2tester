@@ -818,13 +818,16 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_READ_OTP_DATA):
+/*
 			otpBytes = readOTP32bits();
 
 			//4 8-bit values to send back over UART
 			send_data_over_UART(4,(u8*)&otpBytes);
+*/
 			break;
 
 		case (CMD_PROG_OTP_CHIP_ID):
+/*
 			//verify 3 bytes for chipID received after command byte
 			if (numBytesReceived<4)
 			{
@@ -832,15 +835,18 @@ void read_uart_bytes(void)
 			}
 			send_byte_over_UART(ProgramOTP_chipID( (UartRxData[1]<<16) |
 						(UartRxData[2]<<8) | UartRxData[3]));
+*/
 			break;
 
 		case (CMD_PROG_OTP_VBG_TRIM):
+/*
 			//verify 1 byte for trim value received after command byte
 			if (numBytesReceived<2)
 			{
 				return;
 			}
 			send_byte_over_UART(ProgramOTP_VbgTrim(UartRxData[1]));
+*/
 			break;
 
 		case (CMD_READ_FPGA_TX_CTRL_WORDS):
@@ -1056,19 +1062,19 @@ void read_uart_bytes(void)
 
 		case (CMD_UPDATE_TX_CAR_DATA_RAMP):
 			rampStartValue = (UartRxData[1]<<8) + UartRxData[2];
-			updateDdrTxBufferWithRamp(CARRIER_CHANNEL,TxDcValue);
+			updateDdrTxBufferWithRamp(CARRIER_CHANNEL,rampStartValue);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
 		case (CMD_UPDATE_TX_NODE_DATA_RAMP):
 			rampStartValue = (UartRxData[1]<<8) + UartRxData[2];
-			updateDdrTxBufferWithRamp(NODE_CHANNEL,TxDcValue);
+			updateDdrTxBufferWithRamp(NODE_CHANNEL,rampStartValue);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
 		case (CMD_UPDATE_TX_ANODE_DATA_RAMP):
 			rampStartValue = (UartRxData[1]<<8) + UartRxData[2];
-			updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,TxDcValue);
+			updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,rampStartValue);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
