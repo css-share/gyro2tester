@@ -3,8 +3,13 @@
 
 #include "xaxidma.h"
 
+//=========================================================
+// uncomment these defines for prints over UART during test
 //#define PRINT_TX_DEBUGS
 //#define PRINT_RX_DEBUGS
+//#define PRINT_RX_BUFFER_ON_CAPTURE
+//=========================================================
+
 
 #define DMA_DEV_ID		    XPAR_AXIDMA_0_DEVICE_ID
 #define DMA_BASEADDR        XPAR_AXIDMA_0_BASEADDR
@@ -28,6 +33,14 @@
 #define CARRIER_CHAN_TX_BUFF_OFFSET		0
 #define NODE_CHAN_TX_BUFF_OFFSET		NUM_DATAPOINTS_PER_TX_CHANNEL
 #define ANTINODE_CHAN_TX_BUFF_OFFSET	(NUM_DATAPOINTS_PER_TX_CHANNEL << 1)
+
+#define TEST_ADC_CHAN_RX_BUFF_OFFSET		0
+#define NODE_CHAN_RX_BUFF_OFFSET		NUM_DATAPOINTS_PER_TX_CHANNEL
+#define ANTINODE_CHAN_RX_BUFF_OFFSET	(NUM_DATAPOINTS_PER_TX_CHANNEL << 1)
+
+#define RX_TADC_CHANNEL_BUFFER_BASE		RX_BUFFER_BASE
+#define RX_NODE_CHANNEL_BUFFER_BASE		(RX_BUFFER_BASE + NUM_BYTES_PER_TX_CHANNEL)
+#define RX_ANTINODE_CHANNEL_BUFFER_BASE	(RX_BUFFER_BASE + (NUM_BYTES_PER_TX_CHANNEL << 1))
 //=============================
 
 
@@ -35,11 +48,15 @@
 u8 		initDMA(XAxiDma *axiDmaPtr);
 void 	initializeHsiDataStreams(XAxiDma *axiDmaPtr);
 void 	updateTxDataStream(XAxiDma *axiDmaPtr);
+void 	captureRxHsiData(XAxiDma *axiDmaPtr);
 void 	updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue);
 void 	updateDdrTxBufferWithRamp(u8 TxChannel,u16 rampStartValue);
 void 	setupTxDdrBuffersPattern1(void);
 void 	setupTxDdrBuffersPattern2(void);
+void 	printRxDdrBufferResults(void);
 u32 	Buffer_Not_Full(UINTPTR BuffAddr);
+void 	setBiDirLoopbackMode(void);
+void 	clearBiDirLoopbackMode(void);
 u32 	XAxiDma_MM2Stransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length);
 u32 	XAxiDma_MM2StransferCnfg(XAxiDma *InstancePtr, UINTPTR BuffAddr);
 void 	XAxiDma_MM2StransferRun(XAxiDma *InstancePtr, u32 Length);

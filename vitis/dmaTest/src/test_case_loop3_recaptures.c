@@ -197,7 +197,7 @@ int main(){
 
 		xil_printf("\r\nRestart test_case_loop3_recaptures.c, recapture# %d \r\n",i+1);
 
-		Xil_DCacheFlushRange((UINTPTR)(RxBufferPtr-10), (MAX_PKT_LEN));
+		Xil_DCacheFlushRange((UINTPTR)(RxBufferPtr), (MAX_PKT_LEN));
 		XAxiDma_Reset(&AxiDma);
 
 

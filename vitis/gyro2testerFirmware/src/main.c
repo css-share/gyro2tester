@@ -49,7 +49,12 @@ extern void xil_printf(const char *format, ...);
 #define CMD_UPDATE_TX_CAR_DATA_RAMP 	0x76	// update the Tx Carrier data buffer with ramp data
 #define CMD_UPDATE_TX_NODE_DATA_RAMP 	0x77	// update the Tx Node data buffer with ramp data
 #define CMD_UPDATE_TX_ANODE_DATA_RAMP 	0x78	// update the Tx Anti-node data buffer with ramp data
-#define CMD_UPDATE_FPGA_TX_DATA_STREAM	0x7F	// reload FPGA block ram and restart the Tx data stream
+#define CMD_UPDATE_FPGA_TX_DATA_STREAM	0x79	// reload FPGA block ram and restart the Tx data stream
+#define CMD_CAPTURE_RX_HSI_DATA			0x7A	// use fpga fifo to separate channels before push to DDR buffer
+#define CMD_CAPTURE_RX_HSI_DATA_BYPASS	0x7B	// bypass Rx fifo, RXD straight to DDR buffer, channels interleaved
+#define CMD_READ_RX_TADC_BUFFER			0x7C	// send the Rx DDR buffer TADC channel contents out over UART
+#define CMD_READ_RX_NODE_BUFFER			0x7D	// send the Rx DDR buffer Node channel contents out over UART
+#define CMD_READ_RX_ANODE_BUFFER		0x7E	// send the Rx DDR buffer Anti-node channel contents out over UART
 #define CMD_PROG_OTP_CHIP_ID			0x81	// program the chip ID into OTP memory
 #define CMD_PROG_OTP_VBG_TRIM			0x82	// program the bandgap trim value into OTP memory
 #define CMD_READ_OTP_DATA				0x83	// read the 32-bit data stored in 2 16-bit OTP registers
@@ -1083,6 +1088,29 @@ void read_uart_bytes(void)
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
+		case (CMD_CAPTURE_RX_HSI_DATA):
+			captureRxHsiData(&axiDma);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_READ_RX_TADC_BUFFER):
+			captureRxHsiData(&axiDma);
+			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
+								(u8*)(RX_TADC_CHANNEL_BUFFER_BASE));
+			break;
+
+		case (CMD_READ_RX_NODE_BUFFER):
+			captureRxHsiData(&axiDma);
+			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
+								(u8*)(RX_NODE_CHANNEL_BUFFER_BASE));
+			break;
+
+		case (CMD_READ_RX_ANODE_BUFFER):
+			captureRxHsiData(&axiDma);
+			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
+								(u8*)(RX_ANTINODE_CHANNEL_BUFFER_BASE));
+			break;
+
 	}
 }
 //------------------------------------------------------------
@@ -1689,10 +1717,13 @@ int main() {
 	//===============================================
 	// Section below for debugging Tx data updates.
 	// Comment out when not testing.
+	// To use these tests below uncomment the line
+	// #define PRINT_TX_DEBUGS in dma_controller.h and recompile.
+	// Then run main() with a uart terminal open to see output
+	// messages, use logic analyzer to test output changes.
 	//
 	enableHSI();
-	initDMA(&axiDma);
-	initializeHsiDataStreams();
+	initializeHsiDataStreams(&axiDma);
 	setupTxDdrBuffersPattern1();
 	updateTxDataStream(&axiDma);
 	setupTxDdrBuffersPattern2();
@@ -1710,14 +1741,21 @@ int main() {
 	//===============================================
 	// Section below for debugging Rx data captures.
 	// Comment out when not testing.
+	// To use these tests below uncomment the line
+	// #define PRINT_RX_DEBUGS in dma_controller.h and recompile.
+	// Then run main() with a uart terminal open to see
+	// results of data captures
 	//
-	enableSPI();
 	enableHSI();
-	FPGA_outputs_state = 1;		// 1=on, 2=off
-	//
-	// uncomment one of the below tests to run
-	runDmaTestRxBypass();
-    //runDmaTest();
+	updateDdrTxBufferWithRamp(CARRIER_CHANNEL,0x0000);
+	updateDdrTxBufferWithRamp(NODE_CHANNEL,0x5000);
+	updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,0xA000);
+	updateTxDataStream(&axiDma);
+	setBiDirLoopbackMode();
+	captureRxHsiData(&axiDma);
+	printRxDdrBufferResults();
+	captureRxHsiData(&axiDma);
+	printRxDdrBufferResults();
 	//
     //===============================================
     //===============================================
