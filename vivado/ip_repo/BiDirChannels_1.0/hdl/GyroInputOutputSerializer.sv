@@ -159,7 +159,7 @@ clock_divider_by_10 SYNC_CLK_DIV (
   logic              rx_sync_ok_to_push;
 
 
-
+  assign txclk = clock_div_2;
 
   
 always @ (posedge clk)
@@ -339,7 +339,7 @@ assign tx_enable = !txclk_s & txclk;
   assign tx_fifo_tready_t = (cur_state == LOAD) && tx_enable;
 
   assign shift_oe =  (cur_state == SHIFT);
-  assign txclk = clock_div_2;
+
  
 ///////////////////////////////////////////////////
 // High Speed Output assignments                 //
@@ -348,13 +348,27 @@ assign tx_enable = !txclk_s & txclk;
   logic dsync_tx; 
   logic mck_tx;
   
-  assign mck_tx        = (txclk & enable & shift_oe);
+ // assign mck_tx        = (txclk & enable & shift_oe);
   assign DTX           = (shift_dout & enable & shift_oe);
   assign dsync_tx      = ((count_48 == 'd0) & enable); 
    
 
 
+ 
+
+ always @(posedge clk) 
+    begin  
+    if (~rstn)   
+      mck_tx <= 0;
+    else
+   //   mck_tx <= (txclk & enable & shift_oe);
+      mck_tx <= txclk;      
+  end
   
+ 
+//assign MCK = txclk & enable;
+
+assign MCK = (mck_tx & enable & shift_oe);
 
   
 
@@ -394,7 +408,8 @@ assign tx_enable = !txclk_s & txclk;
   
 
 
-assign MCK = txclk & enable;
+
+  
   
 //////////////////////////////////////////////
 // Input Channel                            //

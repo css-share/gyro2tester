@@ -17,15 +17,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="77,388.610 ns"></ZoomStartTime>
-      <ZoomEndTime time="77,612.278 ns"></ZoomEndTime>
-      <Cursor1Time time="77,575.000 ns"></Cursor1Time>
+      <ZoomStartTime time="1,166,244.044 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,167,471.690 ns"></ZoomEndTime>
+      <Cursor1Time time="1,166,245.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="368"></NameColumnWidth>
-      <ValueColumnWidth column_width="113"></ValueColumnWidth>
+      <NameColumnWidth column_width="176"></NameColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="90" />
+   <WVObjectSize size="99" />
    <wave_markers>
       <marker label="" time="996550000" />
       <marker label="" time="169685000" />
@@ -390,5 +390,42 @@
    <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/LOOP2/S00_AXIS_tvalid">
       <obj_property name="ElementShortName">S00_AXIS_tvalid</obj_property>
       <obj_property name="ObjectShortName">S00_AXIS_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/mck_tx">
+      <obj_property name="ElementShortName">mck_tx</obj_property>
+      <obj_property name="ObjectShortName">mck_tx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/shift_last">
+      <obj_property name="ElementShortName">shift_last</obj_property>
+      <obj_property name="ObjectShortName">shift_last</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/txclk">
+      <obj_property name="ElementShortName">txclk</obj_property>
+      <obj_property name="ObjectShortName">txclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/MCK_N">
+      <obj_property name="ElementShortName">MCK_N</obj_property>
+      <obj_property name="ObjectShortName">MCK_N</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/cur_state">
+      <obj_property name="ElementShortName">cur_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">cur_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/DSYNC">
+      <obj_property name="ElementShortName">DSYNC</obj_property>
+      <obj_property name="ObjectShortName">DSYNC</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/DTX">
+      <obj_property name="ElementShortName">DTX</obj_property>
+      <obj_property name="ObjectShortName">DTX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/MCK_P">
+      <obj_property name="ElementShortName">MCK_P</obj_property>
+      <obj_property name="ObjectShortName">MCK_P</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/count_48">
+      <obj_property name="ElementShortName">count_48[5:0]</obj_property>
+      <obj_property name="ObjectShortName">count_48[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

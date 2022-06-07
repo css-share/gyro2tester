@@ -27,11 +27,11 @@
 //`define SPI_TEST
 //`define LOOP1_TEST
 //`define LOOP2_TEST
-//`define LOOP3_TEST
+`define LOOP3_TEST
 //`define RXPAT_TEST
 //`define LOOP2_TXPAT_TEST
 //`define LOOP2_RXBYP_TEST
-`define LOOP2_RXBYP_RESTART_TEST
+//`define LOOP2_RXBYP_RESTART_TEST
 //`define LOOP2_TEST_RESTART
 //`define LOOP3_TEST_RESTART
 //`define LOOP3_RXBYP_TEST

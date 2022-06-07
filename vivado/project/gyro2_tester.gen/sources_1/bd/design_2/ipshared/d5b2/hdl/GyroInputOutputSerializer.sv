@@ -348,7 +348,7 @@ assign tx_enable = !txclk_s & txclk;
   logic dsync_tx; 
   logic mck_tx;
   
-  assign mck_tx        = (txclk & enable & shift_oe);
+  assign mck_tx        = (~txclk & enable & shift_oe);
   assign DTX           = (shift_dout & enable & shift_oe);
   assign dsync_tx      = ((count_48 == 'd0) & enable); 
    
@@ -394,7 +394,11 @@ assign tx_enable = !txclk_s & txclk;
   
 
 
-assign MCK = txclk & enable;
+//assign MCK = txclk & enable;
+
+assign MCK = mck_tx;
+
+  
   
 //////////////////////////////////////////////
 // Input Channel                            //

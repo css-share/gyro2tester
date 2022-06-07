@@ -1,3 +1,68 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/data_processor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_processor
+WARNING: [VRFC 10-3676] redeclaration of ansi port 'state_reg' is not allowed [/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/data_processor.v:17]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/iobuf_xil.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module iobuf_xil
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/common/led_driver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module led_driver
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_processing_system7_0_0/sim/design_2_processing_system7_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_processing_system7_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_0_even_0/sim/design_2_blk_mem_0_even_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_0_even_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_0_odd_0/sim/design_2_blk_mem_0_odd_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_0_odd_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_2_odd_0/sim/design_2_blk_mem_2_odd_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_2_odd_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_1_even_1/sim/design_2_blk_mem_1_even_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_1_even_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_1_even_0/sim/design_2_blk_mem_1_even_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_1_even_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_0_even_1/sim/design_2_blk_mem_0_even_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_0_even_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/14ec/hdl/axis_stream_fifo_v1_0_S00_AXI.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_stream_fifo_v1_0_S00_AXI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/14ec/src/gen_sync_que_af.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gen_sync_que_af
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/common/pipe_que_48_32.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pipe_que_48_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/14ec/hdl/axis_stream_fifo_v1_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axis_stream_fifo_v1_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_RxFIFO_0/sim/design_2_RxFIFO_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_RxFIFO_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_axis_switch_0_0/sim/design_2_axis_switch_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_axis_switch_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_axis_switch_1_0/sim/design_2_axis_switch_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_axis_switch_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_data_processor_0_0/sim/design_2_data_processor_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_data_processor_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_axis_switch_2_0/sim/design_2_axis_switch_2_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_axis_switch_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_axis_switch_3_0/sim/design_2_axis_switch_3_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_axis_switch_3_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/c43f/hdl/SPI_ip_v1_0_S00_AXI.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI_ip_v1_0_S00_AXI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/c43f/src/dff.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/c43f/hdl/SPI_ip_v1_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SPI_ip_v1_0
+INFO: [VRFC 10-2458] undeclared symbol enable, assumed default net type wire [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/c43f/hdl/SPI_ip_v1_0.sv:170]
+INFO: [VRFC 10-2458] undeclared symbol spi_busy_clr, assumed default net type wire [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/c43f/hdl/SPI_ip_v1_0.sv:226]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_SPI_ip_0_0/sim/design_2_SPI_ip_0_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_SPI_ip_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_iobuf_xil_0_0/sim/design_2_iobuf_xil_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_iobuf_xil_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/sim/bd_0c5c.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0c5c
+INFO: [VRFC 10-311] analyzing module clk_map_imp_1S8ISXI
+INFO: [VRFC 10-311] analyzing module m00_exit_pipeline_imp_8NDKQ5
+INFO: [VRFC 10-311] analyzing module m00_nodes_imp_LY38JL
+INFO: [VRFC 10-311] analyzing module s00_entry_pipeline_imp_17AGKDQ
+INFO: [VRFC 10-311] analyzing module s00_nodes_imp_127TQUS
+INFO: [VRFC 10-311] analyzing module s01_entry_pipeline_imp_22JBP6
+INFO: [VRFC 10-311] analyzing module s01_nodes_imp_5QRDXE
+INFO: [VRFC 10-311] analyzing module switchboards_imp_1QSE49S
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_0/sim/bd_0c5c_one_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bd_0c5c_one_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_2/sim/bd_0c5c_arsw_0.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_0c5c_arsw_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_3/sim/bd_0c5c_rsw_0.sv" into library xil_defaultlib
@@ -48,6 +113,67 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tes
 INFO: [VRFC 10-311] analyzing module bd_0c5c_m00bn_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/bd_0/ip/ip_26/sim/bd_0c5c_m00e_0.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bd_0c5c_m00e_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_smartconnect_0_0/sim/design_2_smartconnect_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_smartconnect_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_xbar_0/sim/design_2_xbar_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_xbar_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk0_mem_tx_odd_0/sim/design_2_blk0_mem_tx_odd_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk0_mem_tx_odd_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk1_mem_tx_odd_0/sim/design_2_blk1_mem_tx_odd_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk1_mem_tx_odd_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_1_even_2/sim/design_2_blk_mem_1_even_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_1_even_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk1_mem_tx_even_0/sim/design_2_blk1_mem_tx_even_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk1_mem_tx_even_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk2_mem_tx_even_0/sim/design_2_blk2_mem_tx_even_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk2_mem_tx_even_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_blk_mem_tx_even_0/sim/design_2_blk_mem_tx_even_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_blk_mem_tx_even_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_xlconcat_1_0/sim/design_2_xlconcat_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_xlconcat_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_led_driver_0_0/sim/design_2_led_driver_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_led_driver_0_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/src/BiDirChannels_v1_0_S00_AXI.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BiDirChannels_v1_0_S00_AXI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/hdl/GyroInputOutputSerializer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module GyroInputOutputSerializer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/src/clock_divider_by_10.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider_by_10
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/src/clock_divider_by_2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider_by_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/src/mux_8x1_1bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_8x1_1bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/src/upCounter8Bits.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module upCounter8Bits
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/2840/hdl/BiDirChannels_v1_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BiDirChannels_v1_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_BiDirChannels_0_0/sim/design_2_BiDirChannels_0_0.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_BiDirChannels_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ip/design_2_auto_pc_0/sim/design_2_auto_pc_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_auto_pc_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMA_imp_MEFHMS
+INFO: [VRFC 10-311] analyzing module LOOP1_imp_UYGTN7
+INFO: [VRFC 10-311] analyzing module LOOP2_imp_NW9JVA
+INFO: [VRFC 10-311] analyzing module REGISTER_DEMUX_imp_1T65VR6
+INFO: [VRFC 10-311] analyzing module RESETS_imp_1YVNN1J
+INFO: [VRFC 10-311] analyzing module RX_BUFFER_imp_1JAE102
+INFO: [VRFC 10-311] analyzing module SPI_imp_1GZSG7G
+INFO: [VRFC 10-311] analyzing module TX_BUFFER_imp_QRKGWQ
+INFO: [VRFC 10-311] analyzing module design_2
+INFO: [VRFC 10-311] analyzing module design_2_ps7_0_axi_periph_0
+INFO: [VRFC 10-311] analyzing module m00_couplers_imp_1RNKOCV
+INFO: [VRFC 10-311] analyzing module m01_couplers_imp_2U2XTA
+INFO: [VRFC 10-311] analyzing module m02_couplers_imp_1QCX618
+INFO: [VRFC 10-311] analyzing module m03_couplers_imp_4F1VSD
+INFO: [VRFC 10-311] analyzing module m04_couplers_imp_1U8WDHL
+INFO: [VRFC 10-311] analyzing module m05_couplers_imp_FN5IG
+INFO: [VRFC 10-311] analyzing module m06_couplers_imp_1T87SGA
+INFO: [VRFC 10-311] analyzing module m07_couplers_imp_16MLNV
+INFO: [VRFC 10-311] analyzing module m08_couplers_imp_1V7KTHF
+INFO: [VRFC 10-311] analyzing module s00_couplers_imp_7UZ7KD
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/hdl/design_2_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_2_wrapper
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/funcsim/models/spi_dummy_reg.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module spi_dummy_reg
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/testbench/gyro_tb.sv" into library xil_defaultlib

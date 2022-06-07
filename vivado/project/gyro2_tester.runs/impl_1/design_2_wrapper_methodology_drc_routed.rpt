@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Mon Jun  6 11:21:59 2022
-| Host         : xsjlc200176 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Tue Jun  7 10:45:57 2022
+| Host         : xsjl24914 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 39
+             Violations found: 41
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                       | Violations |
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | TIMING-14 | Critical Warning | LUT on the clock tree                                             | 3          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                                      | 1          |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                 | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                                     | 8          |
+| TIMING-18 | Warning          | Missing input or output delay                                     | 10         |
 | TIMING-30 | Warning          | Sub-optimal master source pin selection for generated clock       | 2          |
 | TIMING-47 | Warning          | False path or asynchronous clock group between synchronous clocks | 11         |
 | XDCH-2    | Warning          | Same min and max delay values on IO port                          | 13         |
@@ -107,10 +107,20 @@ Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on SPI_CSN relative to clock(s) clk_fpga_0
+An output delay is missing on MCK_N relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on MCK_P relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on SPI_CSN relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#10 Warning
 Missing input or output delay  
 An output delay is missing on SYNC_CK relative to clock(s) clk_fpga_0
 Related violations: <none>

@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Mon Jun  6 11:16:34 2022
-// Host        : xsjlc200176 running 64-bit CentOS Linux release 7.4.1708 (Core)
+// Date        : Tue Jun  7 10:41:00 2022
+// Host        : xsjl24911 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode synth_stub
 //               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_stub.v
 // Design      : design_2_axis_stream_txfifo_0_2
