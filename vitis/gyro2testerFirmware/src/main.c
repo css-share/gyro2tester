@@ -1094,19 +1094,16 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_READ_RX_TADC_BUFFER):
-			captureRxHsiData(&axiDma);
 			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
 								(u8*)(RX_TADC_CHANNEL_BUFFER_BASE));
 			break;
 
 		case (CMD_READ_RX_NODE_BUFFER):
-			captureRxHsiData(&axiDma);
 			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
 								(u8*)(RX_NODE_CHANNEL_BUFFER_BASE));
 			break;
 
 		case (CMD_READ_RX_ANODE_BUFFER):
-			captureRxHsiData(&axiDma);
 			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
 								(u8*)(RX_ANTINODE_CHANNEL_BUFFER_BASE));
 			break;
