@@ -27,11 +27,12 @@
 //`define SPI_TEST
 //`define LOOP1_TEST
 //`define LOOP2_TEST
-`define LOOP3_TEST
+//`define LOOP3_TEST
 //`define RXPAT_TEST
 //`define LOOP2_TXPAT_TEST
 //`define LOOP2_RXBYP_TEST
 //`define LOOP2_RXBYP_RESTART_TEST
+`define LOOP3_RXBYP_RESTART_TEST
 //`define LOOP2_TEST_RESTART
 //`define LOOP3_TEST_RESTART
 //`define LOOP3_RXBYP_TEST
@@ -64,6 +65,9 @@
 `define LOOP3_RESTART_RESULTS2        `"`FILENAME_PATH/test_loop3_restart_results_2.txt`"
 `define LOOP2_RXBYP_RESTART_RESULTS   `"`FILENAME_PATH/test_loop2_rxbyp_restart_results.txt`"
 `define LOOP2_RXBYP_RESTART_RESULTS2  `"`FILENAME_PATH/test_loop2_rxbyp_restart_results_2.txt`"
+`define LOOP3_RXBYP_RESTART_RESULTS   `"`FILENAME_PATH/test_loop3_rxbyp_restart_results.txt`"
+`define LOOP3_RXBYP_RESTART_RESULTS2  `"`FILENAME_PATH/test_loop3_rxbyp_restart_results_2.txt`"
+
 
 module tb;
 
@@ -117,7 +121,7 @@ module tb;
   `include "test_case_loop2_restart.sv"  
   `include "test_case_loop3_restart.sv"  
   `include "test_case_loop2_rxbyp_restart.sv"
-
+  `include "test_case_loop3_rxbyp_restart.sv"
 
 
   
@@ -246,16 +250,18 @@ module tb;
 
 
    `ifdef LOOP3_TEST_RESTART   
-         test_loop3_restart(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP3_RESTART_RESULTS), .test_fout_2(`LOOP3_RESTART_RESULTS2));
-      //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
+         test_loop3_restart(.test_fin(`TEST_32_PACKED), .test_fin_2(`TEST_32_PACKED_REV), .test_fout(`LOOP3_RESTART_RESULTS), .test_fout_2(`LOOP3_RESTART_RESULTS2));
     `endif
-
-
 
    `ifdef LOOP2_RXBYP_RESTART_TEST  
          test_loop2_rxbyp_restart(.test_fin(`TEST_32_PACKED), .test_fin_2(`TEST_32_PACKED_REV), .test_fout(`LOOP2_RXBYP_RESTART_RESULTS), .test_fout_2(`LOOP2_RXBYP_RESTART_RESULTS2));
-      //   compare_results(.test_fin(`TEST_32_PACKED), .test_fout(`LOOP1_RESULTS)); 
     `endif
+
+
+   `ifdef LOOP3_RXBYP_RESTART_TEST   
+         test_loop3_rxbyp_restart(.test_fin(`TEST_32_PACKED), .test_fin_2(`TEST_32_PACKED_REV), .test_fout(`LOOP3_RXBYP_RESTART_RESULTS), .test_fout_2(`LOOP3_RXBYP_RESTART_RESULTS2));
+    `endif
+
 
 
       

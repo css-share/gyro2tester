@@ -17,20 +17,22 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,166,244.044 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,167,471.690 ns"></ZoomEndTime>
-      <Cursor1Time time="1,166,245.000 ns"></Cursor1Time>
+      <ZoomStartTime time="16,566,573.894 ns"></ZoomStartTime>
+      <ZoomEndTime time="16,570,209.895 ns"></ZoomEndTime>
+      <Cursor1Time time="16,568,045.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="176"></NameColumnWidth>
-      <ValueColumnWidth column_width="105"></ValueColumnWidth>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="99" />
+   <WVObjectSize size="121" />
    <wave_markers>
       <marker label="" time="996550000" />
       <marker label="" time="169685000" />
       <marker label="" time="271432662" />
       <marker label="" time="932905000" />
+      <marker label="" time="32879045000" />
+      <marker label="" time="16826535000" />
    </wave_markers>
    <wvobject type="logic" fp_name="/tb/tb_ACLK">
       <obj_property name="ElementShortName">tb_ACLK</obj_property>
@@ -335,6 +337,94 @@
       <obj_property name="ElementShortName">txfifo_full</obj_property>
       <obj_property name="ObjectShortName">txfifo_full</obj_property>
    </wvobject>
+   <wvobject fp_name="divider302" type="divider">
+      <obj_property name="label">BIDIR TX FIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/TX_BUFFER/M00_AXIS_tdata">
+      <obj_property name="ElementShortName">M00_AXIS_tdata[47:0]</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tdata[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/LOOP2/M00_AXIS_tdata">
+      <obj_property name="ElementShortName">M00_AXIS_tdata[47:0]</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tdata[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/LOOP2/M00_AXIS1_tdata">
+      <obj_property name="ElementShortName">M00_AXIS1_tdata[47:0]</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS1_tdata[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_fifo_tdata_t">
+      <obj_property name="ElementShortName">tx_fifo_tdata_t[47:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_tdata_t[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_qempty">
+      <obj_property name="ElementShortName">tx_sync_qempty</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_qempty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_qfull">
+      <obj_property name="ElementShortName">tx_sync_qfull</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_qfull</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_afull">
+      <obj_property name="ElementShortName">tx_sync_afull</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_afull</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_ok_to_push">
+      <obj_property name="ElementShortName">tx_sync_ok_to_push</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_ok_to_push</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_ok_to_pop">
+      <obj_property name="ElementShortName">tx_sync_ok_to_pop</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_ok_to_pop</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/debug_clear">
+      <obj_property name="ElementShortName">debug_clear</obj_property>
+      <obj_property name="ObjectShortName">debug_clear</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_fifo_tdata">
+      <obj_property name="ElementShortName">tx_fifo_tdata[47:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_tdata[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_push">
+      <obj_property name="ElementShortName">tx_sync_push</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_push</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_sync_pop">
+      <obj_property name="ElementShortName">tx_sync_pop</obj_property>
+      <obj_property name="ObjectShortName">tx_sync_pop</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_fifo_tdata">
+      <obj_property name="ElementShortName">tx_fifo_tdata[47:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_tdata[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_fifo_tvalid">
+      <obj_property name="ElementShortName">tx_fifo_tvalid</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_fifo_tready">
+      <obj_property name="ElementShortName">tx_fifo_tready</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_tready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/tx_fifo_tlast">
+      <obj_property name="ElementShortName">tx_fifo_tlast</obj_property>
+      <obj_property name="ObjectShortName">tx_fifo_tlast</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/rx_fifo_data">
+      <obj_property name="ElementShortName">rx_fifo_data[47:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_fifo_data[47:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/rx_fifo_valid">
+      <obj_property name="ElementShortName">rx_fifo_valid</obj_property>
+      <obj_property name="ObjectShortName">rx_fifo_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/rx_fifo_ready">
+      <obj_property name="ElementShortName">rx_fifo_ready</obj_property>
+      <obj_property name="ObjectShortName">rx_fifo_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/rx_fifo_last">
+      <obj_property name="ElementShortName">rx_fifo_last</obj_property>
+      <obj_property name="ObjectShortName">rx_fifo_last</obj_property>
+   </wvobject>
    <wvobject fp_name="divider229" type="divider">
    </wvobject>
    <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/RX_BUFFER/RxFIFO/inst/m00_axis_tready">
@@ -372,12 +462,10 @@
    <wvobject type="array" fp_name="/tb/u_dut/design_2_i/LOOP2/M00_AXIS1_tready">
       <obj_property name="ElementShortName">M00_AXIS1_tready[0:0]</obj_property>
       <obj_property name="ObjectShortName">M00_AXIS1_tready[0:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb/u_dut/design_2_i/LOOP2/M00_AXIS1_tvalid">
       <obj_property name="ElementShortName">M00_AXIS1_tvalid[0:0]</obj_property>
       <obj_property name="ObjectShortName">M00_AXIS1_tvalid[0:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb/u_dut/design_2_i/LOOP2/S00_AXIS_tdata">
       <obj_property name="ElementShortName">S00_AXIS_tdata[47:0]</obj_property>

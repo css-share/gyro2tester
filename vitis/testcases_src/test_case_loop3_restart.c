@@ -169,13 +169,14 @@ int main(){
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
 		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-
 	}
 
     ////////////////////////////////////////////////////////////////////////
     // RESTART                                                            //
     ////////////////////////////////////////////////////////////////////////
+
+    TxBufferPtr = (u16 *)TX_BUFFER_BASE + MAX_PKT_LEN;
+	RxBufferPtr = (u16 *)RX_BUFFER_BASE + MAX_PKT_LEN;
 
 
 	// load Tx DDR buffer with down counter data and clear Rx buffer
@@ -190,13 +191,23 @@ int main(){
 
     print("Restart test_case_loop3 \r\n");
 
-    XAxi_WriteReg(TXFIFO_REG0,0x00000000);
-    XAxi_WriteReg(RXFIFO_REG0,0x00000000);
-    XAxi_WriteReg(TXFIFO_REG1,0x00000001);
-    XAxi_WriteReg(RXFIFO_REG1,0x00000001);
-    XAxi_WriteReg(MM2S_DMACR, 0x00000004);
-    XAxi_WriteReg(S2MM_DMACR, 0x00000004);
+    XAxi_WriteReg(TXFIFO_REG0,0x00000000);   // Disable TX Buffer
+    XAxi_WriteReg(RXFIFO_REG0,0x00000000);   // Disable RX Buffer
+    XAxi_WriteReg(TXFIFO_REG1,0x00000001);   // TX Fifo reset 
+    XAxi_WriteReg(RXFIFO_REG1,0x00000001);   // RX Fifo reset 
 
+    XAxi_WriteReg(BIDIR_REG2,0x00000000);    // Disable BiDir   
+    XAxi_WriteReg(BIDIR_REG1,0x00000000);    // Disable BiDir Loopback
+    XAxi_WriteReg(BIDIR_REG0,0x80000000);    // BiDir Fifo reset 
+    XAxi_WriteReg(BIDIR_REG0,0x00000000);    // BiDir Fifo reset
+
+    XAxi_WriteReg(SW0_REG0,0x00000002);      // SW0 Reset 
+    XAxi_WriteReg(SW1_REG0,0x00000002);      // SW1 Reset 
+    XAxi_WriteReg(SW2_REG0,0x00000002);      // SW2 Reset 
+    XAxi_WriteReg(SW3_REG0,0x00000002);      // SW3 Reset 
+
+    XAxi_WriteReg(MM2S_DMACR, 0x00000004);   // TX DMA  Reset 
+    XAxi_WriteReg(S2MM_DMACR, 0x00000004);   // RX DMA  Reset 
 
 
 
@@ -227,9 +238,6 @@ int main(){
 
 
 
-
-
-
     ////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////
 
@@ -238,9 +246,9 @@ int main(){
     xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
 
 
-   xil_printf("Turn on RX DMA path ready to receive \r\n");
+    xil_printf("Turn on RX DMA path ready to receive \r\n");
     XAxi_WriteReg(S2MM_DMACR, 0x00000001);
-    XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE);
+    XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE + MAX_PKT_LEN);
     XAxi_WriteReg(S2MM_SA_MSB, 0x00000000);
     XAxi_WriteReg(S2MM_LENGTH, MAX_PKT_LEN);
 
@@ -252,7 +260,7 @@ int main(){
 
     xil_printf("Send in TX DATA \r\n");
     XAxi_WriteReg(MM2S_DMACR, 0x00000001);
-    XAxi_WriteReg(MM2S_SA, TX_BUFFER_BASE);
+    XAxi_WriteReg(MM2S_SA, TX_BUFFER_BASE + MAX_PKT_LEN);
     XAxi_WriteReg(MM2S_SA_MSB, 0x00000000);
     XAxi_WriteReg(MM2S_LENGTH, MAX_PKT_LEN);
 
@@ -303,7 +311,6 @@ int main(){
 
 	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
 		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
-	//	fprintf(results, "Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
 
 	}
 

@@ -17,7 +17,7 @@
 //////////////////////////////////////////////////////////////
 
     
-  task test_loop3_restart(input [2047:0] test_fin, input [1023:0] test_fout, input [1023:0] test_fout_2);
+  task test_loop3_restart(input [2047:0] test_fin, input [2047:0] test_fin_2, input [1023:0] test_fout, input [1023:0] test_fout_2);
     begin
 
     -> system_reset;
@@ -29,8 +29,11 @@
  
       $display ("Write some data into the memory");
    
-      tb.u_dut.design_2_i.processing_system7_0.inst.pre_load_mem_from_file(test_fin,`TX_BUFFER_BASE, 32768);
+      tb.u_dut.design_2_i.processing_system7_0.inst.pre_load_mem_from_file(test_fin,`TX_BUFFER_BASE, 32768);   
+      tb.u_dut.design_2_i.processing_system7_0.inst.pre_load_mem_from_file(test_fin_2,`TX_BUFFER_BASE + `MAX_PKT_LEN, 32768);
 
+
+      
 
 
       
@@ -145,16 +148,26 @@
 
             
       $display ("Reset the TX and RX now");
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`TXFIFO_REG0,4, 32'h00000000, resp);
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`RXFIFO_REG0,4, 32'h00000000, resp);
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`TXFIFO_REG1,4, 32'h00000001, resp);
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`RXFIFO_REG1,4, 32'h00000001, resp);
-      $display ("Reset the TX DMA");
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_DMACR,4, 32'h00000004, resp);     
-      $display ("Reset the RX DMA");      
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`S2MM_DMACR,4, 32'h00000004, resp);  
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`TXFIFO_REG0,4, 32'h00000000, resp);  // Disable TX Buffer
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`RXFIFO_REG0,4, 32'h00000000, resp);  // Disable RX Buffer
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`TXFIFO_REG1,4, 32'h00000001, resp);  // TX Fifo reset
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`RXFIFO_REG1,4, 32'h00000001, resp);  // RX Fifo reset 
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG2,4, 32'h00000000, resp);   // Disable BiDir   
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG1,4, 32'h00000000, resp);   // Disable BiDir Loopback
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG0,4, 32'h80000000, resp);   // BiDir Fifo reset
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG0,4, 32'h00000000, resp);   // BiDir Fifo reset       
 
-  
+      
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`SW0_REG0,4, 32'h00000002, resp);     // SW0 Reset
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`SW1_REG0,4, 32'h00000002, resp);     // SW1 Reset
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`SW2_REG0,4, 32'h00000002, resp);     // SW2 Reset
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`SW3_REG0,4, 32'h00000002, resp);     // SW3 Reset      
+//      
+      $display ("Reset the TX DMA");
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_DMACR,4, 32'h00000004, resp);   // TX DMA Reset  
+      $display ("Reset the RX DMA");      
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`S2MM_DMACR,4, 32'h00000004, resp);   // RX DMA Reset
+
 
 
 
@@ -181,7 +194,7 @@
       
       $display ("Send in TX DATA with completion interrupt");      
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_DMACR,4, 32'h00001001, resp);
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_SA,4, `TX_BUFFER_BASE, resp); 
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_SA,4, `TX_BUFFER_BASE + `MAX_PKT_LEN, resp); 
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_SA_MSB,4, 32'h00000000, resp);     
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`MM2S_LENGTH,4, `MAX_PKT_LEN, resp);      
 

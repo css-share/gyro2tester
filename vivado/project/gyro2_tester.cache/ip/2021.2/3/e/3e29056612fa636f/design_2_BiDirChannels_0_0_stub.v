@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Tue Jun  7 10:40:58 2022
-// Host        : xsjl24911 running 64-bit CentOS Linux release 7.4.1708 (Core)
+// Date        : Wed Jun  8 00:44:28 2022
+// Host        : xsjl20348 running 64-bit CentOS Linux release 7.4.1708 (Core)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_2_BiDirChannels_0_0_stub.v
 // Design      : design_2_BiDirChannels_0_0

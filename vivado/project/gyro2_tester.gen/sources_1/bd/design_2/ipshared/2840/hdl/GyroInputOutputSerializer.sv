@@ -184,7 +184,7 @@ assign tx_enable = !txclk_s & txclk;
                      .DPWR(2), 
                      .WD(48), 
                      .AF(1), 
-                     .FIFO_RESET(0) 
+                     .FIFO_RESET(1) 
                     )  u_tx_buff_in  ( 
                      .qout       (tx_fifo_tdata_t),
                      .qempty     (tx_sync_qempty), 
@@ -194,7 +194,7 @@ assign tx_enable = !txclk_s & txclk;
                      .ok_to_pop  (tx_sync_ok_to_pop),
                      .fill       (),
                      .clk        (clk), 
-                     .rst_n      (rstn),
+                     .rst_n      (rstn & !debug_clear),
                      .din        (tx_fifo_tdata),
                      .push       (tx_sync_push),
                      .pop        (tx_sync_pop)
@@ -484,7 +484,7 @@ end
                      .DPWR(2), 
                      .WD(48), 
                      .AF(1), 
-                     .FIFO_RESET(0) 
+                     .FIFO_RESET(1) 
                     )  u_rx_buff_in  ( 
                      .qout       (rx_fifo_data),
                      .qempty     (rx_sync_qempty), 
@@ -494,7 +494,7 @@ end
                      .ok_to_pop  (rx_sync_ok_to_pop),
                      .fill       (),
                      .clk        (clk), 
-                     .rst_n      (rstn),
+                     .rst_n      (rstn & !debug_clear),
                      .din        (rx_sync_din),
                      .push       (rx_sync_push),
                      .pop        (rx_sync_pop)
