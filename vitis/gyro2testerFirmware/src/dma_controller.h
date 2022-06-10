@@ -57,6 +57,7 @@ void 	printRxDdrBufferResults(void);
 u32 	Buffer_Not_Full(UINTPTR BuffAddr);
 void 	setBiDirLoopbackMode(void);
 void 	clearBiDirLoopbackMode(void);
+u32		gyro_flush(XAxiDma * InstancePtr);
 u32 	XAxiDma_MM2Stransfer(XAxiDma *InstancePtr, UINTPTR BuffAddr, u32 Length);
 u32 	XAxiDma_MM2StransferCnfg(XAxiDma *InstancePtr, UINTPTR BuffAddr);
 void 	XAxiDma_MM2StransferRun(XAxiDma *InstancePtr, u32 Length);

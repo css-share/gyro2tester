@@ -5,7 +5,44 @@
 
 int RingIndex;
 
+u32 gyro_flush(XAxiDma * InstancePtr){
 
+//	    XAxi_WriteReg(TXFIFO_REG0,0x00000000);   // Disable TX Buffer
+	    XAxi_WriteReg(RXFIFO_REG0,0x00000000);   // Disable RX Buffer
+//	    XAxi_WriteReg(TXFIFO_REG1,0x00000001);   // TX Fifo reset
+	    XAxi_WriteReg(RXFIFO_REG1,0x00000001);   // RX Fifo reset
+
+	    XAxi_WriteReg(BIDIR_REG2,0x00000000);    // Disable BiDir
+	    XAxi_WriteReg(BIDIR_REG1,0x00000000);    // Disable BiDir Loopback
+	    XAxi_WriteReg(BIDIR_REG0,0x80000000);    // BiDir Fifo reset
+	    XAxi_WriteReg(BIDIR_REG0,0x00000000);    // BiDir Fifo reset
+
+	    XAxi_WriteReg(SW0_REG0,0x00000002);      // SW0 Reset
+	    XAxi_WriteReg(SW1_REG0,0x00000002);      // SW1 Reset
+	    XAxi_WriteReg(SW2_REG0,0x00000002);      // SW2 Reset
+	    XAxi_WriteReg(SW3_REG0,0x00000002);      // SW3 Reset
+
+//	    XAxi_WriteReg(MM2S_DMACR, 0x00000004);   // TX DMA  Reset
+	    XAxi_WriteReg(S2MM_DMACR, 0x00000004);   // RX DMA  Reset
+
+
+//		XAxiDma_IntrDisable(InstancePtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+//		XAxiDma_IntrDisable(InstancePtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+		XAxiDma_Reset(InstancePtr);
+
+	//	xil_printf("FGPA Data Path Flush Complete \r\n");
+		return XST_SUCCESS;
+
+
+}
+//=========================================================================
+
+
+
+
+
+//=========================================================================
 u8 initDMA(XAxiDma *axiDmaPtr){
 
 	int Status;
@@ -174,6 +211,7 @@ void captureRxHsiData(XAxiDma *axiDmaPtr){
 	xil_printf("\r\nTesting function captureRxHsiData() \r\n");
 #endif
 
+	gyro_flush(axiDmaPtr);
 	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
 	XAxiDma_Reset(axiDmaPtr);
 
