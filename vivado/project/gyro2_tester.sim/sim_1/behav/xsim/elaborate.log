@@ -4,6 +4,7 @@ Running: /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/bin/un
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 48 for port 'DWA_LOOPBACK' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/ipshared/12ba/hdl/GyroInputOutputSerializer.sv:232]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'm_axis_tkeep' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:690]
 WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 27 for port 'm_axi_arprot' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5345]
 WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 27 for port 'm_axi_awprot' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.ip_user_files/bd/design_2/sim/design_2.v:5349]
@@ -79,6 +80,7 @@ Compiling module xil_defaultlib.mux_8x1_1bit
 Compiling module xil_defaultlib.dff
 Compiling module xil_defaultlib.clock_divider_by_2
 Compiling module xil_defaultlib.gen_sync_que_af(DPWR=2,WD=48,AF=...
+Compiling module xil_defaultlib.hsi
 Compiling module xil_defaultlib.GyroInputOutputSerializer
 Compiling module xil_defaultlib.BiDirChannels_v1_0
 Compiling module xil_defaultlib.design_2_BiDirChannels_0_0
@@ -480,7 +482,6 @@ Compiling module xlconcat_v2_1_4.xlconcat_v2_1_4_xlconcat(dout_wi...
 Compiling module xil_defaultlib.design_2_xlconcat_1_0
 Compiling module xil_defaultlib.design_2
 Compiling module xil_defaultlib.design_2_wrapper
-Compiling module xil_defaultlib.hsi
 Compiling module xil_defaultlib.spi_dummy_reg
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl

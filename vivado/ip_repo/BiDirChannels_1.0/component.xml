@@ -512,7 +512,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c7597e5f</spirit:value>
+            <spirit:value>4121eb56</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -528,7 +528,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c7597e5f</spirit:value>
+            <spirit:value>4121eb56</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1230,6 +1230,10 @@
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>../common/hsi.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>src/mux_8x1_1bit.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
@@ -1267,6 +1271,10 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>src/gen_sync_que_af.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../common/hsi.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1428,8 +1436,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>BiDirChannels_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>136</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-06-10T05:28:36Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>138</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-06-10T20:52:20Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:BiDirChannels:1.0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/BiDirChannels_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2209ef83_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro_tester_gold-master/ip_repo/BiDirChannels_1.0</xilinx:tag>
@@ -1734,13 +1742,32 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@6891fe37_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@13302d9a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@3a84a2cf_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9017096_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@750d1eac_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@faba4bb_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61ac6564_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77f34303_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3197395a_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71d9ece5_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f559d83_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7152d52e_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@501c548_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41ea4d76_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e92b18c_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1379e7c9_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2938254f_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@257f585b_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@370ce301_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@782c44d0_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2fcebbff_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cdf15f3_ARCHIVE_LOCATION">/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo/BiDirChannels_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="325a00ab"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6fede425"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="997071e1"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="1dc87580"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="5d57c6d9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="8a8332f3"/>

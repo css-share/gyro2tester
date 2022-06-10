@@ -57,20 +57,20 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="zedboard"/>
-    <Option Name="WTXSimLaunchSim" Val="184"/>
+    <Option Name="WTXSimLaunchSim" Val="187"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="40"/>
-    <Option Name="WTModelSimExportSim" Val="40"/>
-    <Option Name="WTQuestaExportSim" Val="40"/>
+    <Option Name="WTXSimExportSim" Val="42"/>
+    <Option Name="WTModelSimExportSim" Val="42"/>
+    <Option Name="WTQuestaExportSim" Val="42"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="40"/>
-    <Option Name="WTRivieraExportSim" Val="40"/>
-    <Option Name="WTActivehdlExportSim" Val="40"/>
+    <Option Name="WTVcsExportSim" Val="42"/>
+    <Option Name="WTRivieraExportSim" Val="42"/>
+    <Option Name="WTActivehdlExportSim" Val="42"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -116,15 +116,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci">
-          <Proxy FileSetName="design_2_SPI_ip_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci">
-          <Proxy FileSetName="design_2_axis_stream_txfifo_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci">
-          <Proxy FileSetName="design_2_BiDirChannels_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci">
           <Proxy FileSetName="design_2_processing_system7_0_0"/>
         </CompFileExtendedInfo>
@@ -148,6 +139,15 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_RxFIFO_0/design_2_RxFIFO_0.xci">
           <Proxy FileSetName="design_2_RxFIFO_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_SPI_ip_0_0/design_2_SPI_ip_0_0.xci">
+          <Proxy FileSetName="design_2_SPI_ip_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2.xci">
+          <Proxy FileSetName="design_2_axis_stream_txfifo_0_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_BiDirChannels_0_0/design_2_BiDirChannels_0_0.xci">
+          <Proxy FileSetName="design_2_BiDirChannels_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/design_2/hdl/design_2_wrapper.v">

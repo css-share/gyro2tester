@@ -17,23 +17,23 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16,308,700.704 ns"></ZoomStartTime>
-      <ZoomEndTime time="16,309,899.634 ns"></ZoomEndTime>
-      <Cursor1Time time="16,308,885.000 ns"></Cursor1Time>
+      <ZoomStartTime time="265,994.326 ns"></ZoomStartTime>
+      <ZoomEndTime time="266,637.536 ns"></ZoomEndTime>
+      <Cursor1Time time="266,340.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+      <ValueColumnWidth column_width="118"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="138" />
    <wave_markers>
       <marker label="" time="996550000" />
-      <marker label="" time="271432662" />
       <marker label="" time="932905000" />
       <marker label="" time="32879045000" />
       <marker label="" time="16826535000" />
       <marker label="" time="745639727" />
       <marker label="" time="16308865000" />
+      <marker label="" time="2446240109" />
    </wave_markers>
    <wvobject type="logic" fp_name="/tb/tb_ACLK">
       <obj_property name="ElementShortName">tb_ACLK</obj_property>

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:axis_stream_txfifo:2.0
-// IP Revision: 38
+// IP Revision: 39
 
 (* X_CORE_INFO = "axis_stream_txfifo_v2_0,Vivado 2021.2" *)
 (* CHECK_LICENSE_TYPE = "design_2_axis_stream_txfifo_0_2,axis_stream_txfifo_v2_0,{}" *)
