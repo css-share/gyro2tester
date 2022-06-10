@@ -89,7 +89,7 @@
 
 
       $display ("Enable Bidir serial loopback"); 
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG0,4, 32'h01000000, resp);
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG0,4, 32'h00020000, resp);
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG2,4, 32'h00000001, resp);     
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG1,4, 32'h00000011, resp);
 

@@ -362,7 +362,7 @@ assign tx_enable = !txclk_s & txclk;
       mck_tx <= 0;
     else
    //   mck_tx <= (txclk & enable & shift_oe);
-      mck_tx <= txclk;      
+      mck_tx <= ~txclk;      
   end
   
  

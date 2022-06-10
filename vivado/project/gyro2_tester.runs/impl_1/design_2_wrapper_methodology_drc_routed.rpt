@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Wed Jun  8 00:49:23 2022
-| Host         : xsjl20348 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Thu Jun  9 23:07:53 2022
+| Host         : xsjl23953 running 64-bit CentOS Linux release 7.4.1708 (Core)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 41
+             Violations found: 40
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                       | Violations |
 +-----------+------------------+-------------------------------------------------------------------+------------+
-| TIMING-14 | Critical Warning | LUT on the clock tree                                             | 3          |
+| TIMING-14 | Critical Warning | LUT on the clock tree                                             | 2          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                                      | 1          |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                 | 1          |
 | TIMING-18 | Warning          | Missing input or output delay                                     | 10         |
@@ -40,15 +40,10 @@ Table of Contents
 -----------------
 TIMING-14#1 Critical Warning
 LUT on the clock tree  
-The LUT design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_2 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
+The LUT design_2_i/BiDirChannels_0/inst/u_gyro_serialout/CLK_DIV_CNTR/Q_i_4 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
 Related violations: <none>
 
 TIMING-14#2 Critical Warning
-LUT on the clock tree  
-The LUT design_2_i/BiDirChannels_0/inst/BiDirChannels_v1_0_S00_AXI_inst/Q_i_6 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
-Related violations: <none>
-
-TIMING-14#3 Critical Warning
 LUT on the clock tree  
 The LUT design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/shift_reg[23]_i_3 has been found on the clock tree. Run opt_design to optimize the clock trees, then re-run report_methodology. If LUT(s) are still present in the clock trees, modify the RTL or the synthesis options accordingly to move the clock gating logic to dedicated clock enable resources. Keep in mind that post-opt_design database cannot be used for pin-planning tasks
 Related violations: <none>

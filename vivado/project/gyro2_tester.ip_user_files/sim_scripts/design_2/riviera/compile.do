@@ -285,13 +285,13 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../gyro2_tester.gen/sources_1
 "../../../bd/design_2/ip/design_2_led_driver_0_0/sim/design_2_led_driver_0_0.v" \
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/ec67/hdl" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/3007/hdl" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/8713/hdl" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/f0b6/hdl/verilog" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/66be/hdl/verilog" "+incdir+/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xilinx_vip/include" \
-"../../../bd/design_2/ipshared/2840/src/BiDirChannels_v1_0_S00_AXI.sv" \
-"../../../bd/design_2/ipshared/2840/hdl/GyroInputOutputSerializer.sv" \
-"../../../bd/design_2/ipshared/2840/src/clock_divider_by_10.sv" \
-"../../../bd/design_2/ipshared/2840/src/clock_divider_by_2.sv" \
-"../../../bd/design_2/ipshared/2840/src/mux_8x1_1bit.sv" \
-"../../../bd/design_2/ipshared/2840/src/upCounter8Bits.sv" \
-"../../../bd/design_2/ipshared/2840/hdl/BiDirChannels_v1_0.sv" \
+"../../../bd/design_2/ipshared/9637/src/BiDirChannels_v1_0_S00_AXI.sv" \
+"../../../bd/design_2/ipshared/9637/hdl/GyroInputOutputSerializer.sv" \
+"../../../bd/design_2/ipshared/9637/src/clock_divider_by_10.sv" \
+"../../../bd/design_2/ipshared/9637/src/clock_divider_by_2.sv" \
+"../../../bd/design_2/ipshared/9637/src/mux_8x1_1bit.sv" \
+"../../../bd/design_2/ipshared/9637/src/upCounter8Bits.sv" \
+"../../../bd/design_2/ipshared/9637/hdl/BiDirChannels_v1_0.sv" \
 "../../../bd/design_2/ip/design_2_BiDirChannels_0_0/sim/design_2_BiDirChannels_0_0.sv" \
 
 vlog -work axi_protocol_converter_v2_1_25  -v2k5 "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/ec67/hdl" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/3007/hdl" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/8713/hdl" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/f0b6/hdl/verilog" "+incdir+../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/66be/hdl/verilog" "+incdir+/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xilinx_vip/include" \

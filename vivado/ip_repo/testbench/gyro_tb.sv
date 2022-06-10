@@ -27,12 +27,12 @@
 //`define SPI_TEST
 //`define LOOP1_TEST
 //`define LOOP2_TEST
-//`define LOOP3_TEST
+`define LOOP3_TEST
 //`define RXPAT_TEST
 //`define LOOP2_TXPAT_TEST
 //`define LOOP2_RXBYP_TEST
 //`define LOOP2_RXBYP_RESTART_TEST
-`define LOOP3_RXBYP_RESTART_TEST
+//`define LOOP3_RXBYP_RESTART_TEST
 //`define LOOP2_TEST_RESTART
 //`define LOOP3_TEST_RESTART
 //`define LOOP3_RXBYP_TEST
@@ -304,7 +304,7 @@ module tb;
   wire        DDR_ras_n;
   wire        DDR_reset_n;
   wire        DDR_we_n;
-
+  logic       mck;
 
   
   assign temp_clk = tb_ACLK;
@@ -346,12 +346,34 @@ design_2_wrapper u_dut
     .LED6(leds[6]),
     .LED7(leds[7]),
     .MCK_N(),
-    .MCK_P(),
+    .MCK_P(mck),
     .SPI_CSN(SPI_CS),
     .SPI_DN(SPI_D),
     .SPI_SCK(SPI_SCK),
     .SYNC_CK()
 );
+
+
+hsi u_hsi(
+          .MCK(mck),                          // Master clk 48 MHz
+          .RST_N(temp_rstn),                  // Async reset, active low
+          .DSYNC(dsync),                      // Controller sync pulse
+          .DTX(dtx),                          // Controller TX data (controller to ASIC)
+          .DRX(drx),                          // Controller RX data (ASIC to controller)
+          .HSI_LOOPBACK_EN(1'b1),             // Loopback HSI TX->RX
+          .DTX_LOOPBACK_EN(1'b0),             // Loopback HSI DTX->DRX (skips HSI logic)
+          .DWA_LOOPBACK_EN(1'b0),             // Loopback HSI DRX->DTX (includes HSI logic)
+          .ADC_LOOPBACK_EN(1'b0),             // Loopback HSI ADC->TX (skips HSI logic)
+          .DRX_LOOPBACK_EN(1'b0),             // Loopback TX DWA->RX
+          .DWA_LOOPBACK(1'b0),                // DWA data to be looped back
+          .DRX_DATA0(16'h0000),               // RX data from ADCs
+          .DRX_DATA1(16'h0000),               // RX data from ADCs
+          .DRX_DATA2(16'h0000),               // RX data from ADCs
+          .DOUT_CAR(),                        // TX data to DACs
+          .DOUT_FRCN(),                       // TX data to DACs
+          .DOUT_FRCA()                        // TX data to DACs
+        );
+
 
 
   
