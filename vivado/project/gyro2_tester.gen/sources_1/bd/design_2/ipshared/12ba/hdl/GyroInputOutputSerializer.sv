@@ -208,36 +208,9 @@ assign tx_enable = !txclk_s & txclk;
   assign tx_sync_pop  = tx_fifo_tvalid_t & tx_fifo_tready_t;
 
 
-///////////////////////////////////////////////////
-// Emulate Bill's block here for loopback        //
-/////////////////////////////////////////////////// 
   
-logic drx_loopback;
-      
-assign drx_in = (mode == 2'b01) ? drx_loopback : DRX;
-
-
+ assign drx_in = (mode == 2'b01) ? DTX : DRX;
   
-hsi u_hsi(
-          .MCK(MCK),                          // Master clk 48 MHz
-          .RST_N(rstn & !debug_clear),        // Async reset, active low
-          .DSYNC(DSYNC),                      // Controller sync pulse
-          .DTX(DTX),                          // Controller TX data (controller to ASIC)
-          .DRX(drx_loopback),                          // Controller RX data (ASIC to controller)
-          .HSI_LOOPBACK_EN(1'b1),             // Loopback HSI TX->RX
-          .DTX_LOOPBACK_EN(1'b0),             // Loopback HSI DTX->DRX (skips HSI logic)
-          .DWA_LOOPBACK_EN(1'b0),             // Loopback HSI DRX->DTX (includes HSI logic)
-          .ADC_LOOPBACK_EN(1'b0),             // Loopback HSI ADC->TX (skips HSI logic)
-          .DRX_LOOPBACK_EN(1'b0),             // Loopback TX DWA->RX
-          .DWA_LOOPBACK(1'b0),                // DWA data to be looped back
-          .DRX_DATA0(16'h0000),               // RX data from ADCs
-          .DRX_DATA1(16'h0000),               // RX data from ADCs
-          .DRX_DATA2(16'h0000),               // RX data from ADCs
-          .DOUT_CAR(),                        // TX data to DACs
-          .DOUT_FRCN(),                       // TX data to DACs
-          .DOUT_FRCA()                        // TX data to DACs
-        );
-
 
 
 ////////////////////////////////////////////
@@ -248,6 +221,10 @@ hsi u_hsi(
   localparam IDLE = 2'b00;
   localparam LOAD = 2'b01;
   localparam SHIFT = 2'b10;
+  localparam RELOAD = 2'b11;
+
+
+  
   localparam MAX_COUNT = 6'h2f;
 
   logic [1:0] cur_state;
@@ -262,12 +239,13 @@ hsi u_hsi(
   logic        tx1_fifo_ready_sr;
   logic        tx2_fifo_ready_sr;
   logic        shift_reg_shift;
-//  logic [15:0] test_pattern_car;
-//  logic [15:0] test_pattern_node;
-//  logic [15:0] test_pattern_anti;
   logic [15:0] test_pattern;
+  logic        shift_2nd_last;
 
-  assign shift_reg_shift = ((cur_state == SHIFT) && (count_48 != 0) && tx_enable);
+
+  
+  assign shift_reg_shift = (((cur_state == SHIFT) || (cur_state == RELOAD)) && tx_enable);
+
   
   always_comb
   begin
@@ -287,12 +265,15 @@ hsi u_hsi(
           nxt_state = LOAD;
       end
       SHIFT : begin
-        if (~shift_last)
+        if (~shift_2nd_last)
           nxt_state = SHIFT;
         else if ((tx_fifo_tvalid_t & out_start_stop) ||  (tx_test & out_start_stop))
-          nxt_state = LOAD;
+          nxt_state = RELOAD;
         else
           nxt_state = IDLE;
+      end
+      RELOAD : begin
+          nxt_state = SHIFT;
       end
       default : begin
         nxt_state = IDLE;
@@ -316,7 +297,7 @@ hsi u_hsi(
     begin
       shift_reg <= 0;
     end  
-    else if (cur_state == LOAD)
+    else if (((cur_state == LOAD) || (cur_state == RELOAD)) && tx_enable)
     begin
       if (tx_test)
         shift_reg <= {test_pattern,test_pattern,test_pattern};
@@ -332,6 +313,8 @@ hsi u_hsi(
   always_comb 
     begin  
     if (cur_state == SHIFT)
+      shift_dout = shift_reg[47];
+    else if (cur_state == RELOAD)
       shift_dout = shift_reg[47];
     else
       shift_dout = 1'b0;
@@ -356,16 +339,16 @@ hsi u_hsi(
     begin  
     if (~rstn)   
        count_48 <= 0;
-    else if ((cur_state == LOAD) && tx_enable)
+    else if (((cur_state == LOAD) || (cur_state == RELOAD))  && tx_enable)
       count_48 <= MAX_COUNT;  
     else if (shift_reg_shift)
       count_48 <= count_48 - 1; 
     end    
 
-  assign shift_last = ((count_48 == 'd0) && (cur_state == SHIFT) && tx_enable);
-  assign tx_fifo_tready_t = (cur_state == LOAD) && tx_enable;
-
-  assign shift_oe =  (cur_state == SHIFT);
+  assign shift_last       = ((count_48 == 'd0) && (cur_state == SHIFT) && tx_enable);
+  assign shift_2nd_last   = ((count_48 == 'd1) && (cur_state == SHIFT) && tx_enable);
+  assign tx_fifo_tready_t = ((cur_state == LOAD) || (cur_state == RELOAD)) && tx_enable;
+  assign shift_oe         = (cur_state == SHIFT) || (cur_state == RELOAD);
 
  
 ///////////////////////////////////////////////////
@@ -389,14 +372,14 @@ hsi u_hsi(
       mck_tx <= 0;
     else
    //   mck_tx <= (txclk & enable & shift_oe);
-      mck_tx <= ~txclk;      
+      mck_tx <= txclk;      
   end
   
  
 //assign MCK = txclk & enable;
 
 assign MCK = (mck_tx & enable & shift_oe);
- // assign MCK = (mck_tx & enable);
+
   
 
 
@@ -500,7 +483,7 @@ end
 
 
 
-  assign rx_sync_push = serial_in_load_d & rx_sync_ok_to_push;
+  assign rx_sync_push = serial_in_load & rx_sync_ok_to_push;
   assign rx_fifo_valid = rx_sync_ok_to_pop;
   assign rx_sync_pop  = rx_fifo_ready & rx_fifo_valid;
 

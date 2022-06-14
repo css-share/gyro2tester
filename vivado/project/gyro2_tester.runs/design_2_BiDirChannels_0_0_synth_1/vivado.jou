@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Fri Jun 10 15:36:24 2022
-# Process ID: 2582
+# Start of session at: Tue Jun 14 14:52:06 2022
+# Process ID: 13522
 # Current directory: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1
 # Command line: vivado -log design_2_BiDirChannels_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_BiDirChannels_0_0.tcl
 # Log file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1/design_2_BiDirChannels_0_0.vds
 # Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1/vivado.jou
-# Running On: xsjlc190416, OS: Linux, CPU Frequency: 3499.804 MHz, CPU Physical cores: 16, Host memory: 236389 MB
+# Running On: xsjlc170287, OS: Linux, CPU Frequency: 1245.898 MHz, CPU Physical cores: 16, Host memory: 270210 MB
 #-----------------------------------------------------------
 source design_2_BiDirChannels_0_0.tcl -notrace

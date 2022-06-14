@@ -89,14 +89,15 @@
 
 
       $display ("Enable Bidir serial loopback"); 
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG0,4, 32'h01020000, resp);
-      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG2,4, 32'h00000001, resp);     
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG0,4, 32'h00000000, resp);
+      tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG2,4, 32'h00000001, resp);   // RX sample   
       tb.u_dut.design_2_i.processing_system7_0.inst.write_data(`BIDIR_REG1,4, 32'h00000011, resp);
 
        
     //  while (tb.u_dut.design_2_i.RX_BUFFER.RxFIFO.rxfifo_full == 1'b0) 
     //  begin
     //    @ (posedge tb.tb_ACLK);
+      
     //  end
       
       tb.u_dut.design_2_i.processing_system7_0.inst.wait_interrupt(2, irq_status);

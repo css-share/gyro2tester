@@ -1,8 +1,8 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Fri Jun 10 15:37:31 2022
-// Host        : xsjlc210109 running 64-bit Red Hat Enterprise Linux Workstation release 7.7 (Maipo)
+// Date        : Tue Jun 14 14:52:59 2022
+// Host        : xsjlc170288 running 64-bit CentOS Linux release 7.9.2009 (Core)
 // Command     : write_verilog -force -mode funcsim
 //               /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_axis_stream_txfifo_0_2/design_2_axis_stream_txfifo_0_2_sim_netlist.v
 // Design      : design_2_axis_stream_txfifo_0_2
@@ -1635,13 +1635,13 @@ module design_2_axis_stream_txfifo_0_2_axis_stream_txfifo_v2_0_S00_AXI
         .I4(axi_araddr[3]),
         .O(reg_data_out[0]));
   LUT5 #(
-    .INIT(32'hA0A0CFC0)) 
+    .INIT(32'hAFFCA0FC)) 
     \axi_rdata[10]_i_1 
        (.I0(\axi_rdata_reg[31]_0 [10]),
-        .I1(\slv_reg1_reg_n_0_[10] ),
-        .I2(axi_araddr[2]),
-        .I3(\slv_reg0_reg_n_0_[10] ),
-        .I4(axi_araddr[3]),
+        .I1(\slv_reg0_reg_n_0_[10] ),
+        .I2(axi_araddr[3]),
+        .I3(axi_araddr[2]),
+        .I4(\slv_reg1_reg_n_0_[10] ),
         .O(reg_data_out[10]));
   LUT5 #(
     .INIT(32'hA0A0CFC0)) 
@@ -4051,14 +4051,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I5(\rgfile_reg[2] [11]),
         .O(m00_axis_tdata[11]));
   LUT6 #(
-    .INIT(64'hFFCCF0AA00CCF0AA)) 
+    .INIT(64'hCCAAFFF0CCAA00F0)) 
     \m00_axis_tdata[12]_INST_0 
-       (.I0(\rgfile_reg[0] [12]),
-        .I1(\rgfile_reg[1] [12]),
-        .I2(\rgfile_reg[2] [12]),
+       (.I0(\rgfile_reg[1] [12]),
+        .I1(\rgfile_reg[3] [12]),
+        .I2(\rgfile_reg[0] [12]),
         .I3(\rptr_reg_n_0_[1] ),
         .I4(\rptr_reg_n_0_[0] ),
-        .I5(\rgfile_reg[3] [12]),
+        .I5(\rgfile_reg[2] [12]),
         .O(m00_axis_tdata[12]));
   LUT6 #(
     .INIT(64'hF0CCFFAAF0CC00AA)) 
@@ -4141,14 +4141,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I5(\rgfile_reg[3] [1]),
         .O(m00_axis_tdata[1]));
   LUT6 #(
-    .INIT(64'hFFCCF0AA00CCF0AA)) 
+    .INIT(64'hCCAAFFF0CCAA00F0)) 
     \m00_axis_tdata[20]_INST_0 
-       (.I0(\rgfile_reg[0] [20]),
-        .I1(\rgfile_reg[1] [20]),
-        .I2(\rgfile_reg[2] [20]),
+       (.I0(\rgfile_reg[1] [20]),
+        .I1(\rgfile_reg[3] [20]),
+        .I2(\rgfile_reg[0] [20]),
         .I3(\rptr_reg_n_0_[1] ),
         .I4(\rptr_reg_n_0_[0] ),
-        .I5(\rgfile_reg[3] [20]),
+        .I5(\rgfile_reg[2] [20]),
         .O(m00_axis_tdata[20]));
   LUT6 #(
     .INIT(64'hF0CCFFAAF0CC00AA)) 
@@ -4221,14 +4221,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I5(\rgfile_reg[2] [27]),
         .O(m00_axis_tdata[27]));
   LUT6 #(
-    .INIT(64'hFFCCF0AA00CCF0AA)) 
+    .INIT(64'hCCAAFFF0CCAA00F0)) 
     \m00_axis_tdata[28]_INST_0 
-       (.I0(\rgfile_reg[0] [28]),
-        .I1(\rgfile_reg[1] [28]),
-        .I2(\rgfile_reg[2] [28]),
+       (.I0(\rgfile_reg[1] [28]),
+        .I1(\rgfile_reg[3] [28]),
+        .I2(\rgfile_reg[0] [28]),
         .I3(\rptr_reg_n_0_[1] ),
         .I4(\rptr_reg_n_0_[0] ),
-        .I5(\rgfile_reg[3] [28]),
+        .I5(\rgfile_reg[2] [28]),
         .O(m00_axis_tdata[28]));
   LUT6 #(
     .INIT(64'hF0CCFFAAF0CC00AA)) 
@@ -4311,14 +4311,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I5(\rgfile_reg[2] [35]),
         .O(m00_axis_tdata[35]));
   LUT6 #(
-    .INIT(64'hFFCCF0AA00CCF0AA)) 
+    .INIT(64'hCCAAFFF0CCAA00F0)) 
     \m00_axis_tdata[36]_INST_0 
-       (.I0(\rgfile_reg[0] [36]),
-        .I1(\rgfile_reg[1] [36]),
-        .I2(\rgfile_reg[2] [36]),
+       (.I0(\rgfile_reg[1] [36]),
+        .I1(\rgfile_reg[3] [36]),
+        .I2(\rgfile_reg[0] [36]),
         .I3(\rptr_reg_n_0_[1] ),
         .I4(\rptr_reg_n_0_[0] ),
-        .I5(\rgfile_reg[3] [36]),
+        .I5(\rgfile_reg[2] [36]),
         .O(m00_axis_tdata[36]));
   LUT6 #(
     .INIT(64'hF0CCFFAAF0CC00AA)) 
@@ -4401,14 +4401,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I5(\rgfile_reg[2] [43]),
         .O(m00_axis_tdata[43]));
   LUT6 #(
-    .INIT(64'hFFCCF0AA00CCF0AA)) 
+    .INIT(64'hCCAAFFF0CCAA00F0)) 
     \m00_axis_tdata[44]_INST_0 
-       (.I0(\rgfile_reg[0] [44]),
-        .I1(\rgfile_reg[1] [44]),
-        .I2(\rgfile_reg[2] [44]),
+       (.I0(\rgfile_reg[1] [44]),
+        .I1(\rgfile_reg[3] [44]),
+        .I2(\rgfile_reg[0] [44]),
         .I3(\rptr_reg_n_0_[1] ),
         .I4(\rptr_reg_n_0_[0] ),
-        .I5(\rgfile_reg[3] [44]),
+        .I5(\rgfile_reg[2] [44]),
         .O(m00_axis_tdata[44]));
   LUT6 #(
     .INIT(64'hF0CCFFAAF0CC00AA)) 
@@ -4441,14 +4441,14 @@ module design_2_axis_stream_txfifo_0_2_gen_sync_que_af
         .I5(\rgfile_reg[3] [47]),
         .O(m00_axis_tdata[47]));
   LUT6 #(
-    .INIT(64'hFFCCF0AA00CCF0AA)) 
+    .INIT(64'hCCAAFFF0CCAA00F0)) 
     \m00_axis_tdata[4]_INST_0 
-       (.I0(\rgfile_reg[0] [4]),
-        .I1(\rgfile_reg[1] [4]),
-        .I2(\rgfile_reg[2] [4]),
+       (.I0(\rgfile_reg[1] [4]),
+        .I1(\rgfile_reg[3] [4]),
+        .I2(\rgfile_reg[0] [4]),
         .I3(\rptr_reg_n_0_[1] ),
         .I4(\rptr_reg_n_0_[0] ),
-        .I5(\rgfile_reg[3] [4]),
+        .I5(\rgfile_reg[2] [4]),
         .O(m00_axis_tdata[4]));
   LUT6 #(
     .INIT(64'hF0CCFFAAF0CC00AA)) 

@@ -2,16 +2,15 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Fri Jun 10 15:36:24 2022
-# Process ID: 2582
+# Start of session at: Tue Jun 14 14:52:06 2022
+# Process ID: 13522
 # Current directory: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1
 # Command line: vivado -log design_2_BiDirChannels_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_2_BiDirChannels_0_0.tcl
 # Log file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1/design_2_BiDirChannels_0_0.vds
 # Journal file: /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1/vivado.jou
-# Running On: xsjlc190416, OS: Linux, CPU Frequency: 3499.804 MHz, CPU Physical cores: 16, Host memory: 236389 MB
+# Running On: xsjlc170287, OS: Linux, CPU Frequency: 1245.898 MHz, CPU Physical cores: 16, Host memory: 270210 MB
 #-----------------------------------------------------------
 source design_2_BiDirChannels_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2934.832 ; gain = 2.020 ; free physical = 64145 ; free virtual = 188387
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cdickins/reuse/gyro2tester-main/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/ip'.
@@ -22,37 +21,36 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2636
+INFO: [Synth 8-7075] Helper process launched with PID 13692
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2940.961 ; gain = 0.000 ; free physical = 63226 ; free virtual = 187499
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2941.457 ; gain = 0.000 ; free physical = 42511 ; free virtual = 163827
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_2_BiDirChannels_0_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/synth/design_2_BiDirChannels_0_0.sv:57]
-INFO: [Synth 8-6157] synthesizing module 'BiDirChannels_v1_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/hdl/BiDirChannels_v1_0.sv:20]
-INFO: [Synth 8-6157] synthesizing module 'BiDirChannels_v1_0_S00_AXI' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/BiDirChannels_v1_0_S00_AXI.sv:4]
-INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/BiDirChannels_v1_0_S00_AXI.sv:235]
-INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/BiDirChannels_v1_0_S00_AXI.sv:376]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/BiDirChannels_v1_0_S00_AXI.sv:230]
-INFO: [Synth 8-6155] done synthesizing module 'BiDirChannels_v1_0_S00_AXI' (1#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/BiDirChannels_v1_0_S00_AXI.sv:4]
-INFO: [Synth 8-6157] synthesizing module 'GyroInputOutputSerializer' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/hdl/GyroInputOutputSerializer.sv:20]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider_by_10' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/clock_divider_by_10.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider_by_10' (2#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/clock_divider_by_10.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'upCounter8Bits' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/upCounter8Bits.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'upCounter8Bits' (3#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/upCounter8Bits.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'mux_8x1_1bit' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/mux_8x1_1bit.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'mux_8x1_1bit' (4#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/mux_8x1_1bit.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider_by_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/clock_divider_by_2.sv:21]
-INFO: [Synth 8-6157] synthesizing module 'dff' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/dff.sv:19]
-INFO: [Synth 8-6155] done synthesizing module 'dff' (5#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/dff.sv:19]
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider_by_2' (6#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/clock_divider_by_2.sv:21]
-INFO: [Synth 8-6157] synthesizing module 'gen_sync_que_af' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/gen_sync_que_af.sv:22]
-INFO: [Synth 8-6155] done synthesizing module 'gen_sync_que_af' (7#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/src/gen_sync_que_af.sv:22]
-INFO: [Synth 8-6157] synthesizing module 'hsi' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/common/hsi.sv:12]
-INFO: [Synth 8-6155] done synthesizing module 'hsi' (8#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/common/hsi.sv:12]
-WARNING: [Synth 8-6014] Unused sequential element serial_in_load_reg was removed.  [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/hdl/GyroInputOutputSerializer.sv:494]
-WARNING: [Synth 8-3848] Net data_word_1 in module/entity GyroInputOutputSerializer does not have driver. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/hdl/GyroInputOutputSerializer.sv:57]
-INFO: [Synth 8-6155] done synthesizing module 'GyroInputOutputSerializer' (9#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/hdl/GyroInputOutputSerializer.sv:20]
-INFO: [Synth 8-6155] done synthesizing module 'BiDirChannels_v1_0' (10#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/12ba/hdl/BiDirChannels_v1_0.sv:20]
-INFO: [Synth 8-6155] done synthesizing module 'design_2_BiDirChannels_0_0' (11#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/synth/design_2_BiDirChannels_0_0.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'BiDirChannels_v1_0' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/BiDirChannels_v1_0.sv:20]
+INFO: [Synth 8-6157] synthesizing module 'BiDirChannels_v1_0_S00_AXI' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/BiDirChannels_v1_0_S00_AXI.sv:4]
+INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/BiDirChannels_v1_0_S00_AXI.sv:235]
+INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/BiDirChannels_v1_0_S00_AXI.sv:376]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/BiDirChannels_v1_0_S00_AXI.sv:230]
+INFO: [Synth 8-6155] done synthesizing module 'BiDirChannels_v1_0_S00_AXI' (1#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/BiDirChannels_v1_0_S00_AXI.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'GyroInputOutputSerializer' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/GyroInputOutputSerializer.sv:20]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider_by_10' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/clock_divider_by_10.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider_by_10' (2#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/clock_divider_by_10.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'upCounter8Bits' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/upCounter8Bits.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'upCounter8Bits' (3#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/upCounter8Bits.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_8x1_1bit' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/mux_8x1_1bit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8x1_1bit' (4#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/mux_8x1_1bit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider_by_2' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/clock_divider_by_2.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'dff' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/dff.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'dff' (5#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/dff.sv:19]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider_by_2' (6#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/clock_divider_by_2.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'gen_sync_que_af' [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/gen_sync_que_af.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'gen_sync_que_af' (7#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/src/gen_sync_que_af.sv:22]
+INFO: [Synth 8-226] default block is never used [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/GyroInputOutputSerializer.sv:253]
+WARNING: [Synth 8-6014] Unused sequential element mck_tx_reg was removed.  [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/GyroInputOutputSerializer.sv:373]
+WARNING: [Synth 8-3848] Net data_word_1 in module/entity GyroInputOutputSerializer does not have driver. [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/GyroInputOutputSerializer.sv:58]
+INFO: [Synth 8-6155] done synthesizing module 'GyroInputOutputSerializer' (8#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/GyroInputOutputSerializer.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'BiDirChannels_v1_0' (9#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ipshared/63af/hdl/BiDirChannels_v1_0.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'design_2_BiDirChannels_0_0' (10#1) [/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.gen/sources_1/bd/design_2/ip/design_2_BiDirChannels_0_0/synth/design_2_BiDirChannels_0_0.sv:57]
 WARNING: [Synth 8-7129] Port data_word_1[31] in module GyroInputOutputSerializer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_word_1[30] in module GyroInputOutputSerializer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_word_1[29] in module GyroInputOutputSerializer is either unconnected or has no load
@@ -113,56 +111,57 @@ WARNING: [Synth 8-7129] Port s00_axis_tstrb[2] in module BiDirChannels_v1_0 is e
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[1] in module BiDirChannels_v1_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[0] in module BiDirChannels_v1_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2940.969 ; gain = 0.008 ; free physical = 62433 ; free virtual = 186710
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2941.465 ; gain = 0.008 ; free physical = 42228 ; free virtual = 163552
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2940.969 ; gain = 0.008 ; free physical = 63326 ; free virtual = 187604
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2941.465 ; gain = 0.008 ; free physical = 43136 ; free virtual = 164462
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2940.969 ; gain = 0.008 ; free physical = 63327 ; free virtual = 187605
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2941.465 ; gain = 0.008 ; free physical = 43143 ; free virtual = 164468
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2940.969 ; gain = 0.000 ; free physical = 63296 ; free virtual = 187574
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2941.465 ; gain = 0.000 ; free physical = 43068 ; free virtual = 164396
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2964.926 ; gain = 0.000 ; free physical = 63258 ; free virtual = 187547
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2964.422 ; gain = 0.000 ; free physical = 43001 ; free virtual = 164350
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2964.930 ; gain = 0.004 ; free physical = 63258 ; free virtual = 187548
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2964.426 ; gain = 0.004 ; free physical = 42999 ; free virtual = 164348
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2964.930 ; gain = 23.969 ; free physical = 63319 ; free virtual = 187609
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2964.426 ; gain = 22.969 ; free physical = 42952 ; free virtual = 164323
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2964.930 ; gain = 23.969 ; free physical = 63319 ; free virtual = 187609
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2964.426 ; gain = 22.969 ; free physical = 42952 ; free virtual = 164324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2964.930 ; gain = 23.969 ; free physical = 63320 ; free virtual = 187609
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2964.426 ; gain = 22.969 ; free physical = 42951 ; free virtual = 164323
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'cur_state_reg' in module 'GyroInputOutputSerializer'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                              001 |                               00
-                    LOAD |                              100 |                               01
-                   SHIFT |                              010 |                               10
+                    IDLE |                             0100 |                               00
+                    LOAD |                             1000 |                               01
+                   SHIFT |                             0010 |                               10
+                  RELOAD |                             0001 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'cur_state_reg' using encoding 'one-hot' in module 'GyroInputOutputSerializer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63305 ; free virtual = 187599
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42925 ; free virtual = 164301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -170,16 +169,16 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   16 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
 	   2 Input    7 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 1     
 	   2 Input    3 Bit       Adders := 4     
 +---Registers : 
-	               48 Bit    Registers := 13    
+	               48 Bit    Registers := 10    
 	               32 Bit    Registers := 4     
 	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 3     
@@ -188,17 +187,16 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 16    
 +---Muxes : 
 	   4 Input   48 Bit        Muxes := 2     
-	   2 Input   48 Bit        Muxes := 6     
+	   2 Input   48 Bit        Muxes := 3     
 	   2 Input   32 Bit        Muxes := 3     
 	   4 Input   32 Bit        Muxes := 4     
-	   2 Input   16 Bit        Muxes := 3     
 	   2 Input    6 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 1     
-	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 6     
+	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 24    
+	   2 Input    1 Bit        Muxes := 23    
+	   3 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -236,25 +234,25 @@ WARNING: [Synth 8-7129] Port s00_axis_tstrb[1] in module design_2_BiDirChannels_
 WARNING: [Synth 8-7129] Port s00_axis_tstrb[0] in module design_2_BiDirChannels_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s00_axis_tlast in module design_2_BiDirChannels_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63270 ; free virtual = 187578
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 43064 ; free virtual = 164457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63128 ; free virtual = 187443
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42848 ; free virtual = 164249
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63128 ; free virtual = 187443
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42852 ; free virtual = 164254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63125 ; free virtual = 187440
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42821 ; free virtual = 164222
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -272,37 +270,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -319,41 +317,41 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |CARRY4 |     8|
-|2     |LUT1   |    42|
-|3     |LUT2   |    29|
-|4     |LUT3   |   110|
-|5     |LUT4   |    34|
-|6     |LUT5   |    96|
-|7     |LUT6   |   118|
+|2     |LUT1   |    44|
+|3     |LUT2   |    26|
+|4     |LUT3   |    64|
+|5     |LUT4   |    42|
+|6     |LUT5   |    95|
+|7     |LUT6   |   122|
 |8     |MUXF7  |     1|
-|9     |FDCE   |   156|
-|10    |FDRE   |   665|
-|11    |FDSE   |    23|
+|9     |FDCE   |    13|
+|10    |FDRE   |   673|
+|11    |FDSE   |    24|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63123 ; free virtual = 187438
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42647 ; free virtual = 164068
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2964.938 ; gain = 0.016 ; free physical = 63178 ; free virtual = 187493
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2964.938 ; gain = 23.977 ; free physical = 63180 ; free virtual = 187495
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2964.434 ; gain = 0.016 ; free physical = 42700 ; free virtual = 164122
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2964.434 ; gain = 22.977 ; free physical = 42700 ; free virtual = 164122
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2964.938 ; gain = 0.000 ; free physical = 63265 ; free virtual = 187580
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2964.434 ; gain = 0.000 ; free physical = 42782 ; free virtual = 164205
 INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2964.938 ; gain = 0.000 ; free physical = 63202 ; free virtual = 187517
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2964.434 ; gain = 0.000 ; free physical = 42739 ; free virtual = 164168
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 236d0095
+Synth Design complete, checksum: 34ac676e
 INFO: [Common 17-83] Releasing license: Synthesis
-50 Infos, 76 Warnings, 0 Critical Warnings and 0 Errors encountered.
+49 Infos, 76 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:44 . Memory (MB): peak = 2964.938 ; gain = 30.105 ; free physical = 63402 ; free virtual = 187717
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2964.434 ; gain = 29.109 ; free physical = 42936 ; free virtual = 164365
 INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1/design_2_BiDirChannels_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_2_BiDirChannels_0_0, cache-ID = 0f3bbb0aa902a638
-INFO: [Coretcl 2-1174] Renamed 10 cell refs.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_2_BiDirChannels_0_0, cache-ID = f12b412455dd469b
+INFO: [Coretcl 2-1174] Renamed 9 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.runs/design_2_BiDirChannels_0_0_synth_1/design_2_BiDirChannels_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_2_BiDirChannels_0_0_utilization_synth.rpt -pb design_2_BiDirChannels_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 10 15:37:39 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 14 14:53:05 2022...
