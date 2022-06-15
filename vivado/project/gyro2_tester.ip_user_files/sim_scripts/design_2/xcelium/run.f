@@ -213,9 +213,9 @@
   "../../../bd/design_2/ip/design_2_blk_mem_tx_even_0/sim/design_2_blk_mem_tx_even_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib -sv \
-  "../../../bd/design_2/ipshared/28bb/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv" \
-  "../../../bd/design_2/ipshared/28bb/hdl/axis_stream_txfifo_v2_0_S00_AXIS.sv" \
-  "../../../bd/design_2/ipshared/28bb/hdl/axis_stream_txfifo_v2_0.sv" \
+  "../../../bd/design_2/ipshared/3bf2/hdl/axis_stream_txfifo_v2_0_S00_AXI.sv" \
+  "../../../bd/design_2/ipshared/3bf2/hdl/axis_stream_txfifo_v2_0_S00_AXIS.sv" \
+  "../../../bd/design_2/ipshared/3bf2/hdl/axis_stream_txfifo_v2_0.sv" \
   "../../../bd/design_2/ip/design_2_axis_stream_txfifo_0_2/sim/design_2_axis_stream_txfifo_0_2.sv" \
 -endlib
 -makelib xcelium_lib/xlconcat_v2_1_4 \
@@ -226,13 +226,13 @@
   "../../../bd/design_2/ip/design_2_led_driver_0_0/sim/design_2_led_driver_0_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib -sv \
-  "../../../bd/design_2/ipshared/63af/src/BiDirChannels_v1_0_S00_AXI.sv" \
-  "../../../bd/design_2/ipshared/63af/hdl/GyroInputOutputSerializer.sv" \
-  "../../../bd/design_2/ipshared/63af/src/clock_divider_by_10.sv" \
-  "../../../bd/design_2/ipshared/63af/src/clock_divider_by_2.sv" \
-  "../../../bd/design_2/ipshared/63af/src/mux_8x1_1bit.sv" \
-  "../../../bd/design_2/ipshared/63af/src/upCounter8Bits.sv" \
-  "../../../bd/design_2/ipshared/63af/hdl/BiDirChannels_v1_0.sv" \
+  "../../../bd/design_2/ipshared/7e0c/src/BiDirChannels_v1_0_S00_AXI.sv" \
+  "../../../bd/design_2/ipshared/7e0c/hdl/GyroInputOutputSerializer.sv" \
+  "../../../bd/design_2/ipshared/7e0c/src/clock_divider_by_10.sv" \
+  "../../../bd/design_2/ipshared/7e0c/src/clock_divider_by_2.sv" \
+  "../../../bd/design_2/ipshared/7e0c/src/mux_8x1_1bit.sv" \
+  "../../../bd/design_2/ipshared/7e0c/src/upCounter8Bits.sv" \
+  "../../../bd/design_2/ipshared/7e0c/hdl/BiDirChannels_v1_0.sv" \
   "../../../bd/design_2/ip/design_2_BiDirChannels_0_0/sim/design_2_BiDirChannels_0_0.sv" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_25 \

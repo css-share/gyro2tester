@@ -90,14 +90,18 @@ set_clock_groups -name MULTI -asynchronous -group [get_clocks {clk_fpga_0 spi_cl
 ############################################
 ## Input Delays                           ##
 ############################################
-set_input_delay -clock [get_clocks txclk] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
-
+##set_input_delay -clock [get_clocks txclk] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
+set_input_delay -clock [get_clocks clk_fpga_0] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
 
 ############################################
 ## Output Delays                          ##
 ############################################
 
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+##set_output_delay -clock [get_clocks clk_fpga_0] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+
+
+
 
 set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
 
@@ -136,3 +140,4 @@ set_case_analysis 0 [get_pins {{design_2_i/SPI/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI
 ##set_case_analysis 0 [get_pins [list design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[2] design_2_i/SPI_ip_0/inst/SPI_ip_v1_0_S00_AXI_inst/slv_reg0_reg[1]_0[3] ]]
 
 set_clock_groups -name MULTI -asynchronous -group [get_clocks {clk_fpga_0 spi_clk spi_clk_4 spi_clk_8}] -group [get_clocks txclk]
+

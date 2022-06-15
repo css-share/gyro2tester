@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/ec67/hdl" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/3007/hdl" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/8713/hdl" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/f0b6/hdl/verilog" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/66be/hdl/verilog" --include "../../../../../../ip_repo/testbench" --include "/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xilinx_vip/include" \
+"tb_func_impl.v" \
+
+sv xil_defaultlib  --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/ec67/hdl" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/3007/hdl" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/8713/hdl" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/f0b6/hdl/verilog" --include "../../../../../gyro2_tester.gen/sources_1/bd/design_2/ipshared/66be/hdl/verilog" --include "../../../../../../ip_repo/testbench" --include "/proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../../../ip_repo/common/hsi.sv" \
+"../../../../../../../funcsim/models/spi_dummy_reg.sv" \
+"../../../../../../ip_repo/testbench/gyro_tb.sv" \
+
+# Do not sort compile order
+nosort

@@ -35,6 +35,7 @@ module GyroInputOutputSerializer (
   input  [2:0]        in_channel,
   input  [3:0]        out_channel,
   input  [7:0]        rx_sample_cfg,
+  input               rx_skew_en,
   input               HSCK_POL,		// 0: HSCK rest at 0, 1: HSCK rest at 1.
                                  
   input  [47:0]       tx_fifo_tdata,
@@ -452,27 +453,31 @@ begin
   rx_sample_count <= rx_sample_count + 1;
 end
 
-/*
+
+  logic rx_enable_fixed;
+  logic rx_enable_dyn;
+  
  always_comb
   begin
     case (clock_div)
-      3'b000 : rx_enable = (rx_sample_count == 16'h0000);
-      3'b001 : rx_enable = (rx_sample_count == 16'h0001);
-      3'b010 : rx_enable = (rx_sample_count == 16'h0002);      
-      3'b011 : rx_enable = (rx_sample_count == 16'h0004);
-      3'b100 : rx_enable = (rx_sample_count == 16'h0008);
-      3'b101 : rx_enable = (rx_sample_count == 16'h0010);
-      3'b110 : rx_enable = (rx_sample_count == 16'h0020); 
-      3'b111 : rx_enable = (rx_sample_count == 16'h0040);     
-      default : rx_enable = (rx_sample_count == 16'h0000);  
+      3'b000 : rx_enable_fixed = (rx_sample_count == 16'h0000);
+      3'b001 : rx_enable_fixed = (rx_sample_count == 16'h0002);
+      3'b010 : rx_enable_fixed = (rx_sample_count == 16'h0002);      
+      3'b011 : rx_enable_fixed = (rx_sample_count == 16'h0004);
+      3'b100 : rx_enable_fixed = (rx_sample_count == 16'h0004);
+      3'b101 : rx_enable_fixed = (rx_sample_count == 16'h0004);
+      3'b110 : rx_enable_fixed = (rx_sample_count == 16'h0004); 
+      3'b111 : rx_enable_fixed = (rx_sample_count == 16'h0004);     
+      default : rx_enable_fixed = (rx_sample_count == 16'h0000);  
     endcase
   end
- */   
+    
 
-assign  rx_enable = (rx_sample_count ==  rx_sample_cfg);
+assign rx_enable_dyn = (rx_sample_count ==  rx_sample_cfg);
+assign rx_enable = rx_skew_en ? rx_enable_dyn : rx_enable_fixed;
 
 
-
+  
   
 always @(posedge clk)
 begin
@@ -527,7 +532,7 @@ end
 
 
 
-  assign serial_rx_load =  (mode == 2'b01) ? serial_in_load : serial_in_load_d;
+  assign serial_rx_load =  ((mode == 2'b01) || (clock_div == 3'b000)) ? serial_in_load : serial_in_load_d;
 
   assign rx_sync_push = serial_rx_load & rx_sync_ok_to_push;
   assign rx_fifo_valid = rx_sync_ok_to_pop;

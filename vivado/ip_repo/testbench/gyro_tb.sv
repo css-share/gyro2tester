@@ -87,7 +87,7 @@ module tb;
     wire SPI_SCK;
     wire SPI_CS;
     wire dtx;
-    wire drx;
+    logic drx;
     wire dsync; 
   
     reg sim_error;
@@ -354,12 +354,16 @@ design_2_wrapper u_dut
 );
 
 
+  logic drx_preskew;
+  logic drx_postskew;
+
+  
 hsi u_hsi(
           .MCK(mck),                          // Master clk 48 MHz
           .RST_N(temp_rstn),                  // Async reset, active low
           .DSYNC(dsync),                      // Controller sync pulse
           .DTX(dtx),                          // Controller TX data (controller to ASIC)
-          .DRX(drx),                          // Controller RX data (ASIC to controller)
+          .DRX(drx_preskew),                          // Controller RX data (ASIC to controller)
           .HSI_LOOPBACK_EN(1'b1),             // Loopback HSI TX->RX
           .DTX_LOOPBACK_EN(1'b0),             // Loopback HSI DTX->DRX (skips HSI logic)
           .DWA_LOOPBACK_EN(1'b0),             // Loopback HSI DRX->DTX (includes HSI logic)
@@ -375,6 +379,21 @@ hsi u_hsi(
         );
 
 
+ // assign drx_postskew = #25 drx_preskew;
+ // assign drx = drx_postskew;
+
+
+
+  
+always @ (drx_preskew)
+  drx_postskew = #12 drx_preskew;
+
+  
+always @ (drx_postskew)
+  drx = #12 drx_postskew;
+  
+
+  
 
   
 spi_dummy_reg u_spi_dummy (

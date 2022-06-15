@@ -17,15 +17,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="307,897.082 ns"></ZoomStartTime>
-      <ZoomEndTime time="308,144.900 ns"></ZoomEndTime>
-      <Cursor1Time time="308,025.000 ns"></Cursor1Time>
+      <ZoomStartTime time="307,824.663 ns"></ZoomStartTime>
+      <ZoomEndTime time="308,585.468 ns"></ZoomEndTime>
+      <Cursor1Time time="308,130.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+      <NameColumnWidth column_width="323"></NameColumnWidth>
+      <ValueColumnWidth column_width="158"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="141" />
+   <WVObjectSize size="143" />
    <wave_markers>
       <marker label="" time="996550000" />
       <marker label="" time="932905000" />
@@ -558,10 +558,6 @@
       <obj_property name="ElementShortName">txclk</obj_property>
       <obj_property name="ObjectShortName">txclk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/mck_tx">
-      <obj_property name="ElementShortName">mck_tx</obj_property>
-      <obj_property name="ObjectShortName">mck_tx</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/serial_in_load_d">
       <obj_property name="ElementShortName">serial_in_load_d</obj_property>
       <obj_property name="ObjectShortName">serial_in_load_d</obj_property>
@@ -578,6 +574,10 @@
       <obj_property name="ElementShortName">MCK_P</obj_property>
       <obj_property name="ObjectShortName">MCK_P</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/mck_tx">
+      <obj_property name="ElementShortName">mck_tx</obj_property>
+      <obj_property name="ObjectShortName">mck_tx</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/tb/u_hsi/DSYNC">
       <obj_property name="ElementShortName">DSYNC</obj_property>
       <obj_property name="ObjectShortName">DSYNC</obj_property>
@@ -592,11 +592,19 @@
       <obj_property name="ObjectShortName">DRX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/rx_sample_count">
-      <obj_property name="ElementShortName">rx_sample_count[15:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_sample_count[15:0]</obj_property>
+      <obj_property name="ElementShortName">rx_sample_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_sample_count[7:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb/u_dut/design_2_i/BiDirChannels_0/inst/u_gyro_serialout/rx_enable">
       <obj_property name="ElementShortName">rx_enable</obj_property>
       <obj_property name="ObjectShortName">rx_enable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/drx_preskew">
+      <obj_property name="ElementShortName">drx_preskew</obj_property>
+      <obj_property name="ObjectShortName">drx_preskew</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/drx">
+      <obj_property name="ElementShortName">drx</obj_property>
+      <obj_property name="ObjectShortName">drx</obj_property>
    </wvobject>
 </wave_config>

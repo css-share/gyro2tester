@@ -1,0 +1,27 @@
+Vivado Simulator v2021.2
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: /proj/xbuilds/SWIP/2021.2_1021_0703/installs/lin64/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L xilinx_vip -L unisims_ver -L secureip --snapshot tb_func_impl xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_spi.sv:30]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_spi.sv:32]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_spi.sv:34]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_spi.sv:49]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_spi.sv:51]
+ERROR: [VRFC 10-2991] 'read_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_spi.sv:65]
+ERROR: [VRFC 10-2991] 'pre_load_mem_from_file' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:32]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:34]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:35]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:37]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:38]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:39]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:43]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:44]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:45]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:46]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:50]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:51]
+ERROR: [VRFC 10-2991] 'write_data' is not declared under prefix 'inst' [../../../../../../ip_repo/testbench/test_case_loop1.sv:52]
+INFO: [#UNDEF] Sorry, too many errors..
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

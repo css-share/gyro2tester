@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Tue Jun 14 14:57:39 2022
-| Host         : xsjl20346 running 64-bit CentOS Linux release 7.4.1708 (Core)
+| Date         : Wed Jun 15 15:07:02 2022
+| Host         : xsjl23631 running 64-bit Red Hat Enterprise Linux Workstation release 7.4 (Maipo)
 | Command      : report_methodology -file design_2_wrapper_methodology_drc_routed.rpt -pb design_2_wrapper_methodology_drc_routed.pb -rpx design_2_wrapper_methodology_drc_routed.rpx
 | Design       : design_2_wrapper
 | Device       : xc7z020clg484-1
@@ -23,17 +23,17 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 40
+             Violations found: 42
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                       | Violations |
 +-----------+------------------+-------------------------------------------------------------------+------------+
 | TIMING-14 | Critical Warning | LUT on the clock tree                                             | 2          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                                      | 1          |
 | TIMING-9  | Warning          | Unknown CDC Logic                                                 | 1          |
-| TIMING-18 | Warning          | Missing input or output delay                                     | 10         |
+| TIMING-18 | Warning          | Missing input or output delay                                     | 9          |
 | TIMING-30 | Warning          | Sub-optimal master source pin selection for generated clock       | 2          |
 | TIMING-47 | Warning          | False path or asynchronous clock group between synchronous clocks | 11         |
-| XDCH-2    | Warning          | Same min and max delay values on IO port                          | 13         |
+| XDCH-2    | Warning          | Same min and max delay values on IO port                          | 16         |
 +-----------+------------------+-------------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -72,50 +72,45 @@ Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on DRX relative to clock(s) clk_fpga_0
+An input delay is missing on SPI_DN relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An input delay is missing on SPI_DN relative to clock(s) clk_fpga_0
+An output delay is missing on DSYNC relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on DSYNC relative to clock(s) clk_fpga_0
+An output delay is missing on DTX relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on DTX relative to clock(s) clk_fpga_0
+An output delay is missing on LED0 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on LED0 relative to clock(s) clk_fpga_0
+An output delay is missing on LED1 relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on LED1 relative to clock(s) clk_fpga_0
+An output delay is missing on MCK_N relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on MCK_N relative to clock(s) clk_fpga_0
+An output delay is missing on MCK_P relative to clock(s) clk_fpga_0
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on MCK_P relative to clock(s) clk_fpga_0
-Related violations: <none>
-
-TIMING-18#9 Warning
-Missing input or output delay  
 An output delay is missing on SPI_CSN relative to clock(s) clk_fpga_0
 Related violations: <none>
 
-TIMING-18#10 Warning
+TIMING-18#9 Warning
 Missing input or output delay  
 An output delay is missing on SYNC_CK relative to clock(s) clk_fpga_0
 Related violations: <none>
@@ -187,93 +182,114 @@ Related violations: <none>
 
 XDCH-2#1 Warning
 Same min and max delay values on IO port  
-The same input delay of 2.000 ns has been defined on port 'DRX' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_input_delay -clock [get_clocks txclk] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 93)
+The same input delay of 2.000 ns has been defined on port 'DRX' relative to clock clk_fpga_0 for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock [get_clocks clk_fpga_0] 2.000 [get_ports -filter { NAME =~  "*" && DIRECTION == "IN" }]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 94)
 Related violations: <none>
 
 XDCH-2#2 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'DSYNC' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#3 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'DTX' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#4 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED0' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#5 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED1' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#6 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED2' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#7 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED3' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#8 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED4' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#9 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED5' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#10 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED6' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#11 Warning
 Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'LED7' relative to clock txclk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
 /home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#12 Warning
 Same min and max delay values on IO port  
-The same output delay of 2.000 ns has been defined on port 'SPI_CSN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
-set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 102)
+The same output delay of 2.000 ns has been defined on port 'MCK_N' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 XDCH-2#13 Warning
 Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'MCK_P' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
+Related violations: <none>
+
+XDCH-2#14 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'SPI_CSN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 106)
+Related violations: <none>
+
+XDCH-2#15 Warning
+Same min and max delay values on IO port  
 The same output delay of 2.000 ns has been defined on port 'SPI_DN' relative to clock spi_clk for both max and min. Make sure this reflects the design intent.
 set_output_delay -clock [get_clocks spi_clk] 2.000 [get_ports {SPI_CSN SPI_DN}]
-/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 102)
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 106)
+Related violations: <none>
+
+XDCH-2#16 Warning
+Same min and max delay values on IO port  
+The same output delay of 2.000 ns has been defined on port 'SYNC_CK' relative to clock txclk for both max and min. Make sure this reflects the design intent.
+set_output_delay -clock [get_clocks txclk] 2.000 [get_ports {MCK_N MCK_P SYNC_CK DSYNC DTX LED0 LED1 LED2 LED3 LED4 LED5 LED6 LED7}]
+/home/cdickins/reuse/gyro2tester-main/vivado/project/gyro2_tester.srcs/constrs_1/imports/new/gyro_constraints.xdc (Line: 100)
 Related violations: <none>
 
 
