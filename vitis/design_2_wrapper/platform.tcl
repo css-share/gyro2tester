@@ -57,3 +57,25 @@ platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_
 platform clean
 platform generate
 platform generate
+platform active {design_2_wrapper}
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
+platform clean
+platform generate
+platform clean
+platform generate
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
+platform clean
+platform generate
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vitis/fpgaBuilds/design_2_wrapper___RevID_052622.xsa}
+platform clean
+platform generate
+platform clean
+platform generate
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vitis/fpgaBuilds/design_2_wrapper___RevID_061422.xsa}
+platform clean
+platform generate
+platform config -updatehw {C:/Xilinx_projects/gyro2tester/vivado/project/design_2_wrapper.xsa}
+platform clean
+platform generate
+platform clean
+platform generate

@@ -168,6 +168,7 @@ void clearBiDirLoopbackMode(void){
 void captureRxHsiData(XAxiDma *axiDmaPtr){
 	u16 *RxBufferPtr;
 	RxBufferPtr = (u16 *)RX_BUFFER_BASE;
+	u32 clkDivSetting;
 
 #ifdef PRINT_RX_DEBUGS
 	u16 numDataPointsToCheck = MAX_PKT_LEN;
@@ -175,11 +176,41 @@ void captureRxHsiData(XAxiDma *axiDmaPtr){
 #endif
 
 	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+//	XAxiDma_Reset(axiDmaPtr);
+
+
+
+
+
+    XAxi_WriteReg(RXFIFO_REG0,0x00000000);   // Disable RX Buffer
+    XAxi_WriteReg(RXFIFO_REG1,0x00000001);   // RX Fifo reset
+
+    XAxi_WriteReg(BIDIR_REG1,0x00000001);    // Disable Rx input stream
+    XAxi_WriteReg(BIDIR_REG0,0x80000000);    // BiDir Fifo reset
+    XAxi_WriteReg(BIDIR_REG0,0x00000000);    // BiDir Fifo reset
+
+    XAxi_WriteReg(SW0_REG0,0x00000002);      // SW0 Reset
+    XAxi_WriteReg(SW1_REG0,0x00000002);      // SW1 Reset
+    XAxi_WriteReg(SW2_REG0,0x00000002);      // SW2 Reset
+    XAxi_WriteReg(SW3_REG0,0x00000002);      // SW3 Reset
+
+    XAxi_WriteReg(S2MM_DMACR, 0x00000004);   // RX DMA  Reset
+
+
+
+	XAxiDma_IntrDisable(axiDmaPtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(axiDmaPtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+
+	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+
 	XAxiDma_Reset(axiDmaPtr);
 
-	XAxi_WriteReg(RXFIFO_REG0,0x00000000);	// disable RxFifo push/pop
-	XAxi_WriteReg(RXFIFO_REG1,0x00000001);	// bit0=1 to clear RxFifo
-	XAxi_WriteReg(RXFIFO_REG1,0x00000000);	// bit0=1 to clear RxFifo
+
+
+//	XAxi_WriteReg(RXFIFO_REG0,0x00000000);	// disable RxFifo push/pop
+//	XAxi_WriteReg(RXFIFO_REG1,0x00000001);	// bit0=1 to clear RxFifo
+//	XAxi_WriteReg(RXFIFO_REG1,0x00000000);	// bit0=1 to clear RxFifo
 
 #ifdef PRINT_RX_DEBUGS
 	xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
@@ -196,6 +227,13 @@ void captureRxHsiData(XAxiDma *axiDmaPtr){
 	 xil_printf("Enable RX FIFO PUSH  \r\n");
 #endif
 	 XAxi_WriteReg(RXFIFO_REG0,0x00000001);
+
+
+#ifdef PRINT_RX_DEBUGS
+	 xil_printf("Enable RX input stream in BiDir \r\n");
+#endif
+	 clkDivSetting = XAxi_ReadReg(BIDIR_REG1) & 0x00070000;
+	 XAxi_WriteReg(BIDIR_REG1, clkDivSetting | 0x00000011);
 
 
 

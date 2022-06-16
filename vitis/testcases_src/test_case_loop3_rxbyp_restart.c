@@ -172,7 +172,10 @@ int main(){
     print("Results of test_case_loop3_rxbyp \n\r");
     
 
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
+	for(Index = 0; Index < 20; Index++) {
+		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
+	}
+	for(Index = (MAX_PKT_LEN/2)-20; Index < MAX_PKT_LEN/2; Index++) {
 		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
 	}
 
@@ -182,8 +185,8 @@ int main(){
 
 
 
-    TxBufferPtr = (u16 *)TX_BUFFER_BASE + MAX_PKT_LEN;
-	RxBufferPtr = (u16 *)RX_BUFFER_BASE + MAX_PKT_LEN;
+//    TxBufferPtr = (u16 *)TX_BUFFER_BASE + MAX_PKT_LEN;
+//	RxBufferPtr = (u16 *)RX_BUFFER_BASE + MAX_PKT_LEN;
 
 
 	// load Tx DDR buffer with down counter data and clear Rx buffer
@@ -193,10 +196,21 @@ int main(){
 		RxBufferPtr[Index] = 0x5555;
 		Value = (Value - 1);
 	}
-    
+	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
 
 
     print("Restart test_case_loop3 \r\n");
+/*
+  //  gyro_flush(&AxiDma, CfgPtr);
+    Status = gyro_flush(&AxiDma, CfgPtr);
+    	if (Status != XST_SUCCESS) {
+    		xil_printf("Flush failed %d\r\n", Status);
+    		return XST_FAILURE;
+    	}
+*/
+
+
+
 
     XAxi_WriteReg(TXFIFO_REG0,0x00000000);   // Disable TX Buffer
     XAxi_WriteReg(RXFIFO_REG0,0x00000000);   // Disable RX Buffer
@@ -240,6 +254,8 @@ int main(){
 	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 
 
+	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
+	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
 
 	XAxiDma_Reset(&AxiDma);
 
@@ -251,7 +267,7 @@ int main(){
  
     xil_printf("Turn on RX DMA path ready to receive \r\n");
     XAxi_WriteReg(S2MM_DMACR, 0x00000001);
-    XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE + MAX_PKT_LEN);
+    XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE);
     XAxi_WriteReg(S2MM_SA_MSB, 0x00000000);
     XAxi_WriteReg(S2MM_LENGTH, MAX_PKT_LEN);
 
@@ -263,7 +279,7 @@ int main(){
 
     xil_printf("Send in TX DATA \r\n");
     XAxi_WriteReg(MM2S_DMACR, 0x00000001);
-    XAxi_WriteReg(MM2S_SA, TX_BUFFER_BASE + MAX_PKT_LEN);
+    XAxi_WriteReg(MM2S_SA, TX_BUFFER_BASE);
     XAxi_WriteReg(MM2S_SA_MSB, 0x00000000);
     XAxi_WriteReg(MM2S_LENGTH, MAX_PKT_LEN);
 
@@ -309,7 +325,10 @@ int main(){
     print("Results of test_case_loop3_rxbyp \n\r");
     
 
-	for(Index = 0; Index < MAX_PKT_LEN/2; Index++) {
+	for(Index = 0; Index < 20; Index++) {
+		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
+	}
+	for(Index = (MAX_PKT_LEN/2)-20; Index < MAX_PKT_LEN/2; Index++) {
 		xil_printf("Received data packet %d: RX DATA %x / TX DATA %x\r\n", Index, (unsigned int)RxBufferPtr[Index], (unsigned int)TxBufferPtr[Index]);
 	}
 
