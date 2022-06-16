@@ -222,8 +222,6 @@ XAxiDma axiDma; 				// DMA device instance
 
 volatile unsigned char debugType = 7;
 
-//Xuint32 u32debugWords[MAX_PKT_LEN_BYTES/4];
-//Xuint32	TxBufferData[MAX_PKT_LEN_BYTES];
 
 u8 uartReceivingHsiTxData = FALSE;
 u8 finishedReceivingTxData = FALSE;
@@ -251,6 +249,31 @@ static u8 UartRxData[UART_RX_BUFFER_SIZE];	// Buffer for Receiving Data
 static u8 UartTxData[UART_TX_BUFFER_SIZE];	// Buffer for Transmitting Data
 u16 numUartBytesReceived;
 
+u16 hsiDataIntegrityTestResults[24];	// stores number of failures in each data test
+										// [0] Car buffer, data = 		0x0000
+										// [1] Node buffer, data = 		0x0000
+										// [2] Antinode buffer, data = 	0x0000
+										// [3] Car buffer, data = 		0x5555
+										// [4] Node buffer, data = 		0x5555
+										// [5] Antinode buffer, data = 	0x5555
+										// [6] Car buffer, data = 		0xAAAA
+										// [7] Node buffer, data =		0xAAAA
+										// [8] Antinode buffer, data = 	0xAAAA
+										// [9] Car buffer, data = 		0xFFFF
+										// [10] Node buffer, data = 	0xFFFF
+										// [11] Antinode buffer, data = 0xFFFF
+										// [12] Car buffer, ramp begins = 		0x0000
+										// [13] Node buffer, ramp begins = 		0x0000
+										// [14] Antinode buffer, ramp begins = 	0x0000
+										// [15] Car buffer, ramp begins = 		0x4000
+										// [16] Node buffer, ramp begins = 		0x4000
+										// [17] Antinode buffer, ramp begins = 	0x4000
+										// [18] Car buffer, ramp begins = 		0x8000
+										// [19] Node buffer, ramp begins = 		0x8000
+										// [20] Antinode buffer, ramp begins = 	0x8000
+										// [21] Car buffer, ramp begins = 		0xC000
+										// [22] Node buffer, ramp begins = 		0xC000
+										// [23] Antinode buffer, ramp begins = 	0xC000
 
 u8	FPGA_outputs_state = 2; 	// 1=on, 2=0ff
 
@@ -342,6 +365,7 @@ static void init_MIO_gpio(void);
 static void	initUart(void);
 static void disable_dmm_mux(void);
 static void enable_dmm_mux(void);
+static void hsiDataIntegrityTest(void);
 
 
 
@@ -511,7 +535,7 @@ void nops(unsigned int num) {
 // -------------------------------------------------------------------
 void sendReceivedHsiTxDataToDdrBuffer(u16 *ddrTxBuffer){
     for(i = 0; i < NUM_DATAPOINTS_PER_TX_CHANNEL; i++) {
-        ddrTxBuffer[i] = UartRxData[2*i] + (UartRxData[(2*i)+1]<<8);
+        ddrTxBuffer[i] = (UartRxData[2*i] << 8) + UartRxData[(2*i)+1];
     }
 }
 // -------------------------------------------------------------------
@@ -1109,6 +1133,80 @@ void read_uart_bytes(void)
 			break;
 
 	}
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void hsiDataIntegrityTest(void){
+	// set asic into loopback mode (Tx into Rx including HSI logic)
+	hsiDataIntegrityTestResults[0];
+
+	//====================================================================
+	// send constant data from fpga TXD pin, read data returned on RXD pin
+
+	// send 0x0000 out TXD (Car, Node, Antinode)
+	updateDdrTxBufferWithConstant(CARRIER_CHANNEL,0x0000);
+	updateDdrTxBufferWithConstant(NODE_CHANNEL,0x0000);
+	updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,0x0000);
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+	// send 0x5555 out TXD (Car, Node, Antinode)
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+	// send 0xAAAA out TXD (Car, Node, Antinode)
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+	// send 0xFFFF out TXD (Car, Node, Antinode)
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+	//====================================================================
+
+
+
+	//====================================================================
+	// same test as above except send ramp data out
+
+	// send 16k point ramp starting value of 0x0000 out TXD (Car, Node, Antinode)
+	updateDdrTxBufferWithRamp(CARRIER_CHANNEL,0x0000);
+	updateDdrTxBufferWithRamp(NODE_CHANNEL,0x0000);
+	updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,0x0000);
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+	// send 16k point ramp starting value of 0x4000 out TXD (Car, Node, Antinode)
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+	// send 16k point ramp starting value of 0x8000 out TXD (Car, Node, Antinode)
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+	// send 16k point ramp starting value of 0xC000 out TXD (Car, Node, Antinode)
+	// capture RXD
+	// test TADC buffer
+	// test Node buffer
+	// test Anti-node buffer
+
+
+
 }
 //------------------------------------------------------------
 
