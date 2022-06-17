@@ -25,7 +25,7 @@
 #define CARRIER_CHANNEL					0
 #define NODE_CHANNEL					1
 #define ANTINODE_CHANNEL				2
-#define TEMP_SENSE_CHANNEL				3
+#define TADC_CHANNEL					3
 
 #define NUM_DATAPOINTS_PER_TX_CHANNEL	0x4000
 #define NUM_BYTES_PER_TX_CHANNEL		(NUM_DATAPOINTS_PER_TX_CHANNEL << 1)  // 2 bytes per datapoint

@@ -1149,28 +1149,41 @@ void hsiDataIntegrityTest(void){
 	updateDdrTxBufferWithConstant(CARRIER_CHANNEL,0x0000);
 	updateDdrTxBufferWithConstant(NODE_CHANNEL,0x0000);
 	updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,0x0000);
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
+	updateTxDataStream(&axiDma);
+	captureRxHsiData(&axiDma);
+	hsiDataIntegrityTestResults[0] = testBufferForDcValue(TADC_CHANNEL,0x0000);
+	hsiDataIntegrityTestResults[1] = testBufferForDcValue(NODE_CHANNEL,0x0000);
+	hsiDataIntegrityTestResults[2] = testBufferForDcValue(ANTINODE_CHANNEL,0x0000);
 
 	// send 0x5555 out TXD (Car, Node, Antinode)
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
+	updateDdrTxBufferWithConstant(CARRIER_CHANNEL,0x5555);
+	updateDdrTxBufferWithConstant(NODE_CHANNEL,0x5555);
+	updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,0x5555);
+	updateTxDataStream(&axiDma);
+	captureRxHsiData(&axiDma);
+	hsiDataIntegrityTestResults[3] = testBufferForDcValue(TADC_CHANNEL,0x5555);
+	hsiDataIntegrityTestResults[4] = testBufferForDcValue(NODE_CHANNEL,0x5555);
+	hsiDataIntegrityTestResults[5] = testBufferForDcValue(ANTINODE_CHANNEL,0x5555);
 
 	// send 0xAAAA out TXD (Car, Node, Antinode)
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
+	updateDdrTxBufferWithConstant(CARRIER_CHANNEL,0xAAAA);
+	updateDdrTxBufferWithConstant(NODE_CHANNEL,0xAAAA);
+	updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,0xAAAA);
+	updateTxDataStream(&axiDma);
+	captureRxHsiData(&axiDma);
+	hsiDataIntegrityTestResults[6] = testBufferForDcValue(TADC_CHANNEL,0xAAAA);
+	hsiDataIntegrityTestResults[7] = testBufferForDcValue(NODE_CHANNEL,0xAAAA);
+	hsiDataIntegrityTestResults[8] = testBufferForDcValue(ANTINODE_CHANNEL,0xAAAA);
 
 	// send 0xFFFF out TXD (Car, Node, Antinode)
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
+	updateDdrTxBufferWithConstant(CARRIER_CHANNEL,0xFFFF);
+	updateDdrTxBufferWithConstant(NODE_CHANNEL,0xFFFF);
+	updateDdrTxBufferWithConstant(ANTINODE_CHANNEL,0xFFFF);
+	updateTxDataStream(&axiDma);
+	captureRxHsiData(&axiDma);
+	hsiDataIntegrityTestResults[9] = testBufferForDcValue(TADC_CHANNEL,0xFFFF);
+	hsiDataIntegrityTestResults[10] = testBufferForDcValue(NODE_CHANNEL,0xFFFF);
+	hsiDataIntegrityTestResults[11] = testBufferForDcValue(ANTINODE_CHANNEL,0xFFFF);
 	//====================================================================
 
 
@@ -1179,9 +1192,9 @@ void hsiDataIntegrityTest(void){
 	// same test as above except send ramp data out
 
 	// send 16k point ramp starting value of 0x0000 out TXD (Car, Node, Antinode)
-	updateDdrTxBufferWithRamp(CARRIER_CHANNEL,0x0000);
-	updateDdrTxBufferWithRamp(NODE_CHANNEL,0x0000);
-	updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,0x0000);
+	updateDdrTxBufferWithRamp(CARRIER_CHANNEL,0x6000);
+	updateDdrTxBufferWithRamp(NODE_CHANNEL,0x6000);
+	updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,0x6000);
 	// capture RXD
 	// test TADC buffer
 	// test Node buffer

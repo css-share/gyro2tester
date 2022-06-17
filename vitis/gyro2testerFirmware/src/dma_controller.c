@@ -412,6 +412,89 @@ void updateDdrTxBufferWithConstant(u8 TxChannel,u16 dcValue){
 
 
 //=========================================================================
+u16 testBufferForDcValue(u8 Channel,u16 targetDcValue){
+	u16 Index,channelDdrBufferOffset;
+	u16 *BufferPtr;
+	BufferPtr = (u16 *)RX_BUFFER_BASE;
+	u16 numErrors = 0;
+
+	// set the offset for data loading loop below
+	switch (Channel){
+
+		case (TADC_CHANNEL):
+			channelDdrBufferOffset = TEST_ADC_CHAN_RX_BUFF_OFFSET;
+			break;
+
+		case (NODE_CHANNEL):
+			channelDdrBufferOffset = NODE_CHAN_RX_BUFF_OFFSET;
+			break;
+
+		case (ANTINODE_CHANNEL):
+			channelDdrBufferOffset = ANTINODE_CHAN_RX_BUFF_OFFSET;
+			break;
+	}
+
+	for(Index = 0; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
+
+		if (BufferPtr[Index + channelDdrBufferOffset] != targetDcValue){
+			numErrors += 1;
+		}
+	}
+
+	return numErrors;
+}
+//=========================================================================
+
+
+
+
+
+
+//=========================================================================
+u16 testBufferForRamp(u8 Channel,u16 rampStartValue){
+	// test for an increasing ramp
+
+	u16 Index,channelDdrBufferOffset,targetValue;
+	u16 *BufferPtr;
+	BufferPtr = (u16 *)RX_BUFFER_BASE;
+	u16 numErrors = 0;
+	u16 rolloverValue = rampStartValue
+
+	// set the offset for data loading loop below
+	switch (Channel){
+
+		case (TADC_CHANNEL):
+			channelDdrBufferOffset = TEST_ADC_CHAN_RX_BUFF_OFFSET;
+			break;
+
+		case (NODE_CHANNEL):
+			channelDdrBufferOffset = NODE_CHAN_RX_BUFF_OFFSET;
+			break;
+
+		case (ANTINODE_CHANNEL):
+			channelDdrBufferOffset = ANTINODE_CHAN_RX_BUFF_OFFSET;
+			break;
+	}
+
+	targetValue = BufferPtr[Index + channelDdrBufferOffset] + 1;
+
+	for(Index = 1; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
+
+		if (BufferPtr[Index + channelDdrBufferOffset] != targetDcValue){
+			numErrors += 1;
+		}
+	}
+
+	return numErrors;
+}
+//=========================================================================
+
+
+
+
+
+
+//=========================================================================
 void updateDdrTxBufferWithRamp(u8 TxChannel,u16 rampStartValue){
 	u16 Index,channelDdrBufferOffset;
 	u16 *TxBufferPtr;
