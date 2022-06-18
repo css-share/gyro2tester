@@ -55,6 +55,7 @@ extern void xil_printf(const char *format, ...);
 #define CMD_READ_RX_TADC_BUFFER			0x7C	// send the Rx DDR buffer TADC channel contents out over UART
 #define CMD_READ_RX_NODE_BUFFER			0x7D	// send the Rx DDR buffer Node channel contents out over UART
 #define CMD_READ_RX_ANODE_BUFFER		0x7E	// send the Rx DDR buffer Anti-node channel contents out over UART
+#define CMD_RUN_HSI_DATA_INTEGRITY_TEST 0x7F	// test send/receive performance of the fpga-to-asic HSI bus
 #define CMD_PROG_OTP_CHIP_ID			0x81	// program the chip ID into OTP memory
 #define CMD_PROG_OTP_VBG_TRIM			0x82	// program the bandgap trim value into OTP memory
 #define CMD_READ_OTP_DATA				0x83	// read the 32-bit data stored in 2 16-bit OTP registers
@@ -249,31 +250,23 @@ static u8 UartRxData[UART_RX_BUFFER_SIZE];	// Buffer for Receiving Data
 static u8 UartTxData[UART_TX_BUFFER_SIZE];	// Buffer for Transmitting Data
 u16 numUartBytesReceived;
 
-u16 hsiDataIntegrityTestResults[24];	// stores number of failures in each data test
-										// [0] Car buffer, data = 		0x0000
-										// [1] Node buffer, data = 		0x0000
-										// [2] Antinode buffer, data = 	0x0000
-										// [3] Car buffer, data = 		0x5555
-										// [4] Node buffer, data = 		0x5555
-										// [5] Antinode buffer, data = 	0x5555
-										// [6] Car buffer, data = 		0xAAAA
-										// [7] Node buffer, data =		0xAAAA
-										// [8] Antinode buffer, data = 	0xAAAA
-										// [9] Car buffer, data = 		0xFFFF
-										// [10] Node buffer, data = 	0xFFFF
-										// [11] Antinode buffer, data = 0xFFFF
-										// [12] Car buffer, ramp begins = 		0x0000
-										// [13] Node buffer, ramp begins = 		0x0000
-										// [14] Antinode buffer, ramp begins = 	0x0000
-										// [15] Car buffer, ramp begins = 		0x4000
-										// [16] Node buffer, ramp begins = 		0x4000
-										// [17] Antinode buffer, ramp begins = 	0x4000
-										// [18] Car buffer, ramp begins = 		0x8000
-										// [19] Node buffer, ramp begins = 		0x8000
-										// [20] Antinode buffer, ramp begins = 	0x8000
-										// [21] Car buffer, ramp begins = 		0xC000
-										// [22] Node buffer, ramp begins = 		0xC000
-										// [23] Antinode buffer, ramp begins = 	0xC000
+//u16 hsiDataIntegrityTestResults[15]={0x1234,2,3,4,5,6,7,8,9,10,11,12,13,14,0xABCD};
+u16 hsiDataIntegrityTestResults[15];	// stores number of failures in each data test
+										// [0] Car buffer, data = 				0x0000
+										// [1] Node buffer, data = 				0x0000
+										// [2] Antinode buffer, data = 			0x0000
+										// [3] Car buffer, data = 				0x5555
+										// [4] Node buffer, data = 				0x5555
+										// [5] Antinode buffer, data = 			0x5555
+										// [6] Car buffer, data = 				0xAAAA
+										// [7] Node buffer, data =				0xAAAA
+										// [8] Antinode buffer, data = 			0xAAAA
+										// [9] Car buffer, data = 				0xFFFF
+										// [10] Node buffer, data = 			0xFFFF
+										// [11] Antinode buffer, data = 		0xFFFF
+										// [12] Car buffer, ramp begins = 		0x6000
+										// [13] Node buffer, ramp begins = 		0x6000
+										// [14] Antinode buffer, ramp begins = 	0x6000
 
 u8	FPGA_outputs_state = 2; 	// 1=on, 2=0ff
 
@@ -449,6 +442,12 @@ unsigned int writeGyroRegister(unsigned int address, unsigned int data){
 	Xuint32 		spiControReg,clkSelBits,enableBit;
 	Xuint16			readbackValue;
 
+	// ========================================================================
+	// do a 'dummy' read of register 6 (unimplemented). This avoids problems
+	// caused by a race condition in the IC's SPI module by setting the
+	// register field to an address safe to glitch before the actual write occurs
+	readGyroRegister(6);
+	// ========================================================================
 
 	spiControReg = *(baseaddr_spi+0);
 
@@ -1132,6 +1131,12 @@ void read_uart_bytes(void)
 								(u8*)(RX_ANTINODE_CHANNEL_BUFFER_BASE));
 			break;
 
+		case (CMD_RUN_HSI_DATA_INTEGRITY_TEST):
+			hsiDataIntegrityTest();
+			send_data_over_UART(15*2,	// 15 results, 2 bytes per result, so send 30 bytes
+								(u8*)(hsiDataIntegrityTestResults));
+			break;
+
 	}
 }
 //------------------------------------------------------------
@@ -1139,8 +1144,17 @@ void read_uart_bytes(void)
 
 //------------------------------------------------------------
 void hsiDataIntegrityTest(void){
+	u16 regValue;
+
+	// turn on LVDS receiver if not enabled
+	regValue = readGyroRegister(20);
+	if ( (regValue & 0x1000) == 0){
+		writeGyroRegister(20,0x1000);
+	}
+
 	// set asic into loopback mode (Tx into Rx including HSI logic)
-	hsiDataIntegrityTestResults[0];
+	regValue = readGyroRegister(16);
+	writeGyroRegister(16,0x8000);
 
 	//====================================================================
 	// send constant data from fpga TXD pin, read data returned on RXD pin
@@ -1195,31 +1209,14 @@ void hsiDataIntegrityTest(void){
 	updateDdrTxBufferWithRamp(CARRIER_CHANNEL,0x6000);
 	updateDdrTxBufferWithRamp(NODE_CHANNEL,0x6000);
 	updateDdrTxBufferWithRamp(ANTINODE_CHANNEL,0x6000);
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
+	updateTxDataStream(&axiDma);
+	captureRxHsiData(&axiDma);
+	hsiDataIntegrityTestResults[12] = testBufferForRamp(TADC_CHANNEL,0x6000);
+	hsiDataIntegrityTestResults[13] = testBufferForRamp(NODE_CHANNEL,0x6000);
+	hsiDataIntegrityTestResults[14] = testBufferForRamp(ANTINODE_CHANNEL,0x6000);
 
-	// send 16k point ramp starting value of 0x4000 out TXD (Car, Node, Antinode)
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
-
-	// send 16k point ramp starting value of 0x8000 out TXD (Car, Node, Antinode)
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
-
-	// send 16k point ramp starting value of 0xC000 out TXD (Car, Node, Antinode)
-	// capture RXD
-	// test TADC buffer
-	// test Node buffer
-	// test Anti-node buffer
-
-
-
+	// test done so restore register 16 setting that was read earlier
+	writeGyroRegister(16,regValue);
 }
 //------------------------------------------------------------
 

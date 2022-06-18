@@ -1,9 +1,28 @@
 Nothing to build in platform 'design_2_wrapper'
 
-02:42:31 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
+22:53:47 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/dma_controller.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
+../src/dma_controller.c: In function 'testBufferForRamp':
+../src/dma_controller.c:463:6: warning: unused variable 'rolloverValue' [-Wunused-variable]
+  463 |  u16 rolloverValue = rampStartValue + NUM_DATAPOINTS_PER_TX_CHANNEL;
+      |      ^~~~~~~~~~~~~
+'Finished building: ../src/dma_controller.c'
+' '
+'Building target: gyro2testerFirmware.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: gyro2testerFirmware.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  65524	   3168	 156984	 225676	  3718c	gyro2testerFirmware.elf
+'Finished building: gyro2testerFirmware.elf.size'
+' '

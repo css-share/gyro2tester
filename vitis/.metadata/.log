@@ -10219,3 +10219,1545 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-353: Laun
 
 !ENTRY com.xilinx.sdk.utils 0 0 2022-06-16 02:42:49.976
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-353: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:09.313
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-566: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:09.320
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-566: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:09.324
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-566: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:09.329
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-566: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 21:03:09.332
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:09.336
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-566: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:09.340
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-566: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2022-06-17 21:03:09.664
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:47.199
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-575: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:47.205
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-575: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:47.209
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-575: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:47.214
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-575: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 21:03:47.217
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:47.221
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-575: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 21:03:47.225
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-575: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:38.975
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-588: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:38.984
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-588: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:38.989
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-588: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:38.994
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-588: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 22:30:38.998
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:39.003
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-588: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:39.007
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-588: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:54.022
+!MESSAGE XSCT Command: [disconnect tcfchan#48], Thread: Thread-3049
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:30:54.027
+!MESSAGE XSCT command with result: [disconnect tcfchan#48], Result: [null, ]. Thread: Thread-3049
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:31:57.938
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-591: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:31:57.946
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-591: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:31:57.949
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-591: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:31:57.955
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-591: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 22:31:57.958
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:31:57.962
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-591: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:31:57.966
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-591: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:05.287
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.370
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.387
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.403
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.425
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.440
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.443
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.446
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.449
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.451
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.454
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#49]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.456
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.459
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.462
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.465
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.468
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.471
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.474
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.476
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.479
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.481
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.484
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.487
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:32:06.490
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.492
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.595
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.602
+!MESSAGE XSCT Command: [version -server], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.609
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2021.2]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.615
+!MESSAGE XSCT Command: [version], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.619
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2021.2.0
+SW Build 1967 on 2021-10-14-04:42:58
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.623
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.637
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.641
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.665
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.668
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.678
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.681
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.705
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.708
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.718
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.721
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.744
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.748
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.757
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.760
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.783
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.786
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.796
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.799
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.825
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.828
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.838
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.841
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.865
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.868
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248AA59A3" && level == 0}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.892
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248AA59A3" && level == 0}], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:06.895
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:07.014
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:07.018
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:07.033
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:07.036
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:07.073
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:07.079
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.098
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.119
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.129
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.132
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.154
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.158
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.290
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:10.293
+!MESSAGE XSCT Command: [fpga -file C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/bitstream/design_2_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:12.785
+!MESSAGE XSCT command with result: [fpga -file C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/bitstream/design_2_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:12.810
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:12.973
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:12.979
+!MESSAGE XSCT Command: [loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.011
+!MESSAGE XSCT command with result: [loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, design_2_wrapper_18]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.015
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.020
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.024
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.044
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.048
+!MESSAGE XSCT Command: [source C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/psinit/ps7_init.tcl], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.054
+!MESSAGE XSCT command with result: [source C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:13.058
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:15.448
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:15.455
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:15.631
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:15.637
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:15.830
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:15.834
+!MESSAGE XSCT Command: [dow C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/Debug/gyro2testerFirmware.elf], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:16.641
+!MESSAGE XSCT command with result: [dow C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/Debug/gyro2testerFirmware.elf], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:16.645
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:16.815
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:17.184
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:17.201
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:17.205
+!MESSAGE XSCT Command: [con], Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:32:17.560
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-584: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:50.498
+!MESSAGE XSCT Command: [disconnect tcfchan#49], Thread: Thread-3121
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:50.504
+!MESSAGE XSCT command with result: [disconnect tcfchan#49], Result: [null, ]. Thread: Thread-3121
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:52.923
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-358: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:52.929
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-358: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:52.934
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-358: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:52.940
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-358: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 22:36:52.943
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:52.946
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-358: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:36:52.950
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-358: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:02.796
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.879
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.897
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.909
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.924
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.945
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.948
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.951
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.954
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.956
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.959
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.961
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.964
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.967
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.969
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.972
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.974
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:03.977
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#50]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.979
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.982
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.984
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.987
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.990
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:37:03.992
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:03.994
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.099
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.103
+!MESSAGE XSCT Command: [version -server], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.107
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2021.2]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.109
+!MESSAGE XSCT Command: [version], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.113
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2021.2.0
+SW Build 1967 on 2021-10-14-04:42:58
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.116
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.126
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.129
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.151
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.155
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.164
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.167
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.191
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.194
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.203
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.206
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.230
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.233
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.242
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.245
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.267
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.271
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.280
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.284
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.307
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.310
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.319
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.322
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.346
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.349
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248AA59A3" && level == 0}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.372
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248AA59A3" && level == 0}], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.375
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.535
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.539
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.557
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.561
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.600
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:04.603
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.614
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.645
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.659
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.663
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.687
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.690
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.802
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:07.805
+!MESSAGE XSCT Command: [fpga -file C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/bitstream/design_2_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.315
+!MESSAGE XSCT command with result: [fpga -file C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/bitstream/design_2_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.362
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.554
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.560
+!MESSAGE XSCT Command: [loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.596
+!MESSAGE XSCT command with result: [loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, design_2_wrapper_18]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.602
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.608
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.613
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.630
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.634
+!MESSAGE XSCT Command: [source C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/psinit/ps7_init.tcl], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.639
+!MESSAGE XSCT command with result: [source C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:10.643
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:12.906
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:12.913
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:13.093
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:13.099
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:13.129
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:13.136
+!MESSAGE XSCT Command: [dow C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/Debug/gyro2testerFirmware.elf], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:13.929
+!MESSAGE XSCT command with result: [dow C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/Debug/gyro2testerFirmware.elf], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:13.933
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:14.078
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:14.269
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:14.297
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:14.300
+!MESSAGE XSCT Command: [con], Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:37:14.663
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-591: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:42:57.966
+!MESSAGE XSCT Command: [disconnect tcfchan#50], Thread: Thread-3199
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:42:57.978
+!MESSAGE XSCT command with result: [disconnect tcfchan#50], Result: [null, ]. Thread: Thread-3199
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:43:09.146
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-605: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:43:09.153
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-605: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:43:09.157
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-605: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:43:09.162
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-605: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 22:43:09.166
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:43:09.170
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-605: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:43:09.174
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-605: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:47.733
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Thread: Worker-603: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:47.740
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss ], Result: [null, ]. Thread: Worker-603: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:47.744
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-603: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:47.752
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-603: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-06-17 22:53:47.756
+!MESSAGE Generating MD5 hash for file: C:\Xilinx_projects\gyro2tester\vitis\design_2_wrapper\export\design_2_wrapper\sw\design_2_wrapper\standalone_domain\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:47.761
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Thread: Worker-603: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:47.766
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/system.mss], Result: [null, ]. Thread: Worker-603: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:54.618
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.684
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.695
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.711
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.726
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.750
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.755
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.763
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.768
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.771
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.775
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.778
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.781
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.785
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.788
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.791
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.794
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#51]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.796
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.800
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.804
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.807
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.810
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.813
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.tcf 4 0 2022-06-17 22:53:55.817
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.820
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.908
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.912
+!MESSAGE XSCT Command: [version -server], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.915
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2021.2]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.918
+!MESSAGE XSCT Command: [version], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.921
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2021.2.0
+SW Build 1967 on 2021-10-14-04:42:58
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.924
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.933
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.936
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.960
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.963
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.973
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.976
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:55.999
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.003
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.013
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.016
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.040
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.044
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.053
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.056
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.080
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.083
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.093
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.096
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.119
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.123
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.132
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.136
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.159
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.162
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248AA59A3" && level == 0}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.186
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248AA59A3" && level == 0}], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.189
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.339
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.345
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.367
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.371
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.410
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:56.413
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.423
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.464
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.481
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248AA59A3]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.485
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.514
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.519
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.591
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:53:59.594
+!MESSAGE XSCT Command: [fpga -file C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/bitstream/design_2_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.082
+!MESSAGE XSCT command with result: [fpga -file C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/bitstream/design_2_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.120
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.288
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.294
+!MESSAGE XSCT Command: [loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.319
+!MESSAGE XSCT command with result: [loadhw -hw C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/hw/design_2_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, design_2_wrapper_18]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.323
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.501
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.512
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.541
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.544
+!MESSAGE XSCT Command: [source C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/psinit/ps7_init.tcl], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.548
+!MESSAGE XSCT command with result: [source C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:02.551
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:04.969
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:04.975
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:05.165
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:05.172
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:05.192
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:05.197
+!MESSAGE XSCT Command: [dow C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/Debug/gyro2testerFirmware.elf], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.003
+!MESSAGE XSCT command with result: [dow C:/Xilinx_projects/gyro2tester/vitis/gyro2testerFirmware/Debug/gyro2testerFirmware.elf], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.006
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.171
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.357
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.386
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.392
+!MESSAGE XSCT Command: [con], Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-06-17 22:54:06.569
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-599: Launching SystemDebugger_gyro2testerFirmware_system

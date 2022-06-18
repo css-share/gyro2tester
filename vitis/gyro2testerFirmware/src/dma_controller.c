@@ -452,15 +452,17 @@ u16 testBufferForDcValue(u8 Channel,u16 targetDcValue){
 
 //=========================================================================
 u16 testBufferForRamp(u8 Channel,u16 rampStartValue){
-	// test for an increasing ramp
+	/*	Test for an increasing ramp in the specified buffer
+		Return the number of failures in the test of ramp data
+	*/
 
 	u16 Index,channelDdrBufferOffset,targetValue;
 	u16 *BufferPtr;
 	BufferPtr = (u16 *)RX_BUFFER_BASE;
 	u16 numErrors = 0;
-	u16 rolloverValue = rampStartValue
+	u16 rolloverValue = rampStartValue + NUM_DATAPOINTS_PER_TX_CHANNEL;
 
-	// set the offset for data loading loop below
+	// set the correct buffer offset for use below
 	switch (Channel){
 
 		case (TADC_CHANNEL):
@@ -476,12 +478,22 @@ u16 testBufferForRamp(u8 Channel,u16 rampStartValue){
 			break;
 	}
 
-	targetValue = BufferPtr[Index + channelDdrBufferOffset] + 1;
+	// first point in the Rx buffer is taken as the start of the ramp
+	targetValue = BufferPtr[channelDdrBufferOffset] + 1;
 
+	// each successive point in the buffer should increase by one
 	for(Index = 1; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
 
-		if (BufferPtr[Index + channelDdrBufferOffset] != targetDcValue){
+		if (BufferPtr[channelDdrBufferOffset + Index] != targetValue){
 			numErrors += 1;
+		}
+
+		// set up next expected value to look for in the data
+		if (targetValue == rampStartValue + NUM_DATAPOINTS_PER_TX_CHANNEL - 1){
+			targetValue = rampStartValue; // rollover point has been reached
+		}
+		else{
+			targetValue++;	// increment to next point in the ramp
 		}
 	}
 
