@@ -278,6 +278,81 @@ void captureRxHsiData(XAxiDma *axiDmaPtr){
 
 
 //=========================================================================
+void captureRxHsiDataOld(XAxiDma *axiDmaPtr){
+	u16 *RxBufferPtr;
+	RxBufferPtr = (u16 *)RX_BUFFER_BASE;
+
+#ifdef PRINT_RX_DEBUGS
+	u16 numDataPointsToCheck = MAX_PKT_LEN;
+	xil_printf("\r\nTesting function captureRxHsiData() \r\n");
+#endif
+
+	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+	XAxiDma_Reset(axiDmaPtr);
+
+	XAxi_WriteReg(RXFIFO_REG0,0x00000000);	// disable RxFifo push/pop
+	XAxi_WriteReg(RXFIFO_REG1,0x00000001);	// bit0=1 to clear RxFifo
+	XAxi_WriteReg(RXFIFO_REG1,0x00000000);	// bit0=1 to clear RxFifo
+
+#ifdef PRINT_RX_DEBUGS
+	xil_printf("Initial Rx Fifo Levels %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+	xil_printf("Turn on RX DMA path ready to receive \r\n");
+#endif
+
+	XAxi_WriteReg(S2MM_DMACR, 0x00000001);
+	XAxi_WriteReg(S2MM_SA, RX_BUFFER_BASE);
+	XAxi_WriteReg(S2MM_SA_MSB, 0x00000000);
+	XAxi_WriteReg(S2MM_LENGTH, MAX_PKT_LEN);
+
+
+#ifdef PRINT_RX_DEBUGS
+	 xil_printf("Enable RX FIFO PUSH  \r\n");
+#endif
+	 XAxi_WriteReg(RXFIFO_REG0,0x00000001);
+
+
+
+	while(Buffer_Not_Full(RXFIFO_REG3)){
+		if (Buffer_Not_Full(RXFIFO_REG3) == TRUE){
+#ifdef PRINT_RX_DEBUGS
+					xil_printf("RXBUFFER still busy...\r\n");
+#endif
+		}
+	 }
+
+#ifdef PRINT_RX_DEBUGS
+	xil_printf("Rx Fifo Levels after filled %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+
+	xil_printf("Enable RX FIFO POP \r\n");
+#endif
+	XAxi_WriteReg(RXFIFO_REG0, 0x00000003);
+
+
+	while(XAxiDma_Busy(axiDmaPtr,XAXIDMA_DEVICE_TO_DMA)){
+		if (XAxiDma_Busy(axiDmaPtr,XAXIDMA_DEVICE_TO_DMA) == TRUE){
+#ifdef PRINT_RX_DEBUGS
+			xil_printf("S2MM channel is busy...\r\n");
+#endif
+		}
+	}
+
+#ifdef PRINT_RX_BUFFER_ON_CAPTURE
+	xil_printf("Rx Fifo Levels after pop %x \r\n", XAxi_ReadReg(RXFIFO_REG3));
+	for(u32 Index = 0; Index < numDataPointsToCheck; Index++) {
+		xil_printf("Datapoint %04x:  RX DATA %04x \r\n", Index, (unsigned int)RxBufferPtr[Index]);
+	}
+#endif
+
+
+	XAxiDma_Reset(axiDmaPtr);
+}
+//=========================================================================
+
+
+
+
+
+//=========================================================================
 void printRxDdrBufferResults(void){
 	u16 numPointsToDisplay = 12;
 	u16 i;
@@ -370,6 +445,39 @@ void updateTxDataStream(XAxiDma *axiDmaPtr){
 
     XAxiDma_Reset(axiDmaPtr);
 
+}
+//=========================================================================
+
+
+
+
+
+//=========================================================================
+void sendReceivedHsiTxDataToDdrBuffer(u8 TxChannel, u8 *ReceivedDataBuffer){
+	unsigned int Index,channelDdrBufferOffset;
+	u16 *TxBufferPtr;
+	TxBufferPtr = (u16 *)TX_BUFFER_BASE;
+
+	// set the offset for data loading loop below
+	switch (TxChannel){
+
+		case (CARRIER_CHANNEL):
+			channelDdrBufferOffset = CARRIER_CHAN_TX_BUFF_OFFSET;
+			break;
+
+		case (NODE_CHANNEL):
+			channelDdrBufferOffset = NODE_CHAN_TX_BUFF_OFFSET;
+			break;
+
+		case (ANTINODE_CHANNEL):
+			channelDdrBufferOffset = ANTINODE_CHAN_TX_BUFF_OFFSET;
+			break;
+	}
+
+	for(Index = 0; Index < NUM_DATAPOINTS_PER_TX_CHANNEL; Index ++){
+			TxBufferPtr[Index + channelDdrBufferOffset] =
+					(ReceivedDataBuffer[2*Index] << 8) + ReceivedDataBuffer[(2*Index)+1];
+	}
 }
 //=========================================================================
 

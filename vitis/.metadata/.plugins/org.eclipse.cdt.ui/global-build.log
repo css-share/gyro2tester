@@ -1,6 +1,6 @@
 Nothing to build in platform 'design_2_wrapper'
 
-22:53:47 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
+23:23:12 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -8,21 +8,62 @@ a9-linaro-pre-build-step
 make --no-print-directory main-build
 'Building file: ../src/dma_controller.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
 ../src/dma_controller.c: In function 'testBufferForRamp':
-../src/dma_controller.c:463:6: warning: unused variable 'rolloverValue' [-Wunused-variable]
-  463 |  u16 rolloverValue = rampStartValue + NUM_DATAPOINTS_PER_TX_CHANNEL;
+../src/dma_controller.c:571:6: warning: unused variable 'rolloverValue' [-Wunused-variable]
+  571 |  u16 rolloverValue = rampStartValue + NUM_DATAPOINTS_PER_TX_CHANNEL;
       |      ^~~~~~~~~~~~~
 'Finished building: ../src/dma_controller.c'
 ' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:7:
+C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+../src/main.c: In function 'read_uart_bytes':
+../src/main.c:761:6: warning: unused variable 'TxDdrBufferPtr' [-Wunused-variable]
+  761 |  u8 *TxDdrBufferPtr;
+      |      ^~~~~~~~~~~~~~
+../src/main.c:760:6: warning: unused variable 'otpBytes' [-Wunused-variable]
+  760 |  u32 otpBytes;
+      |      ^~~~~~~~
+../src/main.c: At top level:
+../src/main.c:338:21: warning: 'getNumBytesToSend' declared 'static' but never defined [-Wunused-function]
+  338 | static unsigned int getNumBytesToSend(u8 *RxData);
+      |                     ^~~~~~~~~~~~~~~~~
+../src/main.c:339:13: warning: 'send_Tx_data_over_UART' declared 'static' but never defined [-Wunused-function]
+  339 | static void send_Tx_data_over_UART(unsigned int num_points_to_send);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:1735:6: warning: 'init_MIO_gpio' defined but not used [-Wunused-function]
+ 1735 | void init_MIO_gpio(void)
+      |      ^~~~~~~~~~~~~
+../src/main.c:1589:8: warning: 'ProgramOTP_VbgTrim' defined but not used [-Wunused-function]
+ 1589 | Xuint8 ProgramOTP_VbgTrim(u8 trimVal)
+      |        ^~~~~~~~~~~~~~~~~~
+../src/main.c:1577:8: warning: 'ProgramOTP_chipID' defined but not used [-Wunused-function]
+ 1577 | Xuint8 ProgramOTP_chipID(u32 id)
+      |        ^~~~~~~~~~~~~~~~~
+../src/main.c:1472:5: warning: 'InitializeDelayTimer' defined but not used [-Wunused-function]
+ 1472 | int InitializeDelayTimer(void)
+      |     ^~~~~~~~~~~~~~~~~~~~
+../src/main.c:250:11: warning: 'UartTxData' defined but not used [-Wunused-variable]
+  250 | static u8 UartTxData[UART_TX_BUFFER_SIZE]; // Buffer for Transmitting Data
+      |           ^~~~~~~~~~
+'Finished building: ../src/main.c'
+' '
 'Building target: gyro2testerFirmware.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: gyro2testerFirmware.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  65524	   3168	 156984	 225676	  3718c	gyro2testerFirmware.elf
+  65844	   3168	 156984	 225996	  372cc	gyro2testerFirmware.elf
 'Finished building: gyro2testerFirmware.elf.size'
 ' '

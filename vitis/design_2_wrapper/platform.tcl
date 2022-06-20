@@ -79,3 +79,8 @@ platform clean
 platform generate
 platform clean
 platform generate
+platform active {design_2_wrapper}
+platform config -updatehw {C:/css/ngc/gyro2/gyro2tester/vivado/project/design_2_wrapper.xsa}
+platform clean
+platform generate
+platform generate -domains 

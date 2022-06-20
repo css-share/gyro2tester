@@ -330,7 +330,6 @@ static void storeFpgaSpiControlWords(void);
 static int 	SetupUartPs(XScuGic *IntcInstPtr, XUartPs *UartInstPtr,
 					u16 DeviceId, u16 UartIntrId);
 static void setupUartToReceiveHsiTxData(u8 lsByte,u8 midByte, u8 msByte);
-static void sendReceivedHsiTxDataToDdrBuffer(u16 *DdrTxBuffer);
 static void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData);
 static int 	SetupUartInterruptSystem(XScuGic *IntcInstancePtr,
 					XUartPs *UartInstancePtr,
@@ -526,15 +525,6 @@ void nops(unsigned int num) {
     int i;
     for(i = 0; i < num; i++) {
         asm("nop");
-    }
-}
-// -------------------------------------------------------------------
-
-
-// -------------------------------------------------------------------
-void sendReceivedHsiTxDataToDdrBuffer(u16 *ddrTxBuffer){
-    for(i = 0; i < NUM_DATAPOINTS_PER_TX_CHANNEL; i++) {
-        ddrTxBuffer[i] = (UartRxData[2*i] << 8) + UartRxData[(2*i)+1];
     }
 }
 // -------------------------------------------------------------------
@@ -1039,18 +1029,20 @@ void read_uart_bytes(void)
 			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
 
+/*
 		case (CMD_DEBUG1):
 			if (debugType == 1)
 			{
 
 			}
 			break;
+*/
 
 		case (CMD_UPDATE_TX_CAR_DATA_SINE):
 			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
 			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
 			waitForDataOverUart();
-			sendReceivedHsiTxDataToDdrBuffer(HsiTxDataCarBuffer);
+			sendReceivedHsiTxDataToDdrBuffer(CARRIER_CHANNEL,UartRxData);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
@@ -1058,7 +1050,7 @@ void read_uart_bytes(void)
 			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
 			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
 			waitForDataOverUart();
-			sendReceivedHsiTxDataToDdrBuffer(HsiTxDataNodeBuffer);
+			sendReceivedHsiTxDataToDdrBuffer(NODE_CHANNEL,UartRxData);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
@@ -1066,7 +1058,7 @@ void read_uart_bytes(void)
 			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
 			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
 			waitForDataOverUart();
-			sendReceivedHsiTxDataToDdrBuffer(HsiTxDataAntinodeBuffer);
+			sendReceivedHsiTxDataToDdrBuffer(ANTINODE_CHANNEL,UartRxData);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
@@ -1111,10 +1103,16 @@ void read_uart_bytes(void)
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
+		case (CMD_DEBUG1):
+			captureRxHsiDataOld(&axiDma);
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
 		case (CMD_CAPTURE_RX_HSI_DATA):
 			captureRxHsiData(&axiDma);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
+
 
 		case (CMD_READ_RX_TADC_BUFFER):
 			send_data_over_UART(NUM_BYTES_PER_TX_CHANNEL,
