@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "platform.h"
 #include "xparameters.h"
 #include "xil_printf.h"
@@ -73,6 +74,8 @@ extern void xil_printf(const char *format, ...);
 #define	CMD_SET_SPICLK_DIV				0xB2	// set the SPI clock division setting
 #define CMD_GET_SPICLK_DIV				0xB3	// send the SPI clock division setting over uart
 #define CMD_GET_CONFIG_SETTINGS			0xBA	// send all config settings over uart
+#define CMD_ENABLE_VFUSE				0xBE	// set the Vfuse MIO output high
+#define CMD_DISABLE_VFUSE				0xBF	// set the Vfuse MIO output low
 #define CMD_READ_CORE_STATUS_REG		0xC1	// read the CORE STATUS register and return register setting
 #define CMD_CHANGE_DMM_MUX_SETTING		0xC5	// change the mux selection the DMM is connected to
 #define CMD_DISABLE_MIO_OUTPUTS			0xC6	// disable MIO outputs so power down is safe
@@ -221,7 +224,7 @@ Xuint32  debugWordData = 0x00000000;						//change this depending on what you wa
 
 XAxiDma axiDma; 				// DMA device instance
 
-volatile unsigned char debugType = 7;
+volatile unsigned char debugType = 1;
 
 
 u8 uartReceivingHsiTxData = FALSE;
@@ -358,7 +361,10 @@ static void	initUart(void);
 static void disable_dmm_mux(void);
 static void enable_dmm_mux(void);
 static void hsiDataIntegrityTest(void);
-
+static void enable_Vfuse(void);
+static void disable_Vfuse(void);
+static void nvmWriteBit(bool dataBit);
+static void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3);
 
 
 
@@ -1029,14 +1035,35 @@ void read_uart_bytes(void)
 			send_data_over_UART(numBytesToSend,(u8*)RX_BUFFER_BASE);
 			break;
 
-/*
+		case (CMD_ENABLE_VFUSE):
+			enable_Vfuse();
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
+		case (CMD_DISABLE_VFUSE):
+			disable_Vfuse();
+			send_byte_over_UART(RESPONSE_CMD_DONE);
+			break;
+
 		case (CMD_DEBUG1):
 			if (debugType == 1)
 			{
+				// set something high
+				enable_Vfuse();
 
+				/* Aim for 75usec PROG high pulse
+				 * Time for spi transactions is ~1usec(fastest SPI clk) to ~8usec(slowest SPI clk)
+				 * Try a delay time of around
+				 */
+				SetTimerDuration(6000, 1);
+				timerRunning = 1;
+				XTtcPs_Start(&DelayTimer);
+				while(timerRunning);
+
+				// set something back low
+				disable_Vfuse();
 			}
 			break;
-*/
 
 		case (CMD_UPDATE_TX_CAR_DATA_SINE):
 			setupUartToReceiveHsiTxData(UartRxData[1],UartRxData[2],UartRxData[3]);
@@ -1100,11 +1127,6 @@ void read_uart_bytes(void)
 
 		case (CMD_UPDATE_FPGA_TX_DATA_STREAM):	// stop TXD stream, load Tx DDR buffers into FPGA block ram, and
 			updateTxDataStream(&axiDma);		// start the TXD data stream again
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_DEBUG1):
-			captureRxHsiDataOld(&axiDma);
 			send_byte_over_UART(RESPONSE_CMD_DONE);
 			break;
 
@@ -1573,6 +1595,173 @@ void DelayTimerInterruptHandler(void *CallBackRef)
 
 
 
+
+
+
+//============================================================
+//============================================================
+//============================================================
+
+/*
+ *
+ * verilog from Bill:
+ *
+task nvm_write;
+  input    [10:0] D3;
+  input    [10:0] D2;
+  input    [10:0] D1;
+  input    [10:0] D0;
+  reg [3:0] P0, P1, P2, P3;
+  integer k;
+  begin
+    // Calculate the parity bits
+    P0[0] = !(D0[0]^D0[1]^D0[3]^D0[4]^D0[6]^D0[8]^D0[10]);
+    P0[1] =   D0[0]^D0[2]^D0[3]^D0[5]^D0[6]^D0[9]^D0[10];
+    P0[2] = !(D0[1]^D0[2]^D0[3]^D0[7]^D0[8]^D0[9]^D0[10]);
+    P0[3] =   D0[4]^D0[5]^D0[6]^D0[7]^D0[8]^D0[9]^D0[10];
+
+    P1[0] = !(D1[0]^D1[1]^D1[3]^D1[4]^D1[6]^D1[8]^D1[10]);
+    P1[1] =   D1[0]^D1[2]^D1[3]^D1[5]^D1[6]^D1[9]^D1[10];
+    P1[2] = !(D1[1]^D1[2]^D1[3]^D1[7]^D1[8]^D1[9]^D1[10]);
+    P1[3] =   D1[4]^D1[5]^D1[6]^D1[7]^D1[8]^D1[9]^D1[10];
+
+    P2[0] = !(D2[0]^D2[1]^D2[3]^D2[4]^D2[6]^D2[8]^D2[10]);
+    P2[1] =   D2[0]^D2[2]^D2[3]^D2[5]^D2[6]^D2[9]^D2[10];
+    P2[2] = !(D2[1]^D2[2]^D2[3]^D2[7]^D2[8]^D2[9]^D2[10]);
+    P2[3] =   D2[4]^D2[5]^D2[6]^D2[7]^D2[8]^D2[9]^D2[10];
+
+    P3[0] = !(D3[0]^D3[1]^D3[3]^D3[4]^D3[6]^D3[8]^D3[10]);
+    P3[1] =   D3[0]^D3[2]^D3[3]^D3[5]^D3[6]^D3[9]^D3[10];
+    P3[2] = !(D3[1]^D3[2]^D3[3]^D3[7]^D3[8]^D3[9]^D3[10]);
+    P3[3] =   D3[4]^D3[5]^D3[6]^D3[7]^D3[8]^D3[9]^D3[10];
+
+    // CURSEN1/CURSEN0   SFTRST/SFTSET/READEN/RESET PROG/SERREADEN/PORIN/CLK    0/0/OVERRIDE/SOURCE
+    reg_write(7'h24, 16'b0000_0000_0000_0000);  // Toggle RESET=0
+
+    for (k=3;  k>=0; k=k-1) nvm_write_bit(P3[k]);
+    for (k=10; k>=0; k=k-1) nvm_write_bit(D3[k]);
+    for (k=3;  k>=0; k=k-1) nvm_write_bit(P2[k]);
+    for (k=10; k>=0; k=k-1) nvm_write_bit(D2[k]);
+    for (k=3;  k>=0; k=k-1) nvm_write_bit(P1[k]);
+    for (k=10; k>=0; k=k-1) nvm_write_bit(D1[k]);
+    for (k=3;  k>=0; k=k-1) nvm_write_bit(P0[k]);
+    for (k=10; k>=0; k=k-1) nvm_write_bit(D0[k]);
+
+    reg_write(7'h24, 16'b0000_0001_0000_0000);  // Toggle RESET=1
+  end
+endtask // otp_write
+
+
+//=======================================================
+// Write one OTP bit
+//=======================================================
+
+task otp_write_bit;
+  input BIT;
+  begin
+     // toggle PROG to program this bit to 1
+     if (BIT==1'b1) begin
+         reg_write(7'h24, 16'b0000_0000_1000_0000);  // PROG=1
+         reg_write(7'h24, 16'b0000_0000_0000_0000);  // PROG=0
+     end
+     // toggle CLK to advance to next bit
+     reg_write(7'h24, 16'b0000_0000_0001_0000);  // CLK=1
+     reg_write(7'h24, 16'b0000_0000_0000_0000);  // CLK=0
+  end
+endtask
+*/
+
+
+//============================================================
+//============================================================
+//============================================================
+
+
+
+
+
+
+
+
+//------------------------------------------------------------
+void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
+{
+	bool D0[11],D1[11],D2[11],D3[11];	// data to program into fuses
+	bool P0[4],P1[4],P2[4],P3[4];		// parity bits to program into fuses
+	u8 i,k;
+	const u16 BIT_POSITION = 0x00000001;
+
+	for(i=0;i<11;i++) D0[i] = d0 & (BIT_POSITION<<i);	// populate data bits for D0
+	for(i=0;i<11;i++) D1[i] = d1 & (BIT_POSITION<<i);	// populate data bits for D1
+	for(i=0;i<11;i++) D2[i] = d2 & (BIT_POSITION<<i);	// populate data bits for D2
+	for(i=0;i<11;i++) D3[i] = d3 & (BIT_POSITION<<i);	// populate data bits for D3
+
+	// Calculate the parity bits
+	P0[0] = !(D0[0]^D0[1]^D0[3]^D0[4]^D0[6]^D0[8]^D0[10]);
+	P0[1] =   D0[0]^D0[2]^D0[3]^D0[5]^D0[6]^D0[9]^D0[10];
+	P0[2] = !(D0[1]^D0[2]^D0[3]^D0[7]^D0[8]^D0[9]^D0[10]);
+	P0[3] =   D0[4]^D0[5]^D0[6]^D0[7]^D0[8]^D0[9]^D0[10];
+
+	P1[0] = !(D1[0]^D1[1]^D1[3]^D1[4]^D1[6]^D1[8]^D1[10]);
+	P1[1] =   D1[0]^D1[2]^D1[3]^D1[5]^D1[6]^D1[9]^D1[10];
+	P1[2] = !(D1[1]^D1[2]^D1[3]^D1[7]^D1[8]^D1[9]^D1[10]);
+	P1[3] =   D1[4]^D1[5]^D1[6]^D1[7]^D1[8]^D1[9]^D1[10];
+
+	P2[0] = !(D2[0]^D2[1]^D2[3]^D2[4]^D2[6]^D2[8]^D2[10]);
+	P2[1] =   D2[0]^D2[2]^D2[3]^D2[5]^D2[6]^D2[9]^D2[10];
+	P2[2] = !(D2[1]^D2[2]^D2[3]^D2[7]^D2[8]^D2[9]^D2[10]);
+	P2[3] =   D2[4]^D2[5]^D2[6]^D2[7]^D2[8]^D2[9]^D2[10];
+
+	P3[0] = !(D3[0]^D3[1]^D3[3]^D3[4]^D3[6]^D3[8]^D3[10]);
+	P3[1] =   D3[0]^D3[2]^D3[3]^D3[5]^D3[6]^D3[9]^D3[10];
+	P3[2] = !(D3[1]^D3[2]^D3[3]^D3[7]^D3[8]^D3[9]^D3[10]);
+	P3[3] =   D3[4]^D3[5]^D3[6]^D3[7]^D3[8]^D3[9]^D3[10];
+
+	writeGyroRegister(24, 0x0000);	// reset bit low
+
+	for (k=3;  k>=0; k=k-1) nvmWriteBit(P3[k]);
+	for (k=10; k>=0; k=k-1) nvmWriteBit(D3[k]);
+	for (k=3;  k>=0; k=k-1) nvmWriteBit(P2[k]);
+	for (k=10; k>=0; k=k-1) nvmWriteBit(D2[k]);
+	for (k=3;  k>=0; k=k-1) nvmWriteBit(P1[k]);
+	for (k=10; k>=0; k=k-1) nvmWriteBit(D1[k]);
+	for (k=3;  k>=0; k=k-1) nvmWriteBit(P0[k]);
+	for (k=10; k>=0; k=k-1) nvmWriteBit(D0[k]);
+
+	writeGyroRegister(24, 0x0100);	// reset bit high
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void nvmWriteBit(bool dataBit)
+{	/* 	Pulses the PROG line if the data bit is to be a 1 (fuse zapped)
+		and toggles the CLK bit on NVM ip to advance the bit counter
+
+ 	 	Target for a PROG high pulse is 75usec(spec 50usec min, 100usec max)
+ 	*/
+
+	if (dataBit == 1){
+		writeGyroRegister(24, 0x0080);	// PROG=1
+
+		/* Aim for 75usec PROG high pulse
+		 * Time for spi transactions is ~1usec(fastest SPI clk) to ~8usec(slowest SPI clk)
+		 * Try a delay time of around
+		 */
+		SetTimerDuration(6000, 1);
+		timerRunning = 1;
+		XTtcPs_Start(&DelayTimer);
+		while(timerRunning);
+
+		writeGyroRegister(24, 0x0000);	// PROG=0
+	}
+
+	writeGyroRegister(24, 0x0010);	// CLK=1
+	writeGyroRegister(24, 0x0000);	// CLK=0
+}
+//------------------------------------------------------------
+
+
 //------------------------------------------------------------
 Xuint8 ProgramOTP_chipID(u32 id)
 {
@@ -1731,6 +1920,20 @@ u32 readOTP32bits(void)
 //------------------------------------------------------------
 
 
+
+//------------------------------------------------------------
+void enable_Vfuse(void){
+	XGpioPs_WritePin(&MIO_gpio, VFUSE_MIO_OUTPUT_PIN, 1);
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void disable_Vfuse(void){
+	XGpioPs_WritePin(&MIO_gpio, VFUSE_MIO_OUTPUT_PIN, 0);
+}
+//------------------------------------------------------------
+
 //------------------------------------------------------------
 void init_MIO_gpio(void)
 {
@@ -1810,6 +2013,8 @@ void disable_dmm_mux(void){
 int main() {
     init_platform();
 
+    init_MIO_gpio();
+    InitializeDelayTimer();
     setSPIClockDivision(SPI_clock_division_setting);
     initUart();
 	initDMA(&axiDma);

@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="TxDdrBufferCar"/>
+		<item key="selection" value="sendReceivedHsiTxDataToDdrBuffer"/>
 		<list key="findhistory">
+			<item value="sendReceivedHsiTxDataToDdrBuffer"/>
+			<item value="updateDdrTxBufferWithConstant"/>
+			<item value="CMD_UPDATE_TX_ANODE_DATA_SINE"/>
+			<item value="CMD_CAPTURE_RX_HSI_DATA"/>
 			<item value="TxDdrBufferCar"/>
 			<item value="CMD_UPDATE_TX_CAR_DATA_SINE"/>
 			<item value="UartRxData"/>
@@ -19,10 +23,6 @@
 			<item value="send_byte_over_UART"/>
 			<item value="CMD_UPDATE_TX_ANODE_DATA_DC"/>
 			<item value="initSPI"/>
-			<item value="CMD_FPGA_ALL_OUTPUTS_ENABLED"/>
-			<item value="RX_TRANSFER_LENGTH_BYTES"/>
-			<item value="flag"/>
-			<item value="numAddressesToRead"/>
 		</list>
 		<list key="replacehistory">
 			<item value="fpgaBiDirControlWords"/>

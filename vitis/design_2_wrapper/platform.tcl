@@ -84,3 +84,9 @@ platform config -updatehw {C:/css/ngc/gyro2/gyro2tester/vivado/project/design_2_
 platform clean
 platform generate
 platform generate -domains 
+platform generate -domains standalone_domain 
+platform clean
+platform generate
+platform active {design_2_wrapper}
+bsp reload
+platform generate -domains standalone_domain 
