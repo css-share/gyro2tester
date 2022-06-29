@@ -851,15 +851,21 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_PROG_OTP_CHIP_ID):
-/*
+
 			//verify 3 bytes for chipID received after command byte
 			if (numBytesReceived<4)
 			{
 				return;
 			}
-			send_byte_over_UART(ProgramOTP_chipID( (UartRxData[1]<<16) |
-						(UartRxData[2]<<8) | UartRxData[3]));
-*/
+			// data was sent over uart ordered: LS_byte, MID_byte, MS_byte
+			nvmWrite((u16)UartRxData[1],(u16)UartRxData[2],(u16)UartRxData[3],0x0000);
+
+			send_byte_over_UART(0);	// just send back 0 for now indicating no errors
+
+			// this was the way it was done in gyro1
+//			send_byte_over_UART(ProgramOTP_chipID( (UartRxData[1]<<16) |
+//						(UartRxData[2]<<8) | UartRxData[3]));
+
 			break;
 
 		case (CMD_PROG_OTP_VBG_TRIM):
@@ -1053,9 +1059,9 @@ void read_uart_bytes(void)
 
 				/* Aim for 75usec PROG high pulse
 				 * Time for spi transactions is ~1usec(fastest SPI clk) to ~8usec(slowest SPI clk)
-				 * Try a delay time of around
+				 * Try a delay time of around 60usec
 				 */
-				SetTimerDuration(6000, 1);
+				SetTimerDuration(6500, 1);
 				timerRunning = 1;
 				XTtcPs_Start(&DelayTimer);
 				while(timerRunning);
@@ -1688,7 +1694,7 @@ void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
 {
 	bool D0[11],D1[11],D2[11],D3[11];	// data to program into fuses
 	bool P0[4],P1[4],P2[4],P3[4];		// parity bits to program into fuses
-	u8 i,k;
+	int i,k;
 	const u16 BIT_POSITION = 0x00000001;
 
 	for(i=0;i<11;i++) D0[i] = d0 & (BIT_POSITION<<i);	// populate data bits for D0
@@ -1717,18 +1723,36 @@ void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
 	P3[2] = !(D3[1]^D3[2]^D3[3]^D3[7]^D3[8]^D3[9]^D3[10]);
 	P3[3] =   D3[4]^D3[5]^D3[6]^D3[7]^D3[8]^D3[9]^D3[10];
 
-	writeGyroRegister(24, 0x0000);	// reset bit low
+	// pulse RESET high to reset the NVM bit counter
+	writeGyroRegister(24, 0x0100);	// write RESET=1
+	writeGyroRegister(24, 0x0000);	// write RESET=0
 
-	for (k=3;  k>=0; k=k-1) nvmWriteBit(P3[k]);
-	for (k=10; k>=0; k=k-1) nvmWriteBit(D3[k]);
-	for (k=3;  k>=0; k=k-1) nvmWriteBit(P2[k]);
-	for (k=10; k>=0; k=k-1) nvmWriteBit(D2[k]);
-	for (k=3;  k>=0; k=k-1) nvmWriteBit(P1[k]);
-	for (k=10; k>=0; k=k-1) nvmWriteBit(D1[k]);
-	for (k=3;  k>=0; k=k-1) nvmWriteBit(P0[k]);
-	for (k=10; k>=0; k=k-1) nvmWriteBit(D0[k]);
+	for (k=3;  k>=0; k--){
+		nvmWriteBit(P3[k]);
+	}
+	for (k=10; k>=0; k--){
+		nvmWriteBit(D3[k]);
+	}
+	for (k=3;  k>=0; k--){
+		nvmWriteBit(P2[k]);
+	}
+	for (k=10; k>=0; k=k-1){
+		nvmWriteBit(D2[k]);
+	}
+	for (k=3;  k>=0; k=k-1){
+		nvmWriteBit(P1[k]);
+	}
+	for (k=10; k>=0; k=k-1){
+		nvmWriteBit(D1[k]);
+	}
+	for (k=3;  k>=0; k=k-1){
+		nvmWriteBit(P0[k]);
+	}
+	for (k=10; k>=0; k=k-1){
+		nvmWriteBit(D0[k]);
+	}
 
-	writeGyroRegister(24, 0x0100);	// reset bit high
+	writeGyroRegister(24, 0x0100);	// write RESET=1
 }
 //------------------------------------------------------------
 
@@ -1737,18 +1761,16 @@ void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
 void nvmWriteBit(bool dataBit)
 {	/* 	Pulses the PROG line if the data bit is to be a 1 (fuse zapped)
 		and toggles the CLK bit on NVM ip to advance the bit counter
-
- 	 	Target for a PROG high pulse is 75usec(spec 50usec min, 100usec max)
  	*/
-
 	if (dataBit == 1){
 		writeGyroRegister(24, 0x0080);	// PROG=1
+//		writeGyroRegister(24, 0x0200);	// SFTSET=1 instead of PROG=1 when just testing
 
-		/* Aim for 75usec PROG high pulse
+		/* Aim for 75usec PROG high pulse - spec is 50usec min, 100usec max
 		 * Time for spi transactions is ~1usec(fastest SPI clk) to ~8usec(slowest SPI clk)
-		 * Try a delay time of around
+		 * Try a delay time of around 70usec
 		 */
-		SetTimerDuration(6000, 1);
+		SetTimerDuration(7000, 1);
 		timerRunning = 1;
 		XTtcPs_Start(&DelayTimer);
 		while(timerRunning);
@@ -1756,6 +1778,7 @@ void nvmWriteBit(bool dataBit)
 		writeGyroRegister(24, 0x0000);	// PROG=0
 	}
 
+	// pulse CLK to increment NVM bit counter to next bit position
 	writeGyroRegister(24, 0x0010);	// CLK=1
 	writeGyroRegister(24, 0x0000);	// CLK=0
 }
@@ -2014,11 +2037,13 @@ int main() {
     init_platform();
 
     init_MIO_gpio();
-    InitializeDelayTimer();
     setSPIClockDivision(SPI_clock_division_setting);
     initUart();
+    InitializeDelayTimer();
 	initDMA(&axiDma);
 	initializeHsiDataStreams(&axiDma);
+
+	nvmWrite(3,1,6,0);
 
 /*
 	//===============================================
