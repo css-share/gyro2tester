@@ -60,6 +60,8 @@ extern void xil_printf(const char *format, ...);
 #define CMD_PROG_OTP_CHIP_ID			0x81	// program the chip ID into OTP memory
 #define CMD_PROG_OTP_VBG_TRIM			0x82	// program the bandgap trim value into OTP memory
 #define CMD_READ_OTP_DATA				0x83	// read the 32-bit data stored in 2 16-bit OTP registers
+#define CMD_PROGRAM_NVM_BITS			0x84	// take four 11-bit D values, calculate four 4-bit error correction values, program all 60 fuse bits
+#define CMD_PROGRAM_NVM_RAW_BITS		0x85	// take four 15-bit values to program into all 60 fuse bits
 #define CMD_FILL_DAC_TXFIFO				0xA2	// fill the TxFIFO with values and send via HSI bus
 #define CMD_FPGA_ALL_OUTPUTS_LOW		0xA7	// set all FPGA outputs low for safe power down
 #define CMD_FPGA_ALL_OUTPUTS_ENABLED 	0xA8	// enable all FPGA outputs after power supplies turned on
@@ -103,7 +105,8 @@ extern void xil_printf(const char *format, ...);
 #define RESPONSE_WRITE_FAIL				0x53	// write completed but readback of value written failed
 #define RESPONSE_CMD_DONE				0x54	// indicates command received and action has been taken
 #define RESPONSE_ADC_ACQUIRE_DONE		0x55	// indicates finished with ADC data acquisition
-#define RESPONSE_READY_FOR_TX_DATA  	0x56	// indicates ready UART is ready to receive Tx data
+#define RESPONSE_READY_FOR_TX_DATA  	0x56	// indicates UART is ready to receive Tx data
+#define RESPONSE_READY_FOR_FUSE_DATA	0x57	// indicates UART is ready to receive 8 bytes of data
 
 // test ADC mux settings
 #define TADC_MUX_TEMPERATURE_SENSOR		0x000
@@ -227,8 +230,7 @@ XAxiDma axiDma; 				// DMA device instance
 volatile unsigned char debugType = 1;
 
 
-u8 uartReceivingHsiTxData = FALSE;
-u8 finishedReceivingTxData = FALSE;
+u8 uartReceivingData = FALSE;
 
 int loadPattern2 = 0;
 int loadPattern3 = 0;
@@ -365,6 +367,7 @@ static void enable_Vfuse(void);
 static void disable_Vfuse(void);
 static void nvmWriteBit(bool dataBit);
 static void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3);
+static void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3);
 
 
 
@@ -542,11 +545,23 @@ void waitForDataOverUart(void)
 	u8 abortUartWaiting = FALSE;	//this is a way to use debugger to
 									//manually abort Uart receive operation
 
-	while ( (finishedReceivingTxData == FALSE) && (abortUartWaiting == FALSE) ){}
+	while ( uartReceivingData && (abortUartWaiting == FALSE) ){}
 	if (abortUartWaiting)
 	{
 		XUartPs_Recv(&UartPs, UartRxData, 0); //request 0 bytes to abort receive operation
 	}
+}
+// -------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------
+void setupUartToReceiveFuseData(void)
+{
+	// set flags for ISR operation
+	uartReceivingData = TRUE;
+
+	// 2 bytes per value, 4 values so need to read 8 bytes
+	XUartPs_Recv(&UartPs, UartRxData, 8);
 }
 // -------------------------------------------------------------------
 
@@ -557,8 +572,7 @@ void setupUartToReceiveHsiTxData(u8 msByte, u8 midByte, u8 lsByte)
 	u16 numBytesToReceive;
 
 	// set flags for ISR operation
-	uartReceivingHsiTxData = TRUE;
-	finishedReceivingTxData = FALSE;
+	uartReceivingData = TRUE;
 
 	numBytesToReceive = (msByte<<16) + (midByte<<8) + lsByte;
 	//XUartPs_Recv(&UartPs, dataBuffer, numBytesToReceive);
@@ -657,9 +671,8 @@ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 
 	/* All of the data has been received */
 	if (Event == XUARTPS_EVENT_RECV_DATA) {
-		if (uartReceivingHsiTxData){
-			finishedReceivingTxData = TRUE;
-			uartReceivingHsiTxData = FALSE;
+		if (uartReceivingData){
+			uartReceivingData = FALSE;
 		}
 		else{
 			state |= SERVICE_UART;
@@ -877,6 +890,30 @@ void read_uart_bytes(void)
 			}
 			send_byte_over_UART(ProgramOTP_VbgTrim(UartRxData[1]));
 */
+			break;
+
+		case (CMD_PROGRAM_NVM_BITS):
+			setupUartToReceiveFuseData();
+			send_byte_over_UART(RESPONSE_READY_FOR_FUSE_DATA);
+			waitForDataOverUart();
+			nvmWrite((u16)(UartRxData[0]+(UartRxData[1]<<8)),
+					(u16)(UartRxData[2]+(UartRxData[3]<<8)),
+					(u16)(UartRxData[4]+(UartRxData[5]<<8)),
+					(u16)(UartRxData[6]+(UartRxData[7]<<8)));
+			send_byte_over_UART(0);	// just send back 0 for now indicating no errors...
+									// Still need to do error checking routines with margin reads
+			break;
+
+		case (CMD_PROGRAM_NVM_RAW_BITS):
+			setupUartToReceiveFuseData();
+			send_byte_over_UART(RESPONSE_READY_FOR_FUSE_DATA);
+			waitForDataOverUart();
+			nvmWriteRaw((u16)(UartRxData[0]+(UartRxData[1]<<8)),
+					(u16)(UartRxData[2]+(UartRxData[3]<<8)),
+					(u16)(UartRxData[4]+(UartRxData[5]<<8)),
+					(u16)(UartRxData[6]+(UartRxData[7]<<8)));
+			send_byte_over_UART(0);	// just send back 0 for now indicating no errors...
+									// Still need to do error checking routines with margin reads
 			break;
 
 		case (CMD_READ_FPGA_TX_CTRL_WORDS):
@@ -1685,17 +1722,57 @@ endtask
 
 
 
+//------------------------------------------------------------
+void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3)
+{	/* Takes four 15-bit values as raw fuse data
+	 * Does not calculate the error correction data. First 4 bits
+	 * of each value is taken as error correction data.
+	 * Each 15-bit values is interpreted as P[14:11],D[10:0]
+	 * Programs the 60 bits into NVM fuses.
+ 	*/
+
+	int i;
+	const u16 BIT_POSITION = 1;
+
+	// pulse RESET high, then low to reset the NVM bit counter
+	writeGyroRegister(24, 0x0100);	// write RESET=1
+	writeGyroRegister(24, 0x0000);	// write RESET=0
+
+	for(i=0;i<15;i++){
+		nvmWriteBit( d0 & (BIT_POSITION<<i) );	// program first 15 fuse bits P0[3:0] and D0[10:0]
+	}
+	for(i=0;i<15;i++){
+		nvmWriteBit( d1 & (BIT_POSITION<<i) );	// program second 15 fuse bits P1[3:0] and D1[10:0]
+	}
+	for(i=0;i<15;i++){
+		nvmWriteBit( d2 & (BIT_POSITION<<i) );	// program third 15 fuse bits P2[3:0] and D2[10:0]
+	}
+	for(i=0;i<15;i++){
+		nvmWriteBit( d3 & (BIT_POSITION<<i) );	// program fourth 15 fuse bits P3[3:0] and D3[10:0]
+	}
 
 
+	/*****************************************************
+	// This was in Bill's verilog, I don't know why
+	// From the NVM datasheet reset should be pulsed high, then low
+	// to reset the bit pointer before programming. It doesn't say
+	// to set RESET high again. Reset is active high.
+	writeGyroRegister(24, 0x0100);	// write RESET=1
+	******************************************************/
+}
+//------------------------------------------------------------
 
 
 //------------------------------------------------------------
 void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
-{
+{	/* Takes four 11-bit values as D0-D3 fuse data,
+	 * calculates four 4-bit values P0-P3 error correction data,
+	 * and programs the 60 bits into NVM fuses
+ 	*/
 	bool D0[11],D1[11],D2[11],D3[11];	// data to program into fuses
 	bool P0[4],P1[4],P2[4],P3[4];		// parity bits to program into fuses
 	int i,k;
-	const u16 BIT_POSITION = 0x00000001;
+	const u16 BIT_POSITION = 0x01;
 
 	for(i=0;i<11;i++) D0[i] = d0 & (BIT_POSITION<<i);	// populate data bits for D0
 	for(i=0;i<11;i++) D1[i] = d1 & (BIT_POSITION<<i);	// populate data bits for D1
@@ -1723,7 +1800,7 @@ void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
 	P3[2] = !(D3[1]^D3[2]^D3[3]^D3[7]^D3[8]^D3[9]^D3[10]);
 	P3[3] =   D3[4]^D3[5]^D3[6]^D3[7]^D3[8]^D3[9]^D3[10];
 
-	// pulse RESET high to reset the NVM bit counter
+	// pulse RESET high, then low to reset the NVM bit counter
 	writeGyroRegister(24, 0x0100);	// write RESET=1
 	writeGyroRegister(24, 0x0000);	// write RESET=0
 
@@ -1752,7 +1829,13 @@ void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
 		nvmWriteBit(D0[k]);
 	}
 
+	/*****************************************************
+	// This was in Bill's verilog, I don't know why
+	// From the NVM datasheet reset should be pulsed high, then low
+	// to reset the bit pointer before programming. It doesn't say
+	// to set RESET high again. Reset is active high.
 	writeGyroRegister(24, 0x0100);	// write RESET=1
+	******************************************************/
 }
 //------------------------------------------------------------
 
