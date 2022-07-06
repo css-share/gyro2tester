@@ -747,3 +747,33 @@ timestamp=[2022-06-28 21:12:01], mode=APP_CREATION, duration=0:00:10.771, durati
 timestamp=[2022-06-28 21:15:17], mode=PLATFORM_GENERATION, duration=0:00:09.001, duration_ms=9001, data={name=design_2_wrapper}
 timestamp=[2022-06-28 21:15:18], mode=BUILD, duration=0:00:01.105, duration_ms=1105, data={name=xscutimer_intr_example_1, configuration=Debug, clean_build=false}
 timestamp=[2022-06-28 21:15:25], mode=BUILD, duration=0:00:06.536, duration_ms=6536, data={name=xscutimer_intr_example_1_system, configuration=Debug, clean_build=false}
+timestamp=[2022-06-29 16:08:06], mode=WORKBENCH_START, duration=0:00:06.654, duration_ms=6654, data={}
+timestamp=[2022-06-29 16:08:07], mode=WORKBENCH_UI_INIT, duration=0:00:00.490, duration_ms=490, data={editors_count=5, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2022-06-29 16:08:07], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.057, duration_ms=57, data={}
+timestamp=[2022-06-29 16:11:35], mode=PLATFORM_GENERATION, duration=0:00:11.535, duration_ms=11535, data={name=design_2_wrapper}
+timestamp=[2022-06-29 16:11:39], mode=BUILD, duration=0:00:00.717, duration_ms=717, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-06-29 16:11:40], mode=BUILD, duration=0:00:00.118, duration_ms=118, data={name=gyro2testerFirmware_system, configuration=Debug, clean_build=true}
+timestamp=[2022-06-29 16:11:45], mode=BUILD, duration=0:00:05.179, duration_ms=5179, data={name=gyro2testerFirmware_system, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 17:28:35], mode=BUILD, duration=0:00:00.713, duration_ms=713, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 21:44:30], mode=BUILD, duration=0:00:00.366, duration_ms=366, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 21:45:30], mode=BUILD, duration=0:00:00.320, duration_ms=320, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 21:50:59], mode=BUILD, duration=0:00:00.315, duration_ms=315, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 21:51:33], mode=BUILD, duration=0:00:00.305, duration_ms=305, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 21:52:25], mode=BUILD, duration=0:00:00.662, duration_ms=662, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:00:52], mode=BUILD, duration=0:00:00.660, duration_ms=660, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:02:05], mode=BUILD, duration=0:00:00.206, duration_ms=206, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:44:55], mode=BUILD, duration=0:00:00.663, duration_ms=663, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:51:28], mode=BUILD, duration=0:00:00.660, duration_ms=660, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:56:04], mode=BUILD, duration=0:00:00.655, duration_ms=655, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:59:07], mode=BUILD, duration=0:00:00.313, duration_ms=313, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 22:59:37], mode=BUILD, duration=0:00:00.658, duration_ms=658, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 23:03:29], mode=BUILD, duration=0:00:00.667, duration_ms=667, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-05 23:12:49], mode=BUILD, duration=0:00:00.658, duration_ms=658, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:29:33], mode=BUILD, duration=0:00:00.662, duration_ms=662, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:32:21], mode=BUILD, duration=0:00:00.253, duration_ms=253, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:38:50], mode=BUILD, duration=0:00:00.663, duration_ms=663, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:39:54], mode=BUILD, duration=0:00:00.199, duration_ms=199, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:43:11], mode=BUILD, duration=0:00:00.655, duration_ms=655, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:53:17], mode=BUILD, duration=0:00:00.669, duration_ms=669, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:55:21], mode=BUILD, duration=0:00:00.657, duration_ms=657, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}
+timestamp=[2022-07-06 02:59:45], mode=BUILD, duration=0:00:00.658, duration_ms=658, data={name=gyro2testerFirmware, configuration=Debug, clean_build=false}

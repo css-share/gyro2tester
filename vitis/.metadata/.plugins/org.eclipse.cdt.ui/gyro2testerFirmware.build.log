@@ -1,72 +1,55 @@
-21:07:50 **** Build of configuration Debug for project gyro2testerFirmware ****
+02:59:45 **** Incremental Build of configuration Debug for project gyro2testerFirmware ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/dma_controller.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/dma_controller.d" -MT"src/dma_controller.o" -o "src/dma_controller.o" "../src/dma_controller.c"
-../src/dma_controller.c: In function 'testBufferForRamp':
-../src/dma_controller.c:571:6: warning: unused variable 'rolloverValue' [-Wunused-variable]
-  571 |  u16 rolloverValue = rampStartValue + NUM_DATAPOINTS_PER_TX_CHANNEL;
-      |      ^~~~~~~~~~~~~
-'Finished building: ../src/dma_controller.c'
-' '
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 In file included from ../src/main.c:8:
-C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
 ../src/main.c: In function 'read_uart_bytes':
-../src/main.c:767:6: warning: unused variable 'TxDdrBufferPtr' [-Wunused-variable]
-  767 |  u8 *TxDdrBufferPtr;
+../src/main.c:788:6: warning: unused variable 'TxDdrBufferPtr' [-Wunused-variable]
+  788 |  u8 *TxDdrBufferPtr;
       |      ^~~~~~~~~~~~~~
-../src/main.c:766:6: warning: unused variable 'otpBytes' [-Wunused-variable]
-  766 |  u32 otpBytes;
+../src/main.c:787:6: warning: unused variable 'otpBytes' [-Wunused-variable]
+  787 |  u32 otpBytes;
       |      ^~~~~~~~
 ../src/main.c: At top level:
-../src/main.c:341:21: warning: 'getNumBytesToSend' declared 'static' but never defined [-Wunused-function]
-  341 | static unsigned int getNumBytesToSend(u8 *RxData);
+../src/main.c:349:21: warning: 'getNumBytesToSend' declared 'static' but never defined [-Wunused-function]
+  349 | static unsigned int getNumBytesToSend(u8 *RxData);
       |                     ^~~~~~~~~~~~~~~~~
-../src/main.c:342:13: warning: 'send_Tx_data_over_UART' declared 'static' but never defined [-Wunused-function]
-  342 | static void send_Tx_data_over_UART(unsigned int num_points_to_send);
+../src/main.c:350:13: warning: 'send_Tx_data_over_UART' declared 'static' but never defined [-Wunused-function]
+  350 | static void send_Tx_data_over_UART(unsigned int num_points_to_send);
       |             ^~~~~~~~~~~~~~~~~~~~~~
-../src/main.c:1778:8: warning: 'ProgramOTP_VbgTrim' defined but not used [-Wunused-function]
- 1778 | Xuint8 ProgramOTP_VbgTrim(u8 trimVal)
+../src/main.c:1954:8: warning: 'ProgramOTP_VbgTrim' defined but not used [-Wunused-function]
+ 1954 | Xuint8 ProgramOTP_VbgTrim(u8 trimVal)
       |        ^~~~~~~~~~~~~~~~~~
-../src/main.c:1766:8: warning: 'ProgramOTP_chipID' defined but not used [-Wunused-function]
- 1766 | Xuint8 ProgramOTP_chipID(u32 id)
+../src/main.c:1942:8: warning: 'ProgramOTP_chipID' defined but not used [-Wunused-function]
+ 1942 | Xuint8 ProgramOTP_chipID(u32 id)
       |        ^~~~~~~~~~~~~~~~~
-../src/main.c:1687:6: warning: 'nvmWrite' defined but not used [-Wunused-function]
- 1687 | void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3)
-      |      ^~~~~~~~
-../src/main.c:253:11: warning: 'UartTxData' defined but not used [-Wunused-variable]
-  253 | static u8 UartTxData[UART_TX_BUFFER_SIZE]; // Buffer for Transmitting Data
+../src/main.c:261:11: warning: 'UartTxData' defined but not used [-Wunused-variable]
+  261 | static u8 UartTxData[UART_TX_BUFFER_SIZE]; // Buffer for Transmitting Data
       |           ^~~~~~~~~~
 'Finished building: ../src/main.c'
 ' '
-'Building file: ../src/platform.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
 'Building target: gyro2testerFirmware.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/css/ngc/gyro2/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Xilinx_projects/gyro2tester/vitis/design_2_wrapper/export/design_2_wrapper/sw/design_2_wrapper/standalone_domain/bsplib/lib -o "gyro2testerFirmware.elf"  ./src/dma_controller.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: gyro2testerFirmware.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size gyro2testerFirmware.elf  |tee "gyro2testerFirmware.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  68212	   3168	 156984	 228364	  37c0c	gyro2testerFirmware.elf
+  70196	   3168	 156984	 230348	  383cc	gyro2testerFirmware.elf
 'Finished building: gyro2testerFirmware.elf.size'
 ' '
 
-21:07:53 Build Finished (took 3s.380ms)
+02:59:45 Build Finished (took 645ms)
 

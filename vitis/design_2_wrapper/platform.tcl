@@ -90,3 +90,4 @@ platform generate
 platform active {design_2_wrapper}
 bsp reload
 platform generate -domains standalone_domain 
+platform generate

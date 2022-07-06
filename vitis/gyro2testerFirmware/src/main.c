@@ -62,6 +62,7 @@ extern void xil_printf(const char *format, ...);
 #define CMD_READ_OTP_DATA				0x83	// read the 32-bit data stored in 2 16-bit OTP registers
 #define CMD_PROGRAM_NVM_BITS			0x84	// take four 11-bit D values, calculate four 4-bit error correction values, program all 60 fuse bits
 #define CMD_PROGRAM_NVM_RAW_BITS		0x85	// take four 15-bit values to program into all 60 fuse bits
+#define CMD_READ_NVM_RAW_FUSES			0x86	// read the 60-bit fuse data directly from NVM using serial read
 #define CMD_FILL_DAC_TXFIFO				0xA2	// fill the TxFIFO with values and send via HSI bus
 #define CMD_FPGA_ALL_OUTPUTS_LOW		0xA7	// set all FPGA outputs low for safe power down
 #define CMD_FPGA_ALL_OUTPUTS_ENABLED 	0xA8	// enable all FPGA outputs after power supplies turned on
@@ -243,6 +244,11 @@ u8 byte4 = 0x04;
 
 u16 i = 0;
 
+u16 nvmRawData[4];	// container for raw NVM fuse data bits read using serial read on the OROUT pin
+					// nvmRawData[0]:  P0[3:0] in bits 14:11, D0[10:0] in bits 10:0
+					// nvmRawData[1]:  P1[3:0] in bits 14:11, D1[10:0] in bits 10:0
+					// nvmRawData[2]:  P2[3:0] in bits 14:11, D2[10:0] in bits 10:0
+					// nvmRawData[3]:  P3[3:0] in bits 14:11, D3[10:0] in bits 10:0
 
 int flag;
 int setup_interrupt_system();
@@ -368,6 +374,8 @@ static void disable_Vfuse(void);
 static void nvmWriteBit(bool dataBit);
 static void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3);
 static void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3);
+static void nvmReadRaw(void);
+static bool nvmSerialReadBit(void);
 
 
 
@@ -914,6 +922,13 @@ void read_uart_bytes(void)
 					(u16)(UartRxData[6]+(UartRxData[7]<<8)));
 			send_byte_over_UART(0);	// just send back 0 for now indicating no errors...
 									// Still need to do error checking routines with margin reads
+			break;
+
+		case (CMD_READ_NVM_RAW_FUSES):
+			nvmReadRaw();	// reads raw fuse data into nvmRawData[4] array
+
+			// send 8 bytes (the four 16-bit words for NVM raw data)
+			send_data_over_UART(8,(u8*)&nvmRawData[0]);
 			break;
 
 		case (CMD_READ_FPGA_TX_CTRL_WORDS):
@@ -1721,6 +1736,61 @@ endtask
 
 
 
+//------------------------------------------------------------
+void nvmReadRaw(void)
+{	/* Reads the 60 raw bits from the NVM IP using serial read
+	 * on the OROUT line (read-only reg25 bit12)
+	 * Populates the global variable nvmRawData[4] with serial read results
+ 	*/
+	bool bitResult;
+	int i,j;
+
+	// clear out container contents
+	for(i=0;i<4;i++){
+		nvmRawData[i] = 0;
+	}
+
+	// pulse RESET high, then low to reset the NVM bit counter
+	writeGyroRegister(24, 0x0100);	// write RESET=1
+	writeGyroRegister(24, 0x0040);	// write RESET=0, SERREADEN=1 to read data on OROUT
+
+	for(j=3;j>=0;j--){		// serial read sends 60-bit fuse data MSB first
+		for(i=0;i<=14;i++){
+			bitResult = nvmSerialReadBit();
+			if (bitResult==1){
+				nvmRawData[j] |= (0x4000>>i);
+			}
+		}
+	}
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+bool nvmSerialReadBit(void)
+{	/* 	Reads a single fuse bit state by reading the OROUT line (read-only reg25 bit12),
+		then toggles the CLK bit on NVM ip to advance the bit counter
+ 	*/
+	bool bitState;
+	u16 reg25;
+
+	reg25 = readGyroRegister(25);
+
+	if ( reg25 & 0x1000 ){	// OROUT is bit 12 of read-only register 25
+		bitState = 1;
+	}
+	else{
+		bitState = 0;
+	}
+
+	// pulse CLK to increment NVM bit counter to next bit position
+	writeGyroRegister(24, 0x0050);	// CLK=1, SERREADEN=1
+	writeGyroRegister(24, 0x0040);	// CLK=0, SERREADEN=1
+
+	return bitState;
+}
+//------------------------------------------------------------
+
 
 //------------------------------------------------------------
 void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3)
@@ -1728,27 +1798,27 @@ void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3)
 	 * Does not calculate the error correction data. First 4 bits
 	 * of each value is taken as error correction data.
 	 * Each 15-bit values is interpreted as P[14:11],D[10:0]
-	 * Programs the 60 bits into NVM fuses.
+	 * Programs the given 60 bits into NVM fuses.
  	*/
 
 	int i;
-	const u16 BIT_POSITION = 1;
+	const u16 BIT_POSITION = 0x400;
 
 	// pulse RESET high, then low to reset the NVM bit counter
 	writeGyroRegister(24, 0x0100);	// write RESET=1
 	writeGyroRegister(24, 0x0000);	// write RESET=0
 
 	for(i=0;i<15;i++){
-		nvmWriteBit( d0 & (BIT_POSITION<<i) );	// program first 15 fuse bits P0[3:0] and D0[10:0]
+		nvmWriteBit( d3 & (BIT_POSITION>>i) );	// program first 15 fuse bits P3[3:0] and D3[10:0]
 	}
 	for(i=0;i<15;i++){
-		nvmWriteBit( d1 & (BIT_POSITION<<i) );	// program second 15 fuse bits P1[3:0] and D1[10:0]
+		nvmWriteBit( d2 & (BIT_POSITION>>i) );	// program second 15 fuse bits P2[3:0] and D2[10:0]
 	}
 	for(i=0;i<15;i++){
-		nvmWriteBit( d2 & (BIT_POSITION<<i) );	// program third 15 fuse bits P2[3:0] and D2[10:0]
+		nvmWriteBit( d1 & (BIT_POSITION>>i) );	// program third 15 fuse bits P1[3:0] and D1[10:0]
 	}
 	for(i=0;i<15;i++){
-		nvmWriteBit( d3 & (BIT_POSITION<<i) );	// program fourth 15 fuse bits P3[3:0] and D3[10:0]
+		nvmWriteBit( d0 & (BIT_POSITION>>i) );	// program fourth 15 fuse bits P0[3:0] and D0[10:0]
 	}
 
 
@@ -2126,7 +2196,8 @@ int main() {
 	initDMA(&axiDma);
 	initializeHsiDataStreams(&axiDma);
 
-	nvmWrite(3,1,6,0);
+	enableSPI();
+	nvmWriteRaw(2,0,0,0x500);
 
 /*
 	//===============================================
