@@ -1802,7 +1802,7 @@ void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3)
  	*/
 
 	int i;
-	const u16 BIT_POSITION = 0x400;
+	const u16 BIT_POSITION = 0x4000;	// writing 15-bit value MSB first so start at bit14
 
 	// pulse RESET high, then low to reset the NVM bit counter
 	writeGyroRegister(24, 0x0100);	// write RESET=1
@@ -2196,8 +2196,8 @@ int main() {
 	initDMA(&axiDma);
 	initializeHsiDataStreams(&axiDma);
 
-	enableSPI();
-	nvmWriteRaw(2,0,0,0x500);
+//	enableSPI();
+//	nvmWriteRaw(2,0,0,0x500);
 
 /*
 	//===============================================
