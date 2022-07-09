@@ -15,6 +15,7 @@
 #include "dma_controller.h"
 #include "xaxidma.h"
 #include "xdebug.h"
+#include "gyro_application.h"
 
 #if (!defined(DEBUG))
 extern void xil_printf(const char *format, ...);
@@ -38,9 +39,6 @@ extern void xil_printf(const char *format, ...);
 #define CMD_WRITE_FPGA_REGISTER			0x43	// write 32-bit value to FPGA register
 #define CMD_READ_FPGA_REGISTER			0x44	// read 32-bit value from FPGA register
 #define CMD_READ_RX_FPGA_DATA 			0x46	// read the stored Rx data from FPGA DDR memory
-#define CMD_READ_DATA					0x61	// read data from tester - should be followed by
-												// 4 bytes(unsigned int) for num words to be
-												// sent (msbyte first)
 #define CMD_UPDATE_TX_CAR_DATA_DC 		0x70	// update the Tx Carrier data buffer with single DC value
 #define CMD_UPDATE_TX_NODE_DATA_DC 		0x71	// update the Tx Node data buffer with single DC value
 #define CMD_UPDATE_TX_ANODE_DATA_DC		0x72	// update the Tx Anti-node data buffer with single DC value
@@ -63,15 +61,13 @@ extern void xil_printf(const char *format, ...);
 #define CMD_PROGRAM_NVM_BITS			0x84	// take four 11-bit D values, calculate four 4-bit error correction values, program all 60 fuse bits
 #define CMD_PROGRAM_NVM_RAW_BITS		0x85	// take four 15-bit values to program into all 60 fuse bits
 #define CMD_READ_NVM_RAW_FUSES			0x86	// read the 60-bit fuse data directly from NVM using serial read
-#define CMD_FILL_DAC_TXFIFO				0xA2	// fill the TxFIFO with values and send via HSI bus
+#define CMD_READ_NVM_RAW_FUSES_MARGIN1	0x87	// read the 60-bit fuse data directly using margin read mode 1
+#define CMD_READ_NVM_RAW_FUSES_MARGIN2	0x88	// read the 60-bit fuse data directly using margin read mode 2
 #define CMD_FPGA_ALL_OUTPUTS_LOW		0xA7	// set all FPGA outputs low for safe power down
 #define CMD_FPGA_ALL_OUTPUTS_ENABLED 	0xA8	// enable all FPGA outputs after power supplies turned on
 #define CMD_FPGA_GET_OUTPUTS_STATE  	0xA9	// read the enabled/disabled state of FPGA outputs
 #define CMD_RUN_TADC_CONVERSION			0xAB	// take a single test ADC conversion and return result
 #define CMD_RUN_TADC_CONVERSIONS		0xAC	// take measurements using the test ADC
-//#define CMD_ENABLE_HSI_SIGNALS		0xAD	// enable hsi signals on the FPGA
-//#define	CMD_DISABLE_HSI_SIGNALS		0xAE	// disable hsi signals on the FPGA
-#define CMD_PULSE_HSI_CAPTURE_DURATION 	0xAF 	// pulse IO pin from HSI data capture begin to buffer full
 #define CMD_SET_MCLK_DIV				0xB0	// set the MCLK division setting
 #define CMD_GET_MCLK_DIV				0xB1	// send MCLK division setting over uart
 #define	CMD_SET_SPICLK_DIV				0xB2	// set the SPI clock division setting
@@ -79,29 +75,17 @@ extern void xil_printf(const char *format, ...);
 #define CMD_GET_CONFIG_SETTINGS			0xBA	// send all config settings over uart
 #define CMD_ENABLE_VFUSE				0xBE	// set the Vfuse MIO output high
 #define CMD_DISABLE_VFUSE				0xBF	// set the Vfuse MIO output low
-#define CMD_READ_CORE_STATUS_REG		0xC1	// read the CORE STATUS register and return register setting
 #define CMD_CHANGE_DMM_MUX_SETTING		0xC5	// change the mux selection the DMM is connected to
 #define CMD_DISABLE_MIO_OUTPUTS			0xC6	// disable MIO outputs so power down is safe
 #define CMD_ENABLE_DMM_MUX 				0xC7	// enable the DMM mux by setting enable line high
 #define CMD_DISABLE_DMM_MUX				0xC8	// disable the DMM mux by setting disable line low
-#define CMD_RUN_DMA_TEST 				0xC9	// run the DMA test script
-#define CMD_RUN_DMA_TEST_RX_BYPASS		0xCA	// run the DMA test with RX in bypass mode
 #define CMD_DEBUG1						0xD0	// used for whatever debugging necessary
-#define CMD_SET_RX_FIFO_RESET_BIT  		0xD3	// set fpga control register bit to reset Rx fifo
-#define CMD_CLEAR_RX_FIFO_RESET_BIT 	0xD4	// clear fpga control register bit to reset Rx fifo
-#define CMD_FILL_TX_BUFFER_P_CHAN		0xE1	// fill the buffer in fpga for Tx P channel data output
-#define CMD_FILL_TX_BUFFER_M_CHAN 		0xE2	// fill the buffer in fpga for Tx M channel data output
-#define CMD_FILL_TX_BUFFER_CARRIER_CHAN 0xE3	// fill the buffer in fpga for Tx carrier channel data output
-#define CMD_ENABLE_FPGA_TX_DATA_OUTPUT 	0xE7	// write gyro channel control register: LSB = 1
-#define CMD_DISABLE_FPGA_TX_DATA_OUTPUT 0xE8	// write gyro channel control register: LSB = 0
-#define CMD_RESET_TX_FIFO 				0xE9	// set, then clear the reset bit in baseaddr_tx_fifo+0 register
 #define CMD_READ_FPGA_TX_CTRL_WORDS 	0xEC	// read the 32-bit control words in fpga Tx section
 #define CMD_READ_FPGA_RX_CTRL_WORDS 	0xED	// read the 32-bit control words in fpga Rx section
 #define CMD_READ_FPGA_CONTROL_WORDS		0xEE	// read the 32-bit control words in fpga logic section
 #define CMD_READ_FPGA_SPI_CTRL_WORDS    0xEF	// read the 32-bit control words in fpga SPI section
-#define CMD_ENABLE_GYRO_CHANNEL 		0xF2	// enable the gyro channel outputs on the fpga
-#define CMD_DISABLE_GYRO_CHANNEL 		0xF3	// disable the gyro channel outputs on the fpga
 
+// responses sent out over UART
 #define RESPONSE_WRITE_SUCCESS			0x52	// write completed and readback of value was successful
 #define RESPONSE_WRITE_FAIL				0x53	// write completed but readback of value written failed
 #define RESPONSE_CMD_DONE				0x54	// indicates command received and action has been taken
@@ -151,11 +135,6 @@ u8 dmm_mux_setting = DMM_MUX_SEL_ATB;	//initially dmm set to monitor ATB
 #define CONFIG_MCK_DIV_128				0x70000
 u32 MCK_div_setting = CONFIG_MCK_DIV_1;
 //
-#define CONFIG_SPI_CLK_DIV_1			0x0	// base frequency is 25MHz
-#define CONFIG_SPI_CLK_DIV_2			0x1	// div2 is 12.5MHz
-#define CONFIG_SPI_CLK_DIV_4			0x2	// div4 is 6.25MHz
-#define CONFIG_SPI_CLK_DIV_8			0x3	// div8 is 3.125MHz
-unsigned int SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_4;
 
 #define DIV_1		1
 #define DIV_2		2
@@ -258,7 +237,6 @@ static XScuGic interrupt_controller;	//instance of the interrupt controller
 XUartPs UartPs;							// Instance of the UART Device
 
 static u8 UartRxData[UART_RX_BUFFER_SIZE];	// Buffer for Receiving Data
-static u8 UartTxData[UART_TX_BUFFER_SIZE];	// Buffer for Transmitting Data
 u16 numUartBytesReceived;
 
 //u16 hsiDataIntegrityTestResults[15]={0x1234,2,3,4,5,6,7,8,9,10,11,12,13,14,0xABCD};
@@ -346,19 +324,12 @@ static int 	SetupUartInterruptSystem(XScuGic *IntcInstancePtr,
 					XUartPs *UartInstancePtr,
 					u16 UartIntrId);
 static void read_uart_bytes(void);
-static unsigned int getNumBytesToSend(u8 *RxData);
-static void send_Tx_data_over_UART(unsigned int num_points_to_send);
 static void send_data_over_UART(unsigned int num_points_to_send, u8 *dataArray);
 static void send_byte_over_UART(Xuint8 byteToSend);
 static int InitializeDelayTimer(void);
-void SetTimerDuration(XInterval interval, u8 prescalar);
+static void SetTimerDuration(XInterval interval, u8 prescalar);
 static void DelayTimerInterruptHandler(void *CallBackRef);
-static Xuint8 ProgramOTP(u32 otp32BitValue);
-static Xuint8 ProgramOTP_chipID(u32 id);
-static Xuint8 ProgramOTP_VbgTrim(u8 trimVal);
-static u32 readOTP32bits(void);
 static void fill_testADC_results_array(u16 signalToMeasure, u16 numReadings);
-static void changeSPIclockDivision(u8 divSetting);
 static void changeMCLKdivision(u8 divSetting);
 static void changeMuxSelection(u8 selection);
 static void setDmmMuxAddressLines(u32 addr3, u32 addr2, u32 addr1, u32 addr0);
@@ -374,8 +345,10 @@ static void disable_Vfuse(void);
 static void nvmWriteBit(bool dataBit);
 static void nvmWrite(u16 d0, u16 d1, u16 d2, u16 d3);
 static void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3);
-static void nvmReadRaw(void);
-static bool nvmSerialReadBit(void);
+static void nvmReadRaw(u8 mode);
+static bool nvmSerialReadBit(u16 curentSenseBits);
+static void setupUartToReceiveFuseData(void);
+static void setSPIClockDivision(unsigned int divisionSetting);
 
 
 
@@ -436,20 +409,40 @@ void storeFpgaSpiControlWords(void){
 
 
 // -------------------------------------------------------------------
- void setSPIClockDivision(unsigned int v){
-   Xuint32 x;
+void setSPIClockDivision(unsigned int divisionSetting){
+	u32 spiReg0;
 
-   x = (Xuint32) ((v<<2) & SPI_CLK_SEL_BITS);
-   *(baseaddr_spi) = x;
+	spiReg0 = XAxi_ReadReg(SPI_REG0) & 0xFFFFFFF3;	// mask the clock select bits
+
+	switch (divisionSetting){
+		case (DIV_1):
+			XAxi_WriteReg(SPI_REG0,spiReg0);		// set clock division of 1
+			break;
+		case (DIV_2):
+			XAxi_WriteReg(SPI_REG0,spiReg0|0x4);	// set clock division of 2
+			break;
+		case (DIV_4):
+			XAxi_WriteReg(SPI_REG0,spiReg0|0x8);	// set clock division of 4
+			break;
+		case (DIV_8):
+			XAxi_WriteReg(SPI_REG0,spiReg0|0xC);	// set clock division of 8
+			break;
+	}
 }
 // -------------------------------------------------------------------
 
 
 // -------------------------------------------------------------------
-unsigned int readSPIClockDivision(void){
-     return (int) (*(baseaddr_spi) & SPI_CLK_SEL_BITS >> 2);
+u8 getSPIClockDivision(void){
+	/* Returns the spi clock division setting:
+	 * 0=div1, 1=div2, 2=div4, 3=div8
+	 */
+	u32 divSetting;
+
+	divSetting = XAxi_ReadReg(SPI_REG0) & SPI_CLK_SEL_BITS;	// mask the clock select bits
+
+	return (u8)(divSetting>>2);
 }
-// -------------------------------------------------------------------
 
 
 // -------------------------------------------------------------------
@@ -492,19 +485,20 @@ unsigned int writeGyroRegister(unsigned int address, unsigned int data){
 unsigned int readGyroRegister(unsigned char address){
 	Xuint32 		spiControReg,clkSelBits,enableBit;
 
-	spiControReg = *(baseaddr_spi+0);
+	spiControReg = XAxi_ReadReg(SPI_REG0);
 
 	clkSelBits = spiControReg & SPI_CLK_SEL_BITS;		// store clock select bits
 	enableBit = spiControReg & SPI_ENABLE_BIT;			// store clock select bits
 
-	*(baseaddr_spi+0) = clkSelBits | enableBit			// setup for a register read
-						| SPI_READ_BIT;
-	*(baseaddr_spi+1) = address;						// set register address to read
-	*(baseaddr_spi+0) = clkSelBits | enableBit			// set start bit[0] to initiate transfer
-						| SPI_READ_BIT | SPI_START_BIT;
-	while (*(baseaddr_spi+3) & SPI_BUSY_BIT);			// wait for read to complete
+	XAxi_WriteReg(SPI_REG0,clkSelBits | enableBit		// setup for a register read
+									  | SPI_READ_BIT);
+	XAxi_WriteReg(SPI_REG1,address);					// set register address to be read
+	XAxi_WriteReg(SPI_REG0,clkSelBits | enableBit		// set start bit[0] to initiate transfer
+					| SPI_READ_BIT | SPI_START_BIT);
 
-	return *(baseaddr_spi+3) & 0xFFFF;
+	while (XAxi_ReadReg(SPI_REG3) & SPI_BUSY_BIT);		// wait for read to complete
+
+	return (XAxi_ReadReg(SPI_REG3) & 0xFFFF);
 }
 // -------------------------------------------------------------------
 
@@ -784,8 +778,6 @@ void read_uart_bytes(void)
 	u16 numPoints;
 	u32 numBytesToSend;
 	u16 TxData,TxDcValue,rampStartValue;
-	u32 otpBytes;
-	u8 *TxDdrBufferPtr;
 	unsigned int commandByte,regAddr,regData;
 
 	// loop through Uart Rx buffer and store received data
@@ -925,7 +917,23 @@ void read_uart_bytes(void)
 			break;
 
 		case (CMD_READ_NVM_RAW_FUSES):
-			nvmReadRaw();	// reads raw fuse data into nvmRawData[4] array
+			nvmReadRaw(0);	// reads raw fuse data into nvmRawData[4] array
+
+			// send 8 bytes (the four 16-bit words for NVM raw data)
+			send_data_over_UART(8,(u8*)&nvmRawData[0]);
+			break;
+
+		case (CMD_READ_NVM_RAW_FUSES_MARGIN1):
+			nvmReadRaw(1);	// reads raw fuse data into nvmRawData[4] array using
+							// margin read mode 1
+
+			// send 8 bytes (the four 16-bit words for NVM raw data)
+			send_data_over_UART(8,(u8*)&nvmRawData[0]);
+			break;
+
+		case (CMD_READ_NVM_RAW_FUSES_MARGIN2):
+			nvmReadRaw(2);	// reads raw fuse data into nvmRawData[4] array using
+							// margin read mode 2
 
 			// send 8 bytes (the four 16-bit words for NVM raw data)
 			send_data_over_UART(8,(u8*)&nvmRawData[0]);
@@ -1039,13 +1047,7 @@ void read_uart_bytes(void)
 			}
 
 			// second byte received has the division setting
-			// function below sets the internal variable that
-			// contains spi clock division setting
-			changeSPIclockDivision(UartRxData[1]);
-
-			// use new variable in call to configuration function
-			// that will change register setting in FPGA
-			setSPIClockDivision(SPI_clock_division_setting);
+			setSPIClockDivision(UartRxData[1]);
 			break;
 
 		case (CMD_CHANGE_DMM_MUX_SETTING):
@@ -1065,25 +1067,6 @@ void read_uart_bytes(void)
 			sendFpgaConfigBytesOverUart();
 			break;
 
-		case (CMD_RUN_DMA_TEST):
-//			runDmaTest();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-
-		case (CMD_RUN_DMA_TEST_RX_BYPASS):
-//			runDmaTestRxBypass();
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-/*
-		case (CMD_FILL_TX_BUFFER_P_CHAN):
-			setupUartToReceiveTxData(UartRxData[1],UartRxData[2]);
-			send_byte_over_UART(RESPONSE_READY_FOR_TX_DATA);
-			waitForDataOverUart();
-			TxDataFromUartToDma(TX_CHAN_P_OFFSET);
-			sendTxDmaPacket(&AxiDma, TX_CHAN_P_OFFSET);
-			send_byte_over_UART(RESPONSE_CMD_DONE);
-			break;
-*/
 		case (CMD_READ_RX_FPGA_DATA):
 			// first byte received is command, second byte is signal to measure,
 			// third and fourth bytes are 16-bit number of measurements MSbyte(3rd) LSbyte(4th)
@@ -1303,7 +1286,7 @@ void hsiDataIntegrityTest(void){
 void sendFpgaConfigBytesOverUart(void)
 {
 	send_byte_over_UART( (u8)(MCK_div_setting>>16) );
-	send_byte_over_UART( (u8)SPI_clock_division_setting );
+	send_byte_over_UART( getSPIClockDivision() );
 	send_byte_over_UART( (u8)(dmm_mux_setting));
 }
 //------------------------------------------------------------
@@ -1355,27 +1338,6 @@ void setDmmMuxAddressLines(u32 addr3, u32 addr2, u32 addr1, u32 addr0)
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A1_OUTPUT_PIN, addr1);
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A2_OUTPUT_PIN, addr2);
 	 XGpioPs_WritePin(&MIO_gpio, DMM_MUX_A3_OUTPUT_PIN, addr3);
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-void changeSPIclockDivision(u8 divSetting)
-{
-	switch (divSetting){
-		case (DIV_1):
-		SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_1;
-			break;
-		case (DIV_2):
-		SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_2;
-			break;
-		case (DIV_4):
-		SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_4;
-			break;
-		case (DIV_8):
-		SPI_clock_division_setting = CONFIG_SPI_CLK_DIV_8;
-			break;
-	}
 }
 //------------------------------------------------------------
 
@@ -1737,15 +1699,28 @@ endtask
 
 
 //------------------------------------------------------------
-void nvmReadRaw(void)
+void nvmReadRaw(u8 readMode)
 {	/* Reads the 60 raw bits from the NVM IP using serial read
 	 * on the OROUT line (read-only reg25 bit12)
 	 * Populates the global variable nvmRawData[4] with serial read results
+	 *
+	 * readMode is the read mode to use:
+	 * 	readMode=0 for standard read of fuse states (normal production read)
+	 * 	readMode=1 for margin read with 73kohm RFUSE threshold margin (standard margin read test)
+	 * 	readMode=2 for margin read with 108kohm RFUSE threshold margin
  	*/
 	bool bitResult;
 	int i,j;
+	u16 currentSenseBits = 0;
 
-	// clear out container contents
+	if (readMode == 1){
+		currentSenseBits = 0x1000;
+	}
+	else if (readMode == 2){
+		currentSenseBits = 0x2000;
+	}
+
+	// clear out previous read results
 	for(i=0;i<4;i++){
 		nvmRawData[i] = 0;
 	}
@@ -1756,7 +1731,7 @@ void nvmReadRaw(void)
 
 	for(j=3;j>=0;j--){		// serial read sends 60-bit fuse data MSB first
 		for(i=0;i<=14;i++){
-			bitResult = nvmSerialReadBit();
+			bitResult = nvmSerialReadBit(currentSenseBits);
 			if (bitResult==1){
 				nvmRawData[j] |= (0x4000>>i);
 			}
@@ -1767,9 +1742,12 @@ void nvmReadRaw(void)
 
 
 //------------------------------------------------------------
-bool nvmSerialReadBit(void)
+bool nvmSerialReadBit(u16 curentSenseBits)
 {	/* 	Reads a single fuse bit state by reading the OROUT line (read-only reg25 bit12),
-		then toggles the CLK bit on NVM ip to advance the bit counter
+	 *	then toggles the CLK bit on NVM ip to advance the bit counter.
+	 *
+	 *	curentSenseBits is the state of reg24 bit13(CURSEN[1]) and bit12(CURSEN[0])
+	 *	that need to be maintained during the pulsing of CLK below
  	*/
 	bool bitState;
 	u16 reg25;
@@ -1784,8 +1762,8 @@ bool nvmSerialReadBit(void)
 	}
 
 	// pulse CLK to increment NVM bit counter to next bit position
-	writeGyroRegister(24, 0x0050);	// CLK=1, SERREADEN=1
-	writeGyroRegister(24, 0x0040);	// CLK=0, SERREADEN=1
+	writeGyroRegister(24, 0x0050|curentSenseBits);	// CLK=1, SERREADEN=1, maintain CURSEN[1:0]
+	writeGyroRegister(24, 0x0040|curentSenseBits);	// CLK=0, SERREADEN=1, maintain CURSEN[1:0]
 
 	return bitState;
 }
@@ -1794,10 +1772,11 @@ bool nvmSerialReadBit(void)
 
 //------------------------------------------------------------
 void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3)
-{	/* Takes four 15-bit values as raw fuse data
-	 * Does not calculate the error correction data. First 4 bits
-	 * of each value is taken as error correction data.
-	 * Each 15-bit values is interpreted as P[14:11],D[10:0]
+{	/* Takes four 15-bit values as raw fuse data.
+	 * Does not calculate the error correction data.
+	 * Bits 14:11 of each value are taken as error correction data.
+	 * Bits 10:0 of each value are taken as program data.
+	 * i.e. each 15-bit value is interpreted as P[14:11],D[10:0]
 	 * Programs the given 60 bits into NVM fuses.
  	*/
 
@@ -1916,6 +1895,7 @@ void nvmWriteBit(bool dataBit)
 		and toggles the CLK bit on NVM ip to advance the bit counter
  	*/
 	if (dataBit == 1){
+		enable_Vfuse();					// just to create an output pulse to observe timing
 		writeGyroRegister(24, 0x0080);	// PROG=1
 //		writeGyroRegister(24, 0x0200);	// SFTSET=1 instead of PROG=1 when just testing
 
@@ -1923,175 +1903,20 @@ void nvmWriteBit(bool dataBit)
 		 * Time for spi transactions is ~1usec(fastest SPI clk) to ~8usec(slowest SPI clk)
 		 * Try a delay time of around 70usec
 		 */
-		SetTimerDuration(7000, 1);
+		SetTimerDuration(8000, 1);
 		timerRunning = 1;
 		XTtcPs_Start(&DelayTimer);
 		while(timerRunning);
+
+		disable_Vfuse();				// end the output pulse for debugging,
+										// MIO output switched just before PROG=1 and PROG=0
 
 		writeGyroRegister(24, 0x0000);	// PROG=0
 	}
 
 	// pulse CLK to increment NVM bit counter to next bit position
-	writeGyroRegister(24, 0x0010);	// CLK=1
-	writeGyroRegister(24, 0x0000);	// CLK=0
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-Xuint8 ProgramOTP_chipID(u32 id)
-{
-	u32 otp32register;
-
-	//shift ID over to bits 31:8 of the 32 bit OTP register
-	otp32register = id << 8;
-	return ProgramOTP(otp32register);
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-Xuint8 ProgramOTP_VbgTrim(u8 trimVal)
-{
-	//mask bits 5-31 if set in trimVal
-	trimVal &= 0x1F;
-
-	return ProgramOTP((u32)trimVal);
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-Xuint8 ProgramOTP(u32 otp32ProgramValue)
-{
-	int i;
-	Xuint8 readbackErrorCode = 0;
-	u32 x = 1;
-	u32 otp32TestValue;
-
-	otp32TestValue = readOTP32bits() | otp32ProgramValue;
-
-	//turn Vfuse on (NVM programming voltage)
-//	enable_Vfuse();
-
-	//delay for Vfuse to come up
-	SetTimerDuration(65000, 10);
-	timerRunning = 1;
-	XTtcPs_Start(&DelayTimer);
-	while(timerRunning);
-
-	// setup the timer for 25usec delay to use later
-//	SetTimerDuration(2500, 1);
-
-	// loop through all 32 bits in otp register to clear out any 1s
-	for(i=0;i<32;i++)
-	{
-		writeGyroRegister(2,0x0010);		//CLKM=1
-		writeGyroRegister(2,0x0000);		//CLKM=0
-		writeGyroRegister(2,0x0020);		//CLKS=1
-		writeGyroRegister(2,0x0000);		//CLKS=0
-
-	}
-
-	// shift a 1 into bit position 0
-	writeGyroRegister(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
-	writeGyroRegister(2,0x8010);		//DIN=1,CLKM=1,CLKS=0
-	writeGyroRegister(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
-	writeGyroRegister(2,0x8020);		//DIN=1,CLKM=0,CLKS=1
-	writeGyroRegister(2,0x8000);		//DIN=1,CLKM=0,CLKS=0
-	writeGyroRegister(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
-
-	// check each bit position to see if it should be programmed
-	// to a '1', then shift bit to next position
-	for(i=0;i<32;i++)
-	{
-		// check if this bit should be programmed
-		if (otp32ProgramValue & (x << i) )
-		{
-			writeGyroRegister(2,0x4000);	//SHORTEN=1,IZAPEN=0,WE=0
-			writeGyroRegister(2,0x6000);	//SHORTEN=1,IZAPEN=1,WE=0
-			// wait 1<t<10us, ensure spi transfer time takes care of this
-			// if no delay is used
-			writeGyroRegister(2,0x7000);	//SHORTEN=1,IZAPEN=1,WE=1
-			writeGyroRegister(2,0x3000);	//SHORTEN=0,IZAPEN=1,WE=1
-
-			//delay 25usec for zap time
-			/*timerRunning = 1;
-			XTtcPs_Start(&DelayTimer);
-			while(timerRunning);*/
-
-			// delay above was not needed because delay
-			// between spi register write completions is ~25usec
-
-			writeGyroRegister(2,0x7000);	//SHORTEN=1,IZAPEN=1,WE=1
-			writeGyroRegister(2,0x6000);	//SHORTEN=1,IZAPEN=1,WE=0
-			writeGyroRegister(2,0x4000);	//SHORTEN=1,IZAPEN=0,WE=0
-			writeGyroRegister(2,0x0000);	//SHORTEN=0,IZAPEN=0,WE=0
-		}
-
-		//shift bit to next position in register
-		writeGyroRegister(2,0x0010);		//DIN=0,CLKM=1,CLKS=0
-		writeGyroRegister(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
-		writeGyroRegister(2,0x0020);		//DIN=0,CLKM=0,CLKS=1
-		writeGyroRegister(2,0x0000);		//DIN=0,CLKM=0,CLKS=0
-	}
-
-//	disable_Vfuse();		// programming done so disable voltage
-
-	//enable read operations
-	writeGyroRegister(2,0x0001);		//RSWEN=1
-	// wait min 4.5usec
-	writeGyroRegister(2,0x0003);		//BANK=1,RSWEN=1
-	writeGyroRegister(2,0x0007);		//READ=1,BANK=1,RSWEN=1
-
-	//test for correct value in NVM register
-	if (otp32TestValue != readOTP32bits()) readbackErrorCode |= 0x01;
-
-	//set fuse block in read mode (low current)
-	writeGyroRegister(2,0x0047);		//BIASL=1,READ=1,BANK=1,RSWEN=1
-	//test for correct value in NVM register
-	if (otp32TestValue != readOTP32bits()) readbackErrorCode |= 0x02;
-
-	//set fuse block in read mode (high current)
-	writeGyroRegister(2,0x000F);		//BIASH=1,READ=1,BANK=1,RSWEN=1
-	//test for correct value in NVM register
-	if (otp32TestValue != readOTP32bits()) readbackErrorCode |= 0x04;
-
-	//clear all bits in the OTP programming register
-	writeGyroRegister(2,0x0000);
-
-	return readbackErrorCode;
-}
-//------------------------------------------------------------
-
-
-//------------------------------------------------------------
-/*
- * Reads the 32-bit value from the OTP memory block
- */
-u32 readOTP32bits(void)
-{
-	unsigned int reg3originalValue,regReadResult;
-	u32 otp32bitResult;
-
-	// read value of register 3 to restore later
-	reg3originalValue = readGyroRegister(3);
-
-	// set 2 RBKSEL bits in order to read OTP register values
-	writeGyroRegister(3,(0x0300|reg3originalValue));
-
-	// read lower 16 bits of 32 bit result
-	regReadResult = readGyroRegister(2);
-	otp32bitResult = regReadResult;
-
-	// read upper 16 bits of 32 bit result
-	regReadResult = readGyroRegister(3);
-	otp32bitResult += (regReadResult << 16);
-
-	// restore register 3 original value
-	writeGyroRegister(3,reg3originalValue);
-
-	return otp32bitResult;
+	writeGyroRegister(24, 0x0010);		// CLK=1
+	writeGyroRegister(24, 0x0000);		// CLK=0
 }
 //------------------------------------------------------------
 
@@ -2190,14 +2015,22 @@ int main() {
     init_platform();
 
     init_MIO_gpio();
-    setSPIClockDivision(SPI_clock_division_setting);
+    setSPIClockDivision(DIV_4);
     initUart();
     InitializeDelayTimer();
 	initDMA(&axiDma);
 	initializeHsiDataStreams(&axiDma);
 
-//	enableSPI();
-//	nvmWriteRaw(2,0,0,0x500);
+/*
+	//==============================================
+	//==============================================
+	//=== For testing the NVM fuse blow routines ===
+	enableSPI();
+	nvmWriteRaw(2,0,0,0x500);
+	//==============================================
+	//==============================================
+*/
+
 
 /*
 	//===============================================
