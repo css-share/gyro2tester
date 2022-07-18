@@ -919,7 +919,7 @@ void read_uart_bytes(void)
 		case (CMD_READ_NVM_RAW_FUSES):
 			nvmReadRaw(0);	// reads raw fuse data into nvmRawData[4] array
 
-			// send 8 bytes (the four 16-bit words for NVM raw data)
+			// send 8 bytes (the four 15-bit words for NVM raw data)
 			send_data_over_UART(8,(u8*)&nvmRawData[0]);
 			break;
 
@@ -927,7 +927,7 @@ void read_uart_bytes(void)
 			nvmReadRaw(1);	// reads raw fuse data into nvmRawData[4] array using
 							// margin read mode 1
 
-			// send 8 bytes (the four 16-bit words for NVM raw data)
+			// send 8 bytes (the four 15-bit words for NVM raw data)
 			send_data_over_UART(8,(u8*)&nvmRawData[0]);
 			break;
 
@@ -935,7 +935,7 @@ void read_uart_bytes(void)
 			nvmReadRaw(2);	// reads raw fuse data into nvmRawData[4] array using
 							// margin read mode 2
 
-			// send 8 bytes (the four 16-bit words for NVM raw data)
+			// send 8 bytes (the four 15-bit words for NVM raw data)
 			send_data_over_UART(8,(u8*)&nvmRawData[0]);
 			break;
 
@@ -1773,7 +1773,7 @@ bool nvmSerialReadBit(u16 curentSenseBits)
 //------------------------------------------------------------
 void nvmWriteRaw(u16 d0, u16 d1, u16 d2, u16 d3)
 {	/* Takes four 15-bit values as raw fuse data.
-	 * Does not calculate the error correction data.
+	 * Error correction bits are passed in, not calculated.
 	 * Bits 14:11 of each value are taken as error correction data.
 	 * Bits 10:0 of each value are taken as program data.
 	 * i.e. each 15-bit value is interpreted as P[14:11],D[10:0]
